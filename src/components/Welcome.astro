@@ -5,8 +5,8 @@ import expedicionImg from '../assets/expedicion.jpg';
 <div id="container">
 	<div id="background-pattern"></div>
 	<main>
-		<section id="hero">
-			<img id="hero-photo" src={expedicionImg.src} alt="Equipo de trekking en las montañas" />
+		<section id="hero" style={`background-image: linear-gradient(rgba(0,0,0,0.44), rgba(0,0,0,0.44)), url('${expedicionImg.src}')`}>
+			<div id="hero-overlay"></div>
 			<div id="header">
 				<h1>CLIMBING TREKKING PERÚ</h1>
 				<div id="divider"></div>
@@ -15,7 +15,6 @@ import expedicionImg from '../assets/expedicion.jpg';
 			<div id="content-box">
 				<h2>Próximamente</h2>
 				<p>Estamos preparando las mejores experiencias de trekking y expediciones en las montañas del Perú. Tu aventura comienza aquí.</p>
-
 			</div>
 		</section>
 	</main>
@@ -57,13 +56,33 @@ import expedicionImg from '../assets/expedicion.jpg';
 	}
 
 	#hero {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		max-width: 700px;
+		justify-content: center;
+		max-width: 1000px;
 		width: 100%;
+		min-height: 80vh;
 		text-align: center;
 		gap: 40px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		color: white;
+	}
+
+	#hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.48);
+		z-index: 1;
+	}
+
+	#header,
+	#content-box {
+		position: relative;
+		z-index: 2;
 	}
 
 	#header {
@@ -74,7 +93,7 @@ import expedicionImg from '../assets/expedicion.jpg';
 	#header h1 {
 		font-size: clamp(28px, 6vw, 56px);
 		font-weight: 700;
-		color: #0066cc;
+		color: white;
 		margin: 0;
 		letter-spacing: -0.5px;
 		line-height: 1.1;
@@ -91,7 +110,7 @@ import expedicionImg from '../assets/expedicion.jpg';
 
 	#subtitle {
 		font-size: clamp(12px, 3vw, 18px);
-		color: #666;
+		color: rgba(255, 255, 255, 0.9);
 		margin: 0;
 		font-weight: 400;
 		letter-spacing: 1.5px;
@@ -113,16 +132,6 @@ import expedicionImg from '../assets/expedicion.jpg';
 		color: white;
 		margin: 0 0 15px 0;
 		font-weight: 600;
-	}
-
-	#hero-photo {
-		width: 100%;
-		max-width: 950px;
-		height: auto;
-		border-radius: 14px;
-		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-		margin-bottom: 24px;
-		object-fit: cover;
 	}
 
 	#content-box p {
