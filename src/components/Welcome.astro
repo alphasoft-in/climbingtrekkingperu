@@ -25,11 +25,18 @@ import expedicionImg from '../assets/expedicion.jpg';
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 		height: 100vh;
 		width: 100vw;
-		background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 		position: relative;
 		overflow: hidden;
 		margin: 0;
 		padding: 0;
+	}
+
+	#container::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+		z-index: 0;
 	}
 
 	#background-pattern {
@@ -61,21 +68,22 @@ import expedicionImg from '../assets/expedicion.jpg';
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		max-width: 1000px;
 		width: 100%;
-		min-height: 80vh;
+		min-height: 100vh;
 		text-align: center;
-		gap: 40px;
+		gap: 30px;
+		padding: 1.5rem;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 		color: white;
+		z-index: 1;
 	}
 
 	#hero-overlay {
 		position: absolute;
 		inset: 0;
-		background: rgba(0, 0, 0, 0.48);
+		background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
 		z-index: 1;
 	}
 
@@ -83,6 +91,8 @@ import expedicionImg from '../assets/expedicion.jpg';
 	#content-box {
 		position: relative;
 		z-index: 2;
+		width: 100%;
+		max-width: 900px;
 	}
 
 	#header {
@@ -91,13 +101,14 @@ import expedicionImg from '../assets/expedicion.jpg';
 	}
 
 	#header h1 {
-		font-size: clamp(28px, 6vw, 56px);
-		font-weight: 700;
+		font-size: clamp(32px, 7vw, 72px);
+		font-weight: 800;
 		color: white;
 		margin: 0;
 		letter-spacing: -0.5px;
-		line-height: 1.1;
+		line-height: 1.05;
 		word-wrap: break-word;
+		text-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 	}
 
 	#divider {
@@ -118,10 +129,11 @@ import expedicionImg from '../assets/expedicion.jpg';
 	}
 
 	#content-box {
-		background: linear-gradient(135deg, #0066cc 0%, #00a8e8 100%);
-		padding: clamp(30px, 8vw, 50px) clamp(20px, 6vw, 40px);
-		border-radius: 12px;
-		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+		background: rgba(0, 0, 0, 0.42);
+		backdrop-filter: blur(10px);
+		padding: clamp(24px, 5vw, 40px) clamp(20px, 6vw, 36px);
+		border-radius: 14px;
+		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 		animation: slideUp 0.8s ease-out 0.2s both;
 		width: 100%;
 		box-sizing: border-box;
