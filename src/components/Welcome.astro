@@ -22,10 +22,13 @@
 <style>
 	#container {
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-		height: 100%;
+		height: 100vh;
+		width: 100vw;
 		background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 		position: relative;
 		overflow: hidden;
+		margin: 0;
+		padding: 0;
 	}
 
 	#background-pattern {
@@ -41,39 +44,43 @@
 
 	main {
 		height: 100%;
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: relative;
 		z-index: 1;
 		padding: 20px;
+		box-sizing: border-box;
 	}
 
 	#hero {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		max-width: 650px;
+		max-width: 700px;
 		width: 100%;
 		text-align: center;
+		gap: 40px;
 	}
 
 	#header {
-		margin-bottom: 60px;
 		animation: fadeIn 0.8s ease-out;
+		width: 100%;
 	}
 
 	#header h1 {
-		font-size: 48px;
+		font-size: clamp(28px, 6vw, 56px);
 		font-weight: 700;
 		color: #0066cc;
 		margin: 0;
 		letter-spacing: -0.5px;
 		line-height: 1.1;
+		word-wrap: break-word;
 	}
 
 	#divider {
-		width: 60px;
+		width: clamp(40px, 15%, 80px);
 		height: 4px;
 		background: linear-gradient(90deg, #0066cc, #00a8e8);
 		margin: 20px auto;
@@ -81,7 +88,7 @@
 	}
 
 	#subtitle {
-		font-size: 18px;
+		font-size: clamp(12px, 3vw, 18px);
 		color: #666;
 		margin: 0;
 		font-weight: 400;
@@ -91,21 +98,23 @@
 
 	#content-box {
 		background: linear-gradient(135deg, #0066cc 0%, #00a8e8 100%);
-		padding: 50px 40px;
+		padding: clamp(30px, 8vw, 50px) clamp(20px, 6vw, 40px);
 		border-radius: 12px;
 		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 		animation: slideUp 0.8s ease-out 0.2s both;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	#content-box h2 {
-		font-size: 36px;
+		font-size: clamp(28px, 5vw, 40px);
 		color: white;
 		margin: 0 0 15px 0;
 		font-weight: 600;
 	}
 
 	#content-box p {
-		font-size: 17px;
+		font-size: clamp(14px, 3.5vw, 17px);
 		color: rgba(255, 255, 255, 0.95);
 		margin: 0;
 		line-height: 1.6;
@@ -131,60 +140,164 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
-		#container {
+	/* Tablets (768px - 1024px) */
+	@media screen and (max-width: 1024px) {
+		#background-pattern {
+			width: 400px;
+			height: 400px;
+			top: -40%;
+			right: -5%;
+		}
+
+		main {
 			padding: 20px;
 		}
 
-		#header h1 {
-			font-size: 36px;
-		}
-
-		#subtitle {
-			font-size: 15px;
-		}
-
-		#content-box {
-			padding: 40px 25px;
-		}
-
-		#content-box h2 {
-			font-size: 28px;
-		}
-
-		#content-box p {
-			font-size: 16px;
+		#hero {
+			gap: 35px;
 		}
 	}
 
-	@media screen and (max-width: 480px) {
+	/* Small tablets (481px - 768px) */
+	@media screen and (max-width: 768px) {
+		#background-pattern {
+			width: 350px;
+			height: 350px;
+			top: -30%;
+			right: 0;
+		}
+
+		main {
+			padding: 15px;
+		}
+
+		#hero {
+			gap: 30px;
+		}
+
 		#header {
-			margin-bottom: 40px;
-		}
-
-		#header h1 {
-			font-size: 28px;
-		}
-
-		#subtitle {
-			font-size: 13px;
-		}
-
-		#content-box {
-			padding: 30px 20px;
-		}
-
-		#content-box h2 {
-			font-size: 24px;
-		}
-
-		#content-box p {
-			font-size: 15px;
+			margin-bottom: 0;
 		}
 
 		#divider {
-			width: 50px;
+			margin: 15px auto;
+		}
+	}
+
+	/* Mobile phones (481px - 768px) */
+	@media screen and (max-width: 640px) {
+		#background-pattern {
+			width: 300px;
+			height: 300px;
+			top: -20%;
+			right: -15%;
+		}
+
+		#hero {
+			gap: 25px;
+		}
+
+		#header h1 {
+			letter-spacing: 0;
+		}
+
+		#subtitle {
+			letter-spacing: 1px;
+		}
+	}
+
+	/* Small mobile phones (max 480px) */
+	@media screen and (max-width: 480px) {
+		#container {
+			height: 100vh;
+		}
+
+		main {
+			padding: 12px;
+			min-height: 100vh;
+		}
+
+		#hero {
+			gap: 20px;
+			width: 100%;
+		}
+
+		#background-pattern {
+			width: 250px;
+			height: 250px;
+			top: -10%;
+			right: -20%;
+		}
+
+		#header {
+			width: 100%;
+		}
+
+		#header h1 {
+			letter-spacing: -1px;
+		}
+
+		#divider {
+			width: 40px;
 			height: 3px;
+			margin: 12px auto;
+		}
+
+		#subtitle {
+			letter-spacing: 0.5px;
+		}
+
+		#content-box {
+			padding: 25px 18px;
+			border-radius: 10px;
+		}
+
+		#content-box h2 {
+			margin-bottom: 12px;
+		}
+
+		#content-box p {
+			line-height: 1.5;
+		}
+	}
+
+	/* Extra small phones (max 375px) */
+	@media screen and (max-width: 375px) {
+		main {
+			padding: 10px;
+		}
+
+		#hero {
+			gap: 15px;
+		}
+
+		#background-pattern {
+			width: 200px;
+			height: 200px;
+			opacity: 0.5;
+		}
+
+		#content-box {
+			padding: 20px 15px;
+		}
+	}
+
+	/* Landscape orientation optimization */
+	@media screen and (max-height: 600px) {
+		main {
+			padding: 10px;
+		}
+
+		#hero {
+			gap: 15px;
+		}
+
+		#header {
+			margin-bottom: 0;
+		}
+
+		#content-box {
+			padding: clamp(15px, 4vw, 30px) clamp(15px, 4vw, 30px);
 		}
 	}
 </style>
