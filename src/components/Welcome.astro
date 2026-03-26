@@ -7,7 +7,7 @@
 		<section id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.44), rgba(0,0,0,0.44)), url('/expedicion.jpg')">
 			<div id="hero-overlay"></div>
 			<div id="header">
-				<h1>CLIMBING TREKKING PERÚ</h1>
+				<h1>CLIMBING<br/>TREKKING PERÚ</h1>
 				<div id="divider"></div>
 				<p id="subtitle">Expediciones de Montaña</p>
 			</div>
@@ -62,8 +62,10 @@
 
 	#hero {
 		position: relative;
-		display: grid;
-		place-items: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		width: 100vw;
 		min-height: 100vh;
 		max-width: 100vw;
@@ -74,6 +76,7 @@
 		background-repeat: no-repeat;
 		color: white;
 		z-index: 1;
+		gap: 20px;
 	}
 
 	#hero-overlay {
