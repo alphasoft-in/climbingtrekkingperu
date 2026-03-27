@@ -43,8 +43,23 @@ const enUrl = `/en/${routeName}`;
 				<nav class="nav-desktop">
 					<ul class="nav-menu">
 						<li><a href={getRelativeLocaleUrl(lang, '')} class={routeName === "" ? 'active' : ''}>{t('nav.home')}</a></li>
-						<li><a href={getRelativeLocaleUrl(lang, 'tours')} class={routeName.startsWith('tours') ? 'active' : ''}>{t('nav.tours')}</a></li>
 						<li><a href={getRelativeLocaleUrl(lang, 'about')} class={routeName.startsWith('about') ? 'active' : ''}>{t('nav.about')}</a></li>
+						<li><a href={getRelativeLocaleUrl(lang, 'trekking')} class={routeName.startsWith('trekking') ? 'active' : ''}>{t('nav.trekking')}</a></li>
+						<li><a href={getRelativeLocaleUrl(lang, 'climbing')} class={routeName.startsWith('climbing') ? 'active' : ''}>{t('nav.climbing')}</a></li>
+						<li class="nav-dropdown">
+							<a href="#" class={['peru', 'bolivia', 'ecuador', 'chile', 'argentina'].some(c => routeName.includes(c)) ? 'active' : ''}>
+								{t('nav.destinations')} <span class="arrow">▾</span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href={getRelativeLocaleUrl(lang, 'peru')}>{t('nav.peru')}</a></li>
+								<li><a href={getRelativeLocaleUrl(lang, 'bolivia')}>{t('nav.bolivia')}</a></li>
+								<li><a href={getRelativeLocaleUrl(lang, 'ecuador')}>{t('nav.ecuador')}</a></li>
+								<li><a href={getRelativeLocaleUrl(lang, 'chile')}>{t('nav.chile')}</a></li>
+								<li><a href={getRelativeLocaleUrl(lang, 'argentina')}>{t('nav.argentina')}</a></li>
+							</ul>
+						</li>
+						<li><a href={getRelativeLocaleUrl(lang, 'tours')} class={routeName.startsWith('tours') ? 'active' : ''}>{t('nav.tours')}</a></li>
+						<li><a href={getRelativeLocaleUrl(lang, 'gallery')} class={routeName.startsWith('gallery') ? 'active' : ''}>{t('nav.gallery')}</a></li>
 					</ul>
 				</nav>
 
@@ -77,14 +92,33 @@ const enUrl = `/en/${routeName}`;
 					</div>
 					<nav class="overlay-links">
 						<a href={getRelativeLocaleUrl(lang, '')} class={routeName === "" ? 'active' : ''}>{t('nav.home')}</a>
-						<a href={getRelativeLocaleUrl(lang, 'tours')} class={routeName.startsWith('tours') ? 'active' : ''}>{t('nav.tours')}</a>
 						<a href={getRelativeLocaleUrl(lang, 'about')} class={routeName.startsWith('about') ? 'active' : ''}>{t('nav.about')}</a>
+						<a href={getRelativeLocaleUrl(lang, 'trekking')} class={routeName.startsWith('trekking') ? 'active' : ''}>{t('nav.trekking')}</a>
+						<a href={getRelativeLocaleUrl(lang, 'climbing')} class={routeName.startsWith('climbing') ? 'active' : ''}>{t('nav.climbing')}</a>
+						
+						<div class="mobile-dropdown">
+							<button class="mobile-dropdown-btn">
+								{t('nav.destinations')} <span class="arrow">▾</span>
+							</button>
+							<div class="mobile-dropdown-content">
+								<a href={getRelativeLocaleUrl(lang, 'peru')}>{t('nav.peru')}</a>
+								<a href={getRelativeLocaleUrl(lang, 'bolivia')}>{t('nav.bolivia')}</a>
+								<a href={getRelativeLocaleUrl(lang, 'ecuador')}>{t('nav.ecuador')}</a>
+								<a href={getRelativeLocaleUrl(lang, 'chile')}>{t('nav.chile')}</a>
+								<a href={getRelativeLocaleUrl(lang, 'argentina')}>{t('nav.argentina')}</a>
+							</div>
+						</div>
+
+						<a href={getRelativeLocaleUrl(lang, 'tours')} class={routeName.startsWith('tours') ? 'active' : ''}>{t('nav.tours')}</a>
+						<a href={getRelativeLocaleUrl(lang, 'gallery')} class={routeName.startsWith('gallery') ? 'active' : ''}>{t('nav.gallery')}</a>
 						<a href={getRelativeLocaleUrl(lang, 'contact')} class={`overlay-cta ${routeName.startsWith('contact') ? 'active' : ''}`}>{t('nav.contact')}</a>
 					</nav>
-					<div class="overlay-lang">
-						<a href={esUrl} class={lang === 'es' ? 'active' : ''}>Español</a>
-						<span class="sep">/</span>
-						<a href={enUrl} class={lang === 'en' ? 'active' : ''}>English</a>
+					<div class="overlay-footer">
+						<div class="overlay-lang">
+							<a href={esUrl} class={lang === 'es' ? 'active' : ''}>Español</a>
+							<span class="sep">/</span>
+							<a href={enUrl} class={lang === 'en' ? 'active' : ''}>English</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -113,8 +147,20 @@ const enUrl = `/en/${routeName}`;
 
 				burger.addEventListener('click', open);
 				close.addEventListener('click', hide);
+                
+                // Toggle para destinos en móvil
+                const mobileDropBtn = overlay.querySelector('.mobile-dropdown-btn');
+                const mobileDropContent = overlay.querySelector('.mobile-dropdown-content');
+                if (mobileDropBtn && mobileDropContent) {
+                    mobileDropBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileDropContent.classList.toggle('active');
+                        mobileDropBtn.querySelector('.arrow').classList.toggle('rotate');
+                    });
+                }
+
                 // Cerrar al hacer clic en enlaces
-                overlay.querySelectorAll('a').forEach(link => {
+                overlay.querySelectorAll('nav a').forEach(link => {
                     link.addEventListener('click', hide);
                 });
 			}
@@ -171,29 +217,60 @@ const enUrl = `/en/${routeName}`;
 	}
 
 	.nav-desktop { display: flex; align-items: center; }
-	.nav-menu { display: flex; gap: 3rem; list-style: none; margin: 0; padding: 0; }
+	.nav-menu { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
 	.nav-menu a {
 		text-decoration: none;
 		color: var(--color-text-light);
 		font-weight: 600;
-		font-size: 0.9rem;
+		font-size: 0.85rem;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		transition: color 0.3s ease;
 		position: relative;
+        display: flex;
+        align-items: center;
+        gap: 4px;
 	}
 	.nav-menu a:hover, .nav-menu a.active { color: var(--color-primary); }
-	.nav-menu a::after {
-		content: '';
+	
+    .nav-menu a .arrow { font-size: 0.85rem; transition: transform 0.3s; }
+    .nav-menu li:hover .arrow { transform: rotate(180deg); }
+
+	/* Dropdown Style */
+	.nav-dropdown { position: relative; }
+	.dropdown-menu {
 		position: absolute;
-		bottom: -6px;
+		top: 100%;
 		left: 0;
-		width: 0;
-		height: 2px;
-		background: var(--color-primary);
-		transition: width 0.3s ease;
+		background: white;
+		min-width: 180px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+		border-radius: 8px;
+		padding: 1rem 0;
+		list-style: none;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(10px);
+		transition: all 0.3s ease;
+		z-index: 3000;
 	}
-	.nav-menu a.active::after { width: 100%; }
+	.nav-dropdown:hover .dropdown-menu {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0);
+	}
+	.dropdown-menu li a {
+		padding: 0.8rem 1.5rem;
+		font-size: 0.8rem;
+		color: var(--color-text);
+		display: block;
+        text-transform: none;
+        letter-spacing: 0;
+	}
+	.dropdown-menu li a:hover {
+		background: #f8fafc;
+		color: var(--color-primary);
+	}
 
 	.nav-actions { display: flex; align-items: center; gap: 2rem; }
 	.lang-switch { display: flex; gap: 0.5rem; font-weight: 800; font-size: 0.8rem; color: #cbd5e1; }
@@ -204,10 +281,10 @@ const enUrl = `/en/${routeName}`;
 		background: var(--color-primary);
 		color: #fff;
 		text-decoration: none;
-		padding: 12px 28px;
+		padding: 10px 20px;
 		border-radius: 100px;
 		font-weight: 700;
-		font-size: 0.85rem;
+		font-size: 0.8rem;
 		letter-spacing: 0.5px;
 		box-shadow: 0 4px 15px rgba(15, 77, 130, 0.2);
 		transition: all 0.3s ease;
@@ -252,6 +329,7 @@ const enUrl = `/en/${routeName}`;
 		opacity: 0;
 		transform: translateY(-10px);
 		transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        overflow-y: auto;
 	}
 
 	.mobile-full-overlay.is-active {
@@ -277,8 +355,9 @@ const enUrl = `/en/${routeName}`;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
+		gap: 1.5rem;
 		width: 100%;
+        padding: 4rem 2rem;
 	}
 
 	.overlay-logo img {
@@ -289,33 +368,73 @@ const enUrl = `/en/${routeName}`;
 	.overlay-links {
 		display: flex;
 		flex-direction: column;
-		gap: 0.8rem;
+		gap: 1.2rem;
 		text-align: center;
+        width: 100%;
 	}
 
-	.overlay-links a {
+	.overlay-links a, .mobile-dropdown-btn {
 		text-decoration: none;
 		color: var(--color-text);
 		font-size: 0.9rem;
 		font-weight: 700;
 		letter-spacing: 0.5px;
         transition: color 0.3s ease;
+        background: none;
+        border: none;
+        width: 100%;
+        cursor: pointer;
 	}
 
     .overlay-links a.active {
         color: var(--color-primary);
         border-bottom: 2px solid var(--color-primary);
         padding-bottom: 4px;
+        display: inline-block;
+        width: auto;
+        margin: 0 auto;
     }
 
 	.overlay-cta {
 		background: var(--color-primary);
 		color: white !important;
-		padding: 0.6rem 1.5rem;
+		padding: 0.8rem 2.2rem;
 		border-radius: 100px;
-		font-size: 0.8rem !important;
-		margin-top: 0.5rem;
-		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		font-size: 0.85rem !important;
+		margin-top: 1rem;
+        display: inline-block !important;
+        width: auto !important;
+	}
+
+    /* Mobile Dropdown */
+    .mobile-dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        background: #f8fafc;
+        border-radius: 12px;
+    }
+    .mobile-dropdown-content.active {
+        max-height: 300px;
+        padding: 1rem;
+        margin-top: 0.5rem;
+    }
+    .mobile-dropdown-content a {
+        font-size: 0.85rem !important;
+        color: var(--color-text-light) !important;
+        font-weight: 500 !important;
+    }
+    .mobile-dropdown-btn .arrow.rotate { transform: rotate(180deg); }
+
+	.overlay-footer {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
 	}
 
 	.overlay-lang {
@@ -324,10 +443,14 @@ const enUrl = `/en/${routeName}`;
 		font-weight: 800;
 		font-size: 1.1rem;
 		color: #94a3b8;
-		margin-top: 1rem;
 	}
 	.overlay-lang a { text-decoration: none; color: inherit; }
 	.overlay-lang a.active { color: var(--color-primary); }
+
+	@media (max-width: 1280px) {
+		.nav-menu { gap: 1rem; }
+        .nav-menu a { font-size: 0.8rem; }
+	}
 
 	@media (max-width: 1024px) {
 		.nav-desktop, .lang-switch, .header-cta { display: none; }
