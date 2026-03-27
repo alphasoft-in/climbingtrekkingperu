@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Sobre Nosotros - Franpisco Adventure"
+	description="Conoce más sobre nuestra historia corporativa, misión y el equipo de montaña técnica en Huaraz."
+>
+	<section class="page-section">
+		<div class="page-content">
+			<div class="section-header">
+				<h1 class="section-title">EL ORIGEN DEL ASCENSO</h1>
+				<div class="title-divider"></div>
+				<p class="section-subtitle">Nacidos del corazón logístico de los Andes en el año 2015</p>
+			</div>
+			
+			<div class="about-text-columns">
+				<p class="lead-text">Se forjó nuestra vida corporativa e historia bajo la inmensa e imponente protección de la majestuosa Cordillera Blanca. Fuimos guías nativos conociendo a detalle toda la red andina peruana antes que gestores turísticos.</p>
+				<p>Nos define la absoluta devoción y profesionalismo al duro y hermoso montañismo. En nuestra empresa Franpisco Adventure E.I.R.L. guiamos logísticamente cada año a exploradores internacionales cumpliendo inquebrantables acuerdos y altísimos cánones logísticos y estándares corporativos.</p>
+				<p>Contamos con todo el estricto respaldo nacional e internacional y acreditación logística integral <strong>AGMP - UIAGM</strong>, trabajando de la mano y en alianza permanente a nuestras queridas bases locales formadas por diligentes arrieros respetadísimos socialmente y siempre protegiendo cada hectárea limpia de este intocable ecosistema milenario verde prístino.</p>
+			</div>
+            
+            <div class="mission-vision-grid">
+                <div class="mv-card">
+                    <div class="mv-icon">🎯</div>
+                    <h3>Nuestro Compromiso y Misión</h3>
+                    <p>Brindar expediciones asombrosas garantizando control absoluto en reservas operativas y sólida seguridad corporativa, y entregar un despliegue y servicio logístico de inmensa calidad y estándar premium protegiendo la nobleza social de nuestra gran región andina.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">👁️</div>
+                    <h3>El Horizonte Y Nuestra Visión</h3>
+                    <p>Posicionarnos a paso sólido cada año prestando total atención corporativa a cada grupo que llevamos al Huascarán, manteniendo eternamente el primer lugar en confianza e implacable honestidad técnica con el montañista global puro.</p>
+                </div>
+            </div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+/* CLARO Y CORPORATIVO (Mismo CSS de index en blanco) */
+	.page-section {
+		padding: clamp(4rem, 8vw, 6rem) 1rem;
+		background: #ffffff;
+		min-height: calc(100vh - 80px); /* Fill screen minus header approx */
+	}
+
+	.page-content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: clamp(3rem, 6vw, 4rem);
+	}
+
+	.section-title {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		font-weight: 800;
+		color: #0f4d82;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.title-divider {
+		height: 4px;
+		width: clamp(50px, 8vw, 80px);
+		background: #0a84ff;
+		margin: 1.2rem auto;
+		border-radius: 2px;
+	}
+
+	.section-subtitle {
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		color: #64748b;
+		margin-top: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.about-text-columns {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+		gap: clamp(1.5rem, 5vw, 3rem);
+		font-size: clamp(1.1rem, 2vw, 1.15rem);
+		line-height: 1.8;
+		color: #475569;
+		margin-bottom: clamp(3rem, 6vw, 5rem);
+	}
+
+	.lead-text {
+		font-size: clamp(1.2rem, 2.5vw, 1.35rem);
+		font-weight: 300;
+		color: #0f4d82;
+		line-height: 1.6;
+	}
+
+	.mission-vision-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+		gap: clamp(1.5rem, 4vw, 3rem);
+	}
+
+	.mv-card {
+		background: #f8fbff;
+		border-left: 5px solid #0f4d82;
+		padding: clamp(2rem, 4vw, 3rem);
+		border-radius: 0 12px 12px 0;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.mv-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 25px rgba(10, 132, 255, 0.08);
+	}
+
+	.mv-icon {
+		font-size: clamp(2.5rem, 5vw, 3rem);
+		margin-bottom: 1rem;
+	}
+
+	.mv-card h3 {
+		font-size: clamp(1.3rem, 3vw, 1.5rem);
+		color: #0f4d82;
+		margin-bottom: 1rem;
+		font-weight: 700;
+	}
+
+	.mv-card p {
+		color: #555;
+		font-size: clamp(1rem, 2vw, 1.05rem);
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.about-text-columns {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>

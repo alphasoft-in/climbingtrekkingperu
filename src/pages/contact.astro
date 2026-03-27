@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Base Logística y Transmisión - Franpisco Adventure"
+	description="Ponte en contacto operativo en Huaraz. WhatsApp habilitado."
+>
+	<section class="page-section contact-bg">
+		<div class="page-content">
+			<div class="section-header">
+				<h1 class="section-title">CONTACTO LOGÍSTICO SEDE CENTRAL</h1>
+				<div class="title-divider"></div>
+				<p class="section-subtitle">Establece contacto formal y coordina tu expedición con nuestro cuartel operativo en Huaraz.</p>
+			</div>
+			
+			<div class="contact-bento-grid">
+				<div class="contact-info-panel">
+					
+					<div class="info-card">
+						<div class="c-icon-wrap">📍</div>
+						<div class="c-details">
+							<label>01 // COORDENADAS OFICINA GEOGRÁFICAS</label>
+							<p>Sede en la ciudad prístina de Huaraz, Región Ancash - Perú.</p>
+						</div>
+					</div>
+
+					<div class="info-card">
+						<div class="c-icon-wrap">✉️</div>
+						<div class="c-details">
+							<label>02 // CANAL CORREO CORPORATIVO</label>
+							<p><a href="mailto:info@franpiscoadventure.com" class="link-blue">info@franpiscoadventure.com</a></p>
+						</div>
+					</div>
+
+					<div class="info-card highlight-blue">
+						<div class="c-icon-wrap white">📞</div>
+						<div class="c-details">
+							<label class="text-white">03 // WHATSAPP OPERATIVO 24/7</label>
+							<p class="huge-text text-white">+51 987 654 321</p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="contact-form-box">
+					<form class="clean-form" action="#" method="POST">
+						<h3 class="form-title">Formulario de Reserva Formal</h3>
+						
+						<div class="form-row">
+							<div class="f-group">
+								<label>Nombre Completo / Agencia</label>
+								<input type="text" placeholder="Ej: John Alpine / The Rock Group" required>
+							</div>
+							<div class="f-group">
+								<label>Correo Electrónico a Notificar</label>
+								<input type="email" placeholder="explorador.base@ejemplo.com" required>
+							</div>
+						</div>
+
+						<div class="f-group">
+							<label>Plan Logístico Requerido</label>
+							<textarea rows="6" placeholder="Detalle montañas de interés, tamaño de su grupo corporativo y fechas estimadas de llegada a Huaraz..." required></textarea>
+						</div>
+
+						<button class="btn-submit-blue" type="submit">Someter Plan a Central Logística ➔</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+/* CLARO Y LIMPIO CORPORATIVO */
+	.page-section {
+		padding: clamp(4rem, 8vw, 6rem) 1rem;
+		min-height: calc(100vh - 80px); 
+		background: #f8fbff; /* Gris Perla de la marca */
+	}
+
+	.page-content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: clamp(3rem, 5vw, 4rem);
+	}
+
+	.section-title {
+		font-size: clamp(1.8rem, 4vw, 2.8rem);
+		font-weight: 800;
+		color: #0f4d82;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.title-divider {
+		height: 4px;
+		width: clamp(50px, 8vw, 80px);
+		background: #0a84ff;
+		margin: 1.2rem auto;
+		border-radius: 2px;
+	}
+
+	.section-subtitle {
+		font-size: clamp(1.05rem, 2vw, 1.25rem);
+		color: #64748b;
+		margin-top: 1rem;
+	}
+
+	.contact-bento-grid {
+		display: grid;
+		grid-template-columns: 1fr 1.3fr;
+		gap: clamp(2rem, 4vw, 3rem);
+		align-items: stretch;
+	}
+
+	.contact-info-panel {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.info-card {
+		background: #ffffff;
+		padding: clamp(1.5rem, 3vw, 2rem) 1.5rem;
+		border-radius: 12px;
+		border: 1px solid #e2e8f0;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+		transition: transform 0.3s ease;
+	}
+
+	.info-card:hover {  transform: translateX(5px); box-shadow: 0 10px 20px rgba(10, 132, 255, 0.05); }
+
+	.info-card.highlight-blue {
+		background: #0f4d82;
+		color: white;
+		border-color: #0f4d82;
+	}
+
+	.c-icon-wrap {
+		font-size: 2rem;
+		background: #f1f5f9;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 12px;
+		flex-shrink: 0;
+	}
+
+	.c-icon-wrap.white { background: rgba(255, 255, 255, 0.15); }
+
+	.c-details label {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: #64748b;
+		letter-spacing: 1px;
+		margin-bottom: 0.5rem;
+	}
+
+	.text-white { color: #cbd5e1 !important; }
+
+	.c-details p {
+		margin: 0;
+		color: #334155;
+		line-height: 1.5;
+		font-weight: 500;
+		font-size: 1.05rem;
+	}
+
+	.link-blue { color: #0a84ff; text-decoration: none; font-weight: 600; }
+	.link-blue:hover { text-decoration: underline; }
+
+	p.huge-text {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 800;
+	}
+
+	/* CSS Formulario Claro */
+	.contact-form-box {
+		background: #ffffff;
+		padding: clamp(2rem, 4vw, 3rem);
+		border-radius: 16px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+		border: 1px solid #e2e8f0;
+	}
+
+	.form-title {
+		font-size: clamp(1.4rem, 2vw, 1.8rem);
+		color: #0f4d82;
+		margin: 0 0 2rem 0;
+		font-weight: 800;
+		border-bottom: 2px solid #f1f5f9;
+		padding-bottom: 1rem;
+	}
+
+	.clean-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.f-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.f-group label {
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: #475569;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.f-group input, .f-group textarea {
+		padding: 1.2rem;
+		border: 2px solid #e2e8f0;
+		border-radius: 8px;
+		font-size: 1rem;
+		font-family: inherit;
+		color: #1e293b;
+		background: #f8fafc;
+		transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+	}
+
+	.f-group input:focus, .f-group textarea:focus {
+		outline: none;
+		border-color: #0a84ff;
+		background: #ffffff;
+		box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.1);
+	}
+
+	.btn-submit-blue {
+		background: #0f4d82;
+		color: white;
+		border: none;
+		padding: 1.2rem;
+		font-size: 1.1rem;
+		font-weight: 700;
+		border-radius: 8px;
+		cursor: pointer;
+		margin-top: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		transition: background 0.3s, transform 0.2s;
+	}
+
+	.btn-submit-blue:hover {
+		background: #0a84ff;
+		transform: translateY(-2px);
+		box-shadow: 0 8px 15px rgba(10, 132, 255, 0.2);
+	}
+
+	@media (max-width: 900px) {
+		.contact-bento-grid { grid-template-columns: 1fr; }
+	}
+</style>

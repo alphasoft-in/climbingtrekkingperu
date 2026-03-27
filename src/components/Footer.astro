@@ -1,0 +1,173 @@
+---
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Columna Identidad -->
+        <div class="footer-col brand-col">
+            <h3 class="footer-brand">{t('footer.brandName')}</h3>
+            <p>{t('footer.brandDesc')}</p>
+        </div>
+
+        <!-- Columna Navegación Rápida -->
+        <div class="footer-col">
+            <h4>{t('footer.navTitle')}</h4>
+            <ul>
+                <li><a href={getRelativeLocaleUrl(lang, '')}>{t('footer.navHome')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'tours')}>{t('footer.navTours')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'about')}>{t('footer.navAbout')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'contact')}>{t('footer.navContact')}</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna Legal/Acreditaciones -->
+        <div class="footer-col">
+            <h4>{t('footer.legalTitle')}</h4>
+            <ul>
+                <li><a href={getRelativeLocaleUrl(lang, 'about')}>{t('footer.legalEthics')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'tours')}>{t('footer.legalTerms')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'about')}>{t('footer.legalPrivacy')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, '')}>{t('footer.legalCert')}</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna Contacto de Emergencia/Comercial -->
+        <div class="footer-col contact-col">
+            <h4>{t('footer.contactTitle')}</h4>
+            <p><strong>{t('footer.contactHq')}</strong></p>
+            <p><strong>{t('footer.contactEmail')}</strong> <a href="mailto:info@franpiscoadventure.com">info@franpiscoadventure.com</a></p>
+            <p><strong>{t('footer.contactPhone')}</strong> +51 987 654 321</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>{t('footer.copy')}</p>
+    </div>
+</footer>
+
+<style>
+    /* Diseño Limpio de Línea Azul Corporativa */
+    .site-footer {
+        background: #0f4d82; /* Azul Corporativo sólido base */
+        color: #f1f5f9;
+        font-family: 'Inter', system-ui, sans-serif;
+        padding-top: clamp(3.5rem, 6vw, 4.5rem);
+        border-top: 5px solid #0a84ff; /* Acento Luminoso Acorde al Navbar */
+        margin-top: auto; /* Empuje al fondo si la página es muy corta */
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+        color: #ffffff;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 0.8rem;
+    }
+
+    .footer-col h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 45px;
+        height: 3px;
+        background: #0a84ff; /* Subrayado corporativo */
+        border-radius: 2px;
+    }
+
+    .brand-col .footer-brand {
+        color: #ffffff;
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .footer-col p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #cbd5e1; /* Gris brillante/claro */
+        margin: 0 0 1rem 0;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-col a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s ease, transform 0.2s ease;
+        display: inline-block;
+    }
+
+    .footer-col a:hover {
+        color: #60a5fa; /* Azul clarísimo de foco */
+        transform: translateX(5px);
+    }
+
+    .contact-col p {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin-bottom: 1.5rem;
+        color: #e2e8f0;
+    }
+
+    .contact-col strong {
+        color: #7dd3fc; /* Acento cyan pálido hielo */
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .contact-col a {
+        color: #60a5fa;
+        font-weight: 600;
+    }
+
+    .footer-bottom {
+        background: #0a355c; /* Navy súper oscuro para crear contraste piso */
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.85rem;
+        color: #94a3b8;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+    }
+</style>
