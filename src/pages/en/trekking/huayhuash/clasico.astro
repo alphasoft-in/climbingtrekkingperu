@@ -1,0 +1,338 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'LIMA PERU (100 MASL) – HUARAZ (3100 MASL)',
+    content: 'Public bus to Huaraz (8 hours) or flight (50 min). We recommend at least one day of acclimatization in the Cordillera Blanca before starting.'
+  },
+  {
+    day: 'DAY 02',
+    title: 'FULL DAY ROCUTOYOC LAGOON (4450 MASL) – ACCLIMATIZATION',
+    content: 'Visit Rocutuyoc lagoon, Ruripaccha waterfall, and Ruripaccha glacier (4,650 masl). Return to Huaraz.',
+    stats: { time: '9-10 hours', alt: '4450m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'FREE DAY',
+    content: 'Strategic rest day to optimize altitude adjustment before entering the Huayhuash circuit.'
+  },
+  {
+    day: 'DAY 04',
+    title: 'HUARAZ - QUEROPALCA (3831 MASL) - MITUCOCHA (4230 MASL)',
+    content: 'Transfer to Queropalca. Begin the trek towards Mitucocha campsite.',
+    stats: { trans: '08 hours', alt: '4230m', time: '2 h' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'MITUCOCHA (4,230 MASL) - CARHUACOCHA (4,280 MASL)',
+    content: 'Carhuac Pass (4,650 masl). Optional alternate route to Carhuac viewpoint for the Three Lagoons vista.',
+    stats: { alt: '4750 m', dist: '13 km', time: '6 h' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'CARHUACOCHA (4280 MASL) - HUAYHUASH (4350 MASL)',
+    content: 'The most demanding day. Siula Pass (4,800 masl). Vistas of Trapecio and Leon Dormido peaks.',
+    stats: { alt: '4800 m', dist: '15 km', time: '09 h' }
+  },
+  {
+    day: 'DAY 07',
+    title: 'HUAYHUASH (4,350 MASL) - CUYOCPAMPA (4550 MASL)',
+    content: 'Trapecio Pass (5,030 masl). View of Azulcocha lagoon. Optional: San Antonio Viewpoint (5,120 masl).',
+    stats: { alt: '5,030 m', dist: '13 km', time: '7 h' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'CUYOCPAMPA (4,550 MASL) - HUAYLLAPA (3630 MASL)',
+    content: 'Santa Rosa Pass (5,080 masl). Incredible northern face views of Huayhuash. Descend to Huayllapa village.',
+    stats: { alt: '5080 m', dist: '19 km', time: '09 h' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'HUAYLLAPA (3,630 MASL) - GASHPAPAMPA (4555 MASL)',
+    content: 'Ascend to Tapush Pass (4,800 masl). View of the iconic Diablo Mudo peak (5,350 masl).',
+    stats: { alt: '4.800 m', dist: '15 km', time: '08 h' }
+  },
+  {
+    day: 'DAY 10',
+    title: 'GASHPAPAMPA (4555 MASL) – HUACRISH VIEWPOINT (4800 MASL) – HUARAZ',
+    content: 'Yaucha Pass (4,800 masl). Huacrish viewpoint with total panorama. Final transfer to Huaraz.',
+    stats: { alt: '4800 m', dist: '15 km', time: '08 h' }
+  },
+  {
+    day: 'DAY 11',
+    title: 'HUARAZ – LIMA',
+    content: 'Transfer to the bus terminal for the return trip to Lima. End of our services.'
+  }
+];
+
+const includes = [
+  'Pre-trek information at Huaraz office',
+  'Acclimatization day tour (shared)',
+  'Private transport Huaraz - Queropalca',
+  'Return transport Lirio - Huaraz',
+  'Certified Mountain Guide',
+  'Specialized trekking cook',
+  '7 days full board during the trek',
+  '6kg personal gear allowance on mules',
+  'Complete camping equipment',
+  'First aid kit and Oxygen'
+];
+
+const equipment = [
+  'Sleeping bag (-10°C recommended)',
+  'Daypack (40L)',
+  'Waterproof trekking boots',
+  'Technical layering clothes',
+  'Hat, gloves, and sun protection',
+  'Trekking poles',
+  'Rain poncho',
+  'Water bottle or camelback'
+];
+---
+
+<Layout title="Classical Huayhuash Trek - 11 Days | Franpisco Adventure" description="Experience the highlights of the Huayhuash Range in an optimized 11-day circuit. From Queropalca to Huaraz.">
+  <section class="itinerary-header">
+    <div class="container--narrow">
+      <div class="header-content">
+        <a href={getRelativeLocaleUrl(lang, 'trekking/huayhuash')} class="back-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+          Back to Huayhuash
+        </a>
+        <div class="breadcrumb">Classic Route / Queropalca - Lirio</div>
+        <h1>TREKKING CLASSICAL HUAYHUASH RANGE</h1>
+        <div class="header-metrics">
+          <div class="metric">
+            <span class="label">Duration</span>
+            <span class="value">11 Days / 10 Nights</span>
+          </div>
+          <div class="metric">
+            <span class="label">Price</span>
+            <span class="value price">USD. 795.00</span>
+          </div>
+          <div class="metric">
+            <span class="label">Difficulty</span>
+            <span class="value tag hard">Hard to Moderate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-intro">
+    <div class="container--narrow">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h2>The Best of the Andes in 11 Days</h2>
+          <p>This circuit concentrates the most emblematic landscapes of the Huayhuash Range starting from Queropalca. Perfect for those seeking maximum scenic beauty in an optimized timeframe.</p>
+          <ul class="quick-info">
+            <li><strong>Start:</strong> Huaraz, Peru (Queropalca)</li>
+            <li><strong>Regions:</strong> Ancash, Huánuco, Lima</li>
+            <li><strong>Best Season:</strong> April to December</li>
+            <li><strong>Service:</strong> Classic Trekking Expedition</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+           <div class="placeholder-img" style="background: url('/trekking/huayhuash/clasico.jpeg') center/cover;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-details">
+    <div class="container--narrow">
+      <div class="details-layout">
+        <div class="timeline-container">
+          <h2>Detailed Itinerary</h2>
+          <div class="timeline">
+            {itinerary.map((item) => (
+              <div class="timeline-item">
+                <div class="timeline-day">{item.day}</div>
+                <div class="timeline-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.content}</p>
+                  {item.stats && (
+                    <div class="day-stats">
+                      {item.stats.alt && <span>🏔️ {item.stats.alt}</span>}
+                      {item.stats.dist && <span>🥾 {item.stats.dist}</span>}
+                      {item.stats.time && <span>🕒 {item.stats.time}</span>}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-box info-box">
+             <h3>Package Details</h3>
+             <ul>
+               {includes.map(inc => <li>✅ {inc}</li>)}
+             </ul>
+          </div>
+          
+          <div class="sidebar-box equipment-box">
+             <h3>Your Personal Gear</h3>
+             <ul>
+               {equipment.map(eq => <li>🎒 {eq}</li>)}
+             </ul>
+          </div>
+
+          <div class="sidebar-cta">
+             <h3>Need more information?</h3>
+             <p>Check out our group departures and private services.</p>
+             <a href={getRelativeLocaleUrl(lang, 'contact')} class="btn-book">Inquire Now</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .itinerary-header {
+    background: #0f4d82;
+    color: white;
+    padding: 6rem 0 4rem;
+    background-image: linear-gradient(rgba(15, 77, 130, 0.95), rgba(15, 77, 130, 0.95)), url('/trekking/huayhuash/clasico.jpeg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container--narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+  }
+  .back-link:hover { color: white; }
+
+  .breadcrumb {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .itinerary-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+  }
+
+  .header-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+  }
+
+  .metric .label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .metric .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .metric .price { color: var(--color-accent); font-size: 1.3rem; }
+  .metric .tag { background: #fee2e2; color: #ef4444; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; }
+
+  /* Intro Section */
+  .itinerary-intro { padding: 5rem 0; border-bottom: 1px solid #f1f5f9; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  
+  .intro-text h2 { color: var(--color-primary); margin-bottom: 1.5rem; font-size: 1.8rem; }
+  .intro-text p { line-height: 1.7; color: var(--color-text-light); margin-bottom: 2rem; }
+
+  .quick-info { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .quick-info li { font-size: 0.9rem; color: #1e293b; }
+
+  .intro-image .placeholder-img { height: 400px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+  /* Details Layout */
+  .itinerary-details { padding: 5rem 0; background: #fafafa; }
+  .details-layout { display: grid; grid-template-columns: 1fr 350px; gap: 4rem; }
+
+  .timeline { margin-top: 2rem; border-left: 2px solid #e2e8f0; padding-left: 2rem; }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-2rem - 6px);
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #e2e8f0;
+  }
+
+  .timeline-day { font-weight: 800; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 0.5rem; }
+  .timeline-content h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1rem; }
+  .timeline-content p { font-size: 0.95rem; line-height: 1.6; color: var(--color-text-light); }
+
+  .day-stats { display: flex; gap: 1rem; margin-top: 1rem; background: #fff; padding: 0.8rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+
+  /* Sidebar */
+  .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+  .sidebar-box { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+  .sidebar-box h3 { font-size: 1.1rem; margin-bottom: 1.5rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; }
+  .sidebar-box ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  .sidebar-box li { font-size: 0.85rem; line-height: 1.4; color: #475569; }
+
+  .sidebar-cta {
+     background: var(--color-primary);
+     color: white;
+     padding: 2rem;
+     border-radius: 20px;
+     text-align: center;
+  }
+  .sidebar-cta h3 { margin-bottom: 1rem; }
+  .sidebar-cta p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem; }
+  .btn-book {
+     display: block;
+     background: var(--color-accent);
+     color: white;
+     text-decoration: none;
+     padding: 1rem;
+     border-radius: 100px;
+     font-weight: 700;
+     transition: transform 0.3s;
+  }
+  .btn-book:hover { transform: scale(1.05); }
+
+  @media (max-width: 1024px) {
+    .details-layout { grid-template-columns: 1fr; }
+    .intro-grid { grid-template-columns: 1fr; }
+    .header-metrics { grid-template-columns: 1fr; gap: 1rem; }
+  }
+</style>

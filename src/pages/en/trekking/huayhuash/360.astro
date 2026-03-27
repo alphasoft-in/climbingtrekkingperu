@@ -1,0 +1,360 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'LIMA PERU (161 MASL) – HUARAZ (3100 MASL)',
+    content: 'Our FRANPISCO ADVENTURE team will meet you at Jorge Chávez Airport. We then transfer to the public bus terminal for the journey to Huaraz (approx. 8 hours). Upon arrival, we transfer you to your hotel. Optional flights from Lima to Anta-Huaraz are also available.'
+  },
+  {
+    day: 'DAY 02',
+    title: 'FULL DAY ROCUTOYOC LAGOON (4450 MASL) – ACCLIMATIZATION',
+    content: 'Departure at 6:00 am heading north. We visit Cashapunta viewpoint, Ruripaccha waterfall, ancient rock paintings, Rocutuyoc lagoon, the frozen lagoon, and Ruripaccha glacier (4,650 masl).'
+  },
+  {
+    day: 'DAY 03',
+    title: 'FREE DAY',
+    content: 'A day of rest to aid acclimatization and gather energy before starting the Huayhuash circuit.'
+  },
+  {
+    day: 'DAY 04',
+    title: 'TRANSFER HUARAZ (3100M) - CHIQUIÁN - CUARTELWAIN (4180 MASL)',
+    content: 'Travel to Cuartelwain (5 hours) where the donkeys and muleteers await. First campsite at 4180 masl for altitude adjustment.',
+    stats: { trans: '05 hours', alt: '4180m', food: 'Lunch & Dinner' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'CUARTELWAIN (4180M) – MITUCOCHA (4230M)',
+    content: 'Cacananpunta Pass (4,700 masl). Views of Pucacocha and Yanacocha lagoons. Campsite at Jancapampa (4,230 masl) with views of Ninashanca and Jirishanca.',
+    stats: { alt: '4700 m', dist: '09 km', time: '04 to 05 hrs' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'MITUCOCHA (4,230 MASL) - CARHUACOCHA (4,280 MASL)',
+    content: 'Carhuac Pass (4,650 masl). Alternate route to the "Three Lagoons" viewpoint. Majestic views of Suila, Yerupaja, and El Toro mountains.',
+    stats: { alt: '4650 m', dist: '13 km', time: '6 hrs' }
+  },
+  {
+    day: 'DAY 07',
+    title: 'CARHUACOCHA (4,280 MASL) - HUAYHUASH (4,300 MASL)',
+    content: 'The most challenging day. Viewpoint of the three lagoons (Siulacocha, Ganrajanca, Azulcocha). Siula Pass at 4,800 masl.',
+    stats: { alt: '4800 m', dist: '15 km', time: '09 hours' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'HUAYHUASH (4,350 MASL) - VICONGA (4,330 MASL)',
+    content: 'Portachuelo Pass (4,750 masl). Views of the Raura range. Campsite at Viconga with access to 100% natural hot springs.',
+    stats: { alt: '4750 m', dist: '11 km', time: '06 hours' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'VICONGA (4,330 MASL)- CUYOCPAMPA (4,550 MASL)',
+    content: 'Cuyoc Pass (5,000 masl). Panoramic views of Raura and Huayhuash. Optional: San Antonio Viewpoint (5,120 m) for a sunset spectacle.',
+    stats: { alt: '5,050 m', dist: '13 km', time: '6 hours' }
+  },
+  {
+    day: 'DAY 10',
+    title: 'CUYOCPAMPA (4,550 MASL) - HUAYLLAPA (3,630 MASL)',
+    content: 'Sunrise at Santa Rosa Pass (5,080 masl). Incredible northern face views. Descend via Jurao lagoon to Huayllapa village.',
+    stats: { alt: '5080 m', dist: '19 km', time: '10 hours' }
+  },
+  {
+    day: 'DAY 11',
+    title: 'HUAYLLAPA (3,630 MASL) - GASHPAPAMPA (4,550 MASL)',
+    content: 'Ascend to Tapush Pass (4,800 masl). View of the famous Diablo Mudo (Silent Devil) peak. Reach Gashpapampa base camp.',
+    stats: { alt: '4.800 m', dist: '15 km', time: '8 hours' }
+  },
+  {
+    day: 'DAY 12',
+    title: 'GASHPAPAMPA (4,550 MASL) - JAHUACOCHA LAGOON (4,100 MASL)',
+    content: 'Yaucha Pass (4,800 masl). Huacrish viewpoint overlooking Jahuacocha and Soltera Cocha lagoons.',
+    stats: { alt: '4800 m', dist: '12 km', time: '7 hours' }
+  },
+  {
+    day: 'DAY 13',
+    title: 'JAHUACOCHA (4,100 MASL) - LLAMAC (3,300 MASL)',
+    content: 'Final trekking day. Pampa Llamac Pass (3,900 masl). Descend to Llamac village and transfer back to Huaraz.',
+    stats: { alt: '3950 m', dist: '13 km', time: '6 hours' }
+  },
+  {
+    day: 'DAY 14',
+    title: 'HUARAZ – LIMA',
+    content: 'Transfer to the bus terminal for the return trip to Lima.'
+  },
+  {
+    day: 'DAY 15',
+    title: 'LIMA – INTERNATIONAL FLIGHT',
+    content: 'Transfer to Jorge Chávez International Airport. End of our services.'
+  }
+];
+
+const includes = [
+  'Airport meet & greet in Lima',
+  'Bus tickets Lima - Huaraz - Lima',
+  '4 nights hotel (3*) in Huaraz, 1 night in Lima',
+  'Certified Mountain Guide (AGMP/UIAGM)',
+  'Specialized trekking cook',
+  'Huayhuash entrance fees ($100 included)',
+  '10kg personal gear on pack animals',
+  'High-mountain tents and camping equipment',
+  'All meals during the trek',
+  'First aid kit and Oxygen'
+];
+
+const equipment = [
+  'Sleeping bag (-10°C / -15°C)',
+  'Daypack (30-40L)',
+  'Waterproof trekking boots',
+  'Down jacket and thermal layers',
+  'Hat, gloves, and sunglasses',
+  'Sunscreen and insect repellent',
+  'Trekking poles',
+  'Rain poncho'
+];
+---
+
+<Layout title="Trekking Huayhuash 360 - 15 Days | Franpisco Adventure" description="The most spectacular trekking circuit in the Andes. 15 days exploring the Huayhuash Range in comfort service.">
+  <section class="itinerary-header">
+    <div class="container--narrow">
+      <div class="header-content">
+        <a href={getRelativeLocaleUrl(lang, 'trekking/huayhuash')} class="back-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+          Back to Huayhuash
+        </a>
+        <div class="breadcrumb">360 Full Circuit Route</div>
+        <h1>TREKKING CORDILLERA HUAYHUASH 360</h1>
+        <div class="header-metrics">
+          <div class="metric">
+            <span class="label">Duration</span>
+            <span class="value">15 Days / 14 Nights</span>
+          </div>
+          <div class="metric">
+            <span class="label">From</span>
+            <span class="value price">USD. 1,695.00</span>
+          </div>
+          <div class="metric">
+            <span class="label">Difficulty</span>
+            <span class="value tag hard">Hard to Moderate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-intro">
+    <div class="container--narrow">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h2>One of the Best Circuits in the World</h2>
+          <p>This 15-day expedition is the ultimate experience in the Peruvian Andes. We will circle the entire Huayhuash Range, crossing passes over 5,000 meters and camping alongside deep turquoise glacier lagoons.</p>
+          <ul class="quick-info">
+            <li><strong>Start:</strong> Huaraz, Peru</li>
+            <li><strong>Location:</strong> Central Andes (Ancash, Huánuco, Lima)</li>
+            <li><strong>Best Season:</strong> April to December</li>
+            <li><strong>Service:</strong> Superior Comfort</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+           <div class="placeholder-img" style="background: url('/trekking/huayhuash/360.jpeg') center/cover;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-details">
+    <div class="container--narrow">
+      <div class="details-layout">
+        <div class="timeline-container">
+          <h2>Daily Schedule</h2>
+          <div class="timeline">
+            {itinerary.map((item) => (
+              <div class="timeline-item">
+                <div class="timeline-day">{item.day}</div>
+                <div class="timeline-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.content}</p>
+                  {item.stats && (
+                    <div class="day-stats">
+                      {item.stats.alt && <span>🏔️ {item.stats.alt}</span>}
+                      {item.stats.dist && <span>🥾 {item.stats.dist}</span>}
+                      {item.stats.time && <span>🕒 {item.stats.time}</span>}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-box info-box">
+             <h3>What's Included</h3>
+             <ul>
+               {includes.map(inc => <li>✅ {inc}</li>)}
+             </ul>
+          </div>
+          
+          <div class="sidebar-box equipment-box">
+             <h3>Suggested Gear</h3>
+             <ul>
+               {equipment.map(eq => <li>🎒 {eq}</li>)}
+             </ul>
+          </div>
+
+          <div class="sidebar-cta">
+             <h3>Ready for this adventure?</h3>
+             <p>Contact us to check availability and book your spot.</p>
+             <a href={getRelativeLocaleUrl(lang, 'contact')} class="btn-book">Book Now</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .itinerary-header {
+    background: #0f4d82;
+    color: white;
+    padding: 6rem 0 4rem;
+    background-image: linear-gradient(rgba(15, 77, 130, 0.95), rgba(15, 77, 130, 0.95)), url('/images/huayhuash-hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container--narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+  }
+  .back-link:hover { color: white; }
+
+  .breadcrumb {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .itinerary-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+  }
+
+  .header-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+  }
+
+  .metric .label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .metric .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .metric .price { color: var(--color-accent); font-size: 1.3rem; }
+  .metric .tag { background: #fee2e2; color: #ef4444; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; }
+
+  /* Intro Section */
+  .itinerary-intro { padding: 5rem 0; border-bottom: 1px solid #f1f5f9; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  
+  .intro-text h2 { color: var(--color-primary); margin-bottom: 1.5rem; font-size: 1.8rem; }
+  .intro-text p { line-height: 1.7; color: var(--color-text-light); margin-bottom: 2rem; }
+
+  .quick-info { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .quick-info li { font-size: 0.9rem; color: #1e293b; }
+
+  .intro-image .placeholder-img { height: 400px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+  /* Details Layout */
+  .itinerary-details { padding: 5rem 0; background: #fafafa; }
+  .details-layout { display: grid; grid-template-columns: 1fr 350px; gap: 4rem; }
+
+  .timeline { margin-top: 2rem; border-left: 2px solid #e2e8f0; padding-left: 2rem; }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-2rem - 6px);
+    top: 0;
+    width: 100%;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #e2e8f0;
+  }
+
+  .timeline-day { font-weight: 800; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 0.5rem; }
+  .timeline-content h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1rem; }
+  .timeline-content p { font-size: 0.95rem; line-height: 1.6; color: var(--color-text-light); }
+
+  .day-stats { display: flex; gap: 1rem; margin-top: 1rem; background: #fff; padding: 0.8rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+
+  /* Sidebar */
+  .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+  .sidebar-box { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+  .sidebar-box h3 { font-size: 1.1rem; margin-bottom: 1.5rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; }
+  .sidebar-box ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  .sidebar-box li { font-size: 0.85rem; line-height: 1.4; color: #475569; }
+
+  .sidebar-cta {
+     background: var(--color-primary);
+     color: white;
+     padding: 2rem;
+     border-radius: 20px;
+     text-align: center;
+  }
+  .sidebar-cta h3 { margin-bottom: 1rem; }
+  .sidebar-cta p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem; }
+  .btn-book {
+     display: block;
+     background: var(--color-accent);
+     color: white;
+     text-decoration: none;
+     padding: 1rem;
+     border-radius: 100px;
+     font-weight: 700;
+     transition: transform 0.3s;
+  }
+  .btn-book:hover { transform: scale(1.05); }
+
+  @media (max-width: 1024px) {
+    .details-layout { grid-template-columns: 1fr; }
+    .intro-grid { grid-template-columns: 1fr; }
+    .header-metrics { grid-template-columns: 1fr; gap: 1rem; }
+  }
+</style>
