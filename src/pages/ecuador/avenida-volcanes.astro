@@ -4,7 +4,6 @@ import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18
 import RecommendedTours from '../../components/RecommendedTours.astro';
 import TourGallery from '../../components/TourGallery.astro';
 
-const lang = getLangFromUrl(Aconcagua.url); // Wait, Astro.url
 const langUrl = getLangFromUrl(Astro.url);
 const t = useTranslations(langUrl);
 
