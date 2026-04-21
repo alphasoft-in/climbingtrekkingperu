@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const argentinaPrograms = [
+  {
+    id: 'aconcagua',
+    title: t('climbing.aconcagua.name'),
+    description: t('climbing.aconcagua.desc'),
+    image: '/slider_2.png',
+    duration: `17 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'argentina/aconcagua',
+    prefix: 'ARG',
+    type: 'HIGH ALTITUDE EXPEDITION'
+  }
+];
+---
+
+<Layout title={`Argentina - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora los Andes Argentinos con Franpisco Adventure. Expediciones al Aconcagua, el techo de América, con logística de primer nivel y guías expertos.">
+  <section class="hub-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-meta">REGIONAL HUB // ARGENTINA</div>
+      <h1 class="split-title">
+        <span class="thin">DESTINOS</span>
+        <span class="bold">ARGENTINA</span>
+      </h1>
+      <div class="blue-line"></div>
+      <p class="hero-subtitle">Conquista las cumbres más altas de Sudamérica en el corazón de los Andes centrales.</p>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {argentinaPrograms.map((prog) => (
+          <TourCard 
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            path={prog.path}
+            prefix={prog.prefix}
+            type={prog.type}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hub-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background: #06090f url('/slider_2.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+      rgba(6, 9, 15, 0.9) 0%, 
+      rgba(6, 9, 15, 0.4) 50%, 
+      rgba(6, 9, 15, 0.9) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .hero-meta {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    font-weight: 200;
+    letter-spacing: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .split-title .bold {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+
+  .blue-line {
+    width: 80px;
+    height: 4px;
+    background: var(--brand-blue);
+    margin: 0 auto 2.5rem;
+    box-shadow: 0 0 20px rgba(0, 144, 204, 0.4);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .hub-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

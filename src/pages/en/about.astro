@@ -4,141 +4,360 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout 
 	title="About Us - Franpisco Adventure"
-	description="Learn more about our corporate history, mission, and the technical mountain team in Huaraz."
+	description="Learn more about our corporate history, mission, and the technical mountaineering team in Huaraz."
 >
+	<!-- High-End Technical Hero: Editorial Expedition Log -->
+	<section class="page-hero">
+		<div class="hero-bg" style="background-image: url('/slider_1.png');"></div>
+		<div class="hero-overlay"></div>
+		
+		<div class="hero-container">
+			<div class="hero-main-layout">
+				<div class="hero-text-block">
+					<h1 class="hero-title">Our <br/><strong>History</strong></h1>
+					<div class="hero-accent-bar"></div>
+				</div>
+
+				<div class="hero-side-technical">
+					<div class="tech-item">
+						<label>ELEVATION</label>
+						<span>3,052 M.S.L.</span>
+					</div>
+					<div class="tech-item">
+						<label>COORDINATES</label>
+						<span>9°31′48″S 77°31′44″W</span>
+					</div>
+					<div class="tech-item">
+						<label>FOUNDED</label>
+						<span>EST. 2015 / PERÚ</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="page-section">
 		<div class="page-content">
-			<div class="section-header">
-				<h1 class="section-title">THE ORIGIN OF THE ASCENT</h1>
-				<div class="title-divider"></div>
-				<p class="section-subtitle">Forged from the logistical heart of the Andes in 2015</p>
+			<!-- REFINED ARCHITECTURAL HEADER -->
+			<div class="about-header">
+				<div class="ah-left">
+					<span class="ah-meta">ESTABLISHED / 2015</span>
+					<h2 class="ah-main-title">The Origin of the <br/><strong>Ascent</strong></h2>
+				</div>
+				<div class="ah-right technical-details-box">
+					<div class="narrative-meta">
+						<div class="meta-box">
+							<label>BASE HQ</label>
+							<span>HUARAZ, PERÚ</span>
+						</div>
+						<div class="meta-box">
+							<label>ACCREDITATION</label>
+							<span>UIAGM CERTIFIED</span>
+						</div>
+					</div>
+				</div>
 			</div>
 			
-			<div class="about-text-columns">
-				<p class="lead-text">Our corporate life and history were forged under the immense and imposing protection of the majestic Cordillera Blanca. We were native guides deeply knowing the entire Peruvian Andean network before becoming tourism managers.</p>
-				<p>We are defined by our absolute devotion and professionalism to hard and beautiful mountaineering. At Franpisco Adventure E.I.R.L., we logistically guide international explorers every year, fulfilling unbreakable agreements and the highest logistical canons and corporate standards.</p>
-				<p>We have strict national and international backing and comprehensive logistics accreditation <strong>AGMP - UIAGM</strong>, working hand in hand and in permanent alliance with our beloved local bases formed by socially highly respected diligent muleteers, always protecting every clean hectare of this untouchable pristine green millennial ecosystem.</p>
+			<div class="narrative-grid">
+				<div class="narrative-main">
+					<div class="premium-lead-block">
+						<p class="premium-lead">
+							Our corporate life and history were forged under the immense and imposing protection of the majestic Cordillera Blanca. We were native guides deeply knowing the entire Peruvian Andean network before becoming tourism managers.
+						</p>
+					</div>
+					
+					<div class="narrative-details">
+						<div class="detail-col">
+							<p>We are defined by our absolute devotion and professionalism to hard and beautiful mountaineering. At <strong>Franpisco Adventure</strong>, we logistically guide international explorers every year, fulfilling unbreakable agreements and the highest logistical canons.</p>
+						</div>
+						<div class="detail-col">
+							<p>We have strict national and international backing and comprehensive logistics accreditation <strong>AGMP - UIAGM</strong>, working in alliance with local bases of muleteers, protecting this millennial ecosystem.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="narrative-cards">
+					<div class="mv-editorial-card">
+						<span class="ec-tag">OPERATIONAL MISSION</span>
+						<p>Guarantee absolute control in operational reserves and solid corporate security, delivering a logistical service of premium standards.</p>
+					</div>
+					<div class="mv-editorial-card">
+						<span class="ec-tag">LOGISTICAL VISION</span>
+						<p>Eternally maintain the first place in trust and implacable technical honesty with the pure global mountaineer.</p>
+					</div>
+				</div>
 			</div>
-            
-            <div class="mission-vision-grid">
-                <div class="mv-card">
-                    <div class="mv-icon">🎯</div>
-                    <h3>Our Corporate Mission</h3>
-                    <p>Provide astonishing expeditions guaranteeing absolute control in operational reserves and solid corporate security, delivering logistical deployment of immense premium quality while fiercely protecting the social nobility of our great Andean region.</p>
-                </div>
-                <div class="mv-card">
-                    <div class="mv-icon">👁️</div>
-                    <h3>The Horizon & Our Vision</h3>
-                    <p>Position ourselves solidly year after year by providing total corporate attention to every group we take to Huascaran, eternally maintaining the first place in trust and implacable technical honesty with the pure global mountaineer.</p>
-                </div>
-            </div>
 		</div>
 	</section>
 </Layout>
 
 <style>
-/* CLARO Y CORPORATIVO (Mismo CSS de index en blanco) */
+	/* --- TECHNICAL ARCHITECTURAL HERO --- */
+	.page-hero {
+		position: relative;
+		height: 75vh;
+		min-height: 550px;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		background: #06090f;
+	}
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		background-size: cover;
+		background-position: center 40%;
+		transform: scale(1.05); /* Soft zoom for depth */
+	}
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to right, 
+			rgba(6, 9, 15, 0.9) 0%, 
+			rgba(6, 9, 15, 0.4) 50%, 
+			rgba(6, 9, 15, 0.8) 100%),
+			linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+	}
+
+	.hero-container {
+		position: relative;
+		z-index: 10;
+		max-width: 1400px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 5%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* MAIN LAYOUT */
+	.hero-main-layout {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1.5rem;
+	}
+
+	.hero-text-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hero-title {
+		font-size: clamp(2rem, 5vw, 2.8rem);
+		color: white;
+		text-transform: uppercase;
+		font-weight: 200;
+		margin: 0;
+		line-height: 0.95;
+		letter-spacing: -1px;
+	}
+	.hero-title strong { 
+		font-weight: 800; 
+		display: block;
+	}
+
+	.hero-accent-bar {
+		width: 80px;
+		height: 5px;
+		background: var(--brand-red);
+		margin: 1rem auto 0;
+	}
+
+	/* SIDE TECHNICAL DATA - NOW CENTERED BELOW */
+	.hero-side-technical {
+		display: flex;
+		justify-content: center;
+		gap: clamp(2rem, 5vw, 4rem);
+		padding-top: 1.5rem;
+		border: none;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		width: 100%;
+		max-width: 800px;
+	}
+
+	.tech-item { display: flex; flex-direction: column; gap: 5px; }
+	.tech-item label {
+		font-size: 0.65rem;
+		color: var(--brand-blue);
+		font-weight: 800;
+		letter-spacing: 2px;
+	}
+	.tech-item span {
+		font-size: 1rem;
+		color: #fff;
+		font-weight: 600;
+		font-family: 'Inter', sans-serif;
+	}
+
+	/* --- PREMIUM NARRATIVE SECTION --- */
 	.page-section {
-		padding: clamp(4rem, 8vw, 6rem) 1rem;
+		padding: clamp(3rem, 10vw, 7rem) 5%;
 		background: #ffffff;
-		min-height: calc(100vh - 80px); /* Fill screen minus header approx */
+		color: var(--brand-dark);
+		position: relative;
 	}
 
 	.page-content {
-		max-width: 1200px;
+		max-width: 1300px;
 		margin: 0 auto;
+		width: 100%;
 	}
 
-	.section-header {
-		text-align: center;
-		margin-bottom: clamp(3rem, 6vw, 4rem);
+	/* ARCHITECTURAL HEADER */
+	.about-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 3rem;
+		margin-bottom: clamp(3rem, 7vw, 5rem);
+		padding-bottom: 2rem;
+		border-bottom: 2px solid #f1f5f9;
+		flex-wrap: wrap;
 	}
 
-	.section-title {
-		font-size: clamp(2rem, 5vw, 3.2rem);
+	.ah-left { flex: 1; min-width: min(100%, 400px); }
+	.ah-right { flex-shrink: 0; }
+
+	.ah-meta {
+		font-size: 0.7rem;
 		font-weight: 800;
-		color: #0f4d82;
+		color: var(--brand-red);
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		display: block;
+		margin-bottom: 0.8rem;
+	}
+
+	.ah-main-title {
+		font-size: clamp(2.2rem, 4vw, 2.8rem);
+		color: var(--brand-dark);
+		line-height: 0.95;
 		margin: 0;
+		font-weight: 200; 
 		text-transform: uppercase;
-		letter-spacing: 1px;
+		letter-spacing: -1px;
+	}
+	.ah-main-title strong {
+		font-weight: 900;
+		display: block;
 	}
 
-	.title-divider {
-		height: 4px;
-		width: clamp(50px, 8vw, 80px);
-		background: #0a84ff;
-		margin: 1.2rem auto;
-		border-radius: 2px;
+	/* HEADER RIGHT META */
+	.narrative-meta {
+		display: flex;
+		gap: clamp(1.5rem, 4vw, 3rem);
+		text-align: right;
 	}
-
-	.section-subtitle {
-		font-size: clamp(1rem, 2vw, 1.2rem);
-		color: #64748b;
-		margin-top: 1rem;
-		text-transform: uppercase;
+	.meta-box { display: flex; flex-direction: column; gap: 4px; }
+	.meta-box label {
+		font-size: 0.6rem;
+		font-weight: 900;
+		color: var(--brand-blue);
 		letter-spacing: 2px;
 	}
+	.meta-box span {
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: var(--brand-dark);
+	}
 
-	.about-text-columns {
+	/* NARRATIVE GRID */
+	.narrative-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-		gap: clamp(1.5rem, 5vw, 3rem);
-		font-size: clamp(1.1rem, 2vw, 1.15rem);
+		grid-template-columns: 1.8fr 1fr;
+		gap: clamp(2rem, 6vw, 5rem);
+		align-items: stretch;
+	}
+
+	.premium-lead-block { 
+		margin-bottom: 3rem; 
+	}
+	.premium-lead {
+		font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+		line-height: 1.6;
+		color: var(--brand-dark);
+		font-weight: 300;
+		padding-left: 2rem;
+		border-left: 4px solid var(--brand-blue);
+	}
+
+	.narrative-details {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		font-size: 1rem;
 		line-height: 1.8;
 		color: #475569;
-		margin-bottom: clamp(3rem, 6vw, 5rem);
 	}
 
-	.lead-text {
-		font-size: clamp(1.2rem, 2.5vw, 1.35rem);
-		font-weight: 300;
-		color: #0f4d82;
-		line-height: 1.6;
+	/* EDITORIAL CARDS */
+	.narrative-cards {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 	}
 
-	.mission-vision-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-		gap: clamp(1.5rem, 4vw, 3rem);
+	.mv-editorial-card {
+		background: #f8fafc;
+		padding: 2.2rem;
+		border-top: 1px solid #e2e8f0;
+		transition: all 0.4s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
 	}
-
-	.mv-card {
-		background: #f8fbff;
-		border-left: 5px solid #0f4d82;
-		padding: clamp(2rem, 4vw, 3rem);
-		border-radius: 0 12px 12px 0;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.mv-card:hover {
+	.mv-editorial-card:hover {
+		background: #fff;
+		box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+		border-top-color: var(--brand-red);
 		transform: translateY(-5px);
-		box-shadow: 0 10px 25px rgba(10, 132, 255, 0.08);
 	}
 
-	.mv-icon {
-		font-size: clamp(2.5rem, 5vw, 3rem);
-		margin-bottom: 1rem;
+	.ec-tag {
+		font-size: 0.65rem;
+		font-weight: 900;
+		color: var(--brand-red);
+		letter-spacing: 2px;
+		margin-bottom: 1.2rem;
+		text-transform: uppercase;
+		display: block;
+		text-decoration: underline;
+		text-underline-offset: 8px;
+		text-decoration-color: rgba(216, 2, 2, 0.2);
 	}
 
-	.mv-card h3 {
-		font-size: clamp(1.3rem, 3vw, 1.5rem);
-		color: #0f4d82;
-		margin-bottom: 1rem;
-		font-weight: 700;
-	}
-
-	.mv-card p {
-		color: #555;
-		font-size: clamp(1rem, 2vw, 1.05rem);
+	.mv-editorial-card p {
+		font-size: 0.95rem;
 		line-height: 1.7;
+		color: #334155;
 		margin: 0;
+	}
+
+	/* RESPONSIVE */
+	@media (max-width: 1024px) {
+		.narrative-grid { grid-template-columns: 1fr; }
+		.narrative-meta { text-align: left; justify-content: flex-start; }
+		.ah-right { width: 100%; margin-top: 1rem; }
 	}
 
 	@media (max-width: 768px) {
-		.about-text-columns {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
+		.narrative-details { grid-template-columns: 1fr; gap: 2rem; }
+		.premium-lead { padding-left: 1.5rem; }
+		.mv-editorial-card { padding: 2rem; }
+	}
+
+	@media (max-width: 900px) {
+		/* Hero Responsive Tweaks */
+		.hero-main-layout { gap: 2rem; margin-top: 2rem; }
+		.hero-side-technical { padding: 0; border: none; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+	}
+
+	@media (max-width: 640px) {
+		.hero-side-technical { display: none; }
+		.page-hero { height: 60vh; min-height: 450px; }
 	}
 </style>

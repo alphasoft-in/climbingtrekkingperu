@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import RecommendedTours from '../../../../components/RecommendedTours.astro';
+import TourGallery from '../../../../components/TourGallery.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -119,27 +121,40 @@ const equipment = [
 ---
 
 <Layout title="Trekking Huayhuash 360 - 15 Days | Franpisco Adventure" description="The most spectacular trekking circuit in the Andes. 15 days exploring the Huayhuash Range in comfort service.">
-  <section class="itinerary-header">
+  <section class="itinerary-hero">
+    <div class="hero-overlay"></div>
     <div class="container--narrow">
-      <div class="header-content">
-        <a href={getRelativeLocaleUrl(lang, 'trekking/huayhuash')} class="back-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
-          Back to Huayhuash
-        </a>
-        <div class="breadcrumb">360 Full Circuit Route</div>
-        <h1>TREKKING CORDILLERA HUAYHUASH 360</h1>
-        <div class="header-metrics">
+      <div class="hero-content">
+        <div class="path-log">
+          <a href={getRelativeLocaleUrl(lang, 'trekking/huayhuash')} class="back-project">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+          </a>
+          <span class="p-base">TREKKING</span>
+          <span class="p-divider">/</span>
+          <span class="p-base">HUAYHUASH</span>
+          <span class="p-divider">/</span>
+          <span class="p-current">360 FULL CIRCUIT</span>
+        </div>
+        
+        <h1 class="split-title">
+          <span class="thin">TREKKING CORDILLERA</span>
+          <span class="bold">HUAYHUASH 360</span>
+        </h1>
+
+        <div class="metrics-bar">
           <div class="metric">
-            <span class="label">Duration</span>
-            <span class="value">15 Days / 14 Nights</span>
+            <span class="m-label">DURATION</span>
+            <span class="m-value">15 DAYS / 14 NIGHTS</span>
           </div>
           <div class="metric">
-            <span class="label">From</span>
-            <span class="value price">USD. 1,695.00</span>
+            <span class="m-label">FROM</span>
+            <span class="m-value price">USD. 1,695.00</span>
           </div>
           <div class="metric">
-            <span class="label">Difficulty</span>
-            <span class="value tag hard">Hard to Moderate</span>
+            <span class="m-label">DIFFICULTY</span>
+            <span class="m-value">
+              <span class="dif-tag hard">HARD</span>
+            </span>
           </div>
         </div>
       </div>
@@ -148,19 +163,68 @@ const equipment = [
 
   <section class="itinerary-intro">
     <div class="container--narrow">
-      <div class="intro-grid">
-        <div class="intro-text">
-          <h2>One of the Best Circuits in the World</h2>
-          <p>This 15-day expedition is the ultimate experience in the Peruvian Andes. We will circle the entire Huayhuash Range, crossing passes over 5,000 meters and camping alongside deep turquoise glacier lagoons.</p>
-          <ul class="quick-info">
-            <li><strong>Start:</strong> Huaraz, Peru</li>
-            <li><strong>Location:</strong> Central Andes (Ancash, Huánuco, Lima)</li>
-            <li><strong>Best Season:</strong> April to December</li>
-            <li><strong>Service:</strong> Superior Comfort</li>
-          </ul>
+      <div class="dossier-layout">
+        <div class="dossier-sidebar">
+          <span class="vertical-label">TECHNICAL DOSSIER</span>
         </div>
-        <div class="intro-image">
-           <div class="placeholder-img" style="background: url('/trekking/huayhuash/360.jpeg') center/cover;"></div>
+        
+        <div class="dossier-content">
+          <div class="dossier-header">
+            <span class="log-id">LOG: HYH-360-15D</span>
+            <h2 class="dossier-title">Elite <span class="blue">Exploration</span></h2>
+          </div>
+          
+          <p class="dossier-p">This 15-day expedition is the ultimate experience in the Peruvian Andes. We will circle the entire Huayhuash Range, crossing passes over 5,000 meters and camping alongside deep turquoise glacier lagoons.</p>
+          
+          <div class="dossier-specs">
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">LOGISTICS BASE</span>
+                <span class="d-value">Huaraz, Peru</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">TECHNICAL ZONE</span>
+                <span class="d-value">Central Andes</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">SEASON</span>
+                <span class="d-value">April - December</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">SERVICE</span>
+                <span class="d-value">Superior Comfort</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dossier-visual">
+          <div class="visual-frame">
+            <img src="/trekking/huayhuash/360.jpeg" alt="Trekking Huayhuash 360" class="dossier-img" />
+            <div class="coordinates-overlay">
+              <span>9° 32' 26" S</span>
+              <span class="divider">|</span>
+              <span>77° 31' 39" W</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -169,192 +233,607 @@ const equipment = [
   <section class="itinerary-details">
     <div class="container--narrow">
       <div class="details-layout">
-        <div class="timeline-container">
-          <h2>Daily Schedule</h2>
-          <div class="timeline">
+        <!-- Main Timeline -->
+        <div class="path-log-container">
+          <div class="details-header-technical">
+            <span class="sub-label">ROUTE SEQUENCE</span>
+            <h2 class="technical-title">Daily <span class="blue">Schedule</span></h2>
+          </div>
+
+          <div class="path-timeline">
             {itinerary.map((item) => (
-              <div class="timeline-item">
-                <div class="timeline-day">{item.day}</div>
-                <div class="timeline-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.content}</p>
+              <div class="waypoint-item">
+                <div class="waypoint-marker">
+                  <div class="marker-box">
+                    <span class="m-day">{item.day.split(' ')[1]}</span>
+                  </div>
+                  <div class="connector"></div>
+                </div>
+                
+                <div class="waypoint-content">
+                  <div class="waypoint-header">
+                    <span class="w-day-label">{item.day}</span>
+                    <h3 class="w-title">{item.title}</h3>
+                  </div>
+                  
+                  <p class="w-description">{item.content}</p>
+                  
                   {item.stats && (
-                    <div class="day-stats">
-                      {item.stats.alt && <span>🏔️ {item.stats.alt}</span>}
-                      {item.stats.dist && <span>🥾 {item.stats.dist}</span>}
-                      {item.stats.time && <span>🕒 {item.stats.time}</span>}
+                    <div class="waypoint-stats">
+                      {item.stats.alt && (
+                        <div class="w-stat">
+                          <span class="w-s-label">MAX ALTITUDE</span>
+                          <span class="w-s-value">{item.stats.alt}</span>
+                        </div>
+                      )}
+                      {item.stats.dist && (
+                        <div class="w-stat">
+                          <span class="w-s-label">DISTANCE</span>
+                          <span class="w-s-value">{item.stats.dist}</span>
+                        </div>
+                      )}
+                      {item.stats.time && (
+                        <div class="w-stat">
+                          <span class="w-s-label">ESTIMATED TIME</span>
+                          <span class="w-s-value">{item.stats.time}</span>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
               </div>
             ))}
+
+            <div class="timeline-end">
+              <div class="end-mark"></div>
+              <span class="end-text">END OF ROUTE</span>
+            </div>
           </div>
         </div>
 
-        <aside class="sidebar">
-          <div class="sidebar-box info-box">
-             <h3>What's Included</h3>
-             <ul>
-               {includes.map(inc => <li>✅ {inc}</li>)}
-             </ul>
+        <!-- Logistics Sidebar -->
+        <aside class="logistics-sidebar">
+          <div class="logistics-card">
+            <div class="card-header">
+              <span class="c-id">MOD: LOG-INCL</span>
+              <h3>Services Included</h3>
+            </div>
+            <ul class="log-list">
+              {includes.map(inc => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{inc}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           
-          <div class="sidebar-box equipment-box">
-             <h3>Suggested Gear</h3>
-             <ul>
-               {equipment.map(eq => <li>🎒 {eq}</li>)}
-             </ul>
+          <div class="logistics-card secondary">
+            <div class="card-header">
+              <span class="c-id">MOD: TECH-EQ</span>
+              <h3>Suggested Equipment</h3>
+            </div>
+            <ul class="log-list">
+              {equipment.map(eq => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="log-icon-alt"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  <span>{eq}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div class="sidebar-cta">
-             <h3>Ready for this adventure?</h3>
-             <p>Contact us to check availability and book your spot.</p>
-             <a href={getRelativeLocaleUrl(lang, 'contact')} class="btn-book">Book Now</a>
+          <div class="mission-cta">
+            <div class="cta-inner">
+              <span class="cta-status">AVAILABILITY OPEN</span>
+              <h3>Start Your Expedition</h3>
+              <p>Request the full technical dossier of the route and secure your spot for the season.</p>
+              
+              <form class="booking-form" id="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="approx-date">APPROXIMATE DATE</label>
+                    <input type="date" id="approx-date" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="full-name">FULL NAME</label>
+                    <input type="text" id="full-name" placeholder="Write your full name" required />
+                  </div>
+                </div>
+                <button type="submit" class="btn-tactical">
+                  BOOK YOUR SPOT
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
           </div>
         </aside>
       </div>
     </div>
   </section>
+
+  <TourGallery 
+    lang={lang}
+    images={[
+      '/trekking/huayhuash/360.jpeg',
+      '/slider_4.png',
+      '/slider_2.png',
+      '/slider_5.png',
+      '/slider_1.png'
+    ]} 
+  />
+
+  <RecommendedTours currentId="360" />
 </Layout>
 
+<script>
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const date = (document.getElementById('approx-date') as HTMLInputElement).value;
+    const name = (document.getElementById('full-name') as HTMLInputElement).value;
+    const tourName = "TREKKING CORDILLERA HUAYHUASH 360 FULL CIRCUIT 15D";
+    
+    const message = `Hello Franpisco Adventure! I would like to book a spot for the expedition: ${tourName}. My details are:\n\n- Name: ${name}\n- Approx date: ${date}`;
+    const whatsappUrl = `https://wa.me/51987654321?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  });
+</script>
+
 <style>
-  .itinerary-header {
-    background: #0f4d82;
+  .itinerary-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/trekking/huayhuash/mini.jpeg') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
     color: white;
-    padding: 6rem 0 4rem;
-    background-image: linear-gradient(rgba(15, 77, 130, 0.95), rgba(15, 77, 130, 0.95)), url('/images/huayhuash-hero.jpg');
-    background-size: cover;
-    background-position: center;
+    padding-top: 5rem;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(3,4,5,0.95), rgba(3,4,5,0.2) 40%, rgba(3,4,5,0.95));
+    z-index: 1;
   }
 
   .container--narrow {
-    max-width: 1100px;
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  .back-link {
+  .path-log {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #e2e8f0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    transition: color 0.3s;
-  }
-  .back-link:hover { color: white; }
-
-  .breadcrumb {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    margin-bottom: 0.5rem;
-  }
-
-  .itinerary-header h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    gap: 0.8rem;
+    font-size: 0.65rem;
     font-weight: 800;
-    line-height: 1.1;
+    letter-spacing: 2px;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+
+  .back-project {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 0.5rem;
+  }
+  .back-project:hover {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    transform: translateX(-5px);
+  }
+
+  .p-divider { color: rgba(255,255,255,0.2); font-weight: 300; }
+  .p-current { color: var(--brand-blue); }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.5rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    font-weight: 200;
+    letter-spacing: 8px;
+    opacity: 0.8;
+  }
+  .split-title .bold {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  /* Metrics Bar */
+  .metrics-bar {
+    display: flex;
+    gap: 4rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .metric { display: flex; flex-direction: column; gap: 0.5rem; }
+  .m-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-light);
+  }
+  .m-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  .m-value.price { color: var(--brand-blue); font-size: 1.2rem; }
+  
+  .dif-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+  .dif-tag.hard { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+  /* Dossier Section - High End Boutique Style */
+  .itinerary-intro {
+    padding: 10rem 0;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .dossier-layout {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Vertical Label Accent */
+  .dossier-sidebar {
+    display: flex;
+    justify-content: center;
+  }
+  .vertical-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-light);
+    white-space: nowrap;
+  }
+
+  .log-id {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .dossier-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: var(--brand-dark);
     margin-bottom: 2.5rem;
   }
+  .dossier-title .blue { color: var(--brand-blue); }
 
-  .header-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 2rem;
+  .dossier-p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #475569;
+    margin-bottom: 4rem;
+    max-width: 550px;
+    position: relative;
   }
-
-  .metric .label {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: #cbd5e1;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-
-  .metric .value {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-
-  .metric .price { color: var(--color-accent); font-size: 1.3rem; }
-  .metric .tag { background: #fee2e2; color: #ef4444; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; }
-
-  /* Intro Section */
-  .itinerary-intro { padding: 5rem 0; border-bottom: 1px solid #f1f5f9; }
-  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  
-  .intro-text h2 { color: var(--color-primary); margin-bottom: 1.5rem; font-size: 1.8rem; }
-  .intro-text p { line-height: 1.7; color: var(--color-text-light); margin-bottom: 2rem; }
-
-  .quick-info { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .quick-info li { font-size: 0.9rem; color: #1e293b; }
-
-  .intro-image .placeholder-img { height: 400px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-
-  /* Details Layout */
-  .itinerary-details { padding: 5rem 0; background: #fafafa; }
-  .details-layout { display: grid; grid-template-columns: 1fr 350px; gap: 4rem; }
-
-  .timeline { margin-top: 2rem; border-left: 2px solid #e2e8f0; padding-left: 2rem; }
-  .timeline-item { position: relative; margin-bottom: 3rem; }
-  .timeline-item::before {
+  .dossier-p::before {
     content: '';
     position: absolute;
-    left: calc(-2rem - 6px);
-    top: 0;
+    left: -2rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: var(--brand-light);
+  }
+
+  /* Specs Dashboard */
+  .dossier-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .d-spec {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+  .d-icon {
+    margin-top: 0.2rem;
+    color: var(--brand-blue);
+    opacity: 0.6;
+  }
+  .d-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .d-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--brand-light);
+  }
+  .d-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
+
+  /* Visual Frame with Overlays */
+  .dossier-visual { position: relative; }
+  .visual-frame {
+    position: relative;
+    border-radius: 4px; /* Hard corner for technical look */
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  }
+  .dossier-img {
     width: 100%;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #e2e8f0;
+    height: 550px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
   }
+  .visual-frame:hover .dossier-img { transform: scale(1.05); }
 
-  .timeline-day { font-weight: 800; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 0.5rem; }
-  .timeline-content h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1rem; }
-  .timeline-content p { font-size: 0.95rem; line-height: 1.6; color: var(--color-text-light); }
-
-  .day-stats { display: flex; gap: 1rem; margin-top: 1rem; background: #fff; padding: 0.8rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
-
-  /* Sidebar */
-  .sidebar { display: flex; flex-direction: column; gap: 2rem; }
-  .sidebar-box { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-  .sidebar-box h3 { font-size: 1.1rem; margin-bottom: 1.5rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; }
-  .sidebar-box ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
-  .sidebar-box li { font-size: 0.85rem; line-height: 1.4; color: #475569; }
-
-  .sidebar-cta {
-     background: var(--color-primary);
-     color: white;
-     padding: 2rem;
-     border-radius: 20px;
-     text-align: center;
+  .coordinates-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(3,4,5,0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
-  .sidebar-cta h3 { margin-bottom: 1rem; }
-  .sidebar-cta p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem; }
-  .btn-book {
-     display: block;
-     background: var(--color-accent);
-     color: white;
-     text-decoration: none;
-     padding: 1rem;
-     border-radius: 100px;
-     font-weight: 700;
-     transition: transform 0.3s;
-  }
-  .btn-book:hover { transform: scale(1.05); }
+  .coordinates-overlay .divider { opacity: 0.3; font-weight: 300; }
 
   @media (max-width: 1024px) {
-    .details-layout { grid-template-columns: 1fr; }
-    .intro-grid { grid-template-columns: 1fr; }
-    .header-metrics { grid-template-columns: 1fr; gap: 1rem; }
+    .dossier-layout { grid-template-columns: 1fr; }
+    .dossier-sidebar { display: none; }
+    .dossier-img { height: 400px; }
+  }
+
+  /* Details Layout */
+  .itinerary-details { padding: 8rem 0 4rem; background: #fafafa; border-top: 1px solid var(--brand-light); }
+  .details-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+
+  .details-header-technical { margin-bottom: 2.5rem; }
+  .sub-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 5px; color: var(--brand-light); display: block; margin-bottom: 1rem; }
+  .technical-title { font-size: 1.8rem; font-weight: 900; color: var(--brand-dark); letter-spacing: -1px; }
+  .technical-title .blue { color: var(--brand-blue); }
+
+  /* Path Timeline */
+  .path-timeline { position: relative; padding-left: 2rem; }
+  .path-timeline::before {
+    content: '';
+    position: absolute;
+    left: 45px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand-blue), var(--brand-light), var(--brand-light));
+  }
+
+  .waypoint-item {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .waypoint-marker {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .marker-box {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid var(--brand-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .m-day { font-size: 0.9rem; font-weight: 900; color: var(--brand-dark); font-family: 'JetBrains Mono', monospace; }
+
+  .waypoint-content { flex: 1; padding-top: 0.1rem; }
+  .waypoint-header { margin-bottom: 0.8rem; }
+  .w-day-label { font-size: 0.7rem; font-weight: 800; color: var(--brand-blue); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
+  .w-title { font-size: 1.15rem; font-weight: 800; color: var(--brand-dark); letter-spacing: -0.5px; }
+  
+  .w-description {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 1rem;
+    max-width: 650px;
+  }
+
+  .waypoint-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--brand-light);
+  }
+  .w-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .w-s-label { font-size: 0.6rem; font-weight: 800; color: var(--brand-light); letter-spacing: 1px; }
+  .w-s-value { font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
+
+  /* Logistics Sidebar */
+  .logistics-sidebar { display: flex; flex-direction: column; gap: 3rem; padding-top: 6.5rem; }
+  .logistics-card {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid var(--brand-light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  }
+  .card-header { margin-bottom: 2rem; }
+  .c-id { font-size: 0.55rem; font-weight: 800; color: var(--brand-blue); letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
+  .card-header h3 { font-size: 1.1rem; font-weight: 900; color: var(--brand-dark); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .log-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .log-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.82rem; line-height: 1.5; color: var(--brand-dark); }
+  .log-icon { color: var(--brand-blue); flex-shrink: 0; margin-top: 0.2rem; }
+  .log-icon-alt { color: var(--brand-blue); opacity: 0.5; flex-shrink: 0; margin-top: 0.2rem; }
+
+  /* Mission CTA */
+  .mission-cta {
+    background: var(--brand-dark);
+    color: white;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-status { font-size: 0.6rem; font-weight: 900; color: var(--brand-blue); letter-spacing: 2px; display: block; margin-bottom: 1.5rem; }
+  .mission-cta h3 { font-size: 1.6rem; font-weight: 900; margin-bottom: 1rem; }
+  .mission-cta p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 2rem; line-height: 1.6; }
+
+  .btn-tactical {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: var(--brand-blue);
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  .btn-tactical:hover { background: #0047cc; transform: translateY(-3px); }
+
+  /* Booking Form Styling */
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .form-group label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--brand-blue);
+  }
+
+  .form-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1rem;
+    color: white;
+    font-size: 0.85rem;
+    font-family: inherit;
+    border-radius: 2px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .form-group input:focus {
+    border-color: var(--brand-blue);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    .details-layout { grid-template-columns: 1fr; gap: 4rem; }
+    .waypoint-item { gap: 1.5rem; }
+    .path-timeline::before { left: 25px; }
+    .logistics-sidebar { padding-top: 0; }
+  }
+
+  /* Timeline End Decoration */
+  .timeline-end {
+    margin-top: 2rem;
+    padding-left: 45px; /* Matches marker center */
+    position: relative;
+  }
+  .end-mark {
+    width: 250px;
+    height: 60px;
+    border-left: 2px solid var(--brand-light);
+    border-bottom: 2px solid var(--brand-light);
+    position: relative;
+  }
+  .end-mark::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -5px;
+    width: 10px; height: 2px;
+    background: var(--brand-light);
+  }
+  .end-text {
+    position: absolute;
+    bottom: -20px;
+    left: 45px;
+    font-size: 0.55rem;
+    font-weight: 800;
+    color: var(--brand-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
   }
 </style>

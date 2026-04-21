@@ -1,0 +1,142 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import TourCard from '../../../components/TourCard.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programs = [
+  {
+    id: 'volcanoes',
+    title: t('arequipa.prog1.name'),
+    description: t('arequipa.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `7 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard'
+  }
+];
+---
+
+<Layout title={`${t('arequipa.title')} - Franpisco Adventure`} description={t('arequipa.subtitle')}>
+  <section class="arequipa-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="split-title">
+        <span class="thin">EXPEDITIONS IN THE</span>
+        <span class="bold">WHITE CITY AREQUIPA</span>
+      </h1>
+      
+      <div class="red-line"></div>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {programs.map((prog, index) => (
+          <TourCard 
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            path={`trekking/arequipa/arequipa-volcanoes`}
+            prefix="AQP"
+            type="VOLCANIC EXPEDITION"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .arequipa-hero {
+    position: relative;
+    height: 65vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/slider_2.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(3,4,5,0.8), rgba(3,4,5,0.2) 30%, rgba(3,4,5,0.8));
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    font-weight: 200;
+    letter-spacing: 8px;
+    opacity: 0.9;
+  }
+  .split-title .bold {
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+
+  .red-line {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 15px var(--brand-red);
+  }
+
+  .programs-section {
+    padding: 6rem 0;
+    background: #f8fafc;
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .arequipa-hero {
+      height: 50vh;
+    }
+    .programs-section {
+      padding: 6rem 1.5rem;
+    }
+    .container { padding: 0; }
+  }
+</style>

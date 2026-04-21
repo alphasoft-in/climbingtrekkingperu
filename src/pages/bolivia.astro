@@ -1,0 +1,287 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const boliviaPrograms = [
+  {
+    id: 'cordillera-real-expedition',
+    title: t('climbing.bolivia_1.name'),
+    description: t('climbing.bolivia_1.desc'),
+    image: '/slider_3.png',
+    duration: `11 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    path: 'bolivia/cordillera-real-expedition',
+    prefix: 'BOL',
+    type: 'CLIMBING & TREKKING'
+  },
+  {
+    id: 'condoriri-huayna-expedition',
+    title: t('climbing.bolivia_2.name'),
+    description: t('climbing.bolivia_2.desc'),
+    image: '/slider_5.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'bolivia/condoriri-huayna-expedition',
+    prefix: 'BOL',
+    type: 'TECHNICAL CLIMBING'
+  },
+  {
+    id: 'uyuni-huayna-potosi',
+    title: t('climbing.bolivia_3.name'),
+    description: t('climbing.bolivia_3.desc'),
+    image: '/slider_2.png',
+    duration: `10 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    path: 'bolivia/uyuni-huayna-potosi',
+    prefix: 'BOL',
+    type: 'TOUR & CLIMBING'
+  },
+  {
+    id: 'illampu-circuit',
+    title: t('climbing.bolivia_4.name'),
+    description: t('climbing.bolivia_4.desc'),
+    image: '/slider_4.png',
+    duration: `8 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    path: 'bolivia/illampu-circuit',
+    prefix: 'BOL',
+    type: 'REMOTE TREKKING'
+  },
+  {
+    id: 'cotia-huayna-trek',
+    title: t('climbing.bolivia_5.name'),
+    description: t('climbing.bolivia_5.desc'),
+    image: '/slider_3.png',
+    duration: `7 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    path: 'bolivia/cotia-huayna-trek',
+    prefix: 'BOL',
+    type: 'GLACIER TREKKING'
+  },
+  {
+    id: 'condoriri-huayna-expedition-alt',
+    title: t('climbing.bolivia_6.name'),
+    description: t('climbing.bolivia_6.desc'),
+    image: '/slider_1.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'bolivia/condoriri-huayna-expedition',
+    prefix: 'BOL',
+    type: 'TECHNICAL CLIMBING'
+  },
+  {
+    id: 'apolobamba-expedition',
+    title: t('climbing.bolivia_7.name'),
+    description: t('climbing.bolivia_7.desc'),
+    image: '/slider_5.png',
+    duration: `8 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'bolivia/apolobamba-expedition',
+    prefix: 'BOL',
+    type: 'REMOTE EXPEDITION'
+  },
+  {
+    id: 'illimani-sajama',
+    title: t('climbing.bolivia_8.name'),
+    description: t('climbing.bolivia_8.desc'),
+    image: '/slider_1.png',
+    duration: `13 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'bolivia/illimani-sajama',
+    prefix: 'BOL',
+    type: 'HIGH ALTITUDE'
+  }
+];
+---
+
+<Layout title={`Bolivia - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora la Cordillera Real, el Salar de Uyuni y los gigantes de Bolivia como el Sajama e Illimani. Expediciones de montañismo y trekking de élite.">
+  <section class="hub-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <h1 class="split-title">
+        <span class="thin">DESTINOS</span>
+        <span class="bold">BOLIVIA</span>
+      </h1>
+      <div class="hero-accent-bar"></div>
+      
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>MAX ELEVATION</label>
+          <span>6,542 M.S.N.M.</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDINATES</label>
+          <span>16°30′S 68°09′W</span>
+        </div>
+        <div class="tech-item">
+          <label>REGION</label>
+          <span>ALTIPLANO / BOLIVIA</span>
+        </div>
+      </div>
+      
+      <p class="hero-subtitle">Desde el espejo infinito del Salar de Uyuni hasta las cumbres de la Cordillera Real. El corazón de los Andes te espera.</p>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {boliviaPrograms.map((prog) => (
+          <TourCard 
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel as any}
+            path={prog.path}
+            prefix={prog.prefix}
+            type={prog.type}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hub-hero {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    background: #06090f url('/slider_3.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+      rgba(6, 9, 15, 0.9) 0%, 
+      rgba(6, 9, 15, 0.4) 50%, 
+      rgba(6, 9, 15, 0.9) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .hero-meta {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .split-title .bold {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+
+  .hero-accent-bar {
+    width: 80px;
+    height: 4px;
+    background: var(--brand-red);
+    margin: 1.5rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  /* SIDE TECHNICAL DATA - CENTERED BELOW */
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+    opacity: 0.8;
+  }
+
+  .tech-item span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .hub-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

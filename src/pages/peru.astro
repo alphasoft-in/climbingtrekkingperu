@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const peruPrograms = [
+  {
+    id: 'santa-cruz',
+    title: 'Trekking Santa Cruz',
+    description: 'El circuito más emblemático de la Cordillera Blanca. 4 días de lagunas turquesas y vistas al Alpamayo.',
+    image: '/slider_1.png',
+    duration: '4 Días',
+    difficulty: 'Moderado',
+    difficultyLevel: 'mod',
+    path: 'trekking/blanca/santa-cruz',
+    prefix: 'PER',
+    type: 'CLASSIC TREKKING'
+  },
+  {
+    id: 'huayhuash-360',
+    title: 'Huayhuash 360°',
+    description: 'Considerado uno de los mejores trekkings del mundo. Una circunnavegación técnica a la cordillera Huayhuash.',
+    image: '/slider_2.png',
+    duration: '12 Días',
+    difficulty: 'Exigente',
+    difficultyLevel: 'hard',
+    path: 'trekking/huayhuash/360',
+    prefix: 'PER',
+    type: 'EXPEDITION'
+  },
+  {
+    id: 'alpamayo-climb',
+    title: 'Nevado Alpamayo',
+    description: 'La montaña más hermosa del mundo. Ascensión técnica por la cara Directa Francesa.',
+    image: '/slider_3.png',
+    duration: '6 Días',
+    difficulty: 'Técnico',
+    difficultyLevel: 'hard',
+    path: 'climbing/alpamayo',
+    prefix: 'PER',
+    type: 'MOUNTAINEERING'
+  },
+  {
+    id: 'laguna-69',
+    title: 'Trekking Laguna 69',
+    description: 'Aclimatación perfecta. Visita la laguna más famosa de Huaraz bajo los nevados Chacraraju y Pisco.',
+    image: '/slider_4.png',
+    duration: 'Full Day',
+    difficulty: 'Moderado',
+    difficultyLevel: 'mod',
+    path: 'tours/trekking-69',
+    prefix: 'PER',
+    type: 'DAY HIKE'
+  },
+  {
+    id: 'huascaran-expedition',
+    title: 'Nevado Huascarán',
+    description: 'El techo del Perú y de los trópicos. El desafío máximo para montañistas en los Andes peruanos.',
+    image: '/slider_5.png',
+    duration: '7 Días',
+    difficulty: 'Muy Exigente',
+    difficultyLevel: 'hard',
+    path: 'climbing/huascaran',
+    prefix: 'PER',
+    type: 'HIGH ALTITUDE'
+  },
+  {
+    id: 'cusco-inca-trail',
+    title: 'Camino Inca',
+    description: 'Sigue los pasos de los Incas hacia la ciudadela de Machu Picchu. Una experiencia cultural y natural única.',
+    image: '/slider_1.png',
+    duration: '4 Días',
+    difficulty: 'Moderado',
+    difficultyLevel: 'mod',
+    path: 'trekking/cusco/camino-inca',
+    prefix: 'PER',
+    type: 'CULTURAL TREK'
+  }
+];
+---
+
+<Layout title={`Perú - ${t('nav.destinations')} | Franpisco Adventure`} description="Descubre los Andes Peruanos con Franpisco Adventure. Trekking en la Cordillera Blanca y Huayhuash, escalada de alta montaña y tours culturales en Cusco y Machu Picchu.">
+  <section class="hub-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <h1 class="split-title">
+        <span class="thin">DESTINOS</span>
+        <span class="bold">PERÚ</span>
+      </h1>
+      <div class="hero-accent-bar"></div>
+      
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>MAX ELEVATION</label>
+          <span>6,768 M.S.N.M.</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDINATES</label>
+          <span>12°02′S 77°01′W</span>
+        </div>
+        <div class="tech-item">
+          <label>ESTABLISHED</label>
+          <span>EST. 2015 / PERÚ</span>
+        </div>
+      </div>
+      
+      <p class="hero-subtitle">El corazón de los Andes. Cuna de civilizaciones antiguas y picos que desafían los cielos.</p>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {peruPrograms.map((prog) => (
+          <TourCard 
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel as any}
+            path={prog.path}
+            prefix={prog.prefix}
+            type={prog.type}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hub-hero {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    background: #06090f url('/slider_1.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .hero-meta {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .split-title .bold {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+
+  .hero-accent-bar {
+    width: 80px;
+    height: 4px;
+    background: var(--brand-red);
+    margin: 1.5rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  /* SIDE TECHNICAL DATA - CENTERED BELOW */
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+  }
+
+  .tech-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .hub-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

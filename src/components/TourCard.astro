@@ -1,0 +1,310 @@
+---
+import { getRelativeLocaleUrl } from '../i18n/utils';
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  duration: string;
+  difficulty: string;
+  difficultyLevel: 'hard' | 'modplus' | 'mod' | 'easy';
+  path: string;
+  type?: string;
+  prefix?: string;
+}
+
+const { 
+  id, 
+  title, 
+  description, 
+  image, 
+  duration, 
+  difficulty, 
+  difficultyLevel, 
+  path,
+  type = "EXPEDICIÓN TÉCNICA",
+  prefix = "TRK"
+} = Astro.props;
+
+const lang = Astro.url.pathname.split('/')[1] === 'en' ? 'en' : 'es';
+const viewMoreLabel = lang === 'en' ? 'VIEW ITINERARY' : 'VER ITINERARIO';
+---
+
+<div class="elite-tour-card">
+  <!-- Top: Cinematic Media -->
+  <div class="card-media">
+    <img src={image} alt={title} loading="lazy" />
+    <div class="card-media-overlay"></div>
+    
+    <!-- Floating Technical Data -->
+    <div class="tech-serial">
+      <span class="prefix">{prefix}</span>
+      <span class="sep"></span>
+      <span class="id">{id.toUpperCase()}</span>
+    </div>
+
+    <div class="duration-pill">
+      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>{duration}</span>
+    </div>
+  </div>
+
+  <!-- Body: Editorial Content -->
+  <div class="card-content">
+    <div class="card-category-bar">
+      <span class="category-type">{type}</span>
+      <span class={`difficulty-indicator ${difficultyLevel}`}>
+        <span class="indicator-dot"></span>
+        {difficulty}
+      </span>
+    </div>
+
+    <h3 class="card-title">{title}</h3>
+    
+    <p class="card-desc">
+      {description}
+    </p>
+
+    <div class="card-action-zone">
+      <a href={getRelativeLocaleUrl(lang, path)} class="elite-action-btn">
+        <span class="btn-text">{viewMoreLabel}</span>
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .elite-tour-card {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+  }
+
+  .elite-tour-card:hover {
+    transform: translateY(-12px);
+    border-color: transparent;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+  }
+
+  /* --- MEDIA ZONE --- */
+  .card-media {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+  }
+
+  .card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .elite-tour-card:hover .card-media img {
+    transform: scale(1.1);
+  }
+
+  .card-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  /* Technical Serial Number */
+  .tech-serial {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.5rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+    background: rgba(3, 4, 5, 0.8);
+    padding: 8px 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .tech-serial .prefix { opacity: 0.8; }
+  .tech-serial .sep { 
+    width: 1px; 
+    height: 10px; 
+    background: var(--brand-blue); 
+    margin: 0 10px; 
+    opacity: 0.6;
+  }
+
+  /* Duration Pill */
+  .duration-pill {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    color: var(--brand-dark);
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.05);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .duration-pill svg { color: var(--brand-blue); }
+
+  /* --- CONTENT ZONE --- */
+  .card-content {
+    padding: clamp(1.5rem, 4vw, 2.2rem);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #fff;
+  }
+
+  .card-category-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-type {
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+
+  .difficulty-indicator {
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1e293b;
+  }
+
+  .indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ddd;
+  }
+
+  .difficulty-indicator.hard { color: #ef4444; }
+  .difficulty-indicator.hard .indicator-dot { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+  
+  .difficulty-indicator.modplus { color: var(--brand-blue); }
+  .difficulty-indicator.modplus .indicator-dot { background: var(--brand-blue); box-shadow: 0 0 8px rgba(0, 144, 204, 0.4); }
+
+  .difficulty-indicator.mod { color: #0ea5e9; }
+  .difficulty-indicator.mod .indicator-dot { background: #0ea5e9; }
+
+  .card-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    color: var(--brand-dark);
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .elite-tour-card:hover .card-title {
+    color: var(--brand-blue);
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #64748b;
+    margin-bottom: 2.5rem;
+    flex: 1;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* --- ACTION ZONE --- */
+  .card-action-zone {
+    margin-top: auto;
+  }
+
+  .elite-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #0b0d10;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .elite-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--brand-blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+  }
+
+  .btn-text {
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-icon {
+    transform: translateX(0);
+    transition: 0.4s;
+    position: relative;
+    z-index: 2;
+  }
+
+  .elite-action-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .elite-action-btn:hover .btn-icon {
+    transform: translateX(8px);
+  }
+</style>

@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import TourCard from '../../components/TourCard.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programs = [
+  {
+    id: 'classic',
+    title: t('blanca.prog1.name'),
+    description: t('blanca.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `4-5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    path: 'trekking/blanca/santa-cruz'
+  },
+  {
+    id: 'best',
+    title: t('blanca.prog2.name'),
+    description: t('blanca.prog2.desc'),
+    image: '/slider_4.png',
+    duration: `10 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'trekking/blanca/lo-mejor'
+  },
+  {
+    id: 'alpamayo',
+    title: t('blanca.prog3.name'),
+    description: t('blanca.prog3.desc'),
+    image: '/slider_1.png',
+    duration: `11 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/blanca/alpamayo'
+  },
+  {
+    id: 'circuit',
+    title: t('blanca.prog4.name'),
+    description: t('blanca.prog4.desc'),
+    image: '/slider_3.png',
+    duration: `15 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/blanca/circuito'
+  }
+];
+---
+
+<Layout title={`${t('nav.blanca')} - Franpisco Adventure`} description={t('blanca.subtitle')}>
+  <section class="hub-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <h1 class="split-title">
+        <span class="thin">EXPEDICIONES EN LA</span>
+        <span class="bold">CORDILLERA BLANCA</span>
+      </h1>
+      <div class="hero-accent-bar"></div>
+
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>MAX ELEVATION</label>
+          <span>6,768 M.S.N.M.</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDINATES</label>
+          <span>9°07′S 77°36′W</span>
+        </div>
+        <div class="tech-item">
+          <label>REGION</label>
+          <span>ANCASH / PERÚ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {programs.map((prog, index) => (
+          <TourCard 
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            path={prog.path}
+            prefix="BLN"
+            type="EXPEDICIÓN TÉCNICA"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hub-hero {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    background: #06090f url('/slider_2.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+      rgba(6, 9, 15, 0.9) 0%, 
+      rgba(6, 9, 15, 0.4) 50%, 
+      rgba(6, 9, 15, 0.9) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .hero-meta {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .split-title .bold {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+
+  .hero-accent-bar {
+    width: 80px;
+    height: 4px;
+    background: var(--brand-red);
+    margin: 1.5rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  /* SIDE TECHNICAL DATA - CENTERED BELOW */
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+  }
+
+  .tech-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .hub-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

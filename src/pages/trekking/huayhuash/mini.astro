@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import RecommendedTours from '../../../components/RecommendedTours.astro';
+import TourGallery from '../../../components/TourGallery.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -80,27 +82,29 @@ const equipment = [
 ---
 
 <Layout title="Mini Trek Huayhuash - 8 Días | Franpisco Adventure" description="La versión esencial y espectacular del circuito Huayhuash en 8 días. De Mitucocha a Huayllapa.">
-  <section class="itinerary-header">
+  <section class="itinerary-hero">
+    <div class="hero-overlay"></div>
     <div class="container--narrow">
-      <div class="header-content">
-        <a href={getRelativeLocaleUrl(lang, 'trekking/huayhuash')} class="back-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
-          Volver a Huayhuash
-        </a>
-        <div class="breadcrumb">Ruta Esencial / Mitucocha - Cajatambo</div>
-        <h1>MINI TREK CORDILLERA HUAYHUASH</h1>
-        <div class="header-metrics">
+      <div class="hero-content">
+        <h1 class="split-title">
+          <span class="thin">TREKKING CORDILLERA</span>
+          <span class="bold">HUAYHUASH MINI 08D</span>
+        </h1>
+
+        <div class="metrics-bar">
           <div class="metric">
-            <span class="label">Duración</span>
-            <span class="value">08 Días / 07 Noches</span>
+            <span class="m-label">DURACIÓN</span>
+            <span class="m-value">08 DÍAS / 07 NOCHES</span>
           </div>
           <div class="metric">
-            <span class="label">Costo</span>
-            <span class="value price">USD. 695.00</span>
+            <span class="m-label">DESDE</span>
+            <span class="m-value price">USD. 695.00</span>
           </div>
           <div class="metric">
-            <span class="label">Dificultad</span>
-            <span class="value tag hard">Difícil a Moderado</span>
+            <span class="m-label">DIFICULTAD</span>
+            <span class="m-value">
+              <span class="dif-tag hard">DIFÍCIL</span>
+            </span>
           </div>
         </div>
       </div>
@@ -109,19 +113,68 @@ const equipment = [
 
   <section class="itinerary-intro">
     <div class="container--narrow">
-      <div class="intro-grid">
-        <div class="intro-text">
-          <h2>La esencia de los Andes en 8 días</h2>
-          <p>Este itinerario compacto selecciona los puntos más impactantes del circuito Huayhuash, cruzando pasos de más de 5,000 metros y finalizando en la histórica Cajatambo.</p>
-          <ul class="quick-info">
-            <li><strong>Inicio:</strong> Huaraz, Perú</li>
-            <li><strong>Regiones:</strong> Ancash, Huánuco, Lima</li>
-            <li><strong>Mejor Temporada:</strong> Abril a Diciembre</li>
-            <li><strong>Servicio:</strong> Trekking Expedición Especializada</li>
-          </ul>
+      <div class="dossier-layout">
+        <div class="dossier-sidebar">
+          <span class="vertical-label">PAQUETE TÉCNICO</span>
         </div>
-        <div class="intro-image">
-           <div class="placeholder-img" style="background: url('/trekking/huayhuash/mini.jpeg') center/cover;"></div>
+        
+        <div class="dossier-content">
+          <div class="dossier-header">
+            <span class="log-id">LOG: HYH-MN-08D</span>
+            <h2 class="dossier-title">Esencia <span class="blue">Andina</span></h2>
+          </div>
+          
+          <p class="dossier-p">Este itinerario compacto selecciona los puntos más impactantes del circuito Huayhuash, cruzando pasos de más de 5,000 metros y finalizando en la histórica Cajatambo.</p>
+          
+          <div class="dossier-specs">
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">INICIO / LOGÍSTICA</span>
+                <span class="d-value">Huaraz, Perú</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">ZONAS TÉCNICAS</span>
+                <span class="d-value">Ancash, Huánuco, Lima</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">TEMPORADA</span>
+                <span class="d-value">Abril - Diciembre</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">SERVICIO</span>
+                <span class="d-value">Expedición Especializada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dossier-visual">
+          <div class="visual-frame">
+            <img src="/trekking/huayhuash/mini.jpeg" alt="Mini Trek Huayhuash" class="dossier-img" />
+            <div class="coordinates-overlay">
+              <span>10° 20' 05" S</span>
+              <span class="divider">|</span>
+              <span>76° 59' 12" W</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -130,197 +183,611 @@ const equipment = [
   <section class="itinerary-details">
     <div class="container--narrow">
       <div class="details-layout">
-        <div class="timeline-container">
-          <h2>Recorrido Detallado</h2>
-          <div class="timeline">
+        <!-- Main Timeline -->
+        <div class="path-log-container">
+          <div class="details-header-technical">
+            <span class="sub-label">SECUESTRACIÓN DE RUTA</span>
+            <h2 class="technical-title">Recorrido <span class="blue">Detallado</span></h2>
+          </div>
+
+          <div class="path-timeline">
             {itinerary.map((item) => (
-              <div class="timeline-item">
-                <div class="timeline-day">{item.day}</div>
-                <div class="timeline-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.content}</p>
+              <div class="waypoint-item">
+                <div class="waypoint-marker">
+                  <div class="marker-box">
+                    <span class="m-day">{item.day.split(' ')[1]}</span>
+                  </div>
+                  <div class="connector"></div>
+                </div>
+                
+                <div class="waypoint-content">
+                  <div class="waypoint-header">
+                    <span class="w-day-label">{item.day}</span>
+                    <h3 class="w-title">{item.title}</h3>
+                  </div>
+                  
+                  <p class="w-description">{item.content}</p>
+                  
                   {item.stats && (
-                    <div class="day-stats">
-                      {item.stats.alt && <span>🏔️ {item.stats.alt}</span>}
-                      {item.stats.dist && <span>🥾 {item.stats.dist}</span>}
-                      {item.stats.time && <span>🕒 {item.stats.time}</span>}
+                    <div class="waypoint-stats">
+                      {item.stats.alt && (
+                        <div class="w-stat">
+                          <span class="w-s-label">ALTITUD MÁX.</span>
+                          <span class="w-s-value">{item.stats.alt}</span>
+                        </div>
+                      )}
+                      {item.stats.dist && (
+                        <div class="w-stat">
+                          <span class="w-s-label">DISTANCIA</span>
+                          <span class="w-s-value">{item.stats.dist}</span>
+                        </div>
+                      )}
+                      {item.stats.time && (
+                        <div class="w-stat">
+                          <span class="w-s-label">TIEMPO ESTIMADO</span>
+                          <span class="w-s-value">{item.stats.time}</span>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
               </div>
             ))}
+
+            <div class="timeline-end">
+              <div class="end-mark"></div>
+              <span class="end-text">FIN DE RUTA</span>
+            </div>
           </div>
-          <div class="end-service-notice">
-            <p><strong>OJO:</strong> Al llegar a Cajatambo finalizan nuestros servicios. Opción de traslado adicional a Barranca o Lima disponible bajo consulta.</p>
-          </div>
+
         </div>
 
-        <aside class="sidebar">
-          <div class="sidebar-box info-box">
-             <h3>El Paquete Incluye</h3>
-             <ul>
-               {includes.map(inc => <li>✅ {inc}</li>)}
-             </ul>
+        <!-- Logistics Sidebar -->
+        <aside class="logistics-sidebar">
+          <div class="logistics-card">
+            <div class="card-header">
+              <span class="c-id">MOD: LOG-INCL</span>
+              <h3>Servicios Incluidos</h3>
+            </div>
+            <ul class="log-list">
+              {includes.map(inc => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{inc}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           
-          <div class="sidebar-box equipment-box">
-             <h3>Equipo Recomendado</h3>
-             <ul>
-               {equipment.map(eq => <li>🎒 {eq}</li>)}
-             </ul>
+          <div class="logistics-card secondary">
+            <div class="card-header">
+              <span class="c-id">MOD: TECH-EQ</span>
+              <h3>Equipo Sugerido</h3>
+            </div>
+            <ul class="log-list">
+              {equipment.map(eq => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="log-icon-alt"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  <span>{eq}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div class="sidebar-cta">
-             <h3>¿Tienes dudas?</h3>
-             <p>Estamos listos para ayudarte a planificar tu travesía.</p>
-             <a href={getRelativeLocaleUrl(lang, 'contact')} class="btn-book">Contactar Ahora</a>
+          <div class="mission-cta">
+            <div class="cta-inner">
+              <span class="cta-status">DISPONIBILIDAD ABIERTA</span>
+              <h3>Inicia tu Expedición</h3>
+              <p>Solicita el paquete técnico completo de la ruta y asegura tu cupo para la temporada.</p>
+              
+              <form class="booking-form" id="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="approx-date">FECHA APROXIMADA</label>
+                    <input type="date" id="approx-date" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="full-name">NOMBRES Y APELLIDOS</label>
+                    <input type="text" id="full-name" placeholder="Escribe tu nombre completo" required />
+                  </div>
+                </div>
+                <button type="submit" class="btn-tactical">
+                  {t('trekking.book')}
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
           </div>
         </aside>
       </div>
+
+      <div class="technical-notice">
+        <div class="notice-box">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p><strong>NOTA DE TÉRMINO:</strong> Al llegar a Cajatambo finalizan los servicios. Opción de traslado adicional a Barranca o Lima disponible bajo consulta.</p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <TourGallery 
+    lang={lang}
+    images={[
+      '/trekking/huayhuash/mini.jpeg',
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png'
+    ]} 
+  />
+
+  <RecommendedTours currentId="mini" />
 </Layout>
 
+<script>
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const date = (document.getElementById('approx-date') as HTMLInputElement).value;
+    const name = (document.getElementById('full-name') as HTMLInputElement).value;
+    const tourName = "TREKKING CORDILLERA HUAYHUASH MINI 08D";
+    
+    const message = `Hola Franpisco Adventure! Me gustaría reservar un cupo para la expedición: ${tourName}. Mis datos son:\n\n- Nombre: ${name}\n- Fecha aprox: ${date}`;
+    const whatsappUrl = `https://wa.me/51987654321?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  });
+</script>
+
 <style>
-  .itinerary-header {
-    background: #0f4d82;
+  .itinerary-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/trekking/huayhuash/mini.jpeg') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    padding: 6rem 0 4rem;
-    background-image: linear-gradient(rgba(15, 77, 130, 0.95), rgba(15, 77, 130, 0.95)), url('/trekking/huayhuash/mini.jpeg');
-    background-size: cover;
-    background-position: center;
+    padding-top: 5rem;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(3,4,5,0.95), rgba(3,4,5,0.2) 40%, rgba(3,4,5,0.95));
+    z-index: 1;
   }
 
   .container--narrow {
-    max-width: 1100px;
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  .back-link {
+  .hero-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    color: #e2e8f0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    transition: color 0.3s;
+    margin-bottom: 3.5rem;
   }
-  .back-link:hover { color: white; }
-
-  .breadcrumb {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    margin-bottom: 0.5rem;
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 8px;
+    opacity: 0.8;
+  }
+  .split-title .bold {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
   }
 
-  .itinerary-header h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 2.5rem;
-  }
-
-  .header-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  /* Metrics Bar */
+  .metrics-bar {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2.5rem 0;
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 2rem;
   }
 
-  .metric .label {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: #cbd5e1;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+  .metric { display: flex; flex-direction: column; gap: 0.5rem; }
+  .m-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-light);
   }
-
-  .metric .value {
-    font-size: 1.1rem;
-    font-weight: 700;
+  .m-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
   }
+  .m-value.price { color: var(--brand-blue); font-size: 1.2rem; }
+  
+  .dif-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+  .dif-tag.hard { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
 
-  .metric .price { color: var(--color-accent); font-size: 1.3rem; }
   .metric .tag { background: #fee2e2; color: #ef4444; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; }
 
-  /* Intro Section */
-  .itinerary-intro { padding: 5rem 0; border-bottom: 1px solid #f1f5f9; }
-  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  
-  .intro-text h2 { color: var(--color-primary); margin-bottom: 1.5rem; font-size: 1.8rem; }
-  .intro-text p { line-height: 1.7; color: var(--color-text-light); margin-bottom: 2rem; }
+  /* Dossier Section - High End Boutique Style */
+  .itinerary-intro {
+    padding: 10rem 0;
+    background: #ffffff;
+    overflow: hidden;
+  }
 
-  .quick-info { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .quick-info li { font-size: 0.9rem; color: #1e293b; }
+  .dossier-layout {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
 
-  .intro-image .placeholder-img { height: 400px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+  /* Vertical Label Accent */
+  .dossier-sidebar {
+    display: flex;
+    justify-content: center;
+  }
+  .vertical-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-light);
+    white-space: nowrap;
+  }
 
-  /* Details Layout */
-  .itinerary-details { padding: 5rem 0; background: #fafafa; }
-  .details-layout { display: grid; grid-template-columns: 1fr 350px; gap: 4rem; }
+  .log-id {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+    display: block;
+  }
 
-  .timeline { margin-top: 2rem; border-left: 2px solid #e2e8f0; padding-left: 2rem; }
-  .timeline-item { position: relative; margin-bottom: 3rem; }
-  .timeline-item::before {
+  .dossier-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: var(--brand-dark);
+    margin-bottom: 2.5rem;
+  }
+  .dossier-title .blue { color: var(--brand-blue); }
+
+  .dossier-p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--brand-dark);
+    margin-bottom: 4rem;
+    max-width: 550px;
+    position: relative;
+  }
+  .dossier-p::before {
     content: '';
     position: absolute;
-    left: calc(-2rem - 6px);
-    top: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #e2e8f0;
+    left: -2rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: #f1f5f9;
   }
 
-  .timeline-day { font-weight: 800; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 0.5rem; }
-  .timeline-content h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1rem; }
-  .timeline-content p { font-size: 0.95rem; line-height: 1.6; color: var(--color-text-light); }
-
-  .day-stats { display: flex; gap: 1rem; margin-top: 1rem; background: #fff; padding: 0.8rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
-
-  .end-service-notice { margin-top: 4rem; padding: 2rem; background: #fff7ed; border-left: 4px solid #f97316; border-radius: 8px; font-size: 0.95rem; color: #9a3412; line-height: 1.6; }
-
-  /* Sidebar */
-  .sidebar { display: flex; flex-direction: column; gap: 2rem; }
-  .sidebar-box { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-  .sidebar-box h3 { font-size: 1.1rem; margin-bottom: 1.5rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; }
-  .sidebar-box ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
-  .sidebar-box li { font-size: 0.85rem; line-height: 1.4; color: #475569; }
-
-  .sidebar-cta {
-     background: var(--color-primary);
-     color: white;
-     padding: 2rem;
-     border-radius: 20px;
-     text-align: center;
+  /* Specs Dashboard */
+  .dossier-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
-  .sidebar-cta h3 { margin-bottom: 1rem; }
-  .sidebar-cta p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem; }
-  .btn-book {
-     display: block;
-     background: var(--color-accent);
-     color: white;
-     text-decoration: none;
-     padding: 1rem;
-     border-radius: 100px;
-     font-weight: 700;
-     transition: transform 0.3s;
+  .d-spec {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
   }
-  .btn-book:hover { transform: scale(1.05); }
+  .d-icon {
+    margin-top: 0.2rem;
+    color: var(--brand-blue);
+    opacity: 0.6;
+  }
+  .d-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .d-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--brand-light);
+  }
+  .d-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
+
+  /* Visual Frame with Overlays */
+  .dossier-visual { position: relative; }
+  .visual-frame {
+    position: relative;
+    border-radius: 4px; /* Hard corner for technical look */
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  }
+  .dossier-img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+  }
+  .visual-frame:hover .dossier-img { transform: scale(1.05); }
+
+  .coordinates-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(3,4,5,0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .coordinates-overlay .divider { opacity: 0.3; font-weight: 300; }
 
   @media (max-width: 1024px) {
-    .details-layout { grid-template-columns: 1fr; }
-    .intro-grid { grid-template-columns: 1fr; }
-    .header-metrics { grid-template-columns: 1fr; gap: 1rem; }
+    .dossier-layout { grid-template-columns: 1fr; }
+    .dossier-sidebar { display: none; }
+    .dossier-img { height: 400px; }
+  }
+
+  /* Details Layout */
+  .itinerary-details { padding: 8rem 0 4rem; background: #fafafa; border-top: 1px solid #e2e8f0; }
+  .details-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+
+  .details-header-technical { margin-bottom: 2.5rem; }
+  .sub-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 5px; color: var(--brand-light); display: block; margin-bottom: 1rem; }
+  .technical-title { font-size: 1.8rem; font-weight: 900; color: var(--brand-dark); letter-spacing: -1px; }
+  .technical-title .blue { color: var(--brand-blue); }
+
+  /* Path Timeline */
+  .path-timeline { position: relative; padding-left: 2rem; }
+  .path-timeline::before {
+    content: '';
+    position: absolute;
+    left: 45px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand-blue), var(--brand-light), var(--brand-light));
+  }
+
+  .waypoint-item {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .waypoint-marker {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .marker-box {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid var(--brand-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .m-day { font-size: 0.9rem; font-weight: 900; color: var(--brand-dark); font-family: 'JetBrains Mono', monospace; }
+
+  .waypoint-content { flex: 1; padding-top: 0.1rem; }
+  .waypoint-header { margin-bottom: 0.8rem; }
+  .w-day-label { font-size: 0.7rem; font-weight: 800; color: var(--brand-blue); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
+  .w-title { font-size: 1.15rem; font-weight: 800; color: var(--brand-dark); letter-spacing: -0.5px; }
+  
+  .w-description {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
+    max-width: 650px;
+  }
+
+  .waypoint-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--brand-light);
+  }
+  .w-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .w-s-label { font-size: 0.6rem; font-weight: 800; color: var(--brand-light); letter-spacing: 1px; }
+  .w-s-value { font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
+
+  /* Technical Notice */
+  .technical-notice { margin-top: 4rem; }
+  .notice-box {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background: #fff;
+    border: 1px solid var(--brand-light);
+    border-left: 4px solid var(--brand-red);
+    color: var(--brand-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .notice-box svg { color: var(--brand-red); flex-shrink: 0; }
+
+  /* Logistics Sidebar */
+  .logistics-sidebar { display: flex; flex-direction: column; gap: 3rem; padding-top: 6.5rem; }
+  .logistics-card {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid var(--brand-light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  }
+  .card-header { margin-bottom: 2rem; }
+  .c-id { font-size: 0.55rem; font-weight: 800; color: var(--brand-blue); letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
+  .card-header h3 { font-size: 1.1rem; font-weight: 900; color: var(--brand-dark); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .log-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .log-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.82rem; line-height: 1.5; color: var(--brand-dark); }
+  .log-icon { color: var(--brand-blue); flex-shrink: 0; margin-top: 0.2rem; }
+  .log-icon-alt { color: var(--brand-blue); opacity: 0.5; flex-shrink: 0; margin-top: 0.2rem; }
+
+  /* Mission CTA */
+  .mission-cta {
+    background: var(--brand-dark);
+    color: white;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-status { font-size: 0.6rem; font-weight: 900; color: var(--brand-blue); letter-spacing: 2px; display: block; margin-bottom: 1.5rem; }
+  .mission-cta h3 { font-size: 1.6rem; font-weight: 900; margin-bottom: 1rem; }
+  .mission-cta p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 2rem; line-height: 1.6; }
+
+  .btn-tactical {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: var(--brand-blue);
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  .btn-tactical:hover { background: #0047cc; transform: translateY(-3px); }
+
+  /* Booking Form Styling */
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .form-group label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--brand-blue);
+  }
+
+  .form-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1rem;
+    color: white;
+    font-size: 0.85rem;
+    font-family: inherit;
+    border-radius: 2px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .form-group input:focus {
+    border-color: var(--brand-blue);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Adjust date input icon color for dark background */
+  .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    .details-layout { grid-template-columns: 1fr; gap: 4rem; }
+    .waypoint-item { gap: 1.5rem; }
+    .path-timeline::before { left: 25px; }
+    .logistics-sidebar { padding-top: 0; }
+  }
+
+  /* Timeline End Decoration */
+  .timeline-end {
+    margin-top: 2rem;
+    padding-left: 45px; /* Matches marker center */
+    position: relative;
+  }
+  .end-mark {
+    width: 250px;
+    height: 60px;
+    border-left: 2px solid var(--brand-light);
+    border-bottom: 2px solid var(--brand-light);
+    position: relative;
+  }
+  .end-mark::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -5px;
+    width: 10px; height: 2px;
+    background: var(--brand-light);
+  }
+  .end-text {
+    position: absolute;
+    bottom: -20px;
+    left: 45px;
+    font-size: 0.55rem;
+    font-weight: 800;
+    color: var(--brand-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
   }
 </style>

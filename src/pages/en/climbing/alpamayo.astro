@@ -1,0 +1,633 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import RecommendedTours from '../../../components/RecommendedTours.astro';
+import TourGallery from '../../../components/TourGallery.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'HUARAZ (3100M) – CASHAPAMPA – LLAMACORAL (3760M)',
+    content: 'Departure at 7:00 am from Huaraz to Cashapampa (2900m). Meet the donkey drivers and start the hike to Llamacoral (3760m) following the Yurakmayu river.',
+    stats: { time: '3h Trans / 5h Hike', alt: '3760m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'LLAMACORAL (3760M) – ALPAMAYO BASE CAMP (4350M)',
+    content: 'Hike through the Santa Cruz valley, passing Jatuncocha lagoon. Enter the base camp through Arhuaycocha ravine.',
+    stats: { time: '5-6h Hike', alt: '4350m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'BASE CAMP (4350M) – HIGH CAMP (5450M)',
+    content: 'Ascend to the high camp. Technical ascent through the glacier moraine to reach the camp at 5450m.',
+    stats: { time: '6-7h Ascent', alt: '5450m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'HIGH CAMP (5450M) – ALPAMAYO SUMMIT (5947M)',
+    content: 'Summit day. Technical climbing on ice walls (60° to 90°). Reach the peak and enjoy the reward. Rappel down 7-8 lengths back to high camp.',
+    stats: { time: '10-11h Jornada', alt: '5947m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'HIGH CAMP (5450M) – BASE CAMP (4350M)',
+    content: 'Descend back to base camp, including a 40-50m rappel section. Crossing the glacier and moraine.',
+    stats: { time: '6-7h Descent', alt: '4350m' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'BASE CAMP (4350M) – CASHAPAMPA (2900M) – HUARAZ',
+    content: 'Final descent to Cashapampa village. Private transport back to Huaraz city.',
+    stats: { time: 'Return', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Transfer bus terminal - hotel in Huaraz',
+  'Expedition briefing at the office',
+  'Cordillera Blanca Entrance Tickets (HNP)',
+  'Private transport Huaraz - Cashapampa - Huaraz',
+  'UIAGM Certified Guide (International)',
+  'Certified HNP Cook',
+  'Porter for equipment to High Camp',
+  'Full meals during the expedition',
+  'Camping equipment and personal tent',
+  'Ropes and snow stakes',
+  'Personal utensils, tables and chairs',
+  'Donkeys and driver for logistics to Base Camp',
+  'Walkie-talkies and First Aid kit'
+];
+
+const excludes = [
+  'International and domestic flights',
+  'Hotels in Lima and Huaraz',
+  'Bus tickets Lima - Huaraz - Lima',
+  'Meals in cities',
+  'Previous acclimatization days',
+  'Extra porter for personal items',
+  'Sleeping bag and mat',
+  'Personal technical equipment',
+  'Mandatory mountain accident insurance',
+  'Tips'
+];
+
+const equipment = [
+  'Sleeping bag (-20°C rec.)',
+  'Mountain helmet',
+  'Fleece hat and Sun hat',
+  'Glacier glasses (Cat. 4)',
+  'Sunblock',
+  'Down jacket and Gore-Tex jacket',
+  'Thermal shirts and Waterproof pants',
+  'Technical snow gloves',
+  'Harness and technical ice axes (pair)',
+  'Double mountaineering boots and Crampons',
+  'Daypack (40L) and Duffel bag (70L)'
+];
+---
+
+<Layout title="Alpamayo Expedition 5947m | White Range | Franpisco Adventure" description="Scale the most beautiful mountain in the world. 6-day technical expedition to Alpamayo Peak in the Peruvian Andes.">
+  <section class="itinerary-hero alpamayo">
+    <div class="hero-overlay"></div>
+    <div class="container--narrow">
+      <div class="hero-content">
+        <div class="path-log">
+          <a href={getRelativeLocaleUrl(lang, 'climbing')} class="back-project">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+          </a>
+          <span class="p-base">CLIMBING</span>
+          <span class="p-divider">/</span>
+          <span class="p-base">PERU</span>
+          <span class="p-divider">/</span>
+          <span class="p-current">ALPAMAYO 5947M</span>
+        </div>
+        
+        <h1 class="split-title">
+          <span class="thin">THE MOST BEAUTIFUL MOUNTAIN</span>
+          <span class="bold">NEVADO ALPAMAYO 5947M</span>
+        </h1>
+
+        <div class="metrics-bar">
+          <div class="metric">
+            <span class="m-label">DURATION</span>
+            <span class="m-value">06 DAYS</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">MAX ALTITUDE</span>
+            <span class="m-value">5,947 MSNM</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">DIFFICULTY</span>
+            <span class="m-value">
+              <span class="dif-tag hard">TECHNICAL</span>
+            </span>
+          </div>
+          <div class="metric">
+            <span class="m-label">COST</span>
+            <span class="m-value">USD 1,950.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-intro">
+    <div class="container--narrow">
+      <div class="dossier-layout">
+        <div class="dossier-sidebar">
+          <span class="vertical-label">TECHNICAL DOSSIER</span>
+        </div>
+        
+        <div class="dossier-content">
+          <div class="dossier-header">
+            <span class="log-id">LOG: CLB-ALP-06</span>
+            <h2 class="dossier-title">The Pyramid of <span class="blue">Ice</span></h2>
+          </div>
+          
+          <p class="dossier-p">Alpamayo Mountain with a height of 5,947 masl. located in the Peruvian Andes - Cordillera Blanca, within the Huascarán National Park. It is considered the most beautiful mountain in the world since it was consecrated in a scenic photography contest organized by the Alpinism magazine in Munich in May 1966.</p>
+          <p class="dossier-p">Since then, it is the most well-known and sought-after mountain by mountaineers worldwide. To climb this beautiful mountain, a few days of acclimatization are recommended, as well as technical climbing experience and having previously climbed a 5,000m peak to ensure proper adaptation before the expedition.</p>
+          
+          <div class="dossier-specs">
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">START POINT</span>
+                <span class="d-value">Huaraz, Peru</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">INCLINATION</span>
+                <span class="d-value">60° - 90° Wall</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">MIN GROUP</span>
+                <span class="d-value">02 Passengers</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">REQUIREMENT</span>
+                <span class="d-value">Technical Experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dossier-visual">
+          <div class="visual-frame">
+            <img src="/slider_1.png" alt="Alpamayo Peak" class="dossier-img" />
+            <div class="coordinates-overlay">
+              <span>08° 52' 45" S</span>
+              <span class="divider">|</span>
+              <span>77° 39' 12" W</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-details">
+    <div class="container--narrow">
+      <div class="details-layout">
+        <div class="path-log-container">
+          <div class="details-header-technical">
+            <span class="sub-label">EXPEDITION LOGBOOK</span>
+            <h2 class="technical-title">Ascent <span class="blue">Timeline</span></h2>
+          </div>
+
+          <div class="path-timeline">
+            {itinerary.map((item) => (
+              <div class="waypoint-item">
+                <div class="waypoint-marker">
+                  <div class="marker-box">
+                    <span class="m-day">{item.day}</span>
+                  </div>
+                  <div class="connector"></div>
+                </div>
+                
+                <div class="waypoint-content">
+                  <div class="waypoint-header">
+                    <h3 class="w-title">{item.title}</h3>
+                  </div>
+                  
+                  <p class="w-description">{item.content}</p>
+                  
+                  {item.stats && (
+                    <div class="waypoint-stats">
+                      {item.stats.alt && (
+                        <div class="w-stat">
+                          <span class="w-s-label">MASL</span>
+                          <span class="w-s-value">{item.stats.alt}</span>
+                        </div>
+                      )}
+                      {item.stats.time && (
+                        <div class="w-stat">
+                          <span class="w-s-label">DURATION</span>
+                          <span class="w-s-value">{item.stats.time}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+
+            <div class="timeline-end">
+              <div class="end-mark"></div>
+              <span class="end-text">END OF EXPEDITION</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="logistics-sidebar">
+          <div class="logistics-card">
+            <div class="card-header">
+              <span class="c-id">MOD: LOG-INC</span>
+              <h3>What's Included</h3>
+            </div>
+            <ul class="log-list">
+              {includes.map(inc => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{inc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="logistics-card secondary">
+            <div class="card-header">
+              <span class="c-id">MOD: TECH-EQ</span>
+              <h3>Required Equipment</h3>
+            </div>
+            <ul class="log-list">
+              {equipment.map(item => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon-blue"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mission-cta">
+            <div class="cta-inner">
+              <span class="cta-status">SUMMIT MISSION</span>
+              <h3>Start Your Expedition</h3>
+              <p>Book your spot on the most iconic expedition in the Andes. Our UIAGM technical command ensures maximum safety.</p>
+              
+              <form class="booking-form" id="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="approx-date">ESTIMATED DATE</label>
+                    <input type="date" id="approx-date" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="full-name">FULL NAME</label>
+                    <input type="text" id="full-name" placeholder="Your name" required />
+                  </div>
+                </div>
+                <button type="submit" class="btn-tactical">
+                  {t('trekking.book')}
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    lang={lang}
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <RecommendedTours currentId="alpamayo-clb" />
+</Layout>
+
+<script>
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const date = (document.getElementById('approx-date') as HTMLInputElement).value;
+    const name = (document.getElementById('full-name') as HTMLInputElement).value;
+    const tourName = "ALPAMAYO EXPEDITION 5947M";
+    
+    const message = `Hi Franpisco Adventure! I want to book my spot for the expedition: ${tourName}. My details:\n\n- Name: ${name}\n- Date: ${date}`;
+    const whatsappUrl = `https://wa.me/51962421830?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  });
+</script>
+
+<style>
+  .itinerary-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_5.png') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-top: 5rem;
+  }
+  .itinerary-hero.alpamayo { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_5.png'); }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(3,4,5,0.95), rgba(3,4,5,0.2) 40%, rgba(3,4,5,0.95));
+    z-index: 1;
+  }
+
+  .container--narrow {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .path-log {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+
+  .back-project {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 0.5rem;
+  }
+  .back-project:hover {
+    background: #0090cc;
+    border-color: #0090cc;
+    transform: translateX(-5px);
+  }
+
+  .p-divider { color: rgba(255,255,255,0.2); font-weight: 300; }
+  .p-current { color: #0090cc; }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.5rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    font-weight: 200;
+    letter-spacing: 8px;
+    opacity: 0.8;
+  }
+  .split-title .bold {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .metrics-bar {
+    display: flex;
+    gap: 4rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+
+  .metric { display: flex; flex-direction: column; gap: 0.5rem; }
+  .m-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #94a3b8;
+  }
+  .m-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+  .dif-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+  .dif-tag.hard { background: #fee2e2; color: #ef4444; border: 1px solid #fecaca; }
+
+  .itinerary-intro {
+    padding: 10rem 0;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .dossier-layout {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .vertical-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+
+  .log-id {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0090cc;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .dossier-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: #030405;
+    margin-bottom: 2.5rem;
+  }
+  .dossier-title .blue { color: #0090cc; }
+
+  .dossier-p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #475569;
+    margin-bottom: 4rem;
+    max-width: 550px;
+  }
+
+  .dossier-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .d-spec { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .d-icon { color: #0090cc; opacity: 0.6; margin-top: 0.2rem; }
+  .d-info { display: flex; flex-direction: column; gap: 0.4rem; }
+  .d-label { font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 1.5px; }
+  .d-value { font-size: 0.95rem; font-weight: 700; color: #030405; }
+
+  .visual-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  }
+  .dossier-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .coordinates-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(3,4,5,0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .itinerary-details { padding: 8rem 0 4rem; background: #fafafa; border-top: 1px solid #e2e8f0; }
+  .details-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+
+  .sub-label { font-size: 0.6rem; font-weight: 800; color: #0090cc; margin-bottom: 0.5rem; display: block; }
+  .technical-title { font-size: 2.2rem; font-weight: 900; color: #030405; margin-bottom: 2rem; letter-spacing: -1px; }
+  .technical-title .blue { color: #0090cc; }
+
+  .path-timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
+  .path-timeline::before {
+    content: '';
+    position: absolute;
+    left: 45px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #0090cc, #94a3b8, #94a3b8);
+  }
+
+  .waypoint-item { display: flex; gap: 1.5rem; margin-bottom: 4rem; position: relative; }
+  .waypoint-marker { position: relative; z-index: 2; flex-shrink: 0; }
+  .marker-box {
+    width: 90px;
+    height: 40px;
+    background: white;
+    border: 2px solid #030405;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .m-day { font-size: 0.75rem; font-weight: 900; color: #030405; }
+
+  .w-title { font-size: 1.15rem; font-weight: 800; color: #030405; margin-bottom: 0.8rem; }
+  .w-description { font-size: 0.88rem; line-height: 1.8; color: #475569; margin-bottom: 1rem; }
+
+  .waypoint-stats { display: flex; gap: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+  .w-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .w-s-label { font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 1px; }
+  .w-s-value { font-size: 0.75rem; font-weight: 700; color: #030405; }
+
+  .logistics-sidebar { display: flex; flex-direction: column; gap: 3rem; padding-top: 6.5rem; }
+  .logistics-card { background: white; padding: 2.5rem; border: 1px solid #e2e8f0; }
+  .log-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .log-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.82rem; color: #475569; }
+  .log-icon { color: #0090cc; flex-shrink: 0; margin-top: 0.2rem; }
+  .log-icon-blue { color: #0090cc; flex-shrink: 0; margin-top: 0.2rem; }
+
+  .mission-cta { background: #030405; color: white; padding: 3rem; }
+  .cta-status { font-size: 0.6rem; font-weight: 900; color: #0090cc; letter-spacing: 2px; display: block; margin-bottom: 1.5rem; }
+  .mission-cta h3 { font-size: 1.6rem; font-weight: 900; margin-bottom: 1rem; }
+  .mission-cta p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 2rem; }
+
+  .btn-tactical {
+    width: 100%;
+    background: #0090cc;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-tactical:hover { background: #0070a0; }
+
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; font-size: 0.6rem; font-weight: 800; color: #0090cc; margin-bottom: 0.5rem; }
+  .form-group input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.8rem;
+    color: white;
+    outline: none;
+  }
+
+  @media (max-width: 1024px) {
+    .dossier-layout { grid-template-columns: 1fr; }
+    .details-layout { grid-template-columns: 1fr; }
+    .logistics-sidebar { padding-top: 0; }
+  }
+</style>

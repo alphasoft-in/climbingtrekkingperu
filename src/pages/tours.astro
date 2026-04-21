@@ -1,262 +1,312 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const tours = [
+  {
+    id: 'laguna-paron',
+    title: t('tours.huaraz.paron.name'),
+    description: t('tours.huaraz.paron.desc'),
+    image: '/slider_2.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/laguna-paron',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'laguna-llanganuco',
+    title: t('tours.huaraz.llanganuco.name'),
+    description: t('tours.huaraz.llanganuco.desc'),
+    image: '/slider_1.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/laguna-llanganuco',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'trekking-69',
+    title: t('tours.huaraz.69.name'),
+    description: t('tours.huaraz.69.desc'),
+    image: '/slider_3.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus',
+    path: 'tours/trekking-69',
+    prefix: 'HZ',
+    type: 'TREKKING FD'
+  },
+  {
+    id: 'laguna-rocotuyoc',
+    title: t('tours.huaraz.rocotuyoc.name'),
+    description: t('tours.huaraz.rocotuyoc.desc'),
+    image: '/slider_4.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/laguna-rocotuyoc',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'pastoruri',
+    title: t('tours.huaraz.pastoruri.name'),
+    description: t('tours.huaraz.pastoruri.desc'),
+    image: '/slider_2.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/pastoruri',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'chavin-huantar',
+    title: t('tours.huaraz.chavin.name'),
+    description: t('tours.huaraz.chavin.desc'),
+    image: '/slider_1.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/chavin-huantar',
+    prefix: 'HZ',
+    type: 'CULTURAL TOUR'
+  },
+  {
+    id: 'chacas',
+    title: t('tours.huaraz.chacas.name'),
+    description: t('tours.huaraz.chacas.desc'),
+    image: '/slider_4.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/chacas',
+    prefix: 'HZ',
+    type: 'SCENIC TOUR'
+  },
+  {
+    id: 'trekking-churup',
+    title: t('tours.huaraz.churup.name'),
+    description: t('tours.huaraz.churup.desc'),
+    image: '/slider_2.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus',
+    path: 'tours/trekking-churup',
+    prefix: 'HZ',
+    type: 'TREKKING FD'
+  },
+  {
+    id: 'arequipa-volcanes',
+    title: t('arequipa.prog1.name'),
+    description: t('arequipa.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `7 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'trekking/arequipa/arequipa-volcanes',
+    prefix: 'AQP',
+    type: 'VOLCANIC EXPEDITION'
+  },
+  {
+    id: 'ica-paracas',
+    title: t('ica.prog1.name'),
+    description: t('ica.prog1.desc'),
+    image: '/slider_1.png',
+    duration: `3 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/ica-paracas',
+    prefix: 'ICA',
+    type: 'COASTAL EXPEDITION'
+  },
+  {
+    id: 'selva-tambopata',
+    title: t('selva.prog1.name'),
+    description: t('selva.prog1.desc'),
+    image: '/slider_4.png',
+    duration: `3 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/selva-tambopata',
+    prefix: 'MDD',
+    type: 'AMAZON EXPEDITION'
+  },
+  {
+    id: 'iquitos-amazonas',
+    title: t('iquitos.prog1.name'),
+    description: t('iquitos.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `2 - 5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/iquitos-amazonas',
+    prefix: 'IQT',
+    type: 'RIVER EXPEDITION'
+  },
+  {
+    id: 'lima-city',
+    title: t('lima.prog1.name'),
+    description: t('lima.prog1.desc'),
+    image: '/slider_3.png',
+    duration: `4 ${t('trekking.hours')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/lima-city',
+    prefix: 'LIM',
+    type: 'CITY EXPEDITION'
+  },
+  {
+    id: 'lima-pachacamac',
+    title: t('lima.prog2.name'),
+    description: t('lima.prog2.desc'),
+    image: '/slider_1.png',
+    duration: `8 ${t('trekking.hours')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy',
+    path: 'tours/lima-pachacamac',
+    prefix: 'LIM',
+    type: 'ARCHAEOLOGICAL EXPEDITION'
+  },
+  {
+    id: 'maravillas-peru-17d',
+    title: t('tours.vip.name'),
+    description: t('tours.vip.desc'),
+    image: '/trekking/huayhuash/clasico.jpeg',
+    duration: `17 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    path: 'tours/maravillas-peru-17d',
+    prefix: 'PER',
+    type: 'GRAND EXPEDITION'
+  }
+];
 ---
 
-<Layout 
-	title="Tours Cinematográficos - Franpisco Adventure"
-	description="Revisa el increíble catálogo de asaltos montañeros visual a nevados colosales en el majestuoso ande suramericano."
->
-	<section class="cinematic-section tours-hero-bg">
-		<div class="watermark-text" style="top:25%;">TREKKING</div>
-		
-		<div class="glass-container">
-			<div class="section-header-epic center-epic">
-				<h1 class="epic-title">RUTAS Y<br/><span class="text-accent">CONQUISTAS</span></h1>
-				<div class="laser-divider center"></div>
-				<p class="epic-subtitle">Elige en tu destino el temible asalto y batifondo que desafiará a tu ser y espíritu vivo terrenal.</p>
-			</div>
-			
-			<div class="posters-grid">
-				<!-- Poster 1: Inca -->
-				<article class="epic-poster tour-inca">
-					<div class="poster-overlay">
-                        <div class="poster-badges">
-                            <span class="p-badge b-gold">Ruta Ancestral Fuerte</span>
-                            <span class="p-badge b-green">4 DÍAS MÁGICA - INTERMEDIO FÍSICO</span>
-                        </div>
-                        <div class="poster-text">
-                            <h3>Camino Inca Clásico a la Ciudadela</h3>
-                            <p>Trekking enigmático y sagrado. 4 impresionantes días de caminata mágica sudamericana sobre rocas incas puras y húmedo y crudo bosque peruano nuboso y nativo.</p>
-                            <a href="/contact" class="btn-epic">Solicitar Gran Invasión ➔</a>
-                        </div>
-                    </div>
-				</article>
+<Layout title={`${t('nav.tours')} - Franpisco Adventure`} description="Explora nuestras expediciones culturales y tours exclusivos en las regiones más emblemáticas del Perú.">
+  <section class="tours-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-meta">PROGRAM CATALOG // 2024</div>
+      <h1 class="split-title">
+        <span class="thin">EXPLORA NUESTROS</span>
+        <span class="bold">TOURS Y EXPEDICIONES</span>
+      </h1>
+      <div class="blue-line"></div>
+    </div>
+  </section>
 
-				<!-- Poster 2: QD -->
-				<article class="epic-poster tour-qo">
-					<div class="poster-overlay">
-                        <div class="poster-badges">
-                            <span class="p-badge b-blue">Ruinas Fantasmas Vírgenes Perdidas</span>
-                            <span class="p-badge b-green">1 A 2 DÍAS LIGEROS MAGICOS - BAJA</span>
-                        </div>
-                        <div class="poster-text">
-                            <h3>Línea Magisterial Secreta a Huchuy Qosqo</h3>
-                            <p>El silencio prístino de Sudamérica antigua. Senderos olvidados ricos e indomablemente secretos cruzando montañas rocosas vacías prístinas rumbo a santuarios gigantes incas limpios perdidos.</p>
-                            <a href="/contact" class="btn-epic">Explorar el Sendero ➔</a>
-                        </div>
-                    </div>
-				</article>
-
-                <!-- Poster 3: Ice -->
-				<article class="epic-poster tour-ice">
-					<div class="poster-overlay">
-                        <div class="poster-badges">
-                            <span class="p-badge b-ice">Letal Frio Andino Peruano</span>
-                            <span class="p-badge b-red">Glacial Alto (5,200 msnm)</span>
-                        </div>
-                        <div class="poster-text">
-                            <h3>Asedio al Macizo Fuerte Pastoruri</h3>
-                            <p>Aventura técnica indomable a 5mil en la inmaculada brutal gigante Cordillera Blanca Peruana nevada. Exigencia altísima letal viva y un increíble cara a cara monumental gélido helado andino sagrado duro puro con los hielos mágicos puros sagrados sur de vida y muerte.</p>
-                            <a href="/contact" class="btn-epic">Enlistar Supervivencia ➔</a>
-                        </div>
-                    </div>
-				</article>
-
-                <!-- Poster 4: Brutal -->
-				<article class="epic-poster tour-epic">
-					<div class="poster-overlay">
-                        <div class="poster-badges">
-                            <span class="p-badge b-blood">Gigantesca Épica Total Colosal (Top 3)</span>
-                            <span class="p-badge b-black">SUPERVIVENCIA DURA ROTUNDA 100%</span>
-                        </div>
-                        <div class="poster-text">
-                            <h3>Circuito Supremo Máster Total Fuerte: Huayhuash</h3>
-                            <p>Basta rudeza majestuosidad brutal inquebrantable indomable letal del fin. Entre 8 a increíbles puros 13 duros letales grandes crudos de aislamiento extremo, picos majestuosos infinitos gélidos mortales puros fríos duros.</p>
-                            <a href="/contact" class="btn-epic">Someter Máximo Reto ➔</a>
-                        </div>
-                    </div>
-				</article>
-			</div>
-		</div>
-	</section>
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {tours.map((tour) => (
+          <TourCard 
+            id={tour.id}
+            title={tour.title}
+            description={tour.description}
+            image={tour.image}
+            duration={tour.duration}
+            difficulty={tour.difficulty}
+            difficultyLevel={tour.difficultyLevel as any}
+            path={tour.path}
+            prefix={tour.prefix}
+            type={tour.type}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-	/* CINEMATIC BASE STYLES */
-	.cinematic-section {
-		position: relative;
-		min-height: calc(100vh - 80px); /* Ocupa hasta abajo del navbar */
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		padding: clamp(3rem, 5vw, 6rem) clamp(1rem, 4vw, 3rem);
-		color: #ffffff;
-	}
+  .tours-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background: #06090f url('/slider_4.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
 
-	/* Gradiente de Montaña de Noche */
-	.tours-hero-bg {
-		background: #06090f; /* Negro Abismo */
-		background-image: 
-			radial-gradient(ellipse at top right, rgba(14, 165, 233, 0.1) 0%, transparent 60%),
-			radial-gradient(ellipse at bottom left, rgba(125, 211, 252, 0.05) 0%, transparent 60%);
-	}
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+      rgba(6, 9, 15, 0.9) 0%, 
+      rgba(6, 9, 15, 0.4) 50%, 
+      rgba(6, 9, 15, 0.9) 100%);
+    z-index: 1;
+  }
 
-	.watermark-text {
-		position: absolute;
-		top: 30%;
-		left: 10%;
-		font-size: clamp(10rem, 30vw, 30rem);
-		font-weight: 900;
-		color: rgba(255, 255, 255, 0.015);
-		letter-spacing: -5px;
-		z-index: 1;
-		pointer-events: none;
-		line-height: 1;
-		white-space: nowrap;
-		user-select: none;
-	}
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
 
-	.glass-container {
-		position: relative;
-		z-index: 5;
-		max-width: 1600px;
-		margin: 0 auto;
-		width: 100%;
-	}
+  .hero-meta {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+  }
 
-	.section-header-epic.center-epic {
-		text-align: center;
-		margin: 0 auto clamp(3rem, 6vw, 5rem) auto;
-		max-width: 900px;
-	}
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .split-title .bold {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
 
-	.epic-title {
-		font-size: clamp(2.5rem, 6vw, 4.5rem);
-		font-weight: 900;
-		margin: 0;
-		line-height: 1.05;
-		text-transform: uppercase;
-		letter-spacing: -1px;
-		color: #e2e8f0;
-	}
+  .blue-line {
+    width: 80px;
+    height: 4px;
+    background: var(--brand-blue);
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 20px rgba(0, 144, 204, 0.4);
+  }
 
-	.text-accent {
-		color: #38bdf8;
-		text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-	}
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
 
-	.laser-divider.center { 
-		height: 3px;
-        margin: 1.5rem auto; 
-        background: linear-gradient(90deg, transparent, #38bdf8, transparent); 
-        width: clamp(100px, 20vw, 250px); 
-    }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
 
-	.epic-subtitle {
-		font-size: clamp(1.1rem, 2vw, 1.4rem);
-		color: #94a3b8;
-		font-weight: 300;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-        line-height: 1.6;
-	}
-
-	/* CINEMATIC POSTERS GRID */
-	.posters-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-		gap: clamp(2rem, 4vw, 3rem);
-	}
-
-	.epic-poster {
-		position: relative;
-		border-radius: 12px;
-		overflow: hidden;
-		min-height: 450px; /* Poster vertical alto de Película */
-		display: flex;
-		align-items: flex-end;
-		background: #1e293b; /* Fallback incase */
-		box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-		transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
-		cursor: pointer;
-	}
-
-    /* Simulando Imágenes de Background con CSS Oscuro Poderoso y Degradados de Color */
-    .tour-inca { background: linear-gradient(0deg, #18231c 0%, rgba(30, 41, 59, 1) 100%); } /* Tono Musgo/Ruina */
-    .tour-qo { background: linear-gradient(0deg, #171c26 0%, rgba(20, 30, 40, 1) 100%); }   /* Tono Noche Piedra */
-    .tour-ice { background: linear-gradient(0deg, #112738 0%, rgba(15, 23, 42, 1) 100%); }  /* Tono Hielo Profundo */
-    .tour-epic { background: linear-gradient(0deg, #2a0b12 0%, #0c0812 100%); }             /* Tono Aleta Sangre Extrema Top3 */
-
-	.epic-poster:hover {
-		transform: translateY(-15px) scale(1.02);
-		box-shadow: 0 20px 50px rgba(56, 189, 248, 0.15);
-	}
-
-	.poster-overlay {
-		padding: 2.5rem;
-		width: 100%;
-		background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-        height: 100%;
-	}
-
-	.poster-badges {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		margin-bottom: 1.5rem;
-	}
-
-	.p-badge {
-		font-size: 0.75rem;
-		font-weight: 800;
-		padding: 6px 14px;
-		border-radius: 4px; /* Cuadriculado Duro Película */
-		text-transform: uppercase;
-		letter-spacing: 1px;
-	}
-
-    /* Badges de Lujo */
-    .b-gold { background: rgba(202, 138, 4, 0.2); color: #fcd34d; border: 1px solid rgba(252, 211, 77, 0.3); }
-    .b-green { background: rgba(21, 128, 61, 0.2); color: #86efac; border: 1px solid rgba(134, 239, 172, 0.3); }
-    .b-blue { background: rgba(30, 58, 138, 0.3);  color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.3); }
-    .b-gray { background: rgba(71, 85, 105, 0.3); color: #cbd5e1; border: 1px solid rgba(203, 213, 225, 0.3); }
-    .b-ice { background: rgba(2, 132, 199, 0.2); color: #7dd3fc; border: 1px solid rgba(125, 211, 252, 0.3); text-shadow: 0 0 10px rgba(125,211,252, 0.5);}
-    .b-red { background: rgba(185, 28, 28, 0.2); color: #fca5a5; border: 1px solid rgba(252, 165, 165, 0.3); }
-    .b-blood { background: rgba(153, 27, 27, 0.5); color: #fecaca; border: 1px solid #ef4444; }
-    .b-black { background: rgba(0, 0, 0, 0.8); color: #ef4444; border: 1px solid #7f1d1d; }
-
-	.poster-text h3 {
-		color: #ffffff;
-		font-size: clamp(1.6rem, 2.5vw, 2rem);
-		font-weight: 800;
-		margin: 0 0 1rem 0;
-		line-height: 1.1;
-		font-family: 'Inter', sans-serif;
-	}
-
-	.poster-text p {
-		color: #94a3b8;
-		font-size: 1.05rem;
-		line-height: 1.6;
-		margin: 0 0 2rem 0;
-	}
-
-	.btn-epic {
-		display: inline-block;
-		color: #38bdf8;
-		font-size: 1.1rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		text-decoration: none;
-		letter-spacing: 2px;
-		transition: color 0.3s ease, transform 0.3s ease;
-	}
-
-	.epic-poster:hover .btn-epic {
-		color: #ffffff;
-		transform: translateX(10px);
-	}
+  @media (max-width: 768px) {
+    .tours-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
 </style>

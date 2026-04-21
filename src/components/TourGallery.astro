@@ -1,0 +1,129 @@
+---
+interface Props {
+  images?: string[];
+  lang?: string;
+}
+
+const { images = [], lang = 'es' } = Astro.props;
+---
+
+<section class="tour-gallery">
+  <div class="container--narrow">
+    <div class="gallery-header">
+      <span class="sub-label">{lang === 'es' ? 'REGISTRO VISUAL' : 'VISUAL LOG'}</span>
+      <h2 class="gallery-title">{lang === 'es' ? 'Galería de' : 'Expedition'} <span class="blue">{lang === 'es' ? 'Expedición' : 'Gallery'}</span></h2>
+    </div>
+
+    <div class="gallery-grid">
+      {images.map((img, index) => (
+        <div class={`gallery-item item-${index % 5}`}>
+          <img src={img} alt={`Expedition image ${index + 1}`} loading="lazy" />
+          <div class="item-overlay">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tour-gallery {
+    padding: 2rem 0 6rem;
+    background: #ffffff;
+  }
+
+  .container--narrow {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .gallery-header {
+    text-align: left;
+    margin-bottom: 3.5rem;
+    border-left: 3px solid var(--brand-blue);
+    padding-left: 1.5rem;
+  }
+
+  .sub-label {
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--brand-light);
+    display: block;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--brand-dark);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  .gallery-title .blue {
+    color: var(--brand-blue);
+  }
+
+  /* Cinematic Grid Layout */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #f1f5f9;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Asymmetrical Grid Pattern */
+  .item-0 { grid-column: span 2; grid-row: span 2; }
+  .item-1 { grid-column: span 2; grid-row: span 1; }
+  .item-2 { grid-column: span 1; grid-row: span 1; }
+  .item-3 { grid-column: span 1; grid-row: span 1; }
+  .item-4 { grid-column: span 2; grid-row: span 1; }
+
+  .item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 144, 204, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+    color: white;
+  }
+
+  .gallery-item:hover .item-overlay {
+    opacity: 1;
+  }
+
+  @media (max-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+    .item-0, .item-1, .item-2, .item-3, .item-4 { grid-column: span 1; grid-row: span 1; }
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>
