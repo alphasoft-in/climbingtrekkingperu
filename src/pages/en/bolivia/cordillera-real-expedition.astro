@@ -1,8 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
-import RecommendedTours from '../../../../components/RecommendedTours.astro';
-import TourGallery from '../../../../components/TourGallery.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import RecommendedTours from '../../../components/RecommendedTours.astro';
+import TourGallery from '../../../components/TourGallery.astro';
 
 const langUrl = getLangFromUrl(Astro.url);
 const t = useTranslations(langUrl);
