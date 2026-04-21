@@ -59,17 +59,6 @@ const excludes = [
     <div class="hero-overlay"></div>
     <div class="container--narrow">
       <div class="hero-content">
-        <div class="path-log">
-          <a href={getRelativeLocaleUrl(lang, 'tours')} class="back-project">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
-          </a>
-          <span class="p-base">TOURS</span>
-          <span class="p-divider">/</span>
-          <span class="p-base">IQUITOS</span>
-          <span class="p-divider">/</span>
-          <span class="p-current">AMAZON RIVER</span>
-        </div>
-        
         <h1 class="split-title">
           <span class="thin">THE LARGEST RIVER</span>
           <span class="bold">MYSTIC AMAZON 4D</span>
@@ -316,20 +305,44 @@ const excludes = [
 </script>
 
 <style>
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  
+  
+  }
   /* Same styles as ES page */
-  .itinerary-hero { position: relative; height: 60vh; min-height: 500px; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_2.png') center/cover no-repeat fixed; display: flex; align-items: center; color: white; padding-top: 5rem; }
-  .itinerary-hero.iquitos-prog { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_2.png'); }
+  .itinerary-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; position: relative; height: 60vh; min-height: 500px; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_2.png') center/cover no-repeat fixed; display: flex; align-items: center;
+    justify-content: center;
+    text-align: center;
+    justify-content: center; color: white; padding-top: 5rem; 
+    text-align: center;
+  }
+  .itinerary-hero.iquitos-prog { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_2.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,4,5,0.95), rgba(3,4,5,0.2) 40%, rgba(3,4,5,0.95)); z-index: 1; }
   .container--narrow { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  .path-log { display: flex; align-items: center; gap: 0.8rem; font-size: 0.65rem; font-weight: 800; letter-spacing: 2px; color: var(--brand-light); margin-bottom: 2rem; }
-  .back-project { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; text-decoration: none; transition: 0.3s; margin-right: 0.5rem; }
-  .back-project:hover { background: var(--brand-blue); border-color: var(--brand-blue); transform: translateX(-5px); }
-  .p-divider { color: rgba(255,255,255,0.2); font-weight: 300; }
-  .p-current { color: var(--brand-blue); }
-  .split-title { display: flex; flex-direction: column; margin-bottom: 3.5rem; }
+  .split-title {
+    align-items: center;
+    gap: 0.5rem; display: flex; flex-direction: column; margin-bottom: 3.5rem; 
+  
+  }
   .split-title .thin { font-size: clamp(0.9rem, 2.5vw, 1.3rem); font-weight: 200; letter-spacing: 8px; opacity: 0.8; }
   .split-title .bold { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -1px; line-height: 1; }
-  .metrics-bar { display: flex; gap: 4rem; padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .metrics-bar {
+    justify-content: center; display: flex; gap: 4rem; padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); 
+  
+  }
   .metric { display: flex; flex-direction: column; gap: 0.5rem; }
   .m-label { font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; color: var(--brand-light); }
   .m-value { font-size: 1rem; font-weight: 800; color: #fff; }
@@ -406,3 +419,4 @@ const excludes = [
   .end-mark { width: 12px; height: 12px; background: var(--brand-light); border: 2px solid var(--brand-dark); z-index: 2; transform: rotate(45deg); }
   .end-text { font-size: 0.65rem; font-weight: 800; color: var(--brand-light); letter-spacing: 3px; text-transform: uppercase; }
 </style>
+

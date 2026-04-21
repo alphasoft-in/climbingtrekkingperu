@@ -350,8 +350,14 @@ const equipment = [
     color: white;
     padding-top: 5rem;
     text-align: center;
+  
   }
-  .itinerary-hero.alpamayo { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_5.png'); }
+  .itinerary-hero.alpamayo { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_5.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   .hero-overlay {
     position: absolute;
@@ -373,6 +379,7 @@ const equipment = [
     flex-direction: column;
     align-items: center;
     width: 100%;
+  
   }
 
   .split-title {
@@ -380,6 +387,8 @@ const equipment = [
     flex-direction: column;
     align-items: center;
     margin-bottom: 3.5rem;
+  
+    gap: 0.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.9rem, 2.5vw, 1.3rem);
@@ -401,6 +410,7 @@ const equipment = [
     padding: 2.5rem 0;
     border-top: 1px solid rgba(255,255,255,0.1);
     flex-wrap: wrap;
+  
   }
 
   .metric { display: flex; flex-direction: column; gap: 0.5rem; }

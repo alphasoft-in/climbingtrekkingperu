@@ -1,8 +1,8 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
-import RecommendedTours from '../../components/RecommendedTours.astro';
-import TourGallery from '../../components/TourGallery.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import RecommendedTours from '../../../components/RecommendedTours.astro';
+import TourGallery from '../../../components/TourGallery.astro';
 
 const langUrl = getLangFromUrl(Astro.url);
 const t = useTranslations(langUrl);
@@ -77,17 +77,6 @@ const excludes = [
     <div class="hero-overlay"></div>
     <div class="container--narrow">
       <div class="hero-content">
-        <div class="path-log">
-          <a href={getRelativeLocaleUrl(langUrl, 'bolivia')} class="back-project">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
-          </a>
-          <span class="p-base">BOLIVIA</span>
-          <span class="p-divider">/</span>
-          <span class="p-base">GLACIER TREKKING</span>
-          <span class="p-divider">/</span>
-          <span class="p-current">COTIA TO HUAYNA</span>
-        </div>
-        
         <h1 class="split-title">
           <span class="thin">CORDILLERA REAL TRANSVERSE</span>
           <span class="bold">TREK COTIA - HUAYNA</span>
@@ -295,6 +284,10 @@ const excludes = [
 
 <style>
   .itinerary-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
     height: 70vh;
     min-height: 600px;
@@ -303,8 +296,14 @@ const excludes = [
     align-items: center;
     color: white;
     padding-top: 5rem;
+  
   }
-  .itinerary-hero.bolivia-cotia { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_3.png'); }
+  .itinerary-hero.bolivia-cotia { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_3.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   .hero-overlay {
     position: absolute;
@@ -321,44 +320,22 @@ const excludes = [
     padding: 0 2rem;
   }
 
-  .path-log {
+  .hero-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #94a3b8;
-    margin-bottom: 2rem;
+    width: 100%;
+  
   }
-
-  .back-project {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: 0.3s;
-    margin-right: 0.5rem;
-  }
-  .back-project:hover {
-    background: #0090cc;
-    border-color: #0090cc;
-    transform: translateX(-5px);
-  }
-
-  .p-divider { color: rgba(255,255,255,0.2); font-weight: 300; }
-  .p-current { color: #0090cc; }
 
   .split-title {
     display: flex;
     flex-direction: column;
     margin-bottom: 3.5rem;
+  
+    align-items: center;
+    gap: 0.5rem;
+  
   }
   .split-title .thin {
     font-size: clamp(0.9rem, 2.5vw, 1.3rem);
@@ -379,6 +356,9 @@ const excludes = [
     padding: 2.5rem 0;
     border-top: 1px solid rgba(255,255,255,0.1);
     flex-wrap: wrap;
+  
+    justify-content: center;
+  
   }
 
   .metric { display: flex; flex-direction: column; gap: 0.5rem; }
