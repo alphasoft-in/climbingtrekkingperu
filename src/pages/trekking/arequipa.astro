@@ -17,30 +17,31 @@ const programs = [
     difficultyLevel: 'hard'
   }
 ];
+import RecommendedTours from '../../components/RecommendedTours.astro';
 ---
 
 <Layout title={`${t('arequipa.title')} - Franpisco Adventure`} description={t('arequipa.subtitle')}>
-  <section class="arequipa-hero">
-    <div class="hero-overlay"></div>
+  <section class="hub-hero">
+    
+    <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <h1 class="split-title">
-        <span class="thin">EXPEDICIONES EN LA</span>
-        <span class="bold">CIUDAD BLANCA AREQUIPA</span>
+        <span class="thin">AVENTURAS</span>
+        <span class="bold">AREQUIPA</span>
       </h1>
-      
       <div class="hero-accent-bar"></div>
-
+      
       <div class="hero-side-technical">
         <div class="tech-item">
-          <label>ELEVATION</label>
-          <span>2,335 M.S.N.M.</span>
+          <label>ELEVACIÓN MÁX</label>
+          <span>6,075 M.S.N.M.</span>
         </div>
         <div class="tech-item">
-          <label>COORDINATES</label>
+          <label>COORDENADAS</label>
           <span>16°24′S 71°32′W</span>
         </div>
         <div class="tech-item">
-          <label>REGION</label>
+          <label>REGIÓN</label>
           <span>AREQUIPA / PERÚ</span>
         </div>
       </div>
@@ -67,14 +68,17 @@ const programs = [
       </div>
     </div>
   </section>
+
+  <RecommendedTours currentId="arequipa" />
 </Layout>
 
+
 <style>
-  .arequipa-hero {
+  .hub-hero {
     position: relative;
     height: 75vh;
     min-height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/slider_2.png') center/cover no-repeat;
+    background: #06090f url('/slider_5.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,17 +86,20 @@ const programs = [
     text-align: center;
   }
 
-  .hero-overlay {
+  .hero-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(3,4,5,0.8), rgba(3,4,5,0.2) 30%, rgba(3,4,5,0.8));
+    background: linear-gradient(to bottom, 
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
     z-index: 10;
-    max-width: 1200px;
+    max-width: 900px;
     padding: 0 2rem;
     margin-top: 3rem;
   }
@@ -103,16 +110,17 @@ const programs = [
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
     font-weight: 200;
-    letter-spacing: 8px;
-    opacity: 0.9;
+    letter-spacing: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
@@ -121,11 +129,10 @@ const programs = [
     width: 80px;
     height: 4px;
     background: var(--brand-red);
-    margin: 1.5rem auto 2.5rem;
+    margin:  1.2rem auto 2.5rem;
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  /* SIDE TECHNICAL DATA - CENTERED BELOW */
   .hero-side-technical {
     display: flex;
     justify-content: center;
@@ -159,12 +166,12 @@ const programs = [
   }
 
   .programs-section {
-    padding: 6rem 0;
-    background: #f8fafc;
+    padding: 8rem 0;
+    background: #ffffff;
   }
 
   .container {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
   }
@@ -176,15 +183,9 @@ const programs = [
   }
 
   @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-    .arequipa-hero {
-      height: 50vh;
-    }
-    .programs-section {
-      padding: 6rem 1.5rem;
-    }
+    .hub-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

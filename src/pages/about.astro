@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 ---
 
 <Layout 
@@ -20,15 +21,15 @@ import Layout from '../layouts/Layout.astro';
 
 				<div class="hero-side-technical">
 					<div class="tech-item">
-						<label>ELEVATION</label>
+						<label>ELEVACIÓN</label>
 						<span>3,052 M.S.N.M.</span>
 					</div>
 					<div class="tech-item">
-						<label>COORDINATES</label>
+						<label>COORDENADAS</label>
 						<span>9°31′48″S 77°31′44″W</span>
 					</div>
 					<div class="tech-item">
-						<label>FOUNDED</label>
+						<label>FUNDADA</label>
 						<span>EST. 2015 / PERÚ</span>
 					</div>
 				</div>
@@ -41,18 +42,18 @@ import Layout from '../layouts/Layout.astro';
 			<!-- REFINED ARCHITECTURAL HEADER -->
 			<div class="about-header">
 				<div class="ah-left">
-					<span class="ah-meta">ESTABLISHED / 2015</span>
+					<span class="ah-meta">ESTABLECIDO / 2015</span>
 					<h2 class="ah-main-title">El Origen del <br/><strong>Ascenso</strong></h2>
 				</div>
 				<div class="ah-right technical-details-box">
 					<div class="narrative-meta">
 						<div class="meta-box">
-							<label>BASE HQ</label>
+							<label>SEDE CENTRAL</label>
 							<span>HUARAZ, PERÚ</span>
 						</div>
 						<div class="meta-box">
 							<label>ACREDITACIÓN</label>
-							<span>UIAGM CERTIFIED</span>
+							<span>CERTIFICADO UIAGM</span>
 						</div>
 					</div>
 				</div>
@@ -89,6 +90,8 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 	</section>
+
+  <RecommendedTours currentId="about" />
 </Layout>
 
 <style>

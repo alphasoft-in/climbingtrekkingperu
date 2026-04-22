@@ -87,6 +87,7 @@ const equipment = [
           <span class="thin">BALCONY OF THE ANDES</span>
           <span class="bold">NEVADO PISCO 5752M</span>
         </h1>
+        <div class="hero-accent-bar"></div>
 
         <div class="metrics-bar">
           <div class="metric">
@@ -121,7 +122,7 @@ const equipment = [
         
         <div class="dossier-content">
           <div class="dossier-header">
-            <span class="log-id">LOG: CLB-PIS-05</span>
+            <span class="log-id">CÓDIGO: CLB-PIS-05</span>
             <h2 class="dossier-title">El Balcón de los <span class="blue">Andes</span></h2>
           </div>
           
@@ -238,7 +239,7 @@ const equipment = [
         <aside class="logistics-sidebar">
           <div class="logistics-card">
             <div class="card-header">
-              <span class="c-id">MOD: LOG-INC</span>
+              <span class="c-id">REF: SRV-INC</span>
               <h3>Qué Incluye</h3>
             </div>
             <ul class="log-list">
@@ -253,7 +254,7 @@ const equipment = [
           
           <div class="logistics-card secondary">
             <div class="card-header">
-              <span class="c-id">MOD: TECH-EQ</span>
+              <span class="c-id">REF: EQP-TCN</span>
               <h3>Equipo Requerido</h3>
             </div>
             <ul class="log-list">
@@ -372,19 +373,19 @@ const equipment = [
   .split-title {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3.5rem;
+    margin-bottom:  1.5rem;
   
     align-items: center;
     gap: 0.5rem;
   }
   .split-title .thin {
-    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     font-weight: 200;
     letter-spacing: 8px;
     opacity: 0.8;
   }
   .split-title .bold {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
     line-height: 1;
@@ -393,7 +394,7 @@ const equipment = [
   .metrics-bar {
     display: flex;
     gap: 4rem;
-    padding: 2.5rem 0;
+    padding:  1.5rem 0;
     border-top: 1px solid rgba(255,255,255,0.1);
     flex-wrap: wrap;
   
@@ -593,4 +594,13 @@ const equipment = [
     .details-layout { grid-template-columns: 1fr; }
     .logistics-sidebar { padding-top: 0; }
   }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
 </style>

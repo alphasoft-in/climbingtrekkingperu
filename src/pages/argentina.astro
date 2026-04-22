@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
 import TourCard from '../components/TourCard.astro';
 
@@ -17,22 +18,36 @@ const argentinaPrograms = [
     difficultyLevel: 'hard' as const,
     path: 'argentina/aconcagua',
     prefix: 'ARG',
-    type: 'HIGH ALTITUDE EXPEDITION'
+    type: 'EXPEDICIÓN DE ALTA MONTAÑA'
   }
 ];
 ---
 
 <Layout title={`Argentina - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora los Andes Argentinos con Franpisco Adventure. Expediciones al Aconcagua, el techo de América, con logística de primer nivel y guías expertos.">
   <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
-      <div class="hero-meta">REGIONAL HUB // ARGENTINA</div>
       <h1 class="split-title">
         <span class="thin">DESTINOS</span>
         <span class="bold">ARGENTINA</span>
       </h1>
-      <div class="blue-line"></div>
-      <p class="hero-subtitle">Conquista las cumbres más altas de Sudamérica en el corazón de los Andes centrales.</p>
+      <div class="hero-accent-bar"></div>
+      
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>ELEVACIÓN MÁX</label>
+          <span>6,962 M.S.N.M.</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDENADAS</label>
+          <span>32°39′S 70°00′W</span>
+        </div>
+        <div class="tech-item">
+          <label>REGIÓN</label>
+          <span>ANDES / ARGENTINA</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -56,14 +71,16 @@ const argentinaPrograms = [
       </div>
     </div>
   </section>
+  <RecommendedTours />
 </Layout>
+
 
 <style>
   .hub-hero {
     position: relative;
-    height: 60vh;
+    height: 75vh;
     min-height: 500px;
-    background: #06090f url('/slider_2.png') center/cover no-repeat;
+    background: #06090f url('/slider_3.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,9 +92,9 @@ const argentinaPrograms = [
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
@@ -89,51 +106,65 @@ const argentinaPrograms = [
     margin-top: 3rem;
   }
 
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
-  }
-
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
-    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     font-weight: 200;
     letter-spacing: 12px;
     opacity: 0.8;
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
 
-  .blue-line {
+  .hero-accent-bar {
     width: 80px;
     height: 4px;
-    background: var(--brand-blue);
-    margin: 0 auto 2.5rem;
-    box-shadow: 0 0 20px rgba(0, 144, 204, 0.4);
+    background: var(--brand-red);
+    margin:  1.2rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  .hero-subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    max-width: 650px;
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+  }
+
+  .tech-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter', sans-serif;
   }
 
   .programs-section {
@@ -147,9 +178,16 @@ const argentinaPrograms = [
     padding: 0 40px;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     .hub-hero { height: 50vh; }
     .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

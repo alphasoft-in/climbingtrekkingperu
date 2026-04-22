@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
 import TourCard from '../components/TourCard.astro';
 
@@ -17,7 +18,7 @@ const climbingPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/alpamayo',
     prefix: 'CLB',
-    type: 'TECHNICAL EXPEDITION'
+    type: 'EXPEDICIÓN TÉCNICA'
   },
   {
     id: 'chopicallqui',
@@ -29,7 +30,7 @@ const climbingPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/chopicallqui',
     prefix: 'CLB',
-    type: 'TECHNICAL ASCENT'
+    type: 'ASCENSIÓN TÉCNICA'
   },
   {
     id: 'huascaran',
@@ -41,7 +42,7 @@ const climbingPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/huascaran',
     prefix: 'CLB',
-    type: 'TECHNICAL EXPEDITION'
+    type: 'EXPEDICIÓN TÉCNICA'
   },
   {
     id: 'pisco',
@@ -53,7 +54,7 @@ const climbingPrograms = [
     difficultyLevel: 'mod',
     path: 'climbing/pisco',
     prefix: 'CLB',
-    type: 'ACCLIMATIZATION + CLIMB'
+    type: 'ACLIMATACIÓN + ESCALADA'
   },
   {
     id: 'ishinca-valley',
@@ -65,7 +66,7 @@ const climbingPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/ishinca-valley',
     prefix: 'CLB',
-    type: 'TECHNICAL TRILOGY'
+    type: 'TRILOGÍA TÉCNICA'
   },
   {
     id: 'prep-package',
@@ -77,7 +78,7 @@ const climbingPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/prep-package',
     prefix: 'CLB',
-    type: 'TECHNICAL TRAINING'
+    type: 'ENTRENAMIENTO TÉCNICO'
   },
   {
     id: 'artesonraju',
@@ -89,21 +90,36 @@ const climbingPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/artesonraju',
     prefix: 'CLB',
-    type: 'ELITE EXPEDITION'
+    type: 'EXPEDICIÓN ÉLITE'
   }
 ];
 ---
 
 <Layout title={`${t('nav.climbing')} - Franpisco Adventure`} description="Expediciones técnicas de alta montaña en la Cordillera Blanca y Huayhuash. Cumbre el Alpamayo, Huascarán y más con guías UIAGM.">
   <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
-      <div class="hero-meta">MOUNTAINEERING // HIGH ALTITUDE</div>
       <h1 class="split-title">
-        <span class="thin">EXPEDICIONES DE</span>
-        <span class="bold">ALTA MONTAÑA Y ESCALADA</span>
+        <span class="thin">EXPEDICIONES</span>
+        <span class="bold">CLIMBING</span>
       </h1>
-      <div class="blue-line"></div>
+      <div class="hero-accent-bar"></div>
+      
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>ELEVACIÓN MÁX</label>
+          <span>6,962 M.S.N.M.</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDENADAS</label>
+          <span>9°08′S 77°36′W</span>
+        </div>
+        <div class="tech-item">
+          <label>REGIÓN</label>
+          <span>ANDES / GLOBAL</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -127,14 +143,16 @@ const climbingPrograms = [
       </div>
     </div>
   </section>
+  <RecommendedTours />
 </Layout>
+
 
 <style>
   .hub-hero {
     position: relative;
-    height: 60vh;
+    height: 75vh;
     min-height: 500px;
-    background: #06090f url('/slider_5.png') center/cover no-repeat;
+    background: #06090f url('/slider_3.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,9 +164,9 @@ const climbingPrograms = [
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
@@ -160,21 +178,13 @@ const climbingPrograms = [
     margin-top: 3rem;
   }
 
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
-  }
-
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
@@ -184,17 +194,49 @@ const climbingPrograms = [
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
 
-  .blue-line {
+  .hero-accent-bar {
     width: 80px;
     height: 4px;
-    background: var(--brand-blue);
-    margin: 0 auto 2.5rem;
-    box-shadow: 0 0 20px rgba(0, 144, 204, 0.4);
+    background: var(--brand-red);
+    margin:  1.2rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+  }
+
+  .tech-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter', sans-serif;
   }
 
   .programs-section {
@@ -208,9 +250,16 @@ const climbingPrograms = [
     padding: 0 40px;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     .hub-hero { height: 50vh; }
     .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

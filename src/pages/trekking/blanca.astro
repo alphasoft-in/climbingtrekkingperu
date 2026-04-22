@@ -48,29 +48,31 @@ const programs = [
     path: 'trekking/blanca/circuito'
   }
 ];
+import RecommendedTours from '../../components/RecommendedTours.astro';
 ---
 
 <Layout title={`${t('nav.blanca')} - Franpisco Adventure`} description={t('blanca.subtitle')}>
   <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <h1 class="split-title">
-        <span class="thin">EXPEDICIONES EN LA</span>
-        <span class="bold">CORDILLERA BLANCA</span>
+        <span class="thin">AVENTURAS</span>
+        <span class="bold">TREKKING BLANCA</span>
       </h1>
       <div class="hero-accent-bar"></div>
-
+      
       <div class="hero-side-technical">
         <div class="tech-item">
-          <label>MAX ELEVATION</label>
+          <label>ELEVACIÓN MÁX</label>
           <span>6,768 M.S.N.M.</span>
         </div>
         <div class="tech-item">
-          <label>COORDINATES</label>
+          <label>COORDENADAS</label>
           <span>9°07′S 77°36′W</span>
         </div>
         <div class="tech-item">
-          <label>REGION</label>
+          <label>REGIÓN</label>
           <span>ANCASH / PERÚ</span>
         </div>
       </div>
@@ -97,7 +99,10 @@ const programs = [
       </div>
     </div>
   </section>
+
+  <RecommendedTours currentId="blanca" />
 </Layout>
+
 
 <style>
   .hub-hero {
@@ -116,9 +121,9 @@ const programs = [
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
@@ -130,21 +135,13 @@ const programs = [
     margin-top: 3rem;
   }
 
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
-  }
-
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
@@ -154,7 +151,7 @@ const programs = [
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
@@ -163,11 +160,10 @@ const programs = [
     width: 80px;
     height: 4px;
     background: var(--brand-red);
-    margin: 1.5rem auto 2.5rem;
+    margin:  1.2rem auto 2.5rem;
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  /* SIDE TECHNICAL DATA - CENTERED BELOW */
   .hero-side-technical {
     display: flex;
     justify-content: center;
@@ -211,9 +207,16 @@ const programs = [
     padding: 0 40px;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     .hub-hero { height: 50vh; }
     .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

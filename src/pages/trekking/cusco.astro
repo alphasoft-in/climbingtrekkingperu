@@ -29,7 +29,7 @@ const programs = [
     id: 'camino-inca',
     title: t('cusco.prog3.name'),
     description: t('cusco.prog3.desc'),
-    image: '/trekking/huayhuash/clasico.jpeg',
+    image: '/trekking/huayhuash/clasico.png',
     duration: `4 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.modplus'),
     difficultyLevel: 'modplus'
@@ -53,29 +53,31 @@ const programs = [
     difficultyLevel: 'modplus'
   }
 ];
+import RecommendedTours from '../../components/RecommendedTours.astro';
 ---
 
 <Layout title={`${t('cusco.title')} - Franpisco Adventure`} description={t('cusco.subtitle')}>
   <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <h1 class="split-title">
-        <span class="thin">TREKKING EN EL</span>
-        <span class="bold">OMBLIGO DEL MUNDO</span>
+        <span class="thin">AVENTURAS</span>
+        <span class="bold">CUSCO TREKS</span>
       </h1>
       <div class="hero-accent-bar"></div>
-
+      
       <div class="hero-side-technical">
         <div class="tech-item">
-          <label>ELEVATION</label>
-          <span>3,399 M.S.N.M.</span>
+          <label>ELEVACIÓN MÁX</label>
+          <span>6,384 M.S.N.M.</span>
         </div>
         <div class="tech-item">
-          <label>COORDINATES</label>
+          <label>COORDENADAS</label>
           <span>13°31′S 71°58′W</span>
         </div>
         <div class="tech-item">
-          <label>REGION</label>
+          <label>REGIÓN</label>
           <span>CUSCO / PERÚ</span>
         </div>
       </div>
@@ -102,14 +104,17 @@ const programs = [
       </div>
     </div>
   </section>
+
+  <RecommendedTours currentId="cusco" />
 </Layout>
+
 
 <style>
   .hub-hero {
     position: relative;
     height: 75vh;
     min-height: 500px;
-    background: #06090f url('/slider_2.png') center/cover no-repeat;
+    background: #06090f url('/slider_4.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,9 +126,9 @@ const programs = [
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
@@ -135,21 +140,13 @@ const programs = [
     margin-top: 3rem;
   }
 
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
-  }
-
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
@@ -159,7 +156,7 @@ const programs = [
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
@@ -168,11 +165,10 @@ const programs = [
     width: 80px;
     height: 4px;
     background: var(--brand-red);
-    margin: 1.5rem auto 2.5rem;
+    margin:  1.2rem auto 2.5rem;
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  /* SIDE TECHNICAL DATA - CENTERED BELOW */
   .hero-side-technical {
     display: flex;
     justify-content: center;
@@ -223,15 +219,9 @@ const programs = [
   }
 
   @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-    .programs-section {
-      padding: 4rem 1.5rem;
-    }
+    .hub-hero { height: 50vh; }
+    .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
-    .cusco-hero {
-      height: 50vh;
-    }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import Slider from '../components/Slider.astro';
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 ---
 
 <Layout 
@@ -137,9 +138,9 @@ import Layout from '../layouts/Layout.astro';
 			<div class="team-grid">
 				<!-- MEMBER 01 -->
 				<div class="team-card">
-					<div class="unit-badge">STRATEGIC LEAD</div>
+					<div class="unit-badge">LIDERAZGO ESTRATÉGICO</div>
 					<div class="team-avatar">
-						<img src="/perfiles/francisco.jpeg" alt="Francisco Mayhuay Colonia" />
+						<img src="/perfiles/francisco.png" alt="Francisco Mayhuay Colonia" />
 					</div>
 					<h4 class="member-name">Francisco Mayhuay Colonia</h4>
 					<span class="member-rank">Gerente General & Fundador</span>
@@ -147,9 +148,9 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- MEMBER 02 -->
 				<div class="team-card">
-					<div class="unit-badge">MISSION CONTROL</div>
+					<div class="unit-badge">CONTROL DE MISIÓN</div>
 					<div class="team-avatar">
-						<img src="/perfiles/milagros.jpeg" alt="Milagros Moreno Correa" />
+						<img src="/perfiles/milagros.png" alt="Milagros Moreno Correa" />
 					</div>
 					<h4 class="member-name">Milagros Moreno Correa</h4>
 					<span class="member-rank">Jefa de Logística de Campo</span>
@@ -157,9 +158,9 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- MEMBER 03 -->
 				<div class="team-card">
-					<div class="unit-badge">ELITE SUMMIT</div>
+					<div class="unit-badge">CUMBRE ÉLITE</div>
 					<div class="team-avatar">
-						<img src="/perfiles/nilo.jpeg" alt="Nilo Aramburu Tafur" />
+						<img src="/perfiles/nilo.png" alt="Nilo Aramburu Tafur" />
 					</div>
 					<h4 class="member-name">Nilo Aramburu Tafur</h4>
 					<span class="member-rank">Guía de Montaña IVBV – UIAGM</span>
@@ -167,9 +168,9 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- MEMBER 04 -->
 				<div class="team-card">
-					<div class="unit-badge">FRONT LINE</div>
+					<div class="unit-badge">PRIMERA LÍNEA</div>
 					<div class="team-avatar">
-						<img src="/perfiles/hosterling.jpeg" alt="Hosterling Guillermo Julca" />
+						<img src="/perfiles/hosterling.png" alt="Hosterling Guillermo Julca" />
 					</div>
 					<h4 class="member-name">Hosterling Guillermo Julca</h4>
 					<span class="member-rank">Aspirante a Guía de Montaña</span>
@@ -395,7 +396,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="bento-grid">
 				<!-- Bento 1: Critical Warning -->
 				<div class="bento-card b-red b-span-2">
-					<div class="b-meta-tag">WARNING / MALA PRÁCTICA</div>
+					<div class="b-meta-tag">ADVERTENCIA / MALA PRÁCTICA</div>
 					<h3 class="b-heading">Integridad vs. Explotación</h3>
 					<p>Es alarmante ver cómo agencias "low-cost" desangran la montaña humillando el peso mular y pagando sueldos miserables a arrieros locales para ganar por volumen. <strong>Nosotros elegimos la ética sobre el margen de beneficio.</strong></p>
 					<div class="b-accent-bar"></div>
@@ -411,7 +412,7 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- Bento 3: Safety Security -->
 				<div class="bento-card b-dark">
-					<div class="b-meta-tag">SECURE / 01</div>
+					<div class="b-meta-tag">SEGURIDAD / 01</div>
 					<div class="b-icon">🛡️</div>
 					<h3 class="b-heading">Seguridad Radical</h3>
 					<p>No transigimos con el margen de seguridad, sin importar las condiciones extremas.</p>
@@ -419,7 +420,7 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- Bento 4: Environmental -->
 				<div class="bento-card b-green">
-					<div class="b-meta-tag">CLEAN / 02</div>
+					<div class="b-meta-tag">LIMPIEZA / 02</div>
 					<div class="b-icon">🌱</div>
 					<h3 class="b-heading">Huella Cero</h3>
 					<p>Gestión letal de residuos. Devolvemos a la ciudad el 100% de lo que llevamos al campo.</p>
@@ -427,7 +428,7 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- Bento 5: Quality Elite -->
 				<div class="bento-card b-dark">
-					<div class="b-meta-tag">TECH / 03</div>
+					<div class="b-meta-tag">TÉCNICO / 03</div>
 					<div class="b-icon">⭐</div>
 					<h3 class="b-heading">Calidad Técnica</h3>
 					<p>Equipamiento de alta gama probado en los escenarios más hostiles de los Andes.</p>
@@ -439,14 +440,13 @@ import Layout from '../layouts/Layout.astro';
 					<p class="epic-vow">"VALORAMOS con lealtad andina el esfuerzo del equipo humano y el peso justo animal, en devoto cuidado del ambiente prístino que nos late la vida."</p>
 					<div class="signature-line">
 						<span class="sig-name">FRANPISCO ADVENTURE</span>
-						<span class="sig-rank">EXPEDITION COMMAND</span>
+						<span class="sig-rank">COMANDO DE EXPEDICIÓN</span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-		</div>
-	</section>
+  <RecommendedTours />
 </Layout>
 
 <style>

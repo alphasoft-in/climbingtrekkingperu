@@ -6,10 +6,12 @@ const t = useTranslations(lang);
 const { currentId } = Astro.props;
 
 const allPrograms = [
+  // HUAYHUASH
   {
     id: '360',
+    category: 'trekking',
     title: t('huayhuash.prog1.name'),
-    image: '/trekking/huayhuash/360.jpeg',
+    image: '/trekking/huayhuash/360.png',
     duration: `15 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.hard'),
     difficultyLevel: 'hard',
@@ -17,8 +19,9 @@ const allPrograms = [
   },
   {
     id: 'classic',
+    category: 'trekking',
     title: t('huayhuash.prog2.name'),
-    image: '/trekking/huayhuash/clasico.jpeg',
+    image: '/trekking/huayhuash/clasico.png',
     duration: `11 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.modplus'),
     difficultyLevel: 'modplus',
@@ -26,44 +29,19 @@ const allPrograms = [
   },
   {
     id: 'mini',
+    category: 'trekking',
     title: t('huayhuash.prog3.name'),
-    image: '/trekking/huayhuash/mini.jpeg',
+    image: '/trekking/huayhuash/mini.png',
     duration: `8 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.mod'),
     difficultyLevel: 'mod',
     path: 'trekking/huayhuash/mini'
   },
   {
-    id: 'inca',
-    title: lang === 'es' ? 'CAMINO INCA CLÁSICO' : 'CLASSIC INCA TRAIL',
-    image: '/slider_1.png',
-    duration: `4 ${t('trekking.days')}`,
-    difficulty: t('trekking.diff.modplus'),
-    difficultyLevel: 'modplus',
-    path: 'tours'
-  },
-  {
-    id: 'pastoruri',
-    title: lang === 'es' ? 'GLACIAR PASTORURI' : 'PASTORURI GLACIER',
-    image: '/slider_4.png',
-    duration: `1 ${t('trekking.days')}`,
-    difficulty: t('trekking.diff.mod'),
-    difficultyLevel: 'mod',
-    path: 'tours'
-  },
-  {
-    id: 'huchuy',
-    title: lang === 'es' ? 'HUCHUY QOSQO' : 'HUCHUY QOSQO TREK',
-    image: '/slider_2.png',
-    duration: `2 ${t('trekking.days')}`,
-    difficulty: t('trekking.diff.mod'),
-    difficultyLevel: 'mod',
-    path: 'tours'
-  },
-  {
     id: 'peaks',
+    category: 'trekking',
     title: t('huayhuash.prog4.name'),
-    image: '/trekking/huayhuash/360.jpeg',
+    image: '/trekking/huayhuash/cumbres.png',
     duration: `12 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.hard'),
     difficultyLevel: 'hard',
@@ -71,24 +49,29 @@ const allPrograms = [
   },
   {
     id: 'spectacular',
+    category: 'trekking',
     title: t('huayhuash.prog5.name'),
-    image: '/trekking/huayhuash/clasico.jpeg',
+    image: '/trekking/huayhuash/ruta-huayhuash.png',
     duration: `15 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.modplus'),
     difficultyLevel: 'modplus',
     path: lang === 'es' ? 'trekking/huayhuash/espectacular' : 'trekking/huayhuash/spectacular'
   },
+
+  // CORDILLERA BLANCA TREKKING
   {
-    id: 'santa-cruz',
+    id: 'blanca-sc',
+    category: 'trekking',
     title: t('blanca.prog1.name'),
     image: '/slider_2.png',
-    duration: `7 ${t('trekking.days')}`,
+    duration: `4-7 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.modplus'),
     difficultyLevel: 'modplus',
     path: 'trekking/blanca/santa-cruz'
   },
   {
     id: 'blanca-best',
+    category: 'trekking',
     title: t('blanca.prog2.name'),
     image: '/slider_4.png',
     duration: `10 ${t('trekking.days')}`,
@@ -98,6 +81,7 @@ const allPrograms = [
   },
   {
     id: 'blanca-alpamayo',
+    category: 'trekking',
     title: t('blanca.prog3.name'),
     image: '/slider_1.png',
     duration: `11 ${t('trekking.days')}`,
@@ -107,6 +91,7 @@ const allPrograms = [
   },
   {
     id: 'blanca-circuit',
+    category: 'trekking',
     title: t('blanca.prog4.name'),
     image: '/slider_3.png',
     duration: `15 ${t('trekking.days')}`,
@@ -114,8 +99,53 @@ const allPrograms = [
     difficultyLevel: 'hard',
     path: lang === 'es' ? 'trekking/blanca/circuito' : 'trekking/blanca/circuit'
   },
+
+  // CLIMBING PERU
+  {
+    id: 'alpamayo-clb',
+    category: 'climbing',
+    title: t('climbing.alpamayo.name'),
+    image: '/slider_1.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'climbing/alpamayo'
+  },
+  {
+    id: 'huascaran-clb',
+    category: 'climbing',
+    title: t('climbing.huascaran.name'),
+    image: '/slider_4.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'climbing/huascaran'
+  },
+  {
+    id: 'pisco-clb',
+    category: 'climbing',
+    title: t('climbing.pisco.name'),
+    image: '/slider_2.png',
+    duration: `5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    path: 'climbing/pisco'
+  },
+  {
+    id: 'ishinca-valley-clb',
+    category: 'climbing',
+    title: t('climbing.ishinca.name'),
+    image: '/slider_3.png',
+    duration: `8 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'climbing/ishinca-valley'
+  },
+
+  // CUSCO TREKS
   {
     id: 'cusco-choquequirao',
+    category: 'trekking',
     title: t('cusco.prog1.name'),
     image: '/slider_2.png',
     duration: `4 ${t('trekking.days')}`,
@@ -124,46 +154,63 @@ const allPrograms = [
     path: 'trekking/cusco/choquequirao'
   },
   {
-    id: 'cusco-esencia',
-    title: t('cusco.prog2.name'),
-    image: '/slider_4.png',
-    duration: `12 ${t('trekking.days')}`,
-    difficulty: t('trekking.diff.mod'),
-    difficultyLevel: 'mod',
-    path: lang === 'es' ? 'trekking/cusco/esencia-imperial' : 'trekking/cusco/imperial-essence'
-  },
-  {
     id: 'cusco-inca',
+    category: 'trekking',
     title: t('cusco.prog3.name'),
-    image: '/trekking/huayhuash/clasico.jpeg',
+    image: '/trekking/huayhuash/clasico.png',
     duration: `4 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.modplus'),
     difficultyLevel: 'modplus',
     path: lang === 'es' ? 'trekking/cusco/camino-inca' : 'trekking/cusco/inca-trail'
   },
+
+  // INTERNACIONAL
   {
-    id: 'cusco-ausangate',
-    title: t('cusco.prog4.name'),
+    id: 'aconcagua-arg',
+    category: 'climbing',
+    title: t('climbing.aconcagua.name'),
     image: '/slider_1.png',
-    duration: `4 ${t('trekking.days')}`,
+    duration: `17 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.hard'),
     difficultyLevel: 'hard',
-    path: 'trekking/cusco/ausangate'
+    path: 'argentina/aconcagua'
   },
   {
-    id: 'cusco-lares',
-    title: t('cusco.prog5.name'),
-    image: '/slider_3.png',
-    duration: `4 ${t('trekking.days')}`,
-    difficulty: t('trekking.diff.modplus'),
-    difficultyLevel: 'modplus',
-    path: 'trekking/cusco/lares'
+    id: 'avenida-volcanes-ecu',
+    category: 'climbing',
+    title: t('climbing.ecuador.name'),
+    image: '/slider_4.png',
+    duration: `12 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    path: 'ecuador/avenida-volcanes'
   }
 ];
 
-// Randomize and filter current
+// Logic to find current category and recommend similar ones first
+const currentProg = allPrograms.find(p => p.id === currentId);
+const currentCategory = currentProg ? currentProg.category : null;
+
+let recommended = [];
 const filtered = allPrograms.filter(p => p.id !== currentId);
-const recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
+
+if (currentCategory) {
+  const sameCategory = filtered.filter(p => p.category === currentCategory);
+  const otherCategory = filtered.filter(p => p.category !== currentCategory);
+  
+  // Mix them but prioritize same category
+  recommended = [
+    ...sameCategory.sort(() => Math.random() - 0.5).slice(0, 2),
+    ...otherCategory.sort(() => Math.random() - 0.5).slice(0, 1)
+  ];
+} else {
+  recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
+}
+
+// Fallback if not enough
+if (recommended.length < 3) {
+    recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
+}
 ---
 
 <section class="recommended-section">
@@ -208,18 +255,15 @@ const recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
 
 <style>
   .recommended-section {
-    padding: 10rem 0 8rem;
-    background: var(--brand-red);
+    padding: 8rem 0 6rem;
+    background: #ffffff;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid #f1f5f9;
   }
 
   .recommended-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: rgba(0,0,0,0.1);
+    display: none;
   }
 
   .container {
@@ -239,7 +283,7 @@ const recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
   .header-line {
     width: 40px;
     height: 3px;
-    background: #fff;
+    background: var(--brand-red);
     margin-bottom: 1.5rem;
   }
 
@@ -247,61 +291,53 @@ const recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
     font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 5px;
-    color: rgba(255,255,255,0.8);
+    color: #64748b;
+    margin-bottom: 1rem;
     display: block;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
   }
 
   .section-title {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    line-height: 1;
+    color: var(--brand-dark);
+    letter-spacing: -1.5px;
   }
-
-  .section-title .blue {
-    color: #fff;
-    opacity: 0.9;
-  }
+  .section-title .blue { color: var(--brand-blue); }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .program-card {
+    display: block;
     background: #ffffff;
-    border: none;
-    border-radius: 2px;
-    overflow: hidden;
     text-decoration: none;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    flex-direction: column;
-    box-shadow: none;
-    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    border: 1px solid #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .program-card:hover {
-    transform: translateY(-15px);
-    border: 1px solid #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+    border-color: var(--brand-blue);
   }
 
   .card-image {
-    height: 260px;
-    overflow: hidden;
     position: relative;
+    height: 280px;
+    overflow: hidden;
   }
 
   .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s ease;
   }
 
   .program-card:hover .card-image img {
@@ -311,124 +347,91 @@ const recommended = filtered.sort(() => Math.random() - 0.5).slice(0, 3);
   .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%);
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6));
   }
 
   .card-badge {
     position: absolute;
-    top: 0;
-    right: 0;
-    background: #000;
-    padding: 10px 15px;
+    bottom: 1.5rem;
+    left: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0.2rem;
   }
 
-  .b-label {
-    font-size: 0.45rem;
-    font-weight: 800;
-    color: var(--brand-red);
-    letter-spacing: 1px;
-  }
-
-  .b-value {
-    font-size: 0.75rem;
-    font-weight: 900;
-    color: #fff;
-  }
+  .b-label { font-size: 0.55rem; font-weight: 800; color: #fff; opacity: 0.8; letter-spacing: 1px; }
+  .b-value { font-size: 0.9rem; font-weight: 900; color: #fff; }
 
   .card-body {
-    padding: 2.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 2rem;
   }
 
   .card-meta {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .difficulty-tag {
-    font-size: 0.6rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #373737;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: #f1f5f9;
-    padding: 5px 12px;
-    border-radius: 2px;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
   }
 
-  .dot {
+  .difficulty-tag .dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
+    background: #94a3b8;
   }
 
-  .difficulty-tag.hard .dot { background: var(--brand-red); }
+  .difficulty-tag.hard { color: #ef4444; }
+  .difficulty-tag.hard .dot { background: #ef4444; }
+  .difficulty-tag.modplus { color: var(--brand-blue); }
   .difficulty-tag.modplus .dot { background: var(--brand-blue); }
-  .difficulty-tag.mod .dot { background: #94a3b8; }
 
   .card-body h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 900;
-    color: #0b0d10;
+    color: var(--brand-dark);
+    margin-bottom: 2rem;
     line-height: 1.3;
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
     letter-spacing: -0.5px;
-    flex-grow: 1;
+    min-height: 3.2rem;
   }
 
   .card-footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding-top: 1.8rem;
+    align-items: center;
+    padding-top: 1.5rem;
     border-top: 1px solid #f1f5f9;
   }
 
   .footer-text {
-    font-size: 0.65rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #64748b;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    transition: 0.3s;
   }
 
   .footer-arrow {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f1f5f9;
-    border-radius: 50%;
-    color: var(--brand-red);
-    transition: 0.3s;
-  }
-
-  .program-card:hover .footer-text {
-    color: var(--brand-red);
+    color: var(--brand-blue);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
   }
 
   .program-card:hover .footer-arrow {
-    background: var(--brand-red);
-    color: #fff;
     transform: translateX(5px);
   }
 
-  @media (max-width: 1024px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
   @media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
     .recommended-section { padding: 6rem 0; }
+    .section-header { margin-bottom: 3rem; }
+    .grid { grid-template-columns: 1fr; }
   }
 </style>

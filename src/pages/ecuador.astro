@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
 import TourCard from '../components/TourCard.astro';
 
@@ -17,7 +18,7 @@ const ecuadorPrograms = [
     difficultyLevel: 'hard' as const,
     path: 'ecuador/avenida-volcanes',
     prefix: 'ECU',
-    type: 'VOLCANO EXPEDITION'
+    type: 'EXPEDICIÓN DE VOLCANES'
   },
   {
     id: 'lagunas-pichincha',
@@ -29,13 +30,14 @@ const ecuadorPrograms = [
     difficultyLevel: 'mod' as const,
     path: 'ecuador/lagunas-pichincha',
     prefix: 'ECU',
-    type: 'ACCLIMATIZATION & TOURS'
+    type: 'ACLIMATACIÓN Y TOURS'
   }
 ];
 ---
 
 <Layout title={`Ecuador - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora la Avenida de los Volcanes en Ecuador. Expediciones al Cotopaxi, Chimborazo, Cayambe e Ilinizas con guías certificados y logística premium.">
   <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <h1 class="split-title">
@@ -46,20 +48,18 @@ const ecuadorPrograms = [
       
       <div class="hero-side-technical">
         <div class="tech-item">
-          <label>MAX ELEVATION</label>
+          <label>ELEVACIÓN MÁX</label>
           <span>6,263 M.S.N.M.</span>
         </div>
         <div class="tech-item">
-          <label>COORDINATES</label>
+          <label>COORDENADAS</label>
           <span>0°13′S 78°31′W</span>
         </div>
         <div class="tech-item">
-          <label>REGION</label>
+          <label>REGIÓN</label>
           <span>ANDES / ECUADOR</span>
         </div>
       </div>
-      
-      <p class="hero-subtitle">La mística Avenida de los Volcanes te espera. Desde lagunas turquesas hasta las cumbres más altas de la línea ecuatorial.</p>
     </div>
   </section>
 
@@ -83,7 +83,9 @@ const ecuadorPrograms = [
       </div>
     </div>
   </section>
+  <RecommendedTours />
 </Layout>
+
 
 <style>
   .hub-hero {
@@ -102,9 +104,9 @@ const ecuadorPrograms = [
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
@@ -116,21 +118,13 @@ const ecuadorPrograms = [
     margin-top: 3rem;
   }
 
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
-  }
-
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
@@ -140,7 +134,7 @@ const ecuadorPrograms = [
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
@@ -149,11 +143,10 @@ const ecuadorPrograms = [
     width: 80px;
     height: 4px;
     background: var(--brand-red);
-    margin: 1.5rem auto 2.5rem;
+    margin:  1.2rem auto 2.5rem;
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  /* SIDE TECHNICAL DATA - CENTERED BELOW */
   .hero-side-technical {
     display: flex;
     justify-content: center;
@@ -162,7 +155,7 @@ const ecuadorPrograms = [
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto;
   }
 
   .tech-item {
@@ -186,16 +179,6 @@ const ecuadorPrograms = [
     font-family: 'Inter', sans-serif;
   }
 
-  .hero-subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
   .programs-section {
     padding: 8rem 0;
     background: #ffffff;
@@ -207,9 +190,16 @@ const ecuadorPrograms = [
     padding: 0 40px;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     .hub-hero { height: 50vh; }
     .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

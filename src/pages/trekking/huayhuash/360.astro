@@ -129,6 +129,7 @@ const equipment = [
           <span class="thin">TREKKING CORDILLERA</span>
           <span class="bold">HUAYHUASH 360</span>
         </h1>
+        <div class="hero-accent-bar"></div>
 
         <div class="metrics-bar">
           <div class="metric">
@@ -159,7 +160,7 @@ const equipment = [
         
         <div class="dossier-content">
           <div class="dossier-header">
-            <span class="log-id">LOG: HYH-360-15D</span>
+            <span class="log-id">CÓDIGO: HYH-360-15D</span>
             <h2 class="dossier-title">Exploración <span class="blue">Integral</span></h2>
           </div>
           
@@ -207,7 +208,7 @@ const equipment = [
 
         <div class="dossier-visual">
           <div class="visual-frame">
-            <img src="/trekking/huayhuash/360.jpeg" alt="Trekking Huayhuash 360" class="dossier-img" />
+            <img src="/trekking/huayhuash/360/1.png" alt="Trekking Huayhuash 360" class="dossier-img" />
             <div class="coordinates-overlay">
               <span>9° 32' 26" S</span>
               <span class="divider">|</span>
@@ -225,7 +226,7 @@ const equipment = [
         <!-- Main Timeline -->
         <div class="path-log-container">
           <div class="details-header-technical">
-            <span class="sub-label">SECUESTRACIÓN DE RUTA</span>
+            <span class="sub-label">ITINERARIO TÉCNICO</span>
             <h2 class="technical-title">Cronograma <span class="blue">Diario</span></h2>
           </div>
 
@@ -284,7 +285,7 @@ const equipment = [
         <aside class="logistics-sidebar">
           <div class="logistics-card">
             <div class="card-header">
-              <span class="c-id">MOD: LOG-INCL</span>
+              <span class="c-id">REF: SRV-INC</span>
               <h3>Servicios Incluidos</h3>
             </div>
             <ul class="log-list">
@@ -299,7 +300,7 @@ const equipment = [
           
           <div class="logistics-card secondary">
             <div class="card-header">
-              <span class="c-id">MOD: TECH-EQ</span>
+              <span class="c-id">REF: EQP-TCN</span>
               <h3>Equipo Sugerido</h3>
             </div>
             <ul class="log-list">
@@ -346,11 +347,14 @@ const equipment = [
   <TourGallery 
     lang={lang}
     images={[
-      '/trekking/huayhuash/360.jpeg',
-      '/slider_4.png',
-      '/slider_2.png',
-      '/slider_5.png',
-      '/slider_1.png'
+      '/trekking/huayhuash/360/1.png',
+      '/trekking/huayhuash/360/2.png',
+      '/trekking/huayhuash/360/3.png',
+      '/trekking/huayhuash/360/4.png',
+      '/trekking/huayhuash/360/5.png',
+      '/trekking/huayhuash/360/6.png',
+      '/trekking/huayhuash/360/7.png',
+      '/trekking/huayhuash/360/8.png'
     ]} 
   />
 
@@ -377,7 +381,7 @@ const equipment = [
     position: relative;
     height: 60vh;
     min-height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/trekking/huayhuash/mini.jpeg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/trekking/huayhuash/bg-huayhuash.png') top center/cover no-repeat fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -415,7 +419,7 @@ const equipment = [
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom:  1.5rem;
   
   }
   .split-title .thin {
@@ -425,7 +429,7 @@ const equipment = [
     opacity: 0.8;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
     line-height: 1;
@@ -436,7 +440,7 @@ const equipment = [
     display: flex;
     justify-content: center;
     gap: 4rem;
-    padding: 2.5rem 0;
+    padding:  1.5rem 0;
     border-top: 1px solid rgba(255,255,255,0.1);
   
   }
@@ -809,4 +813,13 @@ const equipment = [
     letter-spacing: 3px;
     text-transform: uppercase;
   }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
 </style>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
 import TourCard from '../components/TourCard.astro';
 
@@ -17,7 +18,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/laguna-paron',
     prefix: 'HZ',
-    type: 'CLASSIC TOUR'
+    type: 'TOUR CLÁSICO'
   },
   {
     id: 'laguna-llanganuco',
@@ -29,7 +30,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/laguna-llanganuco',
     prefix: 'HZ',
-    type: 'CLASSIC TOUR'
+    type: 'TOUR CLÁSICO'
   },
   {
     id: 'trekking-69',
@@ -53,7 +54,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/laguna-rocotuyoc',
     prefix: 'HZ',
-    type: 'CLASSIC TOUR'
+    type: 'TOUR CLÁSICO'
   },
   {
     id: 'pastoruri',
@@ -65,7 +66,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/pastoruri',
     prefix: 'HZ',
-    type: 'CLASSIC TOUR'
+    type: 'TOUR CLÁSICO'
   },
   {
     id: 'chavin-huantar',
@@ -77,7 +78,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/chavin-huantar',
     prefix: 'HZ',
-    type: 'CULTURAL TOUR'
+    type: 'TOUR CULTURAL'
   },
   {
     id: 'chacas',
@@ -89,7 +90,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/chacas',
     prefix: 'HZ',
-    type: 'SCENIC TOUR'
+    type: 'TOUR PAISAJÍSTICO'
   },
   {
     id: 'trekking-churup',
@@ -113,7 +114,7 @@ const tours = [
     difficultyLevel: 'hard',
     path: 'trekking/arequipa/arequipa-volcanes',
     prefix: 'AQP',
-    type: 'VOLCANIC EXPEDITION'
+    type: 'EXPEDICIÓN VOLCÁNICA'
   },
   {
     id: 'ica-paracas',
@@ -125,7 +126,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/ica-paracas',
     prefix: 'ICA',
-    type: 'COASTAL EXPEDITION'
+    type: 'EXPEDICIÓN COSTERA'
   },
   {
     id: 'selva-tambopata',
@@ -137,8 +138,9 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/selva-tambopata',
     prefix: 'MDD',
-    type: 'AMAZON EXPEDITION'
-  },
+    type: 'EXPEDICIÓN AMAZÓNICA'
+  }
+,
   {
     id: 'iquitos-amazonas',
     title: t('iquitos.prog1.name'),
@@ -149,7 +151,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/iquitos-amazonas',
     prefix: 'IQT',
-    type: 'RIVER EXPEDITION'
+    type: 'EXPEDICIÓN DE RÍO'
   },
   {
     id: 'lima-city',
@@ -161,7 +163,7 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/lima-city',
     prefix: 'LIM',
-    type: 'CITY EXPEDITION'
+    type: 'EXPEDICIÓN DE CIUDAD'
   },
   {
     id: 'lima-pachacamac',
@@ -173,33 +175,48 @@ const tours = [
     difficultyLevel: 'easy',
     path: 'tours/lima-pachacamac',
     prefix: 'LIM',
-    type: 'ARCHAEOLOGICAL EXPEDITION'
+    type: 'EXPEDICIÓN ARQUEOLÓGICA'
   },
   {
     id: 'maravillas-peru-17d',
     title: t('tours.vip.name'),
     description: t('tours.vip.desc'),
-    image: '/trekking/huayhuash/clasico.jpeg',
+    image: '/trekking/huayhuash/clasico.png',
     duration: `17 ${t('trekking.days')}`,
     difficulty: t('trekking.diff.mod'),
     difficultyLevel: 'mod',
     path: 'tours/maravillas-peru-17d',
     prefix: 'PER',
-    type: 'GRAND EXPEDITION'
+    type: 'GRAN EXPEDICIÓN'
   }
 ];
 ---
 
 <Layout title={`${t('nav.tours')} - Franpisco Adventure`} description="Explora nuestras expediciones culturales y tours exclusivos en las regiones más emblemáticas del Perú.">
-  <section class="tours-hero">
+  <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
-      <div class="hero-meta">PROGRAM CATALOG // 2024</div>
       <h1 class="split-title">
-        <span class="thin">EXPLORA NUESTROS</span>
-        <span class="bold">TOURS Y EXPEDICIONES</span>
+        <span class="thin">NUESTROS</span>
+        <span class="bold">TOURS</span>
       </h1>
-      <div class="blue-line"></div>
+      <div class="hero-accent-bar"></div>
+      
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>ELEVACIÓN MÁX</label>
+          <span>4,600 M.S.N.M.</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDENADAS</label>
+          <span>9°30′S 77°31′W</span>
+        </div>
+        <div class="tech-item">
+          <label>REGIÓN</label>
+          <span>CORDILLERA BLANCA</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -223,14 +240,16 @@ const tours = [
       </div>
     </div>
   </section>
+  <RecommendedTours />
 </Layout>
 
+
 <style>
-  .tours-hero {
+  .hub-hero {
     position: relative;
-    height: 60vh;
+    height: 75vh;
     min-height: 500px;
-    background: #06090f url('/slider_4.png') center/cover no-repeat;
+    background: #06090f url('/slider_2.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,26 +261,18 @@ const tours = [
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
     z-index: 10;
-    max-width: 1200px;
+    max-width: 900px;
     padding: 0 2rem;
     margin-top: 3rem;
-  }
-
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
   }
 
   .split-title {
@@ -270,7 +281,7 @@ const tours = [
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
@@ -280,17 +291,49 @@ const tours = [
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
 
-  .blue-line {
+  .hero-accent-bar {
     width: 80px;
     height: 4px;
-    background: var(--brand-blue);
-    margin: 0 auto 3rem;
-    box-shadow: 0 0 20px rgba(0, 144, 204, 0.4);
+    background: var(--brand-red);
+    margin:  1.2rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+  }
+
+  .tech-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter', sans-serif;
   }
 
   .programs-section {
@@ -304,9 +347,16 @@ const tours = [
     padding: 0 40px;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
-    .tours-hero { height: 50vh; }
+    .hub-hero { height: 50vh; }
     .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

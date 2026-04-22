@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RecommendedTours from '../components/RecommendedTours.astro';
 import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
 import TourCard from '../components/TourCard.astro';
 
@@ -17,7 +18,7 @@ const peruPrograms = [
     difficultyLevel: 'mod',
     path: 'trekking/blanca/santa-cruz',
     prefix: 'PER',
-    type: 'CLASSIC TREKKING'
+    type: 'TREKKING CLÁSICO'
   },
   {
     id: 'huayhuash-360',
@@ -29,7 +30,7 @@ const peruPrograms = [
     difficultyLevel: 'hard',
     path: 'trekking/huayhuash/360',
     prefix: 'PER',
-    type: 'EXPEDITION'
+    type: 'EXPEDICIÓN'
   },
   {
     id: 'alpamayo-climb',
@@ -41,7 +42,7 @@ const peruPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/alpamayo',
     prefix: 'PER',
-    type: 'MOUNTAINEERING'
+    type: 'MONTAÑISMO'
   },
   {
     id: 'laguna-69',
@@ -53,7 +54,7 @@ const peruPrograms = [
     difficultyLevel: 'mod',
     path: 'tours/trekking-69',
     prefix: 'PER',
-    type: 'DAY HIKE'
+    type: 'CAMINATA DÍA'
   },
   {
     id: 'huascaran-expedition',
@@ -65,7 +66,7 @@ const peruPrograms = [
     difficultyLevel: 'hard',
     path: 'climbing/huascaran',
     prefix: 'PER',
-    type: 'HIGH ALTITUDE'
+    type: 'ALTA MONTAÑA'
   },
   {
     id: 'cusco-inca-trail',
@@ -77,13 +78,14 @@ const peruPrograms = [
     difficultyLevel: 'mod',
     path: 'trekking/cusco/camino-inca',
     prefix: 'PER',
-    type: 'CULTURAL TREK'
+    type: 'TREK CULTURAL'
   }
 ];
 ---
 
 <Layout title={`Perú - ${t('nav.destinations')} | Franpisco Adventure`} description="Descubre los Andes Peruanos con Franpisco Adventure. Trekking en la Cordillera Blanca y Huayhuash, escalada de alta montaña y tours culturales en Cusco y Machu Picchu.">
   <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <h1 class="split-title">
@@ -94,20 +96,18 @@ const peruPrograms = [
       
       <div class="hero-side-technical">
         <div class="tech-item">
-          <label>MAX ELEVATION</label>
+          <label>ELEVACIÓN MÁX</label>
           <span>6,768 M.S.N.M.</span>
         </div>
         <div class="tech-item">
-          <label>COORDINATES</label>
-          <span>12°02′S 77°01′W</span>
+          <label>COORDENADAS</label>
+          <span>9°30′S 77°31′W</span>
         </div>
         <div class="tech-item">
-          <label>ESTABLISHED</label>
-          <span>EST. 2015 / PERÚ</span>
+          <label>REGIÓN</label>
+          <span>ANDES / PERÚ</span>
         </div>
       </div>
-      
-      <p class="hero-subtitle">El corazón de los Andes. Cuna de civilizaciones antiguas y picos que desafían los cielos.</p>
     </div>
   </section>
 
@@ -131,7 +131,9 @@ const peruPrograms = [
       </div>
     </div>
   </section>
+  <RecommendedTours />
 </Layout>
+
 
 <style>
   .hub-hero {
@@ -164,21 +166,13 @@ const peruPrograms = [
     margin-top: 3rem;
   }
 
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
-  }
-
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
     font-size: clamp(0.8rem, 2vw, 1.1rem);
@@ -188,7 +182,7 @@ const peruPrograms = [
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
   }
@@ -197,11 +191,10 @@ const peruPrograms = [
     width: 80px;
     height: 4px;
     background: var(--brand-red);
-    margin: 1.5rem auto 2.5rem;
+    margin:  1.2rem auto 2.5rem;
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  /* SIDE TECHNICAL DATA - CENTERED BELOW */
   .hero-side-technical {
     display: flex;
     justify-content: center;
@@ -210,7 +203,7 @@ const peruPrograms = [
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto;
   }
 
   .tech-item {
@@ -234,16 +227,6 @@ const peruPrograms = [
     font-family: 'Inter', sans-serif;
   }
 
-  .hero-subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
   .programs-section {
     padding: 8rem 0;
     background: #ffffff;
@@ -255,9 +238,16 @@ const peruPrograms = [
     padding: 0 40px;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     .hub-hero { height: 50vh; }
     .programs-section { padding: 6rem 1.5rem; }
     .container { padding: 0; }
+    .hero-side-technical { gap: 1.5rem; }
   }
 </style>

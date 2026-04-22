@@ -56,6 +56,7 @@ const excludes = [
           <span class="thin">PUERTO MALDONADO</span>
           <span class="bold">TAMBOPATA & SANDOVAL 3D</span>
         </h1>
+        <div class="hero-accent-bar"></div>
 
         <div class="metrics-bar">
           <div class="metric">
@@ -86,7 +87,7 @@ const excludes = [
         
         <div class="dossier-content">
           <div class="dossier-header">
-            <span class="log-id">LOG: MDD-TAM-03D</span>
+            <span class="log-id">EXPEDITION ID: MDD-TAM-03D</span>
             <h2 class="dossier-title">The Lungs of <span class="blue">Madre de Dios</span></h2>
           </div>
           
@@ -209,7 +210,7 @@ const excludes = [
         <aside class="logistics-sidebar">
           <div class="logistics-card">
             <div class="card-header">
-              <span class="c-id">MOD: LOG-JUNGLE</span>
+              <span class="c-id">REF: SRV-JUNGLE</span>
               <h3>Included Services</h3>
             </div>
             <ul class="log-list">
@@ -224,7 +225,7 @@ const excludes = [
           
           <div class="logistics-card secondary">
             <div class="card-header">
-              <span class="c-id">MOD: TECH-INFO</span>
+              <span class="c-id">REF: EQP-INFO</span>
               <h3>Not Included / Notes</h3>
             </div>
             <ul class="log-list">
@@ -275,7 +276,7 @@ const excludes = [
       '/slider_1.png',
       '/slider_2.png',
       '/slider_3.png',
-      '/trekking/huayhuash/360.jpeg'
+      '/trekking/huayhuash/360.png'
     ]} 
   />
 
@@ -321,13 +322,13 @@ const excludes = [
   .container--narrow { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
   .split-title {
     align-items: center;
-    gap: 0.5rem; display: flex; flex-direction: column; margin-bottom: 3.5rem; 
+    gap: 0.5rem; display: flex; flex-direction: column; margin-bottom:  1.5rem; 
   
   }
-  .split-title .thin { font-size: clamp(0.9rem, 2.5vw, 1.3rem); font-weight: 200; letter-spacing: 8px; opacity: 0.8; }
-  .split-title .bold { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -1px; line-height: 1; }
+  .split-title .thin { font-size: clamp(0.8rem, 2vw, 1.1rem); font-weight: 200; letter-spacing: 8px; opacity: 0.8; }
+  .split-title .bold { font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 900; letter-spacing: -1px; line-height: 1; }
   .metrics-bar {
-    justify-content: center; display: flex; gap: 4rem; padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); 
+    justify-content: center; display: flex; gap: 4rem; padding:  1.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); 
   
   }
   .metric { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -405,5 +406,14 @@ const excludes = [
   .timeline-end { margin-top: 2rem; padding-left: 45px; position: relative; display: flex; align-items: center; gap: 1.5rem; }
   .end-mark { width: 12px; height: 12px; background: var(--brand-light); border: 2px solid var(--brand-dark); z-index: 2; transform: rotate(45deg); }
   .end-text { font-size: 0.65rem; font-weight: 800; color: var(--brand-light); letter-spacing: 3px; text-transform: uppercase; }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
 </style>
 

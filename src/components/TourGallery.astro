@@ -2,9 +2,10 @@
 interface Props {
   images?: string[];
   lang?: string;
+  tourName?: string;
 }
 
-const { images = [], lang = 'es' } = Astro.props;
+const { images = [], lang = 'es', tourName } = Astro.props;
 ---
 
 <section class="tour-gallery">
@@ -16,8 +17,8 @@ const { images = [], lang = 'es' } = Astro.props;
 
     <div class="gallery-grid">
       {images.map((img, index) => (
-        <div class={`gallery-item item-${index % 5}`}>
-          <img src={img} alt={`Expedition image ${index + 1}`} loading="lazy" />
+        <div class="gallery-item" data-src={img} data-index={index}>
+          <img src={img} alt={`${tourName || 'Expedition'} ${index + 1}`} loading="lazy" />
           <div class="item-overlay">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
           </div>
@@ -25,11 +26,117 @@ const { images = [], lang = 'es' } = Astro.props;
       ))}
     </div>
   </div>
+
+  <!-- Premium Lightbox Modal -->
+  <div id="gallery-modal" class="gallery-modal">
+    <div class="modal-backdrop"></div>
+    
+    <div class="modal-ui">
+      <button class="close-modal" id="close-modal" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="nav-btn prev" id="modal-prev">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </div>
+      <div class="nav-btn next" id="modal-next">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="modal-content">
+      <div class="img-wrapper">
+        <img id="modal-img" src="" alt="Full size view" />
+      </div>
+      
+      <div class="modal-info">
+        <div class="info-text">
+          <span class="info-tag">{lang === 'es' ? 'EXPEDICIÓN' : 'EXPEDITION'}</span>
+          <h3 class="info-title">{tourName || (lang === 'es' ? 'Andes Peruanos' : 'Peruvian Andes')}</h3>
+        </div>
+        <div class="info-counter">
+          <span id="current-idx">1</span> / <span id="total-idx">{images.length}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script>
+  const modal = document.getElementById('gallery-modal');
+  const modalImg = document.getElementById('modal-img') as HTMLImageElement;
+  const closeBtn = document.getElementById('close-modal');
+  const prevBtn = document.getElementById('modal-prev');
+  const nextBtn = document.getElementById('modal-next');
+  const currentIdxSpan = document.getElementById('current-idx');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  let currentIndex = 0;
+  const images = Array.from(galleryItems).map(item => item.getAttribute('data-src') || '');
+
+  const updateModal = (index: number) => {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    
+    currentIndex = index;
+    
+    if (modalImg) {
+      modalImg.style.opacity = '0';
+      setTimeout(() => {
+        modalImg.src = images[currentIndex];
+        if (currentIdxSpan) currentIdxSpan.textContent = (currentIndex + 1).toString();
+        modalImg.style.opacity = '1';
+      }, 200);
+    }
+  };
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      currentIndex = index;
+      if (modal && modalImg) {
+        modalImg.src = images[currentIndex];
+        if (currentIdxSpan) currentIdxSpan.textContent = (currentIndex + 1).toString();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const closeModal = () => {
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      setTimeout(() => {
+        if (modalImg) modalImg.src = '';
+      }, 400);
+    }
+  };
+
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.querySelector('.modal-backdrop')?.addEventListener('click', closeModal);
+  
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    updateModal(currentIndex - 1);
+  });
+  
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    updateModal(currentIndex + 1);
+  });
+
+  // Keyboard support
+  document.addEventListener('keydown', (e) => {
+    if (!modal?.classList.contains('active')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') updateModal(currentIndex - 1);
+    if (e.key === 'ArrowRight') updateModal(currentIndex + 1);
+  });
+</script>
 
 <style>
   .tour-gallery {
-    padding: 2rem 0 6rem;
+    padding: 6rem 0;
     background: #ffffff;
   }
 
@@ -68,62 +175,206 @@ const { images = [], lang = 'es' } = Astro.props;
     color: var(--brand-blue);
   }
 
-  /* Cinematic Grid Layout */
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 250px;
     gap: 1.5rem;
   }
 
   .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 4px;
     background: #f1f5f9;
     cursor: pointer;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
 
   .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .gallery-item:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1);
   }
-
-  /* Asymmetrical Grid Pattern */
-  .item-0 { grid-column: span 2; grid-row: span 2; }
-  .item-1 { grid-column: span 2; grid-row: span 1; }
-  .item-2 { grid-column: span 1; grid-row: span 1; }
-  .item-3 { grid-column: span 1; grid-row: span 1; }
-  .item-4 { grid-column: span 2; grid-row: span 1; }
 
   .item-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 144, 204, 0.4);
+    background: rgba(0, 144, 204, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     color: white;
+    backdrop-filter: blur(2px);
   }
 
   .gallery-item:hover .item-overlay {
     opacity: 1;
   }
 
-  @media (max-width: 1024px) {
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
-    .item-0, .item-1, .item-2, .item-3, .item-4 { grid-column: span 1; grid-row: span 1; }
+  /* Premium Lightbox Styles */
+  .gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @media (max-width: 600px) {
+  .gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 4, 5, 0.98);
+    backdrop-filter: blur(15px);
+  }
+
+  .modal-ui {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .modal-ui > * { pointer-events: auto; }
+
+  .close-modal {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+
+  .close-modal:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+    color: var(--brand-red);
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    opacity: 0.2;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  .nav-btn:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.1);
+    color: var(--brand-blue);
+  }
+
+  .nav-btn.prev { left: 40px; }
+  .nav-btn.next { right: 40px; }
+
+  .modal-content {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    transform: scale(0.95);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gallery-modal.active .modal-content {
+    transform: scale(1);
+  }
+
+  .img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #modal-img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1.5rem;
+  }
+
+  .info-tag {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-title {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 900;
+    color: white;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .info-counter {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    .nav-btn { width: 50px; height: 50px; }
+    .nav-btn.prev { left: 20px; }
+    .nav-btn.next { right: 20px; }
+    .close-modal { top: 20px; right: 20px; }
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .nav-btn { display: none; }
+    .modal-info { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
     .gallery-grid { grid-template-columns: 1fr; }
   }
 </style>
+

@@ -130,6 +130,7 @@ const equipment = [
           <span class="thin">HUAYHUASH RANGE</span>
           <span class="bold">PEAKS EXPEDITION</span>
         </h1>
+        <div class="hero-accent-bar"></div>
 
         <div class="metrics-bar">
           <div class="metric">
@@ -160,7 +161,7 @@ const equipment = [
         
         <div class="dossier-content">
           <div class="dossier-header">
-            <span class="log-id">LOG: HYH-CB-13D</span>
+            <span class="log-id">EXPEDITION ID: HYH-CB-13D</span>
             <h2 class="dossier-title">Diablo Mudo <span class="blue">& Pumarinri</span></h2>
           </div>
           
@@ -208,7 +209,7 @@ const equipment = [
 
         <div class="dossier-visual">
           <div class="visual-frame">
-            <img src="/trekking/huayhuash/360.jpeg" alt="Huayhuash Peaks" class="dossier-img" />
+            <img src="/trekking/huayhuash/cumbres.png" alt="Huayhuash Peaks" class="dossier-img" />
             <div class="coordinates-overlay">
               <span>10° 16' 18" S</span>
               <span class="divider">|</span>
@@ -283,7 +284,7 @@ const equipment = [
         <aside class="logistics-sidebar">
           <div class="logistics-card">
             <div class="card-header">
-              <span class="c-id">MOD: LOG-INCL</span>
+              <span class="c-id">REF: SRV-INC</span>
               <h3>Included Services</h3>
             </div>
             <ul class="log-list">
@@ -298,7 +299,7 @@ const equipment = [
           
           <div class="logistics-card secondary">
             <div class="card-header">
-              <span class="c-id">MOD: TECH-EQ</span>
+              <span class="c-id">REF: EQP-TCN</span>
               <h3>Technical Gear</h3>
             </div>
             <ul class="log-list">
@@ -352,7 +353,7 @@ const equipment = [
   <TourGallery 
     lang={lang}
     images={[
-      '/trekking/huayhuash/360.jpeg',
+      '/trekking/huayhuash/cumbres.png',
       '/slider_1.png',
       '/slider_2.png',
       '/slider_3.png',
@@ -388,7 +389,7 @@ const equipment = [
     position: relative;
     height: 60vh;
     min-height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/trekking/huayhuash/360.jpeg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/trekking/huayhuash/cumbres.png') center/cover no-repeat fixed;
     display: flex;
     align-items: center;
     color: white;
@@ -422,20 +423,20 @@ const equipment = [
   .split-title {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3.5rem;
+    margin-bottom:  1.5rem;
   
     align-items: center;
     gap: 0.5rem;
   
   }
   .split-title .thin {
-    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     font-weight: 200;
     letter-spacing: 8px;
     opacity: 0.8;
   }
   .split-title .bold {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
     letter-spacing: -1px;
     line-height: 1;
@@ -444,7 +445,7 @@ const equipment = [
   .metrics-bar {
     display: flex;
     gap: 4rem;
-    padding: 2.5rem 0;
+    padding:  1.5rem 0;
     border-top: 1px solid rgba(255,255,255,0.1);
   
     justify-content: center;
@@ -817,4 +818,13 @@ const equipment = [
     letter-spacing: 3px;
     text-transform: uppercase;
   }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
 </style>

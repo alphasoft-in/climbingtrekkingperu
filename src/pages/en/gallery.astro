@@ -30,19 +30,34 @@ const galleryItems = [
   { id: 13, category: 'bolivia', title: 'Mount Illimani', location: 'La Paz', image: '/slider_3.png', size: 'medium' },
   { id: 14, category: 'ecuador', title: 'Chimborazo Volcano', location: 'Riobamba', image: '/slider_4.png', size: 'small' },
 ];
+import RecommendedTours from '../../components/RecommendedTours.astro';
 ---
 
 <Layout title="Expedition Gallery | Franpisco Adventure" description="Explore our visual record of expeditions in the Andes. High mountain photos, trekking, and unique landscapes in Peru, Bolivia, and more.">
-  <section class="gallery-hero">
+  <section class="hub-hero">
+    
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
-      <div class="hero-meta">EST. 2015 / PHOTOGRAPHY</div>
       <h1 class="split-title">
-        <span class="thin">VISUAL RECORD</span>
-        <span class="bold">ANDEAN GALLERY</span>
+        <span class="thin">GALLERY</span>
+        <span class="bold">GALLERY</span>
       </h1>
-      <div class="blue-line"></div>
-      <p class="hero-subtitle">Captured moments in the heart of the range. From frozen summits to sacred valleys.</p>
+      <div class="hero-accent-bar"></div>
+      
+      <div class="hero-side-technical">
+        <div class="tech-item">
+          <label>ASSETS</label>
+          <span>124 IMÁGENES</span>
+        </div>
+        <div class="tech-item">
+          <label>COORDINATES</label>
+          <span>9°30′S 77°31′W</span>
+        </div>
+        <div class="tech-item">
+          <label>REGION</label>
+          <span>EXPEDICIÓN VISUAL</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -117,6 +132,8 @@ const galleryItems = [
       </div>
     </div>
   </div>
+
+  <RecommendedTours currentId="gallery" />
 </Layout>
 
 <script>
@@ -234,27 +251,27 @@ const galleryItems = [
   document.querySelector('[data-filter="all"]')?.classList.add('active');
 </script>
 
+
 <style>
-  .gallery-hero {
+  .hub-hero {
     position: relative;
-    height: 60vh;
+    height: 75vh;
     min-height: 500px;
-    background: #06090f url('/slider_3.png') center/cover no-repeat;
+    background: #06090f url('/slider_1.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    overflow: hidden;
   }
 
   .hero-bg-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(6, 9, 15, 0.9) 0%, 
-      rgba(6, 9, 15, 0.4) 50%, 
-      rgba(6, 9, 15, 0.9) 100%);
+      rgba(3, 4, 5, 0.9) 0%, 
+      rgba(3, 4, 5, 0.4) 50%, 
+      rgba(3, 4, 5, 0.9) 100%);
     z-index: 1;
   }
 
@@ -263,60 +280,74 @@ const galleryItems = [
     z-index: 10;
     max-width: 900px;
     padding: 0 2rem;
-    margin-top: 2rem;
-  }
-
-  .hero-meta {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--brand-blue);
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
   }
 
   .split-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: 0.5rem;
     line-height: 1;
-    margin-bottom: 2.5rem;
+    margin-bottom:  1.5rem;
   }
   .split-title .thin {
-    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     font-weight: 200;
     letter-spacing: 12px;
     opacity: 0.8;
     text-transform: uppercase;
   }
   .split-title .bold {
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
   }
 
-  .blue-line {
+  .hero-accent-bar {
     width: 80px;
     height: 4px;
-    background: var(--brand-blue);
-    margin: 0 auto 2.5rem;
-    box-shadow: 0 0 20px rgba(0, 144, 204, 0.4);
+    background: var(--brand-red);
+    margin:  1.2rem auto 2.5rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
 
-  .hero-subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    max-width: 650px;
+  .hero-side-technical {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .tech-item label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+  }
+
+  .tech-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter', sans-serif;
   }
 
   /* Gallery Section */
   .gallery-section {
     padding: 6rem 0 10rem;
-    background: #06090f;
+    background: #ffffff;
   }
 
   .container-fluid {
@@ -336,17 +367,16 @@ const galleryItems = [
   .filter-bar {
     display: flex;
     gap: 0.5rem;
-    background: rgba(255,255,255,0.03);
+    background: #f1f5f9;
     padding: 6px;
     border-radius: 100px;
-    border: 1px solid rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+    border: 1px solid #e2e8f0;
   }
 
   .filter-btn {
     background: transparent;
     border: none;
-    color: rgba(255,255,255,0.5);
+    color: #64748b;
     padding: 0.8rem 1.8rem;
     font-size: 0.65rem;
     font-weight: 800;
@@ -369,30 +399,29 @@ const galleryItems = [
     transition: 0.3s;
   }
 
-  .filter-btn:hover { color: #fff; }
+  .filter-btn:hover { color: var(--brand-dark); }
 
   .filter-btn.active {
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: #ffffff;
+    color: var(--brand-dark);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   }
   .filter-btn.active .dot { opacity: 1; }
 
-  /* Premium Masonry Grid */
+  /* Premium Uniform Grid */
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 300px;
-    gap: 1.2rem;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 
   .gallery-card {
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    background: #111;
+    background: #f8fafc;
     border-radius: 4px;
+    aspect-ratio: 3 / 2; /* Uniform aspect ratio */
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -407,9 +436,13 @@ const galleryItems = [
     to { opacity: 0; transform: scale(0.95); }
   }
 
-  .gallery-card.large { grid-column: span 2; grid-row: span 2; }
-  .gallery-card.medium { grid-column: span 1; grid-row: span 2; }
-  .gallery-card.small { grid-column: span 1; grid-row: span 1; }
+  /* Remove asymmetrical size logic */
+  .gallery-card.large, 
+  .gallery-card.medium, 
+  .gallery-card.small { 
+    grid-column: auto; 
+    grid-row: auto; 
+  }
 
   .card-inner {
     width: 100%;
@@ -427,13 +460,13 @@ const galleryItems = [
   .card-glass {
     position: absolute;
     inset: 0;
-    background: rgba(6, 9, 15, 0.2);
+    background: rgba(6, 9, 15, 0.1);
     transition: 0.4s;
     z-index: 2;
   }
 
   .gallery-card:hover .card-inner img { transform: scale(1.1); }
-  .gallery-card:hover .card-glass { background: rgba(6, 9, 15, 0.4); }
+  .gallery-card:hover .card-glass { background: rgba(6, 9, 15, 0.3); }
 
   .card-overlay {
     position: absolute;
@@ -443,7 +476,7 @@ const galleryItems = [
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(to top, rgba(6, 9, 15, 0.95) 0%, rgba(6, 9, 15, 0) 60%);
+    background: linear-gradient(to top, rgba(6, 9, 15, 0.8) 0%, transparent 60%);
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }

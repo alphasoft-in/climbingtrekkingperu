@@ -54,6 +54,7 @@ const excludes = [
           <span class="thin">EL ORÁCULO DEL PACÍFICO</span>
           <span class="bold">LIMA & PACHACAMAC 8H</span>
         </h1>
+        <div class="hero-accent-bar"></div>
 
         <div class="metrics-bar">
           <div class="metric">
@@ -84,7 +85,7 @@ const excludes = [
         
         <div class="dossier-content">
           <div class="dossier-header">
-            <span class="log-id">LOG: LIM-PACH-08H</span>
+            <span class="log-id">CÓDIGO: LIM-PACH-08H</span>
             <h2 class="dossier-title">Entre el Oráculo y la <span class="blue">Ciudad</span></h2>
           </div>
           
@@ -207,7 +208,7 @@ const excludes = [
         <aside class="logistics-sidebar">
           <div class="logistics-card">
             <div class="card-header">
-              <span class="c-id">MOD: LOG-LIMA-PACH</span>
+              <span class="c-id">REF: SRV-LIMA-PACH</span>
               <h3>Servicios Incluidos</h3>
             </div>
             <ul class="log-list">
@@ -222,7 +223,7 @@ const excludes = [
           
           <div class="logistics-card secondary">
             <div class="card-header">
-              <span class="c-id">MOD: TECH-LOGISTICS</span>
+              <span class="c-id">REF: EQP-LOGISTICS</span>
               <h3>No Incluye / Notas</h3>
             </div>
             <ul class="log-list">
@@ -273,7 +274,7 @@ const excludes = [
       '/slider_3.png',
       '/slider_2.png',
       '/slider_4.png',
-      '/trekking/huayhuash/360.jpeg'
+      '/trekking/huayhuash/360.png'
     ]} 
   />
 
@@ -316,13 +317,13 @@ const excludes = [
     align-items: center;
     width: 100%;
   }
-  .split-title { display: flex; flex-direction: column; margin-bottom: 3.5rem; 
+  .split-title { display: flex; flex-direction: column; margin-bottom:  1.5rem; 
     align-items: center;
     gap: 0.5rem;
   }
-  .split-title .thin { font-size: clamp(0.9rem, 2.5vw, 1.3rem); font-weight: 200; letter-spacing: 8px; opacity: 0.8; }
-  .split-title .bold { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -1px; line-height: 1; }
-  .metrics-bar { display: flex; gap: 4rem; padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); 
+  .split-title .thin { font-size: clamp(0.8rem, 2vw, 1.1rem); font-weight: 200; letter-spacing: 8px; opacity: 0.8; }
+  .split-title .bold { font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 900; letter-spacing: -1px; line-height: 1; }
+  .metrics-bar { display: flex; gap: 4rem; padding:  1.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); 
     justify-content: center;
   }
   .metric { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -400,4 +401,13 @@ const excludes = [
   .timeline-end { margin-top: 2rem; padding-left: 45px; position: relative; display: flex; align-items: center; gap: 1.5rem; }
   .end-mark { width: 12px; height: 12px; background: var(--brand-light); border: 2px solid var(--brand-dark); z-index: 2; transform: rotate(45deg); }
   .end-text { font-size: 0.65rem; font-weight: 800; color: var(--brand-light); letter-spacing: 3px; text-transform: uppercase; }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
 </style>
