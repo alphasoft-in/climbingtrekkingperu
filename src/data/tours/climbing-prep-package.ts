@@ -17,7 +17,7 @@ export const climbingPrepPackageData = {
       titlePrefix: "Domina los",
       titleAccent: "Andes Técnicos",
       description: "Programa intensivo diseñado para consolidar técnica en glaciar y pared. Cuatro cumbres emblemáticas para prepararte para desafíos como Alpamayo o Huascarán.",
-      image: "/slider_5.png",
+      image: "/prep/prep.png",
       lat: `09° 08' 22" S`,
       lon: `77° 28' 14" W`,
       specs: [
@@ -68,7 +68,10 @@ export const climbingPrepPackageData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/prep/1.png",
+      "/prep/2.png",
+      "/prep/3.png",
+      "/prep/4.png"
     ]
   },
   en: {
@@ -86,7 +89,7 @@ export const climbingPrepPackageData = {
       titlePrefix: "Master the",
       titleAccent: "Technical Andes",
       description: "Intensive program designed to consolidate glacier and wall technique. Four emblematic summits to prepare you for challenges like Alpamayo or Huascaran.",
-      image: "/slider_5.png",
+      image: "/prep/prep.png",
       lat: `09° 08' 22" S`,
       lon: `77° 28' 14" W`,
       specs: [
@@ -137,7 +140,10 @@ export const climbingPrepPackageData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/prep/1.png",
+      "/prep/2.png",
+      "/prep/3.png",
+      "/prep/4.png"
     ]
   }
 };
