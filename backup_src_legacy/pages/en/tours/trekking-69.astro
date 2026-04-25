@@ -1,0 +1,172 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '05:00 AM',
+    title: 'EARLY DEPARTURE',
+    content: 'Departure from Huaraz heading north. Stop on the way for an energetic breakfast (not included).',
+    stats: { time: 'Start' }
+  },
+  {
+    day: '08:30 AM',
+    title: 'CEBOLLAPAMPA',
+    content: 'Arrival at the trekking starting point after passing through the Llanganuco lakes. Gear preparation.',
+    stats: { alt: '3900m' }
+  },
+  {
+    day: '09:00 AM',
+    title: 'TREKKING START',
+    content: 'Ascending hike through the Demanda valley, passing by Consuelo Lake and glacial landscapes.',
+    stats: { dist: '7 km' }
+  },
+  {
+    day: '12:00 PM',
+    title: 'LAKE 69 (4600M)',
+    content: 'Arrival at the blue jewel. Time for photos, relaxation, and enjoying the view of Chacraraju and Pisco peaks.',
+    stats: { alt: '4600m', time: '1 h stay' }
+  },
+  {
+    day: '04:00 PM',
+    title: 'RETURN TO CEBOLLAPAMPA',
+    content: 'Descent along the same route to the transportation. Return journey to Huaraz.',
+    stats: { time: 'Descent' }
+  },
+  {
+    day: '07:00 PM',
+    title: 'ARRIVAL IN HUARAZ',
+    content: 'End of the day at the Huaraz Main Square.',
+    stats: { time: 'End' }
+  }
+];
+
+const includes = [
+  'Pick up from your hotel in Huaraz',
+  'Private/shared tourist transportation',
+  'Official Tour Guide (Bilingual)',
+  'Emergency oxygen and first aid kit',
+  'Trekking poles (upon request)'
+];
+
+const excludes = [
+  'Breakfast and lunch (Box lunch recommended)',
+  'HNP entrance ticket (Ext: S/. 30.00 / Nac: S/. 12.00)',
+  'Personal travel insurance',
+  'Personal expenses'
+];
+
+const equipment = [
+  'Daypack (20-30L)',
+  'Water (3L minimum) and snacks',
+  'Layered clothing (Thermal, fleece, windbreaker)',
+  'Trekking boots with good grip',
+  'Hat, gloves, and UV sunglasses',
+  'Sunblock and insect repellent',
+  'Raincoat or poncho'
+];
+---
+
+<Layout title="Laguna 69 Trekking | Huaraz | Franpisco Adventure" description="The most famous one-day trek in the world. A demanding hike to an intense blue lake at 4600m in Huascaran National Park.">
+  <ItineraryHero 
+    client:load
+    titleTop="THE BLUE CHALLENGE"
+    titleMain="LAGUNA 69 TREKKING"
+    backgroundImage="/trekking/blanca/bg-cordillerablanca.png"
+    duration="FULL DAY (14h)"
+    price="CONSULT"
+    difficulty="EXIGENTE"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-L69-FD"
+    titlePrefix="The Pinnacle of"
+    titleAccent="Hiking"
+    description="Laguna 69 is undoubtedly the most iconic one-day hike in the Peruvian Andes. Located at the foot of the imposing Chacraraju, its sapphire blue color and glacial environment offer an unparalleled visual reward after the effort of the ascent."
+    image="/trekking/blanca/trekking-clasico.png"
+    lat={`09° 00' 40" S`}
+    lon={`77° 36' 47" W`}
+    specs={[
+      { label: 'DISTANCE', value: '14 KM (R/T)', icon: 'location' },
+      { label: 'GRADIENT', value: '+700m Ascent', icon: 'zone' },
+      { label: 'MARCH TIME', value: '5 - 6 Hours', icon: 'season' },
+      { label: 'REQUIREMENT', value: 'Acclimatization', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Included Services" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LAGUNA 69 TREKKING FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Laguna 69"
+    images={[
+      '/trekking/blanca/trekking-clasico.png',
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="trekking-69" client:visible />
+</Layout>

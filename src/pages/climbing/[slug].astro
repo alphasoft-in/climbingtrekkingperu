@@ -1,0 +1,18 @@
+---
+import { allToursData } from '@data/tours/toursData';
+import PackageTemplate from '@components/PackageTemplate.astro';
+
+export async function getStaticPaths() {
+  const climbingTours = Object.entries(allToursData).filter(([_, data]) => data.category === 'climbing');
+  
+  return climbingTours.map(([slug, data]) => ({
+    params: { slug },
+    props: { data }
+  }));
+}
+
+const { data } = Astro.props;
+const lang = 'es';
+---
+
+<PackageTemplate lang={lang} data={data} />

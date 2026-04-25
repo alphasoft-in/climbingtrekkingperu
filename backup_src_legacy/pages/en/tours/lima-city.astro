@@ -1,0 +1,153 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'ANCESTRAL',
+    title: 'HUACA PUCLLANA',
+    content: 'We begin with a panoramic view of Huaca Pucllana, a magnificent ceremonial and archaeological center from the 4th century A.D. built in adobe, considered a sacred town by the Incas.',
+    stats: { alt: 'Sea level', dist: 'Panoramic', time: '45 min' }
+  },
+  {
+    day: 'COLONIAL',
+    title: 'HISTORICAL CENTER & CATACOMBS',
+    content: 'Tour through the Historical Center of Lima: Plaza Mayor, Government Palace, Cathedral, and Municipal Palace. Visit to the San Francisco Convent and its famous underground crypts (Catacombs).',
+    stats: { alt: 'Historical', dist: 'Walking', time: '2 h' }
+  },
+  {
+    day: 'MODERN',
+    title: 'SAN ISIDRO & MIRAFLORES',
+    content: 'Visit to the traditional residential areas: El Olivar in San Isidro and the Love Park in Miraflores, with a spectacular view of the Pacific Ocean.',
+    stats: { alt: 'Coast', dist: 'Transport', time: '1 h' }
+  }
+];
+
+const includes = [
+  'Pickup from your hotel (Miraflores, San Isidro, Lima)',
+  'Air-conditioned tourist transport',
+  'Professional bilingual official tour guide',
+  'Guided visit to San Francisco and Catacombs',
+  'Drop-off at your hotel after the tour'
+];
+
+const excludes = [
+  'Entrance tickets to tourist sites',
+  'Meals and drinks',
+  'Tips for guide and driver',
+  'Personal expenses'
+];
+
+const equipment = [
+  'Comfortable walking shoes',
+  'Sunscreen and sunglasses',
+  'Camera with extra battery',
+  'Bottled water',
+  'Light jacket (Lima can be misty)',
+  'Extra cash for personal purchases'
+];
+---
+
+<Layout title="Classic Lima City Tour | Franpisco Adventure" description="Explore Lima in its three stages: Ancestral, Colonial, and Contemporary. A 4-hour journey through the most emblematic points of the Peruvian capital.">
+  <ItineraryHero 
+    client:load
+    titleTop="CITY OF KINGS"
+    titleMain="LIMA CITY TOUR 4H"
+    backgroundImage="/slider_3.png"
+    duration="4 HOURS APPROX"
+    price="CONSULT"
+    difficulty="EASY"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="LIM-CTY-04H"
+    titlePrefix="Three Eras in"
+    titleAccent="One City"
+    description="Lima is a metropolis that breathes history at every corner. This optimized 4-hour journey allows you to contrast the Ancestral Lima of adobe oracles, the Colonial Lima of the most important viceroyalty in America, and the Contemporary Lima."
+    image="/slider_1.png"
+    lat={`12° 02' 35" S`}
+    lon={`77° 01' 42" W`}
+    specs={[
+      { label: 'DEPARTURES', value: 'Daily (AM/PM)', icon: 'location' },
+      { label: 'HISTORY', value: 'Ancestral & Colonial', icon: 'zone' },
+      { label: 'DURATION', value: '4 Hours', icon: 'season' },
+      { label: 'MODALITY', value: 'Shared / Private', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Included Services" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LIMA CITY TOUR (4H)" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Lima City Tour"
+    images={[
+      '/slider_3.png',
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="lima-city" client:visible />
+</Layout>

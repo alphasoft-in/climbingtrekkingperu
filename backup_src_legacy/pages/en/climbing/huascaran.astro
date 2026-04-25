@@ -1,0 +1,180 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'HUARAZ – MUSHO (3500M) – MORAINE CAMP (4800M)',
+    content: 'Transfer from Huaraz to Musho. Ascent to the moraine camp. Phenomenal sunset over the Huaylas Valley.',
+    stats: { time: '7-8h Ascent', alt: '4800m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'MORAINE CAMP (4800M) – CAMP I (5450M)',
+    content: 'Ascent from Moraine Camp to Camp I. Technical glacier crossing to reach the campsite.',
+    stats: { time: '4-5h Ascent', alt: '5450m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'CAMP I (5450M) – CAMP II (5980M)',
+    content: 'Critical stretch crossing the "Canaleta", a technical and exposed section. Arrival at Camp II (The Shield) with views of Cordillera Negra.',
+    stats: { time: '6-7h Ascent', alt: '5980m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'CAMP II (5980M) – HUASCARÁN SUMMIT (6768M)',
+    content: 'Summit push to the highest peak in Peru. Navigating crevices and ice cornices to reach the roof of the country. Return to Camp II.',
+    stats: { time: '12-13h Full Day', alt: '6768m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'CAMP II (5980M) – MORAINE CAMP (4800M)',
+    content: 'Early descent crossing the Canaleta safely once more. Continue down to the moraine camp.',
+    stats: { time: '7-8h Descent', alt: '4800m' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'MORAINE CAMP (4800M) – MUSHO – HUARAZ',
+    content: 'Final descent to Musho and private return transport to Huaraz city.',
+    stats: { time: 'Return', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Terminal - hotel transfer in Huaraz',
+  'Technical briefing at office',
+  'Private transport Huaraz - Musho - Huaraz',
+  'UIAGM Certified mountain guide',
+  'Specialized cook and assistant',
+  'Porters for high camps (Collective gear)',
+  'Full expedition meals',
+  'High-mountain camping gear',
+  'HNP entrance fees',
+  'Ropes, snow stakes and technical gear',
+  'First aid kit and Oxygen'
+];
+
+const excludes = [
+  'Travel and technical rescue insurance',
+  'City meals',
+  'Personal mountain equipment',
+  'Personal porter (optional)',
+  'Personal expenses and tips'
+];
+
+const equipment = [
+  'Attack pack (50L) and load pack (70L)',
+  'Sleeping bag (-20°C)',
+  'Helmet, UV glasses Cat 4 and headlamp',
+  'Down jacket and Gore-Tex',
+  'Technical snow gloves (3 layers)',
+  'Harness and technical ice axes (pair)',
+  'Double/triple boots and crampons'
+];
+---
+
+<Layout title="Huascarán Expedition 6768m | Roof of Peru | Franpisco Adventure" description="Ascent to the highest peak in Peru. 6-day technical expedition to Huascarán South with UIAGM guides and elite logistics.">
+  <ItineraryHero
+    client:load
+    titleTop="THE ROOF OF PERU"
+    titleMain="NEVADO HUASCARÁN 6768M"
+    backgroundImage="/slider_4.png"
+    duration="06 DAYS / 05 NIGHTS"
+    price="USD. 1,995.00"
+    difficulty="VERY HIGH"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-HUA-06"
+    titlePrefix="The Colossus"
+    titleAccent="of the Andes"
+    description="Huascarán South is the highest peak in the Peruvian Andes. A maximum challenge that requires solid technical experience and rigorous acclimatization."
+    image="/slider_4.png"
+    lat={`09° 07' 17" S`}
+    lon={`77° 36' 32" W`}
+    specs={[
+      { label: 'MAX SUMMIT', value: '6,768 MASL', icon: 'location' },
+      { label: 'ACTIVITY', value: 'Technical Climbing', icon: 'activity' },
+      { label: 'SEASON', value: 'June - August', icon: 'season' },
+      { label: 'SERVICE', value: 'Elite Logistics', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Technical Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="HUASCARÁN EXPEDITION 6768M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Nevado Huascarán"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="huascaran" client:visible />
+</Layout>

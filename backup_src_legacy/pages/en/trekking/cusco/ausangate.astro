@@ -1,0 +1,171 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from '../../../../components/TourGallery';
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'CUSCO – TINKI – PACCHANTA – UPIS',
+    content: 'Travel through the South Valley to Upis. Gentle acclimatization hike with views of Mt. Ausangate. Exploration of Huayna Ausangate lagoon.',
+    stats: { alt: '4350m', dist: '8 km', time: '5 h' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'UPIS – JAMPA PASS (5100M) – AUSANGATECOCHA',
+    content: 'Crossing Jampa Pass surrounded by glaciers and turquoise lagoons. Descent to the Ausangatecocha camp.',
+    stats: { alt: '5100m', dist: '18 km', time: '9 h' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'AUSANGATECOCHA – WARMISAYANA PASS (5200M) – ANANTAPATA',
+    content: 'Ascent to the highest point of the journey (Palomani/Warmisayana Pass). Panoramic views of the Vilcanota Range and the red mountain.',
+    stats: { alt: '5200m', dist: '17 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'ANANTAPATA – RAINBOW MOUNTAIN – CUSCO',
+    content: 'Early visit to Vinicunca to avoid crowds. Red Valley viewpoint and transfer back to Cusco city.',
+    stats: { alt: '5040m', dist: '10 km', time: '4 h' }
+  }
+];
+
+const includes = [
+  'Airport - Hotel - Airport transfers (Cusco)',
+  '2 Hotel nights in Cusco (Courtesy)',
+  'Private transport Cusco – Upis / Vinicunca – Cusco',
+  'Official bilingual specialized mountain guide',
+  'Professional camping equipment (Tents, dining, kitchen)',
+  'Chef and kitchen assistant',
+  'Horses for equipment transport and 6kg personal gear',
+  'Full board (3B, 3L, 3D) with hot drinks',
+  'Duffle bag for personal belongings',
+  'First aid kit and emergency oxygen'
+];
+
+const excludes = [
+  'Domestic and international flights',
+  'Entrance tickets to communities (Approx. S/. 50)',
+  'Sleeping bag and inflatable mats',
+  'Trekking poles',
+  'Day 4 lunch and Day 1 breakfast',
+  'Tips and personal expenses'
+];
+
+const equipment = [
+  'Technical mountain boots',
+  'Winter clothing (-15°C rated)',
+  'Thermal base layers and fleece',
+  'Waterproof/Gore-Tex outer shell',
+  'Sleeping bag (-15°C comfort)',
+  'Trekking poles (highly recommended)',
+  'Headlamp with extra batteries',
+  'Sunblock (SPF 50+) and lip balm'
+];
+---
+
+<Layout title="Ausangate Trek & Rainbow Mountain 4 Days | Cusco | Franpisco Adventure" description="Technical high-mountain expedition around Mt. Ausangate. 4 days of glaciers, 5200m passes, and arrival at the Rainbow Mountain.">
+  <ItineraryHero
+    client:load
+    titleTop="THE SACRED MASSIF"
+    titleMain="AUSANGATE TREK 4D"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    duration="4 DAYS / 3 NIGHTS"
+    price="USD. 695.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CSQ-AUS-04D"
+    titlePrefix="The Guardian of"
+    titleAccent="Cusco"
+    description="Ausangate is the most important Apu in the southern Andes. This route not only takes you through its glacial slopes and colored lagoons but also connects epically with the Rainbow Mountain, away from conventional crowds."
+    image="/slider_1.png"
+    lat={`13° 47' 18" S`}
+    lon={`71° 13' 52" W`}
+    specs={[
+      { label: "COVERAGE", value: "Vilcanota Range", icon: "location" },
+      { label: "LOGISTICS", value: "Horses & Camping", icon: "zone" },
+      { label: "TRIP TYPE", value: "High Altitude Trekking", icon: "season" },
+      { label: "TEMP", value: "Down to -15°C", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Not Included"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Technical Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="AUSANGATE TREK & RAINBOW MOUNTAIN 4D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Ausangate Trek"
+    images={[
+      '/slider_1.png',
+      '/slider_4.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="ausangate" client:visible />
+</Layout>

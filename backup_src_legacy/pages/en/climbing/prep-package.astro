@@ -1,0 +1,179 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'NEVADO MATEO (5150M) – ACCLIMATIZATION',
+    content: 'Departure to Punta Olímpica. Basic technical ascent to start mountaineering and ensure optimal acclimatization.',
+    stats: { time: '5-6h Ascent', alt: '5150m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'ICHIC ULTA (5350M) – TECHNICAL PREPARATION',
+    content: 'Panoramic ascent with views of Huascarán South. Practice glacier and moraine progression.',
+    stats: { time: '7-8h Ascent', alt: '5350m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'HUARAZ – LLACA CREEK – VALLUNARAJU MORAINE CAMP (4980M)',
+    content: 'Transfer to Llaca and steep ascent to moraine camp. Spectacular views of the Huaraz valley.',
+    stats: { time: '3h Hike', alt: '4980m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'VALLUNARAJU SUMMIT (5680M) – HUARAZ',
+    content: 'Summit push over rock and glacier. Return to base camp and transfer back to the city.',
+    stats: { time: '10-11h Full Day', alt: '5680m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'HUARAZ – YANAPACCHA MORAINE CAMP (4800M)',
+    content: 'Transfer via Llanganuco. Ascent to moraine camp and start of technical glacier course (PD+).',
+    stats: { time: '4h Ascent', alt: '4800m' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'YANAPACCHA SUMMIT (5460M) – HUARAZ',
+    content: 'Technical climbing to the summit. View of the Blanca colossi. Final descent and return to Huaraz.',
+    stats: { time: '10-11h Full Day', alt: '5460m' }
+  }
+];
+
+const includes = [
+  'Private transport for all expeditions',
+  'UIAGM Certified mountain guide',
+  'Full cook and camp logistics',
+  'Porters for expedition equipment',
+  'Technical gear: Helmet, Ice axe, Harness, Crampons',
+  'Full meals during Vallunaraju and Yanapaccha',
+  'High-mountain personal tents',
+  'Coca tea and energy snacks',
+  'First aid kit and communication'
+];
+
+const excludes = [
+  'Travel and rescue insurance',
+  'Meals on Mateo and Ichic Ulta days',
+  'Personal sleeping bag and mat',
+  'HNP entrance fees',
+  'Technical mountain boots',
+  'Personal expenses and tips'
+];
+
+const equipment = [
+  'Sleeping bag (-20°C)',
+  'Mountain helmet and headlamp',
+  'UV glasses Cat 4 and sunblock',
+  'Down jacket and Gore-Tex',
+  'Technical ice axes and harness',
+  'High-mountain boots and crampons',
+  'Load and attack backpacks'
+];
+---
+
+<Layout title="4 Peaks Prep Package | Technical Mountaineering | Franpisco Adventure" description="Master high mountain technique with our 6-day package. Climb Mateo, Ichic Ulta, Vallunaraju and Yanapaccha with elite UIAGM guides.">
+  <ItineraryHero
+    client:load
+    titleTop="HIGH LEVEL TRAINING"
+    titleMain="PREP: 4 TECHNICAL PEAKS"
+    backgroundImage="/slider_5.png"
+    duration="06 DAYS / 05 NIGHTS"
+    price="USD. 1,395.00"
+    difficulty="HIGH / PROGRESSIVE"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-PREP-06"
+    titlePrefix="Master the"
+    titleAccent="Technical Andes"
+    description="Intensive program designed to consolidate glacier and wall technique. Four emblematic peaks to prepare you for challenges like Alpamayo or Huascarán."
+    image="/slider_5.png"
+    lat={`09° 08' 22" S`}
+    lon={`77° 28' 14" W`}
+    specs={[
+      { label: 'MAX SUMMIT', value: '5,680 MASL', icon: 'location' },
+      { label: 'TYPE', value: 'Technical Training', icon: 'activity' },
+      { label: 'SEASON', value: 'Year Round', icon: 'season' },
+      { label: 'SERVICE', value: 'Elite UIAGM Command', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Technical Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="4 PEAKS TECHNICAL PREP PACKAGE" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Preparation Package"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="prep-package" client:visible />
+</Layout>

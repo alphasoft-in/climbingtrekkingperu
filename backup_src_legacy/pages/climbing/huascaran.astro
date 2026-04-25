@@ -1,0 +1,180 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'HUARAZ – MUSHO (3500M) – CAMPO MORRENA (4800M)',
+    content: 'Traslado de Huaraz a Musho. Ascenso hasta el campo morrena. Espectacular puesta de sol sobre el Callejón de Huaylas.',
+    stats: { time: '7-8h Ascenso', alt: '4800m' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'CAMPO MORRENA (4800M) – CAMPO I (5450M)',
+    content: 'Ascenso desde Campo Morrena hasta el primer campo alto. Cruce del glaciar técnico para alcanzar el campamento.',
+    stats: { time: '4-5h Ascenso', alt: '5450m' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'CAMPO I (5450M) – CAMPO II (5980M)',
+    content: 'Tramo crítico cruzando la "Canaleta", sección técnica y expuesta. Llegada al Campo II (Escudo) con vistas de la Cordillera Negra.',
+    stats: { time: '6-7h Ascenso', alt: '5980m' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'CAMPO II (5980M) – CUMBRE HUASCARÁN (6768M)',
+    content: 'Ataque a la cumbre más alta del Perú. Navegación por grietas y cornisas hasta alcanzar el techo del país. Retorno al Campo II.',
+    stats: { time: '12-13h Jornada', alt: '6768m' }
+  },
+  {
+    day: 'DÍA 05',
+    title: 'CAMPO II (5980M) – CAMPO MORRENA (4800M)',
+    content: 'Descenso temprano cruzando nuevamente la Canaleta de forma segura. Continuación hasta el campo morrena.',
+    stats: { time: '7-8h Descenso', alt: '4800m' }
+  },
+  {
+    day: 'DÍA 06',
+    title: 'CAMPO MORRENA (4800M) – MUSHO – HUARAZ',
+    content: 'Descenso final hacia Musho y transporte privado de retorno triunfal a la ciudad de Huaraz.',
+    stats: { time: 'Retorno', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Traslado terminal - hotel en Huaraz',
+  'Charla técnica en la oficina',
+  'Transporte privado Huaraz - Musho - Huaraz',
+  'Guía de montaña Certificado UIAGM',
+  'Cocinero especializado y asistente',
+  'Porteros para campos altos (Equipo colectivo)',
+  'Alimentación completa en expedición',
+  'Equipo de camping de alta montaña',
+  'Tickets de entrada al P.N. Huascarán',
+  'Cuerdas, estacas de nieve y equipo técnico',
+  'Botiquín y Oxígeno de emergencia'
+];
+
+const excludes = [
+  'Seguros de viaje y rescate técnico',
+  'Alimentación en la ciudad',
+  'Equipo personal de montaña',
+  'Portero personal (opcional)',
+  'Gastos personales y propinas'
+];
+
+const equipment = [
+  'Mochila de ataque (50L) y carga (70L)',
+  'Saco de dormir (-20°C)',
+  'Casco, gafas UV Cat 4 y frontal',
+  'Chaqueta de plumas y Gore-Tex',
+  'Guantes técnicos de nieve (3 capas)',
+  'Arnés y piolets técnicos (par)',
+  'Botas dobles/triples y grampones'
+];
+---
+
+<Layout title="Expedición Huascarán 6768m | El Techo del Perú | Franpisco Adventure" description="Ascenso a la montaña más alta del Perú. Expedición técnica de 6 días al Huascarán Sur con guías UIAGM y logística de élite.">
+  <ItineraryHero
+    client:load
+    titleTop="EL TECHO DEL PERÚ"
+    titleMain="NEVADO HUASCARÁN 6768M"
+    backgroundImage="/slider_4.png"
+    duration="06 DÍAS / 05 NOCHES"
+    price="USD. 1,995.00"
+    difficulty="MUY ALTA"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-HUA-06"
+    titlePrefix="El Coloso"
+    titleAccent="de los Andes"
+    description="El Huascarán Sur es la cumbre más alta de los Andes Peruanos. Un desafío máximo que requiere experiencia técnica sólida y una aclimatación rigurosa."
+    image="/slider_4.png"
+    lat={`09° 07' 17" S`}
+    lon={`77° 36' 32" W`}
+    specs={[
+      { label: "PUNTO MÁXIMO", value: "6,768 MSNM", icon: "location" },
+      { label: "ACTIVIDAD", value: "Escalada Técnica", icon: "activity" },
+      { label: "TEMPORADA", value: "Junio - Agosto", icon: "season" },
+      { label: "SERVICIO", value: "Logística de Élite", icon: "service" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Técnico" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="EXPEDICIÓN HUASCARÁN 6768M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Nevado Huascarán"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="huascaran" client:visible />
+</Layout>

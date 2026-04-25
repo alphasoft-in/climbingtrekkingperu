@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '08:00 AM',
+    title: 'DEPARTURE FROM HUARAZ',
+    content: 'Pick up from your hotel and journey north through the Huaylas Valley. First stop in Carhuaz to taste typical ice cream.',
+    stats: { time: 'Start' }
+  },
+  {
+    day: '10:30 AM',
+    title: 'YUNGAY (MEMORIAL SITE)',
+    content: 'Guided visit to the Yungay Memorial Site, a city buried by the 1970 landslide. A place of memory and history.',
+    stats: { alt: '2500m' }
+  },
+  {
+    day: '11:30 AM',
+    title: 'HUASCARAN NATIONAL PARK',
+    content: 'Entry to the National Park. Ascent through the Llanganuco valley among Quenuales (Polylepis) forests.',
+    stats: { alt: '3400m' }
+  },
+  {
+    day: '12:00 PM',
+    title: 'LLANGANUCO LAKES',
+    content: 'Visit to Chinacocha (female) and Orconcocha (male) lakes. Time for boats, hiking, and photography.',
+    stats: { alt: '3890m', time: '2 h stay' }
+  },
+  {
+    day: '03:00 PM',
+    title: 'TARICA & HANDICRAFTS',
+    content: 'Descent and stop at the artisanal village of Tarica to see ceramic work and buy souvenirs.',
+    stats: { time: 'Culture' }
+  },
+  {
+    day: '06:30 PM',
+    title: 'ARRIVAL IN HUARAZ',
+    content: 'Arrival at Huaraz Main Square. End of the daily expedition.',
+    stats: { time: 'End' }
+  }
+];
+
+const includes = [
+  'Pick up from your hotel in Huaraz',
+  'Equipped tourist transportation',
+  'Official Tour Guide (Bilingual)',
+  'Assistance at the National Park',
+  'First aid kit'
+];
+
+const excludes = [
+  'Meals (Lunch at a local restaurant)',
+  'HNP entrance tickets (S/. 30.00)',
+  'Boat service at the lake',
+  'Personal expenses'
+];
+
+const equipment = [
+  'Light jacket and rain poncho',
+  'Sun protection (hat, sunscreen, sunglasses)',
+  'Comfortable walking shoes',
+  'Camera with extra battery',
+  'Water and snacks',
+  'Extra cash for lunch and tickets'
+];
+---
+
+<Layout title="Llanganuco Lake & Yungay | Huaraz | Franpisco Adventure" description="Explore the turquoise lakes of Llanganuco and the history of Yungay in the heart of Huascaran National Park.">
+  <ItineraryHero 
+    client:load
+    titleTop="HISTORY & NATURE"
+    titleMain="LLANGANUCO LAKE"
+    backgroundImage="/slider_1.png"
+    duration="FULL DAY (10H)"
+    price="CONSULT"
+    difficulty="EASY"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-LLA-FD"
+    titlePrefix="Turquoise in the"
+    titleAccent="High Mountains"
+    description="The tour to Llanganuco is the quintessential Huaraz classic. It combines the natural beauty of turquoise lakes with the moving history of the Yungay Memorial."
+    image="/slider_3.png"
+    lat={`09° 04' 00" S`}
+    lon={`77° 39' 00" W`}
+    specs={[
+      { label: 'LOCATION', value: 'Huascaran Nat. Park', icon: 'location' },
+      { label: 'PEAKS', value: 'Huascaran, Huandoy', icon: 'zone' },
+      { label: 'TYPE', value: 'Cultural / Scenic', icon: 'season' },
+      { label: 'TEMPERATURE', value: '12°C - 18°C', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LLANGANUCO LAKE FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Llanganuco"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="laguna-llanganuco" client:visible />
+</Layout>

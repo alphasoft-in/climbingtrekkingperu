@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuggestedRoutes from '../components/SuggestedRoutes';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard';
+import PageHero from '../components/PageHero';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const argentinaPrograms = [
+  {
+    id: 'aconcagua',
+    title: t('climbing.aconcagua.name'),
+    description: t('climbing.aconcagua.desc'),
+    image: '/slider_2.png',
+    duration: `17 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    prefix: 'ARG',
+    category: 'EXPEDICIÓN DE ALTA MONTAÑA'
+  }
+];
+---
+
+<Layout title={`Argentina - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora los Andes Argentinos con Franpisco Adventure. Expediciones al Aconcagua, el techo de América, con logística de primer nivel y guías expertos.">
+  <PageHero 
+    client:load
+    titleTop="DESTINOS"
+    titleMain="ARGENTINA"
+    backgroundImage="/slider_3.png"
+    techData={[
+      { label: "ELEVACIÓN MÁX", value: "6,962 M.S.N.M." },
+      { label: "COORDENADAS", value: "32°39′S 70°00′W" },
+      { label: "REGIÓN", value: "ANDES / ARGENTINA" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {argentinaPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, `argentina/${prog.id}`)}
+            prefix={prog.prefix}
+            category={prog.category}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes lang={lang} currentId="argentina-hub" client:visible />
+</Layout>

@@ -1,0 +1,172 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '07:30 AM',
+    title: 'DEPARTURE FROM HUARAZ',
+    content: 'Departure towards Carhuaz and ascent through the Ulta valley. Panoramic views of Huascaran.',
+    stats: { time: 'Start' }
+  },
+  {
+    day: '10:00 AM',
+    title: 'PUNTA OLIMPICA',
+    content: 'Crossing the highest trans-Andean tunnel in the world (4736m). Stop to see the Contrahierbas glacier.',
+    stats: { alt: '4736m' }
+  },
+  {
+    day: '12:00 PM',
+    title: 'ARRIVAL IN CHACAS',
+    content: 'Visit to the picturesque village of Chacas. Known for its wood carvings from the Don Bosco school.',
+    stats: { alt: '3360m', time: 'Culture' }
+  },
+  {
+    day: '01:30 PM',
+    title: 'DON BOSCO WORKSHOPS',
+    content: 'Visit to the woodworking workshops and the main church with its restored gold leaf altarpiece.',
+    stats: { time: 'Art' }
+  },
+  {
+    day: '03:30 PM',
+    title: 'RETURN VIA ULTA',
+    content: 'Return journey to Huaraz enjoying the high mountain landscapes once again.',
+    stats: { time: 'Descent' }
+  },
+  {
+    day: '07:30 PM',
+    title: 'ARRIVAL IN HUARAZ',
+    content: 'Arrival at the city center. End of services.',
+    stats: { time: 'End' }
+  }
+];
+
+const includes = [
+  'Pick up from your hotel in Huaraz',
+  'Private/shared tourist transportation',
+  'Official Tour Guide (Bilingual)',
+  'First aid kit',
+  'Personalized assistance'
+];
+
+const excludes = [
+  'Meals (Regional lunch)',
+  'Tips and gratuities',
+  'Travel and accident insurance',
+  'Personal expenses'
+];
+
+const equipment = [
+  'Comfortable walking shoes',
+  'Warm clothing and windbreaker',
+  'Sun protection (hat, sunblock, glasses)',
+  'Camera with extra battery',
+  'Water bottle and snacks',
+  'Cash for lunch and souvenirs'
+];
+---
+
+<Layout title="Chacas & Punta Olimpica Full Day | Ancash | Franpisco Adventure" description="Discover the artistic and spiritual beauty of Chacas and the Don Bosco workshops, crossing the highest trans-Andean tunnel in the world.">
+  <ItineraryHero
+    client:load
+    titleTop="ART & MOUNTAINS"
+    titleMain="CHACAS & PUNTA OLIMPICA"
+    backgroundImage="/slider_4.png"
+    duration="FULL DAY (12H)"
+    price="UPON REQUEST"
+    difficulty="EASY"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HZ-CHS-FD"
+    titlePrefix="The Carver's"
+    titleAccent="Refuge"
+    description="Chacas is not just a village; it's a living work of art. Located on the other side of the Cordillera Blanca, this destination combines the vertigo of Punta Olimpica with the peace of a community dedicated to art."
+    image="/slider_3.png"
+    lat={`09° 09' 00" S`}
+    lon={`77° 22' 00" W`}
+    specs={[
+      { label: 'LOCATION', value: 'Conchucos Valley', icon: 'location' },
+      { label: 'ATTRACTION', value: 'Don Bosco Craftsmanship', icon: 'zone' },
+      { label: 'INFRASTRUCTURE', value: 'Trans-Andean Tunnel', icon: 'season' },
+      { label: 'LANDSCAPE', value: 'Glaciers and Valleys', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="CHACAS & PUNTA OLIMPICA FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Chacas"
+    images={[
+      '/slider_4.png',
+      '/slider_3.png',
+      '/slider_2.png',
+      '/slider_1.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="chacas" client:visible />
+</Layout>

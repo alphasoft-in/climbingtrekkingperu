@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '08:30 AM',
+    title: 'SALIDA DE HUARAZ',
+    content: 'Partida hacia el sur del Callejón de Huaylas. Pasamos por Recuay, Ticapampa y Catac.',
+    stats: { time: 'Inicio' }
+  },
+  {
+    day: '10:30 AM',
+    title: 'PACHACOTO Y PUYAS',
+    content: 'Ingreso al Parque Nacional. Visita a las aguas gasificadas de Pumapampa y las milenarias Puyas Raimondi.',
+    stats: { alt: '3900m' }
+  },
+  {
+    day: '11:30 AM',
+    title: 'PINTURAS Y OJO DE PUMA',
+    content: 'Observación de pinturas rupestres y el "Ojo de Puma", un manantial de colores cambiantes.',
+    stats: { time: 'Cultura' }
+  },
+  {
+    day: '12:30 PM',
+    title: 'GLACIAR PASTORURI',
+    content: 'Caminata de 30-40 min hacia la base del glaciar. Observación de la laguna congelada y las grietas del hielo.',
+    stats: { alt: '5200m', time: '2 h estancia' }
+  },
+  {
+    day: '03:30 PM',
+    title: 'ALMUERZO EN CATAC',
+    content: 'Descenso y parada en Catac para disfrutar de un almuerzo típico de la región.',
+    stats: { time: 'Gastronomía' }
+  },
+  {
+    day: '06:30 PM',
+    title: 'ARRIBO A HUARAZ',
+    content: 'Llegada a la Plaza de Armas de Huaraz. Fin de la jornada.',
+    stats: { time: 'Fin' }
+  }
+];
+
+const includes = [
+  'Recojo de su hotel en Huaraz',
+  'Transporte turístico compartido/privado',
+  'Guía Oficial de Turismo (Bilingüe)',
+  'Botiquín y oxígeno de emergencia',
+  'Asistencia personalizada'
+];
+
+const excludes = [
+  'Alimentación (Almuerzo regional)',
+  'Ticket de entrada PNH (S/. 25.00)',
+  'Caballos en la base del glaciar',
+  'Gastos personales'
+];
+
+const equipment = [
+  'Ropa de abrigo (capas térmicas, polar, casaca)',
+  'Cortavientos impermeable',
+  'Protección solar (gorro, bloqueador, lentes)',
+  'Calzado cómodo para caminata',
+  'Cámara fotográfica con batería extra',
+  'Agua y snacks'
+];
+---
+
+<Layout title="Glaciar Pastoruri Full Day | Huaraz | Franpisco Adventure" description="Visita el Glaciar Pastoruri a más de 5000m. La ruta del cambio climático, Puyas Raimondi y manantiales gasificados en Ancash.">
+  <ItineraryHero 
+    client:load
+    titleTop="LA RUTA DEL HIELO"
+    titleMain="GLACIAR PASTORURI 5250M"
+    backgroundImage="/slider_3.png"
+    duration="FULL DAY (10H)"
+    price="CONSULTAR"
+    difficulty="FÁCIL"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-PAS-FD"
+    titlePrefix="Testigo del"
+    titleAccent="Tiempo"
+    description="El Glaciar Pastoruri es hoy un símbolo del cambio climático. A pesar de su retroceso, sigue siendo uno de los puntos de acceso más sencillos a la alta montaña."
+    image="/slider_1.png"
+    lat={`09° 52' 00" S`}
+    lon={`77° 11' 00" W`}
+    specs={[
+      { label: 'LOCALIZACIÓN', value: 'Catac, Cordillera Blanca', icon: 'location' },
+      { label: 'BOTÁNICA', value: 'Puyas Raimondi', icon: 'zone' },
+      { label: 'ACTIVIDAD', value: 'Hielo / Fotografía', icon: 'season' },
+      { label: 'ACCESO', value: 'Caminata Suave', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="GLACIAR PASTORURI FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Pastoruri"
+    images={[
+      '/slider_3.png',
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="pastoruri" client:visible />
+</Layout>

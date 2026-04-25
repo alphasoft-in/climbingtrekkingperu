@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DIA 01',
+    title: 'CUSCO – TINKI – PACCHANTA – UPIS',
+    content: 'Viaje por el Valle Sur hasta Upis. Caminata suave de aclimatación con vistas al Nevado Ausangate. Exploración de la laguna Huayna Ausangate.',
+    stats: { alt: '4350m', dist: '8 km', time: '5 h' }
+  },
+  {
+    day: 'DIA 02',
+    title: 'UPIS – PASO JAMPA (5100M) – AUSANGATECOCHA',
+    content: 'Cruce del Paso Jampa rodeado de glaciares y lagunas turquesas. Descenso al campamento Ausangatecocha.',
+    stats: { alt: '5100m', dist: '18 km', time: '9 h' }
+  },
+  {
+    day: 'DIA 03',
+    title: 'AUSANGATECOCHA – PASO WARMISAYANA (5200M) – ANANTAPATA',
+    content: 'Ascenso al punto más alto de la travesía (Paso Palomani/Warmisayana). Vistas panorámicas de la Cordillera Vilcanota y la montaña roja.',
+    stats: { alt: '5200m', dist: '17 km', time: '8 h' }
+  },
+  {
+    day: 'DIA 04',
+    title: 'ANANTAPATA – MONTAÑA 7 COLORES – CUSCO',
+    content: 'Visita temprana al Vinicunca para evitar multitudes. Mirador del Valle Rojo y retorno en transporte a la ciudad de Cusco.',
+    stats: { alt: '5040m', dist: '10 km', time: '4 h' }
+  }
+];
+
+const includes = [
+  'Traslados Aeropuerto - Hotel - Aeropuerto (Cusco)',
+  '2 Noches de hotel en Cusco (Cortesía)',
+  'Transporte privado Cusco – Upis / Vinicunca – Cusco',
+  'Guía oficial bilingüe especializado en alta montaña',
+  'Equipo de campamento profesional (Carpas, comedor, cocina)',
+  'Cocinero y asistente de cocina',
+  'Caballos para transporte de equipo y 6kg de equipo personal',
+  'Alimentación completa (3D, 3A, 3C) con bebidas calientes',
+  'Duffle bag para pertenencias personales',
+  'Botiquín de primeros auxilios y oxígeno de emergencia'
+];
+
+const excludes = [
+  'Vuelos nacionales e internacionales',
+  'Tickets de entrada a comunidades y parques (S/. 50 aprox)',
+  'Bolsa de dormir y matras inflables',
+  'Bastones de trekking',
+  'Almuerzo del día 4 y desayuno del día 1',
+  'Propinas y gastos personales'
+];
+
+const equipment = [
+  'Botas de montaña técnicas',
+  'Ropa de invierno extrema (capas térmicas)',
+  'Chaqueta impermeable / Gore-Tex',
+  'Bolsa de dormir técnica (-15°C confort)',
+  'Bastones de trekking (recomendados)',
+  'Linterna frontal con pilas de repuesto',
+  'Protector solar (FPS 50+) y labial',
+  'Gafas de sol con protección UV'
+];
+---
+
+<Layout title="Ausangate Trek & Montaña 7 Colores 4 Días | Cusco | Franpisco Adventure" description="Expedición técnica de alta montaña por el Nevado Ausangate. 4 días de glaciares, pasos a 5200m y llegada a la Montaña de 7 Colores.">
+  <ItineraryHero
+    client:load
+    titleTop="ALTA MONTAÑA"
+    titleMain="AUSANGATE & RAINBOW MOUNTAIN"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    duration="4 DÍAS / 3 NOCHES"
+    price="USD. 560.00"
+    difficulty="DIFÍCIL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CSQ-AUS-04D"
+    titlePrefix="El Guardián de"
+    titleAccent="Cusco"
+    description="Rodear el Ausangate es sumergirse en la cosmovisión andina. Este no es solo un trekking; es un peregrinaje entre glaciares sagrados, lagunas turquesas y comunidades que mantienen viva su herencia incaica."
+    image="/slider_1.png"
+    lat={`13° 47' 18" S`}
+    lon={`71° 13' 52" W`}
+    specs={[
+      { label: "PUNTO DE INICIO", value: "Cusco, Perú", icon: "location" },
+      { label: "ZONA TÉCNICA", value: "Cordillera Vilcanota", icon: "zone" },
+      { label: "TEMPORADA", value: "Abril - Noviembre", icon: "season" },
+      { label: "SERVICIO", value: "Aventura Confort", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Servicios Incluidos"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="No Incluye"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Equipo Técnico"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="AUSANGATE TREKKING & RAINBOW MOUNTAIN 4D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Ausangate Trek"
+    images={[
+      '/slider_1.png',
+      '/slider_4.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="ausangate" client:visible />
+</Layout>

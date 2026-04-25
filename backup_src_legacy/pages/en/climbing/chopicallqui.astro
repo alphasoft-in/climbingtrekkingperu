@@ -1,0 +1,166 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'HUARAZ (3100M) – CHOPICALLQUI CURVE – MORAINE CAMP (4800M)',
+    content: 'Transfer from Huaraz to the Chopicallqui curve. Start the ascent to the moraine camp. A demanding approach day.',
+    stats: { time: '6-7h Ascent', alt: '4800m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'MORAINE CAMP (4800M) – HIGH CAMP (5480M)',
+    content: 'Crossing the moraine and technical glacier stretch to reach high camp. Preparation for summit push.',
+    stats: { time: '4-5h Ascent', alt: '5480m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'HIGH CAMP (5480M) – CHOPICALLQUI SUMMIT (6354M)',
+    content: 'Summit push via the normal route. Spectacular views of the Cordillera Blanca. Descent to moraine camp.',
+    stats: { time: '14-15h Full Day', alt: '6354m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'MORAINE CAMP (4800M) – CURVE – HUARAZ (3100M)',
+    content: 'Final descent to the curve and return transport to Huaraz city.',
+    stats: { time: 'Return', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Transfer terminal - hotel in Huaraz',
+  'Guided ascent with UIAGM experts',
+  'Huascaran N.P. entrance fees',
+  'Private transport for all transfers',
+  'Full meals during expedition',
+  'High-mountain camping gear',
+  'Porters for collective equipment',
+  'Specialized cook and assistant',
+  'First aid kit and oxygen'
+];
+
+const excludes = [
+  'Travel and rescue insurance',
+  'City meals',
+  'Personal mountain equipment',
+  'Personal expenses and tips',
+  'Personal sleeping bag (-20°C)'
+];
+
+const equipment = [
+  'Sleeping bag (-20°C)',
+  'Mountain helmet and headlamp',
+  'UV glasses Cat 4 and sunblock',
+  'Down jacket and Gore-Tex',
+  'Technical ice axes and harness',
+  'High-mountain boots and crampons',
+  'Daypack (40L)'
+];
+---
+
+<Layout title="Chopicallqui Climbing 6354m | White Range | Franpisco Adventure" description="Conquer the fifth highest mountain in the Cordillera Blanca. 4-day technical expedition to Chopicallqui Peak with UIAGM guides.">
+  <ItineraryHero
+    client:load
+    titleTop="THE GIANT OF THE BLANCA"
+    titleMain="CHOPICALLQUI PEAK 6354M"
+    backgroundImage="/slider_1.png"
+    duration="04 DAYS / 03 NIGHTS"
+    price="USD. 1,195.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-CHO-04"
+    titlePrefix="The Heart of"
+    titleAccent="Ancash"
+    description="Chopicallqui is the fifth highest mountain in the Cordillera Blanca. It offers an aesthetic route and a summit with stunning views of Huascarán and Huandoy massifs."
+    image="/slider_1.png"
+    lat={`09° 05' 12" S`}
+    lon={`77° 34' 26" W`}
+    specs={[
+      { label: 'MAX SUMMIT', value: '6,354 MASL', icon: 'location' },
+      { label: 'TYPE', value: 'Technical Expedition', icon: 'activity' },
+      { label: 'SEASON', value: 'June - August', icon: 'season' },
+      { label: 'SERVICE', value: 'Elite UIAGM Guide', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Technical Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="CHOPICALLQUI EXPEDITION 6354M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Nevado Chopicallqui"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="chopicallqui" client:visible />
+</Layout>

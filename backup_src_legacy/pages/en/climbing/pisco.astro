@@ -1,0 +1,173 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'HUARAZ – ROCUTUYOC LAGOON (4450M)',
+    content: 'Acclimatization day visiting Rocutuyoc lagoon and the glacier. Perfect for cultural and physical adaptation.',
+    stats: { time: '9-10h Tour', alt: '4450m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'NEVADO MATEO (5150M) – ACCLIMATIZATION',
+    content: 'Basic technical ascent to Nevado Mateo. Practice using crampons and ice axe on real glacier terrain.',
+    stats: { time: '5-6h Ascent', alt: '5150m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'HUARAZ – CEBOLLAPAMPA – PISCO BASE CAMP (4680M)',
+    content: 'Transfer to Cebollapampa and uphill hike to the Nevado Pisco base camp.',
+    stats: { time: '4-5h Hike', alt: '4680m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'BASE CAMP (4680M) – PISCO SUMMIT (5752M)',
+    content: 'Summit push. Crossing moraine and glacier. 360° panoramic view of the Cordillera Blanca.',
+    stats: { time: '13-14h Full Day', alt: '5752m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'BASE CAMP (4680M) – HUARAZ (3100M)',
+    content: 'Final descent to Cebollapampa and private return transport to Huaraz city.',
+    stats: { time: 'Return', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Rocutuyoc Lagoon Acclimatization Tour',
+  'Nevado Mateo Expedition (5150m)',
+  'Private transport for all transfers',
+  'Full meals during Pisco expedition',
+  'High-mountain camping gear',
+  'UIAGM Certified mountain guide',
+  'Specialized cook and assistant',
+  'Donkeys and driver for base camp logistics',
+  'HNP entrance fees',
+  'First aid kit and radios'
+];
+
+const excludes = [
+  'Travel and rescue insurance',
+  'City meals',
+  'Personal mountain equipment',
+  'Personal sleeping bag and mat',
+  'Personal expenses and tips'
+];
+
+const equipment = [
+  'Sleeping bag (-20°C)',
+  'Mountain helmet and headlamp',
+  'UV glasses Cat 4 and sunblock',
+  'Down jacket and Gore-Tex',
+  'Harness and trekking ice axe',
+  'High-mountain boots and crampons',
+  'Daypack (40L)'
+];
+---
+
+<Layout title="Pisco Peak Climbing 5752m | White Range | Franpisco Adventure" description="5-day expedition to Nevado Pisco. Includes acclimatization at Rocutuyoc Lagoon and Nevado Mateo. The best view of the Cordillera Blanca with UIAGM guides.">
+  <ItineraryHero
+    client:load
+    titleTop="THE BALCONY OF THE ANDES"
+    titleMain="NEVADO PISCO 5752M"
+    backgroundImage="/slider_2.png"
+    duration="05 DAYS / 04 NIGHTS"
+    price="USD. 595.00"
+    difficulty="MODERATE"
+    difficultyLevel="moderate"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-PIS-05"
+    titlePrefix="The Heart of the"
+    titleAccent="White Range"
+    description="Nevado Pisco is known as the balcony of the Andes due to its strategic location. It offers unparalleled panoramic views of Huascarán, Chopicalqui and Huandoy."
+    image="/slider_2.png"
+    lat={`09° 01' 14" S`}
+    lon={`77° 35' 42" W`}
+    specs={[
+      { label: 'MAX SUMMIT', value: '5,752 MASL', icon: 'location' },
+      { label: 'TYPE', value: 'Glacier Mountaineering', icon: 'activity' },
+      { label: 'SEASON', value: 'May - September', icon: 'season' },
+      { label: 'SERVICE', value: 'Pro UIAGM Guide', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Technical Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="NEVADO PISCO EXPEDITION 5752M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Nevado Pisco"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="pisco" client:visible />
+</Layout>

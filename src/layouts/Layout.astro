@@ -1,10 +1,11 @@
 ---
-import Footer from "../components/Footer.astro";
+import Footer from "@components/Footer.tsx";
+import Navbar from "@components/Navbar.tsx";
 import {
 	getLangFromUrl,
 	useTranslations,
-	getRelativeLocaleUrl,
 } from "../i18n/utils";
+import '../styles/global.css';
 
 interface Props {
 	title?: string;
@@ -21,8 +22,20 @@ const t = useTranslations(lang);
 
 const currentPath = Astro.url.pathname;
 const routeName = currentPath.replace(/^\/en(\/|$)/, "$1").replace(/^\//, "").split('?')[0].replace(/\/$/, "");
-const esUrl = `/${routeName}`;
-const enUrl = `/en/${routeName}`;
+
+let esUrl = `/${routeName}`;
+let enUrl = `/en/${routeName}`;
+
+// Handle localized page name mapping
+const mappings: Record<string, { es: string; en: string }> = {
+  'nosotros': { es: '/nosotros', en: '/en/about' },
+  'about': { es: '/nosotros', en: '/en/about' },
+};
+
+if (mappings[routeName]) {
+  esUrl = mappings[routeName].es;
+  enUrl = mappings[routeName].en;
+}
 
 const isToursRoute = routeName === "tours" || routeName.startsWith("tours/");
 
@@ -37,6 +50,44 @@ const isDestinationsActive = !isToursRoute && [
 const isTrekkingActive = !isToursRoute && (
 	routeName.startsWith("trekking") || routeName.includes("huayhuash") || routeName.includes("blanca")
 );
+
+const navLabels = {
+  home: t("nav.home"),
+  about: t("nav.about"),
+  trekking: t("nav.trekking"),
+  huayhuash: t("nav.huayhuash"),
+  blanca: t("nav.blanca"),
+  cusco: t("nav.cusco"),
+  climbing: t("nav.climbing"),
+  destinations: t("nav.destinations"),
+  peru: t("nav.peru"),
+  bolivia: t("nav.bolivia"),
+  ecuador: t("nav.ecuador"),
+  chile: t("nav.chile"),
+  argentina: t("nav.argentina"),
+  tours: t("nav.tours"),
+  gallery: t("nav.gallery"),
+  contact: t("nav.contact"),
+};
+
+const footerLabels = {
+  brandName: t("footer.brandName"),
+  brandDesc: t("footer.brandDesc"),
+  navTitle: t("footer.navTitle"),
+  navHome: t("footer.navHome"),
+  navTours: t("footer.navTours"),
+  navAbout: t("footer.navAbout"),
+  navContact: t("footer.navContact"),
+  legalTitle: t("footer.legalTitle"),
+  legalEthics: t("footer.legalEthics"),
+  legalTerms: t("footer.legalTerms"),
+  legalPrivacy: t("footer.legalPrivacy"),
+  legalEsnna: t("footer.legalEsnna"),
+  legalCert: t("footer.legalCert"),
+  contactTitle: t("footer.contactTitle"),
+  contactHq: t("footer.contactHq"),
+  copy: t("footer.copy"),
+};
 ---
 
 <!doctype html>
@@ -80,385 +131,28 @@ const isTrekkingActive = !isToursRoute && (
 		/>
 	</head>
 	<body>
-		<header class="main-header">
-			<div class="nav-container">
-				<div class="nav-inner">
-					<!-- Brand -->
-					<div class="brand">
-						<a href={getRelativeLocaleUrl(lang, "")}>
-							<img src="/logo.png" alt="Franpisco" />
-						</a>
-					</div>
-
-					<!-- Navigation -->
-					<nav class="desktop-nav">
-						<ul class="nav-list">
-							<li><a href={getRelativeLocaleUrl(lang, "")} class={routeName === "" ? "active" : ""}>{t("nav.home")}</a></li>
-							<li><a href={getRelativeLocaleUrl(lang, "about")} class={routeName.startsWith("about") ? "active" : ""}>{t("nav.about")}</a></li>
-							<li class="has-drop">
-								<a href="#" class={isTrekkingActive ? "active" : ""}>
-									{t("nav.trekking")}
-									<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
-								</a>
-								<div class="drop-menu">
-									<a href={getRelativeLocaleUrl(lang, "trekking/huayhuash")}>{t("nav.huayhuash")}</a>
-									<a href={getRelativeLocaleUrl(lang, "trekking/blanca")}>{t("nav.blanca")}</a>
-									<a href={getRelativeLocaleUrl(lang, "trekking/cusco")}>{t("nav.cusco")}</a>
-								</div>
-							</li>
-							<li><a href={getRelativeLocaleUrl(lang, "climbing")} class={routeName.startsWith("climbing") ? "active" : ""}>{t("nav.climbing")}</a></li>
-							<li class="has-drop">
-								<a href="#" class={isDestinationsActive ? "active" : ""}>
-									{t("nav.destinations")}
-									<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
-								</a>
-								<div class="drop-menu">
-									<a href={getRelativeLocaleUrl(lang, "peru")}>{t("nav.peru")}</a>
-									<a href={getRelativeLocaleUrl(lang, "bolivia")}>{t("nav.bolivia")}</a>
-									<a href={getRelativeLocaleUrl(lang, "ecuador")}>{t("nav.ecuador")}</a>
-									<a href={getRelativeLocaleUrl(lang, "chile")}>{t("nav.chile")}</a>
-									<a href={getRelativeLocaleUrl(lang, "argentina")}>{t("nav.argentina")}</a>
-								</div>
-							</li>
-							<li><a href={getRelativeLocaleUrl(lang, "tours")} class={routeName.startsWith("tours") ? "active" : ""}>{t("nav.tours")}</a></li>
-							<li><a href={getRelativeLocaleUrl(lang, "gallery")} class={routeName.startsWith("gallery") ? "active" : ""}>{t("nav.gallery")}</a></li>
-							<li><a href={getRelativeLocaleUrl(lang, "contact")} class={routeName.startsWith("contact") ? "active" : ""}>{t("nav.contact")}</a></li>
-						</ul>
-					</nav>
-
-					<!-- Actions -->
-					<div class="header-actions">
-						<div class="lang-minimal">
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-							<a href={esUrl} class={lang === "es" ? "active" : ""}>ES</a>
-							<span class="sep"></span>
-							<a href={enUrl} class={lang === "en" ? "active" : ""}>EN</a>
-						</div>
-						<button id="burger-trigger" class="burger-btn">
-							<span></span>
-							<span></span>
-							<span></span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<!-- Full Menu Overlay -->
-		<div id="full-menu" class="menu-overlay">
-			<div class="overlay-container">
-				<div class="overlay-header">
-					<img src="/logo.png" alt="Logo" />
-					<button id="close-menu" class="btn-close">CLOSE</button>
-				</div>
-				<nav class="overlay-links">
-					<a href={getRelativeLocaleUrl(lang, "")} class={routeName === "" ? "active" : ""}>{t("nav.home")}</a>
-					<a href={getRelativeLocaleUrl(lang, "about")} class={routeName.startsWith("about") ? "active" : ""}>{t("nav.about")}</a>
-					
-					<div class="mobile-drop">
-						<button class="mobile-drop-btn">{t("nav.trekking")} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></button>
-						<div class="mobile-drop-content">
-							<a href={getRelativeLocaleUrl(lang, "trekking/huayhuash")}>{t("nav.huayhuash")}</a>
-							<a href={getRelativeLocaleUrl(lang, "trekking/blanca")}>{t("nav.blanca")}</a>
-							<a href={getRelativeLocaleUrl(lang, "trekking/cusco")}>{t("nav.cusco")}</a>
-						</div>
-					</div>
-
-					<div class="mobile-drop">
-						<button class="mobile-drop-btn">{t("nav.destinations")} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg></button>
-						<div class="mobile-drop-content">
-							<a href={getRelativeLocaleUrl(lang, "peru")}>{t("nav.peru")}</a>
-							<a href={getRelativeLocaleUrl(lang, "bolivia")}>{t("nav.bolivia")}</a>
-							<a href={getRelativeLocaleUrl(lang, "ecuador")}>{t("nav.ecuador")}</a>
-							<a href={getRelativeLocaleUrl(lang, "chile")}>{t("nav.chile")}</a>
-							<a href={getRelativeLocaleUrl(lang, "argentina")}>{t("nav.argentina")}</a>
-						</div>
-					</div>
-
-					<a href={getRelativeLocaleUrl(lang, "climbing")} class={routeName.startsWith("climbing") ? "active" : ""}>{t("nav.climbing")}</a>
-					<a href={getRelativeLocaleUrl(lang, "tours")} class={routeName.startsWith("tours") ? "active" : ""}>{t("nav.tours")}</a>
-					<a href={getRelativeLocaleUrl(lang, "gallery")} class={routeName.startsWith("gallery") ? "active" : ""}>{t("nav.gallery")}</a>
-					<a href={getRelativeLocaleUrl(lang, "contact")} class={routeName.startsWith("contact") ? "active" : ""}>{t("nav.contact")}</a>
-				</nav>
-				<div class="overlay-footer">
-					<div class="overlay-socials">
-						<a href="#">FB</a>
-						<a href="#">IG</a>
-						<a href="#">IN</a>
-					</div>
-					<p class="brand-name">Franpisco Adventure</p>
-					<div class="lang-minimal mobile">
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-						<a href={esUrl} class={lang === "es" ? "active" : ""}>ES</a>
-						<span class="sep"></span>
-						<a href={enUrl} class={lang === "en" ? "active" : ""}>EN</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<Navbar 
+      client:load 
+      lang={lang as 'es' | 'en'} 
+      labels={navLabels}
+      esUrl={esUrl}
+      enUrl={enUrl}
+      currentPath={currentPath}
+      routeName={routeName}
+      isTrekkingActive={isTrekkingActive}
+      isDestinationsActive={isDestinationsActive}
+    />
 
 		<main>
 			<slot />
 		</main>
 
-		<Footer />
+		<Footer client:load lang={lang as 'es' | 'en'} labels={footerLabels} />
 
 		<script>
-			const header = document.querySelector(".main-header");
-			const burger = document.getElementById("burger-trigger");
-			const close = document.getElementById("close-menu");
-			const overlay = document.getElementById("full-menu");
-
-			window.addEventListener("scroll", () => {
-				if (window.scrollY > 40) {
-					header?.classList.add("scrolled");
-				} else {
-					header?.classList.remove("scrolled");
-				}
-			});
-
-			burger?.addEventListener("click", () => {
-				overlay?.classList.add("is-active");
-				document.body.style.overflow = "hidden";
-			});
-
-			close?.addEventListener("click", () => {
-				overlay?.classList.remove("is-active");
-				document.body.style.overflow = "";
-			});
-
-			// Mobile Dropdowns
-			const dropBtns = document.querySelectorAll('.mobile-drop-btn');
-			dropBtns.forEach(btn => {
-				btn.addEventListener('click', () => {
-					const parent = btn.parentElement;
-					parent?.classList.toggle('is-open');
-				});
-			});
+			// Sticky behavior moved to React component
 		</script>
 
-		<style is:global>
-			:root {
-				--brand-red: #d80202;
-				--brand-blue: #0090cc;
-				--brand-light: #d5d5d5;
-				--brand-dark: #373737;
-				--header-bg: #fff;
-				--header-text: var(--brand-dark);
-				--accent: var(--brand-blue);
-			}
-
-			/* Global Responsive Grid Utility */
-			.grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-				gap: 3rem;
-			}
-			@media (max-width: 768px) {
-				.grid { gap: 2rem; }
-			}
-
-			* { box-sizing: border-box; margin: 0; padding: 0; }
-			body { background: #0b0d10; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-			main { background: #0b0d10; }
-
-			.main-header {
-				position: fixed;
-				top: 0; left: 0; width: 100%;
-				height: 95px;
-				z-index: 1000;
-				display: flex;
-				align-items: center;
-				background: var(--header-bg);
-				border-bottom: 3px solid var(--brand-blue);
-				box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-				transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-			}
-
-			.main-header.scrolled {
-				height: 75px;
-				background: var(--brand-dark);
-				border-bottom-color: var(--brand-red);
-			}
-
-			.scrolled .nav-list a { color: var(--brand-light); }
-			.scrolled .nav-list a:hover { color: #fff; }
-
-			.nav-container { width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 40px; }
-			.nav-inner { display: flex; align-items: center; justify-content: space-between; }
-
-			/* Brand */
-			.brand img { height: 45px; transition: 0.4s; }
-			.scrolled .brand img { height: 35px; }
-
-			/* Desktop Nav */
-			.desktop-nav { margin-left: auto; margin-right: 40px; }
-			.nav-list { display: flex; list-style: none; gap: 30px; }
-			.nav-list a {
-				text-decoration: none;
-				color: var(--brand-dark);
-				font-size: 0.75rem;
-				font-weight: 800;
-				text-transform: uppercase;
-				letter-spacing: 0.05em;
-				transition: 0.3s;
-				display: flex;
-				align-items: center;
-				gap: 5px;
-			}
-			.nav-list a:hover, .nav-list a.active { color: var(--brand-blue); }
-			.scrolled .nav-list a.active { color: var(--brand-red); }
-
-			/* Dropdowns */
-			.has-drop { position: relative; }
-			.drop-menu {
-				position: absolute; top: calc(100% + 5px); left: 50%;
-				transform: translateX(-50%) translateY(10px);
-				background: #fff;
-				min-width: 240px;
-				padding: 12px;
-				opacity: 0; visibility: hidden;
-				display: flex;
-				flex-direction: column;
-				gap: 4px;
-				transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-				box-shadow: 0 40px 100px rgba(0,0,0,0.15);
-				border-radius: 8px;
-				z-index: 1100;
-			}
-			.scrolled .drop-menu { background: var(--brand-dark); box-shadow: 0 40px 100px rgba(0,0,0,0.4); }
-			
-			.drop-menu.mega { min-width: 550px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 30px; }
-			.mega-col { display: flex; flex-direction: column; gap: 8px; }
-			.has-drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-			
-			.drop-menu a { 
-				font-size: 0.72rem; 
-				padding: 12px 18px; 
-				border-radius: 6px; 
-				color: var(--brand-dark) !important; 
-				font-weight: 700; 
-				border: none !important;
-				background: transparent;
-				transition: 0.2s;
-			}
-			.scrolled .drop-menu a { color: #fff !important; }
-			.drop-menu a:hover { 
-				color: var(--brand-blue) !important; 
-			}
-			.scrolled .drop-menu a:hover { background: none; }
-
-			/* Actions */
-			.header-actions { display: flex; align-items: center; gap: 20px; }
-			.lang-minimal { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.7rem; }
-			.globe-icon { color: var(--brand-blue); opacity: 0.7; }
-			.lang-minimal a { text-decoration: none; color: #888; transition: 0.3s; }
-			.lang-minimal a.active { color: var(--brand-blue); }
-			.lang-minimal a:hover { color: var(--brand-red); }
-			.sep { width: 1px; height: 12px; background: #ddd; }
-			.scrolled .sep { background: #555; }
-			.scrolled .lang-minimal a { color: #888; }
-			.scrolled .lang-minimal a.active { color: var(--brand-red); }
-
-			.btn-action {
-				background: var(--brand-red); color: white;
-				text-decoration: none; font-size: 0.75rem; font-weight: 900;
-				padding: 12px 28px; border-radius: 2px;
-				text-transform: uppercase;
-				transition: 0.3s;
-				box-shadow: 0 4px 0 #9b0101;
-			}
-			.btn-action:hover { transform: translateY(2px); box-shadow: 0 2px 0 #9b0101; }
-
-			.burger-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 6px; }
-			.burger-btn span { width: 28px; height: 3px; background: var(--brand-dark); }
-			.scrolled .burger-btn span { background: #fff; }
-
-			/* Overlay Menu */
-			.menu-overlay {
-				position: fixed; inset: 0; background: radial-gradient(circle at top right, #444, #1a1a1a); z-index: 2000;
-				visibility: hidden; opacity: 0; transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-			}
-			.menu-overlay.is-active { visibility: visible; opacity: 1; }
-			.overlay-container { height: 100%; display: flex; flex-direction: column; padding: 40px; }
-			.overlay-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
-			.overlay-header img { height: 40px; }
-			.btn-close { background: none; border: none; color: #fff; cursor: pointer; font-size: 0.75rem; letter-spacing: 0.3em; font-weight: 800; opacity: 0.6; transition: 0.3s; }
-			.btn-close:hover { opacity: 1; color: var(--brand-red); }
-
-			.overlay-links { 
-				display: flex; 
-				flex-direction: column; 
-				gap: 12px; 
-				align-items: center; 
-				flex: 1; 
-				justify-content: flex-start; 
-				padding-top: 20px;
-				overflow-y: auto;
-				width: 100%;
-			}
-			.overlay-links a, .mobile-drop-btn { 
-				text-decoration: none; 
-				color: #fff; 
-				font-size: 1.1rem; 
-				font-weight: 300; 
-				text-transform: uppercase; 
-				letter-spacing: 0.15em;
-				transition: 0.4s; 
-				position: relative;
-				background: none;
-				border: none;
-				cursor: pointer;
-				font-family: inherit;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
-			.overlay-links a::after {
-				content: ''; position: absolute; bottom: -8px; left: 50%; width: 0; height: 1px;
-				background: var(--brand-blue); transition: 0.4s; transform: translateX(-50%);
-				opacity: 0.6;
-			}
-			.overlay-links a:hover { transform: scale(1.05); font-weight: 500; }
-			.overlay-links a.active { color: var(--brand-red); font-weight: 700; }
-
-			/* Mobile Dropdowns */
-			.mobile-drop { width: 100%; display: flex; flex-direction: column; align-items: center; }
-			.mobile-drop-content { 
-				max-height: 0; 
-				overflow: hidden; 
-				transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-				display: flex; 
-				flex-direction: column; 
-				align-items: center;
-				gap: 8px;
-				width: 100%;
-				background: rgba(255,255,255,0.03);
-			}
-			.mobile-drop.is-open .mobile-drop-content { max-height: 500px; padding: 15px 0; margin-top: 10px; }
-			.mobile-drop.is-open .mobile-drop-btn svg { transform: rotate(180deg); }
-			.mobile-drop-content a { font-size: 0.85rem !important; opacity: 0.7; }
-
-			.overlay-footer { text-align: center; margin-top: auto; padding-top: 30px; padding-bottom: 10px; }
-			.overlay-socials { display: flex; justify-content: center; gap: 20px; margin-bottom: 10px; }
-			.overlay-socials a { color: #fff; text-decoration: none; font-size: 0.8rem; opacity: 0.6; }
-			.brand-name { opacity: 0.4; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; }
-			.lang-minimal.mobile { justify-content: center; }
-			.lang-minimal.mobile a { font-size: 0.85rem; padding: 5px 10px; }
-
-			@media (max-width: 1240px) {
-				.desktop-nav { display: none; }
-				.burger-btn { display: flex; }
-				.nav-container { padding: 0 20px; }
-				.main-header { height: 80px; }
-			}
-
-			@media (max-width: 480px) {
-				.overlay-container { padding: 30px 20px; }
-				.overlay-header { margin-bottom: 40px; }
-				.overlay-links a, .mobile-drop-btn { font-size: 1rem; }
-			}
-		</style>
 	</body>
 </html>
 

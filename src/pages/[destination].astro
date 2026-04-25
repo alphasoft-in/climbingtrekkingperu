@@ -1,0 +1,21 @@
+---
+import { toursData } from '@data/tours/toursData';
+import { regionsData } from '@data/regions';
+import CategoryTemplate from '@components/CategoryTemplate.astro';
+
+export async function getStaticPaths() {
+  const destinations = ['argentina', 'bolivia', 'ecuador', 'chile'];
+  return destinations.map(dest => ({
+    params: { destination: dest },
+    props: { 
+      metadata: regionsData[dest],
+      programs: toursData.filter(t => t.path.includes(`${dest}/`))
+    }
+  }));
+}
+
+const { metadata, programs } = Astro.props;
+const lang = 'es';
+---
+
+<CategoryTemplate lang={lang} metadata={metadata} programs={programs} />

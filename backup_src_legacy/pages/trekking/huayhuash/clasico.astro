@@ -1,0 +1,237 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../i18n/utils";
+import SuggestedRoutes from "../../../components/SuggestedRoutes";
+import TourGallery from "../../../components/TourGallery";
+import ItineraryHero from "../../../components/ItineraryHero";
+import ItineraryIntro from "../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../components/LogisticsCard";
+import ItineraryBooking from "../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DIA 01",
+    title: "LIMA PERU (100 MSNM) – HUARAZ (3100 MSNM)",
+    content:
+      "Viaje en bus público hacia Huaraz (8 horas) o en avión (50 min). Se recomienda un día de aclimatación previo en la Cordillera Blanca.",
+  },
+  {
+    day: "DIA 02",
+    title: "FULL DAY LAGUNA ROCUTOYOC (4450 MSNM) – ACLIMATACIÓN",
+    content:
+      "Visita a la laguna Rocutuyoc, cascada de Ruripaccha, glaciar de Ruripaccha (4,650 msnm). Retorno a Huaraz.",
+    stats: { time: "9-10 horas", alt: "4450m" },
+  },
+  {
+    day: "DIA 03",
+    title: "DIA LIBRE",
+    content:
+      "Descanso estratégico para optimizar la aclimatación antes de iniciar el circuito Huayhuash.",
+  },
+  {
+    day: "DIA 04",
+    title: "HUARAZ - QUEROPALCA (3831 MSNM) - MITUCOCHA (4230 MSNM)",
+    content:
+      "Traslado a Queropalca. Inicio del trekking hacia el campamento Mitucocha.",
+    stats: { trans: "08 horas", alt: "4230m", time: "2 h" },
+  },
+  {
+    day: "DIA 05",
+    title: "MITUCOCHA (4,230 MSNM) - CARHUACOCHA (4,280 MSNM)",
+    content:
+      "Paso Carhuac (4,650 msnm). Mirador de las tres lagunas con vistas de Yerupaja y Siula.",
+    stats: { alt: "4750 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DIA 06",
+    title: "CARHUACOCHA (4280 MSNM) - HUAYHUASH (4350 MSNM)",
+    content:
+      "Día exigente. Paso Siula (4,800 msnm). Vistas de Trapecio y León Dormido.",
+    stats: { alt: "4800 m", dist: "15 km", time: "09 h" },
+  },
+  {
+    day: "DIA 07",
+    title: "HUAYHUASH (4,350 MSNM) - CUYOCPAMPA (4550 MSNM)",
+    content:
+      "Paso Trapecio (5,030 msnm). Vista de la laguna Azulcocha. Opcional: Mirador San Antonio (5,120 msnm).",
+    stats: { alt: "5,030 m", dist: "13 km", time: "7 h" },
+  },
+  {
+    day: "DIA 08",
+    title: "CUYOCPAMPA (4,550 MSNM) - HUAYLLAPA (3630 MSNM)",
+    content:
+      "Paso Santa Rosa (5,080 msnm). Vista increíble de la cara norte de Huayhuash. Descenso a Huayllapa.",
+    stats: { alt: "5080 m", dist: "19 km", time: "09 h" },
+  },
+  {
+    day: "DIA 09",
+    title: "HUAYLLAPA (3,630 MSNM) - GASHPAPAMPA (4555 MSNM)",
+    content:
+      "Subida al paso Tapush (4,800 msnm). Vista del nevado Diablo Mudo (5,350 msnm).",
+    stats: { alt: "4.800 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DIA 10",
+    title: "GASHPAPAMPA (4555 MSNM) – MIRADOR HUACRISH (4800 MSNM) – HUARAZ",
+    content:
+      "Paso Yaucha (4,800 msnm). Mirador Huacrish con panorámica total. Traslado final a Huaraz.",
+    stats: { alt: "4800 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DIA 11",
+    title: "HUARAZ – LIMA",
+    content:
+      "Traslado al terminal de bus para el retorno a Lima. Fin de servicios.",
+  },
+];
+
+const includes = [
+  "Información previa en oficina Huaraz",
+  "Tours de aclimatación (compartido)",
+  "Transporte privado Huaraz - Queropalca",
+  "Transporte de retorno Lirio - Huaraz",
+  "Guía oficial de Trekking calificado",
+  "Cocinero especializado en expediciones",
+  "7 días de pensión completa en el trek",
+  "6kg de equipaje permitido en mulas",
+  "Equipo de camping completo",
+  "Botiquín de primeros auxilios y Oxígeno",
+];
+
+const equipment = [
+  "Bolsa de dormir (-10°C recomendado)",
+  "Mochila de ataque (40L)",
+  "Botas de montaña impermeables",
+  "Ropa técnica de abrigo (capas)",
+  "Gorro, guantes y protección solar",
+  "Bastones de trekking",
+  "Poncho para lluvia",
+  "Cantimplora o camelback",
+];
+---
+
+<Layout
+  title="Trekking Clásico Huayhuash - 11 Días | Franpisco Adventure"
+  description="Explora lo mejor de la Cordillera Huayhuash en un circuito optimizado de 11 días. Desde Queropalca hasta Huaraz."
+>
+  <ItineraryHero
+    client:load
+    titleTop="TREKKING CORDILLERA"
+    titleMain="HUAYHUASH CLÁSICO"
+    backgroundImage="/trekking/huayhuash/bg-clasico.png"
+    duration="11 DÍAS / 10 NOCHES"
+    price="USD. 795.00"
+    difficulty="MODERADO+"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-CL-11D"
+    titlePrefix="Ruta"
+    titleAccent="Legendaria"
+    description="Este circuito concentra los paisajes más emblemáticos de la Cordillera Huayhuash iniciando desde Queropalca. Ideal para quienes buscan la máxima belleza escénica en un itinerario optimizado."
+    image="/trekking/huayhuash/clasico.png"
+    lat={`9° 58' 21" S`}
+    lon={`76° 54' 42" W`}
+    specs={[
+      {
+        label: "INICIO / LOGÍSTICA",
+        value: "Queropalca, Perú",
+        icon: "location",
+      },
+      { label: "ZONAS TÉCNICAS", value: "Ancash, Huánuco, Lima", icon: "zone" },
+      { label: "TEMPORADA", value: "Abril - Diciembre", icon: "season" },
+      { label: "SERVICIO", value: "Clásico Expedición", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Servicios Incluidos"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Equipo Sugerido"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="TREKKING CORDILLERA HUAYHUASH CLÁSICO 11D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/clasico/1.png",
+      "/trekking/huayhuash/clasico/2.png",
+      "/trekking/huayhuash/clasico/3.png",
+      "/trekking/huayhuash/clasico/4.png",
+      "/trekking/huayhuash/clasico/5.png",
+      "/trekking/huayhuash/clasico/6.png",
+      "/trekking/huayhuash/clasico/7.png",
+      "/trekking/huayhuash/clasico/8.png",
+    ]}
+    lang={lang}
+    tourName="Huayhuash Clásico"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="classic" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

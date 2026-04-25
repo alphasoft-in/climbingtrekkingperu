@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuggestedRoutes from '../components/SuggestedRoutes';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard';
+import PageHero from '../components/PageHero';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const ecuadorPrograms = [
+  {
+    id: 'avenida-volcanes',
+    title: t('climbing.ecuador.name'),
+    description: t('climbing.ecuador.desc'),
+    image: '/slider_4.png',
+    duration: `12 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    prefix: 'ECU',
+    category: 'EXPEDICIÓN DE VOLCANES'
+  },
+  {
+    id: 'lagunas-pichincha',
+    title: t('climbing.ecuador_tours.name'),
+    description: t('climbing.ecuador_tours.desc'),
+    image: '/slider_2.png',
+    duration: `5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    prefix: 'ECU',
+    category: 'ACLIMATACIÓN Y TOURS'
+  }
+];
+---
+
+<Layout title={`Ecuador - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora la Avenida de los Volcanes en Ecuador. Expediciones al Cotopaxi, Chimborazo, Cayambe e Ilinizas con guías certificados y logística premium.">
+  <PageHero 
+    client:load
+    titleTop="DESTINOS"
+    titleMain="ECUADOR"
+    backgroundImage="/slider_4.png"
+    techData={[
+      { label: "ELEVACIÓN MÁX", value: "6,263 M.S.N.M." },
+      { label: "COORDENADAS", value: "0°13′S 78°31′W" },
+      { label: "REGIÓN", value: "ANDES / ECUADOR" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {ecuadorPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, `ecuador/${prog.id}`)}
+            prefix={prog.prefix}
+            category={prog.category}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes lang={lang} currentId="ecuador-hub" client:visible />
+</Layout>

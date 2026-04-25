@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'HUARAZ – LAGUNA ROCUTUYOC (4450M)',
+    content: 'Día de aclimatación visitando la laguna Rocutuyoc y el glaciar. Perfecto para adaptación cultural y física.',
+    stats: { time: '9-10h Tour', alt: '4450m' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'NEVADO MATEO (5150M) – ACLIMATACIÓN',
+    content: 'Ascensión técnica básica al Nevado Mateo. Práctica de uso de grampones y piolet sobre glaciar real.',
+    stats: { time: '5-6h Ascenso', alt: '5150m' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'HUARAZ – CEBOLLAPAMPA – CAMPO BASE PISCO (4680M)',
+    content: 'Traslado a Cebollapampa y caminata de ascenso hasta el campo base del Nevado Pisco.',
+    stats: { time: '4-5h Caminata', alt: '4680m' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'CAMPO BASE (4680M) – CUMBRE PISCO (5752M)',
+    content: 'Ataque a la cumbre. Cruce de morrena y glaciar. Vista panorámica de 360° de la Cordillera Blanca.',
+    stats: { time: '13-14h Jornada', alt: '5752m' }
+  },
+  {
+    day: 'DÍA 05',
+    title: 'CAMPO BASE (4680M) – HUARAZ (3100M)',
+    content: 'Descenso final hacia Cebollapampa y transporte privado de retorno a la ciudad de Huaraz.',
+    stats: { time: 'Retorno', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Tour Aclimatación Laguna Rocutuyoc',
+  'Expedición Nevado Mateo (5150m)',
+  'Transporte privado para todos los traslados',
+  'Alimentación completa en expedición Pisco',
+  'Equipo de campamento de alta montaña',
+  'Guía de montaña Certificado UIAGM',
+  'Cocinero especializado y asistente',
+  'Burros y arriero para logística al base',
+  'Tickets de entrada al P.N. Huascarán',
+  'Botiquín de primeros auxilios y radios'
+];
+
+const excludes = [
+  'Seguros de viaje y rescate',
+  'Alimentación en la ciudad',
+  'Equipo personal de montaña',
+  'Saco de dormir y colchoneta personal',
+  'Gastos personales y propinas'
+];
+
+const equipment = [
+  'Saco de dormir (-20°C)',
+  'Casco de montaña y frontal',
+  'Gafas UV Cat 4 y bloqueador',
+  'Chaqueta de plumas y Gore-Tex',
+  'Arnés y piolet de travesía',
+  'Botas de alta montaña y grampones',
+  'Mochila de ataque (40L)'
+];
+---
+
+<Layout title="Escalada Nevado Pisco 5752m | Cordillera Blanca | Franpisco Adventure" description="Expedición de 5 días al Nevado Pisco. Incluye aclimatación en Laguna Rocutuyoc y Nevado Mateo. La mejor vista de la Cordillera Blanca con guías UIAGM.">
+  <ItineraryHero
+    client:load
+    titleTop="EL BALCÓN DE LOS ANDES"
+    titleMain="NEVADO PISCO 5752M"
+    backgroundImage="/slider_2.png"
+    duration="05 DÍAS / 04 NOCHES"
+    price="USD. 595.00"
+    difficulty="MODERADO"
+    difficultyLevel="moderate"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-PIS-05"
+    titlePrefix="El Corazón de la"
+    titleAccent="Cordillera Blanca"
+    description="El Nevado Pisco es conocido como el balcón de los Andes por su ubicación estratégica. Ofrece vistas panorámicas inigualables del Huascarán, Chopicalqui y Huandoy."
+    image="/slider_2.png"
+    lat={`09° 01' 14" S`}
+    lon={`77° 35' 42" W`}
+    specs={[
+      { label: "PUNTO MÁXIMO", value: "5,752 MSNM", icon: "location" },
+      { label: "TIPO", value: "Montañismo Glaciar", icon: "activity" },
+      { label: "TEMPORADA", value: "Mayo - Septiembre", icon: "season" },
+      { label: "SERVICIO", value: "Guía UIAGM Pro", icon: "service" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Técnico" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="EXPEDICIÓN NEVADO PISCO 5752M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Nevado Pisco"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="pisco" client:visible />
+</Layout>

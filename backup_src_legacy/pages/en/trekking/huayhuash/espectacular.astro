@@ -1,0 +1,271 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../../i18n/utils";
+import SuggestedRoutes from "../../../../components/SuggestedRoutes";
+import TourGallery from "../../../../components/TourGallery";
+import ItineraryHero from "../../../../components/ItineraryHero";
+import ItineraryIntro from "../../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../../components/LogisticsCard";
+import ItineraryBooking from "../../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DAY 01",
+    title: "LIMA – PERU (100 MASL) – HUARAZ (3100 M)",
+    content:
+      "Reception at Lima airport and direct transfer to Huaraz (8 hours) by public bus or optional private flight. Transfer to hotel.",
+    stats: { time: "8 hs" },
+  },
+  {
+    day: "DAY 02",
+    title: "ACCLIMATIZATION: ROCUTOYOC LAGOON (4450 MASL) – WHITE RANGE",
+    content:
+      "Acclimatization tour visiting Cashapunta lookout, Ruripaccha waterfall, cave paintings and Rocutuyoc lagoon. Hike to the glacier (4,650 masl).",
+    stats: { alt: "4450m", time: "9-10 hs" },
+  },
+  {
+    day: "DAY 03",
+    title: "FREE DAY IN HUARAZ",
+    content:
+      "Strategic rest in the city to optimize acclimatization and logistical preparation before the expedition.",
+  },
+  {
+    day: "DAY 04",
+    title: "HUARAZ (3100M) - CUARTELWAIN (4180M) - MITUCOCHA (4280M)",
+    content:
+      "Transfer to Cuartelwain (5h). Start of trekking crossing the first pass Cacananpunta (4,700 masl). Jancapampa camp.",
+    stats: { alt: "4700 m", time: "5 h" },
+  },
+  {
+    day: "DAY 05",
+    title: "MITUCOCHA (4230 MASL) - CARHUACOCHA (4280 MASL)",
+    content:
+      "Hike to Carhuac lookout (4,750 masl). Spectacular views of Yerupaja (6,634m) and Siula (6,344m) peaks.",
+    stats: { alt: "4750 m", dist: "13 km", time: "5 h" },
+  },
+  {
+    day: "DAY 06",
+    title: "CARHUACOCHA (4280 MASL) - HUAYHUASH (4350 MASL)",
+    content:
+      "Demanding day. Visit to the three lagoons lookout (Siulacocha, Ganrajanca, Quesillacocha). Siula Pass (4,800 masl).",
+    stats: { alt: "4800 m", dist: "15 km", time: "09 hs" },
+  },
+  {
+    day: "DAY 07",
+    title: "HUAYHUASH (4350 MASL) - CUYOCPAMPA (4550 MASL)",
+    content:
+      "Crossing between Trapecio and Putscanturpa mountains to Trapecio Pass (5,030 masl). Optional: San Antonio Lookout (5,120 masl).",
+    stats: { alt: "5,030 m", dist: "13 km", time: "7 h" },
+  },
+  {
+    day: "DAY 08",
+    title: "CUYOCPAMPA (4550 MASL) – CUTATAMBO (4280 MASL)",
+    content:
+      "Santa Rosa Pass (5,080 masl) with incredible view of the northern face of Huayhuash. Descent to Jurao lagoon.",
+    stats: { alt: "5080 m", dist: "11 km", time: "6 h" },
+  },
+  {
+    day: "DAY 09",
+    title: "CUTATAMBO – CERO GRAN VISTA LOOKOUT (5150 MASL)",
+    content:
+      "Ascent to Cero Gran Vista lookout to observe Joe Simpson's route (Touching the Void) on Siula Grande.",
+    stats: { alt: "5150 m", dist: "14 km", time: "8 h" },
+  },
+  {
+    day: "DAY 10",
+    title: "CUTATAMBO (4280 MASL) - HUAYLLAPA (3630 MASL)",
+    content:
+      "Descent through Calinca valley to the village of Huayllapa. Optional: homestay accommodation with wifi and hot water.",
+    stats: { dist: "8 km", time: "05 hs" },
+  },
+  {
+    day: "DAY 11",
+    title: "HUAYLLAPA (3630 MASL) - GASHPAPAMPA (4555 MASL)",
+    content:
+      "Long but gentle ascent to Tapush Pass (4,800 masl). Views of Diablo Mudo peak (5,350 masl).",
+    stats: { alt: "4800 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DAY 12",
+    title: "GASHPAPAMPA (4555 MASL) - JAHUACOCHA LAGOON (4100 MASL)",
+    content:
+      "Yaucha Pass (4,800 masl). Huacrish Lookout with full panorama of the highest peaks of the range.",
+    stats: { alt: "4800 m", dist: "12 km", time: "07 h" },
+  },
+  {
+    day: "DAY 13",
+    title: "JAHUACOCHA (4100 MASL) - LLAMAC (3300 MASL)",
+    content:
+      "Last day of trekking. Pampa Llamac Pass (3,900m). Final descent to Llamac and transfer back to Huaraz.",
+    stats: { alt: "3900 m", dist: "13 km", time: "06 h" },
+  },
+  {
+    day: "DAY 14",
+    title: "HUARAZ - TRANSFER TO TERMINAL OR AIRPORT",
+    content:
+      "Transfer from hotel to bus terminal or airport for the return trip to Lima.",
+  },
+  {
+    day: "DAY 15",
+    title: "LIMA - TRANSFER TO AIRPORT",
+    content:
+      "Final transfer to the international airport for your return flight. End of services.",
+  },
+];
+
+const includes = [
+  "Lima airport reception and all transfers",
+  "Lima - Huaraz - Lima bus tickets",
+  "4 nights hotel in Huaraz + 1 night in Lima",
+  "Detailed technical briefing at Huaraz office",
+  "1 Technical acclimatization day",
+  "Private transport to Cuartelwain",
+  "Official Qualified Trekking Guide",
+  "Specialized High Mountain Cook",
+  "10 Days Huayhuash expedition",
+  "10kg gear allowance on donkeys",
+  "Full high-end camping equipment",
+  "Woki toki and First Aid kit",
+];
+
+const equipment = [
+  "Sleeping bag (-10°C recommended)",
+  "Sleeping pad / Thermal mat",
+  "Daypack (40L)",
+  "High mountain trekking boots",
+  "Layered technical clothing (Down, Gore-Tex)",
+  "Sun protection (Hat, glasses, sunblock)",
+  "Trekking poles",
+  "Rain poncho",
+];
+---
+
+<Layout
+  title="The Spectacular Huayhuash Route - 15 Days | Franpisco Adventure"
+  description="The ultimate 15-day expedition in the Huayhuash range. Comfort service with Cero Gran Vista lookout and 5,000m passes."
+>
+  <ItineraryHero
+    client:load
+    titleTop="THE BEST ROUTE"
+    titleMain="HUAYHUASH SPECTACULAR"
+    backgroundImage="/trekking/huayhuash/bg-espectacular.png"
+    duration="15 DAYS / 14 NIGHTS"
+    price="USD. 1,995.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-SPEC-15D"
+    titlePrefix="Supreme"
+    titleAccent="Circuit"
+    description="This is our most complete and exclusive route. 15 days of total immersion in the Cordillera Huayhuash, including the Cero Gran Vista lookout facing Siula Grande and superior logistics services."
+    image="/trekking/huayhuash/bg-espectacular.png"
+    lat={`10° 17' 22" S`}
+    lon={`76° 54' 01" W`}
+    specs={[
+      {
+        label: "START / LOGISTICS",
+        value: "Lima / Huaraz, Peru",
+        icon: "location",
+      },
+      {
+        label: "KEY POINTS",
+        value: "Cero Gran Vista, Santa Rosa",
+        icon: "zone",
+      },
+      { label: "SEASON", value: "March - December", icon: "season" },
+      { label: "SERVICE", value: "Full Comfort Logistics", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Services Included"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Required Equipment"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="THE SPECTACULAR HUAYHUASH ROUTE 15D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/espectacular/1.png",
+      "/trekking/huayhuash/espectacular/2.png",
+      "/trekking/huayhuash/espectacular/3.png",
+      "/trekking/huayhuash/espectacular/4.png",
+      "/trekking/huayhuash/espectacular/5.png",
+      "/trekking/huayhuash/espectacular/6.png",
+      "/trekking/huayhuash/espectacular/7.png",
+      "/trekking/huayhuash/espectacular/8.png",
+    ]}
+    lang={lang}
+    tourName="Huayhuash Spectacular"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="spectacular" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

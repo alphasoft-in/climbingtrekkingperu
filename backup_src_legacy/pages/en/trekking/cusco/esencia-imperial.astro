@@ -1,0 +1,213 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from '../../../../components/TourGallery';
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'ORIGIN COUNTRY – LIMA (180 MASL)',
+    content: 'Personalized reception at Jorge Chavez Airport. Transfer to a 3* hotel in Miraflores.',
+    stats: { time: 'Transfer' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'FLIGHT LIMA – CUSCO – HOTEL',
+    content: 'Transfer to the airport for your flight to Cusco. Reception and transfer to a 3* hotel in the Imperial City.',
+    stats: { time: '1h 20m flight' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'CITY TOURS: INCA TEMPLES AND PALACES',
+    content: 'Visit Qoricancha (Sun Temple) and the sites of Sacsayhuaman, Qenqo, Pukapukara, and Tambomachay.',
+    stats: { alt: '3399m', time: '5 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'VIP SACRED VALLEY – AGUAS CALIENTES',
+    content: 'Visit Chinchero, Maras Salt Mines, and Moray. Buffet lunch in the Valley and train to Aguas Calientes.',
+    stats: { alt: '2800m', time: 'Full Day' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'MACHU PICCHU – CUSCO',
+    content: 'Guided tour in the Inca Citadel (2.5h). Free time and return by Expedition train to Cusco.',
+    stats: { alt: '2430m', time: 'Expedition' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'FREE DAY IN CUSCO',
+    content: 'Day to rest, enjoy local gastronomy, and shop at traditional markets.'
+  },
+  {
+    day: 'DAY 07',
+    title: 'HUMANTAY LAKE',
+    content: 'Technical hike to the turquoise lagoon at the foot of Humantay glacier (4200m). Lunch in Mollepata.',
+    stats: { alt: '4200m', time: '12 h' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'RAINBOW MOUNTAIN – RED VALLEY',
+    content: 'Hike to Vinicunca (5100m) and descent through the spectacular Red Valley. Buffet lunch in Cusipata.',
+    stats: { alt: '5100m', time: '12 h' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'CHECCACUPE – PALCOYO',
+    content: 'Visit the Stone Forest and the Palcoyo Mountain Range (4900m). Ceremony to Pachamama.',
+    stats: { alt: '4900m', time: '10 h' }
+  },
+  {
+    day: 'DAY 10',
+    title: '7 LAGOONS AUSANGATE',
+    content: 'Exploration of Azulcocha, Otorongo, and other lagoons. Bath in Pacchanta hot springs.',
+    stats: { alt: '4300m', time: '14 h' }
+  },
+  {
+    day: 'DAY 11',
+    title: 'FLIGHT CUSCO – LIMA',
+    content: 'Transfer to the airport and return flight to Lima. Transfer to hotel in Miraflores.',
+    stats: { time: '1h 20m flight' }
+  },
+  {
+    day: 'DAY 12',
+    title: 'LIMA – ORIGIN COUNTRY',
+    content: 'Final transfer to Jorge Chavez Airport for your international flight. End of services.'
+  }
+];
+
+const includes = [
+  'Lima - Cusco - Lima flights (Optional in package)',
+  'Full Airport - Hotel transfers (Lima and Cusco)',
+  '11 Nights in 3* hotels (Lima, Cusco, Aguas Calientes)',
+  'Machu Picchu Tour (Expedition Train, Bus, Entrances)',
+  'Cusco City Tour and VIP Sacred Valley',
+  'Expeditions to Humantay, Rainbow Mt, Palcoyo, and 7 Lagoons',
+  'Official bilingual guide for all tours',
+  'Buffet lunches and breakfasts included as per itinerary',
+  'Trekking poles for all hikes',
+  'Oxygen tank and first aid kit'
+];
+
+const excludes = [
+  'International flights',
+  'Meals not specified in cities',
+  'Cusco Cathedral entrance fees',
+  'Huayna Picchu mountain ascent',
+  'Travel insurance (mandatory)',
+  'Tips and personal expenses'
+];
+
+const equipment = [
+  'Technical backpack for daily tours (20L)',
+  'Warm clothing (fleece, thermal base layers)',
+  'Rainproof jacket or poncho',
+  'Comfortable trekking shoes',
+  'Sun hat and UV sunglasses',
+  'Reusable water bottle',
+  'Sunblock and personal medication'
+];
+---
+
+<Layout title="Imperial Essence: Cusco and Machu Picchu 12 Days | Franpisco Adventure" description="The total 12-day expedition through Cusco and Machu Picchu. Culture, adventure, turquoise lagoons, and colored mountains.">
+  <ItineraryHero 
+    client:load
+    titleTop="TOTAL CULTURE AND ADVENTURE"
+    titleMain="IMPERIAL ESSENCE 12D"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    duration="12 DAYS / 11 NIGHTS"
+    price="USD. 1,695.00"
+    difficulty="PREMIUM"
+    difficultyLevel="mod"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="CSQ-PACK-12D"
+    titlePrefix="The Heart of"
+    titleAccent="The Andes"
+    description="This 12-day expedition is our most ambitious proposal in southern Peru. We have designed a journey that balances the mysticism of Inca temples with the adrenaline of high-altitude hikes above 5,000 meters."
+    image="/slider_4.png"
+    lat={`13° 31' 30" S`}
+    lon={`71° 58' 20" W`}
+    specs={[
+      { label: 'COVERAGE', value: 'Lima, Cusco & Sacred Valley', icon: 'location' },
+      { label: 'KEY POINTS', value: 'Machu Picchu, Humantay, Vinicunca', icon: 'zone' },
+      { label: 'CATEGORY', value: 'Adventure Comfort', icon: 'season' },
+      { label: 'HOTELS', value: '3 Premium Stars', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Included Services" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="IMPERIAL ESSENCE: CUSCO AND MACHU PICCHU 12D" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Imperial Essence"
+    images={[
+      '/slider_4.png',
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="imperial-essence" client:visible />
+</Layout>

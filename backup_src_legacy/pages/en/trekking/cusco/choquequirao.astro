@@ -1,0 +1,168 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from '../../../../components/TourGallery';
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'CUSCO – CACHORA – CAPULIYOC – CHIKISCA',
+    content: 'Departure from Cusco (7:00 am). Visit the Archaeological Park of Piedra de Saywite. Transfer to Capuliyoc for lunch. Start of trekking descending to the Apurimac Canyon to Chikisca.',
+    stats: { alt: '1930m', time: '3 h 20 min' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'CHIKISCA – ROSALINAS BEACH – SANTA ROSA – MARAMPATA',
+    content: 'Descent to the Apurimac River (Rosalinas Beach). Demanding ascent passing through Santa Rosa to the village of Marampata. Enjoy the Andean sunset.',
+    stats: { alt: '2920m', time: '4 h 30 min' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'MARAMPATA – CHOQUEQUIRAO ARCHAEOLOGICAL PARK – MARAMPATA',
+    content: 'Main Day: Exploration of the Choquequirao citadel (Main Plaza, Ceremonial Temple, Terraces, Llama Sector). Lunch on site and return to Marampata.',
+    stats: { alt: '3035m', time: '5-6 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'MARAMPATA – ROSALINAS BEACH – CAPULIYOC – CUSCO',
+    content: 'Early descent to the Apurimac River to avoid the heat. Final ascent to Capuliyoc. Transfer back to the Imperial City of Cusco.',
+    stats: { trans: '4 h', dist: 'Final hike', time: '7 h' }
+  }
+];
+
+const includes = [
+  'Private transport Cusco – Cachora – Capuliyoc (Round trip)',
+  'Full board (3 breakfasts, 4 lunches, 3 dinners)',
+  '3 Nights in local rustic lodges',
+  'Official bilingual specialized tour guide',
+  'Mules for general and personal gear (5kg per person)',
+  'Experienced muleteers',
+  'First aid kit and safety logistics'
+];
+
+const equipment = [
+  'Original documents (Passport / ID)',
+  'Daypack (25 to 35 Ltrs)',
+  'Technical trekking boots with good grip',
+  'Layered clothing (Pants, shirts, jacket, sweater)',
+  'Sunblock and mosquito repellent (essential)',
+  'Hat, trekking poles, and headlamp',
+  'Rain poncho or waterproof gear',
+  'Portable power bank (limited solar energy)'
+];
+
+const excludes = [
+  'First breakfast (Day 1) and last dinner (Day 4)',
+  'Choquequirao entrance fees (S/. 60.00)',
+  'Saywite Stone entrance fees (S/. 10.00)',
+  'Drinks, snacks, and personal expenses',
+  'Saddle horse (optional S/. 160.00 per day)',
+  'Tips for the support team'
+];
+---
+
+<Layout title="Choquequirao Trekking 4 Days | Cusco | Franpisco Adventure" description="Explore the Choquequirao citadel, the true lost city of the Incas. 4 days of intense trekking through the Apurimac Canyon.">
+  <ItineraryHero
+    client:load
+    titleTop="CULTURAL EXPEDITION"
+    titleMain="CHOQUEQUIRAO TREKKING"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    duration="4 DAYS / 3 NIGHTS"
+    price="USD. 595.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CSQ-CHO-04D"
+    titlePrefix="The Sister of"
+    titleAccent="Machu Picchu"
+    description="Choquequirao is not just a ruin; it is a test of endurance and faith. Crossing the imposing Apurimac Canyon to reach its sacred terraces is, for many, the most authentic experience of the Cusco Andes."
+    image="/slider_2.png"
+    lat={`13° 23' 21" S`}
+    lon={`72° 52' 33" W`}
+    specs={[
+      { label: "START POINT", value: "Cusco, Peru", icon: "location" },
+      { label: "TECHNICAL ZONE", value: "Apurimac Canyon", icon: "zone" },
+      { label: "TRIP TYPE", value: "Trekking & Cultural", icon: "season" },
+      { label: "CONNECTIVITY", value: "WiFi in camps", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Not Included"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Recommended Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="CHOQUEQUIRAO TREKKING 4D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Choquequirao Trek"
+    images={[
+      '/slider_2.png',
+      '/slider_1.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="choquequirao" client:visible />
+</Layout>

@@ -1,0 +1,158 @@
+---
+import Footer from "../components/Footer.tsx";
+import Navbar from "../components/Navbar.tsx";
+import {
+	getLangFromUrl,
+	useTranslations,
+} from "../i18n/utils";
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Franpisco Adventure - Tours & Expediciones",
+	description = "Agencia local especializada en experiencias de montaña y trekking en Perú.",
+} = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const currentPath = Astro.url.pathname;
+const routeName = currentPath.replace(/^\/en(\/|$)/, "$1").replace(/^\//, "").split('?')[0].replace(/\/$/, "");
+
+let esUrl = `/${routeName}`;
+let enUrl = `/en/${routeName}`;
+
+// Handle localized page name mapping
+const mappings: Record<string, { es: string; en: string }> = {
+  'nosotros': { es: '/nosotros', en: '/en/about' },
+  'about': { es: '/nosotros', en: '/en/about' },
+};
+
+if (mappings[routeName]) {
+  esUrl = mappings[routeName].es;
+  enUrl = mappings[routeName].en;
+}
+
+const isToursRoute = routeName === "tours" || routeName.startsWith("tours/");
+
+const isDestinationsActive = !isToursRoute && [
+	"peru",
+	"bolivia",
+	"ecuador",
+	"chile",
+	"argentina",
+].some((c) => routeName === c || routeName.startsWith(c + "/"));
+
+const isTrekkingActive = !isToursRoute && (
+	routeName.startsWith("trekking") || routeName.includes("huayhuash") || routeName.includes("blanca")
+);
+
+const navLabels = {
+  home: t("nav.home"),
+  about: t("nav.about"),
+  trekking: t("nav.trekking"),
+  huayhuash: t("nav.huayhuash"),
+  blanca: t("nav.blanca"),
+  cusco: t("nav.cusco"),
+  climbing: t("nav.climbing"),
+  destinations: t("nav.destinations"),
+  peru: t("nav.peru"),
+  bolivia: t("nav.bolivia"),
+  ecuador: t("nav.ecuador"),
+  chile: t("nav.chile"),
+  argentina: t("nav.argentina"),
+  tours: t("nav.tours"),
+  gallery: t("nav.gallery"),
+  contact: t("nav.contact"),
+};
+
+const footerLabels = {
+  brandName: t("footer.brandName"),
+  brandDesc: t("footer.brandDesc"),
+  navTitle: t("footer.navTitle"),
+  navHome: t("footer.navHome"),
+  navTours: t("footer.navTours"),
+  navAbout: t("footer.navAbout"),
+  navContact: t("footer.navContact"),
+  legalTitle: t("footer.legalTitle"),
+  legalEthics: t("footer.legalEthics"),
+  legalTerms: t("footer.legalTerms"),
+  legalPrivacy: t("footer.legalPrivacy"),
+  legalEsnna: t("footer.legalEsnna"),
+  legalCert: t("footer.legalCert"),
+  contactTitle: t("footer.contactTitle"),
+  contactHq: t("footer.contactHq"),
+  copy: t("footer.copy"),
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || 'https://franpiscoadventure.com')} />
+		
+		<!-- Multilingual SEO -->
+		<link rel="alternate" hreflang="es" href={`https://franpiscoadventure.com${esUrl}`} />
+		<link rel="alternate" hreflang="en" href={`https://franpiscoadventure.com${enUrl}`} />
+		<link rel="alternate" hreflang="x-default" href={`https://franpiscoadventure.com${esUrl}`} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL('/og-image.png', Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL('/og-image.png', Astro.url)} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<Navbar 
+      client:load 
+      lang={lang as 'es' | 'en'} 
+      labels={navLabels}
+      esUrl={esUrl}
+      enUrl={enUrl}
+      currentPath={currentPath}
+      routeName={routeName}
+      isTrekkingActive={isTrekkingActive}
+      isDestinationsActive={isDestinationsActive}
+    />
+
+		<main>
+			<slot />
+		</main>
+
+		<Footer client:load lang={lang as 'es' | 'en'} labels={footerLabels} />
+
+		<script>
+			// Sticky behavior moved to React component
+		</script>
+
+	</body>
+</html>
+

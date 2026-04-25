@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import PageHero from '../../components/PageHero';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import TourCard from '../../components/TourCard';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const peruPrograms = [
+  {
+    id: 'santa-cruz',
+    title: 'Santa Cruz Trekking',
+    description: 'The most emblematic circuit in the White Range. 4 days of turquoise lagoons and views of Alpamayo.',
+    image: '/slider_1.png',
+    duration: '4 Days',
+    difficulty: 'Moderate',
+    difficultyLevel: 'mod' as const,
+    path: 'trekking/blanca/santa-cruz',
+    prefix: 'PER',
+    type: 'CLASSIC TREKKING'
+  },
+  {
+    id: 'huayhuash-360',
+    title: 'Huayhuash 360°',
+    description: 'Considered one of the best treks in the world. A technical circumnavigation of the Huayhuash range.',
+    image: '/slider_2.png',
+    duration: '12 Days',
+    difficulty: 'Exigent',
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/huayhuash/360',
+    prefix: 'PER',
+    type: 'EXPEDITION'
+  },
+  {
+    id: 'alpamayo-climb',
+    title: 'Nevado Alpamayo',
+    description: 'The most beautiful mountain in the world. Technical ascent via the French Direct face.',
+    image: '/slider_3.png',
+    duration: '6 Days',
+    difficulty: 'Technical',
+    difficultyLevel: 'hard' as const,
+    path: 'climbing/alpamayo',
+    prefix: 'PER',
+    type: 'MOUNTAINEERING'
+  },
+  {
+    id: 'laguna-69',
+    title: 'Laguna 69 Trekking',
+    description: 'Perfect acclimatization. Visit the most famous lagoon in Huaraz under Chacraraju and Pisco peaks.',
+    image: '/slider_4.png',
+    duration: 'Full Day',
+    difficulty: 'Moderate',
+    difficultyLevel: 'mod' as const,
+    path: 'tours/trekking-69',
+    prefix: 'PER',
+    type: 'DAY HIKE'
+  },
+  {
+    id: 'huascaran-expedition',
+    title: 'Nevado Huascaran',
+    description: 'The roof of Peru and the tropics. The ultimate challenge for mountaineers in the Peruvian Andes.',
+    image: '/slider_5.png',
+    duration: '7 Days',
+    difficulty: 'Very Exigent',
+    difficultyLevel: 'hard' as const,
+    path: 'climbing/huascaran',
+    prefix: 'PER',
+    type: 'HIGH ALTITUDE'
+  },
+  {
+    id: 'cusco-inca-trail',
+    title: 'Inca Trail',
+    description: 'Follow the steps of the Incas to the citadel of Machu Picchu. A unique cultural and natural experience.',
+    image: '/slider_1.png',
+    duration: '4 Days',
+    difficulty: 'Moderate',
+    difficultyLevel: 'mod' as const,
+    path: 'trekking/cusco/camino-inca',
+    prefix: 'PER',
+    type: 'CULTURAL TREK'
+  }
+];
+---
+
+<Layout title={`Peru - ${t('nav.destinations')} | Franpisco Adventure`} description="Discover the Peruvian Andes with Franpisco Adventure. Trekking in the White Range and Huayhuash, high mountain climbing, and cultural tours in Cusco and Machu Picchu.">
+  <PageHero 
+    client:load
+    titleTop="DESTINATIONS"
+    titleMain="PERU"
+    backgroundImage="/slider_1.png"
+    techData={[
+      { label: "MAX ELEVATION", value: "6,768 M.S.N.M." },
+      { label: "COORDINATES", value: "9°30′S 77°31′W" },
+      { label: "REGION", value: "ANDES / PERU" }
+    ]}
+  />
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {peruPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, prog.path)}
+            prefix={prog.prefix}
+            category={prog.type}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  <SuggestedRoutes lang={lang} client:visible />
+</Layout>
+
+<style>
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

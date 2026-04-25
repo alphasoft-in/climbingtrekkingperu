@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'ICA CITY TOUR & HUACACHINA',
+    content: 'Visita a la Plaza de Armas, bodegas vitivinícolas, el pueblo de Cachiche y el Oasis de Huacachina. Tarde de aventura en buggies y sandboarding por las dunas.',
+    stats: { alt: '406m', dist: 'Tour Ciudad', time: '4-5 h' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'ISLAS BALLESTAS & RESERVA DE PARACAS',
+    content: 'Navegación hacia las Islas Ballestas para observar pingüinos, lobos marinos y el geoglifo El Candelabro. Tour terrestre por la Reserva Nacional, Playa Roja y Lagunillas.',
+    stats: { alt: 'Nivel del Mar', dist: 'Marítimo/Terrestre', time: '7-8 h' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'LÍNEAS DE NAZCA & ARQUEOLOGÍA',
+    content: 'Viaje a Nazca para el sobrevuelo de los enigmáticos geoglifos. Visita a los Acueductos de Cantalloc, Ruinas de Paredones y talleres de cerámica ancestral.',
+    stats: { alt: '520m', dist: 'Aéreo/Terrestre', time: '8-10 h' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'CAÑÓN DE LOS PERDIDOS',
+    content: 'Expedición al impresionante Cañón de los Perdidos en las pampas de Gamonal. Caminata de trekking de medio impacto entre desfiladeros y cuevas naturales.',
+    stats: { alt: 'Baja', dist: 'Off-road', time: '6-7 h' }
+  }
+];
+
+const includes = [
+  'Traslados desde el hotel en Ica',
+  'Guía oficial de turismo especializado',
+  'Transporte turístico privado',
+  'Tour Islas Ballestas (Deslizador)',
+  'Entradas a la Reserva Nacional de Paracas',
+  'Tour de Viñedos y Degustación de Pisco',
+  'Aventura en Buggies y Sandboarding en Huacachina',
+  'Equipos de seguridad para actividades'
+];
+
+const excludes = [
+  'Pasajes de bus Lima - Ica - Lima',
+  'Sobrevuelo Líneas de Nazca (Tasa aeroportuaria)',
+  'Almuerzos y Cenas',
+  'Gastos personales y propinas'
+];
+
+const equipment = [
+  'Ropa ligera para el calor',
+  'Sombrero y lentes con protección UV',
+  'Bloqueador solar (obligatorio)',
+  'Calzado cómodo para caminar en arena',
+  'Casaca ligera para el tour en lancha',
+  'Cámara con batería extra',
+  'Botella de agua personal'
+];
+---
+
+<Layout title="Lo Mejor de Ica y Paracas | Oasis, Dunas y Misterio | Franpisco Adventure" description="Explora Ica al sur de Lima. Islas Ballestas, Oasis de Huacachina, Líneas de Nazca y el impresionante Cañón de los Perdidos. Una aventura única en el desierto peruano.">
+  <ItineraryHero 
+    client:load
+    titleTop="SUR DE LIMA"
+    titleMain="LO MEJOR DE ICA 4D"
+    backgroundImage="/slider_1.png"
+    duration="4 DÍAS / 3 NOCHES"
+    price="CONSULTAR"
+    difficulty="BAJA"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="ICA-FULL-04D"
+    titlePrefix="Tierra de"
+    titleAccent="Sol y Pisco"
+    description="Ica es el corazón del desierto peruano. Ubicada a 300 km al sur de Lima, esta región ofrece una mezcla perfecta de misterios arqueológicos, naturaleza marina indomable y la adrenalina de las dunas más altas de América."
+    image="/slider_2.png"
+    lat={`14° 04' 00" S`}
+    lon={`75° 43' 00" W`}
+    specs={[
+      { label: 'ÁREA', value: 'Costa Sur', icon: 'location' },
+      { label: 'DESTACADOS', value: 'Paracas y Nazca', icon: 'zone' },
+      { label: 'CLIMA', value: 'Cálido todo el año', icon: 'season' },
+      { label: 'LOGÍSTICA', value: 'Privada & Aventura', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Servicios Incluidos" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LO MEJOR DE ICA Y PARACAS 4D" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Ica & Paracas"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="ica-paracas" client:visible />
+</Layout>

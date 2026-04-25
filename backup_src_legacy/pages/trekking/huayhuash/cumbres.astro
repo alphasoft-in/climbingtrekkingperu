@@ -1,0 +1,252 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../i18n/utils";
+import SuggestedRoutes from "../../../components/SuggestedRoutes";
+import TourGallery from "../../../components/TourGallery";
+import ItineraryHero from "../../../components/ItineraryHero";
+import ItineraryIntro from "../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../components/LogisticsCard";
+import ItineraryBooking from "../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DIA 01",
+    title: "LLEGADA A LIMA – PERU (161 MSNM) – HUARAZ (3100 MSNM)",
+    content:
+      "Llegada al aeropuerto Jorge Chávez. Traslado a Huaraz en bus (8 horas) o avión (50 min). Recepción y traslado al hotel.",
+    stats: { time: "8 hs" },
+  },
+  {
+    day: "DIA 02",
+    title: "ACLIMATACION: LAGUNA ROCUTOYOC (4450 MSNM) – CORDILLERA BLANCA",
+    content:
+      "Visita al mirador Cashapunta, cascada Ruripaccha, pinturas rupestres y laguna Rocutuyoc. Caminata al glaciar Ruripaccha (4,650 msnm).",
+    stats: { alt: "4450m", time: "9-10 hs" },
+  },
+  {
+    day: "DIA 03",
+    title: "DIA LIBRE",
+    content:
+      "Día de descanso estratégico para optimizar la aclimatación y retomar energía antes de iniciar la expedición en Huayhuash.",
+  },
+  {
+    day: "DIA 04",
+    title: "HUARAZ (3100M) - CUARTELWAIN (4180M) - MITUCOCHA (4230M)",
+    content:
+      "Traslado a Cuartelwain. Inicio del trekking cruzando el paso Cacananpunta (4,700 msnm). Vistas de Ninashanca, Rondoy y Jirishanca.",
+    stats: { alt: "4700 m", dist: "09 km", time: "04-05 hs" },
+  },
+  {
+    day: "DIA 05",
+    title: "MITUCOCHA (4230 MSNM) - CARHUACOCHA (4,280 MSNM)",
+    content:
+      "Caminata por el valle de Jancapampa. Paso Carhuac (4,650 msnm) o ruta alterna al mirador de tres lagunas. Vistas de Yerupaja y Siula.",
+    stats: { alt: "4650 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DIA 06",
+    title: "CARHUACOCHA (4,280 MSNM) - HUAYHUASH (4,300 MSNM)",
+    content:
+      "Día de mayor dificultad. Mirador de las tres lagunas (Siulacocha, Ganrajanca, Azulcocha). Paso Siula (4,800 msnm).",
+    stats: { alt: "4800 m", dist: "15 km", time: "09 hs" },
+  },
+  {
+    day: "DIA 07",
+    title: "HUAYHUASH (4,350 MSNM) - VICONGA (4,330 MSNM)",
+    content:
+      "Día tranquilo. Paso Portachuelo (4,750 msnm) con vistas de la Cordillera Raura. Campamento junto a las aguas termales de Viconga.",
+    stats: { alt: "4750 m", dist: "11 km", time: "06 hs" },
+  },
+  {
+    day: "DIA 08",
+    title: "ASCENSIÓN MONTAÑA PUMARINRI (5465 MSNM) - CUYOCPAMPA",
+    content:
+      "Ataque a la cumbre (01:30 am). 2 horas de glaciar hasta la cima. Vistas de Raura y Huayhuash. Descenso por el paso Cuyoc (5,000m).",
+    stats: { alt: "5465 m", dist: "18 km", time: "14 hs" },
+  },
+  {
+    day: "DIA 09",
+    title: "CUYOCPAMPA (4,550 MSNM) - HUAYLLAPA (3,630 MSNM)",
+    content:
+      "Paso Santa Rosa (5,080 msnm) al amanecer. Descenso por el valle de Calinca hasta el pueblo de Huayllapa.",
+    stats: { alt: "5080 m", dist: "19 km", time: "10 hs" },
+  },
+  {
+    day: "DIA 10",
+    title: "HUAYLLAPA (3,630 MSNM) - GASHPAPAMPA (4,550 MSNM)",
+    content:
+      "Ascenso exigente al paso Tapush (4,800 msnm). Vista del nevado Diablo Mudo. Campamento base Gashpapampa.",
+    stats: { alt: "4800 m", dist: "15 km", time: "08 hs" },
+  },
+  {
+    day: "DIA 11",
+    title: "ASCENSIÓN MONTAÑA DIABLO MUDO (5350 M) – JAHUACOCHA (4100 M)",
+    content:
+      "Ascenso a la cresta y cumbre (01:30 am). Vista fenomenal de la Cordillera Huayhuash. Descenso a la laguna Jahuacocha.",
+    stats: { alt: "5350 m", dist: "19 km", time: "14 hs" },
+  },
+  {
+    day: "DIA 12",
+    title: "JAHUACOCHA (4,100 MSNM) - LLAMAC (3,300 MSNM)",
+    content:
+      "Último día de caminata. Paso Pampa Llamac (3,900m). Descenso final a Llamac y traslado de retorno a Huaraz.",
+    stats: { alt: "3950 m", dist: "13 km", time: "06 hs" },
+  },
+  {
+    day: "DIA 13",
+    title: "TRASLADO AL TERMINAL O AEROPUERTO",
+    content:
+      "Traslado desde el hotel al terminal de bus o aeropuerto para el retorno a Lima. Fin de servicios.",
+  },
+];
+
+const includes = [
+  "Información técnica en oficina Huaraz",
+  "1 Día de aclimatación (compartido)",
+  "Traslados privados Huaraz - Huayhuash",
+  "Guía oficial de Trekking y Guía de Montaña (UIAGM)",
+  "Cocinero especializado en expediciones",
+  "Pensión completa durante el trek (opción vegetariana/sin gluten)",
+  "Burros y arrieros para carga (6kg equipo personal)",
+  "Equipo de camping completo (carpa cocina, comedor, personal)",
+  "Equipo técnico: Casco, Piolets, Arnés, Grampones, Cuerdas",
+  "Woki toki y Botiquín de primeros auxilios",
+];
+
+const equipment = [
+  "Bolsa de dormir -10°C y Colchoneta",
+  "Mochila de ataque 40L",
+  "Botas de Trekking y Zapatos de Montaña",
+  "Ropa técnica por capas (Pluma, Impermeable)",
+  "Gorro para frío y sol, Guantes",
+  "Lentes de sol con protección UV",
+  "Bloqueador solar y Poncho de lluvia",
+  "Bastones de trekking",
+];
+---
+
+<Layout
+  title="Cumbres de Huayhuash: Diablo Mudo y Pumarinri | Franpisco Adventure"
+  description="Expedición de alta montaña en la Cordillera Huayhuash. Escalada en Diablo Mudo (5350m) y Pumarinri (5465m). 13 días de aventura técnica."
+>
+  <ItineraryHero
+    client:load
+    titleTop="CUMBRES DE LA"
+    titleMain="CORDILLERA HUAYHUASH"
+    backgroundImage="/trekking/huayhuash/bg-cumbres.png"
+    duration="13 DÍAS / 12 NOCHES"
+    price="USD. 1,995.00"
+    difficulty="DIFÍCIL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-CB-13D"
+    titlePrefix="Diablo Mudo"
+    titleAccent="& Pumarinri"
+    description="Una expedición técnica diseñada para montañistas que buscan combinar el espectacular trekking de Huayhuash con cumbres de más de 5,000 metros, incluyendo el Diablo Mudo y Pumarinri."
+    image="/trekking/huayhuash/cumbres.png"
+    lat={`10° 16' 18" S`}
+    lon={`76° 54' 14" W`}
+    specs={[
+      {
+        label: "INICIO / LOGÍSTICA",
+        value: "Huaraz, Perú",
+        icon: "location",
+      },
+      { label: "ACTIVIDAD", value: "Caminata y Montañismo", icon: "zone" },
+      { label: "TEMPORADA", value: "Abril - Diciembre", icon: "season" },
+      { label: "SERVICIO", value: "Guía UIAGM Especializado", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Servicios Incluidos"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Equipo Técnico"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="CUMBRES DE LA CORDILLERA HUAYHUASH 13D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/cumbres/1.png",
+      "/trekking/huayhuash/cumbres/2.png",
+      "/trekking/huayhuash/cumbres/3.png",
+      "/trekking/huayhuash/cumbres/4.png",
+      "/trekking/huayhuash/cumbres/5.png",
+      "/trekking/huayhuash/cumbres/6.png",
+      "/trekking/huayhuash/cumbres/7.png",
+      "/trekking/huayhuash/cumbres/8.png",
+    ]}
+    lang={lang}
+    tourName="Cumbres Huayhuash"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="peaks" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

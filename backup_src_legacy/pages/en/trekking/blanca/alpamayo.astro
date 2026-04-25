@@ -1,0 +1,222 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from '../../../../components/TourGallery';
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'ORIGIN COUNTRY TO LIMA (161 MASL) – HUARAZ (3100 M)',
+    content: 'Arrival in Lima and transfer to Huaraz by bus (8 hours) or flight (50 min). Reception and hotel transfer. Acclimatization is recommended.',
+    stats: { time: '8 h' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'ACCLIMATIZATION: ROCUTOYOC LAGOON (4450 MASL)',
+    content: 'Visit Cashapunta lookout, Ruripaccha waterfall, and hike to Ruripaccha glacier (4650m). Return to Huaraz.',
+    stats: { alt: '4450m', time: '9-10 h' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'HUARAZ (3100) – VAQUERIA – PARIA (3900 MASL)',
+    content: 'Transfer passing through Portachuelo pass (4760m). Start of trek in Vaquería to Paria camp.',
+    stats: { trans: '05 h', alt: '4760m', dist: '8.5 km', time: '5 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'TUCTU (4200 MASL) - HUECRUNCOCHA (3850 MASL)',
+    content: 'Ascent to Pukaraju pass (4,650 masl) with views of Taulliraju peaks. Descent to Huecruncocha camp.',
+    stats: { alt: '4650 m', dist: '13.8 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'HUECRUNCOCHA (3850 MASL) – JANCAPAMPA (3700 MASL)',
+    content: 'Hike through Quisuar valley and cross Tupa Tupa pass (4,400 masl). Arrival in Jancapampa (Conchucos side).',
+    stats: { alt: '4400 m', dist: '13.2 km', time: '6 h' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'JANCAPAMPA (3700 MASL) – WILCA (4150 MASL)',
+    content: 'Technical ascent through bushes to Yanacon pass (4,600 masl). Descent to Wilca camp.',
+    stats: { alt: '4600 m', dist: '14.8 km', time: '9 h' }
+  },
+  {
+    day: 'DAY 07',
+    title: 'WILLCA (4200 MASL) – JANCARURISH (4250 MASL)',
+    content: 'Ascent through Tayapampa canyon to Cara Cara pass (4,800 masl). Spectacular views of Alpamayo North Face.',
+    stats: { alt: '4800 m', dist: '14.4 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'JANCARURISH (4250 MASL) - OSORURI (4,380 MASL)',
+    content: 'Hike through Los Cedros canyon and ascent to Vientunan pass (4,790 masl). Balcony camp at Osoruri.',
+    stats: { alt: '4790 m', dist: '8.9 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'OSORURI (4380 MASL) – HUISHCASH (4100 MASL)',
+    content: 'Crossing Toropishtanan pass (4,850 masl). Views of Santa Cruz peaks and Cullicocha lagoon.',
+    stats: { alt: '4850 m', dist: '12.2 km', time: '9 h' }
+  },
+  {
+    day: 'DAY 10',
+    title: 'HUISHCASH (4100 MASL) – HUALCAYAN (3000 MASL) – HUARAZ',
+    content: 'Final zigzag descent to Hualcayan village. Transfer back to Huaraz city.',
+    stats: { alt: '3000 m', dist: '9.3 km', time: '4 h' }
+  },
+  {
+    day: 'DAY 11',
+    title: 'TRANSFER TO TERMINAL OR AIRPORT',
+    content: 'Transfer from hotel based on your departure schedule. End of services.'
+  }
+];
+
+const includes = [
+  'Detailed technical briefing at office',
+  'Official qualified Trekking Guide (AGMP/UIAGM)',
+  'Assistant guide (for groups 10+)',
+  'Expedition specialized cook',
+  '2 Technical acclimatization days',
+  '8 Days of Los Cedros Alpamayo trekking',
+  'Full camping equipment (tents, kitchen, dining)',
+  'Donkeys for general and personal gear transport',
+  'Qualified donkey drivers',
+  'Woki toki and First Aid kit'
+];
+
+const equipment = [
+  'Sleeping bag (-10°C) and Mat',
+  'Technical trekking boots',
+  'Waterproof pants and jacket (Gore-Tex)',
+  'Down jacket for camp',
+  'Telescopic trekking poles',
+  'Headlamp with spare batteries',
+  '100% UV Sunglasses and Sunblock',
+  'Daypack (40L)'
+];
+---
+
+<Layout title="Los Cedros Alpamayo Route 11 Days | White Range | Franpisco Adventure" description="The most spectacular technical expedition in the White Range. 11 days contemplating Alpamayo North Face and crossing high mountain passes.">
+  <ItineraryHero
+    client:load
+    titleTop="TECHNICAL EXPEDITION"
+    titleMain="LOS CEDROS ALPAMAYO"
+    backgroundImage="/trekking/blanca/bg-loscedros.png"
+    duration="11 DAYS / 10 NIGHTS"
+    price="USD. 895.00"
+    difficulty="HARD / TECHNICAL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="BLN-ALP-11D"
+    titlePrefix="The North"
+    titleAccent="Face"
+    description="Considered the most spectacular route for photographers and mountaineers, Los Cedros allows you to circle Alpamayo to contemplate its perfect pyramid from angles inaccessible in other routes."
+    image="/trekking/blanca/trekking-cedros.png"
+    lat={`08° 52' 45" S`}
+    lon={`77° 39' 12" W`}
+    specs={[
+      {
+        label: "START / LOGISTICS",
+        value: "Huaraz, Peru",
+        icon: "location",
+      },
+      {
+        label: "MAX POINT",
+        value: "Toropishtanan Pass (4,850m)",
+        icon: "zone",
+      },
+      { label: "SEASON", value: "April - December", icon: "season" },
+      { label: "SERVICE", value: "Full Technical Expedition", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Suggested Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="LOS CEDROS ALPAMAYO ROUTE 11D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png',
+      '/slider_6.png',
+      '/slider_7.png',
+      '/slider_8.png'
+    ]}
+    lang={lang}
+    tourName="Alpamayo Expedition"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="alpamayo-trek" client:visible />
+
+  <style>
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

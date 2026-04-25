@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'HUARAZ (3100M) – CAMPO BASE ISHINCA (4350M)',
+    content: 'Traslado a Collon. Caminata de aproximación por el valle de Ishinca entre queñuales hasta el campo base.',
+    stats: { time: '5h Caminata', alt: '4350m' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'CAMPO BASE (4350M) – CUMBRE URUS (5424M)',
+    content: 'Ascensión técnica de aclimatación a la cumbre del Urus. Vistas del Ranrapalca y Tocllaraju. Retorno al base.',
+    stats: { time: '9-10h Jornada', alt: '5424m' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'CAMPO BASE (4350M) – CUMBRE ISHINCA (5350M)',
+    content: 'Ataque a la cumbre del Nevado Ishinca. Excelente pico de preparación técnica para el Tocllaraju.',
+    stats: { time: '13-14h Jornada', alt: '5350m' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'DÍA DE DESCANSO ESTRATÉGICO',
+    content: 'Día para recuperar energías y revisión de equipo técnico en el campo base.',
+    stats: { time: 'Descanso', alt: '4350m' }
+  },
+  {
+    day: 'DÍA 05',
+    title: 'CAMPO BASE – CAMPO ALTO TOCLLARAJU (4950M)',
+    content: 'Ascenso cargando equipo de alta montaña hasta el campamento morrena del Tocllaraju.',
+    stats: { time: '4h Ascenso', alt: '4950m' }
+  },
+  {
+    day: 'DÍA 06',
+    title: 'CAMPO ALTO – CUMBRE TOCLLARAJU (6030M) – BASE',
+    content: 'Ataque a la cumbre a medianoche. Escalada técnica para alcanzar los 6030m. Descenso hasta el campo base.',
+    stats: { time: '13-14h Jornada', alt: '6030m' }
+  },
+  {
+    day: 'DÍA 07',
+    title: 'CAMPO BASE – COLLON – HUARAZ (3100M)',
+    content: 'Retorno final por el valle hasta Collon y transporte privado de regreso a Huaraz.',
+    stats: { time: 'Retorno', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Traslado terminal - hotel en Huaraz',
+  'Información técnica y logística completa',
+  'Transporte privado Huaraz - Collon - Huaraz',
+  'Guía de montaña Certificado UIAGM',
+  'Cocinero especializado en alta montaña',
+  'Porteadores para equipos en campos altos',
+  'Alimentación completa en expedición',
+  'Equipo de campamento de alta montaña',
+  'Burros y arriero para logística al base',
+  'Tickets de entrada al P.N. Huascarán',
+  'Cuerdas, estacas y radios de comunicación'
+];
+
+const excludes = [
+  'Seguros de viaje y rescate',
+  'Alimentación en la ciudad',
+  'Equipo técnico personal',
+  'Gastos personales y propinas',
+  'Saco de dormir personal (-20°C)'
+];
+
+const equipment = [
+  'Saco de dormir (-20°C)',
+  'Casco de montaña y frontal',
+  'Gafas UV Cat 4 y bloqueador',
+  'Chaqueta de plumas y Gore-Tex',
+  'Arnés y piolets técnicos (par)',
+  'Botas de alta montaña y grampones',
+  'Mochila de ataque (40L)'
+];
+---
+
+<Layout title="Trilogía Ishinca 6030m | Cordillera Blanca | Franpisco Adventure" description="Expedición de 7 días en el Valle de Ishinca. Conquista el Urus, Ishinca y el imponente Tocllaraju (6030m) con guías UIAGM.">
+  <ItineraryHero
+    client:load
+    titleTop="LA TRILOGÍA DEL VALLE"
+    titleMain="ISHINCA & TOCLLARAJU 6030M"
+    backgroundImage="/slider_3.png"
+    duration="07 DÍAS / 06 NOCHES"
+    price="USD. 1,795.00"
+    difficulty="ALTA / TÉCNICA"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-ISH-07"
+    titlePrefix="El Valle de"
+    titleAccent="los Gigantes"
+    description="El valle de Ishinca permite un ascenso progresivo ideal. Urus e Ishinca sirven de aclimatación perfecta antes del desafío técnico del Tocllaraju (6030m)."
+    image="/slider_3.png"
+    lat={`09° 20' 52" S`}
+    lon={`77° 19' 26" W`}
+    specs={[
+      { label: "PUNTO MÁXIMO", value: "6,030 MSNM", icon: "location" },
+      { label: "TIPO", value: "Trilogía de Cumbres", icon: "activity" },
+      { label: "TEMPORADA", value: "Mayo - Septiembre", icon: "season" },
+      { label: "SERVICIO", value: "Guía UIAGM Élite", icon: "service" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Técnico" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="TRILOGÍA VALLE DE ISHINCA 6030M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Valle de Ishinca"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="ishinca-valley" client:visible />
+</Layout>

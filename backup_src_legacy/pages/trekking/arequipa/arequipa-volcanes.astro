@@ -1,0 +1,185 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'LIMA – AREQUIPA – HOTEL',
+    content: 'Recepción en el aeropuerto o terminal de bus de Arequipa y traslado al hotel seleccionado.',
+    stats: { alt: '2335m', dist: 'Traslado', time: '30 min' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'CULEBRILLAS Y CERRO COLORADO',
+    content: 'Visita a las canteras de sillar para observar el proceso de extracción y labrado. Exploración de la quebrada de culebrillas y sus petroglifos ancestrales.',
+    stats: { alt: '2500m', dist: 'Tour', time: '6-7 h' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'CAÑÓN DEL COLCA (MIRADOR DEL CÓNDOR)',
+    content: 'Salida temprana hacia el Mirador Cruz del Cóndor para observar el vuelo del ave más grande de los Andes. Visita a pueblos tradicionales y retorno a Arequipa.',
+    stats: { alt: '3600m', dist: 'Tour', time: '14 h' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'LAGUNA SALINAS',
+    content: 'Expedición a la laguna de sal rodeada de volcanes. Observación de flamencos, vicuñas y yaretales gigantes al pie del volcán Pichu Pichu.',
+    stats: { alt: '4300m', dist: 'Tour', time: '9-10 h' }
+  },
+  {
+    day: 'DÍA 05',
+    title: 'AREQUIPA – CAMPO BASE CHACHANI',
+    content: 'Traslado en 4x4 hacia la base del volcán. Ascenso a pie de 3-4 horas hasta el campo base Morena. Noche en campamento.',
+    stats: { alt: '4950m', dist: '4x4 + Trek', time: '4 h' }
+  },
+  {
+    day: 'DÍA 06',
+    title: 'CUMBRE VOLCÁN CHACHANI (6075M)',
+    content: 'Ascensión técnica hacia la cumbre del Chachani. Vistas espectaculares de toda la cordillera volcánica. Descenso y traslado al campo base del Misti.',
+    stats: { alt: '6075m', dist: 'Ascenso', time: '5-6 h' }
+  },
+  {
+    day: 'DÍA 07',
+    title: 'CUMBRE VOLCÁN MISTI (5822M) – AREQUIPA',
+    content: 'Ascenso final a la cumbre del Misti. Vista panorámica del cráter activo y la ciudad de Arequipa. Descenso y retorno al hotel.',
+    stats: { alt: '5822m', dist: 'Ascenso', time: '5 h' }
+  }
+];
+
+const includes = [
+  'Traslados Aeropuerto - Hotel - Aeropuerto (Arequipa)',
+  'Noches de hotel en Arequipa',
+  'Transporte turístico privado para todos los tours',
+  'Guía oficial de turismo para tours culturales',
+  'Transporte 4x4 para expediciones Chachani y Misti',
+  'Guía de montaña certificado para ascensiones',
+  'Alimentación completa durante expediciones',
+  'Equipo de campamento completo',
+  'Equipo técnico básico (Crampones/Piolet)',
+  'Traslado final al aeropuerto'
+];
+
+const excludes = [
+  'Vuelos Lima – Arequipa – Lima',
+  'Alimentación en la ciudad de Arequipa',
+  'Ropa técnica de alta montaña (Alquiler disponible)',
+  'Tickets de entrada a museos o parques',
+  'Propinas para guías y staff',
+  'Seguro de viaje y accidentes'
+];
+
+const equipment = [
+  'Ropa térmica y de montaña (por capas)',
+  'Casaca de plumas o térmica pesada',
+  'Botas de montaña con suela rígida',
+  'Mochila de expedición (60-70L)',
+  'Gorro, guantes y lentes UV',
+  'Saco de dormir de alta montaña (-15°C)',
+  'Linterna frontal con pilas extras'
+];
+---
+
+<Layout title="Arequipa y Volcanes 7 Días | Chachani y Misti | Franpisco Adventure" description="La expedición definitiva en Arequipa. 7 días recorriendo el Colca, Salinas y conquistando las cumbres de los volcanes Chachani (6075m) y Misti (5822m).">
+  <ItineraryHero 
+    client:load
+    titleTop="LA CIUDAD BLANCA"
+    titleMain="AREQUIPA & VOLCANES 7D"
+    backgroundImage="/slider_2.png"
+    duration="7 DÍAS / 6 NOCHES"
+    price="USD. 795.00"
+    difficulty="DIFÍCIL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="AQP-VOL-07D"
+    titlePrefix="Tierra de"
+    titleAccent="Fuego y Sillar"
+    description="Esta expedición es única en Sudamérica. Descubre la arquitectura Patrimonio de la Humanidad, el cañón más profundo y conquista las cumbres de los volcanes Chachani (6075m) y Misti (5822m)."
+    image="/slider_3.png"
+    lat={`16° 23' 55" S`}
+    lon={`71° 32' 12" W`}
+    specs={[
+      { label: 'CUMBRE MÁX.', value: '6,075 MSNM', icon: 'location' },
+      { label: 'DESTACADOS', value: 'Misti y Chachani', icon: 'zone' },
+      { label: 'TIEMPO', value: '7 Días / 6 Noches', icon: 'season' },
+      { label: 'LOGÍSTICA', value: '4x4 y Guías UIAGM', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="AREQUIPA Y VOLCANES 7D" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Arequipa Volcanes"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="arequipa-volcanes" client:visible />
+</Layout>

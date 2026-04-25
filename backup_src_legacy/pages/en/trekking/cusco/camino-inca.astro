@@ -1,0 +1,173 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from '../../../../components/TourGallery';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'CUSCO – KM 82 – HUAYLLABAMBA',
+    content: 'Start at Km 82. Hike along the Urubamba River with views of Mt. Veronica. Visit Llactapata and camp at Huayllabamba.',
+    stats: { alt: '3000m', dist: '12 km', time: '5-6 h' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'HUAYLLABAMBA – DEAD WOMAN PASS – PACAYMAYO',
+    content: 'The most demanding section. Ascent to Dead Woman Pass (Warmiwañusca). Descent to the Pacaymayo valley.',
+    stats: { alt: '4200m', dist: '11 km', time: '6-7 h' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'PACAYMAYO – SAYACMARCA – WIÑAYWAYNA',
+    content: 'Visit Runkurakay, Sayacmarca, and Phuyupatamarca. Hike through original granite paths to the Wiñaywayna camp.',
+    stats: { alt: '3800m', dist: '16 km', time: '7-8 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'WIÑAYWAYNA – SUN GATE – MACHU PICCHU',
+    content: 'Final hike to Inti Punku for sunrise over Machu Picchu. 2.5h guided tour and return to Cusco.',
+    stats: { alt: '2430m', dist: '5 km', time: '5 h' }
+  }
+];
+
+const includes = [
+  'Airport - Hotel - Airport transfers (Cusco)',
+  '2 Nights in a 3* hotel in Cusco',
+  'Private transport to Km 82',
+  'Official bilingual specialized tour guide',
+  'Inca Trail and Machu Picchu entrance tickets',
+  'Professional chef and kitchen assistants',
+  'Porters for camping and kitchen equipment',
+  'Full board (3B, 3L, 3D + daily snacks)',
+  'Camping equipment (Tents, dining, kitchen)',
+  'Coca tea and daily boiled water',
+  'Oxygen and first aid kit'
+];
+
+const excludes = [
+  'International and domestic flights',
+  'Sleeping bag and mats (Available for rent)',
+  'Trekking poles',
+  'Day 4 lunch and Day 1 breakfast',
+  'Extra personal porter ($160.00)',
+  'Huayna Picchu entrance ($60.00)',
+  'Tips for the staff'
+];
+
+const equipment = [
+  'Original Passport (mandatory)',
+  'Daypack (20-30L)',
+  'Technical sleeping bag (-10°C)',
+  'Layered clothing (Thermal, fleece, waterproof)',
+  'Trekking boots with good ankle support',
+  'Headlamp with extra batteries',
+  'Sunblock and insect repellent',
+  'Personal water bottle (2L)'
+];
+---
+
+<Layout title="Classic Inca Trail 4 Days | Cusco | Franpisco Adventure" description="Traverse the legendary original Inca Trail to Machu Picchu. 4 days of history, tunnels, and spectacular Andean views.">
+  <ItineraryHero
+    client:load
+    titleTop="THE PATH OF THE GODS"
+    titleMain="INCA TRAIL 4D / 3N"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    duration="4 DAYS / 3 NIGHTS"
+    price="USD. 1,595.00"
+    difficulty="MODERATE +"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CSQ-INC-04D"
+    titlePrefix="The Legendary"
+    titleAccent="Path"
+    description="The Inca Trail is not just a trek; it is a pilgrimage through time. It is the only route that allows you to enter Machu Picchu on foot through the Sun Gate, just as the Incas did 500 years ago."
+    image="/slider_2.png"
+    lat={`13° 13' 35" S`}
+    lon={`72° 32' 59" W`}
+    specs={[
+      { label: "START", value: "Km 82, Piscacucho", icon: "location" },
+      { label: "MAX POINT", value: "Warmiwañusca Pass (4,200m)", icon: "zone" },
+      { label: "PERMITS", value: "Limited (Advance Booking)", icon: "season" },
+      { label: "EQUIPMENT", value: "Porters included", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Not Included / Extras"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Suggested Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="CLASSIC INCA TRAIL 4D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Inca Trail"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="inca-trail" client:visible />
+</Layout>

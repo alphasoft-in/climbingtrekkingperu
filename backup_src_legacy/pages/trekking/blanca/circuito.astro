@@ -1,0 +1,239 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../i18n/utils";
+import SuggestedRoutes from "../../../components/SuggestedRoutes";
+import TourGallery from "../../../components/TourGallery";
+import ItineraryHero from "../../../components/ItineraryHero";
+import ItineraryIntro from "../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../components/LogisticsCard";
+import ItineraryBooking from "../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DÍA 01",
+    title: "LIMA (161 MSNM) – HUARAZ (3100 M)",
+    content: "Recepción en Lima y traslado a Huaraz. Recepción y traslado al hotel.",
+    stats: { time: "8 h" },
+  },
+  {
+    day: "DÍA 02",
+    title: "ACLIMATACIÓN: LAGUNA ROCUTOYOC (4450 MSNM)",
+    content: "Caminata al glaciar de Ruripaccha (4650m). Retorno a Huaraz.",
+    stats: { alt: "4450m", time: "9-10 h" },
+  },
+  {
+    day: "DÍA 03",
+    title: "DÍA LIBRE EN HUARAZ",
+    content: "Descanso y preparación para la expedición. Opcional realizar tours ligeros.",
+  },
+  {
+    day: "DÍA 04",
+    title: "HUARAZ – VAQUERÍA – PARIA (3900 MSNM)",
+    content: "Traslado por el paso Portachuelo (4760m). Inicio del trek en Vaquería hasta Paria.",
+    stats: { trans: "5 h", alt: "4760m", dist: "8.5 km", time: "5 h" },
+  },
+  {
+    day: "DÍA 05",
+    title: "PARIA – PUNTA UNIÓN (4750 MSNM) – TUCTU",
+    content: "Cruce del paso Punta Unión (4750m) con vistas del Taulliraju. Campamento Tuctu.",
+    stats: { alt: "4750m", dist: "10.3 km", time: "9 h" },
+  },
+  {
+    day: "DÍA 06",
+    title: "TUCTU - HUECRUNCOCHA (3850 MSNM)",
+    content: "Ascenso al paso Pukaraju (4650m). Vistas del Taulliraju. Descenso a Huecruncocha.",
+    stats: { alt: "4650m", dist: "13.8 km", time: "8 h" },
+  },
+  {
+    day: "DÍA 07",
+    title: "HUECRUNCOCHA – JANCAPAMPA (3700 MSNM)",
+    content: "Caminata por el valle de Quisuar y cruce del paso Tupa Tupa (4400m).",
+    stats: { alt: "4400m", dist: "13.2 km", time: "6 h" },
+  },
+  {
+    day: "DÍA 08",
+    title: "JANCAPAMPA – WILCA (4150 MSNM)",
+    content: "Ascenso hacia el paso Yanacon (4600m). Bajada al campamento Wilca.",
+    stats: { alt: "4600m", dist: "14.8 km", time: "9 h" },
+  },
+  {
+    day: "DÍA 09",
+    title: "WILLCA – JANCARURISH (4250 MSNM)",
+    content: "Cruce del paso Cara Cara (4800m). Vista de la cara norte del Alpamayo.",
+    stats: { alt: "4800m", dist: "14.4 km", time: "8 h" },
+  },
+  {
+    day: "DÍA 10",
+    title: "BASE DEL ALPAMAYO – LAGUNA JANCARURISH",
+    content: "Día de exploración en la base del Alpamayo, la montaña más bella del mundo.",
+    stats: { alt: "4650m", dist: "7 km", time: "5 h" },
+  },
+  {
+    day: "DÍA 11",
+    title: "JANCARURISH - OSORURI (4380 MSNM)",
+    content: "Caminata por Los Cedros y ascenso al paso Vientunan (4790m). Campamento balcón.",
+    stats: { alt: "4790m", dist: "8.9 km", time: "8 h" },
+  },
+  {
+    day: "DÍA 12",
+    title: "OSORURI – HUISHCASH (4100 MSNM)",
+    content: "Cruce del paso Toropishtanan (4850m). Vistas de laguna Cullicocha.",
+    stats: { alt: "4850m", dist: "12.2 km", time: "9 h" },
+  },
+  {
+    day: "DÍA 13",
+    title: "HUISHCASH – HUALCAYÁN – HUARAZ",
+    content: "Descenso final hacia el pueblo de Hualcayán. Retorno a Huaraz.",
+    stats: { alt: "3000m", dist: "9.3 km", time: "4 h" },
+  },
+  {
+    day: "DÍA 14",
+    title: "HUARAZ – LIMA",
+    content: "Traslado al terminal de bus para el viaje de retorno a Lima.",
+  },
+  {
+    day: "DÍA 15",
+    title: "LIMA – VUELO INTERNACIONAL",
+    content: "Traslado al aeropuerto para su vuelo de retorno. Fin de servicios.",
+  },
+];
+
+const includes = [
+  "Recepción en aeropuerto y traslados completos",
+  "Tickets de bus Lima - Huaraz - Lima",
+  "Hoteles en Huaraz y Lima según itinerario",
+  "Días de aclimatación técnica",
+  "Guía oficial de Trekking (UIAGM)",
+  "Cocinero especializado y asistentes",
+  "Alimentación completa durante la expedición",
+  "Equipo de camping de alta montaña",
+  "Acémilas para transporte de carga",
+  "Oxígeno y Botiquín de primeros auxilios"
+];
+
+const excludes = [
+  "Seguro de viaje y accidentes",
+  "Bolsa de dormir personal",
+  "Alimentación en ciudades",
+  "Entrada al Parque Nacional Huascarán",
+  "Gastos personales y propinas"
+];
+
+const equipment = [
+  "Bolsa de dormir (-15°C)",
+  "Botas de trekking impermeables",
+  "Ropa técnica por capas",
+  "Casaca de pluma o térmica pesada",
+  "Mochila de ataque (40L)",
+  "Bastones de trekking",
+  "Linterna frontal con pilas",
+  "Protección solar completa"
+];
+---
+
+<Layout
+  title="Circuito Cordillera Blanca 15 Días | Franpisco Adventure"
+  description="La travesía definitiva de 15 días en la Cordillera Blanca. Santa Cruz, Los Cedros y Alpamayo en una sola expedición de alto nivel."
+>
+  <ItineraryHero
+    client:load
+    titleTop="EXPEDICIÓN DE ÉLITE"
+    titleMain="CIRCUITO CORDILLERA BLANCA"
+    backgroundImage="/trekking/blanca/bg-cordillera-blanca.png"
+    duration="15 DÍAS / 14 NOCHES"
+    price="USD. 1,695.00"
+    difficulty="MUY DIFÍCIL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="BLN-CIRC-15D"
+    titlePrefix="La Travesía"
+    titleAccent="Total"
+    description="Esta es nuestra expedición insignia en la Cordillera Blanca. Durante 15 días, recorreremos los valles más remotos uniendo la ruta clásica de Santa Cruz con el imponente circuito de Los Cedros Alpamayo."
+    image="/trekking/blanca/trekking-blanca.png"
+    lat={`08° 50' 11" S`}
+    lon={`77° 40' 05" W`}
+    specs={[
+      { label: "COBERTURA", value: "Norte y Centro de la Blanca", icon: "location" },
+      { label: "PUNTOS CLAVE", value: "Alpamayo y Punta Unión", icon: "zone" },
+      { label: "TEMPORADA", value: "Abril - Noviembre", icon: "season" },
+      { label: "SERVICIO", value: "Expedición Premium", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Qué Incluye"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+            <LogisticsCard
+              client:visible
+              title="No Incluye"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+            <LogisticsCard
+              client:visible
+              title="Equipo Técnico"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="CIRCUITO CORDILLERA BLANCA 15D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png',
+      '/slider_6.png'
+    ]}
+    lang={lang}
+    tourName="Circuito Alpamayo"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="circuit" client:visible />
+</Layout>

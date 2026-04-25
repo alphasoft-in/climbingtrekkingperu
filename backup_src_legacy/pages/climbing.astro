@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuggestedRoutes from '../components/SuggestedRoutes';
+import PageHero from '../components/PageHero';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const climbingPrograms = [
+  {
+    id: 'alpamayo',
+    title: t('climbing.alpamayo.name'),
+    description: t('climbing.alpamayo.desc'),
+    image: '/slider_5.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    href: 'climbing/alpamayo',
+    prefix: 'CLB',
+    category: 'ESCALADA TÉCNICA'
+  },
+  {
+    id: 'huascaran',
+    title: t('climbing.huascaran.name'),
+    description: t('climbing.huascaran.desc'),
+    image: '/slider_4.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    href: 'climbing/huascaran',
+    prefix: 'CLB',
+    category: 'ALTA MONTAÑA'
+  },
+  {
+    id: 'pisco',
+    title: t('climbing.pisco.name'),
+    description: t('climbing.pisco.desc'),
+    image: '/slider_2.png',
+    duration: `3 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    href: 'climbing/pisco',
+    prefix: 'CLB',
+    category: 'ESCALADA CLÁSICA'
+  },
+  {
+    id: 'chopicallqui',
+    title: t('climbing.chopicallqui.name'),
+    description: t('climbing.chopicallqui.desc'),
+    image: '/slider_3.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    href: 'climbing/chopicallqui',
+    prefix: 'CLB',
+    category: 'EXPEDICIÓN'
+  },
+  {
+    id: 'ishinca-valley',
+    title: t('climbing.ishinca.name'),
+    description: t('climbing.ishinca.desc'),
+    image: '/slider_1.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    href: 'climbing/ishinca-valley',
+    prefix: 'CLB',
+    category: 'ACLIMATACIÓN'
+  },
+  {
+    id: 'prep-package',
+    title: t('climbing.prep.name'),
+    description: t('climbing.prep.desc'),
+    image: '/slider_4.png',
+    duration: `10 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    href: 'climbing/prep-package',
+    prefix: 'CLB',
+    category: 'ENTRENAMIENTO TÉCNICO'
+  },
+  {
+    id: 'artesonraju',
+    title: t('climbing.artesonraju.name'),
+    description: t('climbing.artesonraju.desc'),
+    image: '/slider_1.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    href: 'climbing/artesonraju',
+    prefix: 'CLB',
+    category: 'EXPEDICIÓN DE ÉLITE'
+  }
+];
+---
+
+<Layout title={`${t('nav.climbing')} - Franpisco Adventure`} description="Expediciones técnicas de alta montaña en la Cordillera Blanca y Huayhuash. Alpamayo, Huascarán y más con guías UIAGM.">
+  <PageHero 
+    client:load
+    titleTop="EXPEDICIONES"
+    titleMain="ESCALADA"
+    backgroundImage="/slider_3.png"
+    techData={[
+      { label: "ELEVACIÓN MÁX", value: "6,962 M.S.N.M." },
+      { label: "COORDENADAS", value: "9°08′S 77°36′W" },
+      { label: "REGIÓN", value: "ANDES / GLOBAL" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {climbingPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, prog.href)}
+            prefix={prog.prefix}
+            category={prog.category}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes lang={lang} currentId="climbing-hub" client:visible />
+</Layout>

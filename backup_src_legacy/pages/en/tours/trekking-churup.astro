@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '07:30 AM',
+    title: 'DEPARTURE FROM HUARAZ',
+    content: 'Departure east of the city to the village of Pitec (3850m). Starting point of the trekking.',
+    stats: { time: 'Start' }
+  },
+  {
+    day: '08:30 AM',
+    title: 'PITEC - ASCENT',
+    content: 'Beginning of the hike. Steep trail offering incredible views of the city and Huamashraju.',
+    stats: { alt: '3850m' }
+  },
+  {
+    day: '10:30 AM',
+    title: 'ROPE SECTION',
+    content: 'Overcoming the technical section with fixed ropes (optional) to reach the upper part of the moraine.',
+    stats: { dist: 'Technical Section' }
+  },
+  {
+    day: '11:30 AM',
+    title: 'CHURUP LAKE (4450 MSNM)',
+    content: 'Arrival at the "seven colors" lake. Time for relaxation, photos, and lunch in front of the Churup peak.',
+    stats: { alt: '4450m', time: '1.5 h stay' }
+  },
+  {
+    day: '02:00 PM',
+    title: 'DESCENT TO PITEC',
+    content: 'Return via the same path with caution in steep sections.',
+    stats: { time: 'Descent' }
+  },
+  {
+    day: '04:30 PM',
+    title: 'RETURN TO HUARAZ',
+    content: 'Arrival at the city. End of the adventure.',
+    stats: { time: 'End' }
+  }
+];
+
+const includes = [
+  'Pick up from your hotel in Huaraz',
+  'Private/shared tourist transportation',
+  'Official Tour Guide (Bilingual)',
+  'First aid kit',
+  'Personalized assistance'
+];
+
+const excludes = [
+  'Meals (Box lunch recommended)',
+  'HNP entrance ticket (S/. 10.00 daily)',
+  'Personal travel insurance',
+  'Personal expenses'
+];
+
+const equipment = [
+  'Mountain shoes (mandatory)',
+  'Small backpack (20-30L)',
+  '2L of water and snacks',
+  'Windbreaker and fleece jacket',
+  'Sun protection (hat, sunglasses, sunscreen)',
+  'Rain poncho'
+];
+---
+
+<Layout title="Churup Lake Trekking | Huaraz | Franpisco Adventure" description="The ideal acclimatization hike. Ascend to 4450m and discover Churup Lake at the foot of its namesake peak.">
+  <ItineraryHero 
+    client:load
+    titleTop="THE CRYSTAL LAKE"
+    titleMain="CHURUP TREKKING 4450M"
+    backgroundImage="/slider_2.png"
+    duration="FULL DAY (8H)"
+    price="CONSULT"
+    difficulty="MODERADO+"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-CHU-FD"
+    titlePrefix="The Eye of the"
+    titleAccent="Mountain"
+    description="Churup Lake is the preferred route for those seeking a physical challenge close to Huaraz. With its turquoise and emerald waters, it is a complete experience."
+    image="/slider_3.png"
+    lat={`09° 29' 00" S`}
+    lon={`77° 24' 00" W`}
+    specs={[
+      { label: 'DISTANCE', value: '7 KM (Round trip)', icon: 'location' },
+      { label: 'GRADIENT', value: '+600m Ascent', icon: 'zone' },
+      { label: 'MARCH', value: '4 - 5 Hours', icon: 'season' },
+      { label: 'REQUIREMENT', value: 'Basic Acclimatization', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="TREKKING CHURUP LAKE FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Churup"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="trekking-churup" client:visible />
+</Layout>

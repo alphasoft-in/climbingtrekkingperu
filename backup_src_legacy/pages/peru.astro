@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuggestedRoutes from '../components/SuggestedRoutes';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard';
+import PageHero from '../components/PageHero';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const peruPrograms = [
+  {
+    id: 'santa-cruz',
+    title: 'Trekking Santa Cruz',
+    description: 'El circuito más emblemático de la Cordillera Blanca. 4 días de lagunas turquesas y vistas al Alpamayo.',
+    image: '/slider_1.png',
+    duration: '4 Días',
+    difficulty: 'Moderado',
+    difficultyLevel: 'mod' as const,
+    href: 'trekking/blanca/santa-cruz',
+    prefix: 'PER',
+    category: 'TREKKING CLÁSICO'
+  },
+  {
+    id: 'huayhuash-360',
+    title: 'Huayhuash 360°',
+    description: 'Considerado uno de los mejores trekkings del mundo. Una circunnavegación técnica a la cordillera Huayhuash.',
+    image: '/slider_2.png',
+    duration: '12 Días',
+    difficulty: 'Exigente',
+    difficultyLevel: 'hard' as const,
+    href: 'trekking/huayhuash/360',
+    prefix: 'PER',
+    category: 'EXPEDICIÓN'
+  },
+  {
+    id: 'alpamayo-climb',
+    title: 'Nevado Alpamayo',
+    description: 'La montaña más hermosa del mundo. Ascensión técnica por la cara Directa Francesa.',
+    image: '/slider_3.png',
+    duration: '6 Días',
+    difficulty: 'Técnico',
+    difficultyLevel: 'hard' as const,
+    href: 'climbing/alpamayo',
+    prefix: 'PER',
+    category: 'MONTAÑISMO'
+  },
+  {
+    id: 'laguna-69',
+    title: 'Trekking Laguna 69',
+    description: 'Aclimatación perfecta. Visita la laguna más famosa de Huaraz bajo los nevados Chacraraju y Pisco.',
+    image: '/slider_4.png',
+    duration: 'Full Day',
+    difficulty: 'Moderado',
+    difficultyLevel: 'mod' as const,
+    href: 'tours/trekking-69',
+    prefix: 'PER',
+    category: 'CAMINATA DÍA'
+  },
+  {
+    id: 'huascaran-expedition',
+    title: 'Nevado Huascarán',
+    description: 'El techo del Perú y de los trópicos. El desafío máximo para montañistas en los Andes peruanos.',
+    image: '/slider_5.png',
+    duration: '7 Días',
+    difficulty: 'Muy Exigente',
+    difficultyLevel: 'hard' as const,
+    href: 'climbing/huascaran',
+    prefix: 'PER',
+    category: 'ALTA MONTAÑA'
+  },
+  {
+    id: 'cusco-inca-trail',
+    title: 'Camino Inca',
+    description: 'Sigue los pasos de los Incas hacia la ciudadela de Machu Picchu. Una experiencia cultural y natural única.',
+    image: '/slider_1.png',
+    duration: '4 Días',
+    difficulty: 'Moderado',
+    difficultyLevel: 'mod' as const,
+    href: 'trekking/cusco/camino-inca',
+    prefix: 'PER',
+    category: 'TREK CULTURAL'
+  }
+];
+---
+
+<Layout title={`Perú - ${t('nav.destinations')} | Franpisco Adventure`} description="Descubre los Andes Peruanos con Franpisco Adventure. Trekking en la Cordillera Blanca y Huayhuash, escalada de alta montaña y tours culturales en Cusco y Machu Picchu.">
+  <PageHero 
+    client:load
+    titleTop="DESTINOS"
+    titleMain="PERÚ"
+    backgroundImage="/slider_1.png"
+    techData={[
+      { label: "ELEVACIÓN MÁX", value: "6,768 M.S.N.M." },
+      { label: "COORDENADAS", value: "9°30′S 77°31′W" },
+      { label: "REGIÓN", value: "ANDES / PERÚ" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {peruPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, prog.href)}
+            prefix={prog.prefix}
+            category={prog.category}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes lang={lang} currentId="peru-hub" client:visible />
+</Layout>

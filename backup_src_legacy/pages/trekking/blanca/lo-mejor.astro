@@ -1,0 +1,211 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../i18n/utils";
+import SuggestedRoutes from "../../../components/SuggestedRoutes";
+import TourGallery from "../../../components/TourGallery";
+import ItineraryHero from "../../../components/ItineraryHero";
+import ItineraryIntro from "../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../components/LogisticsCard";
+import ItineraryBooking from "../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DÍA 01",
+    title: "LIMA (161 MSNM) – HUARAZ (3100 M)",
+    content: "Recepción en Lima y traslado a Huaraz. Traslado al hotel seleccionado.",
+    stats: { time: "8 h" },
+  },
+  {
+    day: "DÍA 02",
+    title: "ACLIMATACIÓN: LAGUNA PARÓN (4250 MSNM)",
+    content: "Viaje al norte visitando Carhuaz y Yungay. Estancia en Laguna Parón con vistas a la Pirámide de Garcilaso.",
+    stats: { alt: "4250m", time: "9-10 h" },
+  },
+  {
+    day: "DÍA 03",
+    title: "ACLIMATACIÓN: LAGUNA ROCUTOYOC (4450 MSNM)",
+    content: "Caminata al glaciar de Ruripaccha (4650m). Vistas espectaculares de la cordillera.",
+    stats: { alt: "4450m", time: "9-10 h" },
+  },
+  {
+    day: "DÍA 04",
+    title: "HUARAZ – LAGUNA 69 (4600 MSNM)",
+    content: "Inicio del trekking en Yuraccoral. Caminata por la Quebrada Demanda hasta la famosa Laguna 69.",
+    stats: { alt: "4600m", dist: "13 km", time: "5 h" },
+  },
+  {
+    day: "DÍA 05",
+    title: "YURACCORAL – VAQUERÍA – PARIA (3900 MSNM)",
+    content: "Traslado por el paso Portachuelo de Llanganuco (4760m). Encuentro con arrieros y caminata a Paria.",
+    stats: { alt: "4760m", dist: "9 km", time: "5 h" },
+  },
+  {
+    day: "DÍA 06",
+    title: "PARIA – TAULLIPAMPA (4250 MSNM)",
+    content: "Cruce del paso Punta Unión (4750m). Vistas del Taulliraju y la Quebrada Santa Cruz.",
+    stats: { alt: "4750m", dist: "13 km", time: "9 h" },
+  },
+  {
+    day: "DÍA 07",
+    title: "TAULLIPAMPA – LLAMACORAL (3760 MSNM)",
+    content: "Descenso por el valle de Santa Cruz. Visita opcional al campo base del Alpamayo.",
+    stats: { alt: "4460m", dist: "15 km", time: "8 h" },
+  },
+  {
+    day: "DÍA 08",
+    title: "LLAMACORAL – CASHAPAMPA – HUARAZ",
+    content: "Último tramo de descenso junto al río Yurakmayu hasta Cashapampa. Traslado a Huaraz.",
+    stats: { alt: "2900m", dist: "8 km", time: "4 h" },
+  },
+  {
+    day: "DÍA 09",
+    title: "HUARAZ – LIMA",
+    content: "Traslado al terminal y viaje de retorno a Lima. Traslado al hotel.",
+  },
+  {
+    day: "DÍA 10",
+    title: "LIMA – VUELO INTERNACIONAL",
+    content: "Traslado al aeropuerto para su vuelo de retorno. Fin de servicios.",
+  },
+];
+
+const includes = [
+  "Recepción en aeropuerto y todos los traslados",
+  "Tickets de bus Lima - Huaraz - Lima",
+  "Hoteles en Huaraz y Lima (3*)",
+  "Días de aclimatación técnica completa",
+  "Logística para Laguna 69 y Santa Cruz Trek",
+  "Guía oficial de Trekking (UIAGM)",
+  "Cocinero especializado y asistentes",
+  "Pensión completa durante los días de montaña",
+  "Acémilas para transporte de equipo",
+  "Equipo de camping de alta montaña",
+  "Oxígeno y Botiquín de primeros auxilios"
+];
+
+const excludes = [
+  "Seguro de viaje y accidentes",
+  "Bolsa de dormir personal",
+  "Alimentación en ciudades",
+  "Entrada al Parque Nacional Huascarán",
+  "Gastos personales y propinas"
+];
+
+const equipment = [
+  "Bolsa de dormir (-10°C)",
+  "Botas de trekking impermeables",
+  "Ropa técnica por capas",
+  "Casaca de pluma o térmica",
+  "Mochila de ataque (40L)",
+  "Bastones de trekking",
+  "Linterna frontal con pilas",
+  "Protección solar completa"
+];
+---
+
+<Layout
+  title="Lo Mejor de la Cordillera Blanca 10 Días | Franpisco Adventure"
+  description="La experiencia definitiva en la Cordillera Blanca. Incluye Laguna 69, Parón, Santa Cruz Trek y logística Confort de 10 días."
+>
+  <ItineraryHero
+    client:load
+    titleTop="EXPEDICIÓN SUPREMA"
+    titleMain="LO MEJOR DE LA BLANCA"
+    backgroundImage="/trekking/blanca/bg-cordillerablanca.png"
+    duration="10 DÍAS / 09 NOCHES"
+    price="USD. 1,195.00"
+    difficulty="MODERADO+"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="BLN-BEST-10D"
+    titlePrefix="El Corazón"
+    titleAccent="de los Andes"
+    description="Este programa combina las lagunas más icónicas de la Cordillera Blanca con el clásico Santa Cruz Trek, ofreciendo una logística de confort superior."
+    image="/trekking/blanca/bg-cordillerablanca.png"
+    lat={`09° 00' 25" S`}
+    lon={`77° 39' 11" W`}
+    specs={[
+      { label: "PUNTOS CLAVE", value: "Laguna 69, Parón, Santa Cruz", icon: "zone" },
+      { label: "DIFICULTAD", value: "Exigente / Paisajista", icon: "location" },
+      { label: "TEMPORADA", value: "Abril - Diciembre", icon: "season" },
+      { label: "SERVICIO", value: "Logística Confort Full", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Qué Incluye"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+            <LogisticsCard
+              client:visible
+              title="No Incluye"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+            <LogisticsCard
+              client:visible
+              title="Equipo Sugerido"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="LO MEJOR DE LA CORDILLERA BLANCA 10D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png',
+      '/slider_6.png'
+    ]}
+    lang={lang}
+    tourName="Lo Mejor de la Blanca"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="best" client:visible />
+</Layout>

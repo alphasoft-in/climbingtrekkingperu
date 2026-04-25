@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import PageHero from '../../components/PageHero';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import TourCard from '../../components/TourCard';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const chilePrograms = [
+  {
+    id: 'ojos-del-salado',
+    title: t('climbing.ojos_salado.name'),
+    description: t('climbing.ojos_salado.desc'),
+    image: '/slider_5.png',
+    duration: `13 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'chile/ojos-del-salado',
+    prefix: 'CHI',
+    type: 'VOLCANO EXPEDITION'
+  }
+];
+---
+
+<Layout title={`Chile - ${t('nav.destinations')} | Franpisco Adventure`} description="Discover the Ojos del Salado Volcano in Chile, the world's highest volcano. Extreme expeditions in the Atacama Desert with expert guides.">
+  <PageHero 
+    client:load
+    titleTop="DESTINATIONS"
+    titleMain="CHILE"
+    backgroundImage="/slider_5.png"
+    techData={[
+      { label: "MAX ELEVATION", value: "6,893 M.S.N.M." },
+      { label: "COORDINATES", value: "22°33′S 67°51′W" },
+      { label: "REGION", value: "ANDES / CHILE" }
+    ]}
+  />
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {chilePrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, prog.path)}
+            prefix={prog.prefix}
+            category={prog.type}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  <SuggestedRoutes lang={lang} client:visible />
+</Layout>
+
+<style>
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

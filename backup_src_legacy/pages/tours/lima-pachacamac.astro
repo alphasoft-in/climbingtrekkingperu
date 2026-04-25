@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'MAÑANA',
+    title: 'CITY TOUR LIMA COMPLETO',
+    content: 'Iniciamos con el City Tour tradicional: Lima Ancestral (Huaca Pucllana), Lima Colonial (Plaza Mayor, San Francisco y Catacumbas) y Lima Contemporánea (San Isidro y Miraflores). Almuerzo Buffet incluido en restaurante turístico.',
+    stats: { alt: 'Histórico', dist: 'Urbano', time: '4 h' }
+  },
+  {
+    day: 'MEDIODÍA',
+    title: 'BARRANCO Y COSTA VERDE',
+    content: 'Visita al distrito bohemio de Barranco, el Puente de los Suspiros y recorrido panorámico por las playas de la Costa Verde, el Salto del Fraile y los Pantanos de Villa.',
+    stats: { alt: 'Costa', dist: 'Panorámica', time: '1.5 h' }
+  },
+  {
+    day: 'TARDE',
+    title: 'SANTUARIO DE PACHACAMAC',
+    content: 'Exploración de la ciudadela arqueológica de Pachacamac, centro ceremonial del creador del universo. Visita a los templos piramidales, el Templo del Sol y el Acllahuasi.',
+    stats: { alt: 'Arqueológico', dist: 'Caminata', time: '2.5 h' }
+  }
+];
+
+const includes = [
+  'Recojo y retorno en su hotel (Miraflores, San Isidro, Lima)',
+  'Transporte turístico privado para todo el recorrido',
+  'Guía oficial de turismo bilingüe especializado',
+  'Almuerzo Buffet en restaurante turístico',
+  'Visita guiada a San Francisco y Catacumbas',
+  'Excursión completa al Santuario de Pachacamac'
+];
+
+const excludes = [
+  'Tickets de entrada a Pachacamac y Museos',
+  'Bebidas adicionales en el almuerzo',
+  'Propinas para guía y conductor',
+  'Servicios no especificados'
+];
+
+const equipment = [
+  'Calzado cómodo para caminar',
+  'Protector solar y sombrero',
+  'Cámara fotográfica',
+  'Agua embotellada',
+  'Ropa ligera y casaca para la brisa marina',
+  'Documento de identidad original'
+];
+---
+
+<Layout title="Lima & Pachacamac Full Day | Franpisco Adventure" description="El tour más completo de Lima. Combina el City Tour clásico con el místico Santuario de Pachacamac. 8 horas de historia, cultura y gastronomía frente al mar.">
+  <ItineraryHero 
+    client:load
+    titleTop="EL ORÁCULO DEL PACÍFICO"
+    titleMain="LIMA & PACHACAMAC 8H"
+    backgroundImage="/slider_1.png"
+    duration="FULL DAY (8 HORAS)"
+    price="CONSULTAR"
+    difficulty="BAJA"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="LIM-PACH-08H"
+    titlePrefix="Entre el Oráculo"
+    titleAccent="y la Ciudad"
+    description="Esta es la experiencia definitiva en la capital. Un viaje que conecta el misticismo del dios Pachacamac con la elegancia colonial de Lima. Recorreremos desde las criptas subterráneas de San Francisco hasta los templos del Sol."
+    image="/slider_3.png"
+    lat={`12° 15' 32" S`}
+    lon={`76° 54' 00" W`}
+    specs={[
+      { label: 'SALIDAS', value: 'Martes a Sábado', icon: 'location' },
+      { label: 'TEMPLOS', value: 'Pachacamac y Sol', icon: 'zone' },
+      { label: 'HORARIO', value: 'Full Day', icon: 'season' },
+      { label: 'INCLUYE', value: 'Almuerzo Buffet', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Servicios Incluidos" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LIMA & PACHACAMAC FULL DAY (8H)" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Lima Pachacamac"
+    images={[
+      '/slider_1.png',
+      '/slider_3.png',
+      '/slider_2.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="lima-pachacamac" client:visible />
+</Layout>

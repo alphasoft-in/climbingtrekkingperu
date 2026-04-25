@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'HUARAZ (3100 M) – CASHAPAMPA (2900 M) – LLAMACORAL (3760 M)',
+    content: 'Traslado a Cashapampa. Inicio del trekking por el valle de Santa Cruz hasta Llamacoral.',
+    stats: { time: '4-5h Trek', alt: '3760m' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'LLAMACORAL (3760 M) – CAMPO BASE TAULLIPAMPA (4250 M)',
+    content: 'Ascenso por el valle de Santa Cruz, pasando por las lagunas Jatuncocha y Quisuarpampa hasta el base.',
+    stats: { time: '5-6h Trek', alt: '4250m' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'CAMPO BASE (4250 M) – CAMPO ALTO (5190 M)',
+    content: 'Ascenso técnico hacia el campo alto. Preparación para el ataque a la cumbre.',
+    stats: { time: '4-5h Ascent', alt: '5190m' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'CUMBRE ARTESONRAJU (6025 M) – CAMPO ALTO',
+    content: 'Ataque a la cumbre. Escalada técnica en paredes de 60° y 70°. Vistas de la pirámide perfecta.',
+    stats: { time: '12-13h', alt: '6025m' }
+  },
+  {
+    day: 'DÍA 05',
+    title: 'CAMPO ALTO (5190 M) – CAMPO BASE (4250 M)',
+    content: 'Descenso técnico desde el campo alto hacia el campo base.',
+    stats: { time: '4-5h Descent', alt: '4250m' }
+  },
+  {
+    day: 'DÍA 06',
+    title: 'CAMPO BASE – CASHAPAMPA – HUARAZ (3100 M)',
+    content: 'Caminata final de retorno a Cashapampa y traslado privado a Huaraz.',
+    stats: { time: 'Return', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Traslado aeropuerto/terminal - hotel en Huaraz',
+  'Transporte privado Huaraz - Cashapampa - Huaraz',
+  'Guía de montaña UIAGM Certificado',
+  'Cocinero autorizado por el PNH',
+  'Porteador para equipos de camping a campo alto',
+  'Alimentación completa en expedición',
+  'Equipos de campamento y carpas personales',
+  'Burros y arriero hasta campo base',
+  'Tickets de entrada al Parque Nacional Huascarán',
+  'Cuerdas y estacas de nieve',
+  'Radios Woki-Toki y Botiquín'
+];
+
+const excludes = [
+  'Vuelos internacionales y locales',
+  'Hoteles en Lima y Huaraz',
+  'Bolsa de dormir y esterilla',
+  'Equipos técnicos personales (Piolets, Botas, etc.)',
+  'Seguro de accidentes de montaña obligatorio',
+  'Propinas para el personal'
+];
+
+const equipment = [
+  'Bolsa de dormir y esterilla técnica',
+  'Casco de montaña y Frontal',
+  'Lentes de nieve (Cat. 4) y Bloqueador solar',
+  'Casaca de pluma e impermeable',
+  'Arnés y Descensores',
+  'Par de Piolets técnicos',
+  'Botas de montaña y Grampones',
+  'Mochila de ataque 40L y Carga 70L'
+];
+---
+
+<Layout title="Expedición Nevado Artesonraju 6025m | Paramount Mountain | Franpisco Adventure" description="Escala el Nevado Artesonraju (6025m), la icónica montaña de Paramount Pictures. Expedición técnica de 6 días en la Cordillera Blanca con guías UIAGM de élite.">
+  <ItineraryHero 
+    client:load
+    titleTop="THE PARAMOUNT PICTURES PEAK"
+    titleMain="NEVADO ARTESONRAJU 6025M"
+    backgroundImage="/slider_1.png"
+    duration="06 DÍAS"
+    price="USD 2,295.00"
+    difficulty="DIFÍCIL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="CLB-ART-06"
+    titlePrefix="La Pirámide de"
+    titleAccent="Paramount"
+    description="El Nevado Artesonraju 6025 m.s.n.m. es una de las montañas más icónicas de los Andes peruanos. Su forma piramidal perfecta es mundialmente reconocida."
+    image="/slider_3.png"
+    lat={`08° 57' 04" S`}
+    lon={`77° 37' 54" W`}
+    specs={[
+      { label: 'PUNTO PARTIDA', value: 'Huaraz, Perú', icon: 'location' },
+      { label: 'ACTIVIDAD', value: 'Escalada Técnica', icon: 'zone' },
+      { label: 'EXPEDICIÓN', value: '6 Días Tácticos', icon: 'season' },
+      { label: 'DIFICULTAD', value: 'Muy Técnica (60°-70°)', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Técnico" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="EXPEDICIÓN NEVADO ARTESONRAJU 6025M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Artesonraju"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="artesonraju" client:visible />
+</Layout>

@@ -1,0 +1,139 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  { day: 'DÍA 01', title: 'Llegada a Lima', content: 'Asistencia y traslado personalizado desde el aeropuerto Jorge Chávez al hotel en Miraflores.' },
+  { day: 'DÍA 02', title: 'Lima – Ica – Huacachina', content: 'Viaje a Ica. Visita a la Plaza de Armas, bodegas de vino/pisco y el Oasis de Huacachina con tour de dunas y buggies.' },
+  { day: 'DÍA 03', title: 'Paracas – Islas Ballestas', content: 'Excursión marítima a las Islas Ballestas para ver pingüinos y lobos marinos. Visita a la Reserva Nacional de Paracas.' },
+  { day: 'DÍA 04', title: 'Ica – Nazca – Arequipa', content: 'Traslado a Nazca para el sobrevuelo de las Líneas de Nazca. Por la noche, viaje en bus cama hacia Arequipa.' },
+  { day: 'DÍA 05', title: 'Arequipa – Ruta del Sillar', content: 'Llegada y acomodación. Tour a las canteras de sillar y la quebrada de Culebrillas con petroglifos ancestrales.' },
+  { day: 'DÍA 06', title: 'Cañón del Colca', content: 'Viaje al Mirador Cruz del Cóndor para observar el vuelo del cóndor y la profundidad del cañón.' },
+  { day: 'DÍA 07', title: 'Laguna Salinas', content: 'Visita al Mirador de Volcanes en Chiguata y expedición a la Laguna Salinas (Yaretales).' },
+  { day: 'DÍA 08', title: 'Arequipa – Puno', content: 'Viaje en bus hacia la ciudad de Puno, a orillas del Lago Titicaca (6.5 horas).' },
+  { day: 'DÍA 09', title: 'Uros y Taquile', content: 'Navegación por el Lago Titicaca. Visita a las islas flotantes de los Uros y la isla cultural de Taquile.' },
+  { day: 'DÍA 10', title: 'Puno – Cusco', content: 'Traslado en bus hacia la Ciudad Imperial del Cusco. Tarde libre para aclimatación.' },
+  { day: 'DÍA 11', title: 'Cusco City Tour & Sacsayhuaman', content: 'Visita al Qoricancha (Templo del Sol) y los complejos de Sacsayhuaman, Qenqo, Pukapukara y Tambomachay.' },
+  { day: 'DÍA 12', title: 'Valle Sagrado VIP', content: 'Chincheros, Salineras de Maras, Moray y Ollantaytambo. Tren hacia Aguas Calientes por la noche.' },
+  { day: 'DÍA 13', title: 'Machu Picchu', content: 'Visita guiada a la ciudadela de Machu Picchu, una de las 7 maravillas del mundo. Retorno a Cusco.' },
+  { day: 'DÍA 14', title: 'Día Libre en Cusco', content: 'Día de descanso para disfrutar de la gastronomía cusqueña y compras de artesanía local.' },
+  { day: 'DÍA 15', title: 'Montaña de 7 Colores', content: 'Expedición a Vinicunca (5,100 msnm) y el Valle Rojo. Paisajes altoandinos impresionantes.' },
+  { day: 'DÍA 16', title: 'Cusco – Lima', content: 'Vuelo de retorno a la capital. Traslado al hotel en Lima.' },
+  { day: 'DÍA 17', title: 'Retorno a País de Origen', content: 'Traslado al aeropuerto internacional 4 horas antes de su vuelo. Fin de los servicios.' }
+];
+
+const includes = [
+  'Atención personalizada de Franpisco Adventure',
+  'Hoteles de 3 estrellas en todas las ciudades',
+  'Transporte privado y buses cama para tramos largos',
+  'Tickets de tren Ollantaytambo - Aguas Calientes (Expedition)',
+  'Entradas a Machu Picchu, Valle Sagrado y Montaña 7 Colores',
+  'Sobrevuelo Líneas de Nazca y tour marítimo Paracas',
+  'Guías oficiales de turismo en cada destino',
+  'Desayunos diarios en hoteles y algunos almuerzos buffet'
+];
+
+const excludes = [
+  'Vuelos internacionales y domésticos (Lima-Cusco)',
+  'Caballo en Montaña de 7 Colores (100 soles opcional)',
+  'Alimentación no mencionada en el programa',
+  'Seguro de viajes y propinas',
+  'Equipo de excursión personal'
+];
+---
+
+<Layout title="Las Maravillas del Perú VIP 17D | Franpisco Adventure" description="La expedición definitiva por el sur del Perú. 17 días recorriendo Lima, Paracas, Nazca, Arequipa, Puno y Cusco con servicio VIP personalizado.">
+  <ItineraryHero 
+    client:load
+    titleTop="LA EXPEDICIÓN DEFINITIVA"
+    titleMain="MARAVILLAS DEL PERÚ 17D"
+    backgroundImage="/slider_2.png"
+    duration="17 DÍAS / 16 NOCHES"
+    price="USD. 2,465.00"
+    difficulty="MODERADA"
+    difficultyLevel="mod"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="PER-VIP-17D"
+    titlePrefix="El Alma del"
+    titleAccent="Sur Peruano"
+    description="Este no es solo un viaje, es una inmersión profunda en la historia viva de América del Sur. Desde la modernidad de Lima hasta el misticismo de Machu Picchu, pasando por los desiertos de Nazca y las aguas sagradas del Titicaca. 17 días de servicio personalizado, hoteles de primera y experiencias culturales sin comparación."
+    image="/slider_1.png"
+    lat={`13° 09' 47" S`}
+    lon={`72° 32' 44" W`}
+    specs={[
+      { label: 'DESTINOS', value: 'Sur del Perú', icon: 'location' },
+      { label: 'CATEGORÍA', value: 'Cultural VIP', icon: 'zone' },
+      { label: 'ALOJAMIENTO', value: '3★ Superior', icon: 'service' },
+      { label: 'CONEXIONES', value: 'Tren, Bus & Vuelos', icon: 'season' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Servicios Incluidos" 
+              items={includes} 
+              refCode="SRV-VIP-17D" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye / Notas" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="MARAVILLAS DEL PERÚ VIP 17D" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Maravillas del Perú"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="maravillas-peru-17d" client:visible />
+</Layout>

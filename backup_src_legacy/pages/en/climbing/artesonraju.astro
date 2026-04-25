@@ -1,0 +1,182 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'HUARAZ (3100M) – CASHAPAMPA – LLAMACORAL (3760M)',
+    content: 'Transfer to Cashapampa where donkeys wait. Trek through Yurakmayu river to Llamacoral. A smooth start for a high-intensity expedition.',
+    stats: { time: '4-5h Trek', alt: '3760m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'LLAMACORAL (3760M) – TAULLIPAMPA BASE CAMP (4250M)',
+    content: 'Ascent through Santa Cruz valley, passing Jatuncocha and Quisuarpampa lagoons to the base camp of Artesonraju south-east face.',
+    stats: { time: '5-6h Trek', alt: '4250m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'BASE CAMP (4250M) – HIGH CAMP (5190M)',
+    content: 'Technical ascent towards high camp. The path becomes steep and demanding, preparing us for the summit push.',
+    stats: { time: '4-5h Ascent', alt: '5190m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'ARTESONRAJU SUMMIT (6025M) – HIGH CAMP',
+    content: 'Summit push at 12:00 am. Technical climbing on walls with 60° to 70° inclination. The reward is the view of the most perfect pyramid in the Andes.',
+    stats: { time: '12-13h Full Day', alt: '6025m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'HIGH CAMP (5190M) – BASE CAMP (4250M)',
+    content: 'Technical descent from high camp towards the comfort of base camp to celebrate the summit success.',
+    stats: { time: '4-5h Descent', alt: '4250m' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'BASE CAMP – CASHAPAMPA – HUARAZ (3100M)',
+    content: 'Final return trek to Cashapampa and private transfer back to Huaraz city.',
+    stats: { time: 'Return', alt: '3100m' }
+  }
+];
+
+const includes = [
+  'Transfer terminal - hotel in Huaraz',
+  'Technical briefing at office',
+  'Private Huaraz - Cashapampa - Huaraz transport',
+  'UIAGM Certified mountain guide',
+  'Certified cook and assistant',
+  'Porter for equipment to High Camp',
+  'Full expedition meals',
+  'Camping equipment and personal tents',
+  'Donkeys and muleteer for logistics to base camp',
+  'HNP entrance tickets',
+  'Ropes and snow stakes',
+  'Walkie-talkies and First Aid kit'
+];
+
+const excludes = [
+  'International and domestic flights',
+  'City meals',
+  'Personal technical gear',
+  'Personal expenses and tips',
+  'Personal sleeping bag (-20°C)',
+  'Compulsory mountain insurance'
+];
+
+const equipment = [
+  'Sleeping bag (-20°C)',
+  'Mountain helmet and UV glasses Cat 4',
+  'Down jacket and Gore-Tex',
+  'Technical snow gloves',
+  'Harness and technical ice axes (pair)',
+  'Double boots and crampons',
+  'Daypack (40L)'
+];
+---
+
+<Layout title="Artesonraju Mountain Expedition 6025m | Paramount Mountain | Franpisco Adventure" description="Scale Nevado Artesonraju (6025m), the iconic Paramount Pictures mountain. 6-day technical expedition in the Cordillera Blanca with elite UIAGM guides.">
+  <ItineraryHero
+    client:load
+    titleTop="THE PARAMOUNT PICTURES PEAK"
+    titleMain="NEVADO ARTESONRAJU 6025M"
+    backgroundImage="/slider_1.png"
+    duration="06 DAYS / 05 NIGHTS"
+    price="USD. 2,295.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CLB-ART-06"
+    titlePrefix="The Paramount"
+    titleAccent="Pyramid"
+    description="Nevado Artesonraju (6025m) is one of the most iconic mountains in the Peruvian Andes. Its perfect pyramidal shape is recognized as the Paramount Pictures logo."
+    image="/slider_3.png"
+    lat={`08° 57' 04" S`}
+    lon={`77° 37' 54" W`}
+    specs={[
+      { label: 'MAX SUMMIT', value: '6,025 MASL', icon: 'location' },
+      { label: 'INCLINATION', value: '60° - 70° Ice', icon: 'activity' },
+      { label: 'SEASON', value: 'June - August', icon: 'season' },
+      { label: 'SERVICE', value: 'Elite Technical', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Technical Gear" 
+              items={equipment} 
+              refCode="EQP-TCN" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="ARTESONRAJU EXPEDITION 6025M" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName="Artesonraju"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="artesonraju" client:visible />
+</Layout>

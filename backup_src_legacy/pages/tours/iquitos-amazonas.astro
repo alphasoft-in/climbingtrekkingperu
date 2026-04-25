@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DÍA 01',
+    title: 'IQUITOS – NAVEGACIÓN AMAZONAS – FUNDO PEDRITO',
+    content: 'Recojo y breve city tour histórico por Iquitos. Navegación por el río Amazonas hasta el Fundo Pedrito para observar Paiches (peces gigantes), caimanes y la Victoria Regia. Almuerzo en el lodge y caminata por selva primaria. Excursión nocturna en canoa por la Laguna Shansho.',
+    stats: { alt: '106m', dist: 'Fluvial', time: '8 h' }
+  },
+  {
+    day: 'DÍA 02',
+    title: 'PESCA DE PIRAÑAS – BÚSQUEDA DE DELFINES',
+    content: 'Caminata matutina para observar aves. Pesca recreativa de pirañas carnívoras y sardinas. Por la tarde, navegación en búsqueda de los legendarios delfines rosados y grises del Amazonas. Caminata nocturna para escuchar la sinfonía de la selva tropical.',
+    stats: { alt: 'Amazonía', dist: 'Río Amazonas', time: '10-12 h' }
+  },
+  {
+    day: 'DÍA 03',
+    title: 'ISLA DE LOS MONOS – COMUNIDAD RIVEREÑA',
+    content: 'Visita al proyecto "Isla de los Monos" para observar especies en peligro de extinción (Choros, Maquizapas, etc.). Por la tarde, visita al caserío "Pantoja" para interactuar con las costumbres locales de la zona. Excursión nocturna en canoa por el río.',
+    stats: { alt: 'Cultural', dist: 'Selva Virgen', time: '9 h' }
+  },
+  {
+    day: 'DÍA 04',
+    title: 'MARIPOSARIO – RETORNO A IQUITOS',
+    content: 'Visita al criadero de mariposas para aprender sobre el ciclo de la mariposa Morpho. Almuerzo de despedida y retorno en bote rápido hacia la ciudad de Iquitos para el traslado al hotel o aeropuerto.',
+    stats: { alt: 'Diverso', dist: 'Retorno', time: '6 h' }
+  }
+];
+
+const includes = [
+  'Traslados Aeropuerto / Hotel en Iquitos',
+  'Navegación en bote rápido por el Amazonas',
+  'Alojamiento en cabañas con baño privado',
+  'Alimentación completa (Basada en productos regionales)',
+  'Guía profesional bilingüe (Experto local)',
+  'Todas las excursiones descritas en el programa',
+  'Entradas a Fundo Pedrito e Isla de los Monos',
+  'Equipos de seguridad fluvial'
+];
+
+const excludes = [
+  'Vuelos Lima - Iquitos - Lima',
+  'Bebidas embotelladas y consumo de bar',
+  'Uso de botas y ponchos (Alquiler disponible)',
+  'Propinas para el personal y Guía',
+  'Seguro de viajes personal'
+];
+
+const equipment = [
+  'Ropa ligera y transpirable (manga larga)',
+  'Repelente de insectos (DEET 50%+)',
+  'Sombrero y lentes con protección UV',
+  'Poncho de lluvia o casaca impermeable',
+  'Linterna frontal con pilas de repuesto',
+  'Kit de aseo personal',
+  'Vacuna contra la fiebre amarilla (recomendada)'
+];
+---
+
+<Layout title="Amazonas Místico: Iquitos y Río Amazonas | Franpisco Adventure" description="Explora el río más grande del mundo desde Iquitos. Programas de 2 a 5 días en la selva norte. Delfines rosados, Isla de los Monos y expediciones en selva primaria.">
+  <ItineraryHero 
+    client:load
+    titleTop="EL RÍO MÁS GRANDE"
+    titleMain="AMAZONAS MÍSTICO 4D"
+    backgroundImage="/slider_2.png"
+    duration="4 DÍAS / 3 NOCHES"
+    price="CONSULTAR"
+    difficulty="BAJA"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="IQT-AMZ-04D"
+    titlePrefix="Navegando el"
+    titleAccent="Origen del Agua"
+    description="Iquitos es la ciudad más grande del mundo sin acceso por carretera, una isla de civilización en el corazón del Amazonas. Desde aquí, navegamos por el río más caudaloso del planeta para descubrir delfines rosados, caimanes y una biodiversidad única."
+    image="/slider_3.png"
+    lat={`03° 45' 00" S`}
+    lon={`73° 15' 00" W`}
+    specs={[
+      { label: 'PUNTO BASE', value: 'Iquitos', icon: 'location' },
+      { label: 'FAUNA', value: 'Delfín Rosado', icon: 'zone' },
+      { label: 'OPCIONES', value: 'Programas 2-5 Días', icon: 'season' },
+      { label: 'TIPO', value: 'Comfort & Inmersión', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Servicios Incluidos" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="AMAZONAS MÍSTICO (IQUITOS) 4D" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Iquitos Amazonas"
+    images={[
+      '/slider_2.png',
+      '/slider_1.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="iquitos-amazonas" client:visible />
+</Layout>

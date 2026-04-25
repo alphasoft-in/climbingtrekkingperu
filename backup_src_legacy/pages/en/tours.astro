@@ -1,0 +1,255 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import PageHero from '../../components/PageHero';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import TourCard from '../../components/TourCard';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const tours = [
+  {
+    id: 'laguna-paron',
+    title: t('tours.huaraz.paron.name'),
+    description: t('tours.huaraz.paron.desc'),
+    image: '/slider_2.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/laguna-paron',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'laguna-llanganuco',
+    title: t('tours.huaraz.llanganuco.name'),
+    description: t('tours.huaraz.llanganuco.desc'),
+    image: '/slider_1.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/laguna-llanganuco',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'trekking-69',
+    title: t('tours.huaraz.69.name'),
+    description: t('tours.huaraz.69.desc'),
+    image: '/slider_3.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'tours/trekking-69',
+    prefix: 'HZ',
+    type: 'TREKKING FD'
+  },
+  {
+    id: 'laguna-rocotuyoc',
+    title: t('tours.huaraz.rocotuyoc.name'),
+    description: t('tours.huaraz.rocotuyoc.desc'),
+    image: '/slider_4.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/laguna-rocotuyoc',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'pastoruri',
+    title: t('tours.huaraz.pastoruri.name'),
+    description: t('tours.huaraz.pastoruri.desc'),
+    image: '/slider_2.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/pastoruri',
+    prefix: 'HZ',
+    type: 'CLASSIC TOUR'
+  },
+  {
+    id: 'chavin-huantar',
+    title: t('tours.huaraz.chavin.name'),
+    description: t('tours.huaraz.chavin.desc'),
+    image: '/slider_1.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/chavin-huantar',
+    prefix: 'HZ',
+    type: 'CULTURAL TOUR'
+  },
+  {
+    id: 'chacas',
+    title: t('tours.huaraz.chacas.name'),
+    description: t('tours.huaraz.chacas.desc'),
+    image: '/slider_4.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/chacas',
+    prefix: 'HZ',
+    type: 'SCENIC TOUR'
+  },
+  {
+    id: 'trekking-churup',
+    title: t('tours.huaraz.churup.name'),
+    description: t('tours.huaraz.churup.desc'),
+    image: '/slider_2.png',
+    duration: `1 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'tours/trekking-churup',
+    prefix: 'HZ',
+    type: 'TREKKING FD'
+  },
+  {
+    id: 'arequipa-volcanoes',
+    title: t('arequipa.prog1.name'),
+    description: t('arequipa.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `7 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/arequipa/arequipa-volcanes',
+    prefix: 'AQP',
+    type: 'VOLCANIC EXPEDITION'
+  },
+  {
+    id: 'ica-paracas',
+    title: t('ica.prog1.name'),
+    description: t('ica.prog1.desc'),
+    image: '/slider_1.png',
+    duration: `3 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/ica-paracas',
+    prefix: 'ICA',
+    type: 'COASTAL EXPEDITION'
+  },
+  {
+    id: 'selva-tambopata',
+    title: t('selva.prog1.name'),
+    description: t('selva.prog1.desc'),
+    image: '/slider_4.png',
+    duration: `3 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/selva-tambopata',
+    prefix: 'MDD',
+    type: 'AMAZON EXPEDITION'
+  },
+  {
+    id: 'iquitos-amazonas',
+    title: t('iquitos.prog1.name'),
+    description: t('iquitos.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `2 - 5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/iquitos-amazonas',
+    prefix: 'IQT',
+    type: 'RIVER EXPEDITION'
+  },
+  {
+    id: 'lima-city',
+    title: t('lima.prog1.name'),
+    description: t('lima.prog1.desc'),
+    image: '/slider_3.png',
+    duration: `4 ${t('trekking.hours')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/lima-city',
+    prefix: 'LIM',
+    type: 'CITY EXPEDITION'
+  },
+  {
+    id: 'lima-pachacamac',
+    title: t('lima.prog2.name'),
+    description: t('lima.prog2.desc'),
+    image: '/slider_1.png',
+    duration: `8 ${t('trekking.hours')}`,
+    difficulty: t('trekking.diff.easy'),
+    difficultyLevel: 'easy' as const,
+    path: 'tours/lima-pachacamac',
+    prefix: 'LIM',
+    type: 'ARCHAEOLOGICAL EXPEDITION'
+  },
+  {
+    id: 'maravillas-peru-17d',
+    title: t('tours.vip.name'),
+    description: t('tours.vip.desc'),
+    image: '/trekking/huayhuash/clasico.png',
+    duration: `17 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    path: 'tours/maravillas-peru-17d',
+    prefix: 'PER',
+    type: 'GRAND EXPEDITION'
+  }
+];
+---
+
+<Layout title={`${t('nav.tours')} - Franpisco Adventure`} description="Explore our cultural expeditions and exclusive tours in the most iconic regions of Peru.">
+  <PageHero 
+    client:load
+    titleTop="OUR"
+    titleMain="TOURS"
+    backgroundImage="/slider_2.png"
+    techData={[
+      { label: "MAX ELEVATION", value: "4,600 M.S.N.M." },
+      { label: "COORDINATES", value: "9°30′S 77°31′W" },
+      { label: "REGION", value: "CORDILLERA BLANCA" }
+    ]}
+  />
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {tours.map((tour) => (
+          <TourCard 
+            client:visible
+            id={tour.id}
+            title={tour.title}
+            description={tour.description}
+            image={tour.image}
+            duration={tour.duration}
+            difficulty={tour.difficulty}
+            difficultyLevel={tour.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, tour.path)}
+            prefix={tour.prefix}
+            category={tour.type}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  <SuggestedRoutes lang={lang} client:visible />
+</Layout>
+
+<style>
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

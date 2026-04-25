@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #d80202;
+  --color-brand-blue: #0090cc;
+  --color-brand-light: #d5d5d5;
+  --color-brand-dark: #373737;
+
+  --breakpoint-nav: 1240px;
+}
+
+@layer base {
+  :root {
+    --brand-red: #d80202;
+    --brand-blue: #0090cc;
+    --brand-light: #d5d5d5;
+    --brand-dark: #373737;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #0b0d10;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  main {
+    background-color: #0b0d10;
+  }
+}

@@ -1,0 +1,252 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../../i18n/utils";
+import SuggestedRoutes from "../../../../components/SuggestedRoutes";
+import TourGallery from "../../../../components/TourGallery";
+import ItineraryHero from "../../../../components/ItineraryHero";
+import ItineraryIntro from "../../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../../components/LogisticsCard";
+import ItineraryBooking from "../../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DAY 01",
+    title: "ARRIVAL IN LIMA – PERU (161 MASL) – HUARAZ (3100 MASL)",
+    content:
+      "Arrival at Jorge Chávez Airport. Transfer to Huaraz by bus (8 hours) or flight (50 min). Reception and transfer to hotel.",
+    stats: { time: "8 hs" },
+  },
+  {
+    day: "DAY 02",
+    title: "ACCLIMATIZATION: ROCUTOYOC LAGOON (4450 MASL) – WHITE RANGE",
+    content:
+      "Visit to Cashapunta lookout, Ruripaccha waterfall, cave paintings and Rocutuyoc lagoon. Hike to Ruripaccha glacier (4,650 masl).",
+    stats: { alt: "4450m", time: "9-10 hs" },
+  },
+  {
+    day: "DAY 03",
+    title: "FREE DAY",
+    content:
+      "Strategic rest day to optimize acclimatization and recover energy before starting the Huayhuash expedition.",
+  },
+  {
+    day: "DAY 04",
+    title: "HUARAZ (3100M) - CUARTELWAIN (4180M) - MITUCOCHA (4230M)",
+    content:
+      "Transfer to Cuartelwain. Start of trekking crossing the Cacananpunta Pass (4,700 masl). Views of Ninashanca, Rondoy and Jirishanca peaks.",
+    stats: { alt: "4700 m", dist: "09 km", time: "04-05 hs" },
+  },
+  {
+    day: "DAY 05",
+    title: "MITUCOCHA (4230 MASL) - CARHUACOCHA (4280 MASL)",
+    content:
+      "Hike through Jancapampa valley. Carhuac Pass (4,650 masl) or alternate route to the three lagoons lookout. Views of Yerupaja and Siula.",
+    stats: { alt: "4650 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DAY 06",
+    title: "CARHUACOCHA (4280 MASL) - HUAYHUASH (4300 MASL)",
+    content:
+      "Most demanding day. Three lagoons lookout (Siulacocha, Ganrajanca, Azulcocha). Siula Pass (4,800 masl).",
+    stats: { alt: "4800 m", dist: "15 km", time: "09 hs" },
+  },
+  {
+    day: "DAY 07",
+    title: "HUAYHUASH (4350 MASL) - VICONGA (4330 MASL)",
+    content:
+      "Easy day. Portachuelo Pass (4,750 masl) with views of Cordillera Raura. Camp next to the hot springs of Viconga.",
+    stats: { alt: "4750 m", dist: "11 km", time: "06 hs" },
+  },
+  {
+    day: "DAY 08",
+    title: "PUMARINRI MOUNTAIN ASCENT (5465 MASL) - CUYOCPAMPA",
+    content:
+      "Summit push (01:30 am). 2 hours of glacier to the top. Views of Raura and Huayhuash. Descent via Cuyoc Pass (5,000m).",
+    stats: { alt: "5465 m", dist: "18 km", time: "14 hs" },
+  },
+  {
+    day: "DAY 09",
+    title: "CUYOCPAMPA (4550 MASL) - HUAYLLAPA (3630 MASL)",
+    content:
+      "Santa Rosa Pass (5,080 masl) at sunrise. Descent through Calinca valley to the village of Huayllapa.",
+    stats: { alt: "5080 m", dist: "19 km", time: "10 hs" },
+  },
+  {
+    day: "DAY 11",
+    title: "HUAYLLAPA (3630 MASL) - GASHPAPAMPA (4550 MASL)",
+    content:
+      "Demanding ascent to Tapush Pass (4,800 masl). View of Diablo Mudo peak. Base camp Gashpapampa.",
+    stats: { alt: "4800 m", dist: "15 km", time: "08 hs" },
+  },
+  {
+    day: "DAY 11",
+    title: "DIABLO MUDO MOUNTAIN ASCENT (5350 M) – JAHUACOCHA (4100 M)",
+    content:
+      "Ascent to the ridge and summit (01:30 am). Phenomenal view of the Huayhuash range. Descent to Jahuacocha lagoon.",
+    stats: { alt: "5350 m", dist: "19 km", time: "14 hs" },
+  },
+  {
+    day: "DAY 12",
+    title: "JAHUACOCHA (4100 MASL) - LLAMAC (3300 MASL)",
+    content:
+      "Last day of trekking. Pampa Llamac Pass (3,900m). Final descent to Llamac and transfer back to Huaraz.",
+    stats: { alt: "3950 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DAY 13",
+    title: "TRANSFER TO TERMINAL OR AIRPORT",
+    content:
+      "Transfer from hotel to bus terminal or airport for the return to Lima. End of services.",
+  },
+];
+
+const includes = [
+  "Technical briefing at Huaraz office",
+  "1 Acclimatization day (shared)",
+  "Private Huaraz - Huayhuash transfers",
+  "Official Trekking Guide and UIAGM Mountain Guide",
+  "Specialized Expedition Cook",
+  "Full board during trek (Veg/GF options)",
+  "Donkeys and muleteers (6kg personal gear allowance)",
+  "Full camping equipment",
+  "Technical gear: Helmet, Ice axe, Harness, Crampons, Ropes",
+  "Woki toki and First Aid kit",
+];
+
+const equipment = [
+  "Sleeping bag -10°C and Sleeping pad",
+  "Daypack 40L",
+  "Trekking boots and Mountain boots",
+  "Layered technical clothing (Down, Waterproof)",
+  "Hat for cold and sun, Gloves",
+  "UV protection Sunglasses",
+  "Sunblock and Rain poncho",
+  "Trekking poles",
+];
+---
+
+<Layout
+  title="Huayhuash Peaks: Diablo Mudo & Pumarinri | Franpisco Adventure"
+  description="High altitude expedition in the Huayhuash range. Climbing Diablo Mudo (5350m) and Pumarinri (5465m). 13 days of technical adventure."
+>
+  <ItineraryHero
+    client:load
+    titleTop="PEAKS OF THE"
+    titleMain="HUAYHUASH RANGE"
+    backgroundImage="/trekking/huayhuash/bg-cumbres.png"
+    duration="13 DAYS / 12 NIGHTS"
+    price="USD. 1,995.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-CB-13D"
+    titlePrefix="Diablo Mudo"
+    titleAccent="& Pumarinri"
+    description="A technical expedition designed for mountaineers seeking to combine the spectacular Huayhuash trekking with summits over 5,000 meters, including Diablo Mudo and Pumarinri."
+    image="/trekking/huayhuash/cumbres.png"
+    lat={`10° 16' 18" S`}
+    lon={`76° 54' 14" W`}
+    specs={[
+      {
+        label: "START / LOGISTICS",
+        value: "Huaraz, Peru",
+        icon: "location",
+      },
+      { label: "ACTIVITY", value: "Hiking & Mountaineering", icon: "zone" },
+      { label: "SEASON", value: "April - December", icon: "season" },
+      { label: "SERVICE", value: "Specialized UIAGM Guide", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Services Included"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Technical Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="PEAKS OF THE HUAYHUASH RANGE 13D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/cumbres/1.png",
+      "/trekking/huayhuash/cumbres/2.png",
+      "/trekking/huayhuash/cumbres/3.png",
+      "/trekking/huayhuash/cumbres/4.png",
+      "/trekking/huayhuash/cumbres/5.png",
+      "/trekking/huayhuash/cumbres/6.png",
+      "/trekking/huayhuash/cumbres/7.png",
+      "/trekking/huayhuash/cumbres/8.png",
+    ]}
+    lang={lang}
+    tourName="Huayhuash Peaks"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="peaks" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

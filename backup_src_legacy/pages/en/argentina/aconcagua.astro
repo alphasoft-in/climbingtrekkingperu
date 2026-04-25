@@ -1,0 +1,688 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'ARRIVAL IN MENDOZA (746 MASL)',
+    content: 'Reception at El Plumerillo International Airport and private transfer to the hotel in Mendoza city.',
+    stats: { alt: '746m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'PERMITS & LOGISTICS IN MENDOZA',
+    content: 'Aconcagua Park entry permit procedures with guide assistance. Final gear check and welcome dinner.',
+    stats: { alt: '746m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'MENDOZA – PENITENTES (2700 M)',
+    content: 'Transfer towards the mountain via the international route. Start of gradual acclimatization in the Penitentes area.',
+    stats: { time: '5h Drive', alt: '2700m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'PENITENTES – CONFLUENCIA (3368 M)',
+    content: 'Start of trekking in Aconcagua Park. First camp with views of the impressive South Face.',
+    stats: { time: '5h Trek', alt: '3368m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'ACCLIMATIZATION TO PLAZA FRANCIA (4200 M)',
+    content: 'Trek to the South Wall lookout. Crucial day for gradual acclimatization before moving to base camp.',
+    stats: { time: '7-8h Trek', alt: '4200m' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'CONFLUENCIA – PLAZA DE MULAS (4250 M)',
+    content: 'Hike through Playa Ancha to the largest base camp in the Andes, a true "tent city".',
+    stats: { time: '8-9h Trek', alt: '4250m' }
+  },
+  {
+    day: 'DAY 07',
+    title: 'REST DAY IN PLAZA DE MULAS',
+    content: 'Free day for recovery, hydration, and mandatory medical check-ups at base camp.',
+    stats: { alt: '4250m' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'MT. BONETE ASCENT (5000 M)',
+    content: 'Training and active acclimatization summit. Dramatically improves success chances on Aconcagua.',
+    stats: { time: '8-9h Trek', alt: '5000m' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'PLAZA DE MULAS – CAMP 1 (5050 M)',
+    content: 'Start of high camp ascent. Load movement and establishment of the first high camp.',
+    stats: { time: '6-7h Ascent', alt: '5050m' }
+  },
+  {
+    day: 'DAY 10',
+    title: 'CAMP 1 – CAMP 2 NIDO DE CÓNDORES (5550 M)',
+    content: 'Ascent to one of the most beautiful camps with panoramic views of the Main Range.',
+    stats: { time: '6h Ascent', alt: '5550m' }
+  },
+  {
+    day: 'DAY 11',
+    title: 'ACCLIMATIZATION IN NIDO DE CÓNDORES',
+    content: 'Strategic day for rest and body adjustment to extreme altitude above 5500 meters.',
+    stats: { alt: '5550m' }
+  },
+  {
+    day: 'DAY 12',
+    title: 'CAMP 2 – CAMP 3 CÓLERA (5970 M)',
+    content: 'Establishment of the last camp before the summit. Tactical preparation and early rest.',
+    stats: { time: '4h Ascent', alt: '5970m' }
+  },
+  {
+    day: 'DAY 13',
+    title: 'RESERVE DAY (WEATHER)',
+    content: 'Contingency to ensure a good weather window for the summit push.',
+    stats: { status: 'Flexible' }
+  },
+  {
+    day: 'DAY 14',
+    title: 'ACONCAGUA SUMMIT (6962 M) – CAMP 3',
+    content: 'Final push via Canaleta and Guanaco Ridge. Roof of America reached. Return to Camp 3.',
+    stats: { time: '12-13h Day', alt: '6962m' }
+  },
+  {
+    day: 'DAY 15',
+    title: 'CAMP 3 – PLAZA DE MULAS (4250 M)',
+    content: 'Long descent back to base camp. Celebration dinner and deep rest.',
+    stats: { time: '8-9h Descent', alt: '4250m' }
+  },
+  {
+    day: 'DAY 16',
+    title: 'PLAZA DE MULAS – PENITENTES – MENDOZA',
+    content: 'Final descent to the park exit and private transfer back to Mendoza city.',
+    stats: { alt: '746m' }
+  },
+  {
+    day: 'DAY 17',
+    title: 'DEPARTURE FROM MENDOZA',
+    content: 'Airport transfer for international return flight. End of expedition.',
+    stats: { status: 'Transfer' }
+  }
+];
+
+const includes = [
+  'Airport - Hotel - Airport transfers in Mendoza',
+  'Professional assistance for entry permit procedures',
+  '02 nights hotel in Mendoza with breakfast',
+  '01 night in Puente del Inca (Mountain hostel)',
+  'Exclusive private vehicle transfers',
+  'Mules for personal gear transport (no kg limit) to Base Camp',
+  'Professional Mountain Guide (Aconcagua Certified)',
+  'Full board during the entire expedition',
+  'Equipped dining dome in Base Camp with chairs and tables',
+  'High mountain tents (2 people in high camps)',
+  'Porter service for common gear and waste',
+  'Hot shower and exclusive toilets in Base Camp',
+  'Emergency medical gear and 24/7 communications'
+];
+
+const excludes = [
+  'Aconcagua Park entrance fee (government tax)',
+  'Compulsory medical insurance for extreme sports (incl. evacuation)',
+  'Personal technical gear (Sleeping bag, boots, etc.)',
+  'Expenses due to early abandonment of the expedition',
+  'Lunches and dinners in Mendoza city',
+  'Tips for expedition staff'
+];
+
+const equipment = [
+  'Sleeping bag (-30°C) and insulating Mat',
+  'Double or triple high mountain Boots',
+  '12-point Crampons and Trekking poles',
+  'Down jacket (heavy duty) and Gore-Tex jacket',
+  'Expedition and thermal pants',
+  'Technical high-altitude mittens and gloves',
+  'Glacier glasses (Cat. 4) and Goggles',
+  'Expedition pack (80L) and Attack pack (40L)',
+  'Balaclavas and thermal hats',
+  'Stainless steel thermos'
+];
+---
+
+<Layout title="Aconcagua Expedition 6962m | Roof of the Americas | Franpisco Adventure" description="Conquer Aconcagua (6962m) in Argentina with Franpisco Adventure. 17-day expedition with premium logistics, expert guides, and maximum safety.">
+  <section class="itinerary-hero aconcagua">
+    <div class="hero-overlay"></div>
+    <div class="container--narrow">
+      <div class="hero-content" style="text-align: center;">
+        <h1 class="split-title">
+          <span class="thin">THE ROOF OF THE AMERICAS</span>
+          <span class="bold">NEVADO ACONCAGUA 6962M</span>
+        </h1>
+        <div class="hero-accent-bar"></div>
+
+        <div class="metrics-bar">
+          <div class="metric">
+            <span class="m-label">DURATION</span>
+            <span class="m-value">17 DAYS</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">MAX ALTITUDE</span>
+            <span class="m-value">6,962 MSNM</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">DIFFICULTY</span>
+            <span class="m-value">
+              <span class="dif-tag hard">HIGH ALTITUDE / NON-TECH</span>
+            </span>
+          </div>
+          <div class="metric">
+            <span class="m-label">COST</span>
+            <span class="m-value">USD 8,950.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-intro">
+    <div class="container--narrow">
+      <div class="dossier-layout">
+        <div class="dossier-sidebar">
+          <span class="vertical-label">EXPEDITION DOSSIER</span>
+        </div>
+        
+        <div class="dossier-content">
+          <div class="dossier-header">
+            <span class="log-id">EXPEDITION ID: ARG-ACON-17</span>
+            <h2 class="dossier-title">The Stone <span class="blue">Sentinel</span></h2>
+          </div>
+          
+          <p class="dossier-p">Mount Aconcagua is the highest peak in the Americas and the highest in the world outside Asia. Located in Mendoza, Argentina, it is an epic challenge that requires determination, endurance, and impeccable logistics.</p>
+          <p class="dossier-p">Our 17-day program is designed to maximize gradual acclimatization, using strategic camps and reserve days. Although not a technical ascent, the extreme altitude demands superior physical preparation and the support of an elite professional team.</p>
+          
+          <div class="dossier-specs">
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">START POINT</span>
+                <span class="d-value">Mendoza, Argentina</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">ACTIVITY</span>
+                <span class="d-value">7000er Expedition</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">SEASON</span>
+                <span class="d-value">December - March</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">DIFFICULTY</span>
+                <span class="d-value">Extreme Physical</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dossier-visual">
+          <div class="visual-frame">
+            <img src="/slider_2.png" alt="Aconcagua Summit" class="dossier-img" />
+            <div class="coordinates-overlay">
+              <span>32° 39' 12" S</span>
+              <span class="divider">|</span>
+              <span>70° 00' 40" W</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-details">
+    <div class="container--narrow">
+      <div class="details-layout">
+        <div class="path-log-container">
+          <div class="details-header-technical">
+            <span class="sub-label">MISSION CHRONOLOGY</span>
+            <h2 class="technical-title">17-Day <span class="blue">Itinerary</span></h2>
+          </div>
+
+          <div class="path-timeline">
+            {itinerary.map((item) => (
+              <div class="waypoint-item">
+                <div class="waypoint-marker">
+                  <div class="marker-box">
+                    <span class="m-day">{item.day}</span>
+                  </div>
+                  <div class="connector"></div>
+                </div>
+                
+                <div class="waypoint-content">
+                  <div class="waypoint-header">
+                    <h3 class="w-title">{item.title}</h3>
+                  </div>
+                  
+                  <p class="w-description">{item.content}</p>
+                  
+                  {item.stats && (
+                    <div class="waypoint-stats">
+                      {item.stats.alt && (
+                        <div class="w-stat">
+                          <span class="w-s-label">MASL</span>
+                          <span class="w-s-value">{item.stats.alt}</span>
+                        </div>
+                      )}
+                      {item.stats.time && (
+                        <div class="w-stat">
+                          <span class="w-s-label">DURATION</span>
+                          <span class="w-s-value">{item.stats.time}</span>
+                        </div>
+                      )}
+                      {item.stats.status && (
+                        <div class="w-stat">
+                          <span class="w-s-label">TYPE</span>
+                          <span class="w-s-value">{item.stats.status}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="logistics-sidebar">
+          <div class="logistics-card">
+            <div class="card-header">
+              <span class="c-id">REF: SRV-INC</span>
+              <h3>Included Services</h3>
+            </div>
+            <ul class="log-list">
+              {includes.map(inc => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{inc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="logistics-card secondary">
+            <div class="card-header">
+              <span class="c-id">REF: EQP-TCN</span>
+              <h3>Required Equipment</h3>
+            </div>
+            <ul class="log-list">
+              {equipment.map(item => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon-blue"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mission-cta">
+            <div class="cta-inner">
+              <span class="cta-status">ELITE EXPEDITION</span>
+              <h3>Book Your Expedition</h3>
+              <p>Join the Franpisco Adventure team to reach the highest peak in the Americas. World-class logistics for an unforgettable challenge.</p>
+              
+              <form class="booking-form" id="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="approx-date">ESTIMATED DATE</label>
+                    <input type="date" id="approx-date" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="full-name">FULL NAME</label>
+                    <input type="text" id="full-name" placeholder="Your name" required />
+                  </div>
+                </div>
+                <button type="submit" class="btn-tactical">
+                  {t('trekking.book')}
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId= client:visible />
+</Layout>
+
+<script>
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const date = (document.getElementById('approx-date') as HTMLInputElement).value;
+    const name = (document.getElementById('full-name') as HTMLInputElement).value;
+    const tourName = "ACONCAGUA 6962M EXPEDITION - ARGENTINA";
+    
+    const message = `Hi Franpisco Adventure! I want to book my spot for the Aconcagua expedition in Argentina: ${tourName}. My details:\n\n- Name: ${name}\n- Date: ${date}`;
+    const whatsappUrl = `https://wa.me/51962421830?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  });
+</script>
+
+<style>
+  .itinerary-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 70vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_2.png') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 5rem;
+    text-align: center;
+  
+  }
+  .itinerary-hero.aconcagua { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_2.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(3,4,5,0.95), rgba(3,4,5,0.2) 40%, rgba(3,4,5,0.95));
+    z-index: 1;
+  }
+
+  .container--narrow {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  
+  
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom:  1.5rem;
+  
+  
+  }
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 8px;
+    opacity: 0.8;
+  }
+  .split-title .bold {
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .metrics-bar {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding:  1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  
+  
+  }
+
+  .metric { display: flex; flex-direction: column; gap: 0.5rem; }
+  .m-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #94a3b8;
+  }
+  .m-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+  .dif-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+  .dif-tag.hard { background: #fee2e2; color: #ef4444; border: 1px solid #fecaca; }
+
+  .itinerary-intro {
+    padding: 10rem 0;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .dossier-layout {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .vertical-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+
+  .log-id {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0090cc;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .dossier-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: #030405;
+    margin-bottom: 2.5rem;
+  }
+  .dossier-title .blue { color: #0090cc; }
+
+  .dossier-p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #475569;
+    margin-bottom: 4rem;
+    max-width: 550px;
+  }
+
+  .dossier-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .d-spec { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .d-icon { color: #0090cc; opacity: 0.6; margin-top: 0.2rem; }
+  .d-info { display: flex; flex-direction: column; gap: 0.4rem; }
+  .d-label { font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 1.5px; }
+  .d-value { font-size: 0.95rem; font-weight: 700; color: #030405; }
+
+  .visual-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  }
+  .dossier-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .coordinates-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(3,4,5,0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .itinerary-details { padding: 8rem 0 4rem; background: #fafafa; border-top: 1px solid #e2e8f0; }
+  .details-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+
+  .sub-label { font-size: 0.6rem; font-weight: 800; color: #0090cc; margin-bottom: 0.5rem; display: block; }
+  .technical-title { font-size: 2.2rem; font-weight: 900; color: #030405; margin-bottom: 2rem; letter-spacing: -1px; }
+  .technical-title .blue { color: #0090cc; }
+
+  .path-timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
+  .path-timeline::before {
+    content: '';
+    position: absolute;
+    left: 45px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #0090cc, #94a3b8, #94a3b8);
+  }
+
+  .waypoint-item { display: flex; gap: 1.5rem; margin-bottom: 4rem; position: relative; }
+  .waypoint-marker { position: relative; z-index: 2; flex-shrink: 0; }
+  .marker-box {
+    width: 90px;
+    height: 40px;
+    background: white;
+    border: 2px solid #030405;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .m-day { font-size: 0.75rem; font-weight: 900; color: #030405; }
+
+  .w-title { font-size: 1.15rem; font-weight: 800; color: #030405; margin-bottom: 0.8rem; }
+  .w-description { font-size: 0.88rem; line-height: 1.8; color: #475569; margin-bottom: 1rem; }
+
+  .waypoint-stats { display: flex; gap: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+  .w-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .w-s-label { font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 1px; }
+  .w-s-value { font-size: 0.75rem; font-weight: 700; color: #030405; }
+
+  .logistics-sidebar { display: flex; flex-direction: column; gap: 3rem; padding-top: 6.5rem; }
+  .logistics-card { background: white; padding: 2.5rem; border: 1px solid #e2e8f0; }
+  .log-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .log-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.82rem; color: #475569; }
+  .log-icon { color: #0090cc; flex-shrink: 0; margin-top: 0.2rem; }
+  .log-icon-blue { color: #0090cc; flex-shrink: 0; margin-top: 0.2rem; }
+
+  .mission-cta { background: #030405; color: white; padding: 3rem; }
+  .cta-status { font-size: 0.6rem; font-weight: 900; color: #0090cc; letter-spacing: 2px; display: block; margin-bottom: 1.5rem; }
+  .mission-cta h3 { font-size: 1.6rem; font-weight: 900; margin-bottom: 1rem; }
+  .mission-cta p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 2rem; }
+
+  .btn-tactical {
+    width: 100%;
+    background: #0090cc;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-tactical:hover { background: #0070a0; }
+
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; font-size: 0.6rem; font-weight: 800; color: #0090cc; margin-bottom: 0.5rem; }
+  .form-group input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.8rem;
+    color: white;
+    outline: none;
+  }
+
+  @media (max-width: 1024px) {
+    .dossier-layout { grid-template-columns: 1fr; }
+    .details-layout { grid-template-columns: 1fr; }
+    .logistics-sidebar { padding-top: 0; }
+  }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
+</style>

@@ -1,0 +1,237 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../../i18n/utils";
+import SuggestedRoutes from "../../../../components/SuggestedRoutes";
+import TourGallery from "../../../../components/TourGallery";
+import ItineraryHero from "../../../../components/ItineraryHero";
+import ItineraryIntro from "../../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../../components/LogisticsCard";
+import ItineraryBooking from "../../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DAY 01",
+    title: "LIMA PERU (100 MASL) – HUARAZ (3100 MASL)",
+    content:
+      "Public bus trip to Huaraz (8 hours) or flight (50 min). One day of prior acclimatization in the Cordillera Blanca is recommended.",
+  },
+  {
+    day: "DAY 02",
+    title: "FULL DAY ROCUTOYOC LAGOON (4450 MASL) – ACCLIMATIZATION",
+    content:
+      "Visit to Rocutuyoc lagoon, Ruripaccha waterfall, Ruripaccha glacier (4,650 masl). Return to Huaraz.",
+    stats: { time: "9-10 hours", alt: "4450m" },
+  },
+  {
+    day: "DAY 03",
+    title: "FREE DAY",
+    content:
+      "Strategic rest day to optimize acclimatization before starting the Huayhuash circuit.",
+  },
+  {
+    day: "DAY 04",
+    title: "HUARAZ - QUEROPALCA (3831 MASL) - MITUCOCHA (4230 MASL)",
+    content:
+      "Transfer to Queropalca. Start of the trekking towards Mitucocha campsite.",
+    stats: { trans: "08 hours", alt: "4230m", time: "2 h" },
+  },
+  {
+    day: "DAY 05",
+    title: "MITUCOCHA (4230 MASL) - CARHUACOCHA (4280 MASL)",
+    content:
+      "Carhuac Pass (4,650 masl). Three lagoons lookout with views of Yerupaja and Siula peaks.",
+    stats: { alt: "4750 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DAY 06",
+    title: "CARHUACOCHA (4280 MASL) - HUAYHUASH (4350 MASL)",
+    content:
+      "Demanding day. Siula Pass (4,800 masl). Views of Trapecio and Leon Dormido peaks.",
+    stats: { alt: "4800 m", dist: "15 km", time: "09 h" },
+  },
+  {
+    day: "DAY 07",
+    title: "HUAYHUASH (4350 MASL) - CUYOCPAMPA (4550 MASL)",
+    content:
+      "Trapecio Pass (5,030 masl). View of Azulcocha lagoon. Optional: San Antonio Lookout (5,120 masl).",
+    stats: { alt: "5,030 m", dist: "13 km", time: "7 h" },
+  },
+  {
+    day: "DAY 08",
+    title: "CUYOCPAMPA (4550 MASL) - HUAYLLAPA (3630 MASL)",
+    content:
+      "Santa Rosa Pass (5,080 masl). Incredible view of the northern face of Huayhuash range. Descent to Huayllapa.",
+    stats: { alt: "5080 m", dist: "19 km", time: "09 h" },
+  },
+  {
+    day: "DAY 09",
+    title: "HUAYLLAPA (3630 MASL) - GASHPAPAMPA (4555 MASL)",
+    content:
+      "Ascent to Tapush Pass (4,800 masl). View of Diablo Mudo peak (5,350 masl).",
+    stats: { alt: "4.800 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DAY 10",
+    title: "GASHPAPAMPA (4555 MASL) – HUACRISH LOOKOUT (4800 MASL) – HUARAZ",
+    content:
+      "Yaucha Pass (4,800 masl). Huacrish Lookout with full panoramic view. Final transfer to Huaraz.",
+    stats: { alt: "4800 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DAY 11",
+    title: "HUARAZ – LIMA",
+    content:
+      "Transfer to the bus terminal for the return trip to Lima. End of services.",
+  },
+];
+
+const includes = [
+  "Pre-trek briefing at Huaraz office",
+  "Shared acclimatization tours",
+  "Private transport Huaraz - Queropalca",
+  "Return transport Lirio - Huaraz",
+  "Qualified Official Trekking Guide",
+  "Specialized Expedition Cook",
+  "7 days full board during the trek",
+  "6kg gear allowance on mules",
+  "Full camping equipment",
+  "First aid kit and Oxygen",
+];
+
+const equipment = [
+  "Sleeping bag (-10°C recommended)",
+  "Daypack (40L)",
+  "Waterproof mountain boots",
+  "Technical thermal layers",
+  "Hat, gloves, and sun protection",
+  "Trekking poles",
+  "Rain poncho",
+  "Canteen or hydration pack",
+];
+---
+
+<Layout
+  title="Classic Huayhuash Trek - 11 Days | Franpisco Adventure"
+  description="Explore the best of the Cordillera Huayhuash on an optimized 11-day circuit. From Queropalca to Huaraz."
+>
+  <ItineraryHero
+    client:load
+    titleTop="TREKKING CORDILLERA"
+    titleMain="HUAYHUASH CLASSIC"
+    backgroundImage="/trekking/huayhuash/bg-clasico.png"
+    duration="11 DAYS / 10 NIGHTS"
+    price="USD. 795.00"
+    difficulty="MODERATE+"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-CL-11D"
+    titlePrefix="Legendary"
+    titleAccent="Route"
+    description="This circuit concentrates the most iconic landscapes of the Cordillera Huayhuash starting from Queropalca. Ideal for those looking for maximum scenic beauty in an optimized itinerary."
+    image="/trekking/huayhuash/clasico.png"
+    lat={`9° 58' 21" S`}
+    lon={`76° 54' 42" W`}
+    specs={[
+      {
+        label: "START / LOGISTICS",
+        value: "Queropalca, Peru",
+        icon: "location",
+      },
+      { label: "TECHNICAL ZONES", value: "Ancash, Huánuco, Lima", icon: "zone" },
+      { label: "SEASON", value: "April - December", icon: "season" },
+      { label: "SERVICE", value: "Classic Expedition", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Services Included"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Suggested Equipment"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="TREKKING CORDILLERA HUAYHUASH CLASSIC 11D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/clasico/1.png",
+      "/trekking/huayhuash/clasico/2.png",
+      "/trekking/huayhuash/clasico/3.png",
+      "/trekking/huayhuash/clasico/4.png",
+      "/trekking/huayhuash/clasico/5.png",
+      "/trekking/huayhuash/clasico/6.png",
+      "/trekking/huayhuash/clasico/7.png",
+      "/trekking/huayhuash/clasico/8.png",
+    ]}
+    lang={lang}
+    tourName="Huayhuash Classic"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="classic" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

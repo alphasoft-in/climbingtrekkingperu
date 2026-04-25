@@ -1,0 +1,246 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from "../../../../components/TourGallery";
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'ORIGIN COUNTRY TO LIMA (161 MASL) – HUARAZ (3100 M)',
+    content: 'Reception at Lima airport and transfer to bus terminal for the trip to Huaraz (8 hours). Hotel transfer.',
+    stats: { time: '8 h' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'ACCLIMATIZATION: ROCUTOYOC LAGOON (4450 MASL)',
+    content: 'Visit Cashapunta lookout, Ruripaccha waterfall, and hike to Ruripaccha glacier (4650m). Return to Huaraz.',
+    stats: { alt: '4450m', time: '9-10 h' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'FREE DAY IN HUARAZ',
+    content: 'Rest day and final preparations for the expedition. Optional light tours in the surrounding areas.'
+  },
+  {
+    day: 'DAY 04',
+    title: 'HUARAZ (3100) – VAQUERIA – PARIA (3900 MASL)',
+    content: 'Transfer passing through Portachuelo pass (4760m). Start of trek in Vaquería to Paria camp.',
+    stats: { trans: '05 h', alt: '4760m', dist: '8.5 km', time: '5 h' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'PARIA (3900 MASL) – PUNTA UNION (4750 MASL) – TUCTU (4200 MASL)',
+    content: 'Crossing the iconic Punta Union pass (4,750 masl) with views of Taulliraju. Return to Tuctu camp.',
+    stats: { alt: '4750 m', dist: '10.3 km', time: '9 h' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'TUCTU (4200 MASL) - HUECRUNCOCHA (3850 MASL)',
+    content: 'Ascent to Pukaraju pass (4,650 masl). Views of Taulliraju and Pukaraju peaks. Descent to Huecruncocha.',
+    stats: { alt: '4650 m', dist: '13.8 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 07',
+    title: 'HUECRUNCOCHA (3850 MASL) – JANCAPAMPA (3700 MASL)',
+    content: 'Hike through Quisuar valley and cross Tupa Tupa pass (4,400 masl). Descent to Jancapampa.',
+    stats: { alt: '4400 m', dist: '13.2 km', time: '6 h' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'JANCAPAMPA (3700 MASL) – WILCA (4150 MASL)',
+    content: 'Technical ascent to Yanacon pass (4,600 masl) overlooking Conchucos valley. Descent to Wilca.',
+    stats: { alt: '4600 m', dist: '14.8 km', time: '9 h' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'WILLCA (4200 MASL) – JANCARURISH (4250 MASL)',
+    content: 'Crossing Cara Cara pass (4,800 masl). Impressive view of Alpamayo North Face.',
+    stats: { alt: '4800 m', dist: '14.4 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 10',
+    title: 'JANCARURISH LAGOON (4650 MASL) – ALPAMAYO VIEW',
+    content: 'Day dedicated to exploring Alpamayo base and its lagoon, contemplating the most beautiful mountain in the world.',
+    stats: { alt: '4650 m', dist: '7 km', time: '5 h' }
+  },
+  {
+    day: 'DAY 11',
+    title: 'JANCARURISH (4250 MASL) - OSORURI (4,380 MASL)',
+    content: 'Hike through Los Cedros canyon and ascent to Vientunan pass (4,790 masl). Balcony camp.',
+    stats: { alt: '4790 m', dist: '8.9 km', time: '8 h' }
+  },
+  {
+    day: 'DAY 12',
+    title: 'OSORURI (4380 MASL) – HUISHCASH (4100 MASL)',
+    content: 'Crossing Toropishtanan pass (4,850 masl). Views of Cullicocha lagoon and Santa Cruz peak.',
+    stats: { alt: '4850 m', dist: '12.2 km', time: '9 h' }
+  },
+  {
+    day: 'DAY 13',
+    title: 'HUISHCASH (4100 MASL) – HUALCAYAN (3000 MASL) – HUARAZ',
+    content: 'Final descent to Hualcayan village. Transfer back to Huaraz city.',
+    stats: { alt: '3000 m', dist: '9.3 km', time: '4 h' }
+  },
+  {
+    day: 'DAY 14',
+    title: 'TRANSFER HUARAZ – LIMA',
+    content: 'Transfer to bus terminal for the return trip to Lima. Transfer to hotel.'
+  },
+  {
+    day: 'DAY 15',
+    title: 'LIMA – RETURN FLIGHT',
+    content: 'Transfer to the airport for your international flight. End of services.'
+  }
+];
+
+const includes = [
+  'Lima airport reception and all transfers',
+  'Lima - Huaraz - Lima bus tickets',
+  '4 Nights in Huaraz + 1 night in Lima',
+  '1 Technical acclimatization day + 1 preparation day',
+  '10 Days of high-intensity trekking',
+  'PNH Entrance fees included ($95.00)',
+  'Official UIAGM/AGMP Trekking Guide',
+  'Specialized cook and assistants',
+  'Full board during the expedition',
+  'Premium camping equipment (including toilet tent)',
+  'Donkeys for total cargo transport',
+  'Emergency oxygen and Woki toki'
+];
+
+const equipment = [
+  'Sleeping bag (-10°C) and Mat',
+  'Waterproof trekking boots',
+  'Technical clothing (Gore-Tex, Down)',
+  'Daypack (40L)',
+  'Trekking poles',
+  'Headlamp and spare batteries',
+  '100% UV Sunglasses',
+  'Personal First Aid kit'
+];
+---
+
+<Layout title="White Range Full Circuit 15 Days | Franpisco Adventure" description="The ultimate 15-day traverse in the White Range. Santa Cruz, Los Cedros, and Alpamayo in a single high-level expedition.">
+  <ItineraryHero
+    client:load
+    titleTop="ELITE EXPEDITION"
+    titleMain="WHITE RANGE FULL CIRCUIT"
+    backgroundImage="/trekking/blanca/bg-cordillera-blanca.png"
+    duration="15 DAYS / 14 NIGHTS"
+    price="USD. 1,695.00"
+    difficulty="VERY HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="BLN-CIRC-15D"
+    titlePrefix="The Total"
+    titleAccent="Traverse"
+    description="This is our flagship expedition in the White Range. For 15 days, we will traverse the most remote valleys, joining the classic Santa Cruz route with the imposing Los Cedros Alpamayo circuit."
+    image="/trekking/blanca/trekking-blanca.png"
+    lat={`08° 50' 11" S`}
+    lon={`77° 40' 05" W`}
+    specs={[
+      {
+        label: "COVERAGE",
+        value: "North & Central Blanca",
+        icon: "location",
+      },
+      {
+        label: "KEY POINTS",
+        value: "Alpamayo, Punta Union, Cullicocha",
+        icon: "zone",
+      },
+      { label: "SEASON", value: "March - December", icon: "season" },
+      { label: "LOGISTICS", value: "Expedition Comfort", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Technical Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="WHITE RANGE FULL CIRCUIT 15D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      '/trekking/blanca/bg-cordillera-blanca.png',
+      '/slider_4.png',
+      '/slider_5.png',
+      '/slider_6.png',
+      '/slider_7.png',
+      '/slider_8.png',
+      '/slider_1.png',
+      '/slider_2.png'
+    ]}
+    lang={lang}
+    tourName="Alpamayo Circuit"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="circuit" client:visible />
+
+  <style>
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

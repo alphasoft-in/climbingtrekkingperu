@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '08:30 AM',
+    title: 'DEPARTURE FROM HUARAZ',
+    content: 'Departure southwards through the Huaylas Valley. We pass through Recuay, Ticapampa, and Catac.',
+    stats: { time: 'Start' }
+  },
+  {
+    day: '10:30 AM',
+    title: 'PACHACOTO & PUYAS',
+    content: 'Entry to the National Park. Visit to the Pumapampa carbonated waters and the ancient Puyas Raimondi.',
+    stats: { alt: '3900m' }
+  },
+  {
+    day: '11:30 AM',
+    title: 'PAINTINGS & PUMA EYE',
+    content: 'Observation of cave paintings and the "Puma Eye", a spring with changing colors.',
+    stats: { time: 'Culture' }
+  },
+  {
+    day: '12:30 PM',
+    title: 'PASTORURI GLACIER',
+    content: '30-40 min walk to the glacier base. Observation of the frozen lagoon and ice crevasses.',
+    stats: { alt: '5200m', time: '2 h stay' }
+  },
+  {
+    day: '03:30 PM',
+    title: 'LUNCH IN CATAC',
+    content: 'Descent and stop in Catac to enjoy a typical regional lunch.',
+    stats: { time: 'Gastronomy' }
+  },
+  {
+    day: '06:30 PM',
+    title: 'ARRIVAL IN HUARAZ',
+    content: 'Arrival at Huaraz Main Square. End of the day.',
+    stats: { time: 'End' }
+  }
+];
+
+const includes = [
+  'Pick up from your hotel in Huaraz',
+  'Shared/private tourist transportation',
+  'Official Tour Guide (Bilingual)',
+  'Emergency oxygen and first aid kit',
+  'Personalized assistance'
+];
+
+const excludes = [
+  'Meals (Regional lunch)',
+  'HNP entrance ticket (S/. 25.00)',
+  'Horses at the glacier base',
+  'Personal expenses'
+];
+
+const equipment = [
+  'Warm clothing (thermal layers, fleece, jacket)',
+  'Waterproof windbreaker',
+  'Sun protection (hat, sunscreen, sunglasses)',
+  'Comfortable walking shoes',
+  'Camera with extra battery',
+  'Water and snacks'
+];
+---
+
+<Layout title="Pastoruri Glacier Full Day | Huaraz | Franpisco Adventure" description="Visit the Pastoruri Glacier at over 5000m. The route of climate change, Puyas Raimondi, and carbonated springs in Ancash.">
+  <ItineraryHero 
+    client:load
+    titleTop="THE ICE ROUTE"
+    titleMain="PASTORURI GLACIER 5250M"
+    backgroundImage="/slider_3.png"
+    duration="FULL DAY (10H)"
+    price="CONSULT"
+    difficulty="EASY"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-PAS-FD"
+    titlePrefix="Witness of"
+    titleAccent="Time"
+    description="Pastoruri Glacier is now a symbol of climate change. Despite its retreat, it remains one of the easiest access points to high mountains above 5,000m."
+    image="/slider_1.png"
+    lat={`09° 52' 00" S`}
+    lon={`77° 11' 00" W`}
+    specs={[
+      { label: 'LOCATION', value: 'Catac, Cordillera Blanca', icon: 'location' },
+      { label: 'BOTANY', value: 'Puyas Raimondi', icon: 'zone' },
+      { label: 'ACTIVITY', value: 'Ice / Photography', icon: 'season' },
+      { label: 'ACCESS', value: 'Gentle Hike', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="PASTORURI GLACIER FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Pastoruri"
+    images={[
+      '/slider_3.png',
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="pastoruri" client:visible />
+</Layout>

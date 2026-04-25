@@ -1,0 +1,83 @@
+---
+import Layout from '@layouts/Layout.astro';
+import SuggestedRoutes from './SuggestedRoutes';
+import PageHero from './PageHero';
+
+interface Props {
+  lang: 'es' | 'en';
+  data: any;
+}
+
+const { lang, data } = Astro.props;
+const content = data[lang];
+---
+
+<Layout 
+	title={lang === 'es' ? "Sobre Nosotros - Franpisco Adventure" : "About Us - Franpisco Adventure"}
+	description={lang === 'es' ? "Conoce más sobre nuestra historia corporativa, misión y el equipo de montaña técnica en Huaraz." : "Learn more about our corporate history, mission, and the technical mountaineering team in Huaraz."}
+>
+	<PageHero 
+		client:load
+		titleTop={content.hero.titleTop}
+		titleMain={content.hero.titleMain}
+		backgroundImage={content.hero.backgroundImage}
+		techData={content.hero.techData}
+	/>
+
+	<section class="py-20 md:py-32 bg-white px-6">
+		<div class="max-w-[1200px] mx-auto">
+			<div class="flex flex-col items-center text-center gap-8 mb-12 md:mb-16 border-b border-slate-100 pb-10">
+				<div class="max-w-2xl">
+					<span class="text-[9px] md:text-[10px] font-black text-brand-red tracking-[0.4em] uppercase mb-4 block">{content.intro.tag}</span>
+					<h2 class="text-3xl md:text-5xl text-brand-dark leading-[0.9] font-extralight uppercase tracking-tighter">
+						{content.intro.titlePrefix} <br/><strong class="font-black block mt-2">{content.intro.titleMain}</strong>
+					</h2>
+				</div>
+				
+				<div class="flex gap-10 md:gap-16 pt-2">
+					<div class="flex flex-col gap-2 items-center">
+						<label class="text-[9px] font-black text-brand-blue tracking-[0.25em] uppercase">{content.intro.hqLabel}</label>
+						<span class="text-xs md:text-sm font-bold text-brand-dark font-mono">{content.intro.hqValue}</span>
+					</div>
+					<div class="flex flex-col gap-2 border-l border-slate-100 pl-10 md:pl-16 items-center">
+						<label class="text-[9px] font-black text-brand-blue tracking-[0.25em] uppercase">{content.intro.accLabel}</label>
+						<span class="text-xs md:text-sm font-bold text-brand-dark uppercase font-mono tracking-tighter">{content.intro.accValue}</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-start">
+				<div class="lg:col-span-7 space-y-16">
+					<div class="relative">
+						<div class="absolute -left-6 top-0 w-1 h-full bg-brand-blue shadow-[0_0_15px_rgba(0,114,206,0.3)]"></div>
+						<p class="text-xl md:text-2xl text-brand-dark font-light leading-relaxed italic pr-4">
+							{content.intro.quote}
+						</p>
+					</div>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-500 text-sm md:text-base leading-relaxed font-medium">
+						<p set:html={content.intro.desc1.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+						<p set:html={content.intro.desc2.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+					</div>
+				</div>
+
+				<div class="lg:col-span-5 flex flex-col gap-5">
+					<div class="bg-slate-50/50 p-8 md:p-10 border-l-2 border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-100 hover:border-brand-red group">
+						<span class="text-[9px] font-black text-brand-red tracking-[0.3em] uppercase mb-6 block opacity-60 group-hover:opacity-100 transition-opacity">{content.mission.tag}</span>
+						<p class="text-brand-dark/70 text-sm md:text-base leading-relaxed font-medium">
+							{content.mission.text}
+						</p>
+					</div>
+					<div class="bg-slate-50/50 p-8 md:p-10 border-l-2 border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-100 hover:border-brand-blue group">
+						<span class="text-[9px] font-black text-brand-blue tracking-[0.3em] uppercase mb-6 block opacity-60 group-hover:opacity-100 transition-opacity">{content.vision.tag}</span>
+						<p class="text-brand-dark/70 text-sm md:text-base leading-relaxed font-medium">
+							{content.vision.text}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+  <SuggestedRoutes client:load lang={lang} />
+</Layout>

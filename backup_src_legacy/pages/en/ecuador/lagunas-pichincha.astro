@@ -1,0 +1,602 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+
+const langUrl = getLangFromUrl(Astro.url);
+const t = useTranslations(langUrl);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'ARRIVAL IN QUITO (2850 M)',
+    content: 'Reception at Mariscal Sucre Airport and transfer to the hotel. Briefing and gear review for the upcoming days.',
+    stats: { alt: '2850m' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'QUILOTOA LAKE TOUR (3900 M)',
+    content: 'Travel via Panamericana South. Hike to the Toachi River Canyon viewpoint and descent to the shore of the turquoise lagoon in a collapsed volcano crater.',
+    stats: { time: '6h Activity', alt: '3900m' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'CUICOCHA LAKE (3068 M) - OTAVALO',
+    content: 'Visit to the sacred lake at the foot of Cotacachi volcano. Hike along the viewpoints to observe its internal islets. Stop in Otavalo.',
+    stats: { alt: '3068m' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'MOJANDA LAKES (4263 M)',
+    content: 'Exploration of the three high-altitude lakes (Caricocha, Huarmicocha, Yanacocha). Outdoor picnic and active acclimatization hike.',
+    stats: { time: '4h Trek', alt: '4263m' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'RUCU PICHINCHA VOLCANO SUMMIT (4696 M)',
+    content: 'Ascent to Quito\'s iconic peak. Cable car approach and final climb through the sandy slopes. Perfect training for high summits.',
+    stats: { time: '6-8h Day', alt: '4696m' }
+  }
+];
+
+const includes = [
+  'Airport reception and Round-trip transfers',
+  '4 nights hotel in Quito with breakfast',
+  'Private 4x4 transport for all tours',
+  'Professional guide for lake tours',
+  'Certified guide (UIAGM/ASEGUIM) for Rucu Pichincha',
+  'Picnic lunch at the lakes and snacks',
+  'Entrance fees and permits for National Parks',
+  'Safety equipment and first aid kits'
+];
+
+const excludes = [
+  'International flights',
+  'Meals not specified (dinners in Quito)',
+  'Personal technical mountain gear',
+  'Travel and accident insurance',
+  'Tips for the staff'
+];
+
+const equipment = [
+  '45L backpack for day hikes',
+  'Thermal jacket (Down or synthetic)',
+  'Waterproof shell (Gore-Tex or similar)',
+  'Trekking or mid-mountain boots',
+  'Trekking poles (recommended)',
+  'Sunglasses with UV protection',
+  'Sunblock and lip balm',
+  'Thermal hat and gloves'
+];
+---
+
+<Layout title="Lakes and Rucu Pichincha Volcano | Ecuador | Franpisco Adventure" description="Explore Ecuador's most beautiful lakes (Quilotoa, Cuicocha, Mojanda) and climb Rucu Pichincha in this 5-day acclimatization program.">
+  <section class="itinerary-hero ecuador-lagunas">
+    <div class="hero-overlay"></div>
+    <div class="container--narrow">
+      <div class="hero-content">
+        <h1 class="split-title">
+          <span class="thin">ACCLIMATIZATION & CULTURE</span>
+          <span class="bold">LAKES & RUCU PICHINCHA</span>
+        </h1>
+        <div class="hero-accent-bar"></div>
+
+        <div class="metrics-bar">
+          <div class="metric">
+            <span class="m-label">DURATION</span>
+            <span class="m-value">05 DAYS</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">MAX ALTITUDE</span>
+            <span class="m-value">4,696 MSNM</span>
+          </div>
+          <div class="metric">
+            <span class="m-label">DIFFICULTY</span>
+            <span class="m-value">
+              <span class="dif-tag mod">MODERATE / ACCLIMATIZATION</span>
+            </span>
+          </div>
+          <div class="metric">
+            <span class="m-label">COST</span>
+            <span class="m-value">USD 895.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-intro">
+    <div class="container--narrow">
+      <div class="dossier-layout">
+        <div class="dossier-sidebar">
+          <span class="vertical-label">TOURS DOSSIER</span>
+        </div>
+        
+        <div class="dossier-content">
+          <div class="dossier-header">
+            <span class="log-id">EXPEDITION ID: ECU-LAK-05</span>
+            <h2 class="dossier-title">Mirrors of <span class="blue">Water and Fire</span></h2>
+          </div>
+          
+          <p class="dossier-p">The Ecuadorian Andes offer a unique landscape of volcanic lagoons with turquoise and emerald waters. This 5-day program is the perfect combination of cultural tourism, natural landscapes, and physical preparation.</p>
+          <p class="dossier-p">From the mystical **Quilotoa Lagoon** to the ascent of **Rucu Pichincha** volcano above the capital, this itinerary is designed for those who want to know the heart of Ecuador while preparing their body for higher altitude challenges like Cotopaxi or Chimborazo.</p>
+          
+          <div class="dossier-specs">
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">START POINT</span>
+                <span class="d-value">Quito, Ecuador</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">ACTIVITY</span>
+                <span class="d-value">Trekking & Acclimatization</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">DURATION</span>
+                <span class="d-value">5 Tactical Days</span>
+              </div>
+            </div>
+            <div class="d-spec">
+              <div class="d-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="d-info">
+                <span class="d-label">DIFFICULTY</span>
+                <span class="d-value">Moderate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dossier-visual">
+          <div class="visual-frame">
+            <img src="/slider_2.png" alt="Quilotoa Lake" class="dossier-img" />
+            <div class="coordinates-overlay">
+              <span>00° 51' 40" S</span>
+              <span class="divider">|</span>
+              <span>78° 54' 50" W</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-details">
+    <div class="container--narrow">
+      <div class="details-layout">
+        <div class="path-log-container">
+          <div class="details-header-technical">
+            <span class="sub-label">TOUR LOGBOOK</span>
+            <h2 class="technical-title">Mission <span class="blue">Timeline</span></h2>
+          </div>
+
+          <div class="path-timeline">
+            {itinerary.map((item) => (
+              <div class="waypoint-item">
+                <div class="waypoint-marker">
+                  <div class="marker-box">
+                    <span class="m-day">{item.day}</span>
+                  </div>
+                  <div class="connector"></div>
+                </div>
+                
+                <div class="waypoint-content">
+                  <div class="waypoint-header">
+                    <h3 class="w-title">{item.title}</h3>
+                  </div>
+                  
+                  <p class="w-description">{item.content}</p>
+                  
+                  {item.stats && (
+                    <div class="waypoint-stats">
+                      {item.stats.alt && (
+                        <div class="w-stat">
+                          <span class="w-s-label">MASL</span>
+                          <span class="w-s-value">{item.stats.alt}</span>
+                        </div>
+                      )}
+                      {item.stats.time && (
+                        <div class="w-stat">
+                          <span class="w-s-label">DURATION</span>
+                          <span class="w-s-value">{item.stats.time}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="logistics-sidebar">
+          <div class="logistics-card">
+            <div class="card-header">
+              <span class="c-id">REF: SRV-INC</span>
+              <h3>Included Services</h3>
+            </div>
+            <ul class="log-list">
+              {includes.map(inc => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{inc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="logistics-card secondary">
+            <div class="card-header">
+              <span class="c-id">REF: GEAR-REQ</span>
+              <h3>Suggested Equipment</h3>
+            </div>
+            <ul class="log-list">
+              {equipment.map(item => (
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" class="log-icon-blue"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mission-cta">
+            <div class="cta-inner">
+              <span class="cta-status">ACCLIMATIZATION</span>
+              <h3>Start Your Journey</h3>
+              <p>Prepare for Ecuador's highest summits by exploring its sacred lakes. The first step to conquering the volcanoes.</p>
+              
+              <form class="booking-form" id="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="approx-date">ESTIMATED DATE</label>
+                    <input type="date" id="approx-date" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="full-name">FULL NAME</label>
+                    <input type="text" id="full-name" placeholder="Your name" required />
+                  </div>
+                </div>
+                <button type="submit" class="btn-tactical">
+                  {t('trekking.book')}
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={langUrl}
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId= client:visible />
+</Layout>
+
+<script>
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const date = (document.getElementById('approx-date') as HTMLInputElement).value;
+    const name = (document.getElementById('full-name') as HTMLInputElement).value;
+    const tourName = "LAKES AND RUCU PICHINCHA - ECUADOR";
+    
+    const message = `Hi Franpisco Adventure! I want to book the lakes program in Ecuador: ${tourName}. My details:\n\n- Name: ${name}\n- Date: ${date}`;
+    const whatsappUrl = `https://wa.me/51962421830?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  });
+</script>
+
+<style>
+  .itinerary-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 70vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/slider_2.png') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 5rem;
+    text-align: center;
+  
+  }
+  .itinerary-hero.ecuador-lagunas { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/slider_2.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(3,4,5,0.95), rgba(3,4,5,0.2) 40%, rgba(3,4,5,0.95));
+    z-index: 1;
+  }
+
+  .container--narrow {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  
+  
+  }
+
+  .split-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom:  1.5rem;
+  
+  
+  }
+  .split-title .thin {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 200;
+    letter-spacing: 8px;
+    opacity: 0.8;
+  }
+  .split-title .bold {
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .metrics-bar {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding:  1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  
+  
+  }
+
+  .metric { display: flex; flex-direction: column; gap: 0.5rem; }
+  .m-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #94a3b8;
+  }
+  .m-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+  .dif-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+  .dif-tag.mod { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+  .itinerary-intro {
+    padding: 10rem 0;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .dossier-layout {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .vertical-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+
+  .log-id {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0090cc;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .dossier-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: #030405;
+    margin-bottom: 2.5rem;
+  }
+  .dossier-title .blue { color: #0090cc; }
+
+  .dossier-p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #475569;
+    margin-bottom: 4rem;
+    max-width: 550px;
+  }
+
+  .dossier-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .d-spec { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .d-icon { color: #0090cc; opacity: 0.6; margin-top: 0.2rem; }
+  .d-info { display: flex; flex-direction: column; gap: 0.4rem; }
+  .d-label { font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 1.5px; }
+  .d-value { font-size: 0.95rem; font-weight: 700; color: #030405; }
+
+  .visual-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  }
+  .dossier-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .coordinates-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(3,4,5,0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .itinerary-details { padding: 8rem 0 4rem; background: #fafafa; border-top: 1px solid #e2e8f0; }
+  .details-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+
+  .sub-label { font-size: 0.6rem; font-weight: 800; color: #0090cc; margin-bottom: 0.5rem; display: block; }
+  .technical-title { font-size: 2.2rem; font-weight: 900; color: #030405; margin-bottom: 2rem; letter-spacing: -1px; }
+  .technical-title .blue { color: #0090cc; }
+
+  .path-timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
+  .path-timeline::before {
+    content: '';
+    position: absolute;
+    left: 45px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #0090cc, #94a3b8, #94a3b8);
+  }
+
+  .waypoint-item { display: flex; gap: 1.5rem; margin-bottom: 4rem; position: relative; }
+  .waypoint-marker { position: relative; z-index: 2; flex-shrink: 0; }
+  .marker-box {
+    width: 90px;
+    height: 40px;
+    background: white;
+    border: 2px solid #030405;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .m-day { font-size: 0.75rem; font-weight: 900; color: #030405; }
+
+  .w-title { font-size: 1.15rem; font-weight: 800; color: #030405; margin-bottom: 0.8rem; }
+  .w-description { font-size: 0.88rem; line-height: 1.8; color: #475569; margin-bottom: 1rem; }
+
+  .waypoint-stats { display: flex; gap: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+  .w-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .w-s-label { font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 1px; }
+  .w-s-value { font-size: 0.75rem; font-weight: 700; color: #030405; }
+
+  .logistics-sidebar { display: flex; flex-direction: column; gap: 3rem; padding-top: 6.5rem; }
+  .logistics-card { background: white; padding: 2.5rem; border: 1px solid #e2e8f0; }
+  .log-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .log-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.82rem; color: #475569; }
+  .log-icon { color: #0090cc; flex-shrink: 0; margin-top: 0.2rem; }
+  .log-icon-blue { color: #0090cc; flex-shrink: 0; margin-top: 0.2rem; }
+
+  .mission-cta { background: #030405; color: white; padding: 3rem; }
+  .cta-status { font-size: 0.6rem; font-weight: 900; color: #0090cc; letter-spacing: 2px; display: block; margin-bottom: 1.5rem; }
+  .mission-cta h3 { font-size: 1.6rem; font-weight: 900; margin-bottom: 1rem; }
+  .mission-cta p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 2rem; }
+
+  .btn-tactical {
+    width: 100%;
+    background: #0090cc;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-tactical:hover { background: #0070a0; }
+
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; font-size: 0.6rem; font-weight: 800; color: #0090cc; margin-bottom: 0.5rem; }
+  .form-group input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.8rem;
+    color: white;
+    outline: none;
+  }
+
+  @media (max-width: 1024px) {
+    .dossier-layout { grid-template-columns: 1fr; }
+    .details-layout { grid-template-columns: 1fr; }
+    .logistics-sidebar { padding-top: 0; }
+  }
+
+  .hero-accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-red);
+    margin:  1.2rem auto;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+
+</style>

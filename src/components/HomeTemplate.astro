@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Slider from './Slider';
+import Institutional from './Institutional';
+import WorkArea from './WorkArea';
+import TeamSection from './TeamSection';
+import Gastronomy from './Gastronomy';
+import Logistics from './Logistics';
+import EthicsBento from './EthicsBento';
+import SuggestedRoutes from './SuggestedRoutes';
+import { useTranslations } from '@i18n/utils';
+
+interface Props {
+  lang: 'es' | 'en';
+  data: any;
+}
+
+const { lang, data } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Layout title={data.title} description={data.description}>
+	<Slider client:load lang={lang} slides={data.slides} buttonLabel={t('slider.btn')} />
+	<Institutional client:load data={data.institutional} />
+	<WorkArea client:load data={data.workArea} />
+	<TeamSection client:load data={data.team} />
+	<Gastronomy client:load data={data.gastronomy} />
+	<Logistics client:load data={data.logistics} />
+	<EthicsBento client:load data={data.ethics} />
+	<SuggestedRoutes client:load lang={lang} />
+</Layout>

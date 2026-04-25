@@ -1,0 +1,216 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../../i18n/utils";
+import SuggestedRoutes from "../../../../components/SuggestedRoutes";
+import TourGallery from "../../../../components/TourGallery";
+import ItineraryHero from "../../../../components/ItineraryHero";
+import ItineraryIntro from "../../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../../components/LogisticsCard";
+import ItineraryBooking from "../../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DAY 01",
+    title: "ORIGIN COUNTRY TO LIMA (161 MASL) – HUARAZ (3100 M)",
+    content:
+      "Arrival in Lima and travel to Huaraz by public bus (8 hours) or flight (50 min). Reception and hotel transfer. Rest is recommended to start acclimatization.",
+    stats: { time: "8 h" },
+  },
+  {
+    day: "DAY 02",
+    title: "ACCLIMATIZATION: PASTORURI GLACIER (5200 MASL) – WHITE RANGE",
+    content:
+      "Visit carbonated waters, Puyas Raimondi, and hike to the Pastoruri glacier. Return to Huaraz.",
+    stats: { alt: "5200m", time: "9-10 h" },
+  },
+  {
+    day: "DAY 03",
+    title: "HUARAZ (3100 M) – VAQUERIA – PARIA (3900 MASL)",
+    content:
+      "Transfer passing through Llanganuco lagoons and Portachuelo pass (4760m). Start of trekking in Vaquería to Paria camp.",
+    stats: { trans: "04 h", alt: "4760m", dist: "09 km", time: "5 h" },
+  },
+  {
+    day: "DAY 04",
+    title: "PARIA (3900M) - TAULLIPAMPA (4250 MASL)",
+    content:
+      "Hike through Huaripampa valley to Punta Unión pass (4,750 masl). Views of Taulliraju and Santa Cruz canyon.",
+    stats: { alt: "4750 m", dist: "13 km", time: "09 h" },
+  },
+  {
+    day: "DAY 05",
+    title: "TAULLIPAMPA (4250M) - LLAMACORAL (3760 MASL)",
+    content:
+      "Descent through Santa Cruz valley. Detour to Alpamayo base camp and visit to Arhuaycocha lagoon (4460m).",
+    stats: { alt: "4460 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DAY 06",
+    title: "LLAMACORAL (3760M) - CASHAPAMPA (2900 MASL) - HUARAZ",
+    content:
+      "Final descent through the valley along Yurakmayu river to Cashapampa village. Transfer back to Huaraz hotel.",
+    stats: { alt: "2900 m", dist: "08 km", time: "04 h" },
+  },
+  {
+    day: "DAY 07",
+    title: "TRANSFER TO TERMINAL OR AIRPORT",
+    content:
+      "Transfer from hotel to bus terminal or airport for return trip to Lima. End of services.",
+  },
+];
+
+const includes = [
+  "Technical briefing at Huaraz office",
+  "1 Day Pastoruri acclimatization",
+  "Private transport Huaraz - Vaquería",
+  "Final transfer Cashapampa - Huaraz",
+  "Official qualified Trekking Guide",
+  "Expedition specialized cook",
+  "Full board during trek (veg/GF options)",
+  "5kg gear allowance on donkeys",
+  "Full camping equipment (kitchen, dining, tents, toilet)",
+  "Woki toki and First Aid kit",
+];
+
+const equipment = [
+  "Sleeping bag -10°C and Sleeping mat",
+  "Daypack 40L",
+  "Waterproof Trekking boots",
+  "Layered technical clothing (Down, Waterproof)",
+  "Hat for cold and sun, Gloves",
+  "Sunglasses and Sunblock",
+  "Rain poncho and Trekking poles",
+];
+---
+
+<Layout
+  title="Santa Cruz Trek 07 Days | White Range | Franpisco Adventure"
+  description="The most famous trek in the White Range (Cordillera Blanca). Santa Cruz Trek in 7 days, including Pastoruri acclimatization and Punta Union pass."
+>
+  <ItineraryHero
+    client:load
+    titleTop="CLASSIC TREKKING"
+    titleMain="SANTA CRUZ 07D"
+    backgroundImage="/trekking/blanca/trekking-clasico.png"
+    duration="07 DAYS / 06 NIGHTS"
+    price="USD. 595.00"
+    difficulty="MODERATE+"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="BLN-SC-07D"
+    titlePrefix="Santa Cruz"
+    titleAccent="Experience"
+    description="Considered one of the most beautiful treks in the world, the Santa Cruz offers unmatched views of the Alpamayo peak and crosses the emblematic Punta Union pass at 4,750 meters."
+    image="/trekking/blanca/trekking-clasico.png"
+    lat={`08° 52' 39" S`}
+    lon={`77° 33' 21" W`}
+    specs={[
+      {
+        label: "START / LOGISTICS",
+        value: "Huaraz, Peru",
+        icon: "location",
+      },
+      {
+        label: "TECHNICAL ZONE",
+        value: "Huascaran N.P., Ancash",
+        icon: "zone",
+      },
+      { label: "SEASON", value: "March - December", icon: "season" },
+      { label: "SERVICE", value: "Expedition with Mules", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Suggested Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="CORDILLERA BLANCA SANTA CRUZ TREK 07D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-24 md:h-32"></div>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/blanca/santacruz/1.png",
+      "/trekking/blanca/santacruz/2.png",
+      "/trekking/blanca/santacruz/3.png",
+      "/trekking/blanca/santacruz/4.png",
+      "/trekking/blanca/santacruz/5.png",
+      "/trekking/blanca/santacruz/6.png",
+      "/trekking/blanca/santacruz/7.png",
+      "/trekking/blanca/santacruz/8.png",
+    ]}
+    lang={lang}
+    tourName="Santa Cruz Trek"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="SC" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

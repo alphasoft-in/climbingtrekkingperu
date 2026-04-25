@@ -1,0 +1,173 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DIA 01',
+    title: 'CUSCO – KM 82 – HUAYLLABAMBA',
+    content: 'Inicio en el Km 82. Caminata a lo largo del Río Urubamba con vista al Nevado Verónica. Visita a Llactapata y campamento en Huayllabamba.',
+    stats: { alt: '3000m', dist: '12 km', time: '5-6 h' }
+  },
+  {
+    day: 'DIA 02',
+    title: 'HUAYLLABAMBA – PASO WARMIWAÑUSCA – PACAYMAYO',
+    content: 'El tramo más exigente. Ascenso al paso de la Mujer Muerta (Warmiwañusca). Descenso al valle de Pacaymayo.',
+    stats: { alt: '4200m', dist: '11 km', time: '6-7 h' }
+  },
+  {
+    day: 'DIA 03',
+    title: 'PACAYMAYO – SAYACMARCA – WIÑAYWAYNA',
+    content: 'Visita a Runkurakay, Sayacmarca y Phuyupatamarca. Caminata por senderos de granito original hasta el campamento de Wiñaywayna.',
+    stats: { alt: '3800m', dist: '16 km', time: '7-8 h' }
+  },
+  {
+    day: 'DIA 04',
+    title: 'WIÑAYWAYNA – PUERTA DEL SOL – MACHU PICCHU',
+    content: 'Caminata final hacia el Inti Punku para ver el amanecer sobre Machu Picchu. Tour guiado de 2.5h y retorno a Cusco.',
+    stats: { alt: '2430m', dist: '5 km', time: '5 h' }
+  }
+];
+
+const includes = [
+  'Traslados Aeropuerto - Hotel - Aeropuerto (Cusco)',
+  '2 Noches de hotel 3* en Cusco',
+  'Transporte privado hasta el Km 82',
+  'Guía profesional bilingüe especializado',
+  'Ticket de entrada al Camino Inca y Machu Picchu',
+  'Cocinero y asistentes de cocina',
+  'Porteadores para equipo de campamento y cocina',
+  'Alimentación completa (3D, 3A, 3C + snacks diarios)',
+  'Equipo de campamento (Carpas, comedor, cocina)',
+  'Mate de coca y agua hervida diaria',
+  'Oxígeno y botiquín de primeros auxilios'
+];
+
+const excludes = [
+  'Vuelos internacionales y nacionales',
+  'Bolsa de dormir y esterillas (Disponible para alquiler)',
+  'Bastones de caminata',
+  'Almuerzo del día 4 y desayuno del día 1',
+  'Porteador personal extra ($160.00)',
+  'Entrada a Huayna Picchu ($60.00)',
+  'Propinas para el staff'
+];
+
+const equipment = [
+  'Pasaporte original (obligatorio)',
+  'Mochila pequeña (20-30L)',
+  'Bolsa de dormir técnica (-10°C)',
+  'Ropa en capas (Térmica, polar, impermeable)',
+  'Botas de trekking con buen soporte',
+  'Linterna frontal con pilas extra',
+  'Bloqueador solar y repelente de insectos',
+  'Botella de agua personal (2L)'
+];
+---
+
+<Layout title="Camino Inca Clásico 4 Días | Cusco | Franpisco Adventure" description="Recorre el legendario Camino Inca original hasta Machu Picchu. 4 días de historia, túneles y vistas espectaculares de los Andes.">
+  <ItineraryHero
+    client:load
+    titleTop="LA RUTA DE LOS DIOSES"
+    titleMain="CAMINO INCA 4D / 3N"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    duration="4 DÍAS / 3 NOCHES"
+    price="USD. 1,595.00"
+    difficulty="MODERADO +"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="CSQ-INC-04D"
+    titlePrefix="El Sendero"
+    titleAccent="Legendario"
+    description="El Camino Inca no es solo un trekking; es un peregrinaje a través del tiempo. Es la única ruta que te permite entrar a Machu Picchu a pie a través de la Puerta del Sol, tal como lo hacían los Incas hace 500 años."
+    image="/slider_2.png"
+    lat={`13° 13' 35" S`}
+    lon={`72° 32' 59" W`}
+    specs={[
+      { label: "INICIO", value: "Km 82, Piscacucho", icon: "location" },
+      { label: "PUNTO MÁXIMO", value: "Abra Warmiwañusca (4,200m)", icon: "zone" },
+      { label: "PERMISOS", value: "Limitados (Reserva previa)", icon: "season" },
+      { label: "EQUIPO", value: "Porteadores incluidos", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats,
+            }))}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard
+              client:visible
+              title="Servicios Incluidos"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="No Incluye / Extras"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Equipo Sugerido"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="CAMINO INCA CLÁSICO 4D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Camino Inca"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="camino-inca" client:visible />
+</Layout>

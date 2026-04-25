@@ -1,0 +1,222 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../i18n/utils";
+import SuggestedRoutes from "../../../components/SuggestedRoutes";
+import TourGallery from "../../../components/TourGallery";
+import ItineraryHero from "../../../components/ItineraryHero";
+import ItineraryIntro from "../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../components/LogisticsCard";
+import ItineraryBooking from "../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DIA 01",
+    title: "LIMA PERU (100 MSNM) – HUARAZ (3100 MSNM)",
+    content:
+      "Viaje en bus (8 horas) o avión (50 min) hacia Huaraz. Se recomienda un día de aclimatación previo en la Cordillera Blanca.",
+  },
+  {
+    day: "DIA 02",
+    title: "FULL DAY LAGUNA ROCUTOYOC (4450 MSNM) – ACLIMATACIÓN",
+    content:
+      "Visita a la laguna Rocutuyoc, cascada de Ruripaccha y glaciar de Ruripaccha (4,650 msnm). Retorno a Huaraz.",
+    stats: { time: "9-10 horas", alt: "4450m" },
+  },
+  {
+    day: "DIA 03",
+    title: "DIA LIBRE",
+    content:
+      "Descanso estratégico para optimizar la aclimatación antes de iniciar el Mini Trek Huayhuash.",
+  },
+  {
+    day: "DIA 04",
+    title: "HUARAZ (3100M) CUARTELWAIN (4180 MSNM) - MITUCOCHA (4280 MSNM)",
+    content:
+      "Traslado a Cuartelwain. Paso Cacananpunta (4700 msnm). Descenso al campamento Jancapampa (Mitucocha).",
+    stats: { trans: "05 horas", alt: "4700 m", time: "5 h" },
+  },
+  {
+    day: "DIA 05",
+    title: "MITUCOCHA (4230 MSNM) - CARHUACOCHA (4,280 MSNM)",
+    content:
+      "Paso Carhuac (4,650 msnm). Opción de ruta alterna al mirador de tres lagunas para vistas de Yerupaja y Siula.",
+    stats: { alt: "4650 m", dist: "13 km", time: "6 h" },
+  },
+  {
+    day: "DIA 06",
+    title: "CARHUACOCHA (4280 MSNM) - HUAYHUASH (4350 MSNM)",
+    content:
+      "Día exigente. Mirador de las tres lagunas. Paso Siula (4,800 msnm). Vistas de Trapecio y León Dormido.",
+    stats: { alt: "4800 m", dist: "15 km", time: "08 h" },
+  },
+  {
+    day: "DIA 07",
+    title: "HUAYHUASH (4,350 MSNM) - CUYOCPAMPA (4550 MSNM)",
+    content:
+      "Paso Trapecio (5,030 msnm). Vista de laguna Azulcocha. Opcional: Mirador San Antonio (5,120 msnm).",
+    stats: { alt: "5,030 m", dist: "13 km", time: "6 h" },
+  },
+  {
+    day: "DIA 08",
+    title: "CUYOCPAMPA (4,550 MSNM) - HUAYLLAPA (3630 MSNM)",
+    content:
+      "Paso Santa Rosa (5,080 msnm). Vista norte de Huayhuash. Descenso a Huayllapa y traslado a Cajatambo.",
+    stats: { alt: "5080 m", dist: "19 km", time: "09 h" },
+  },
+];
+
+const includes = [
+  "Información previa en oficina Huaraz",
+  "Tours de aclimatación (compartido)",
+  "Transporte privado Huaraz - Queropalca",
+  "Traslado Huayllapa - Cajatambo",
+  "Guía oficial de Trekking calificado",
+  "Cocinero especializado en trekking",
+  "5 días de pensión completa en el trek",
+  "6kg de equipaje permitido en mulas",
+  "Equipo de trekking y camping completo",
+  "Botiquín y Oxígeno de primeros auxilios",
+];
+
+const excludes = [
+  "Entradas a los campamentos (aprox. S/. 250)",
+  "Bolsa de dormir y matra inflable",
+  "Bastones de trekking personales",
+  "Bebidas y snacks extras",
+  "Propinas para el personal",
+  "Seguro médico y de viaje"
+];
+
+const equipment = [
+  "Bolsa de dormir (-10°C recomendado)",
+  "Mochila de ataque (40L)",
+  "Botas de trekking impermeables",
+  "Ropa térmica y de abrigo (capas)",
+  "Gorro, guantes y protección solar",
+  "Bastones de trekking",
+  "Poncho para lluvia",
+  "Camelback o cantimplora",
+];
+---
+
+<Layout
+  title="Mini Trek Huayhuash - 8 Días | Franpisco Adventure"
+  description="La versión esencial y espectacular del circuito Huayhuash en 8 días. De Mitucocha a Huayllapa."
+>
+  <ItineraryHero
+    client:load
+    titleTop="TREKKING CORDILLERA"
+    titleMain="HUAYHUASH MINI 08D"
+    backgroundImage="/trekking/huayhuash/bg-mini.png"
+    duration="08 DÍAS / 07 NOCHES"
+    price="USD. 695.00"
+    difficulty="DIFÍCIL"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-MN-08D"
+    titlePrefix="Esencia"
+    titleAccent="Andina"
+    description="Este itinerario compacto selecciona los puntos más impactantes del circuito Huayhuash, cruzando pasos de más de 5,000 metros y finalizando en la histórica Cajatambo."
+    image="/trekking/huayhuash/bg-mini.png"
+    lat={`10° 20' 05" S`}
+    lon={`76° 59' 12" W`}
+    specs={[
+      {
+        label: "INICIO / LOGÍSTICA",
+        value: "Huaraz, Perú",
+        icon: "location",
+      },
+      { label: "ZONAS TÉCNICAS", value: "Ancash, Huánuco, Lima", icon: "zone" },
+      { label: "TEMPORADA", value: "Abril - Diciembre", icon: "season" },
+      { label: "SERVICIO", value: "Expedición Especializada", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Servicios Incluidos"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="No Incluye"
+              items={excludes}
+              refCode="SRV-EXC"
+              variant="secondary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Equipo Sugerido"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="TREKKING CORDILLERA HUAYHUASH MINI 08D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/mini/1.png",
+      "/trekking/huayhuash/mini/2.png",
+      "/trekking/huayhuash/mini/3.png",
+      "/trekking/huayhuash/mini/4.png",
+      "/trekking/huayhuash/mini/5.png",
+      "/trekking/huayhuash/mini/6.png",
+      "/trekking/huayhuash/mini/7.png",
+      "/trekking/huayhuash/mini/8.png",
+    ]}
+    lang={lang}
+    tourName="Huayhuash Mini"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="mini" client:visible />
+</Layout>

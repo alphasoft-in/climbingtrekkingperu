@@ -1,0 +1,217 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../../i18n/utils';
+import SuggestedRoutes from '../../../../components/SuggestedRoutes';
+import TourGallery from '../../../../components/TourGallery';
+import ItineraryHero from '../../../../components/ItineraryHero';
+import ItineraryIntro from '../../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../../components/LogisticsCard';
+import ItineraryBooking from '../../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'ORIGIN COUNTRY TO LIMA (161 MASL) – HUARAZ (3100 M)',
+    content: 'Reception at Lima airport and transfer to bus terminal for the trip to Huaraz (8 hours). Hotel transfer.',
+    stats: { time: '8 h' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'ACCLIMATIZATION: PARON LAGOON (4250 MASL)',
+    content: 'Trip north visiting Carhuaz, Yungay, and Caraz. Stay at Paron Lagoon with options for the lookout, boat, or kayak.',
+    stats: { alt: '4250m', time: '9-10 h' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'ACCLIMATIZATION: ROCUTOYOC LAGOON (4450 MASL)',
+    content: 'Visit Cashapunta lookout, Ruripaccha waterfall, and hike to the Ruripaccha glacier (4650m).',
+    stats: { alt: '4450m', time: '9-10 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'HUARAZ (3100 M) – YURACCORAL (3900 M) – LAGOON 69 (4600 MASL)',
+    content: 'Start of trekking in Yuraccoral. Hike through Demanda Canyon to the famous Lagoon 69 facing Chacraraju peak.',
+    stats: { alt: '4600 m', dist: '13 km', time: '5 h' }
+  },
+  {
+    day: 'DAY 05',
+    title: 'YURACCORAL (3900 M) – VAQUERIA – PARIA (3900 MASL)',
+    content: 'Transfer passing through Portachuelo pass (4760m). Meet donkeys in Vaqueria and hike to Paria camp.',
+    stats: { alt: '4760m', dist: '09 km', time: '5 h' }
+  },
+  {
+    day: 'DAY 06',
+    title: 'PARIA (3900M) - TAULLIPAMPA (4250 MASL)',
+    content: 'Crossing Punta Union pass (4,750 masl). Stunning views of Taulliraju and Santa Cruz Canyon.',
+    stats: { alt: '4750 m', dist: '13 km', time: '09 h' }
+  },
+  {
+    day: 'DAY 07',
+    title: 'TAULLIPAMPA (4250M) - LLAMACORAL (3760 MASL)',
+    content: 'Descent through Santa Cruz valley. Visit Alpamayo base camp and Arhuaycocha lagoon (4460m).',
+    stats: { alt: '4460 m', dist: '15 km', time: '08 h' }
+  },
+  {
+    day: 'DAY 08',
+    title: 'LLAMACORAL (3760M) - CASHAPAMPA (2900 MSNM) - HUARAZ',
+    content: 'Last descent along Yurakmayu river to Cashapampa. Transfer back to Huaraz hotel.',
+    stats: { alt: '2900 m', dist: '08 km', time: '04 h' }
+  },
+  {
+    day: 'DAY 09',
+    title: 'RETURN: HUARAZ – LIMA',
+    content: 'Transfer to terminal and trip back to Lima. Transfer to hotel in Miraflores district.'
+  },
+  {
+    day: 'DAY 10',
+    title: 'LIMA – INTERNATIONAL FLIGHT',
+    content: 'Transfer to the airport for your return flight. End of services.'
+  }
+];
+
+const includes = [
+  'Lima airport reception and all transfers',
+  'Lima - Huaraz - Lima bus tickets',
+  '4 Nights in Huaraz (3*) + 1 night in Lima (3*)',
+  '2 Technical acclimatization days (Paron & Rocotuyoc)',
+  'Full logistics for Lagoon 69 and Santa Cruz Trek',
+  'Official UIAGM/AGMP Trekking Guide',
+  'Mountain specialized cook',
+  'Full board during mountain days',
+  '6kg gear allowance on donkeys',
+  'Premium camping equipment (including toilet tent)',
+  'Emergency oxygen and Woki toki',
+  'White Range entrance fees included'
+];
+
+const equipment = [
+  'Sleeping bag (-10°C recommended)',
+  'Sleeping mat / Thermal pad',
+  'Daypack (40L)',
+  'Waterproof trekking boots',
+  'Layered technical clothing (Down, Gore-Tex)',
+  'Sunglasses and Sunblock',
+  'Trekking poles',
+  'Rain poncho'
+];
+---
+
+<Layout title="The Best of White Range 10 Days | Franpisco Adventure" description="The ultimate White Range experience. Includes Lagoon 69, Paron, Santa Cruz Trek and 10-day Comfort logistics.">
+  <ItineraryHero
+    client:load
+    titleTop="SUPREME EXPEDITION"
+    titleMain="THE BEST OF WHITE RANGE"
+    backgroundImage="/trekking/blanca/bg-cordillerablanca.png"
+    duration="10 DAYS / 09 NIGHTS"
+    price="USD. 1,195.00"
+    difficulty="MODERATE+"
+    difficultyLevel="modplus"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="BLN-BEST-10D"
+    titlePrefix="The Heart"
+    titleAccent="of the Andes"
+    description="This program combines the most iconic lagoons of the White Range with the classic Santa Cruz Trek, offering superior comfort logistics for total immersion in the Andes."
+    image="/trekking/blanca/bg-cordillerablanca.png"
+    lat={`09° 00' 25" S`}
+    lon={`77° 39' 11" W`}
+    specs={[
+      {
+        label: "START / LOGISTICS",
+        value: "Lima / Huaraz, Peru",
+        icon: "location",
+      },
+      {
+        label: "KEY POINTS",
+        value: "Lagoon 69, Paron, Santa Cruz",
+        icon: "zone",
+      },
+      { label: "SEASON", value: "April - December", icon: "season" },
+      { label: "SERVICE", value: "Full Comfort Logistics", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Included Services"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Necessary Gear"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="THE BEST OF WHITE RANGE 10D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/blanca/lomejor/1.png",
+      "/trekking/blanca/lomejor/2.png",
+      "/trekking/blanca/lomejor/3.png",
+      "/trekking/blanca/lomejor/4.png",
+      "/trekking/blanca/lomejor/5.png",
+      "/trekking/blanca/lomejor/6.png",
+      "/trekking/blanca/lomejor/7.png",
+      "/trekking/blanca/lomejor/8.png",
+    ]}
+    lang={lang}
+    tourName="The Best of the Blanca"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="best" client:visible />
+
+  <style>
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

@@ -1,0 +1,97 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import TourCard from '../../../components/TourCard';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import PageHero from '../../../components/PageHero';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programs = [
+  {
+    id: 'choquequirao',
+    title: t('cusco.prog1.name'),
+    description: t('cusco.prog1.desc'),
+    image: '/slider_2.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard'
+  },
+  {
+    id: 'esencia-imperial',
+    title: t('cusco.prog2.name'),
+    description: t('cusco.prog2.desc'),
+    image: '/slider_4.png',
+    duration: `12 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod'
+  },
+  {
+    id: 'camino-inca',
+    title: t('cusco.prog3.name'),
+    description: t('cusco.prog3.desc'),
+    image: '/trekking/huayhuash/clasico.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus'
+  },
+  {
+    id: 'ausangate',
+    title: t('cusco.prog4.name'),
+    description: t('cusco.prog4.desc'),
+    image: '/slider_1.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard'
+  },
+  {
+    id: 'lares',
+    title: t('cusco.prog5.name'),
+    description: t('cusco.prog5.desc'),
+    image: '/slider_3.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus'
+  }
+];
+---
+
+<Layout title={`${t('cusco.title')} - Franpisco Adventure`} description={t('cusco.subtitle')}>
+  <PageHero 
+    client:load
+    titleTop="ADVENTURES"
+    titleMain="CUSCO TREKS"
+    backgroundImage="/trekking/cusco/bg-busco.png"
+    techData={[
+      { label: "MAX ELEVATION", value: "6,384 M.S.N.M." },
+      { label: "COORDINATES", value: "13°31′S 71°58′W" },
+      { label: "REGION", value: "CUSCO / PERÚ" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {programs.map((prog, index) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel as any}
+            href={getRelativeLocaleUrl(lang, `trekking/cusco/${prog.id}`)}
+            prefix="CSQ"
+            category="CULTURAL EXPEDITION"
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes client:visible lang={lang as 'es' | 'en'} currentId="cusco-hub" />
+</Layout>

@@ -1,0 +1,257 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../../../../i18n/utils";
+import SuggestedRoutes from "../../../../components/SuggestedRoutes";
+import TourGallery from "../../../../components/TourGallery";
+import ItineraryHero from "../../../../components/ItineraryHero";
+import ItineraryIntro from "../../../../components/ItineraryIntro";
+import ItinerarySchedule from "../../../../components/ItinerarySchedule";
+import LogisticsCard from "../../../../components/LogisticsCard";
+import ItineraryBooking from "../../../../components/ItineraryBooking";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: "DAY 01",
+    title: "LIMA PERU (161 MASL) – HUARAZ (3100 MASL)",
+    content:
+      "We FRANPISCO ADVENTURE will wait for you at Jorge Chávez Airport. Then we transfer you to the public bus terminal for the trip to Huaraz (approx. 8 hours). Upon arrival in Huaraz, we transfer you to your hotel. Flight option from Lima to Anta-Huaraz is also available.",
+  },
+  {
+    day: "DAY 02",
+    title: "FULL DAY ROCUTOYOC LAGOON (4450 MASL) – ACCLIMATIZATION",
+    content:
+      "Departure from Huaraz at 6:00 am. Guided tour to Rocutuyoc Lagoon (4,450 masl) in the north. Visit Cashapunta lookout, Ruripaccha waterfall, rock paintings, Rocutuyoc lagoon, frozen lagoon, and Ruripaccha glacier (4,650 masl).",
+  },
+  {
+    day: "DAY 03",
+    title: "FREE DAY",
+    content:
+      "Rest day for altitude adjustment and energy recovery before starting the Huayhuash circuit.",
+  },
+  {
+    day: "DAY 04",
+    title: "TRANSFER HUARAZ (3100M) - CHIQUIÁN - CUARTELWAIN (4180 MASL)",
+    content:
+      "At 8:00 am we drive to Cuartelwain (5 hours) where donkeys and muleteers await. First camp at 4,180 masl for acclimatization.",
+    stats: { trans: "05 hours", alt: "4180m", food: "Lunch and Dinner" },
+  },
+  {
+    day: "DAY 05",
+    title: "CUARTELWAIN (4180M) – MITUCOCHA (4230M)",
+    content:
+      "Cacananpunta Pass (4,700 masl). Views of Pucacocha and Yanacocha lagoons and the Queropalca valley. Jancapampa camp (4,230m) with views of Ninashanca and Jirishanca.",
+    stats: { alt: "4700 m", dist: "09 km", time: "04 to 05 hs" },
+  },
+  {
+    day: "DAY 06",
+    title: "MITUCOCHA (4230 MASL) - CARHUACOCHA (4280 MASL)",
+    content:
+      "Carhuac Pass (4,650 masl). Alternate route to the three lagoons lookout. Views of Siula, Yerupaja, and Toro mountains.",
+    stats: { alt: "4650 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DAY 07",
+    title: "CARHUACOCHA (4280 MASL) - HUAYHUASH (4300 MASL)",
+    content:
+      "Higher difficulty day. Lookout of the three lagoons (Siulacocha, Ganrajanca, Azulcocha). Siula Pass (4,800 masl).",
+    stats: { alt: "4800 m", dist: "15 km", time: "09 hs" },
+  },
+  {
+    day: "DAY 08",
+    title: "HUAYHUASH (4350 MASL) - VICONGA (4330 MASL)",
+    content:
+      "Portachuelo Pass (4,750 masl). Views of Cordillera Raura. Viconga camp and natural thermal baths.",
+    stats: { alt: "4750 m", dist: "11 km", time: "06 hs" },
+  },
+  {
+    day: "DAY 09",
+    title: "VICONGA (4330 MASL)- CUYOCPAMPA (4550 MASL)",
+    content:
+      "Cuyoc Pass (5,000 masl). Full views of Raura and Huayhuash. Optional: San Antonio Lookout (5,120 m).",
+    stats: { alt: "5050 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DAY 10",
+    title: "CUYOCPAMPA (4550 MASL) - HUAYLLAPA (3630 MASL)",
+    content:
+      "Sunrise at Santa Rosa Pass (5,080 masl). Descent through Jurao lagoon to the village of Huayllapa.",
+    stats: { alt: "5080 m", dist: "19 km", time: "10 hs" },
+  },
+  {
+    day: "DAY 11",
+    title: "HUAYLLAPA (3630 MASL) - GASHPAPAMPA (4550 MASL)",
+    content:
+      "Ascent to Tapush Pass (4,800 masl). View of Diablo Mudo peak. Arrival at Gashpapampa.",
+    stats: { alt: "4.800 m", dist: "15 km", time: "8 hs" },
+  },
+  {
+    day: "DAY 12",
+    title: "GASHPAPAMPA (4550 MASL) - JAHUACOCHA LAGOON (4100 MASL)",
+    content:
+      "Yaucha Pass (4,800 masl). Huacrish lookout with panoramic views of Jahuacocha and Soltera Cocha.",
+    stats: { alt: "4800 m", dist: "12 km", time: "7 hs" },
+  },
+  {
+    day: "DAY 13",
+    title: "JAHUACOCHA (4100 MASL) - LLAMAC (3300 MASL)",
+    content:
+      "Last day. Pampa Llamac Pass (3,900 m). Descent to Llamac village and transfer to Huaraz.",
+    stats: { alt: "3950 m", dist: "13 km", time: "6 hs" },
+  },
+  {
+    day: "DAY 14",
+    title: "HUARAZ – LIMA",
+    content: "Transfer to bus terminal for the return trip to Lima.",
+  },
+  {
+    day: "DAY 15",
+    title: "LIMA – INTERNATIONAL FLIGHT",
+    content: "Transfer to Jorge Chávez Airport. End of services.",
+  },
+];
+
+const includes = [
+  "Airport reception in Lima",
+  "Lima - Huaraz - Lima bus tickets",
+  "4 nights hotel (3*) in Huaraz, 1 night in Lima",
+  "Official Trekking Guide (AGMP/UIAGM)",
+  "Specialized Cook (varied menus)",
+  "Huayhuash entrance tickets ($100 included)",
+  "10kg gear allowance on mules",
+  "High mountain tents and camping equipment",
+  "Full board during the trek",
+  "Woki toki and First Aid kit",
+];
+
+const equipment = [
+  "Sleeping bag (-10°C / -15°C)",
+  "Daypack (30-40L)",
+  "Waterproof trekking boots",
+  "Down jacket and layered thermal clothing",
+  "Hat, gloves, and sunglasses",
+  "Sunblock and repellent",
+  "Trekking poles",
+  "Rain poncho",
+];
+---
+
+<Layout
+  title="Trekking Huayhuash 360 - 15 Days | Franpisco Adventure"
+  description="The most spectacular trekking circuit in the Andes. 15 days exploring the Huayhuash range with comfort services."
+>
+  <ItineraryHero
+    client:load
+    titleTop="TREKKING CORDILLERA"
+    titleMain="HUAYHUASH 360"
+    backgroundImage="/trekking/huayhuash/bg-huayhuash.png"
+    duration="15 DAYS / 14 NIGHTS"
+    price="USD. 1,695.00"
+    difficulty="HARD"
+    difficultyLevel="hard"
+  />
+
+  <ItineraryIntro
+    client:visible
+    code="HYH-360-15D"
+    titlePrefix="Integral"
+    titleAccent="Exploration"
+    description="This 15-day expedition is the ultimate experience in the Peruvian Andes. We will circle the entire Huayhuash range, crossing passes over 5,000 meters and camping next to intense turquoise glacial lagoons."
+    image="/trekking/huayhuash/360/1.png"
+    lat={`9° 32' 26" S`}
+    lon={`77° 31' 39" W`}
+    specs={[
+      { label: "LOGISTICS BASE", value: "Huaraz, Peru", icon: "location" },
+      { label: "TECHNICAL ZONE", value: "Central Andes", icon: "zone" },
+      { label: "SEASON", value: "April - December", icon: "season" },
+      { label: "SERVICE", value: "Superior Comfort", icon: "service" },
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start"
+      >
+        <!-- Main Timeline -->
+        <div class="flex-1">
+          <ItinerarySchedule
+            client:visible
+            days={itinerary.map((item) => {
+              return {
+                day: item.day,
+                title: item.title,
+                description: item.content,
+                stats: item.stats,
+              };
+            })}
+          />
+        </div>
+
+        <!-- Logistics Sidebar -->
+        <aside class="sticky top-24 h-fit">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12"
+          >
+            <LogisticsCard
+              client:visible
+              title="Services Included"
+              items={includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title="Suggested Equipment"
+              items={equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking
+                client:load
+                tourName="TREKKING CORDILLERA HUAYHUASH 360 FULL CIRCUIT 15D"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery
+    client:visible
+    images={[
+      "/trekking/huayhuash/360/1.png",
+      "/trekking/huayhuash/360/2.png",
+      "/trekking/huayhuash/360/3.png",
+      "/trekking/huayhuash/360/4.png",
+      "/trekking/huayhuash/360/5.png",
+      "/trekking/huayhuash/360/6.png",
+      "/trekking/huayhuash/360/7.png",
+      "/trekking/huayhuash/360/8.png",
+    ]}
+    lang={lang}
+    tourName="Huayhuash 360"
+  />
+
+  <SuggestedRoutes lang={lang} currentId="360" client:visible />
+
+  <style>
+    /* Base styles for expedition dossiers */
+    .logistics-card {
+      background: white;
+      padding: 2.5rem;
+      border: 1px solid var(--brand-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</Layout>

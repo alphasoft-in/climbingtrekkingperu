@@ -1,0 +1,122 @@
+---
+// src/components/PackageTemplate.astro
+import Layout from '@layouts/Layout.astro';
+import SuggestedRoutes from './SuggestedRoutes';
+import TourGallery from './TourGallery';
+import ItineraryHero from './ItineraryHero';
+import ItineraryIntro from './ItineraryIntro';
+import ItinerarySchedule from './ItinerarySchedule';
+import LogisticsCard from './LogisticsCard';
+import ItineraryBooking from './ItineraryBooking';
+
+interface Props {
+  lang: 'es' | 'en';
+  data: any;
+}
+
+const { lang, data } = Astro.props;
+const t = data[lang];
+---
+
+<Layout title={`${t.hero.titleMain} | Franpisco Adventure`} description={t.hero.description || t.intro.description}>
+  <ItineraryHero
+    client:load
+    titleTop={t.hero.titleTop}
+    titleMain={t.hero.titleMain}
+    backgroundImage={t.hero.backgroundImage}
+    duration={t.hero.duration}
+    price={t.hero.price}
+    difficulty={t.hero.difficulty}
+    difficultyLevel={t.hero.difficultyLevel}
+  />
+
+  <ItineraryIntro
+    client:visible
+    code={t.intro.code}
+    titlePrefix={t.intro.titlePrefix}
+    titleAccent={t.intro.titleAccent}
+    description={t.intro.description}
+    image={t.intro.image}
+    lat={t.intro.lat}
+    lon={t.intro.lon}
+    specs={t.intro.specs}
+  />
+
+  <section class="details-section bg-[#fafafa] py-24 border-t border-slate-200">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-8">
+          <ItinerarySchedule 
+            client:visible
+            days={t.itinerary.map((item: any) => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))}
+            title={t.itineraryTitle}
+            subtitle={t.itinerarySubtitle}
+          />
+        </div>
+
+        <aside class="lg:col-span-4 sticky top-24 h-fit">
+          <div class="flex flex-col gap-10">
+            <LogisticsCard
+              client:visible
+              title={t.includesTitle}
+              items={t.includes}
+              refCode="SRV-INC"
+              variant="primary"
+            />
+
+            <LogisticsCard
+              client:visible
+              title={t.equipmentTitle}
+              items={t.equipment}
+              refCode="EQP-TCN"
+              variant="secondary"
+            />
+
+            {t.excludes && (
+              <LogisticsCard
+                client:visible
+                title={lang === 'es' ? 'No Incluye' : 'Not Included'}
+                items={t.excludes}
+                refCode="SRV-EXC"
+                variant="secondary"
+              />
+            )}
+
+            <ItineraryBooking
+              client:visible
+              lang={lang}
+              tourName={t.hero.titleMain}
+            />
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery 
+    client:visible 
+    lang={lang}
+    tourName={t.hero.titleMain}
+    images={t.gallery || [
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId={data.id} client:visible />
+</Layout>
+
+<style>
+  .details-section {
+    position: relative;
+    z-index: 10;
+  }
+</style>

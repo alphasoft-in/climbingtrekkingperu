@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '08:00 AM',
+    title: 'PARTIDA DE HUARAZ',
+    content: 'Salida hacia el norte, pasando por la comunidad histórica de Vicos. Breve parada en el mirador de Cashapunta.',
+    stats: { time: 'Inicio' }
+  },
+  {
+    day: '10:30 AM',
+    title: 'RURIPACCHA',
+    content: 'Visita a la catarata de Ruripaccha y observación de pinturas rupestres milenarias en la zona.',
+    stats: { alt: '3800m' }
+  },
+  {
+    day: '12:00 PM',
+    title: 'LAGUNA ROCOTUYOC',
+    content: 'Arribo a la laguna principal. Exploración de la laguna congelada y vistas del glaciar Ruripaccha.',
+    stats: { alt: '4450m', time: '3 h estancia' }
+  },
+  {
+    day: '03:30 PM',
+    title: 'RETORNO Y CULTURA',
+    content: 'Descenso hacia Huaraz. Parada para conocer más sobre la comunidad de Vicos y su organización social.',
+    stats: { time: 'Descenso' }
+  },
+  {
+    day: '07:00 PM',
+    title: 'ARRIBO A HUARAZ',
+    content: 'Llegada al centro de la ciudad. Fin de servicios.',
+    stats: { time: 'Fin' }
+  }
+];
+
+const includes = [
+  'Recojo de su hotel en Huaraz',
+  'Transporte turístico privado/compartido',
+  'Guía Oficial de Turismo (Bilingüe)',
+  'Botiquín de primeros auxilios',
+  'Asistencia personalizada'
+];
+
+const excludes = [
+  'Alimentación (Almuerzo en ruta)',
+  'Ticket de entrada Comunidad Vicos (S/. 10.00)',
+  'Seguro de viaje',
+  'Gastos personales'
+];
+
+const equipment = [
+  'Casaca ligera y poncho de lluvia',
+  'Protección solar (gorro, bloqueador, lentes)',
+  'Calzado cómodo para caminata',
+  'Cámara fotográfica con batería extra',
+  'Agua y snacks',
+  'Efectivo para almuerzo y tickets'
+];
+---
+
+<Layout title="Laguna Rocotuyoc y Glaciar | Huaraz | Franpisco Adventure" description="Descubre una de las rutas menos convencionales de Huaraz. Laguna Rocotuyoc, pinturas rupestres y el imponente glaciar Ruripaccha.">
+  <ItineraryHero 
+    client:load
+    titleTop="HIELO Y ANCESTRALIDAD"
+    titleMain="LAGUNA ROCOTUYOC"
+    backgroundImage="/slider_2.png"
+    duration="FULL DAY (11H)"
+    price="CONSULTAR"
+    difficulty="MODERADO"
+    difficultyLevel="moderate"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-ROC-FD"
+    titlePrefix="El Guardián del"
+    titleAccent="Glaciar"
+    description="La Laguna Rocotuyoc es un destino emergente que ofrece una experiencia más salvaje y solitaria. El circuito incluye una laguna congelada y pinturas rupestres."
+    image="/slider_1.png"
+    lat={`09° 16' 00" S`}
+    lon={`77° 28' 00" W`}
+    specs={[
+      { label: 'LOCALIZACIÓN', value: 'Vicos, Cordillera Blanca', icon: 'location' },
+      { label: 'ATRACTIVOS', value: 'Hielo, Pinturas Rupestres', icon: 'zone' },
+      { label: 'ESTADO', value: 'Ruta Paisajística', icon: 'season' },
+      { label: 'PÚBLICO', value: 'Aventureros', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LAGUNA ROCOTUYOC FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Rocotuyoc"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="laguna-rocotuyoc" client:visible />
+</Layout>

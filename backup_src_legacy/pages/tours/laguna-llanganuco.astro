@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import TourGallery from '../../components/TourGallery';
+import ItineraryHero from '../../components/ItineraryHero';
+import ItineraryIntro from '../../components/ItineraryIntro';
+import ItinerarySchedule from '../../components/ItinerarySchedule';
+import LogisticsCard from '../../components/LogisticsCard';
+import ItineraryBooking from '../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: '08:00 AM',
+    title: 'PARTIDA DE HUARAZ',
+    content: 'Recojo de su hotel y viaje hacia el norte del Callejón de Huaylas. Primera parada en Carhuaz para degustar helados típicos.',
+    stats: { time: 'Inicio' }
+  },
+  {
+    day: '10:30 AM',
+    title: 'YUNGAY (CAMPO SANTO)',
+    content: 'Visita guiada al Campo Santo de Yungay, ciudad sepultada por el alud de 1970. Un lugar de memoria e historia.',
+    stats: { alt: '2500m' }
+  },
+  {
+    day: '11:30 AM',
+    title: 'PARQUE NACIONAL HUASCARÁN',
+    content: 'Ingreso al Parque Nacional. Ascenso por la quebrada Llanganuco entre bosques de Quenuales.',
+    stats: { alt: '3400m' }
+  },
+  {
+    day: '12:00 PM',
+    title: 'LAGUNAS LLANGANUCO',
+    content: 'Visita a las lagunas Chinacocha (hembra) y Orconcocha (macho). Tiempo para botes, caminatas y fotografía.',
+    stats: { alt: '3890m', time: '2 h estancia' }
+  },
+  {
+    day: '03:00 PM',
+    title: 'TARICA Y ARTESANÍAS',
+    content: 'Descenso y parada en el pueblo artesanal de Tarica para ver el trabajo en cerámica y comprar recuerdos.',
+    stats: { time: 'Cultura' }
+  },
+  {
+    day: '06:30 PM',
+    title: 'RETORNO A HUARAZ',
+    content: 'Llegada a la Plaza de Armas de Huaraz. Fin de la expedición diaria.',
+    stats: { time: 'Fin' }
+  }
+];
+
+const includes = [
+  'Recojo de su hotel en Huaraz',
+  'Transporte turístico equipado',
+  'Guía Oficial de Turismo (Bilingüe)',
+  'Asistencia en el Parque Nacional',
+  'Botiquín de primeros auxilios'
+];
+
+const excludes = [
+  'Alimentación (Almuerzo en restaurante local)',
+  'Tickets de entrada PNH (Ext: S/. 30.00 / Nac: S/. 12.00)',
+  'Servicio de botes en la laguna',
+  'Gastos personales'
+];
+
+const equipment = [
+  'Casaca ligera y poncho de lluvia',
+  'Protección solar (gorro, bloqueador, lentes)',
+  'Calzado cómodo para caminata',
+  'Cámara fotográfica con batería extra',
+  'Agua y snacks',
+  'Efectivo para almuerzo y tickets'
+];
+---
+
+<Layout title="Laguna Llanganuco y Yungay | Huaraz | Franpisco Adventure" description="Explora las lagunas turquesas de Llanganuco y la historia de Yungay en el corazón del Parque Nacional Huascarán.">
+  <ItineraryHero 
+    client:load
+    titleTop="HISTORIA Y NATURALEZA"
+    titleMain="LAGUNA LLANGANUCO"
+    backgroundImage="/slider_1.png"
+    duration="FULL DAY (10H)"
+    price="CONSULTAR"
+    difficulty="FÁCIL"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="HZ-LLA-FD"
+    titlePrefix="Turquesa en la"
+    titleAccent="Alta Montaña"
+    description="El tour a Llanganuco es el clásico por excelencia de Huaraz. Combina la belleza natural de las lagunas con la conmovedora historia de Yungay."
+    image="/slider_3.png"
+    lat={`09° 04' 00" S`}
+    lon={`77° 39' 00" W`}
+    specs={[
+      { label: 'LOCALIZACIÓN', value: 'Parque Nac. Huascarán', icon: 'location' },
+      { label: 'NEVADOS', value: 'Huascarán, Huandoy', icon: 'zone' },
+      { label: 'TIPO', value: 'Cultural / Paisajístico', icon: 'season' },
+      { label: 'TEMPERATURA', value: '12°C - 18°C', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="Qué Incluye" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="No Incluye" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Equipo Sugerido" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="LAGUNA LLANGANUCO FULL DAY" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Llanganuco"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="laguna-llanganuco" client:visible />
+</Layout>

@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuggestedRoutes from '../components/SuggestedRoutes';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/utils';
+import TourCard from '../components/TourCard';
+import PageHero from '../components/PageHero';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const boliviaPrograms = [
+  {
+    id: 'cordillera-real-expedition',
+    title: t('climbing.bolivia_1.name'),
+    description: t('climbing.bolivia_1.desc'),
+    image: '/slider_3.png',
+    duration: `11 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    prefix: 'BOL',
+    category: 'ESCALADA Y TREKKING'
+  },
+  {
+    id: 'condoriri-huayna-expedition',
+    title: t('climbing.bolivia_2.name'),
+    description: t('climbing.bolivia_2.desc'),
+    image: '/slider_5.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    prefix: 'BOL',
+    category: 'ESCALADA TÉCNICA'
+  },
+  {
+    id: 'uyuni-huayna-potosi',
+    title: t('climbing.bolivia_3.name'),
+    description: t('climbing.bolivia_3.desc'),
+    image: '/slider_2.png',
+    duration: `10 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    prefix: 'BOL',
+    category: 'TOUR Y ESCALADA'
+  },
+  {
+    id: 'illampu-circuit',
+    title: t('climbing.bolivia_4.name'),
+    description: t('climbing.bolivia_4.desc'),
+    image: '/slider_4.png',
+    duration: `8 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    prefix: 'BOL',
+    category: 'TREKKING REMOTO'
+  },
+  {
+    id: 'cotia-huayna-trek',
+    title: t('climbing.bolivia_5.name'),
+    description: t('climbing.bolivia_5.desc'),
+    image: '/slider_3.png',
+    duration: `7 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod',
+    prefix: 'BOL',
+    category: 'TREKKING DE GLACIAR'
+  },
+  {
+    id: 'condoriri-huayna-expedition-alt',
+    title: t('climbing.bolivia_6.name'),
+    description: t('climbing.bolivia_6.desc'),
+    image: '/slider_1.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    prefix: 'BOL',
+    category: 'ESCALADA TÉCNICA'
+  },
+  {
+    id: 'apolobamba-expedition',
+    title: t('climbing.bolivia_7.name'),
+    description: t('climbing.bolivia_7.desc'),
+    image: '/slider_5.png',
+    duration: `8 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    prefix: 'BOL',
+    category: 'EXPEDICIÓN REMOTA'
+  },
+  {
+    id: 'illimani-sajama',
+    title: t('climbing.bolivia_8.name'),
+    description: t('climbing.bolivia_8.desc'),
+    image: '/slider_1.png',
+    duration: `13 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard',
+    prefix: 'BOL',
+    category: 'ALTA MONTAÑA'
+  }
+];
+---
+
+<Layout title={`Bolivia - ${t('nav.destinations')} | Franpisco Adventure`} description="Explora la Cordillera Real, el Salar de Uyuni y los gigantes de Bolivia como el Sajama e Illimani. Expediciones de montañismo y trekking de élite.">
+  <PageHero 
+    client:load
+    titleTop="DESTINOS"
+    titleMain="BOLIVIA"
+    backgroundImage="/slider_2.png"
+    techData={[
+      { label: "ELEVACIÓN MÁX", value: "6,542 M.S.N.M." },
+      { label: "COORDENADAS", value: "16°29′S 68°09′W" },
+      { label: "REGIÓN", value: "ANDES / BOLIVIA" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {boliviaPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel as any}
+            href={getRelativeLocaleUrl(lang, `bolivia/${prog.id}`)}
+            prefix={prog.prefix}
+            category={prog.category}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes lang={lang} currentId="bolivia-hub" client:visible />
+</Layout>

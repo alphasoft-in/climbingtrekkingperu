@@ -1,0 +1,164 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+import TourGallery from '../../../components/TourGallery';
+import ItineraryHero from '../../../components/ItineraryHero';
+import ItineraryIntro from '../../../components/ItineraryIntro';
+import ItinerarySchedule from '../../../components/ItinerarySchedule';
+import LogisticsCard from '../../../components/LogisticsCard';
+import ItineraryBooking from '../../../components/ItineraryBooking';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const itinerary = [
+  {
+    day: 'DAY 01',
+    title: 'IQUITOS – AMAZON NAVIGATION',
+    content: 'Pickup and historical tour of Iquitos. Navigation along the Amazon River to Pedrito Farm to observe giant fish and caimans. Primary jungle hike.',
+    stats: { alt: '106m', dist: 'River', time: '8 h' }
+  },
+  {
+    day: 'DAY 02',
+    title: 'PIRANHA FISHING – DOLPHIN SPOTTING',
+    content: 'Morning hike for bird watching. Recreational fishing for piranhas. In the afternoon, navigation in search of pink and gray Amazon dolphins.',
+    stats: { alt: 'Amazon', dist: 'Jungle', time: '10-12 h' }
+  },
+  {
+    day: 'DAY 03',
+    title: 'MONKEY ISLAND – COMMUNITIES',
+    content: 'Visit to the "Monkey Island" project to observe endangered species. Visit to riverside villages to interact with local customs.',
+    stats: { alt: 'Cultural', dist: 'Virgin Jungle', time: '9 h' }
+  },
+  {
+    day: 'DAY 04',
+    title: 'BUTTERFLY FARM – RETURN',
+    content: 'Visit to the butterfly farm to learn about the Morpho butterfly life cycle. Farewell lunch and fast boat return to Iquitos.',
+    stats: { alt: 'Diverse', dist: 'Return', time: '6 h' }
+  }
+];
+
+const includes = [
+  'Airport / Hotel Transfers in Iquitos',
+  'Fast boat navigation on the Amazon River',
+  'Accommodation in cabins with private bathrooms',
+  'Full meals (Regional products)',
+  'Professional bilingual guide (Local expert)',
+  'All excursions described in the program',
+  'Entrance tickets to attractions',
+  'Safety equipment'
+];
+
+const excludes = [
+  'Flights Lima - Iquitos - Lima',
+  'Bottled drinks and bar consumption',
+  'Boot and rain poncho use (Rental available)',
+  'Personal travel insurance',
+  'Personal expenses and tips'
+];
+
+const equipment = [
+  'Light, breathable clothing (long sleeves)',
+  'Rain poncho or waterproof jacket',
+  'Sun protection (hat, sunscreen, sunglasses)',
+  'Insect repellent (DEET 50% recommended)',
+  'Binoculars for bird watching',
+  'Personal water bottle',
+  'Flashlight with extra batteries'
+];
+---
+
+<Layout title="Mystic Amazon: Iquitos and Amazon River | Franpisco Adventure" description="Explore the world's largest river from Iquitos. 2 to 5-day programs in the northern jungle. Pink dolphins, Monkey Island, and primary jungle expeditions.">
+  <ItineraryHero 
+    client:load
+    titleTop="THE LARGEST RIVER"
+    titleMain="MYSTIC AMAZON 4D"
+    backgroundImage="/slider_2.png"
+    duration="4 DAYS / 3 NIGHTS"
+    price="CONSULT"
+    difficulty="EASY"
+    difficultyLevel="easy"
+  />
+
+  <ItineraryIntro 
+    client:visible
+    code="IQT-AMZ-04D"
+    titlePrefix="Navigating the"
+    titleAccent="Origin of Water"
+    description="Iquitos is the largest city in the world without road access. From here, we navigate the world's most voluminous river to discover pink dolphins and unique biodiversity."
+    image="/slider_1.png"
+    lat={`03° 45' 00" S`}
+    lon={`73° 15' 00" W`}
+    specs={[
+      { label: 'BASE POINT', value: 'Iquitos City', icon: 'location' },
+      { label: 'WILDLIFE', value: 'Pink Dolphin, Hoatzin', icon: 'zone' },
+      { label: 'OPTIONS', value: '2, 3, 4 & 5 Days', icon: 'season' },
+      { label: 'TYPE', value: 'Comfort & Immersion', icon: 'service' }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-[#fafafa]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+        <div class="flex-1">
+          <ItinerarySchedule 
+            client:visible 
+            days={itinerary.map(item => ({
+              day: item.day,
+              title: item.title,
+              description: item.content,
+              stats: item.stats
+            }))} 
+          />
+        </div>
+
+        <aside class="sticky top-24 h-fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-10 lg:gap-12">
+            <LogisticsCard 
+              client:visible 
+              title="What's Included" 
+              items={includes} 
+              refCode="SRV-INC" 
+              variant="primary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Not Included" 
+              items={excludes} 
+              refCode="SRV-EXC" 
+              variant="secondary" 
+            />
+            <LogisticsCard 
+              client:visible 
+              title="Suggested Gear" 
+              items={equipment} 
+              refCode="EQP-INFO" 
+              variant="secondary" 
+            />
+            <div class="md:col-span-2 lg:col-span-1">
+              <ItineraryBooking 
+                client:load 
+                tourName="MYSTIC AMAZON (IQUITOS) 4D" 
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <TourGallery client:visible 
+    lang={lang}
+    tourName="Iquitos"
+    images={[
+      '/slider_1.png',
+      '/slider_2.png',
+      '/slider_3.png',
+      '/slider_4.png',
+      '/slider_5.png'
+    ]} 
+  />
+
+  <SuggestedRoutes lang={lang} currentId="iquitos-amazonas" client:visible />
+</Layout>

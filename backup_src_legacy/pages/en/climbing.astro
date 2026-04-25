@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import PageHero from '../../components/PageHero';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import TourCard from '../../components/TourCard';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const climbingPrograms = [
+  {
+    id: 'alpamayo',
+    title: t('climbing.alpamayo.name'),
+    description: t('climbing.alpamayo.desc'),
+    image: '/slider_5.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'climbing/alpamayo',
+    prefix: 'CLB',
+    type: 'TECHNICAL CLIMBING'
+  },
+  {
+    id: 'huascaran',
+    title: t('climbing.huascaran.name'),
+    description: t('climbing.huascaran.desc'),
+    image: '/slider_4.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'climbing/huascaran',
+    prefix: 'CLB',
+    type: 'HIGH ALTITUDE'
+  },
+  {
+    id: 'pisco',
+    title: t('climbing.pisco.name'),
+    description: t('climbing.pisco.desc'),
+    image: '/slider_2.png',
+    duration: `3 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    path: 'climbing/pisco',
+    prefix: 'CLB',
+    type: 'CLASSIC CLIMB'
+  },
+  {
+    id: 'chopicallqui',
+    title: t('climbing.chopicallqui.name'),
+    description: t('climbing.chopicallqui.desc'),
+    image: '/slider_3.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'climbing/chopicallqui',
+    prefix: 'CLB',
+    type: 'EXPEDITION'
+  },
+  {
+    id: 'ishinca-valley',
+    title: t('climbing.ishinca.name'),
+    description: t('climbing.ishinca.desc'),
+    image: '/slider_1.png',
+    duration: `4 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    path: 'climbing/ishinca-valley',
+    prefix: 'CLB',
+    type: 'ACCLIMATIZATION'
+  },
+  {
+    id: 'prep-package',
+    title: t('climbing.prep.name'),
+    description: t('climbing.prep.desc'),
+    image: '/slider_4.png',
+    duration: `10 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'climbing/prep-package',
+    prefix: 'CLB',
+    type: 'TECHNICAL TRAINING'
+  },
+  {
+    id: 'artesonraju',
+    title: t('climbing.artesonraju.name'),
+    description: t('climbing.artesonraju.desc'),
+    image: '/slider_1.png',
+    duration: `6 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'climbing/artesonraju',
+    prefix: 'CLB',
+    type: 'ELITE EXPEDITION'
+  }
+];
+---
+
+<Layout title={`${t('nav.climbing')} - Franpisco Adventure`} description="Technical high-mountain expeditions in the Cordillera Blanca and Huayhuash. Summit Alpamayo, Huascarán, and more with UIAGM guides.">
+  <PageHero 
+    client:load
+    titleTop="EXPEDITIONS"
+    titleMain="CLIMBING"
+    backgroundImage="/slider_3.png"
+    techData={[
+      { label: "MAX ELEVATION", value: "6,962 M.S.N.M." },
+      { label: "COORDINATES", value: "9°08′S 77°36′W" },
+      { label: "REGION", value: "ANDES / GLOBAL" }
+    ]}
+  />
+
+  <section class="programs-section">
+    <div class="container">
+      <div class="grid">
+        {climbingPrograms.map((prog) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel}
+            href={getRelativeLocaleUrl(lang, prog.path)}
+            prefix={prog.prefix}
+            category={prog.type}
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  <SuggestedRoutes lang={lang} client:visible />
+</Layout>
+
+<style>
+  .programs-section {
+    padding: 8rem 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .programs-section { padding: 6rem 1.5rem; }
+    .container { padding: 0; }
+  }
+</style>

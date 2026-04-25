@@ -1,0 +1,92 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../../i18n/utils';
+import TourCard from '../../../components/TourCard';
+import PageHero from '../../../components/PageHero';
+import SuggestedRoutes from '../../../components/SuggestedRoutes';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programs = [
+  {
+    id: 'classic',
+    title: t('blanca.prog1.name'),
+    description: t('blanca.prog1.desc'),
+    image: '/trekking/blanca/trekking-clasico.png',
+    duration: `4-5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    path: 'trekking/blanca/santa-cruz'
+  },
+  {
+    id: 'best',
+    title: t('blanca.prog2.name'),
+    description: t('blanca.prog2.desc'),
+    image: '/slider_4.png',
+    duration: `10 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'trekking/blanca/lo-mejor'
+  },
+  {
+    id: 'alpamayo',
+    title: t('blanca.prog3.name'),
+    description: t('blanca.prog3.desc'),
+    image: '/trekking/blanca/trekking-cedros.png',
+    duration: `11 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/blanca/alpamayo'
+  },
+  {
+    id: 'circuit',
+    title: t('blanca.prog4.name'),
+    description: t('blanca.prog4.desc'),
+    image: '/trekking/blanca/trekking-blanca.png',
+    duration: `15 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/blanca/circuito'
+  }
+];
+---
+
+<Layout title={`${t('nav.blanca')} - Franpisco Adventure`} description={t('blanca.subtitle')}>
+  <PageHero 
+    client:load
+    titleTop="ADVENTURES"
+    titleMain="TREKKING BLANCA"
+    backgroundImage="/trekking/blanca/bg-cordillerablanca.png"
+    techData={[
+      { label: "MAX ELEVATION", value: "6,768 M.S.N.M." },
+      { label: "COORDINATES", value: "9°07′S 77°36′W" },
+      { label: "REGION", value: "ANCASH / PERU" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {programs.map((prog, index) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel as any}
+            href={getRelativeLocaleUrl(lang, prog.path)}
+            prefix="BLN"
+            category="TECHNICAL EXPEDITION"
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes client:load lang={lang as 'es' | 'en'} />
+</Layout>

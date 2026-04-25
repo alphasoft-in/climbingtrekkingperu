@@ -1,0 +1,21 @@
+---
+import { toursData } from '@data/tours/toursData';
+import { regionsData } from '@data/regions';
+import CategoryTemplate from '@components/CategoryTemplate.astro';
+
+export async function getStaticPaths() {
+  const regions = ['blanca', 'huayhuash', 'cusco', 'arequipa'];
+  return regions.map(region => ({
+    params: { region },
+    props: { 
+      metadata: regionsData[region],
+      programs: toursData.filter(t => t.path.includes(`trekking/${region}`))
+    }
+  }));
+}
+
+const { metadata, programs } = Astro.props;
+const lang = 'en';
+---
+
+<CategoryTemplate lang={lang} metadata={metadata} programs={programs} />

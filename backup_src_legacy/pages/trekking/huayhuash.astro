@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import TourCard from '../../components/TourCard';
+import SuggestedRoutes from '../../components/SuggestedRoutes';
+import PageHero from '../../components/PageHero';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programs = [
+  {
+    id: '360',
+    title: t('huayhuash.prog1.name'),
+    description: t('huayhuash.prog1.desc'),
+    image: '/trekking/huayhuash/360.png',
+    duration: `12-14 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/huayhuash/360'
+  },
+  {
+    id: 'classic',
+    title: t('huayhuash.prog2.name'),
+    description: t('huayhuash.prog2.desc'),
+    image: '/trekking/huayhuash/clasico.png',
+    duration: `10-12 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'trekking/huayhuash/clasico'
+  },
+  {
+    id: 'mini',
+    title: t('huayhuash.prog3.name'),
+    description: t('huayhuash.prog3.desc'),
+    image: '/trekking/huayhuash/mini.png',
+    duration: `4-5 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.mod'),
+    difficultyLevel: 'mod' as const,
+    path: 'trekking/huayhuash/mini'
+  },
+  {
+    id: 'peaks',
+    title: t('huayhuash.prog4.name'),
+    description: t('huayhuash.prog4.desc'),
+    image: '/trekking/huayhuash/cumbres.png',
+    duration: `12 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.hard'),
+    difficultyLevel: 'hard' as const,
+    path: 'trekking/huayhuash/cumbres'
+  },
+  {
+    id: 'spectacular',
+    title: t('huayhuash.prog5.name'),
+    description: t('huayhuash.prog5.desc'),
+    image: '/trekking/huayhuash/bg-espectacular.png',
+    duration: `15 ${t('trekking.days')}`,
+    difficulty: t('trekking.diff.modplus'),
+    difficultyLevel: 'modplus' as const,
+    path: 'trekking/huayhuash/espectacular'
+  }
+];
+---
+
+<Layout title={`${t('nav.huayhuash')} - Franpisco Adventure`} description={t('huayhuash.subtitle')}>
+  <PageHero 
+    client:load
+    titleTop="AVENTURAS"
+    titleMain="HUAYHUASH"
+    backgroundImage="/trekking/huayhuash/bg-huayhuash.png"
+    techData={[
+      { label: "ELEVACIÓN MÁX", value: "5,632 M.S.N.M." },
+      { label: "COORDENADAS", value: "10°16′S 76°54′W" },
+      { label: "REGIÓN", value: "HUAYHUASH / PERÚ" }
+    ]}
+  />
+
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {programs.map((prog, index) => (
+          <TourCard 
+            client:visible
+            id={prog.id}
+            title={prog.title}
+            description={prog.description}
+            image={prog.image}
+            duration={prog.duration}
+            difficulty={prog.difficulty}
+            difficultyLevel={prog.difficultyLevel as any}
+            href={getRelativeLocaleUrl(lang, prog.path)}
+            prefix="HYH"
+            category="EXPEDICIÓN TÉCNICA"
+            lang={lang as 'es' | 'en'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SuggestedRoutes client:load lang={lang as 'es' | 'en'} />
+</Layout>
