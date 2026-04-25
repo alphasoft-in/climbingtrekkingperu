@@ -6,7 +6,7 @@ export const culturalParonData = {
     hero: {
       titleTop: "LA JOYA DE LA CORDILLERA",
       titleMain: "LAGUNA PARÓN 4250M",
-      backgroundImage: "/trekking/blanca/santa-cruz.png",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
       duration: "FULL DAY (11H)",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
@@ -67,7 +67,7 @@ export const culturalParonData = {
     hero: {
       titleTop: "THE JEWEL OF THE RANGE",
       titleMain: "PARON LAGOON 4250M",
-      backgroundImage: "/trekking/blanca/santa-cruz.png",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
       duration: "FULL DAY (11H)",
       price: "UPON REQUEST",
       difficulty: "EASY",
