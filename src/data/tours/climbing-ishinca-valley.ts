@@ -6,7 +6,7 @@ export const climbingIshincaValleyData = {
     hero: {
       titleTop: "LA TRILOGÍA DEL VALLE",
       titleMain: "ISHINCA & TOCLLARAJU 6030M",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/tocllaraju/bg-tocllaraju.png",
       duration: "07 DÍAS",
       price: "USD 1,795.00",
       difficulty: "ALTA / TÉCNICA",
@@ -17,7 +17,7 @@ export const climbingIshincaValleyData = {
       titlePrefix: "El Valle de",
       titleAccent: "los Gigantes",
       description: "El valle de Ishinca permite un ascenso progresivo ideal. Urus e Ishinca sirven de aclimatación perfecta antes del desafío técnico del Tocllaraju (6030m).",
-      image: "/slider_3.png",
+      image: "/tocllaraju/tocllaraju.png",
       lat: `09° 20' 52" S`,
       lon: `77° 19' 26" W`,
       specs: [
@@ -77,7 +77,7 @@ export const climbingIshincaValleyData = {
     hero: {
       titleTop: "THE VALLEY TRILOGY",
       titleMain: "ISHINCA & TOCLLARAJU 6030M",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/tocllaraju/bg-tocllaraju.png",
       duration: "07 DAYS",
       price: "USD 1,795.00",
       difficulty: "HIGH / TECHNICAL",
@@ -88,7 +88,7 @@ export const climbingIshincaValleyData = {
       titlePrefix: "The Valley of",
       titleAccent: "the Giants",
       description: "The Ishinca valley allows for an ideal progressive ascent. Urus and Ishinca serve as perfect acclimatization before the technical challenge of Tocllaraju (6030m).",
-      image: "/slider_3.png",
+      image: "/tocllaraju/tocllaraju.png",
       lat: `09° 20' 52" S`,
       lon: `77° 19' 26" W`,
       specs: [
