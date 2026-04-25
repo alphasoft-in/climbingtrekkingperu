@@ -6,7 +6,7 @@ export const climbingArtesonrajuData = {
     hero: {
       titleTop: "THE PARAMOUNT PICTURES PEAK",
       titleMain: "NEVADO ARTESONRAJU 6025M",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/artesonraju/bg-artesonraju.png",
       duration: "06 DÍAS",
       price: "USD 2,295.00",
       difficulty: "DIFÍCIL",
@@ -78,7 +78,7 @@ export const climbingArtesonrajuData = {
     hero: {
       titleTop: "THE PARAMOUNT PICTURES PEAK",
       titleMain: "NEVADO ARTESONRAJU 6025M",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/artesonraju/bg-artesonraju.png",
       duration: "06 DAYS",
       price: "USD 2,295.00",
       difficulty: "HARD",
