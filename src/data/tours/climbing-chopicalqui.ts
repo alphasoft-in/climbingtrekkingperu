@@ -17,7 +17,7 @@ export const climbingChopicalquiData = {
       titlePrefix: "El Corazón de",
       titleAccent: "Ancash",
       description: "El Chopicallqui es la quinta montaña más alta de la Cordillera Blanca. Ofrece una ruta estética y una cima con vistas impresionantes a los macizos del Huascarán y Huandoy.",
-      image: "/slider_1.png",
+      image: "/chopicalqui/chopicalqui.png",
       lat: `09° 05' 12" S`,
       lon: `77° 34' 26" W`,
       specs: [
@@ -86,7 +86,7 @@ export const climbingChopicalquiData = {
       titlePrefix: "The Heart of",
       titleAccent: "Ancash",
       description: "Chopicalqui is the fifth highest mountain in the Cordillera Blanca. It offers an aesthetic route and a summit with impressive views of the Huascarán and Huandoy massifs.",
-      image: "/slider_1.png",
+      image: "/chopicalqui/chopicalqui.png",
       lat: `09° 05' 12" S`,
       lon: `77° 34' 26" W`,
       specs: [
