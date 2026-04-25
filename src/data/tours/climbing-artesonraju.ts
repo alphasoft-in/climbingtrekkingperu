@@ -71,7 +71,10 @@ export const climbingArtesonrajuData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/artesonraju/1.png",
+      "/artesonraju/2.png",
+      "/artesonraju/3.png",
+      "/artesonraju/4.png"
     ]
   },
   en: {
@@ -143,7 +146,10 @@ export const climbingArtesonrajuData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/artesonraju/1.png",
+      "/artesonraju/2.png",
+      "/artesonraju/3.png",
+      "/artesonraju/4.png"
     ]
   }
 };
