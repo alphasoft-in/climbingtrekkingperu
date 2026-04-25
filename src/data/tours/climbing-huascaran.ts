@@ -6,7 +6,7 @@ export const climbingHuascaranData = {
     hero: {
       titleTop: "EL TECHO DEL PERÚ",
       titleMain: "NEVADO HUASCARÁN 6768M",
-      backgroundImage: "/slider_4.png",
+      backgroundImage: "/huascaran/bg-huascaran.png",
       duration: "06 DÍAS",
       price: "USD 1,995.00",
       difficulty: "MUY ALTA",
@@ -76,7 +76,7 @@ export const climbingHuascaranData = {
     hero: {
       titleTop: "THE ROOF OF PERU",
       titleMain: "NEVADO HUASCARÁN 6768M",
-      backgroundImage: "/slider_4.png",
+      backgroundImage: "/huascaran/bg-huascaran.png",
       duration: "06 DAYS",
       price: "USD 1,995.00",
       difficulty: "VERY HIGH",
