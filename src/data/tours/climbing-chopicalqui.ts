@@ -6,7 +6,7 @@ export const climbingChopicalquiData = {
     hero: {
       titleTop: "EL GIGANTE DE LA BLANCA",
       titleMain: "NEVADO CHOPICALQUI 6354M",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/chopicalqui/bg-chopicalqui.png",
       duration: "04 DÍAS",
       price: "USD 1,195.00",
       difficulty: "DIFÍCIL",
@@ -65,14 +65,17 @@ export const climbingChopicalquiData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/chopicalqui/1.png",
+      "/chopicalqui/2.png",
+      "/chopicalqui/3.png",
+      "/chopicalqui/4.png"
     ]
   },
   en: {
     hero: {
       titleTop: "THE GIANT OF THE BLANCA",
       titleMain: "NEVADO CHOPICALQUI 6354M",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/chopicalqui/bg-chopicalqui.png",
       duration: "04 DAYS",
       price: "USD 1,195.00",
       difficulty: "HARD",
@@ -131,7 +134,10 @@ export const climbingChopicalquiData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/chopicalqui/1.png",
+      "/chopicalqui/2.png",
+      "/chopicalqui/3.png",
+      "/chopicalqui/4.png"
     ]
   }
 };
