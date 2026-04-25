@@ -17,7 +17,7 @@ export const climbingArtesonrajuData = {
       titlePrefix: "La Pirámide de",
       titleAccent: "Paramount",
       description: "El Nevado Artesonraju 6025 m.s.n.m. es una de las montañas más icónicas de los Andes peruanos. Su forma piramidal perfecta es mundialmente reconocida.",
-      image: "/slider_3.png",
+      image: "/artesonraju/artesonraju.png",
       lat: `08° 57' 04" S`,
       lon: `77° 37' 54" W`,
       specs: [
@@ -89,7 +89,7 @@ export const climbingArtesonrajuData = {
       titlePrefix: "The Pyramid of",
       titleAccent: "Paramount",
       description: "Nevado Artesonraju 6025 MASL is one of the most iconic mountains in the Peruvian Andes. Its perfect pyramidal shape is recognized worldwide.",
-      image: "/slider_3.png",
+      image: "/artesonraju/artesonraju.png",
       lat: `08° 57' 04" S`,
       lon: `77° 37' 54" W`,
       specs: [
