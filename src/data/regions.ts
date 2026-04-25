@@ -290,7 +290,7 @@ export const regionsData: Record<string, RegionMetadata> = {
         { label: "COORDENADAS", value: "9°30′S 77°31′W" },
         { label: "REGIÓN", value: "ANDES / PERÚ" }
       ],
-      description: "Explora la diversidad del Perú con Franpisco Adventure. Desde la Ciudad Blanca de Arequipa y los oasis de Ica, hasta la magia del Amazonas en Iquitos y el corazón del imperio Inca."
+      description: "Explora la diversidad del Perú con Franpisco Adventure. Desde la Ciudad Blanca de Arequipa y los oasis de Ica, hasta la biodiversidad de Tambopata en Madre de Dios y el corazón del imperio Inca."
     },
     en: {
       titleTop: "DESTINATIONS",
@@ -301,7 +301,7 @@ export const regionsData: Record<string, RegionMetadata> = {
         { label: "COORDINATES", value: "9°30′S 77°31′W" },
         { label: "REGION", value: "ANDES / PERU" }
       ],
-      description: "Explore the diversity of Peru with Franpisco Adventure. From the White City of Arequipa and the oases of Ica, to the magic of the Amazon in Iquitos and the heart of the Inca Empire."
+      description: "Explore the diversity of Peru with Franpisco Adventure. From the White City of Arequipa and the oases of Ica, to the biodiversity of Tambopata in Madre de Dios and the heart of the Inca Empire."
     }
   }
 };
