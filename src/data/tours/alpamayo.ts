@@ -62,7 +62,16 @@ export const alpamayoData = {
     itineraryTitle: "Ascenso",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Qué Incluye",
-    equipmentTitle: "Equipo Técnico"
+    equipmentTitle: "Equipo Técnico",
+    gallery: [
+      "/climbing/1.png",
+      "/climbing/2.png",
+      "/climbing/3.png",
+      "/climbing/4.png",
+      "/climbing/5.png",
+      "/climbing/6.png",
+      "/climbing/7.png"
+    ]
   },
   en: {
     hero: {
@@ -124,6 +133,15 @@ export const alpamayoData = {
     itineraryTitle: "Ascent",
     itinerarySubtitle: "Timeline",
     includesTitle: "What's Included",
-    equipmentTitle: "Technical Gear"
+    equipmentTitle: "Technical Gear",
+    gallery: [
+      "/climbing/1.png",
+      "/climbing/2.png",
+      "/climbing/3.png",
+      "/climbing/4.png",
+      "/climbing/5.png",
+      "/climbing/6.png",
+      "/climbing/7.png"
+    ]
   }
 };
