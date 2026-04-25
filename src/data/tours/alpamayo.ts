@@ -6,7 +6,7 @@ export const alpamayoData = {
     hero: {
       titleTop: "LA MONTAÑA MÁS BELLA",
       titleMain: "NEVADO ALPAMAYO 5947M",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/climbing/alpamayo.png",
       duration: "06 DÍAS / 05 NOCHES",
       price: "USD. 1,950.00",
       difficulty: "DIFÍCIL / TÉCNICO",
@@ -17,7 +17,7 @@ export const alpamayoData = {
       titlePrefix: "La Pirámide",
       titleAccent: "de Hielo",
       description: "El Alpamayo es considerado la montaña más bella del mundo. Su forma piramidal perfecta atrae a montañistas de todo el globo. Un desafío técnico de alto nivel que requiere experiencia y aclimatación.",
-      image: "/slider_1.png",
+      image: "/climbing/alpamayo.png",
       lat: `08° 52' 45" S`,
       lon: `77° 39' 12" W`,
       specs: [
@@ -68,7 +68,7 @@ export const alpamayoData = {
     hero: {
       titleTop: "THE MOST BEAUTIFUL MOUNTAIN",
       titleMain: "NEVADO ALPAMAYO 5947M",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/climbing/alpamayo.png",
       duration: "06 DAYS / 05 NIGHTS",
       price: "USD. 1,950.00",
       difficulty: "HARD / TECHNICAL",
@@ -79,7 +79,7 @@ export const alpamayoData = {
       titlePrefix: "The Pyramid",
       titleAccent: "of Ice",
       description: "Alpamayo is considered the most beautiful mountain in the world. Its perfect pyramid shape attracts mountaineers worldwide. A high-level technical challenge requiring experience and adaptation.",
-      image: "/slider_1.png",
+      image: "/climbing/alpamayo.png",
       lat: `08° 52' 45" S`,
       lon: `77° 39' 12" W`,
       specs: [
