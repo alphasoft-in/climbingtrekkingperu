@@ -6,7 +6,7 @@ export const climbingPiscoData = {
     hero: {
       titleTop: "EL BALCÓN DE LOS ANDES",
       titleMain: "NEVADO PISCO 5752M",
-      backgroundImage: "/slider_2.png",
+      backgroundImage: "/pisco/bg-pisco.png",
       duration: "05 DÍAS",
       price: "USD 595.00",
       difficulty: "MODERADO",
@@ -67,14 +67,21 @@ export const climbingPiscoData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/pisco/1.png",
+      "/pisco/2.png",
+      "/pisco/3.png",
+      "/pisco/4.png",
+      "/pisco/5.png",
+      "/pisco/6.png",
+      "/pisco/7.png",
+      "/pisco/8.png"
     ]
   },
   en: {
     hero: {
       titleTop: "THE BALCONY OF THE ANDES",
       titleMain: "NEVADO PISCO 5752M",
-      backgroundImage: "/slider_2.png",
+      backgroundImage: "/pisco/bg-pisco.png",
       duration: "05 DAYS",
       price: "USD 595.00",
       difficulty: "MODERATE",
@@ -135,7 +142,14 @@ export const climbingPiscoData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/pisco/1.png",
+      "/pisco/2.png",
+      "/pisco/3.png",
+      "/pisco/4.png",
+      "/pisco/5.png",
+      "/pisco/6.png",
+      "/pisco/7.png",
+      "/pisco/8.png"
     ]
   }
 };
