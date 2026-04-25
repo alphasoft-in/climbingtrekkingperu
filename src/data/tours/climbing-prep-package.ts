@@ -6,7 +6,7 @@ export const climbingPrepPackageData = {
     hero: {
       titleTop: "ENTRENAMIENTO DE ALTO NIVEL",
       titleMain: "PREPARACIÓN: 4 CUMBRES TÉCNICAS",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/prep/bg-prep.png",
       duration: "06 DÍAS",
       price: "USD 1,395.00",
       difficulty: "ALTA / PROGRESIVA",
@@ -75,7 +75,7 @@ export const climbingPrepPackageData = {
     hero: {
       titleTop: "HIGH-LEVEL TRAINING",
       titleMain: "PREPARATION: 4 TECHNICAL SUMMITS",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/prep/bg-prep.png",
       duration: "06 DAYS",
       price: "USD 1,395.00",
       difficulty: "HIGH / PROGRESSIVE",
