@@ -290,7 +290,7 @@ export const regionsData: Record<string, RegionMetadata> = {
         { label: "COORDENADAS", value: "9°30′S 77°31′W" },
         { label: "REGIÓN", value: "ANDES / PERÚ" }
       ],
-      description: "Descubre los Andes Peruanos con Franpisco Adventure. Trekking, escalada y cultura."
+      description: "Descubre los Andes Peruanos con Franpisco Adventure. Desde la Ciudad Blanca de Arequipa y el profundo Cañón del Colca, hasta las cumbres de la Cordillera Blanca y el corazón del imperio Inca."
     },
     en: {
       titleTop: "DESTINATIONS",
@@ -301,7 +301,7 @@ export const regionsData: Record<string, RegionMetadata> = {
         { label: "COORDINATES", value: "9°30′S 77°31′W" },
         { label: "REGION", value: "ANDES / PERU" }
       ],
-      description: "Discover the Peruvian Andes with Franpisco Adventure. Trekking, climbing and culture."
+      description: "Discover the Peruvian Andes with Franpisco Adventure. From the White City of Arequipa and the deep Colca Canyon, to the peaks of the Cordillera Blanca and the heart of the Inca Empire."
     }
   }
 };
