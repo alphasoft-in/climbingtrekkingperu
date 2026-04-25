@@ -70,7 +70,14 @@ export const climbingIshincaValleyData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/tocllaraju/1.png",
+      "/tocllaraju/2.png",
+      "/tocllaraju/3.png",
+      "/tocllaraju/4.png",
+      "/tocllaraju/5.png",
+      "/tocllaraju/6.png",
+      "/tocllaraju/7.png",
+      "/tocllaraju/8.png"
     ]
   },
   en: {
@@ -141,7 +148,14 @@ export const climbingIshincaValleyData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/tocllaraju/1.png",
+      "/tocllaraju/2.png",
+      "/tocllaraju/3.png",
+      "/tocllaraju/4.png",
+      "/tocllaraju/5.png",
+      "/tocllaraju/6.png",
+      "/tocllaraju/7.png",
+      "/tocllaraju/8.png"
     ]
   }
 };
