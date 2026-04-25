@@ -70,7 +70,8 @@ export const alpamayoData = {
       "/climbing/4.png",
       "/climbing/5.png",
       "/climbing/6.png",
-      "/climbing/7.png"
+      "/climbing/7.png",
+      "/climbing/8.png"
     ]
   },
   en: {
@@ -141,7 +142,8 @@ export const alpamayoData = {
       "/climbing/4.png",
       "/climbing/5.png",
       "/climbing/6.png",
-      "/climbing/7.png"
+      "/climbing/7.png",
+      "/climbing/8.png"
     ]
   }
 };
