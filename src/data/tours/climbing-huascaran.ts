@@ -17,7 +17,7 @@ export const climbingHuascaranData = {
       titlePrefix: "El Coloso",
       titleAccent: "de los Andes",
       description: "El Huascarán Sur es la cumbre más alta de los Andes Peruanos. Un desafío máximo que requiere experiencia técnica sólida y una aclimatación rigurosa.",
-      image: "/slider_4.png",
+      image: "/huascaran/huascaran.png",
       lat: `09° 07' 17" S`,
       lon: `77° 36' 32" W`,
       specs: [
@@ -69,7 +69,14 @@ export const climbingHuascaranData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/huascaran/1.png",
+      "/huascaran/2.png",
+      "/huascaran/3.png",
+      "/huascaran/4.png",
+      "/huascaran/5.png",
+      "/huascaran/6.png",
+      "/huascaran/7.png",
+      "/huascaran/8.png"
     ]
   },
   en: {
@@ -87,7 +94,7 @@ export const climbingHuascaranData = {
       titlePrefix: "The Colossus",
       titleAccent: "of the Andes",
       description: "South Huascaran is the highest peak in the Peruvian Andes. A maximum challenge that requires solid technical experience and rigorous acclimatization.",
-      image: "/slider_4.png",
+      image: "/huascaran/huascaran.png",
       lat: `09° 07' 17" S`,
       lon: `77° 36' 32" W`,
       specs: [
@@ -139,7 +146,14 @@ export const climbingHuascaranData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
+      "/huascaran/1.png",
+      "/huascaran/2.png",
+      "/huascaran/3.png",
+      "/huascaran/4.png",
+      "/huascaran/5.png",
+      "/huascaran/6.png",
+      "/huascaran/7.png",
+      "/huascaran/8.png"
     ]
   }
 };
