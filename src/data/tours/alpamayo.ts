@@ -6,7 +6,7 @@ export const alpamayoData = {
     hero: {
       titleTop: "LA MONTAÑA MÁS BELLA",
       titleMain: "NEVADO ALPAMAYO 5947M",
-      backgroundImage: "/climbing/alpamayo.png",
+      backgroundImage: "/climbing/bg-alpamayo-5947m.png",
       duration: "06 DÍAS / 05 NOCHES",
       price: "USD. 1,950.00",
       difficulty: "DIFÍCIL / TÉCNICO",
@@ -68,7 +68,7 @@ export const alpamayoData = {
     hero: {
       titleTop: "THE MOST BEAUTIFUL MOUNTAIN",
       titleMain: "NEVADO ALPAMAYO 5947M",
-      backgroundImage: "/climbing/alpamayo.png",
+      backgroundImage: "/climbing/bg-alpamayo-5947m.png",
       duration: "06 DAYS / 05 NIGHTS",
       price: "USD. 1,950.00",
       difficulty: "HARD / TECHNICAL",
