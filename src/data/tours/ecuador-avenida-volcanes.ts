@@ -5,8 +5,8 @@ export const ecuadorAvenidaVolcanesData = {
   es: {
     hero: {
       titleTop: "EL DESAFÍO VOLCÁNICO DEFINITIVO",
-      titleMain: "AVENIDA DE LOS VOLCANES",
-      backgroundImage: "/slider_4.png",
+      titleMain: "VOLCANES & CUMBRES DE ECUADOR 12D",
+      backgroundImage: "/ecuador/bg-lliniza.png",
       duration: "12 DÍAS",
       price: "USD 1,995",
       difficulty: "TÉCNICA",
@@ -17,7 +17,7 @@ export const ecuadorAvenidaVolcanesData = {
       titlePrefix: "Tierra de",
       titleAccent: "Fuego y Hielo",
       description: "Los Andes ecuatorianos albergan una de las concentraciones de volcanes más impresionantes del planeta. Nuestra expedición recorre la mística Avenida de los Volcanes, uniendo cuatro picos icónicos.",
-      image: "/slider_5.png",
+      image: "/ecuador/lliniza.png",
       lat: `00° 01' 44" S`,
       lon: `78° 26' 06" W`,
       specs: [
@@ -70,16 +70,13 @@ export const ecuadorAvenidaVolcanesData = {
     itineraryTitle: "Misión",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Incluido",
-    equipmentTitle: "Equipo Técnico",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Técnico"
   },
   en: {
     hero: {
       titleTop: "THE ULTIMATE VOLCANO CHALLENGE",
-      titleMain: "AVENUE OF VOLCANOES",
-      backgroundImage: "/slider_4.png",
+      titleMain: "ECUADOR VOLCANOES & SUMMITS 12D",
+      backgroundImage: "/ecuador/bg-lliniza.png",
       duration: "12 DAYS",
       price: "USD 1,995",
       difficulty: "TECHNICAL",
@@ -90,7 +87,7 @@ export const ecuadorAvenidaVolcanesData = {
       titlePrefix: "Land of",
       titleAccent: "Fire & Ice",
       description: "The Ecuadorian Andes house one of the most impressive concentrations of volcanoes on the planet. Our expedition traverses the mystical Avenue of Volcanoes, uniting four iconic peaks.",
-      image: "/slider_5.png",
+      image: "/ecuador/lliniza.png",
       lat: `00° 01' 44" S`,
       lon: `78° 26' 06" W`,
       specs: [
@@ -143,9 +140,6 @@ export const ecuadorAvenidaVolcanesData = {
     itineraryTitle: "Mission",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included",
-    equipmentTitle: "Technical Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Technical Gear"
   }
 };

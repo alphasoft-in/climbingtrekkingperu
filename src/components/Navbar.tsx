@@ -85,16 +85,18 @@ const Navbar: React.FC<NavbarProps> = ({
                 <li key={link.label} className="h-full flex items-center">
                   <a
                     href={link.href}
-                    className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-all duration-300 relative group py-2 ${
+                    className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
                       link.active
                         ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
                         : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                     }`}
                   >
-                    {link.label}
-                    <span className={`absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${
-                      isScrolled ? 'bg-brand-red' : 'bg-brand-blue'
-                    }`}></span>
+                    <span className="relative py-1">
+                      {link.label}
+                      <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-all duration-300 ${
+                        link.active ? 'w-full' : 'w-0 group-hover:w-full'
+                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                    </span>
                   </a>
                 </li>
               ))}
@@ -102,16 +104,23 @@ const Navbar: React.FC<NavbarProps> = ({
               {/* Trekking Dropdown */}
               <li className="relative group h-full flex items-center">
                 <button
-                  className={`flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-all duration-300 py-2 ${
+                  className={`flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 py-2 ${
                     isTrekkingActive
                       ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
                       : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                   }`}
                 >
-                  {labels.trekking}
-                  <svg className="transition-transform duration-300 group-hover:rotate-180" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+                  <span className="flex items-center gap-1.5">
+                    <span className="relative">
+                      {labels.trekking}
+                      <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                        isTrekkingActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                    </span>
+                    <svg className="transition-transform duration-300 group-hover:rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </span>
                 </button>
                 <div className={`absolute top-[calc(100%-15px)] left-1/2 -translate-x-1/2 translate-y-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-400 min-w-[280px] p-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-[1100] border ${
                   isScrolled ? 'bg-brand-dark border-white/10' : 'bg-white border-slate-100'
@@ -126,9 +135,11 @@ const Navbar: React.FC<NavbarProps> = ({
                         key={item.href}
                         href={getBaseUrl(item.href)}
                         className={`text-[0.75rem] px-5 py-3.5 rounded-xl font-bold transition-all duration-300 flex items-center justify-between group/item ${
-                          isScrolled 
-                            ? 'text-white hover:bg-white/5 hover:text-brand-blue' 
-                            : 'text-brand-dark hover:bg-slate-50 hover:text-brand-blue'
+                          routeName.includes(item.href)
+                            ? isScrolled ? 'bg-white/10 text-brand-blue' : 'bg-slate-50 text-brand-blue'
+                            : isScrolled 
+                              ? 'text-white hover:bg-white/5 hover:text-brand-blue' 
+                              : 'text-brand-dark hover:bg-slate-50 hover:text-brand-blue'
                         }`}
                       >
                         {item.label}
@@ -144,32 +155,41 @@ const Navbar: React.FC<NavbarProps> = ({
               <li className="h-full flex items-center">
                 <a
                   href={getBaseUrl('climbing')}
-                  className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-all duration-300 relative group py-2 ${
+                  className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
                     routeName.startsWith('climbing')
                       ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
                       : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                   }`}
                 >
-                  {labels.climbing}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${
-                    isScrolled ? 'bg-brand-red' : 'bg-brand-blue'
-                  }`}></span>
-                </a>
+                    <span className="relative">
+                      {labels.climbing}
+                      <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                        routeName.startsWith('climbing') ? 'w-full' : 'w-0 group-hover:w-full'
+                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                    </span>
+                  </a>
               </li>
 
               {/* Destinations Dropdown */}
               <li className="relative group h-full flex items-center">
                 <button
-                  className={`flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-all duration-300 py-2 ${
+                  className={`flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 py-2 ${
                     isDestinationsActive
                       ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
                       : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                   }`}
                 >
-                  {labels.destinations}
-                  <svg className="transition-transform duration-300 group-hover:rotate-180" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+                  <span className="flex items-center gap-1.5">
+                    <span className="relative">
+                      {labels.destinations}
+                      <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                        isDestinationsActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                    </span>
+                    <svg className="transition-transform duration-300 group-hover:rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </span>
                 </button>
                 <div className={`absolute top-[calc(100%-15px)] left-1/2 -translate-x-1/2 translate-y-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-400 min-w-[280px] p-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-[1100] border ${
                   isScrolled ? 'bg-brand-dark border-white/10' : 'bg-white border-slate-100'
@@ -186,9 +206,11 @@ const Navbar: React.FC<NavbarProps> = ({
                         key={item.href}
                         href={getBaseUrl(item.href)}
                         className={`text-[0.75rem] px-5 py-3.5 rounded-xl font-bold transition-all duration-300 flex items-center justify-between group/item ${
-                          isScrolled 
-                            ? 'text-white hover:bg-white/5 hover:text-brand-blue' 
-                            : 'text-brand-dark hover:bg-slate-50 hover:text-brand-blue'
+                          routeName === item.href || routeName.startsWith(item.href + '/')
+                            ? isScrolled ? 'bg-white/10 text-brand-blue' : 'bg-slate-50 text-brand-blue'
+                            : isScrolled 
+                              ? 'text-white hover:bg-white/5 hover:text-brand-blue' 
+                              : 'text-brand-dark hover:bg-slate-50 hover:text-brand-blue'
                         }`}
                       >
                         {item.label}
@@ -209,16 +231,18 @@ const Navbar: React.FC<NavbarProps> = ({
                 <li key={link.label} className="h-full flex items-center">
                   <a
                     href={link.href}
-                    className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-all duration-300 relative group py-2 ${
+                    className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
                       link.active
                         ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
                         : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                     }`}
                   >
-                    {link.label}
-                    <span className={`absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${
-                      isScrolled ? 'bg-brand-red' : 'bg-brand-blue'
-                    }`}></span>
+                    <span className="relative">
+                      {link.label}
+                      <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                        link.active ? 'w-full' : 'w-0 group-hover:w-full'
+                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                    </span>
                   </a>
                 </li>
               ))}

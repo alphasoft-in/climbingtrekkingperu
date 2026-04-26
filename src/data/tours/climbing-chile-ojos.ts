@@ -6,7 +6,7 @@ export const climbingChileOjosData = {
     hero: {
       titleTop: "THE WORLD'S HIGHEST VOLCANO",
       titleMain: "OJOS DEL SALADO 6893M",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/chile/bg-ojos-del-salado.png",
       duration: "13 DÍAS",
       price: "USD 4,950.00",
       difficulty: "EXTREMA / ALTA MONTAÑA",
@@ -17,7 +17,7 @@ export const climbingChileOjosData = {
       titlePrefix: "El Gigante del",
       titleAccent: "Atacama",
       description: "El Volcán Ojos del Salado, con sus imponentes 6893 metros, ostenta el título del volcán más alto del mundo y la segunda cumbre más elevada de América. Ubicado en el corazón del Desierto de Atacama, es un desafío de aislamiento absoluto y condiciones extremas.",
-      image: "/slider_5.png",
+      image: "/chile/ojos-del-salado.png",
       lat: `27° 06' 34" S`,
       lon: `68° 32' 32" W`,
       specs: [
@@ -74,16 +74,13 @@ export const climbingChileOjosData = {
     itineraryTitle: "Expedición",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Requerido",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Requerido"
   },
   en: {
     hero: {
       titleTop: "THE WORLD'S HIGHEST VOLCANO",
       titleMain: "OJOS DEL SALADO 6893M",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/chile/bg-ojos-del-salado.png",
       duration: "13 DAYS",
       price: "USD 4,950.00",
       difficulty: "EXTREME / HIGH MOUNTAIN",
@@ -94,7 +91,7 @@ export const climbingChileOjosData = {
       titlePrefix: "The Giant of",
       titleAccent: "Atacama",
       description: "Ojos del Salado Volcano, with its imposing 6893 meters, holds the title of the highest volcano in the world and the second highest summit in America. Located in the heart of the Atacama Desert, it is a challenge of absolute isolation and extreme conditions.",
-      image: "/slider_5.png",
+      image: "/chile/ojos-del-salado.png",
       lat: `27° 06' 34" S`,
       lon: `68° 32' 32" W`,
       specs: [
@@ -151,9 +148,6 @@ export const climbingChileOjosData = {
     itineraryTitle: "Expedition",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included Services",
-    equipmentTitle: "Required Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Required Gear"
   }
 };

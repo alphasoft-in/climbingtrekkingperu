@@ -6,7 +6,7 @@ export const ecuadorLagunasPichinchaData = {
     hero: {
       titleTop: "ACLIMATACIÓN Y CULTURA",
       titleMain: "LAGUNAS Y VOLCÁN RUCU PICHINCHA",
-      backgroundImage: "/slider_2.png",
+      backgroundImage: "/ecuador/bg-rucu-pichincha.png",
       duration: "05 DÍAS",
       price: "USD 895",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const ecuadorLagunasPichinchaData = {
       titlePrefix: "Espejos de",
       titleAccent: "Agua y Fuego",
       description: "Los Andes ecuatorianos ofrecen un paisaje único de lagunas volcánicas con aguas turquesas. Este programa es la combinación perfecta de turismo cultural y preparación física.",
-      image: "/slider_1.png",
+      image: "/ecuador/rucu-pichincha.png",
       lat: `00° 51' 40" S`,
       lon: `78° 54' 50" W`,
       specs: [
@@ -62,16 +62,13 @@ export const ecuadorLagunasPichinchaData = {
     itineraryTitle: "Misión",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Incluido",
-    equipmentTitle: "Equipo Técnico",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Técnico"
   },
   en: {
     hero: {
       titleTop: "ACCLIMATIZATION & CULTURE",
       titleMain: "LAKES & RUCU PICHINCHA",
-      backgroundImage: "/slider_2.png",
+      backgroundImage: "/ecuador/bg-rucu-pichincha.png",
       duration: "05 DAYS",
       price: "USD 895",
       difficulty: "MODERATE",
@@ -82,7 +79,7 @@ export const ecuadorLagunasPichinchaData = {
       titlePrefix: "Mirrors of",
       titleAccent: "Water & Fire",
       description: "The Ecuadorian Andes offer a unique landscape of volcanic lagoons with turquoise waters. This program is the perfect combination of cultural tourism and physical preparation.",
-      image: "/slider_1.png",
+      image: "/ecuador/rucu-pichincha.png",
       lat: `00° 51' 40" S`,
       lon: `78° 54' 50" W`,
       specs: [
@@ -127,9 +124,6 @@ export const ecuadorLagunasPichinchaData = {
     itineraryTitle: "Mission",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included",
-    equipmentTitle: "Technical Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Technical Gear"
   }
 };

@@ -6,7 +6,7 @@ export const argentinaAconcaguaData = {
     hero: {
       titleTop: "EL TECHO DE LAS AMÉRICAS",
       titleMain: "NEVADO ACONCAGUA 6962M",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/argentina/bg-aconcagua.png",
       duration: "17 DÍAS",
       price: "USD 8,950",
       difficulty: "EXTREMA",
@@ -17,7 +17,7 @@ export const argentinaAconcaguaData = {
       titlePrefix: "El Centinela",
       titleAccent: "de Piedra",
       description: "El Monte Aconcagua es el pico más alto de las Américas y el más alto del mundo fuera de Asia. Un programa de 17 días diseñado para maximizar la aclimatación gradual.",
-      image: "/slider_2.png",
+      image: "/argentina/aconcagua.png",
       lat: `32° 39' 12" S`,
       lon: `70° 00' 40" W`,
       specs: [
@@ -81,16 +81,13 @@ export const argentinaAconcaguaData = {
     itineraryTitle: "Misión",
     itinerarySubtitle: "Cronología",
     includesTitle: "Incluido",
-    equipmentTitle: "Equipo Técnico",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Técnico"
   },
   en: {
     hero: {
       titleTop: "THE ROOF OF THE AMERICAS",
       titleMain: "NEVADO ACONCAGUA 6962M",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/argentina/bg-aconcagua.png",
       duration: "17 DAYS",
       price: "USD 8,950",
       difficulty: "EXTREME",
@@ -101,7 +98,7 @@ export const argentinaAconcaguaData = {
       titlePrefix: "The Stone",
       titleAccent: "Sentinel",
       description: "Mount Aconcagua is the highest peak in the Americas and the highest in the world outside Asia. A 17-day program designed to maximize gradual acclimatization.",
-      image: "/slider_2.png",
+      image: "/argentina/aconcagua.png",
       lat: `32° 39' 12" S`,
       lon: `70° 00' 40" W`,
       specs: [
@@ -165,9 +162,6 @@ export const argentinaAconcaguaData = {
     itineraryTitle: "Mission",
     itinerarySubtitle: "Chronology",
     includesTitle: "Included",
-    equipmentTitle: "Technical Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Technical Gear"
   }
 };
