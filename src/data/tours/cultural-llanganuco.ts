@@ -6,7 +6,7 @@ export const culturalLlanganucoData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "LAGUNA LLANGANUCO 3890M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-llanganuco.png",
       duration: "08 - 09 HORAS",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
@@ -17,7 +17,7 @@ export const culturalLlanganucoData = {
       titlePrefix: "Belleza",
       titleAccent: "Turquesa",
       description: "Las lagunas de Llanganuco (Chinacocha y Orcuncocha) son de las más emblemáticas del Parque Nacional Huascarán. Rodeadas por los nevados más altos del Perú, ofrecen un espectáculo natural de aguas cristalinas y bosques de queñuales.",
-      image: "/trekking/blanca/trekking-clasico.png",
+      image: "/peru/llanganuco.png",
       lat: `09° 04' 00" S`,
       lon: `77° 39' 00" W`,
       specs: [
@@ -59,7 +59,7 @@ export const culturalLlanganucoData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "LLANGANUCO LAGOON 3890M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-llanganuco.png",
       duration: "08 - 09 HOURS",
       price: "UPON REQUEST",
       difficulty: "EASY",
@@ -70,7 +70,7 @@ export const culturalLlanganucoData = {
       titlePrefix: "Turquoise",
       titleAccent: "Beauty",
       description: "The Llanganuco lagoons (Chinacocha and Orcuncocha) are among the most emblematic of the Huascarán National Park. Surrounded by Peru's highest peaks, they offer a natural spectacle of crystal clear waters and queñual forests.",
-      image: "/trekking/blanca/trekking-clasico.png",
+      image: "/peru/llanganuco.png",
       lat: `09° 04' 00" S`,
       lon: `77° 39' 00" W`,
       specs: [

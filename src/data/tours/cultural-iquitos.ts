@@ -6,7 +6,7 @@ export const culturalIquitosData = {
     hero: {
       titleTop: "EL RÍO MÁS CAUDALOSO",
       titleMain: "AMAZONAS MÍSTICO 4D",
-      backgroundImage: "/slider_2.png",
+      backgroundImage: "/peru/bg-iquitos.png",
       duration: "4 DÍAS / 3 NOCHES",
       price: "CONSULTAR",
       difficulty: "BAJA",
@@ -17,7 +17,7 @@ export const culturalIquitosData = {
       titlePrefix: "Navegando el",
       titleAccent: "Origen del Agua",
       description: "Iquitos es la ciudad más grande del mundo sin acceso por carretera, una isla de civilización en el corazón del Amazonas. Desde aquí, navegamos por el río más caudaloso del planeta para descubrir delfines rosados, caimanes y una biodiversidad única.",
-      image: "/slider_3.png",
+      image: "/peru/iquitos.png",
       lat: `03° 45' 00" S`,
       lon: `73° 15' 00" W`,
       specs: [
@@ -68,7 +68,7 @@ export const culturalIquitosData = {
     hero: {
       titleTop: "THE LARGEST RIVER",
       titleMain: "MYSTICAL AMAZON 4D",
-      backgroundImage: "/slider_2.png",
+      backgroundImage: "/peru/bg-iquitos.png",
       duration: "4 DAYS / 3 NIGHTS",
       price: "UPON REQUEST",
       difficulty: "LOW",
@@ -79,7 +79,7 @@ export const culturalIquitosData = {
       titlePrefix: "Navigating the",
       titleAccent: "Source of Water",
       description: "Iquitos is the largest city in the world without road access, an island of civilization in the heart of the Amazon. From here, we navigate the mightiest river on the planet to discover pink dolphins, caimans and unique biodiversity.",
-      image: "/slider_3.png",
+      image: "/peru/iquitos.png",
       lat: `03° 45' 00" S`,
       lon: `73° 15' 00" W`,
       specs: [

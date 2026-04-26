@@ -6,7 +6,7 @@ export const culturalChavinData = {
     hero: {
       titleTop: "CUNA DE LA CIVILIZACIÓN",
       titleMain: "CHAVÍN DE HUÁNTAR 3137M",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/peru/bg-chavin-de-huantar.png",
       duration: "08 - 09 HORAS",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
@@ -17,7 +17,7 @@ export const culturalChavinData = {
       titlePrefix: "Milenario y",
       titleAccent: "Sagrado",
       description: "El sitio arqueológico de Chavín de Huántar es uno de los más importantes del Perú antiguo. En este tour cruzaremos la Cordillera Blanca por el túnel de Cahuish para explorar las pirámides, galerías subterráneas y el famoso Lanzón Monolítico.",
-      image: "/slider_1.png",
+      image: "/peru/chavin-de-huantar.png",
       lat: `09° 35' 34" S`,
       lon: `77° 10' 42" W`,
       specs: [
@@ -59,7 +59,7 @@ export const culturalChavinData = {
     hero: {
       titleTop: "CRADLE OF CIVILIZATION",
       titleMain: "CHAVÍN DE HUÁNTAR 3137M",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/peru/bg-chavin-de-huantar.png",
       duration: "08 - 09 HOURS",
       price: "UPON REQUEST",
       difficulty: "EASY",
@@ -70,7 +70,7 @@ export const culturalChavinData = {
       titlePrefix: "Ancient and",
       titleAccent: "Sacred",
       description: "The archaeological site of Chavín de Huántar is one of the most important in ancient Peru. On this tour we will cross the Cordillera Blanca through the Cahuish tunnel to explore the pyramids, underground galleries and the famous Lanzón Monolith.",
-      image: "/slider_1.png",
+      image: "/peru/chavin-de-huantar.png",
       lat: `09° 35' 34" S`,
       lon: `77° 10' 42" W`,
       specs: [

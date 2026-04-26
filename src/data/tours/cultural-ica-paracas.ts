@@ -6,7 +6,7 @@ export const culturalIcaParacasData = {
     hero: {
       titleTop: "SUR DE LIMA",
       titleMain: "LO MEJOR DE ICA 4D",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/peru/bg-ica.png",
       duration: "4 DÍAS / 3 NOCHES",
       price: "CONSULTAR",
       difficulty: "BAJA",
@@ -17,7 +17,7 @@ export const culturalIcaParacasData = {
       titlePrefix: "Tierra de",
       titleAccent: "Sol y Pisco",
       description: "Ubicada a 300 km al sur de Lima, Ica es un paraíso de sol eterno. Desde el místico Oasis de Huacachina y sus leyendas, hasta la biodiversidad marina de Paracas y los enigmáticos geoglifos de Nazca. Descubre la cuna del Pisco peruano y la aventura profunda del Cañón de los Perdidos en una región donde el desierto cobra vida.",
-      image: "/slider_2.png",
+      image: "/peru/ica.png",
       lat: `14° 04' 00" S`,
       lon: `75° 43' 00" W`,
       specs: [
@@ -67,7 +67,7 @@ export const culturalIcaParacasData = {
     hero: {
       titleTop: "SOUTH OF LIMA",
       titleMain: "THE BEST OF ICA 4D",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/peru/bg-ica.png",
       duration: "4 DAYS / 3 NIGHTS",
       price: "UPON REQUEST",
       difficulty: "LOW",
@@ -78,7 +78,7 @@ export const culturalIcaParacasData = {
       titlePrefix: "Land of",
       titleAccent: "Sun and Pisco",
       description: "Located 300 km south of Lima, Ica is a paradise of eternal sun. From the mystical Huacachina Oasis and its legends, to the marine biodiversity of Paracas and the enigmatic Nazca geoglyphs. Discover the cradle of Peruvian Pisco and the deep adventure of the Canyon of the Lost in a region where the desert comes to life.",
-      image: "/slider_2.png",
+      image: "/peru/ica.png",
       lat: `14° 04' 00" S`,
       lon: `75° 43' 00" W`,
       specs: [

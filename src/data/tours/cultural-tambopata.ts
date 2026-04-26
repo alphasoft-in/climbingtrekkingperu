@@ -6,7 +6,7 @@ export const culturalTambopataData = {
     hero: {
       titleTop: "PUERTO MALDONADO",
       titleMain: "TAMBOPATA & SANDOVAL 3D",
-      backgroundImage: "/slider_4.png",
+      backgroundImage: "/peru/bg-puerto-maldonado.png",
       duration: "3 DÍAS / 2 NOCHES",
       price: "CONSULTAR",
       difficulty: "BAJA",
@@ -17,7 +17,7 @@ export const culturalTambopataData = {
       titlePrefix: "El Pulmón de",
       titleAccent: "Madre de Dios",
       description: "Puerto Maldonado, capital de la biodiversidad, es la puerta al Amazonas sur. Desde el icónico mirador del Obelisco hasta la mística del Lago Sandoval y la Reserva Nacional Tambopata. Explora árboles milenarios, navega por el río Madre de Dios en kayak y descubre la sinfonía de la selva en una expedición que redefine el contacto con la naturaleza.",
-      image: "/slider_1.png",
+      image: "/peru/puerto-maldonado.png",
       lat: `12° 35' 39" S`,
       lon: `69° 10' 48" W`,
       specs: [
@@ -66,7 +66,7 @@ export const culturalTambopataData = {
     hero: {
       titleTop: "PUERTO MALDONADO",
       titleMain: "TAMBOPATA & SANDOVAL 3D",
-      backgroundImage: "/slider_4.png",
+      backgroundImage: "/peru/bg-puerto-maldonado.png",
       duration: "3 DAYS / 2 NIGHTS",
       price: "UPON REQUEST",
       difficulty: "LOW",
@@ -77,7 +77,7 @@ export const culturalTambopataData = {
       titlePrefix: "The Lung of",
       titleAccent: "Madre de Dios",
       description: "Puerto Maldonado, biodiversity capital, is the gateway to the southern Amazon. From the iconic Obelisk viewpoint to the mysticism of Sandoval Lake and the Tambopata National Reserve. Explore ancient trees, kayak the Madre de Dios River, and discover the jungle symphony in an expedition that redefines contact with nature.",
-      image: "/slider_1.png",
+      image: "/peru/puerto-maldonado.png",
       lat: `12° 35' 39" S`,
       lon: `69° 10' 48" W`,
       specs: [

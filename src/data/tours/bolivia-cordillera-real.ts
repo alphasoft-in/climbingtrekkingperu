@@ -1,6 +1,6 @@
 export const boliviaCordilleraRealData = {
   id: 'cordillera-real',
-  category: 'trekking',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {

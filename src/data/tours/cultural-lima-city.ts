@@ -6,7 +6,7 @@ export const culturalLimaCityData = {
     hero: {
       titleTop: "CIUDAD DE LOS REYES",
       titleMain: "CITY TOUR LIMA - PERÚ",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/peru/bg-city-tour-lima.png",
       duration: "04 HORAS",
       price: "USD. 65.00",
       difficulty: "FÁCIL",
@@ -17,7 +17,7 @@ export const culturalLimaCityData = {
       titlePrefix: "Lima",
       titleAccent: "Ancestral & Colonial",
       description: "Conozca Lima, Perú en sus tres períodos históricos: Ancestral, Colonial y Contemporáneo. Iniciamos con la mística Huaca Pucllana, centro ceremonial del siglo IV D.C. Continuamos por el Centro Histórico con más de cincuenta monumentos coloniales, destacando la Basílica Catedral y el Convento de San Francisco con sus famosas Catacumbas. Finalmente, visitamos las zonas residenciales de San Isidro y Miraflores con vistas espectaculares al Pacífico.",
-      image: "/slider_1.png",
+      image: "/peru/lima.png",
       lat: `12° 02' 35" S`,
       lon: `77° 01' 42" W`,
       specs: [
@@ -74,7 +74,7 @@ export const culturalLimaCityData = {
     hero: {
       titleTop: "CITY OF KINGS",
       titleMain: "LIMA CITY TOUR",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/peru/bg-city-tour-lima.png",
       duration: "04 HOURS",
       price: "USD. 65.00",
       difficulty: "EASY",
@@ -85,7 +85,7 @@ export const culturalLimaCityData = {
       titlePrefix: "Lima",
       titleAccent: "Ancestral & Colonial",
       description: "Explore Lima through its three historical periods: Ancestral, Colonial, and Contemporary. We start with the mystical Huaca Pucllana, a ceremonial center from the 4th century A.D. We continue through the Historic Center with over fifty colonial monuments, highlighting the Cathedral and the Convent of San Francisco with its famous Catacombs. Finally, we visit the residential areas of San Isidro and Miraflores with spectacular views of the Pacific.",
-      image: "/slider_1.png",
+      image: "/peru/lima.png",
       lat: `12° 02' 35" S`,
       lon: `77° 01' 42" W`,
       specs: [

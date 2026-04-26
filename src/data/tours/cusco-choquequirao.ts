@@ -6,7 +6,7 @@ export const cuscoChoquequiraoData = {
     hero: {
       titleTop: "LA HERMANA DE MACHU PICCHU",
       titleMain: "TREKKING CHOQUEQUIRAO",
-      backgroundImage: "/trekking/cusco/choquequirao/bg-choquequirao.png",
+      backgroundImage: "/peru/bg-choquequirao.png",
       duration: "4 DÍAS / 3 NOCHES",
       price: "CONSULTAR",
       difficulty: "EXIGENTE",
@@ -65,7 +65,7 @@ export const cuscoChoquequiraoData = {
     hero: {
       titleTop: "THE SISTER OF MACHU PICCHU",
       titleMain: "CHOQUEQUIRAO TREKKING",
-      backgroundImage: "/trekking/cusco/choquequirao/bg-choquequirao.png",
+      backgroundImage: "/peru/bg-choquequirao.png",
       duration: "4 DAYS / 3 NIGHTS",
       price: "UPON REQUEST",
       difficulty: "CHALLENGING",

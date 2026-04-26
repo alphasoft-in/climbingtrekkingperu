@@ -72,6 +72,8 @@ const isDestinationsActive = [
 ].some((c) => routeName === c || routeName.startsWith(c + "/")) || 
 peruSpecificRoutes.some(r => routeName === r || routeName.startsWith(r + "/"));
 
+const isToursActive = routeName.startsWith("tours") && !peruSpecificRoutes.includes(routeName);
+
 const isTrekkingActive = !isToursRoute && (
 	(routeName.startsWith("trekking") && 
    !routeName.startsWith("trekking/arequipa") && 
@@ -173,6 +175,7 @@ const footerLabels = {
       routeName={routeName}
       isTrekkingActive={isTrekkingActive}
       isDestinationsActive={isDestinationsActive}
+      isToursActive={isToursActive}
     />
 
 		<main>

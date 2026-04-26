@@ -1,12 +1,12 @@
 export const boliviaUyuniTiticacaData = {
   id: 'uyuni-titicaca-cultural',
-  category: 'tours',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {
       titleTop: "EXPERIENCIA ALTIPLÁNICA",
       titleMain: "UYUNI & ISLA DEL SOL 10D",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/bolivia/bg-uyuni.png",
       duration: "10 DÍAS / 09 NOCHES",
       price: "USD. 995.00",
       difficulty: "SUAVE / CULTURAL",
@@ -17,7 +17,7 @@ export const boliviaUyuniTiticacaData = {
       titlePrefix: "Tour",
       titleAccent: "Bolivia",
       description: "Descubre la mística de los Andes bolivianos en un viaje de 10 días. Desde la ciudad arqueológica de Tiahuanaco y las aguas sagradas del Lago Titicaca, hasta el blanco infinito del Salar de Uyuni y la ascensión opcional al volcán Thunupa.",
-      image: "/slider_1.png",
+      image: "/bolivia/uyuni.png",
       lat: `20° 08' 01" S`,
       lon: `67° 29' 20" W`,
       specs: [
@@ -72,7 +72,7 @@ export const boliviaUyuniTiticacaData = {
     hero: {
       titleTop: "HIGHLAND EXPERIENCE",
       titleMain: "UYUNI & SUN ISLAND 10D",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/bolivia/bg-uyuni.png",
       duration: "10 DAYS / 09 NIGHTS",
       price: "USD. 995.00",
       difficulty: "SOFT / CULTURAL",
@@ -83,7 +83,7 @@ export const boliviaUyuniTiticacaData = {
       titlePrefix: "Bolivia",
       titleAccent: "Tour",
       description: "Discover the mysticism of the Bolivian Andes in a 10-day journey. From the archaeological city of Tiahuanaco and the sacred waters of Lake Titicaca, to the infinite white of Salar de Uyuni and the optional ascent of Thunupa volcano.",
-      image: "/slider_1.png",
+      image: "/bolivia/uyuni.png",
       lat: `20° 08' 01" S`,
       lon: `67° 29' 20" W`,
       specs: [

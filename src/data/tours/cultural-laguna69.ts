@@ -6,7 +6,7 @@ export const culturalLaguna69Data = {
     hero: {
       titleTop: "EL DESAFÍO AZUL",
       titleMain: "LAGUNA 69 TREKKING 4600M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-cebollapampa.png",
       duration: "FULL DAY",
       price: "CONSULTAR",
       difficulty: "EXIGENTE",
@@ -17,7 +17,7 @@ export const culturalLaguna69Data = {
       titlePrefix: "La Cima del",
       titleAccent: "Senderismo",
       description: "Laguna 69 es el trekking de un día más famoso del Parque Nacional Huascarán. Ubicada a los pies del Chacraraju y el Nevado Pisco, su color azul turquesa intenso recompensa el esfuerzo de la caminata por el Valle de Demanda.",
-      image: "/trekking/blanca/trekking-clasico.png",
+      image: "/peru/cebollapampa.png",
       lat: `09° 00' 40" S`,
       lon: `77° 36' 47" W`,
       specs: [
@@ -59,7 +59,7 @@ export const culturalLaguna69Data = {
     hero: {
       titleTop: "THE BLUE CHALLENGE",
       titleMain: "LAGUNA 69 TREKKING 4600M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-cebollapampa.png",
       duration: "FULL DAY",
       price: "UPON REQUEST",
       difficulty: "CHALLENGING",
@@ -70,7 +70,7 @@ export const culturalLaguna69Data = {
       titlePrefix: "The Peak of",
       titleAccent: "Hiking",
       description: "Laguna 69 is the most famous day trek in the Huascarán National Park. Located at the foot of Chacraraju and Nevado Pisco, its intense turquoise color rewards the effort of the hike through the Demanda Valley.",
-      image: "/trekking/blanca/trekking-clasico.png",
+      image: "/peru/cebollapampa.png",
       lat: `09° 00' 40" S`,
       lon: `77° 36' 47" W`,
       specs: [

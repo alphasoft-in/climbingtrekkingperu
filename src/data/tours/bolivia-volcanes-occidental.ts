@@ -1,6 +1,6 @@
 export const boliviaVolcanesData = {
   id: 'bolivia-volcanes',
-  category: 'climbing',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {

@@ -9,6 +9,7 @@ interface NavbarProps {
   routeName: string;
   isTrekkingActive: boolean;
   isDestinationsActive: boolean;
+  isToursActive: boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -19,6 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({
   routeName,
   isTrekkingActive,
   isDestinationsActive,
+  isToursActive,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -200,7 +202,7 @@ const Navbar: React.FC<NavbarProps> = ({
               </li>
 
               {[
-                { label: labels.tours, href: getBaseUrl('tours'), active: routeName.startsWith('tours') },
+                { label: labels.tours, href: getBaseUrl('tours'), active: isToursActive },
                 { label: labels.gallery, href: getBaseUrl('gallery'), active: routeName.startsWith('gallery') },
                 { label: labels.contact, href: getBaseUrl('contact'), active: routeName.startsWith('contact') },
               ].map((link) => (
@@ -327,8 +329,8 @@ const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('tours')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('tours') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
-              {routeName.startsWith('tours') && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              <a href={getBaseUrl('tours')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
+              {isToursActive && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">

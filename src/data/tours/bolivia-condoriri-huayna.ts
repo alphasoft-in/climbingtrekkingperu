@@ -1,12 +1,12 @@
 export const boliviaCondoririHuaynaData = {
   id: 'condoriri-huayna-expedition',
-  category: 'climbing',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {
       titleTop: "CORDILLERA REAL",
       titleMain: "CONDORIRI & HUAYNAPOTOSÍ 11D",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/bolivia/bg-condoriri.png",
       duration: "11 DÍAS / 10 NOCHES",
       price: "USD. 995.00",
       difficulty: "NO TÉCNICO / ALTA MONTAÑA",
@@ -17,7 +17,7 @@ export const boliviaCondoririHuaynaData = {
       titlePrefix: "Expedición",
       titleAccent: "Bolivia",
       description: "Bolivia es el corazón de los Andes. Esta expedición de 11 días combina la aclimatación en el Lago Titicaca con la ascensión a picos emblemáticos como el Pico Austria, Tarija, Pequeño Alpamayo y el gigante Huayna Potosí (6088m).",
-      image: "/slider_5.png",
+      image: "/bolivia/condoriri.png",
       lat: `16° 10' 11" S`,
       lon: `68° 14' 00" W`,
       specs: [
@@ -76,7 +76,7 @@ export const boliviaCondoririHuaynaData = {
     hero: {
       titleTop: "CORDILLERA REAL",
       titleMain: "CONDORIRI & HUAYNAPOTOSI 11D",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/bolivia/bg-condoriri.png",
       duration: "11 DAYS / 10 NIGHTS",
       price: "USD. 995.00",
       difficulty: "NON-TECHNICAL / HIGH MOUNTAIN",
@@ -87,7 +87,7 @@ export const boliviaCondoririHuaynaData = {
       titlePrefix: "Bolivia",
       titleAccent: "Expedition",
       description: "Bolivia is the heart of the Andes. This 11-day expedition combines acclimatization at Lake Titicaca with the ascent of iconic peaks such as Pico Austria, Tarija, Pequeno Alpamayo, and the giant Huayna Potosi (6088m).",
-      image: "/slider_5.png",
+      image: "/bolivia/condoriri.png",
       lat: `16° 10' 11" S`,
       lon: `68° 14' 00" W`,
       specs: [

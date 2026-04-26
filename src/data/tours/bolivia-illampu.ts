@@ -1,12 +1,12 @@
 export const boliviaIllampuData = {
   id: 'illampu-circuit',
-  category: 'trekking',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {
       titleTop: "CORDILLERA REAL NORTE",
       titleMain: "CIRCUITO ILLAMPU 8D",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/bolivia/bg-illampu.png",
       duration: "08 DÍAS / 07 NOCHES",
       price: "USD. 695.00",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const boliviaIllampuData = {
       titlePrefix: "Trekking",
       titleAccent: "Bolivia",
       description: "El Circuito Illampu es un viaje remoto alrededor de uno de los nevados más imponentes de Bolivia. Atraviesa pasos de más de 4000m, camina por tierras Aymara y maravíllate con glaciares, lagunas y valles profundos.",
-      image: "/slider_5.png",
+      image: "/bolivia/illampu.png",
       lat: `15° 49' 00" S`,
       lon: `68° 33' 00" W`,
       specs: [
@@ -71,7 +71,7 @@ export const boliviaIllampuData = {
     hero: {
       titleTop: "NORTH CORDILLERA REAL",
       titleMain: "ILLAMPU CIRCUIT 8D",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/bolivia/bg-illampu.png",
       duration: "08 DAYS / 07 NIGHTS",
       price: "USD. 695.00",
       difficulty: "MODERATE",
@@ -82,7 +82,7 @@ export const boliviaIllampuData = {
       titlePrefix: "Trekking",
       titleAccent: "Bolivia",
       description: "The Illampu Circuit is a remote journey around one of Bolivia's most imposing peaks. Cross passes over 4000m, walk through Aymara lands and marvel at glaciers, lagoons and deep valleys.",
-      image: "/slider_5.png",
+      image: "/bolivia/illampu.png",
       lat: `15° 49' 00" S`,
       lon: `68° 33' 00" W`,
       specs: [

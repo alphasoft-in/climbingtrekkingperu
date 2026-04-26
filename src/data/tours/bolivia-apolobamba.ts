@@ -1,6 +1,6 @@
 export const boliviaApolobambaData = {
   id: 'apolobamba',
-  category: 'trekking',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {

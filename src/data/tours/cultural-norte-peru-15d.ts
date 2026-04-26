@@ -5,8 +5,8 @@ export const culturalNortePeru15dData = {
   es: {
     hero: {
       titleTop: "EXPERIENCIA CULTURAL",
-      titleMain: "NORTE DEL PERU: LIMA, ICA & HUARAZ 15D",
-      backgroundImage: "/slider_1.png",
+      titleMain: "EXPERIENCIA NACIONAL: LIMA, ICA & HUARAZ 15D",
+      backgroundImage: "/peru/bg-caral.png",
       duration: "15 DÍAS / 14 NOCHES",
       price: "USD. 1,795.00",
       difficulty: "SUAVE / CULTURAL",
@@ -15,9 +15,9 @@ export const culturalNortePeru15dData = {
     intro: {
       code: "PER-NOR-15",
       titlePrefix: "Gran Tour",
-      titleAccent: "Norte Peruano",
+      titleAccent: "Esencia Peruana",
       description: "Descubre la diversidad del Perú en una expedición de 15 días. Desde los misterios de las Líneas de Nazca y el Oasis de Huacachina en la costa, hasta la majestuosidad de la Cordillera Blanca en Huaraz. Un viaje diseñado para combinar historia, aventura y los paisajes más impresionantes del norte y centro del país.",
-      image: "/slider_2.png",
+      image: "/peru/caral.png",
       lat: `9° 31' 48" S`,
       lon: `77° 31' 44" W`,
       specs: [
@@ -75,8 +75,8 @@ export const culturalNortePeru15dData = {
   en: {
     hero: {
       titleTop: "CULTURAL EXPERIENCE",
-      titleMain: "NORTHERN PERU: LIMA, ICA & HUARAZ 15D",
-      backgroundImage: "/slider_1.png",
+      titleMain: "NATIONAL EXPERIENCE: LIMA, ICA & HUARAZ 15D",
+      backgroundImage: "/peru/bg-caral.png",
       duration: "15 DAYS / 14 NIGHTS",
       price: "USD. 1,795.00",
       difficulty: "SOFT / CULTURAL",
@@ -85,9 +85,9 @@ export const culturalNortePeru15dData = {
     intro: {
       code: "PER-NOR-15",
       titlePrefix: "Grand Tour",
-      titleAccent: "Northern Peru",
+      titleAccent: "Peruvian Essence",
       description: "Discover the diversity of Peru in a 15-day expedition. From the mysteries of the Nazca Lines and the Huacachina Oasis on the coast to the majesty of the Cordillera Blanca in Huaraz. A trip designed to combine history, adventure, and the most impressive landscapes of northern and central Peru.",
-      image: "/slider_2.png",
+      image: "/peru/caral.png",
       lat: `9° 31' 48" S`,
       lon: `77° 31' 44" W`,
       specs: [

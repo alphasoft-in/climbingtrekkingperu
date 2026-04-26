@@ -6,7 +6,7 @@ export const culturalPeruBolivia19dData = {
     hero: {
       titleTop: "LO MEJOR DE LOS ANDES",
       titleMain: "PERÚ & BOLIVIA CONFORT 19D",
-      backgroundImage: "/trekking/cusco/lares/bg-lares.png",
+      backgroundImage: "/peru/bg-peru-bolivia.png",
       duration: "19 DÍAS / 18 NOCHES",
       price: "USD. 2,585.00",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const culturalPeruBolivia19dData = {
       titlePrefix: "Expedición",
       titleAccent: "Confot",
       description: "Un viaje épico de 19 días que conecta las maravillas del Cusco, el Lago Titicaca y las imponentes cumbres de la Cordillera Real en Bolivia. Una combinación perfecta de cultura, historia y aventura de alta montaña.",
-      image: "/trekking/cusco/lares-trek.png",
+      image: "/peru/peru-bolivia.png",
       lat: `13° 31' 00" S`,
       lon: `71° 58' 00" W`,
       specs: [
@@ -83,7 +83,7 @@ export const culturalPeruBolivia19dData = {
     hero: {
       titleTop: "THE BEST OF THE ANDES",
       titleMain: "PERU & BOLIVIA COMFORT 19D",
-      backgroundImage: "/trekking/cusco/lares/bg-lares.png",
+      backgroundImage: "/peru/bg-peru-bolivia.png",
       duration: "19 DAYS / 18 NIGHTS",
       price: "USD. 2,585.00",
       difficulty: "MODERATE",
@@ -94,7 +94,7 @@ export const culturalPeruBolivia19dData = {
       titlePrefix: "Comfort",
       titleAccent: "Expedition",
       description: "An epic 19-day journey connecting the wonders of Cusco, Lake Titicaca, and the imposing peaks of the Cordillera Real in Bolivia. A perfect combination of culture, history, and high mountain adventure.",
-      image: "/trekking/cusco/lares-trek.png",
+      image: "/peru/peru-bolivia.png",
       lat: `13° 31' 00" S`,
       lon: `71° 58' 00" W`,
       specs: [

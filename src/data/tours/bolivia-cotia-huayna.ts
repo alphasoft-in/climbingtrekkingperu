@@ -1,12 +1,12 @@
 export const boliviaCotiaHuaynaData = {
   id: 'cotia-huayna-trek',
-  category: 'trekking',
+  category: 'bolivia',
   subCategory: 'bolivia',
   es: {
     hero: {
       titleTop: "CORDILLERA REAL CENTRAL",
       titleMain: "TREKKING LAGUNA COTIA 7D",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/bolivia/bg-cotia.png",
       duration: "07 DÍAS / 06 NOCHES",
       price: "USD. 795.00",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const boliviaCotiaHuaynaData = {
       titlePrefix: "Trekking",
       titleAccent: "Bolivia",
       description: "El Trekking de Cotia es uno de los recorridos más hermosos de la Cordillera Real. Inicia en la Laguna Cotia, pasa por el campo base del Pequeño Alpamayo y finaliza en el campo base del Huayna Potosí.",
-      image: "/slider_5.png",
+      image: "/bolivia/cotia.png",
       lat: `16° 04' 00" S`,
       lon: `68° 18' 00" W`,
       specs: [
@@ -68,7 +68,7 @@ export const boliviaCotiaHuaynaData = {
     hero: {
       titleTop: "CENTRAL CORDILLERA REAL",
       titleMain: "COTIA LAGOON TREK 7D",
-      backgroundImage: "/slider_5.png",
+      backgroundImage: "/bolivia/bg-cotia.png",
       duration: "07 DAYS / 06 NIGHTS",
       price: "USD. 795.00",
       difficulty: "MODERATE",
@@ -79,7 +79,7 @@ export const boliviaCotiaHuaynaData = {
       titlePrefix: "Trekking",
       titleAccent: "Bolivia",
       description: "The Cotia Trek is one of the most beautiful routes in the Cordillera Real. It starts at Cotia Lagoon, passes through Pequeno Alpamayo base camp and ends at the Huayna Potosi base camp.",
-      image: "/slider_5.png",
+      image: "/bolivia/cotia.png",
       lat: `16° 04' 00" S`,
       lon: `68° 18' 00" W`,
       specs: [

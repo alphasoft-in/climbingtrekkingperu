@@ -6,7 +6,7 @@ export const culturalRocotuyocData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "LAGUNA ROCUTOYOC 4450M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-rocutoyoc.png",
       duration: "09 - 10 HORAS",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
@@ -17,7 +17,7 @@ export const culturalRocotuyocData = {
       titlePrefix: "Agua y",
       titleAccent: "Glaciares",
       description: "Un recorrido fascinante por el norte de Huaraz que incluye la comunidad histórica de Vicos, la cascada de Ruripaccha y las lagunas de Rocutuyoc. Podrá observar pinturas rupestres y el imponente glaciar de Ruripaccha a 4,650 msnm.",
-      image: "/slider_2.png",
+      image: "/peru/rocutoyoc.png",
       lat: `09° 15' 00" S`,
       lon: `77° 30' 00" W`,
       specs: [
@@ -59,7 +59,7 @@ export const culturalRocotuyocData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "ROCUTOYOC LAGOON 4450M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-rocutoyoc.png",
       duration: "09 - 10 HOURS",
       price: "UPON REQUEST",
       difficulty: "EASY",
@@ -70,7 +70,7 @@ export const culturalRocotuyocData = {
       titlePrefix: "Water and",
       titleAccent: "Glaciers",
       description: "A fascinating journey north of Huaraz including the historic community of Vicos, the Ruripaccha waterfall, and the Rocutuyoc lagoons. You can observe rock paintings and the imposing Ruripaccha glacier at 4,650 masl.",
-      image: "/slider_2.png",
+      image: "/peru/rocutoyoc.png",
       lat: `09° 15' 00" S`,
       lon: `77° 30' 00" W`,
       specs: [

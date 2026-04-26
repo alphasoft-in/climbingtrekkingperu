@@ -6,7 +6,7 @@ export const culturalParonData = {
     hero: {
       titleTop: "LA JOYA DE LA CORDILLERA",
       titleMain: "LAGUNA PARÓN 4250M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-laguna-paron.png",
       duration: "FULL DAY",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
@@ -17,7 +17,7 @@ export const culturalParonData = {
       titlePrefix: "El Espejo de",
       titleAccent: "Los Andes",
       description: "Ubicada en la provincia de Huaylas, la Laguna Parón es el depósito de agua dulce más importante de la Cordillera Blanca. Rodeada de imponentes nevados como el Artesonraju (el logo de Paramount Pictures) y el Huandoy, ofrece un paisaje turquesa inigualable.",
-      image: "/slider_3.png",
+      image: "/peru/laguna-paron.png",
       lat: `09° 00' 00" S`,
       lon: `77° 41' 00" W`,
       specs: [
@@ -59,7 +59,7 @@ export const culturalParonData = {
     hero: {
       titleTop: "THE JEWEL OF THE RANGE",
       titleMain: "PARON LAGOON 4250M",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/peru/bg-laguna-paron.png",
       duration: "FULL DAY",
       price: "UPON REQUEST",
       difficulty: "EASY",
@@ -70,7 +70,7 @@ export const culturalParonData = {
       titlePrefix: "The Mirror of",
       titleAccent: "The Andes",
       description: "Located in the Huaylas province, Paron Lagoon is the most important freshwater reservoir in the Cordillera Blanca. Surrounded by imposing peaks like Artesonraju (the Paramount Pictures logo) and Huandoy, it offers an unparalleled turquoise landscape.",
-      image: "/slider_3.png",
+      image: "/peru/laguna-paron.png",
       lat: `09° 00' 00" S`,
       lon: `77° 41' 00" W`,
       specs: [

@@ -6,7 +6,7 @@ export const huarazFullExperienceData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "HUARAZ EXPERIENCIA 8D",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/peru/bg-huaraz.png",
       duration: "08 DÍAS / 07 NOCHES",
       price: "USD. 298.00",
       difficulty: "SUAVE / MODERADA",
@@ -17,7 +17,7 @@ export const huarazFullExperienceData = {
       titlePrefix: "Pack",
       titleAccent: "Huaraz",
       description: "Huaraz es la capital del trekking en el Perú. Este paquete de 8 días te lleva por los destinos más emblemáticos de la Cordillera Blanca y los Conchucos, incluyendo lagunas color turquesa, glaciares milenarios y sitios arqueológicos milenarios.",
-      image: "/slider_4.png",
+      image: "/peru/huaraz.png",
       lat: `9° 31' 48" S`,
       lon: `77° 31' 44" W`,
       specs: [
@@ -66,7 +66,7 @@ export const huarazFullExperienceData = {
     hero: {
       titleTop: "BLANCA RANGE",
       titleMain: "HUARAZ EXPERIENCE 8D",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/peru/bg-huaraz.png",
       duration: "08 DAYS / 07 NIGHTS",
       price: "USD. 298.00",
       difficulty: "EASY / MODERATE",
@@ -77,7 +77,7 @@ export const huarazFullExperienceData = {
       titlePrefix: "Huaraz",
       titleAccent: "Pack",
       description: "Huaraz is the trekking capital of Peru. This 8-day package takes you through the most iconic destinations of the Cordillera Blanca and Conchucos, including turquoise lagoons, ancient glaciers, and millenary archaeological sites.",
-      image: "/slider_4.png",
+      image: "/peru/huaraz.png",
       lat: `9° 31' 48" S`,
       lon: `77° 31' 44" W`,
       specs: [
