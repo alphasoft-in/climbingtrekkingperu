@@ -1,0 +1,23 @@
+---
+import { toursData } from '@data/tours/toursData';
+import { regionsData } from '@data/regions';
+import CategoryTemplate from '@components/CategoryTemplate.astro';
+
+const lang = 'en';
+const metadata = regionsData['bolivia'];
+
+// Featured selection for Bolivia hub
+const featuredIds = [
+  'condoriri-huayna-expedition',
+  'illimani-sajama',
+  'uyuni-huayna-potosi',
+  'illampu-circuit',
+  'cotia-huayna-trek',
+  'illampu-peak',
+  'bolivia-volcanes',
+  'uyuni-titicaca-cultural'
+];
+const programs = toursData.filter(t => featuredIds.includes(t.slug));
+---
+
+<CategoryTemplate lang={lang} metadata={metadata} programs={programs} />

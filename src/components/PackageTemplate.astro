@@ -98,18 +98,14 @@ const t = data[lang];
     </div>
   </section>
 
-  <TourGallery 
-    client:visible 
-    lang={lang}
-    tourName={t.hero.titleMain}
-    images={t.gallery || [
-      '/slider_1.png',
-      '/slider_2.png',
-      '/slider_3.png',
-      '/slider_4.png',
-      '/slider_5.png'
-    ]} 
-  />
+  {t.gallery && (
+    <TourGallery 
+      client:visible 
+      lang={lang}
+      tourName={t.hero.titleMain}
+      images={t.gallery} 
+    />
+  )}
 
   <SuggestedRoutes lang={lang} currentId={data.id} client:visible />
 </Layout>

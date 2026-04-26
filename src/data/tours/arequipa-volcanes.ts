@@ -5,143 +5,139 @@ export const arequipaVolcanesData = {
   es: {
     hero: {
       titleTop: "LA CIUDAD BLANCA",
-      titleMain: "AREQUIPA & VOLCANES 7D",
+      titleMain: "MISTI & CHACHANI 10D",
       backgroundImage: "/slider_2.png",
-      duration: "7 DÍAS / 6 NOCHES",
+      duration: "10 DÍAS / 09 NOCHES",
       price: "USD. 795.00",
       difficulty: "DIFÍCIL",
       difficultyLevel: "hard"
     },
     intro: {
-      code: "AQP-VOL-07D",
-      titlePrefix: "Tierra de",
-      titleAccent: "Fuego y Sillar",
-      description: "Arequipa, la 'Ciudad Blanca', es una joya colonial rodeada de volcanes y construida con sillar. Patrimonio de la Humanidad por la UNESCO, ofrece una mezcla única de historia mística, gastronomía excepcional y naturaleza salvaje. Desde el místico Monasterio de Santa Catalina hasta la adrenalina del Rafting en el Río Chili y la profundidad del Cañón del Colca, Arequipa es el punto de partida perfecto para expediciones de alto nivel.",
+      code: "AQP-VOL-10D",
+      titlePrefix: "Aventura",
+      titleAccent: "Arequipa",
+      description: "Explora la Ciudad Blanca y conquista sus volcanes más emblemáticos. Esta expedición de 10 días combina cultura, paisajes únicos como el Cañón del Colca y la adrenalina de alcanzar las cumbres del Misti (5822m) y el Chachani (6057m).",
       image: "/slider_3.png",
       lat: `16° 23' 55" S`,
       lon: `71° 32' 12" W`,
       specs: [
-        { label: 'CUMBRE MÁX.', value: '6,075 MSNM', icon: 'location' },
-        { label: 'DESTACADOS', value: 'Misti y Chachani', icon: 'zone' },
-        { label: 'TIEMPO', value: '7 Días / 6 Noches', icon: 'season' },
-        { label: 'LOGÍSTICA', value: '4x4 & Guías UIAGM', icon: 'service' }
+        { label: 'COSTO', value: 'USD. 795.00', icon: 'location' },
+        { label: 'CUMBRES', value: 'Misti & Chachani', icon: 'zone' },
+        { label: 'DURACIÓN', value: '10 Días', icon: 'season' },
+        { label: 'PARTIDA', value: 'Arequipa', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DÍA 01', title: 'LIMA – AREQUIPA – HOTEL', content: 'Recepción en el aeropuerto de Arequipa o terminal de bus y traslado al hotel seleccionado.', stats: { alt: '2335m', dist: 'Traslado', time: '30 min' } },
-      { day: 'DÍA 02', title: 'CULEBRILLAS & CERRO COLORADO', content: 'Visita a las canteras de sillar para observar la extracción y el tallado. Exploración del cañón de Culebrillas y sus antiguos petroglifos.', stats: { alt: '2500m', dist: 'Tour', time: '6-7 h' } },
-      { day: 'DÍA 03', title: 'CAÑÓN DEL COLCA (MIRADOR DEL CÓNDOR)', content: 'Salida temprana hacia el Mirador de la Cruz del Cóndor para observar el vuelo del ave más grande de los Andes. Visita a pueblos tradicionales y retorno a Arequipa.', stats: { alt: '3600m', dist: 'Tour', time: '14 h' } },
-      { day: 'DÍA 04', title: 'LAGUNA DE SALINAS', content: 'Expedición a la laguna de sal rodeada de volcanes. Observación de flamencos, vicuñas y yaretas gigantes al pie del volcán Pichu Pichu.', stats: { alt: '4300m', dist: 'Tour', time: '9-10 h' } },
-      { day: 'DÍA 05', title: 'AREQUIPA – CAMPO BASE CHACHANI', content: 'Traslado en 4x4 hasta la base del volcán. Caminata de 3-4 horas hasta el campo base Morena. Noche en campamento.', stats: { alt: '4950m', dist: '4x4 + Trek', time: '4 h' } },
-      { day: 'DÍA 06', title: 'CUMBRE VOLCÁN CHACHANI (6075M)', content: 'Ascenso técnico a la cumbre del Chachani. Vistas espectaculares de la cordillera volcánica. Descenso y traslado al campo base del Misti.', stats: { alt: '6075m', dist: 'Ascenso', time: '5-6 h' } },
-      { day: 'DÍA 07', title: 'CUMBRE VOLCÁN MISTI (5822M) – AREQUIPA', content: 'Ascenso final a la cumbre del Misti. Vista panorámica del cráter activo y la ciudad de Arequipa. Descenso y retorno al hotel.', stats: { alt: '5822m', dist: 'Ascenso', time: '5 h' } }
+      { day: 'DÍA 01', title: 'LIMA – AREQUIPA', content: 'Vuelo a Arequipa y traslado al hotel. Tarde de visitas culturales por el centro histórico.' },
+      { day: 'DÍA 02', title: 'CULEBRILLAS & CERRO COLORADO', content: 'Visita a las canteras de sillar, quebrada de culebrillas y petroglifos antiguos.' },
+      { day: 'DÍA 03', title: 'CAÑÓN DEL COLCA', content: 'Excursión al Mirador Cruz del Cóndor, pueblos tradicionales y almuerzo en Sancayo.' },
+      { day: 'DÍA 04', title: 'LAGUNA SALINAS', content: 'Visita a la laguna Salinas, avistamiento de flamencos y volcán Pichu Pichu.' },
+      { day: 'DÍA 05', title: 'AREQUIPA – CAMPO ALTO CHACHANI', content: 'Traslado en 4x4 hacia el punto de inicio y ascenso al campo alto (5250 msnm).' },
+      { day: 'DÍA 06', title: 'CUMBRE CHACHANI (6057M)', content: 'Ataque a la cumbre y vista fenomenal de los Andes. Retorno a Arequipa.' },
+      { day: 'DÍA 07', title: 'AREQUIPA – CAMPO BASE MISTI', content: 'Traslado al campo base del volcán Misti (4250 msnm).' },
+      { day: 'DÍA 08', title: 'CUMBRE MISTI (5822M)', content: 'Ascensión a la cumbre del volcán más famoso. Retorno a Arequipa.' },
+      { day: 'DÍA 09', title: 'AREQUIPA - LIMA', content: 'Traslado al aeropuerto y vuelo de retorno a Lima.' },
+      { day: 'DÍA 10', title: 'RETORNO', content: 'Traslado al aeropuerto internacional de Lima para su vuelo internacional.' }
     ],
     includes: [
-      'Traslados Aeropuerto - Hotel - Aeropuerto (Arequipa)',
-      'Noches de hotel en Arequipa',
-      'Transporte turístico privado para todos los tours',
-      'Guía oficial de turismo para tours culturales',
-      'Transporte 4x4 para expediciones a Chachani y Misti',
-      'Guía de montaña certificado para los ascensos',
-      'Alimentación completa durante las expediciones',
-      'Equipo de campamento',
-      'Equipo técnico (Grampones/Piolet)',
-      'Traslado final al aeropuerto'
+      'Traslados Aeropuerto - Hotel (Arequipa)',
+      'Tours: Culebrillas, Cañón del Colca y Laguna Salinas',
+      'Guía oficial de turismo y transporte para tours',
+      'Expediciones compartidas a Chachani y Misti con guía de montaña',
+      'Traslado en camioneta 4x4 para ascensiones',
+      'Equipo de campamento, bolsa de dormir y colchonetas',
+      'Porteadores para equipo de camping',
+      'Cocinero especializado y alimentación durante ascensiones',
+      'Equipo técnico en época de nieve (Casco, arnés, grampones)'
     ],
     excludes: [
       'Vuelos Lima – Arequipa – Lima',
-      'Comidas en la ciudad de Arequipa',
-      'Ropa técnica de alta montaña (Disponible para renta)',
-      'Tickets de entrada a museos o parques',
-      'Propinas para guías y personal',
-      'Seguro de viaje y accidentes'
+      'Hoteles en Arequipa y Lima',
+      'Alimentación en ciudades y días de tours',
+      'Ropa de abrigo personal',
+      'Tickets de entrada a museos y parques',
+      'Propinas y seguro de viaje personal'
     ],
     equipment: [
-      'Ropa térmica y de montaña (sistema de capas)',
-      'Chaqueta de pluma o térmica pesada',
-      'Botas de montaña con suela rígida',
-      'Mochila de expedición (60-70L)',
-      'Gorro, guantes y lentes UV',
-      'Bolsa de dormir de alta montaña (-15°C)',
-      'Linterna frontal con pilas extra'
+      'Ropa de abrigo extrema (capas térmicas)',
+      'Casaca de pluma e impermeable',
+      'Botas de trekking o media montaña',
+      'Guantes, gorro para frío y gorro para sol',
+      'Bloqueador solar y lentes UV',
+      'Mochila de ataque y artículos personales'
     ],
-    itineraryTitle: "Cronograma",
-    itinerarySubtitle: "Experiencia",
+    itineraryTitle: "Programa",
+    itinerarySubtitle: "10 Días",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
       titleTop: "THE WHITE CITY",
-      titleMain: "AREQUIPA & VOLCANOES 7D",
+      titleMain: "MISTI & CHACHANI 10D",
       backgroundImage: "/slider_2.png",
-      duration: "7 DAYS / 6 NIGHTS",
+      duration: "10 DAYS / 09 NIGHTS",
       price: "USD. 795.00",
       difficulty: "HARD",
       difficultyLevel: "hard"
     },
     intro: {
-      code: "AQP-VOL-07D",
-      titlePrefix: "Land of",
-      titleAccent: "Fire and Sillar",
-      description: "Arequipa, the 'White City', is a colonial gem surrounded by volcanoes and built with sillar. A UNESCO World Heritage site, it offers a unique blend of mystical history, exceptional gastronomy, and wild nature. From the mystical Santa Catalina Monastery to the adrenaline of Rafting on the Chili River and the depth of the Colca Canyon, Arequipa is the perfect starting point for high-level expeditions.",
+      code: "AQP-VOL-10D",
+      titlePrefix: "Arequipa",
+      titleAccent: "Adventure",
+      description: "Explore the White City and conquer its most iconic volcanoes. This 10-day expedition combines culture, unique landscapes like the Colca Canyon, and the adrenaline of reaching the summits of Misti (5822m) and Chachani (6057m).",
       image: "/slider_3.png",
       lat: `16° 23' 55" S`,
       lon: `71° 32' 12" W`,
       specs: [
-        { label: 'MAX SUMMIT', value: '6,075 MASL', icon: 'location' },
-        { label: 'HIGHLIGHTS', value: 'Misti and Chachani', icon: 'zone' },
-        { label: 'TIME', value: '7 Days / 6 Nights', icon: 'season' },
-        { label: 'LOGISTICS', value: '4x4 & UIAGM Guides', icon: 'service' }
+        { label: 'COST', value: 'USD. 795.00', icon: 'location' },
+        { label: 'SUMMITS', value: 'Misti & Chachani', icon: 'zone' },
+        { label: 'DURATION', value: '10 Days', icon: 'season' },
+        { label: 'START', value: 'Arequipa', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DAY 01', title: 'LIMA – AREQUIPA – HOTEL', content: 'Reception at Arequipa airport or bus terminal and transfer to the selected hotel.', stats: { alt: '2335m', dist: 'Transfer', time: '30 min' } },
-      { day: 'DAY 02', title: 'CULEBRILLAS & CERRO COLORADO', content: 'Visit to sillar quarries to observe extraction and carving. Exploration of the Culebrillas canyon and its ancient petroglyphs.', stats: { alt: '2500m', dist: 'Tour', time: '6-7 h' } },
-      { day: 'DAY 03', title: 'COLCA CANYON (CONDOR VIEWPOINT)', content: 'Early departure to the Cruz del Condor Viewpoint to observe the flight of the largest bird in the Andes. Visit traditional villages and return to Arequipa.', stats: { alt: '3600m', dist: 'Tour', time: '14 h' } },
-      { day: 'DAY 04', title: 'SALINAS LAGOON', content: 'Expedition to the salt lagoon surrounded by volcanoes. Observation of flamingos, vicuñas, and giant yaretas at the foot of Pichu Pichu volcano.', stats: { alt: '4300m', dist: 'Tour', time: '9-10 h' } },
-      { day: 'DAY 05', title: 'AREQUIPA – CHACHANI BASE CAMP', content: '4x4 transfer to the base of the volcano. 3-4 hour hike to the Morena base camp. Night in camp.', stats: { alt: '4950m', dist: '4x4 + Trek', time: '4 h' } },
-      { day: 'DAY 06', title: 'CHACHANI VOLCANO SUMMIT (6075M)', content: 'Technical ascent to the summit of Chachani. Spectacular views of the volcanic range. Descent and transfer to Misti base camp.', stats: { alt: '6075m', dist: 'Ascent', time: '5-6 h' } },
-      { day: 'DAY 07', title: 'MISTI VOLCANO SUMMIT (5822M) – AREQUIPA', content: 'Final ascent to the summit of Misti. Panoramic view of the active crater and the city of Arequipa. Descent and return to the hotel.', stats: { alt: '5822m', dist: 'Ascent', time: '5 h' } }
+      { day: 'DAY 01', title: 'LIMA – AREQUIPA', content: 'Flight to Arequipa and hotel transfer. Cultural visits in the historic center.' },
+      { day: 'DAY 02', title: 'CULEBRILLAS & CERRO COLORADO', content: 'Visit to sillar quarries, Culebrillas canyon, and ancient petroglyphs.' },
+      { day: 'DAY 03', title: 'COLCA CANYON', content: 'Cruz del Condor Viewpoint tour, traditional villages, and lunch in Sancayo.' },
+      { day: 'DAY 04', title: 'SALINAS LAGOON', content: 'Salinas lagoon visit, flamingo spotting, and Pichu Pichu volcano views.' },
+      { day: 'DAY 05', title: 'AREQUIPA – CHACHANI HIGH CAMP', content: '4x4 transfer to the start point and ascent to high camp (5250 masl).' },
+      { day: 'DAY 06', title: 'CHACHANI SUMMIT (6057M)', content: 'Summit attack and phenomenal Andean views. Return to Arequipa.' },
+      { day: 'DAY 07', title: 'AREQUIPA – MISTI BASE CAMP', content: 'Transfer to Misti volcano base camp (4250 masl).' },
+      { day: 'DAY 08', title: 'MISTI SUMMIT (5822M)', content: 'Ascent to the most famous volcano summit. Return to Arequipa.' },
+      { day: 'DAY 09', title: 'AREQUIPA - LIMA', content: 'Airport transfer and flight back to Lima.' },
+      { day: 'DAY 10', title: 'RETURN', content: 'Transfer to Lima international airport for your international flight.' }
     ],
     includes: [
-      'Airport - Hotel - Airport transfers (Arequipa)',
-      'Hotel nights in Arequipa',
-      'Private tourist transport for all tours',
-      'Official tour guide for cultural tours',
-      '4x4 transport for Chachani and Misti expeditions',
-      'Certified mountain guide for ascents',
-      'Full board during expeditions',
-      'Camping equipment',
-      'Technical gear (Crampons/Ice axe)',
-      'Final transfer to airport'
+      'Airport - Hotel transfers (Arequipa)',
+      'Tours: Culebrillas, Colca Canyon, and Salinas Lagoon',
+      'Official tour guide and transport for tours',
+      'Shared expeditions to Chachani and Misti with mountain guide',
+      '4x4 truck transfer for ascents',
+      'Camping equipment, sleeping bag, and mats',
+      'Porters for camping gear',
+      'Specialized cook and full board during ascents',
+      'Technical gear for snowy season (Helmet, harness, crampons)'
     ],
     excludes: [
       'Lima – Arequipa – Lima flights',
-      'Meals in Arequipa city',
-      'High-mountain technical clothing (Available for rent)',
-      'Entrance tickets to museums or parks',
-      'Tips for guides and staff',
-      'Travel and accident insurance'
+      'Hotels in Arequipa and Lima',
+      'Meals in cities and during tour days',
+      'Personal warm clothing',
+      'Entrance tickets to museums and parks',
+      'Tips and personal travel insurance'
     ],
     equipment: [
-      'Thermal and mountain clothing (layered system)',
-      'Down jacket or heavy thermal jacket',
-      'Mountain boots with rigid soles',
-      'Expedition backpack (60-70L)',
-      'Hat, gloves, and UV sunglasses',
-      'High-mountain sleeping bag (-15°C)',
-      'Headlamp with extra batteries'
+      'Extreme warm clothing (thermal layers)',
+      'Down and waterproof jacket',
+      'Trekking or mid-mountain boots',
+      'Gloves, cold hat, and sun hat',
+      'Sunscreen and UV sunglasses',
+      'Daypack and personal items'
     ],
     itineraryTitle: "Timeline",
-    itinerarySubtitle: "Experience",
-    includesTitle: "What's Included",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itinerarySubtitle: "10 Days",
+    includesTitle: "Included Services",
+    equipmentTitle: "Recommendations"
   }
 };

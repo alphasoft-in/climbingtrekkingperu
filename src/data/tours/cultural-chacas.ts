@@ -1,129 +1,111 @@
 export const culturalChacasData = {
-  id: 'chacas',
+  id: 'chacas-conchucos',
   category: 'tours',
   subCategory: 'ancash',
   es: {
     hero: {
-      titleTop: "ARTE Y MONTAÑAS",
+      titleTop: "CORDILLERA BLANCA",
       titleMain: "CHACAS & PUNTA OLÍMPICA",
-      backgroundImage: "/slider_4.png",
-      duration: "FULL DAY (12H)",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      duration: "09 HORAS",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
       difficultyLevel: "easy"
     },
     intro: {
-      code: "HZ-CHS-FD",
-      titlePrefix: "El Refugio del",
-      titleAccent: "Tallador",
-      description: "Chacas no es solo un pueblo; es una obra de arte viva. Ubicado al otro lado de la Cordillera Blanca, combina el vértigo de Punta Olímpica con la paz de una comunidad dedicada al arte.",
-      image: "/slider_3.png",
+      code: "HZ-CHAC-FD",
+      titlePrefix: "Tradición y",
+      titleAccent: "Alturas",
+      description: "Un viaje espectacular que cruza la Cordillera Blanca por el túnel vehicular más alto del mundo (Punta Olímpica 4,736 msnm). Visitaremos Chacas, pueblo famoso por su arquitectura colonial y sus talleres de tallado en madera de la Operación Mato Grosso.",
+      image: "/slider_2.png",
       lat: `09° 09' 00" S`,
-      lon: `77° 22' 00" W`,
+      lon: `77° 21' 00" W`,
       specs: [
-        { label: 'LOCALIZACIÓN', value: 'Valle de Conchucos', icon: 'location' },
-        { label: 'ATRACCIÓN', value: 'Artesanía Don Bosco', icon: 'zone' },
-        { label: 'INFRAESTRUCTURA', value: 'Túnel Transandino', icon: 'season' },
-        { label: 'PAISAJE', value: 'Glaciares y Valles', icon: 'service' }
+        { label: 'ELEVACIÓN', value: '4,736 MSNM', icon: 'location' },
+        { label: 'TÚNEL', value: 'Punta Olímpica', icon: 'zone' },
+        { label: 'DESTINO', value: 'Chacas (Conchucos)', icon: 'season' },
+        { label: 'ARTE', value: 'Tallado en madera', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '07:30 AM', title: 'SALIDA DE HUARAZ', content: 'Partida hacia Carhuaz y ascenso por el valle de Ulta. Vistas panorámicas del Huascarán.', stats: { time: 'Inicio' } },
-      { day: '10:00 AM', title: 'PUNTA OLÍMPICA', content: 'Cruce del túnel transandino más alto del mundo (4736m). Parada para ver el glaciar Contrahierbas.', stats: { alt: '4736m' } },
-      { day: '12:00 PM', title: 'LLEGADA A CHACAS', content: 'Visita al pintoresco pueblo de Chacas. Conocido por sus tallados en madera de la escuela Don Bosco.', stats: { alt: '3360m', time: 'Cultura' } },
-      { day: '01:30 PM', title: 'TALLERES DON BOSCO', content: 'Visita a los talleres de carpintería y la iglesia matriz con su retablo restaurado en pan de oro.', stats: { time: 'Arte' } },
-      { day: '03:30 PM', title: 'RETORNO POR ULTA', content: 'Viaje de regreso a Huaraz disfrutando nuevamente de los paisajes de alta montaña.', stats: { time: 'Descenso' } },
-      { day: '07:30 PM', title: 'LLEGADA A HUARAZ', content: 'Arribo al centro de la ciudad. Fin de servicios.', stats: { time: 'Fin' } }
+      { day: '07:30 AM', title: 'SALIDA DE HUARAZ', content: 'Viaje hacia Carhuaz. Ascenso por la quebrada Ulta con vistas de los nevados Huascarán y Contrahierbas. Pago de entradas (S/. 30.00 EX / S/. 12.00 N).' },
+      { day: '11:00 AM', title: 'PUNTA OLÍMPICA Y CHACAS', content: 'Parada en el mirador y cruce del túnel más alto del mundo. Visita a la laguna Cancaraga. Arribo a Chacas, visita a la iglesia, plaza y talleres artesanales.' },
+      { day: '03:00 PM', title: 'ALMUERZO Y RETORNO', content: 'Almuerzo en Chacas y retorno por la misma vía hacia Huaraz, disfrutando nuevamente los paisajes de alta montaña.' }
     ],
     includes: [
       'Recojo de su hotel en Huaraz',
-      'Transporte turístico privado/compartido',
-      'Guía Oficial de Turismo (Bilingüe)',
-      'Botiquín de primeros auxilios',
-      'Asistencia personalizada'
+      'Transporte turístico especializado',
+      'Guía oficial de turismo bilingüe'
     ],
     excludes: [
       'Alimentación (Almuerzo regional)',
-      'Propinas',
-      'Seguro de viaje',
-      'Gastos personales'
+      'Ticket de entrada PNH (S/. 30.00 EX / S/. 12.00 N)',
+      'Gastos personales',
+      'Propinas'
     ],
     equipment: [
-      'Calzado cómodo',
-      'Ropa de abrigo y cortavientos',
-      'Protección solar (gorro, bloqueador)',
+      'Ropa térmica para la altura',
+      'Protector solar y lentes de sol',
       'Cámara fotográfica',
-      'Agua y snacks',
-      'Efectivo para almuerzo y compras'
+      'Calzado cómodo',
+      'Agua embotellada'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
-    includesTitle: "Qué Incluye",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_4.png', '/slider_3.png', '/slider_2.png', '/slider_1.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Cronograma",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Servicios Incluidos",
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
-      titleTop: "ART AND MOUNTAINS",
-      titleMain: "CHACAS & PUNTA OLÍMPICA",
-      backgroundImage: "/slider_4.png",
-      duration: "FULL DAY (12H)",
+      titleTop: "CORDILLERA BLANCA",
+      titleMain: "CHACAS & OLYMPIC POINT",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      duration: "09 HOURS",
       price: "UPON REQUEST",
       difficulty: "EASY",
       difficultyLevel: "easy"
     },
     intro: {
-      code: "HZ-CHS-FD",
-      titlePrefix: "The Carver's",
-      titleAccent: "Refuge",
-      description: "Chacas is not just a village; it is a living work of art. Located on the other side of the Cordillera Blanca, it combines the vertigo of Punta Olimpica with the peace of a community dedicated to art.",
-      image: "/slider_3.png",
+      code: "HZ-CHAC-FD",
+      titlePrefix: "Tradition and",
+      titleAccent: "Heights",
+      description: "A spectacular journey crossing the Cordillera Blanca through the world's highest vehicular tunnel (Punta Olímpica 4,736 masl). We will visit Chacas, a town famous for its colonial architecture and its wood carving workshops of the Operation Mato Grosso.",
+      image: "/slider_2.png",
       lat: `09° 09' 00" S`,
-      lon: `77° 22' 00" W`,
+      lon: `77° 21' 00" W`,
       specs: [
-        { label: 'LOCATION', value: 'Conchucos Valley', icon: 'location' },
-        { label: 'ATTRACTION', value: 'Don Bosco Craftsmanship', icon: 'zone' },
-        { label: 'INFRASTRUCTURE', value: 'Transandean Tunnel', icon: 'season' },
-        { label: 'LANDSCAPE', value: 'Glaciers and Valleys', icon: 'service' }
+        { label: 'ELEVATION', value: '4,736 MASL', icon: 'location' },
+        { label: 'TUNNEL', value: 'Olympic Point', icon: 'zone' },
+        { label: 'DESTINATION', value: 'Chacas (Conchucos)', icon: 'season' },
+        { label: 'ART', value: 'Wood carving', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '07:30 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Departure towards Carhuaz and ascent through the Ulta valley. Panoramic views of Huascaran.', stats: { time: 'Start' } },
-      { day: '10:00 AM', title: 'PUNTA OLÍMPICA', content: 'Crossing the highest trans-Andean tunnel in the world (4736m). Stop to see the Contrahierbas glacier.', stats: { alt: '4736m' } },
-      { day: '12:00 PM', title: 'ARRIVAL IN CHACAS', content: 'Visit to the picturesque village of Chacas. Known for its wood carvings from the Don Bosco school.', stats: { alt: '3360m', time: 'Culture' } },
-      { day: '01:30 PM', title: 'DON BOSCO WORKSHOPS', content: 'Visit to the carpentry workshops and the main church with its restored gold leaf altarpiece.', stats: { time: 'Art' } },
-      { day: '03:30 PM', title: 'RETURN VIA ULTA', content: 'Return trip to Huaraz enjoying the high mountain landscapes again.', stats: { time: 'Descent' } },
-      { day: '07:30 PM', title: 'ARRIVAL IN HUARAZ', content: 'Arrival at the city center. End of services.', stats: { time: 'End' } }
+      { day: '07:30 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Travel to Carhuaz. Ascent through the Ulta gorge with views of Huascarán and Contrahierbas. Payment of entrance fees (S/. 30.00 EX / S/. 12.00 N).' },
+      { day: '11:00 AM', title: 'OLYMPIC POINT & CHACAS', content: 'Stop at the viewpoint and cross the world\'s highest tunnel. Visit to Cancaraga lagoon. Arrival in Chacas, visit to the church, square, and artisan workshops.' },
+      { day: '03:00 PM', title: 'LUNCH & RETURN', content: 'Lunch in Chacas and return by the same route to Huaraz, enjoying the high mountain landscapes again.' }
     ],
     includes: [
       'Pickup from your hotel in Huaraz',
-      'Private/shared tourist transport',
-      'Official Tour Guide (Bilingual)',
-      'First aid kit',
-      'Personalized assistance'
+      'Specialized tourist transport',
+      'Bilingual official tour guide'
     ],
     excludes: [
       'Meals (Regional lunch)',
-      'Tips',
-      'Travel insurance',
-      'Personal expenses'
+      'Entrance ticket (S/. 30.00 EX / S/. 12.00 N)',
+      'Personal expenses',
+      'Tips'
     ],
     equipment: [
-      'Comfortable shoes',
-      'Warm clothing and windbreaker',
-      'Sun protection (hat, sunblock)',
+      'Thermal clothing for high altitude',
+      'Sunscreen and sunglasses',
       'Camera',
-      'Water and snacks',
-      'Extra cash for lunch and shopping'
+      'Comfortable shoes',
+      'Bottled water'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
-    includesTitle: "What's Included",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_4.png', '/slider_3.png', '/slider_2.png', '/slider_1.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Included Services",
+    equipmentTitle: "Recommendations"
   }
 };

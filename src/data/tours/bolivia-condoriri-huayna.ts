@@ -1,137 +1,145 @@
 export const boliviaCondoririHuaynaData = {
-  id: 'condoriri-huayna',
-  category: 'trekking',
+  id: 'condoriri-huayna-expedition',
+  category: 'climbing',
   subCategory: 'bolivia',
   es: {
     hero: {
-      titleTop: "EL DESAFÍO DEFINITIVO",
-      titleMain: "CONDORIRI & HUAYNA POTOSÍ",
+      titleTop: "CORDILLERA REAL",
+      titleMain: "CONDORIRI & HUAYNAPOTOSÍ 11D",
       backgroundImage: "/slider_5.png",
-      duration: "6 DÍAS",
-      price: "USD 895.00",
-      difficulty: "TÉCNICA / ALTA",
+      duration: "11 DÍAS / 10 NOCHES",
+      price: "USD. 995.00",
+      difficulty: "NO TÉCNICO / ALTA MONTAÑA",
       difficultyLevel: "hard"
     },
     intro: {
-      code: "BOL-CH-06",
-      titlePrefix: "La Arista",
-      titleAccent: "Perfecta",
-      description: "Esta expedición concentra la esencia del montañismo en Bolivia. El **Pequeño Alpamayo**, famoso por su arista estética y técnica, sirve como la preparación perfecta para enfrentar al gigante de la región: el **Huayna Potosí**.",
+      code: "BOL-CH-11",
+      titlePrefix: "Expedición",
+      titleAccent: "Bolivia",
+      description: "Bolivia es el corazón de los Andes. Esta expedición de 11 días combina la aclimatación en el Lago Titicaca con la ascensión a picos emblemáticos como el Pico Austria, Tarija, Pequeño Alpamayo y el gigante Huayna Potosí (6088m).",
       image: "/slider_5.png",
       lat: `16° 10' 11" S`,
       lon: `68° 14' 00" W`,
       specs: [
-        { label: 'MACIZOS', value: 'Condoriri & Zongo', icon: 'location' },
-        { label: 'ACTIVIDAD', value: 'Alpinismo Técnico', icon: 'zone' },
-        { label: 'DURACIÓN', value: '6 Días', icon: 'season' },
-        { label: 'CUMBRE MÁX', value: '6088 MSNM', icon: 'service' }
+        { label: 'COSTO', value: 'USD. 995.00', icon: 'location' },
+        { label: 'CUMBRE MÁX', value: '6,088 MSNM', icon: 'zone' },
+        { label: 'DURACIÓN', value: '11 Días', icon: 'season' },
+        { label: 'PARTIDA', value: 'La Paz', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DÍA 01', title: 'LA PAZ – LAGUNA CHIAR KHOTA (4650 M)', content: 'Traslado al pie del macizo Condoriri. Caminata suave hasta el campo base a orillas de la laguna.', stats: { alt: '4650m' } },
-      { day: 'DÍA 02', title: 'PRÁCTICA EN GLACIAR TARIJA', content: 'Aclimatación y revisión de técnicas de progresión en hielo en el glaciar Tarija.', stats: { estado: 'Entrenamiento', alt: '5000m' } },
-      { day: 'DÍA 03', title: 'CUMBRE PEQUEÑO ALPAMAYO (5410 M)', content: 'Ascenso técnico por una de las aristas más estéticas de los Andes. Retorno al campo base.', stats: { time: '8h Día', alt: '5410m' } },
-      { day: 'DÍA 04', title: 'CONDORIRI – REFUGIO HUAYNA POTOSÍ (4680 M)', content: 'Traslado logístico al Valle de Zongo. Tarde de descanso y preparación.', stats: { estado: 'Traslado', alt: '4680m' } },
-      { day: 'DÍA 05', title: 'REFUGIO – CAMPO ALTO (5280 M)', content: 'Ascenso al Campo Alto (Refugio Roca). Hidratación y preparación para el empuje a la cumbre.', stats: { time: '3h Ascenso', alt: '5280m' } },
-      { day: 'DÍA 06', title: 'CUMBRE HUAYNA POTOSÍ (6088 M) – LA PAZ', content: 'Empuje a la cumbre a medianoche. Descenso completo a Zongo y retorno a La Paz.', stats: { time: '10h Día', alt: '6088m' } }
+      { day: 'DÍA 01', title: 'LLEGADA A LA PAZ', content: 'Recepción en el aeropuerto y traslado al hotel (3640 msnm). Revisión de equipo personal.' },
+      { day: 'DÍA 02', title: 'LAGO TITICACA - ISLA DEL SOL', content: 'Viaje a Copacabana y navegación hacia la Isla del Sol. Aclimatación a 3850 msnm.' },
+      { day: 'DÍA 03', title: 'COPACABANA - LA PAZ', content: 'Retorno a La Paz. Tarde libre para pasear en teleférico y visitar El Alto.' },
+      { day: 'DÍA 04', title: 'LA PAZ - LAGUNA CHIARKHOTA', content: 'Traslado a la Rinconada y caminata suave de 3h hasta el campo base (4680 msnm).' },
+      { day: 'DÍA 05', title: 'PICO AUSTRIA (5350M)', content: 'Ascensión de aclimatación con vistas increíbles de la Cordillera Real y Occidental.' },
+      { day: 'DÍA 06', title: 'TARIJA & PEQUEÑO ALPAMAYO', content: 'Ascensión a la montaña Tarija (5370m) y luego al Pequeño Alpamayo (5410m).' },
+      { day: 'DÍA 07', title: 'CHIAR KHOTA - MARIA LLOCO', content: 'Trekking de 7-8h hacia el campamento Maria Lloco (4720 msnm).' },
+      { day: 'DÍA 08', title: 'MARIA LLOCO - REFUGIO HUAYNAPOTOSÍ', content: 'Caminata de 5-6h hacia el campo base del Huayna Potosí.' },
+      { day: 'DÍA 09', title: 'REFUGIO - CAMPO ALTO', content: 'Ascenso de 2-3h hasta el refugio de guías en Campo Alto (5280 msnm).' },
+      { day: 'DÍA 10', title: 'CUMBRE HUAYNA POTOSÍ (6088M)', content: 'Ataque a la cumbre y vistas espectaculares. Retorno a La Paz.' },
+      { day: 'DÍA 11', title: 'RETORNO', content: 'Traslado al aeropuerto internacional El Alto. Fin de servicios.' }
     ],
     includes: [
-      'Transporte privado para toda la logística',
-      'Guía de Montaña Certificado UIAGM (Ratio 1:2)',
-      'Cocinero y alimentación completa de montaña',
-      'Mulas de carga para equipo en Condoriri',
-      'Pernocte en refugios y carpas de alta montaña',
-      'Equipo de camping grupal',
-      'Tickets de ingreso (Condoriri y Zongo)',
-      'Botiquín de primeros auxilios y Oxígeno de Emergencia'
+      'Traslados Aeropuerto - Hotel (Ida y vuelta)',
+      '01 noche de hotel en Copacabana',
+      'Transporte privado para toda la logística de expedición',
+      'Guía de montaña especializado',
+      'Cocinero y porteadores de equipo grupal',
+      'Alimentación completa durante las expediciones',
+      'Equipo de campamento y cocina completo',
+      'Tickets de entrada a Isla del Sol, Condoriri y Huayna Potosí',
+      'Cuerdas y estacas de nieve'
     ],
     excludes: [
-      'Vuelos y Hotel en La Paz',
+      'Vuelos internacionales',
+      '06 noches de hotel en La Paz',
+      'Alimentación en ciudades',
       'Equipo técnico personal',
-      'Bolsa de dormir y aislante',
-      'Seguro de accidentes',
-      'Propinas'
+      'Bolsa de dormir y colchoneta',
+      'Seguro de montaña y propinas'
     ],
     equipment: [
-      'Botas de montaña dobles',
-      'Grampones y Piolet técnico',
-      'Arnés, casco y mosquetones',
-      'Ropa para frío extremo (Capa 3)',
-      'Gafas de sol Cat. 4',
-      'Linterna frontal'
+      'Bolsa de dormir y colchoneta',
+      'Botas de nieve y grampones',
+      'Arnés, piolet de travesía y casco',
+      'Ropa impermeable y de pluma',
+      'Lentes de nieve y bloqueador solar',
+      'Mochila de ataque (40L)'
     ],
-    itineraryTitle: "Misión",
-    itinerarySubtitle: "Cronograma",
+    itineraryTitle: "Cronograma",
+    itinerarySubtitle: "11 Días",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Técnico",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Necesario"
   },
   en: {
     hero: {
-      titleTop: "THE ULTIMATE CLIMB",
-      titleMain: "CONDORIRI & HUAYNA POTOSI",
+      titleTop: "CORDILLERA REAL",
+      titleMain: "CONDORIRI & HUAYNAPOTOSI 11D",
       backgroundImage: "/slider_5.png",
-      duration: "6 DAYS",
-      price: "USD 895.00",
-      difficulty: "TECHNICAL / HIGH",
+      duration: "11 DAYS / 10 NIGHTS",
+      price: "USD. 995.00",
+      difficulty: "NON-TECHNICAL / HIGH MOUNTAIN",
       difficultyLevel: "hard"
     },
     intro: {
-      code: "BOL-CH-06",
-      titlePrefix: "The Perfect",
-      titleAccent: "Ridge",
-      description: "This expedition concentrates the essence of mountaineering in Bolivia. **Pequeno Alpamayo**, famous for its aesthetic and technical ridge, serves as the perfect preparation to face the region's giant: **Huayna Potosi**.",
+      code: "BOL-CH-11",
+      titlePrefix: "Bolivia",
+      titleAccent: "Expedition",
+      description: "Bolivia is the heart of the Andes. This 11-day expedition combines acclimatization at Lake Titicaca with the ascent of iconic peaks such as Pico Austria, Tarija, Pequeno Alpamayo, and the giant Huayna Potosi (6088m).",
       image: "/slider_5.png",
       lat: `16° 10' 11" S`,
       lon: `68° 14' 00" W`,
       specs: [
-        { label: 'MASSIFS', value: 'Condoriri & Zongo', icon: 'location' },
-        { label: 'ACTIVITY', value: 'Technical Alpinism', icon: 'zone' },
-        { label: 'DURATION', value: '6 Days', icon: 'season' },
-        { label: 'MAX SUMMIT', value: '6088 MASL', icon: 'service' }
+        { label: 'COST', value: 'USD. 995.00', icon: 'location' },
+        { label: 'MAX SUMMIT', value: '6,088 MASL', icon: 'zone' },
+        { label: 'DURATION', value: '11 Days', icon: 'season' },
+        { label: 'START', value: 'La Paz', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DAY 01', title: 'LA PAZ – CHIAR KHOTA LAGOON (4650 M)', content: 'Transfer to the foot of the Condoriri massif. Smooth hike to the base camp on the shores of the lagoon.', stats: { alt: '4650m' } },
-      { day: 'DAY 02', title: 'TARIJA GLACIER PRACTICE', content: 'Acclimatization and review of ice progression techniques on the Tarija glacier.', stats: { status: 'Training', alt: '5000m' } },
-      { day: 'DAY 03', title: 'PEQUENO ALPAMAYO SUMMIT (5410 M)', content: 'Technical ascent via one of the most aesthetic ridges in the Andes. Return to base camp.', stats: { time: '8h Day', alt: '5410m' } },
-      { day: 'DAY 04', title: 'CONDORIRI – HUAYNA POTOSI REFUGE (4680 M)', content: 'Logistical transfer to the Zongo Valley. Afternoon of rest and preparation.', stats: { status: 'Transfer', alt: '4680m' } },
-      { day: 'DAY 05', title: 'REFUGE – HIGH CAMP (5280 M)', content: 'Ascent to High Camp (Roca Refuge). Hydration and preparation for the summit push.', stats: { time: '3h Ascent', alt: '5280m' } },
-      { day: 'DAY 06', title: 'HUAYNA POTOSI SUMMIT (6088 M) – LA PAZ', content: 'Summit push at midnight. Full descent to Zongo and return to La Paz.', stats: { time: '10h Day', alt: '6088m' } }
+      { day: 'DAY 01', title: 'ARRIVAL IN LA PAZ', content: 'Airport pickup and transfer to hotel (3640 masl). Personal equipment check.' },
+      { day: 'DAY 02', title: 'LAKE TITICACA - SUN ISLAND', content: 'Travel to Copacabana and navigation to Sun Island. Acclimatization at 3850 masl.' },
+      { day: 'DAY 03', title: 'COPACABANA - LA PAZ', content: 'Return to La Paz. Free afternoon for cable car ride and visiting El Alto.' },
+      { day: 'DAY 04', title: 'LA PAZ - CHIARKHOTA LAGOON', content: 'Transfer to Rinconada and 3h smooth hike to base camp (4680 masl).' },
+      { day: 'DAY 05', title: 'AUSTRIA PEAK (5350M)', content: 'Acclimatization ascent with incredible views of Cordillera Real and Occidental.' },
+      { day: 'DAY 06', title: 'TARIJA & PEQUENO ALPAMAYO', content: 'Ascent to Tarija mountain (5370m) and then Pequeno Alpamayo (5410m).' },
+      { day: 'DAY 07', title: 'CHIAR KHOTA - MARIA LLOCO', content: '7-8h trek to Maria Lloco camp (4720 masl).' },
+      { day: 'DAY 08', title: 'MARIA LLOCO - HUAYNAPOTOSI REFUGE', content: '5-6h hike to Huayna Potosi base camp.' },
+      { day: 'DAY 09', title: 'REFUGE - HIGH CAMP', content: '2-3h ascent to the guides refuge at High Camp (5280 masl).' },
+      { day: 'DAY 10', title: 'HUAYNA POTOSI SUMMIT (6088M)', content: 'Summit attack and spectacular views. Return to La Paz.' },
+      { day: 'DAY 11', title: 'RETURN', content: 'Transfer to El Alto international airport. End of services.' }
     ],
     includes: [
-      'Private transport for all logistics',
-      'Certified UIAGM Mountain Guide (Ratio 1:2)',
-      'Cook and full mountain meals',
-      'Pack mules for equipment in Condoriri',
-      'Overnight in refuges and high altitude tents',
-      'Group camping equipment',
-      'Entrance tickets (Condoriri and Zongo)',
-      'First aid kit and Emergency Oxygen'
+      'Airport - Hotel transfers (Round trip)',
+      '01 night hotel in Copacabana',
+      'Private transport for all expedition logistics',
+      'Specialized mountain guide',
+      'Cook and group equipment porters',
+      'Full meals during expeditions',
+      'Complete camping and kitchen equipment',
+      'Entrance tickets to Sun Island, Condoriri, and Huayna Potosi',
+      'Ropes and snow stakes'
     ],
     excludes: [
-      'Flights and Hotel in La Paz',
+      'International flights',
+      '06 nights hotel in La Paz',
+      'Meals in cities',
       'Personal technical equipment',
       'Sleeping bag and mat',
-      'Accident insurance',
-      'Tips'
+      'Mountain insurance and tips'
     ],
     equipment: [
-      'Double mountain boots',
-      'Crampons and technical Ice Axe',
-      'Harness, helmet and carabiners',
-      'Extreme cold clothing (Layer 3)',
-      'Sunglasses Cat. 4',
-      'Headlamp'
+      'Sleeping bag and mat',
+      'Snow boots and crampons',
+      'Harness, trekking ice axe, and helmet',
+      'Waterproof and down clothing',
+      'Snow goggles and sunscreen',
+      'Daypack (40L)'
     ],
-    itineraryTitle: "Mission",
-    itinerarySubtitle: "Timeline",
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "11 Days",
     includesTitle: "Included Services",
-    equipmentTitle: "Technical Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Required Gear"
   }
 };

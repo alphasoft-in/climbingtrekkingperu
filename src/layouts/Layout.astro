@@ -39,16 +39,48 @@ if (mappings[routeName]) {
 
 const isToursRoute = routeName === "tours" || routeName.startsWith("tours/");
 
-const isDestinationsActive = !isToursRoute && [
+// List of routes that should highlight the "Destinations" menu (specifically Peru)
+const peruSpecificRoutes = [
+  "trekking/arequipa",
+  "tours/ica-paracas",
+  "tours/iquitos-amazonas",
+  "tours/selva-tambopata",
+  "tours/lima-city",
+  "tours/lima-pachacamac",
+  "tours/maravillas-peru-17d",
+  "tours/laguna-paron",
+  "tours/laguna-llanganuco",
+  "tours/trekking-69",
+  "tours/laguna-rocotuyoc",
+  "tours/pastoruri",
+  "tours/chavin-huantar",
+  "tours/chacas-conchucos",
+  "tours/trekking-churup",
+  "tours/peru-bolivia-confort",
+  "trekking/cusco/choquequirao",
+  "trekking/cusco/camino-inca",
+  "trekking/cusco/ausangate",
+  "trekking/cusco/lares"
+];
+
+const isDestinationsActive = [
 	"peru",
 	"bolivia",
 	"ecuador",
 	"chile",
 	"argentina",
-].some((c) => routeName === c || routeName.startsWith(c + "/"));
+].some((c) => routeName === c || routeName.startsWith(c + "/")) || 
+peruSpecificRoutes.some(r => routeName === r || routeName.startsWith(r + "/"));
 
 const isTrekkingActive = !isToursRoute && (
-	routeName.startsWith("trekking") || routeName.includes("huayhuash") || routeName.includes("blanca")
+	(routeName.startsWith("trekking") && 
+   !routeName.startsWith("trekking/arequipa") && 
+   !routeName.startsWith("trekking/cusco/choquequirao") && 
+   !routeName.startsWith("trekking/cusco/camino-inca") && 
+   !routeName.startsWith("trekking/cusco/ausangate") && 
+   !routeName.startsWith("trekking/cusco/lares")) || 
+  routeName.includes("huayhuash") || 
+  routeName.includes("blanca")
 );
 
 const navLabels = {

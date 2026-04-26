@@ -1,4 +1,5 @@
 import { alpamayoData } from './alpamayo';
+import { huarazFullExperienceData } from './huaraz-full-8d';
 import { huayhuash360Data } from './huayhuash-360';
 import { huayhuashClassicData } from './huayhuash-classic';
 import { huayhuashMiniData } from './huayhuash-mini';
@@ -25,6 +26,9 @@ import { boliviaCotiaHuaynaData } from './bolivia-cotia-huayna';
 import { boliviaIllampuData } from './bolivia-illampu';
 import { boliviaIllimaniSajamaData } from './bolivia-illimani-sajama';
 import { boliviaUyuniHuaynaData } from './bolivia-uyuni-huayna';
+import { boliviaIllampuClimbingData } from './bolivia-illampu-climbing';
+import { boliviaVolcanesData } from './bolivia-volcanes-occidental';
+import { boliviaUyuniTiticacaData } from './bolivia-uyuni-titicaca-cultural';
 import { climbingArtesonrajuData } from './climbing-artesonraju';
 import { climbingChopicalquiData } from './climbing-chopicalqui';
 import { climbingHuascaranData } from './climbing-huascaran';
@@ -42,12 +46,15 @@ import { culturalLimaCityData } from './cultural-lima-city';
 import { culturalLimaPachacamacData } from './cultural-lima-pachacamac';
 import { culturalIcaParacasData } from './cultural-ica-paracas';
 import { culturalIquitosData } from './cultural-iquitos';
+import { culturalNortePeru15dData } from './cultural-norte-peru-15d';
 import { culturalTambopataData } from './cultural-tambopata';
 import { culturalChacasData } from './cultural-chacas';
 import { culturalMaravillasData } from './cultural-maravillas';
+import { culturalPeruBolivia19dData } from './cultural-peru-bolivia-19d';
 
 export const allToursData: Record<string, any> = {
   // Huayhuash
+  'huaraz-full-experience': huarazFullExperienceData,
   '360': huayhuash360Data,
   'classic': huayhuashClassicData,
   'mini': huayhuashMiniData,
@@ -81,6 +88,9 @@ export const allToursData: Record<string, any> = {
   'illampu-circuit': boliviaIllampuData,
   'illimani-sajama': boliviaIllimaniSajamaData,
   'uyuni-huayna-potosi': boliviaUyuniHuaynaData,
+  'illampu-peak': boliviaIllampuClimbingData,
+  'bolivia-volcanes': boliviaVolcanesData,
+  'uyuni-titicaca-cultural': boliviaUyuniTiticacaData,
   // Climbing Blanca
   'alpamayo': alpamayoData,
   'artesonraju': climbingArtesonrajuData,
@@ -101,9 +111,11 @@ export const allToursData: Record<string, any> = {
   'lima-pachacamac': culturalLimaPachacamacData,
   'ica-paracas': culturalIcaParacasData,
   'iquitos-amazonas': culturalIquitosData,
+  'norte-peru-15d': culturalNortePeru15dData,
   'selva-tambopata': culturalTambopataData,
   'chacas': culturalChacasData,
   'maravillas-peru-17d': culturalMaravillasData,
+  'peru-bolivia-confort': culturalPeruBolivia19dData,
 };
 
 export const toursData = Object.entries(allToursData).map(([slug, data]) => {
@@ -133,6 +145,16 @@ export const toursData = Object.entries(allToursData).map(([slug, data]) => {
     },
     difficultyLevel: data.es.hero?.difficultyLevel || 'mod',
     image: data.es.hero?.backgroundImage || '',
-    path: `${data.category === 'climbing' ? 'climbing' : `trekking/${data.subCategory}`}/${slug}`
+    path: (() => {
+      if (data.category === 'climbing') return `climbing/${slug}`;
+      if (data.category === 'tours') return `tours/${slug}`;
+      
+      const rootRegions = ['argentina', 'bolivia', 'chile', 'ecuador'];
+      if (rootRegions.includes(data.subCategory)) {
+        return `${data.subCategory}/${slug}`;
+      }
+      
+      return `trekking/${data.subCategory}/${slug}`;
+    })()
   };
 });

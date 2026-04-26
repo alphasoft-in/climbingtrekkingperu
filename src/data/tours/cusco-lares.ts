@@ -5,157 +5,153 @@ export const cuscoLaresData = {
   es: {
     hero: {
       titleTop: "EL VALLE DE LOS TEJEDORES",
-      titleMain: "LARES TREK 4D / 3N",
+      titleMain: "TREKKING LARES - MACHU PICCHU",
       backgroundImage: "/trekking/cusco/lares/bg-lares.png",
       duration: "4 DÍAS / 3 NOCHES",
       price: "USD. 795.00",
-      difficulty: "MODERADO +",
-      difficultyLevel: "modplus"
+      difficulty: "MODERADA",
+      difficultyLevel: "mod"
     },
     intro: {
       code: "CSQ-LAR-04D",
-      titlePrefix: "La Ruta de la",
-      titleAccent: "Tradición",
-      description: "El trek de Lares es la alternativa perfecta al Camino Inca para quienes buscan contacto real con las comunidades quechuas. Durante el trayecto, verás a los locales vistiendo sus trajes rojos tradicionales.",
+      titlePrefix: "Cultura",
+      titleAccent: "Cusco",
+      description: "El trekking de Lares es la alternativa cultural por excelencia. Atraviesa comunidades quechuas que aún conservan sus tradiciones milenarias, disfruta de aguas termales medicinales y culmina en la ciudadela de Machu Picchu.",
       image: "/trekking/cusco/lares-trek.png",
       lat: `13° 07' 42" S`,
       lon: `72° 02' 14" W`,
       specs: [
-        { label: "DESTACADO", value: "Aguas Termales Medicinales", icon: "location" },
-        { label: "ALTITUD MÁX.", value: "Paso Huacawasi (4,600m)", icon: "zone" },
-        { label: "CONEXIÓN", value: "Tren Ollantaytambo", icon: "season" },
-        { label: "EXPERIENCIA", value: "Comunidades de Tejedores", icon: "service" }
+        { label: 'COSTO', value: 'USD. 795.00', icon: 'location' },
+        { label: 'ALTURA MÁX', value: '4,600 MSNM', icon: 'zone' },
+        { label: 'DURACIÓN', value: '4 Días', icon: 'season' },
+        { label: 'DESTINO', value: 'Machu Picchu', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DÍA 01', title: 'CUSCO – AGUAS TERMALES DE LARES – HUACAWASI', content: 'Viaje panorámico hacia el valle de Lares. Tiempo de relajación en las aguas termales medicinales. Caminata de ascenso hacia la comunidad quechua de Huacawasi.', stats: { alt: '3800m', dist: '8 km', time: '4 h' } },
-      { day: 'DÍA 02', title: 'HUACAWASI – PASO LARES (4600M) – MISKI UNUYOC', content: 'Día más exigente. Cruce del Paso Huacawasi rodeado de alpacas y llamas. Vistas espectaculares de la laguna Auroray y descenso al campamento.', stats: { alt: '4600m', dist: '14 km', time: '6-7 h' } },
-      { day: 'DÍA 03', title: 'MISKI UNUYOC – YANAHUARA – AGUAS CALIENTES', content: 'Descenso al Valle Sagrado a través del pintoresco pueblo de Yanahuara. Viaje en tren desde Ollantaytambo hacia el pueblo de Machu Picchu.', stats: { alt: '2950m', dist: '10 km', time: '3-4 h' } },
-      { day: 'DÍA 04', title: 'MACHU PICCHU – RETORNO A CUSCO', content: 'Tour guiado en la ciudadela de Machu Picchu. Exploración libre y retorno en tren y bus a la ciudad del Cusco.', stats: { alt: '2430m', dist: 'Bus', time: '2 h (Tour)' } }
+      { 
+        day: 'DÍA 01', 
+        title: 'CUSCO - LARES - HUACAWASI', 
+        content: 'Recojo 5:00 am. Viaje a Lares cruzando el punto más alto a 4265 msnm con vistas de los glaciares Sawasiray y Pitusiray. Disfrute de las aguas termales de Lares y caminata de 4 horas hasta la comunidad de Huacawasi.' 
+      },
+      { 
+        day: 'DÍA 02', 
+        title: 'HUACAWASI - MISKI UNUYOC', 
+        content: 'Día más difícil. Ascenso al Paso Huacawasi (4600 msnm) rodeado de llamas y alpacas. Vista increíble del Lago Auroray (Blue Lagoon). Campamento en Miski Unuyoc (3800m).' 
+      },
+      { 
+        day: 'DÍA 03', 
+        title: 'MISKYUNUYOC - AGUAS CALIENTES', 
+        content: 'Descenso de 3-4 horas hacia Yanahuara (2950 msnm) en el Valle de Urubamba. Viaje en tren desde Ollantaytambo hacia Aguas Calientes. Pernocte en hostal.' 
+      },
+      { 
+        day: 'DÍA 04', 
+        title: 'CIUDADELA DE MACHU PICCHU', 
+        content: 'Visita guiada de 2 horas en la misteriosa ciudadela de Machu Picchu (2360 msnm). Tiempo libre para explorar y retorno en tren hacia Ollantaytambo y bus a Cusco.' 
+      }
     ],
     includes: [
-      'Traslados Aeropuerto - Hotel - Aeropuerto (Cusco)',
-      '2 Noches de hotel 3* en Cusco',
-      'Transporte privado Cusco – Lares / Ollantaytambo',
-      'Guía profesional bilingüe especializado',
-      'Ticket de entrada a Machu Picchu',
-      'Tickets de tren Ollantaytambo – Aguas Calientes – Ollantaytambo',
-      'Bus de subida/bajada a la ciudadela de Machu Picchu',
-      'Equipo de camping completo (Carpas, comedor, cocina)',
-      'Cocinero y asistentes de cocina',
-      'Caballos para equipo y 6kg de equipaje personal',
-      'Alimentación completa (3D, 3A, 3C)',
-      'Hostal en Aguas Calientes (Habitación privada)'
+      'Traslado Aeropuerto Cusco - Hotel (Ida y vuelta)',
+      '2 noches de hotel en Cusco y 1 noche en Aguas Calientes',
+      'Transporte Cusco – Lares / Ollantaytambo – Cusco',
+      'Guía oficial de turismo bilingüe',
+      'Tickets de tren y bus de subida/bajada a Machu Picchu',
+      'Entrada a Machu Picchu',
+      'Equipo de campamento, cocinero y alimentación completa (3D, 3A, 3C)',
+      'Caballos para carga (incluye 6kg equipo personal)'
     ],
     excludes: [
-      'Vuelos nacionales e internacionales',
-      'Entrada aguas termales Lares (S/. 10)',
-      'Entrada Huayna Picchu (S/. 60)',
-      'Bolsa de dormir y colchonetas inflables',
-      'Bastones de trekking',
-      'Seguro de viaje personal'
+      'Entrada a aguas termales (S/. 10.00)',
+      'Ticket Huayna Picchu y seguros personales',
+      'Bolsa de dormir y bastones (Alquiler disponible)',
+      'Propinas y bebidas'
     ],
     equipment: [
-      'Mochila de trekking (30-40L)',
-      'Bolsa de dormir (-10°C recomendado)',
-      'Botas de trekking impermeables',
-      'Ropa técnica: capas térmicas, polar, impermeable',
-      'Protección solar (gorro, bloqueador, lentes)',
-      'Linterna frontal con pilas extra',
-      'Botella de agua',
-      'Artículos de higiene personal'
+      'Pasaporte original (7 meses vigencia)',
+      'Botas de trekking y ropa de lluvia',
+      'Protector solar, sombrero y lentes de sol',
+      'Kit médico personal y repelente',
+      'Ropa de baño para las aguas termales',
+      'Botella de agua (1 litro)'
     ],
-    itineraryTitle: "Cronograma",
-    itinerarySubtitle: "Travesía",
+    itineraryTitle: "Programa",
+    itinerarySubtitle: "Cultural",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Técnico",
-    gallery: [
-      '/trekking/cusco/lares/1.png',
-      '/trekking/cusco/lares/2.png',
-      '/trekking/cusco/lares/3.png',
-      '/trekking/cusco/lares/4.png',
-      '/trekking/cusco/lares/5.png',
-      '/trekking/cusco/lares/6.png',
-      '/trekking/cusco/lares/7.png',
-      '/trekking/cusco/lares/8.png'
-    ]
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
       titleTop: "THE WEAVERS' VALLEY",
-      titleMain: "LARES TREK 4D / 3N",
+      titleMain: "LARES TREKKING - MACHU PICCHU",
       backgroundImage: "/trekking/cusco/lares/bg-lares.png",
       duration: "4 DAYS / 3 NIGHTS",
       price: "USD. 795.00",
-      difficulty: "MODERATE +",
-      difficultyLevel: "modplus"
+      difficulty: "MODERATE",
+      difficultyLevel: "mod"
     },
     intro: {
       code: "CSQ-LAR-04D",
-      titlePrefix: "The Route of",
-      titleAccent: "Tradition",
-      description: "The Lares trek is the perfect alternative to the Inca Trail for those seeking real contact with Quechua communities. Along the way, you will see locals wearing their traditional red outfits.",
+      titlePrefix: "Culture",
+      titleAccent: "Cusco",
+      description: "The Lares trekking is the quintessential cultural alternative. It crosses Quechua communities that still preserve their millenary traditions, enjoy medicinal hot springs, and culminates in the Machu Picchu citadel.",
       image: "/trekking/cusco/lares-trek.png",
       lat: `13° 07' 42" S`,
       lon: `72° 02' 14" W`,
       specs: [
-        { label: "HIGHLIGHT", value: "Medicinal Hot Springs", icon: "location" },
-        { label: "MAX ALTITUDE", value: "Huacawasi Pass (4,600m)", icon: "zone" },
-        { label: "CONNECTION", value: "Ollantaytambo Train", icon: "season" },
-        { label: "EXPERIENCE", value: "Weavers Communities", icon: "service" }
+        { label: 'COST', value: 'USD. 795.00', icon: 'location' },
+        { label: 'MAX ALT', value: '4,600 MASL', icon: 'zone' },
+        { label: 'DURATION', value: '4 Days', icon: 'season' },
+        { label: 'DESTINATION', value: 'Machu Picchu', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DAY 01', title: 'CUSCO – LARES HOT SPRINGS – HUACAWASI', content: 'Scenic drive to Lares valley. Relaxation time at the medicinal hot springs. Ascent hike to the Quechua community of Huacawasi.', stats: { alt: '3800m', dist: '8 km', time: '4 h' } },
-      { day: 'DAY 02', title: 'HUACAWASI – LARES PASS (4600M) – MISKI UNUYOC', content: 'Most demanding day. Crossing the Huacawasi Pass surrounded by alpacas and llamas. Spectacular views of Auroray lake and descent to camp.', stats: { alt: '4600m', dist: '14 km', time: '6-7 h' } },
-      { day: 'DAY 03', title: 'MISKI UNUYOC – YANAHUARA – AGUAS CALIENTES', content: 'Descent to the Sacred Valley through the picturesque town of Yanahuara. Train journey from Ollantaytambo to Machu Picchu town.', stats: { alt: '2950m', dist: '10 km', time: '3-4 h' } },
-      { day: 'DAY 04', title: 'MACHU PICCHU – RETURN TO CUSCO', content: 'Guided tour at the citadel of Machu Picchu. Free exploration and return by train and bus to Cusco city.', stats: { alt: '2430m', dist: 'Bus', time: '2 h (Tour)' } }
+      { 
+        day: 'DAY 01', 
+        title: 'CUSCO - LARES - HUACAWASI', 
+        content: 'Pickup 5:00 am. Travel to Lares crossing the highest point at 4265 masl with views of the Sawasiray and Pitusiray glaciers. Enjoy the Lares hot springs and 4-hour hike to the Huacawasi community.' 
+      },
+      { 
+        day: 'DAY 02', 
+        title: 'HUACAWASI - MISKI UNUYOC', 
+        content: 'Most difficult day. Ascent to Huacawasi Pass (4600 masl) surrounded by llamas and alpacas. Incredible view of Lake Auroray (Blue Lagoon). Camp at Miski Unuyoc (3800m).' 
+      },
+      { 
+        day: 'DAY 03', 
+        title: 'MISKYUNUYOC - AGUAS CALIENTES', 
+        content: '3-4 hour descent to Yanahuara (2950 masl) in the Urubamba Valley. Train journey from Ollantaytambo to Aguas Calientes. Overnight in hostel.' 
+      },
+      { 
+        day: 'DAY 04', 
+        title: 'MACHU PICCHU CITADEL', 
+        content: '2-hour guided visit in the mysterious Machu Picchu citadel (2360 masl). Free time to explore and return by train to Ollantaytambo and bus to Cusco.' 
+      }
     ],
     includes: [
-      'Airport - Hotel - Airport transfers (Cusco)',
-      '2 Nights of 3* hotel in Cusco',
-      'Private transport Cusco – Lares / Ollantaytambo',
-      'Specialized professional bilingual guide',
-      'Machu Picchu entrance ticket',
-      'Ollantaytambo – Aguas Calientes – Ollantaytambo train tickets',
-      'Up/down bus to Machu Picchu citadel',
-      'Full camping equipment (Tent, dining, kitchen)',
-      'Cook and kitchen assistants',
-      'Horses for equipment and 6kg personal luggage',
-      'Full meals (3B, 3L, 3D)',
-      'Hostel in Aguas Calientes (Private room)'
+      'Cusco Airport - Hotel transfer (Round trip)',
+      '2 nights hotel in Cusco and 1 night in Aguas Calientes',
+      'Cusco – Lares / Ollantaytambo – Cusco transport',
+      'Official bilingual tour guide',
+      'Train and bus up/down tickets to Machu Picchu',
+      'Machu Picchu entrance',
+      'Full camping equipment, cook, and full board (3B, 3L, 3D)',
+      'Pack horses (includes 6kg personal gear)'
     ],
     excludes: [
-      'National and international flights',
-      'Lares hot springs entrance (S/. 10)',
-      'Huayna Picchu entrance (S/. 60)',
-      'Sleeping bag and inflatable mattresses',
-      'Trekking poles',
-      'Personal travel insurance'
+      'Hot springs entrance (S/. 10.00)',
+      'Huayna Picchu ticket and personal insurance',
+      'Sleeping bag and poles (Rent available)',
+      'Tips and drinks'
     ],
     equipment: [
-      'Trekking backpack (30-40L)',
-      'Sleeping bag (-10°C rated)',
-      'Waterproof trekking boots',
-      'Technical clothing: thermal layers, fleece, waterproof',
-      'Sun protection (hat, sunscreen, sunglasses)',
-      'Headlamp with extra batteries',
-      'Water bottle',
-      'Personal hygiene items'
+      'Original passport (7 months validity)',
+      'Trekking boots and rain gear',
+      'Sunscreen, hat, and sunglasses',
+      'Personal medical kit and repellent',
+      'Swimwear for hot springs',
+      'Water bottle (1 liter)'
     ],
     itineraryTitle: "Timeline",
-    itinerarySubtitle: "Traverse",
-    includesTitle: "Services Included",
-    equipmentTitle: "Technical Gear",
-    gallery: [
-      '/trekking/cusco/lares/1.png',
-      '/trekking/cusco/lares/2.png',
-      '/trekking/cusco/lares/3.png',
-      '/trekking/cusco/lares/4.png',
-      '/trekking/cusco/lares/5.png',
-      '/trekking/cusco/lares/6.png',
-      '/trekking/cusco/lares/7.png',
-      '/trekking/cusco/lares/8.png'
-    ]
+    itinerarySubtitle: "Cultural",
+    includesTitle: "Included Services",
+    equipmentTitle: "Recommendations"
   }
 };

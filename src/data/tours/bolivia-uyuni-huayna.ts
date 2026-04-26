@@ -1,151 +1,141 @@
 export const boliviaUyuniHuaynaData = {
-  id: 'uyuni-huayna',
-  category: 'trekking',
+  id: 'uyuni-huayna-potosi',
+  category: 'climbing',
   subCategory: 'bolivia',
   es: {
     hero: {
-      titleTop: "ESPEJOS DE SAL Y CUMBRES",
-      titleMain: "UYUNI + HUAYNA 6088M",
+      titleTop: "SALAR & CUMBRE",
+      titleMain: "UYUNI & HUAYNAPOTOSÍ 10D",
       backgroundImage: "/slider_2.png",
-      duration: "10 DÍAS",
-      price: "USD 995.00",
-      difficulty: "MODERADA / AVENTURA",
-      difficultyLevel: "mod"
+      duration: "10 DÍAS / 09 NOCHES",
+      price: "USD. 995.00",
+      difficulty: "NO TÉCNICO / ALTA MONTAÑA",
+      difficultyLevel: "hard"
     },
     intro: {
-      code: "BOL-UYH-10",
-      titlePrefix: "Espejos de",
-      titleAccent: "Sal y Hielo",
-      description: "Este programa combina las dos experiencias más impactantes de Bolivia. Comenzamos en el **Salar de Uyuni**, el desierto de sal más grande del mundo, donde los paisajes parecen de otro planeta, para luego regresar a la Cordillera Real y enfrentar el desafío del **Huayna Potosí**.",
+      code: "BOL-UH-10",
+      titlePrefix: "Aventura",
+      titleAccent: "Bolivia",
+      description: "Combina la maravilla natural del Salar de Uyuni, la salina más grande del mundo, con el desafío de alcanzar los 6088m de la montaña Huayna Potosí. Una experiencia única que une desierto de sal y glaciares eternos.",
       image: "/slider_2.png",
       lat: `20° 08' 01" S`,
       lon: `67° 29' 20" W`,
       specs: [
-        { label: 'PUNTOS CLAVE', value: 'Uyuni & Cordillera Real', icon: 'location' },
-        { label: 'ACTIVIDAD', value: 'Tour 4x4 + Alpinismo', icon: 'zone' },
+        { label: 'COSTO', value: 'USD. 995.00', icon: 'location' },
+        { label: 'CUMBRE MÁX', value: '6,088 MSNM', icon: 'zone' },
         { label: 'DURACIÓN', value: '10 Días', icon: 'season' },
-        { label: 'ALT. MÁX', value: '6,088 MSNM', icon: 'service' }
+        { label: 'DESTINO', value: 'Uyuni & Zongo', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DÍA 01', title: 'LLEGADA A LA PAZ – TRASLADO A UYUNI', content: 'Recepción en el aeropuerto de El Alto. Traslado a la terminal para el viaje en bus nocturno hacia Uyuni.', stats: { estado: 'Bus Nocturno' } },
-      { day: 'DÍA 02', title: 'SALAR DE UYUNI – ISLA INCAHUASI', content: 'Inicio del tour 4x4. Cementerio de trenes, Colchani y el espejo de sal. Atardecer en el salar.', stats: { alt: '3650m' } },
-      { day: 'DÍA 03', title: 'LAGUNA COLORADA – DESIERTO DE SILOLI', content: 'Exploración de lagunas altiplánicas y avistamiento de flamencos. Paisajes surrealistas en el desierto.', stats: { alt: '4280m' } },
-      { day: 'DÍA 04', title: 'RESERVA EDUARDO AVAROA – RETORNO A LA PAZ', content: 'Geisers Sol de Mañana, aguas termales y Laguna Verde. Regreso a Uyuni y bus nocturno a La Paz.', stats: { estado: 'Bus Nocturno' } },
-      { day: 'DÍA 05', title: 'DÍA LIBRE EN LA PAZ', content: 'Descanso en el hotel. Tiempo libre para explorar el mercado de las brujas y teleféricos.', stats: { estado: 'Descanso' } },
-      { day: 'DÍA 06', title: 'PREPARACIÓN Y ACLIMATACIÓN', content: 'Revisión de equipo técnico para el ascenso al Huayna Potosí.', stats: { estado: 'Prep' } },
-      { day: 'DÍA 07', title: 'LA PAZ – REFUGIO HUAYNA POTOSÍ (4680 M)', content: 'Traslado al paso Zongo. Caminata suave al refugio y práctica en glaciar.', stats: { time: '4h Viaje/Trek', alt: '4680m' } },
-      { day: 'DÍA 08', title: 'REFUGIO – CAMPO ALTO (5280 M)', content: 'Ascenso al Refugio Roca (Campo Alto). Preparación táctica para la cumbre.', stats: { time: '3h Ascenso', alt: '5280m' } },
-      { day: 'DÍA 09', title: 'CUMBRE HUAYNA POTOSÍ (6088 M) – LA PAZ', content: 'Empuje a la cumbre a medianoche. Vistas del Titicaca y Cordillera Real. Retorno a La Paz.', stats: { time: '10h Día', alt: '6088m' } },
-      { day: 'DÍA 10', title: 'LA PAZ – AEROPUERTO', content: 'Traslado al aeropuerto para su vuelo internacional.', stats: { estado: 'Salida' } }
+      { day: 'DÍA 01', title: 'LLEGADA A LA PAZ - UYUNI', content: 'Traslado del aeropuerto a La Paz. Noche viaje en bus cama hacia Uyuni (9 horas).' },
+      { day: 'DÍA 02', title: 'TOUR SALAR DE UYUNI', content: 'Cementerio de trenes, Colchani, Museo de Sal, Isla Incahuasi y puesta de sol en el salar.' },
+      { day: 'DÍA 03', title: 'LAGUNA COLORADA', content: 'Visita a lagunas altiplánicas, desierto de Siloli, Árbol de Piedra y Laguna Colorada (Flamencos).' },
+      { day: 'DÍA 04', title: 'RESERVA EDUARDO AVAROA - RETORNO', content: 'Géisers, aguas termales de Polques, Laguna Verde y retorno en bus a La Paz.' },
+      { day: 'DÍA 05', title: 'DÍA LIBRE EN LA PAZ', content: 'Descanso y paseo en teleférico con vista al Illimani.' },
+      { day: 'DÍA 06', title: 'DÍA DE PREPARACIÓN', content: 'Preparación de equipo para la montaña y descanso.' },
+      { day: 'DÍA 07', title: 'LA PAZ - CAMPO BASE HUAYNAPOTOSÍ', content: 'Traslado al refugio a 4680 msnm. Almuerzo y descanso entre valles y lagunas.' },
+      { day: 'DÍA 08', title: 'REFUGIO - CAMPO ALTO', content: 'Ascenso de 2-3h hasta el refugio Casa de Guías (5280 msnm).' },
+      { day: 'DÍA 09', title: 'CUMBRE HUAYNAPOTOSÍ (6088M)', content: 'Ataque a la cumbre y recompensa visual de los Andes. Retorno a La Paz.' },
+      { day: 'DÍA 10', title: 'RETORNO', content: 'Traslado al aeropuerto El Alto para su vuelo internacional.' }
     ],
     includes: [
-      'Traslados Aeropuerto - Hotel - Aeropuerto',
-      'Tickets de bus La Paz - Uyuni - La Paz (Cama)',
-      'Tour 4x4 en Salar de Uyuni (3 días)',
-      'Alojamiento en el Salar y en La Paz',
-      'Guía de montaña para ascenso al Huayna Potosí',
-      'Cocinero y alimentación completa durante expedición',
-      'Porteadores para equipo grupal',
-      'Tickets de ingreso a Uyuni y Huayna Potosí',
-      'Equipo de camping y seguridad'
+      'Asistencia en aeropuerto y traslados hotel/terminal',
+      'Tickets de bus cama La Paz - Uyuni (Ida y vuelta)',
+      '3 días de tour en Salar de Uyuni con transporte 4x4',
+      'Hospedaje y alimentación completa en Uyuni',
+      'Expedición guiada al Huayna Potosí con guía de montaña',
+      'Cocinero y porteadores para equipo grupal',
+      'Equipo de campamento y cocina completo',
+      'Tickets de entrada a Uyuni y Huayna Potosí',
+      'Oxígeno portátil y botiquín'
     ],
     excludes: [
-      'Vuelos internacionales',
-      'Comidas en ciudades (La Paz/Uyuni)',
-      'Equipo técnico personal (alquiler disponible)',
-      'Bolsa de dormir y aislante',
-      'Seguro de montaña',
-      'Propinas'
+      'Vuelos aéreos internacionales',
+      'Hoteles en La Paz y alimentación en la ciudad',
+      'Equipo técnico personal de montaña',
+      'Bolsa de dormir y colchoneta',
+      'Seguro de montaña y propinas'
     ],
     equipment: [
-      'Ropa de abrigo (Capas térmicas)',
-      'Chaqueta impermeable (Gore-Tex)',
-      'Botas técnicas de montaña',
-      'Grampones y Piolet (Incluidos en logística)',
-      'Gafas de sol Cat. 4',
-      'Mochila de 40L',
-      'Linterna frontal con baterías extra'
+      'Mochila de ataque (50L) y mochila de carga (70L)',
+      'Bolsa de dormir técnica y colchoneta',
+      'Botas de nieve, grampones y piolet técnico',
+      'Arnés y casco',
+      'Ropa de pluma e impermeable',
+      'Gafas de nieve y bloqueador solar'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
+    itineraryTitle: "Programa",
+    itinerarySubtitle: "10 Días",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
-      titleTop: "SALT FLATS & SUMMITS",
-      titleMain: "UYUNI + HUAYNA 6088M",
+      titleTop: "SALT & SUMMIT",
+      titleMain: "UYUNI & HUAYNAPOTOSI 10D",
       backgroundImage: "/slider_2.png",
-      duration: "10 DAYS",
-      price: "USD 995.00",
-      difficulty: "MODERATE / ADVENTURE",
-      difficultyLevel: "mod"
+      duration: "10 DAYS / 09 NIGHTS",
+      price: "USD. 995.00",
+      difficulty: "NON-TECHNICAL / HIGH MOUNTAIN",
+      difficultyLevel: "hard"
     },
     intro: {
-      code: "BOL-UYH-10",
-      titlePrefix: "Mirrors of",
-      titleAccent: "Salt and Ice",
-      description: "This program combines Bolivia's two most impactful experiences. We begin in the **Salar de Uyuni**, the world's largest salt desert, where landscapes look like they belong on another planet, then return to the Cordillera Real to face the challenge of **Huayna Potosi**.",
+      code: "BOL-UH-10",
+      titlePrefix: "Bolivia",
+      titleAccent: "Adventure",
+      description: "Combine the natural wonder of Salar de Uyuni, the world's largest salt flat, with the challenge of reaching the 6088m of Mt. Huayna Potosi. A unique experience that joins salt desert and eternal glaciers.",
       image: "/slider_2.png",
       lat: `20° 08' 01" S`,
       lon: `67° 29' 20" W`,
       specs: [
-        { label: 'KEY POINTS', value: 'Uyuni & Cordillera Real', icon: 'location' },
-        { label: 'ACTIVITY', value: '4x4 Tour + Alpinism', icon: 'zone' },
+        { label: 'COST', value: 'USD. 995.00', icon: 'location' },
+        { label: 'MAX SUMMIT', value: '6,088 MASL', icon: 'zone' },
         { label: 'DURATION', value: '10 Days', icon: 'season' },
-        { label: 'MAX ALT.', value: '6,088 MSNM', icon: 'service' }
+        { label: 'DESTINATION', value: 'Uyuni & Zongo', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'DAY 01', title: 'ARRIVAL IN LA PAZ – TRANSFER TO UYUNI', content: 'Reception at El Alto airport. Transfer to the terminal for the overnight bus journey to Uyuni.', stats: { status: 'Night Bus' } },
-      { day: 'DAY 02', title: 'SALAR DE UYUNI – INCAHUASI ISLAND', content: 'Start of the 4x4 tour. Train cemetery, Colchani, and the salt mirror. Sunset on the salt flats.', stats: { alt: '3650m' } },
-      { day: 'DAY 03', title: 'RED LAGOON – SILOLI DESERT', content: 'Exploration of altiplanic lagoons and flamingo spotting. Surreal landscapes in the desert.', stats: { alt: '4280m' } },
-      { day: 'DAY 04', title: 'EDUARDO AVAROA RESERVE – RETURN TO LA PAZ', content: 'Sol de Mañana geysers, hot springs, and Green Lagoon. Return to Uyuni and overnight bus to La Paz.', stats: { status: 'Night Bus' } },
-      { day: 'DAY 05', title: 'FREE DAY IN LA PAZ', content: 'Rest at the hotel. Free time to explore the witches\' market and cable cars.', stats: { status: 'Rest' } },
-      { day: 'DAY 06', title: 'PREPARATION & ACCLIMATIZATION', content: 'Review of technical gear for the Huayna Potosi ascent.', stats: { status: 'Prep' } },
-      { day: 'DAY 07', title: 'LA PAZ – HUAYNA POTOSI REFUGE (4680 M)', content: 'Transfer to Zongo pass. Gentle hike to the refuge and glacier practice.', stats: { time: '4h Drive/Trek', alt: '4680m' } },
-      { day: 'DAY 08', title: 'REFUGE – HIGH CAMP (5280 M)', content: 'Ascent to Refugio Roca (High Camp). Tactical preparation for the summit.', stats: { time: '3h Ascent', alt: '5280m' } },
-      { day: 'DAY 09', title: 'HUAYNA POTOSI SUMMIT (6088 M) – LA PAZ', content: 'Midnight summit push. Views of Titicaca and Cordillera Real. Return to La Paz.', stats: { time: '10h Day', alt: '6088m' } },
-      { day: 'DAY 10', title: 'LA PAZ – AIRPORT', content: 'Transfer to the airport for your international flight.', stats: { status: 'Departure' } }
+      { day: 'DAY 01', title: 'ARRIVAL IN LA PAZ - UYUNI', content: 'Airport transfer to La Paz. Night sleeper bus to Uyuni (9 hours).' },
+      { day: 'DAY 02', title: 'UYUNI SALT FLAT TOUR', content: 'Train cemetery, Colchani, Salt Museum, Incahuasi Island and sunset on the salt flat.' },
+      { day: 'DAY 03', title: 'RED LAGOON', content: 'Visit highland lagoons, Siloli desert, Stone Tree and Red Lagoon (Flamingos).' },
+      { day: 'DAY 04', title: 'EDUARDO AVAROA RESERVE - RETURN', content: 'Geysers, Polques hot springs, Green Lagoon and return bus to La Paz.' },
+      { day: 'DAY 05', title: 'FREE DAY IN LA PAZ', content: 'Rest and cable car ride with Illimani view.' },
+      { day: 'DAY 06', title: 'PREPARATION DAY', content: 'Mountain equipment preparation and rest.' },
+      { day: 'DAY 07', title: 'LA PAZ - HUAYNAPOTOSI BASE CAMP', content: 'Transfer to refuge at 4680 masl. Lunch and rest between valleys and lagoons.' },
+      { day: 'DAY 08', title: 'REFUGE - HIGH CAMP', content: '2-3h ascent to Guides House refuge (5280 masl).' },
+      { day: 'DAY 09', title: 'HUAYNAPOTOSI SUMMIT (6088M)', content: 'Summit attack and visual reward of the Andes. Return to La Paz.' },
+      { day: 'DAY 10', title: 'RETURN', content: 'Transfer to El Alto airport for international flight.' }
     ],
     includes: [
-      'Airport - Hotel - Airport transfers',
-      'Bus tickets La Paz - Uyuni - La Paz (Bed class)',
-      '4x4 tour in Salar de Uyuni (3 days)',
-      'Lodging in the Salt Flat and La Paz',
-      'Mountain guide for Huayna Potosi ascent',
-      'Cook and full meals during expedition',
-      'Porters for group equipment',
+      'Airport assistance and hotel/terminal transfers',
+      'Sleeper bus tickets La Paz - Uyuni (Round trip)',
+      '3 days Uyuni Salt Flat tour with 4x4 transport',
+      'Hostel and full meals in Uyuni',
+      'Guided expedition to Huayna Potosi with mountain guide',
+      'Cook and group equipment porters',
+      'Complete camping and kitchen equipment',
       'Entrance tickets to Uyuni and Huayna Potosi',
-      'Camping and safety equipment'
+      'Portable oxygen and first aid kit'
     ],
     excludes: [
       'International flights',
-      'Meals in cities (La Paz/Uyuni)',
-      'Personal technical gear (rental available)',
+      'Hotels in La Paz and city meals',
+      'Personal technical mountain gear',
       'Sleeping bag and mat',
-      'Mountain insurance',
-      'Tips'
+      'Mountain insurance and tips'
     ],
     equipment: [
-      'Warm clothing (Thermal layers)',
-      'Waterproof jacket (Gore-Tex)',
-      'Technical mountain boots',
-      'Crampons and Ice Axe (Included in logistics)',
-      'Sunglasses Cat. 4',
-      '40L Backpack',
-      'Headlamp with extra batteries'
+      'Daypack (50L) and duffel/backpack (70L)',
+      'Technical sleeping bag and mat',
+      'Snow boots, crampons and technical ice axe',
+      'Harness and helmet',
+      'Down and waterproof clothing',
+      'Snow goggles and sunscreen'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "10 Days",
     includesTitle: "Included Services",
-    equipmentTitle: "Suggested Equipment",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Recommendations"
   }
 };

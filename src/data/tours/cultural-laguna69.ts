@@ -5,9 +5,9 @@ export const culturalLaguna69Data = {
   es: {
     hero: {
       titleTop: "EL DESAFÍO AZUL",
-      titleMain: "LAGUNA 69 TREKKING",
+      titleMain: "LAGUNA 69 TREKKING 4600M",
       backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
-      duration: "FULL DAY (14H)",
+      duration: "FULL DAY",
       price: "CONSULTAR",
       difficulty: "EXIGENTE",
       difficultyLevel: "hard"
@@ -16,61 +16,51 @@ export const culturalLaguna69Data = {
       code: "HZ-L69-FD",
       titlePrefix: "La Cima del",
       titleAccent: "Senderismo",
-      description: "Laguna 69 es, sin duda, la caminata de un día más icónica de los Andes peruanos. Ubicada a los pies del imponente Chacraraju, su color azul zafiro y el entorno glaciar ofrecen una recompensa visual inigualable tras el esfuerzo del ascenso.",
+      description: "Laguna 69 es el trekking de un día más famoso del Parque Nacional Huascarán. Ubicada a los pies del Chacraraju y el Nevado Pisco, su color azul turquesa intenso recompensa el esfuerzo de la caminata por el Valle de Demanda.",
       image: "/trekking/blanca/trekking-clasico.png",
       lat: `09° 00' 40" S`,
       lon: `77° 36' 47" W`,
       specs: [
-        { label: 'DISTANCIA', value: '14 KM (I/V)', icon: 'location' },
-        { label: 'GRADIENTE', value: '+700m Ascenso', icon: 'zone' },
-        { label: 'TIEMPO MARCHA', value: '5 - 6 Horas', icon: 'season' },
-        { label: 'REQUISITO', value: 'Aclimatación', icon: 'service' }
+        { label: 'ELEVACIÓN', value: '4,600 MSNM', icon: 'location' },
+        { label: 'TREKKING', value: '5 - 6 Horas', icon: 'zone' },
+        { label: 'SALIDA', value: '05:00 AM', icon: 'season' },
+        { label: 'VISTAS', value: 'Chacraraju & Pisco', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '05:00 AM', title: 'SALIDA TEMPRANA', content: 'Partida desde Huaraz hacia el norte. Parada en el camino para un desayuno energético (no incluido).', stats: { time: 'Inicio' } },
-      { day: '08:30 AM', title: 'CEBOLLAPAMPA', content: 'Llegada al punto de inicio de la caminata tras pasar por las lagunas Llanganuco. Preparación del equipo.', stats: { alt: '3900m' } },
-      { day: '09:00 AM', title: 'INICIO DEL TREKKING', content: 'Caminata ascendente por el valle de Demanda, pasando por la laguna Consuelo y paisajes glaciares.', stats: { dist: '7 km' } },
-      { day: '12:00 PM', title: 'LAGUNA 69 (4600 MSNM)', content: 'Arribo a la joya azul. Tiempo para fotos, relax y disfrutar la vista de los nevados Chacraraju y Pisco.', stats: { alt: '4600m', time: '1 h estancia' } },
-      { day: '04:00 PM', title: 'RETORNO A CEBOLLAPAMPA', content: 'Descenso por la misma ruta hasta el transporte. Retorno hacia Huaraz.', stats: { time: 'Descenso' } },
-      { day: '07:00 PM', title: 'LLEGADA A HUARAZ', content: 'Fin de la jornada en la Plaza de Armas de Huaraz.', stats: { time: 'Fin' } }
+      { day: '05:00 AM', title: 'SALIDA DE HUARAZ', content: 'Salida temprana hacia el norte. Parada para desayunar y registro en el control del PNH (S/. 30.00 EX / S/. 12.00 N).' },
+      { day: '09:00 AM', title: 'INICIO TREKKING', content: 'Desde Cebollapampa iniciamos la caminata por el valle de Demanda, pasando por la laguna Consuelo hasta llegar a la espectacular Laguna 69.' },
+      { day: '01:00 PM', title: 'RETORNO', content: 'Tiempo para fotos y vídeos. Descenso por la misma ruta hacia Cebollapampa donde nos espera el transporte. Retorno a Huaraz.' }
     ],
     includes: [
       'Recojo de su hotel en Huaraz',
-      'Transporte turístico privado/compartido',
-      'Guía Oficial de Turismo (Bilingüe)',
-      'Oxígeno de emergencia y botiquín',
-      'Bastones de trekking (bajo solicitud)'
+      'Transporte turístico compartido',
+      'Guía oficial de turismo bilingüe'
     ],
     excludes: [
-      'Desayuno y almuerzo (Box lunch recomendado)',
-      'Ticket de entrada PNH (Ext: S/. 30.00 / Nac: S/. 12.00)',
-      'Seguro de viaje personal',
-      'Gastos personales'
+      'Alimentación (Desayuno y snacks)',
+      'Ticket de entrada PNH (S/. 15.00 N / S/. 30.00 EX)',
+      'Gastos personales',
+      'Propinas'
     ],
     equipment: [
-      'Mochila de diario (20-30L)',
-      'Agua (3L mínimo) y snacks energéticos',
-      'Ropa técnica por capas (térmica, polar, corta-viento)',
-      'Botas de trekking con buen agarre',
-      'Gorro, guantes y lentes con protección UV',
-      'Protector solar y repelente de insectos',
-      'Impermeable o poncho de lluvia'
+      'Mochila de día y calzado de trekking',
+      'Ropa térmica por capas y cortavientos',
+      'Agua (mínimo 3 litros)',
+      'Snacks (chocolates, frutas, galletas)',
+      'Protector solar y lentes de sol'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
-    includesTitle: "Qué Incluye",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/trekking/blanca/trekking-clasico.png', '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png'
-    ]
+    itineraryTitle: "Cronograma",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Servicios Incluidos",
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
       titleTop: "THE BLUE CHALLENGE",
-      titleMain: "LAGUNA 69 TREKKING",
+      titleMain: "LAGUNA 69 TREKKING 4600M",
       backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
-      duration: "FULL DAY (14H)",
+      duration: "FULL DAY",
       price: "UPON REQUEST",
       difficulty: "CHALLENGING",
       difficultyLevel: "hard"
@@ -79,53 +69,43 @@ export const culturalLaguna69Data = {
       code: "HZ-L69-FD",
       titlePrefix: "The Peak of",
       titleAccent: "Hiking",
-      description: "Laguna 69 is undoubtedly the most iconic day hike in the Peruvian Andes. Located at the foot of the imposing Chacraraju, its sapphire blue color and glacier environment offer an unparalleled visual reward after the effort of the ascent.",
+      description: "Laguna 69 is the most famous day trek in the Huascarán National Park. Located at the foot of Chacraraju and Nevado Pisco, its intense turquoise color rewards the effort of the hike through the Demanda Valley.",
       image: "/trekking/blanca/trekking-clasico.png",
       lat: `09° 00' 40" S`,
       lon: `77° 36' 47" W`,
       specs: [
-        { label: 'DISTANCE', value: '14 KM (R/T)', icon: 'location' },
-        { label: 'GRADIENT', value: '+700m Ascent', icon: 'zone' },
-        { label: 'HIKE TIME', value: '5 - 6 Hours', icon: 'season' },
-        { label: 'REQUIREMENT', value: 'Acclimatization', icon: 'service' }
+        { label: 'ELEVATION', value: '4,600 MASL', icon: 'location' },
+        { label: 'TREKKING', value: '5 - 6 Hours', icon: 'zone' },
+        { label: 'DEPARTURE', value: '05:00 AM', icon: 'season' },
+        { label: 'VIEWS', value: 'Chacraraju & Pisco', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '05:00 AM', title: 'EARLY DEPARTURE', content: 'Departure from Huaraz towards the north. Stop on the way for an energetic breakfast (not included).', stats: { time: 'Start' } },
-      { day: '08:30 AM', title: 'CEBOLLAPAMPA', content: 'Arrival at the start point of the hike after passing the Llanganuco lagoons. Equipment preparation.', stats: { alt: '3900m' } },
-      { day: '09:00 AM', title: 'START OF TREKKING', content: 'Ascending hike through the Demanda valley, passing by Consuelo lagoon and glacier landscapes.', stats: { dist: '7 km' } },
-      { day: '12:00 PM', title: 'LAGUNA 69 (4600 MASL)', content: 'Arrival at the blue jewel. Time for photos, relaxation and enjoying the view of Chacraraju and Pisco peaks.', stats: { alt: '4600m', time: '1 h stay' } },
-      { day: '04:00 PM', title: 'RETURN TO CEBOLLAPAMPA', content: 'Descent along the same route to the transport. Return towards Huaraz.', stats: { time: 'Descent' } },
-      { day: '07:00 PM', title: 'ARRIVAL IN HUARAZ', content: 'End of the day at the Plaza de Armas of Huaraz.', stats: { time: 'End' } }
+      { day: '05:00 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Early departure heading north. Stop for breakfast and registration at the PNH control (S/. 30.00 EX / S/. 12.00 N).' },
+      { day: '09:00 AM', title: 'START TREKKING', content: 'From Cebollapampa we start the hike through the Demanda valley, passing by Consuelo lagoon until reaching the spectacular Laguna 69.' },
+      { day: '01:00 PM', title: 'RETURN', content: 'Time for photos and videos. Descent along the same route to Cebollapampa where the transport awaits. Return to Huaraz.' }
     ],
     includes: [
       'Pickup from your hotel in Huaraz',
-      'Private/shared tourist transport',
-      'Official Tour Guide (Bilingual)',
-      'Emergency oxygen and first aid kit',
-      'Trekking poles (upon request)'
+      'Shared tourist transport',
+      'Bilingual official tour guide'
     ],
     excludes: [
-      'Breakfast and lunch (Box lunch recommended)',
-      'PNH entrance ticket (Ext: S/. 30.00 / Nac: S/. 12.00)',
-      'Personal travel insurance',
-      'Personal expenses'
+      'Meals (Breakfast and snacks)',
+      'Entrance ticket (S/. 15.00 N / S/. 30.00 EX)',
+      'Personal expenses',
+      'Tips'
     ],
     equipment: [
-      'Day pack (20-30L)',
-      'Water (3L minimum) and energy snacks',
-      'Technical clothing in layers (thermal, fleece, windbreaker)',
-      'Trekking boots with good grip',
-      'Hat, gloves and sunglasses with UV protection',
-      'Sunscreen and insect repellent',
-      'Rain jacket or poncho'
+      'Daypack and trekking shoes',
+      'Thermal clothing in layers and windbreaker',
+      'Water (minimum 3 liters)',
+      'Snacks (chocolates, fruits, cookies)',
+      'Sunscreen and sunglasses'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
-    includesTitle: "What's Included",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/trekking/blanca/trekking-clasico.png', '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png'
-    ]
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Included Services",
+    equipmentTitle: "Recommendations"
   }
 };

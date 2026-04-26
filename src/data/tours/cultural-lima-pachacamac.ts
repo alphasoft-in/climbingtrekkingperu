@@ -5,10 +5,10 @@ export const culturalLimaPachacamacData = {
   es: {
     hero: {
       titleTop: "EL ORÁCULO DEL PACÍFICO",
-      titleMain: "LIMA & PACHACAMAC 8H",
+      titleMain: "TOUR EN LIMA & PACHACAMAC",
       backgroundImage: "/slider_1.png",
-      duration: "FULL DAY (8 HORAS)",
-      price: "CONSULTAR",
+      duration: "08 HORAS",
+      price: "USD. 140.00",
       difficulty: "BAJA",
       difficultyLevel: "easy"
     },
@@ -16,59 +16,68 @@ export const culturalLimaPachacamacData = {
       code: "LIM-PACH-08H",
       titlePrefix: "Entre el Oráculo",
       titleAccent: "y la Ciudad",
-      description: "Esta es la experiencia definitiva en la capital. Un viaje que conecta el misticismo del dios Pachacamac con la elegancia colonial de Lima. Recorreremos desde las criptas subterráneas de San Francisco hasta los templos del Sol.",
+      description: "Este tour integral nos lleva a través de las tres épocas de Lima (Ancestral, Colonial y Contemporánea) y culmina en el místico Santuario de Pachacamac. Desde la Huaca Pucllana y el Centro Histórico con sus Catacumbas, hasta Barranco y la Costa Verde, para finalmente explorar la ciudadela del Dios creador del universo, donde miles de peregrinos consultaban al oráculo.",
       image: "/slider_3.png",
       lat: `12° 15' 32" S`,
       lon: `76° 54' 00" W`,
       specs: [
         { label: 'SALIDAS', value: 'Martes a Sábado', icon: 'location' },
-        { label: 'TEMPLOS', value: 'Pachacamac y Sol', icon: 'zone' },
-        { label: 'HORARIO', value: 'Full Day', icon: 'season' },
-        { label: 'INCLUYE', value: 'Almuerzo Buffet', icon: 'service' }
+        { label: 'DURACIÓN', value: '8 Horas', icon: 'zone' },
+        { label: 'HORARIO', value: '11:30 Hrs', icon: 'season' },
+        { label: 'ADULTOS', value: 'USD. 140.00', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'MAÑANA', title: 'CITY TOUR LIMA COMPLETO', content: 'Iniciamos con el City Tour tradicional: Lima Ancestral (Huaca Pucllana), Lima Colonial (Plaza Mayor, San Francisco y Catacumbas) and Lima Contemporánea (San Isidro y Miraflores). Almuerzo Buffet incluido en restaurante turístico.', stats: { alt: 'Histórico', dist: 'Urbano', time: '4 h' } },
-      { day: 'MEDIODÍA', title: 'BARRANCO Y COSTA VERDE', content: 'Visita al distrito bohemio de Barranco, el Puente de los Suspiros y recorrido panorámico por las playas de la Costa Verde, el Salto del Fraile y los Pantanos de Villa.', stats: { alt: 'Costa', dist: 'Panorámica', time: '1.5 h' } },
-      { day: 'TARDE', title: 'SANTUARIO DE PACHACAMAC', content: 'Exploración de la ciudadela arqueológica de Pachacamac, centro ceremonial del creador del universo. Visita a los templos piramidales, el Templo del Sol y el Acllahuasi.', stats: { alt: 'Arqueológico', dist: 'Caminata', time: '2.5 h' } }
+      { 
+        day: 'MAÑANA', 
+        title: 'LIMA: ANCESTRAL, COLONIAL Y MODERNA', 
+        content: 'Vista de la Huaca Pucllana. Recorrido por el Centro Histórico: Plaza Mayor, Palacio de Gobierno y Basílica Catedral. Ingreso al Convento de San Francisco y Catacumbas. Visita a San Isidro (El Olivar) y Miraflores (Larcomar).', 
+        stats: { time: '11:30' } 
+      },
+      { 
+        day: 'MEDIODÍA', 
+        title: 'ALMUERZO BUFFET Y BARRANCO', 
+        content: 'Almuerzo buffet en el restaurante Rústica Costa Verde. Visita al tradicional distrito de Barranco y su famoso Puente de los Suspiros.', 
+        stats: { status: 'Gastronomía' } 
+      },
+      { 
+        day: 'TARDE', 
+        title: 'SANTUARIO DE PACHACAMAC', 
+        content: 'Recorrido por la ciudadela de Pachacamac, santuario del Dios creador del universo. Visita a los templos piramidales, Templo del Sol y Palacio de las Mujeres Escogidas (Acllahuasi). Retorno al hotel.', 
+        stats: { status: 'Misticismo' } 
+      }
     ],
     includes: [
-      'Recojo y retorno en su hotel (Miraflores, San Isidro, Lima)',
-      'Transporte turístico privado para todo el recorrido',
-      'Guía oficial de turismo bilingüe especializado',
+      'Recojo y retorno en su hotel (Miraflores, San Isidro, Centro)',
+      'Transporte turístico privado/compartido',
+      'Guía oficial de turismo bilingüe',
       'Almuerzo Buffet en restaurante turístico',
-      'Visita guiada a San Francisco y Catacumbas',
-      'Excursión completa al Santuario de Pachacamac'
+      'Visita guiada a San Francisco y Catacumbas'
     ],
     excludes: [
-      'Tickets de entrada a Pachacamac y Museos',
-      'Bebidas adicionales en el almuerzo',
-      'Propinas para guía y conductor',
-      'Servicios no especificados'
+      'Tickets de entrada a sitios turísticos',
+      'Bebidas adicionales',
+      'Propinas para guía y chofer'
     ],
     equipment: [
       'Calzado cómodo para caminar',
       'Protector solar y sombrero',
       'Cámara fotográfica',
       'Agua embotellada',
-      'Ropa ligera y casaca para la brisa marina',
-      'Documento de identidad original'
+      'Documento de identidad'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
+    itineraryTitle: "Cronograma",
+    itinerarySubtitle: "Full Day",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_1.png', '/slider_3.png', '/slider_2.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
       titleTop: "ORACLE OF THE PACIFIC",
-      titleMain: "LIMA & PACHACAMAC 8H",
+      titleMain: "LIMA & PACHACAMAC TOUR",
       backgroundImage: "/slider_1.png",
-      duration: "FULL DAY (8 HOURS)",
-      price: "UPON REQUEST",
+      duration: "08 HOURS",
+      price: "USD. 140.00",
       difficulty: "LOW",
       difficultyLevel: "easy"
     },
@@ -76,50 +85,59 @@ export const culturalLimaPachacamacData = {
       code: "LIM-PACH-08H",
       titlePrefix: "Between the Oracle",
       titleAccent: "and the City",
-      description: "This is the ultimate experience in the capital. A journey that connects the mysticism of the god Pachacamac with the colonial elegance of Lima. We will travel from the underground crypts of San Francisco to the temples of the Sun.",
+      description: "This comprehensive tour takes us through the three eras of Lima (Ancestral, Colonial, and Contemporary) and culminates at the mystical Sanctuary of Pachacamac. From Huaca Pucllana and the Historic Center with its Catacombs, to Barranco and the Costa Verde, finally exploring the citadel of the Creator God of the universe, where thousands of pilgrims consulted the oracle.",
       image: "/slider_3.png",
       lat: `12° 15' 32" S`,
       lon: `76° 54' 00" W`,
       specs: [
         { label: 'DEPARTURES', value: 'Tuesday to Saturday', icon: 'location' },
-        { label: 'TEMPLES', value: 'Pachacamac & Sun', icon: 'zone' },
-        { label: 'SCHEDULE', value: 'Full Day', icon: 'season' },
-        { label: 'INCLUDES', value: 'Buffet Lunch', icon: 'service' }
+        { label: 'DURATION', value: '8 Hours', icon: 'zone' },
+        { label: 'SCHEDULE', value: '11:30 Hrs', icon: 'season' },
+        { label: 'ADULTS', value: 'USD. 140.00', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'MORNING', title: 'FULL LIMA CITY TOUR', content: 'We start with the traditional City Tour: Ancestral Lima (Huaca Pucllana), Colonial Lima (Plaza Mayor, San Francisco and Catacombs) and Contemporary Lima (San Isidro and Miraflores). Buffet Lunch included in tourist restaurant.', stats: { alt: 'Historical', dist: 'Urban', time: '4 h' } },
-      { day: 'MIDDAY', title: 'BARRANCO AND COSTA VERDE', content: 'Visit to the bohemian district of Barranco, the Bridge of Sighs and panoramic tour of the beaches of the Costa Verde, the Salto del Fraile and the Pantanos de Villa.', stats: { alt: 'Coast', dist: 'Panoramic', time: '1.5 h' } },
-      { day: 'AFTERNOON', title: 'PACHACAMAC SANCTUARY', content: 'Exploration of the archaeological citadel of Pachacamac, ceremonial center of the creator of the universe. Visit to the pyramidal temples, the Temple of the Sun and the Acllahuasi.', stats: { alt: 'Archaeological', dist: 'Walk', time: '2.5 h' } }
+      { 
+        day: 'MORNING', 
+        title: 'LIMA: ANCESTRAL, COLONIAL & MODERN', 
+        content: 'View of Huaca Pucllana. Historic Center tour: Plaza Mayor, Government Palace, and Cathedral. Entrance to the Convent of San Francisco and Catacombs. Visit to San Isidro (El Olivar) and Miraflores (Larcomar).', 
+        stats: { time: '11:30' } 
+      },
+      { 
+        day: 'MIDDAY', 
+        title: 'BUFFET LUNCH & BARRANCO', 
+        content: 'Buffet lunch at Rústica Costa Verde restaurant. Visit to the traditional district of Barranco and its famous Bridge of Sighs.', 
+        stats: { status: 'Gastronomy' } 
+      },
+      { 
+        day: 'AFTERNOON', 
+        title: 'PACHACAMAC SANCTUARY', 
+        content: 'Tour through the citadel of Pachacamac, sanctuary of the Creator God of the universe. Visit to pyramidal temples, Sun Temple, and Palace of the Chosen Women (Acllahuasi). Return to hotel.', 
+        stats: { status: 'Mysticism' } 
+      }
     ],
     includes: [
-      'Pickup and drop-off at your hotel (Miraflores, San Isidro, Lima)',
-      'Private tourist transport for the whole tour',
-      'Specialized bilingual official tour guide',
-      'Buffet Lunch in tourist restaurant',
-      'Guided visit to San Francisco and Catacombs',
-      'Complete excursion to the Pachacamac Sanctuary'
+      'Pickup and drop-off at your hotel (Miraflores, San Isidro, Downtown)',
+      'Private/shared tourist transport',
+      'Bilingual official tour guide',
+      'Buffet Lunch at tourist restaurant',
+      'Guided visit to San Francisco and Catacombs'
     ],
     excludes: [
-      'Entrance tickets to Pachacamac and Museums',
-      'Additional drinks at lunch',
-      'Tips for guide and driver',
-      'Services not specified'
+      'Entrance tickets to tourist sites',
+      'Additional drinks',
+      'Tips for guide and driver'
     ],
     equipment: [
       'Comfortable walking shoes',
       'Sunscreen and hat',
       'Camera',
       'Bottled water',
-      'Light clothing and jacket for the sea breeze',
-      'Original ID document'
+      'Identification document'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "Full Day",
     includesTitle: "Included Services",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_1.png', '/slider_3.png', '/slider_2.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Recommendations"
   }
 };

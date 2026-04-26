@@ -4,126 +4,108 @@ export const culturalChavinData = {
   subCategory: 'ancash',
   es: {
     hero: {
-      titleTop: "EL CENTRO DEL MUNDO",
-      titleMain: "CHAVÍN DE HUÁNTAR",
-      backgroundImage: "/slider_1.png",
-      duration: "FULL DAY (11H)",
+      titleTop: "CUNA DE LA CIVILIZACIÓN",
+      titleMain: "CHAVÍN DE HUÁNTAR 3137M",
+      backgroundImage: "/slider_3.png",
+      duration: "08 - 09 HORAS",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
       difficultyLevel: "easy"
     },
     intro: {
       code: "HZ-CHA-FD",
-      titlePrefix: "Arquitectura del",
-      titleAccent: "Misterio",
-      description: "Chavín de Huántar es uno de los sitios arqueológicos más importantes de América. Considerado el primer centro de integración andina, sus impresionantes estructuras de piedra y galerías son únicas.",
-      image: "/slider_2.png",
-      lat: `09° 35' 33" S`,
+      titlePrefix: "Milenario y",
+      titleAccent: "Sagrado",
+      description: "El sitio arqueológico de Chavín de Huántar es uno de los más importantes del Perú antiguo. En este tour cruzaremos la Cordillera Blanca por el túnel de Cahuish para explorar las pirámides, galerías subterráneas y el famoso Lanzón Monolítico.",
+      image: "/slider_1.png",
+      lat: `09° 35' 34" S`,
       lon: `77° 10' 42" W`,
       specs: [
-        { label: 'LOCALIZACIÓN', value: 'Callejón de Conchucos', icon: 'location' },
-        { label: 'ESCULTURA', value: 'Lanzón Monolítico', icon: 'zone' },
-        { label: 'STATUS', value: 'Patrimonio UNESCO', icon: 'season' },
-        { label: 'PÚBLICO', value: 'Familiar / Cultural', icon: 'service' }
+        { label: 'ELEVACIÓN', value: '3,137 MSNM', icon: 'location' },
+        { label: 'CULTURA', value: 'Pre-Inca (Chavín)', icon: 'zone' },
+        { label: 'SALIDA', value: '08:30 AM', icon: 'season' },
+        { label: 'LAGUNA', value: 'Querococha', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '08:30 AM', title: 'SALIDA DE HUARAZ', content: 'Partida hacia el sur del Callejón de Huaylas. Pasamos por los pueblos de Recuay y Catac.', stats: { time: 'Inicio' } },
-      { day: '10:30 AM', title: 'LAGUNA QUEROCOCHA', content: 'Parada fotográfica en la laguna Querococha (3980m). Vistas del mapa del Perú formado naturalmente en la montaña.', stats: { alt: '3980m' } },
-      { day: '11:30 AM', title: 'TÚNEL CAWISH', content: 'Cruce de la Cordillera Blanca a través del túnel Cawish. Descenso hacia el Callejón de Conchucos.', stats: { alt: '4500m' } },
-      { day: '01:00 PM', title: 'COMPLEJO CHAVÍN', content: 'Visita guiada al centro ceremonial más antiguo de los Andes. Exploración de plazas, galerías subterráneas y el Lanzón Monolítico.', stats: { alt: '3137m', time: '2.5 h estancia' } },
-      { day: '03:30 PM', title: 'MUSEO Y ALMUERZO', content: 'Visita al Museo Nacional Chavín (opcional) y almuerzo en un restaurante local del pueblo.', stats: { time: 'Cultura' } },
-      { day: '07:30 PM', title: 'RETORNO A HUARAZ', content: 'Llegada a la ciudad tras cruzar nuevamente la cordillera. Fin de servicios.', stats: { time: 'Fin' } }
+      { day: '08:30 AM', title: 'SALIDA DE HUARAZ', content: 'Viaje hacia el sur visitando Recuay y Catac. Parada en la laguna de Querococha (3980m) para fotos panorámicas.' },
+      { day: '11:00 AM', title: 'CHAVÍN DE HUÁNTAR', content: 'Cruce del túnel Cahuish. Visita guiada al sitio arqueológico: Plaza Cuadrangular, Circular, galerías y cabezas clavas. Visita al Museo de Sitio.' },
+      { day: '03:30 PM', title: 'ALMUERZO Y RETORNO', content: 'Almuerzo regional en Chavín y retorno a Huaraz cruzando nuevamente la cordillera. Fin de servicios.' }
     ],
     includes: [
       'Recojo de su hotel en Huaraz',
-      'Transporte turístico equipado',
-      'Guía Oficial de Turismo (Especialista)',
-      'Asistencia en el sitio arqueológico',
-      'Botiquín de primeros auxilios'
+      'Transporte turístico compartido',
+      'Guía oficial de turismo bilingüe'
     ],
     excludes: [
       'Alimentación (Almuerzo regional)',
-      'Ticket de entrada al sitio (S/. 15.00)',
-      'Ticket de entrada al museo',
-      'Gastos personales'
+      'Ticket de entrada Arqueología (S/. 30.00)',
+      'Gastos personales',
+      'Propinas'
     ],
     equipment: [
-      'Calzado cómodo para caminar',
-      'Protección solar (gorro, bloqueador)',
-      'Casaca ligera y poncho de lluvia',
-      'Cámara fotográfica con batería extra',
-      'Medicamentos personales',
-      'Efectivo extra para almuerzo y tickets'
+      'Ropa ligera y casaca para el túnel',
+      'Protector solar y sombrero',
+      'Zapatos cómodos',
+      'Cámara fotográfica',
+      'Agua embotellada'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
-    includesTitle: "Qué Incluye",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Cronograma",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Servicios Incluidos",
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
-      titleTop: "CENTER OF THE WORLD",
-      titleMain: "CHAVÍN DE HUÁNTAR",
-      backgroundImage: "/slider_1.png",
-      duration: "FULL DAY (11H)",
+      titleTop: "CRADLE OF CIVILIZATION",
+      titleMain: "CHAVÍN DE HUÁNTAR 3137M",
+      backgroundImage: "/slider_3.png",
+      duration: "08 - 09 HOURS",
       price: "UPON REQUEST",
       difficulty: "EASY",
       difficultyLevel: "easy"
     },
     intro: {
       code: "HZ-CHA-FD",
-      titlePrefix: "Architecture of",
-      titleAccent: "Mystery",
-      description: "Chavín de Huántar is one of the most important archaeological sites in America. Considered the first center of Andean integration, its impressive stone structures and galleries are unique.",
-      image: "/slider_2.png",
-      lat: `09° 35' 33" S`,
+      titlePrefix: "Ancient and",
+      titleAccent: "Sacred",
+      description: "The archaeological site of Chavín de Huántar is one of the most important in ancient Peru. On this tour we will cross the Cordillera Blanca through the Cahuish tunnel to explore the pyramids, underground galleries and the famous Lanzón Monolith.",
+      image: "/slider_1.png",
+      lat: `09° 35' 34" S`,
       lon: `77° 10' 42" W`,
       specs: [
-        { label: 'LOCATION', value: 'Callejon de Conchucos', icon: 'location' },
-        { label: 'SCULPTURE', value: 'Lanzon Monolithic', icon: 'zone' },
-        { label: 'STATUS', value: 'UNESCO World Heritage', icon: 'season' },
-        { label: 'AUDIENCE', value: 'Family / Cultural', icon: 'service' }
+        { label: 'ELEVATION', value: '3,137 MASL', icon: 'location' },
+        { label: 'CULTURE', value: 'Pre-Inca (Chavín)', icon: 'zone' },
+        { label: 'DEPARTURE', value: '08:30 AM', icon: 'season' },
+        { label: 'LAGOON', value: 'Querococha', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '08:30 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Departure towards the south of the Callejon de Huaylas. We pass through the villages of Recuay and Catac.', stats: { time: 'Start' } },
-      { day: '10:30 AM', title: 'QUEROCOCHA LAGOON', content: 'Photo stop at Querococha lagoon (3980m). Views of the naturally formed map of Peru on the mountain.', stats: { alt: '3980m' } },
-      { day: '11:30 AM', title: 'CAWISH TUNNEL', content: 'Crossing the Cordillera Blanca through the Cawish tunnel. Descent towards the Callejon de Conchucos.', stats: { alt: '4500m' } },
-      { day: '01:00 PM', title: 'CHAVÍN COMPLEX', content: 'Guided tour of the oldest ceremonial center of the Andes. Exploration of plazas, underground galleries and the Monolithic Lanzón.', stats: { alt: '3137m', time: '2.5 h stay' } },
-      { day: '03:30 PM', title: 'MUSEUM AND LUNCH', content: 'Visit to the Chavin National Museum (optional) and lunch at a local village restaurant.', stats: { time: 'Culture' } },
-      { day: '07:30 PM', title: 'RETURN TO HUARAZ', content: 'Arrival in the city after crossing the range again. End of services.', stats: { time: 'End' } }
+      { day: '08:30 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Heading south visiting Recuay and Catac. Stop at Querococha lagoon (3980m) for panoramic photos.' },
+      { day: '11:00 AM', title: 'CHAVÍN DE HUÁNTAR', content: 'Crossing the Cahuish tunnel. Guided visit to the archaeological site: Quadrangular Plaza, Circular Plaza, galleries and tenon heads. Visit to the Site Museum.' },
+      { day: '03:30 PM', title: 'LUNCH & RETURN', content: 'Regional lunch in Chavín and return to Huaraz crossing the mountain range again. End of services.' }
     ],
     includes: [
       'Pickup from your hotel in Huaraz',
-      'Equipped tourist transport',
-      'Official Tour Guide (Specialist)',
-      'Assistance at the archaeological site',
-      'First aid kit'
+      'Shared tourist transport',
+      'Bilingual official tour guide'
     ],
     excludes: [
       'Meals (Regional lunch)',
-      'Site entrance ticket (S/. 15.00)',
-      'Museum entrance ticket',
-      'Personal expenses'
+      'Archaeology entrance ticket (S/. 30.00)',
+      'Personal expenses',
+      'Tips'
     ],
     equipment: [
-      'Comfortable walking shoes',
-      'Sun protection (hat, sunblock)',
-      'Light jacket and rain poncho',
-      'Camera with extra battery',
-      'Personal medication',
-      'Extra cash for lunch and tickets'
+      'Light clothing and jacket for the tunnel',
+      'Sunscreen and hat',
+      'Comfortable shoes',
+      'Camera',
+      'Bottled water'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
-    includesTitle: "What's Included",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Included Services",
+    equipmentTitle: "Recommendations"
   }
 };

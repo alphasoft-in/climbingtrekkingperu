@@ -62,10 +62,7 @@ export const culturalIquitosData = {
     itineraryTitle: "Expedición",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_2.png', '/slider_1.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Sugerido"
   },
   en: {
     hero: {
@@ -127,9 +124,6 @@ export const culturalIquitosData = {
     itineraryTitle: "Expedition",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included Services",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_2.png', '/slider_1.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Suggested Gear"
   }
 };

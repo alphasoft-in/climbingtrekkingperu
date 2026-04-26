@@ -1,7 +1,7 @@
 export const climbingChileOjosData = {
   id: 'ojos-del-salado',
   category: 'chile',
-  subCategory: 'atacama',
+  subCategory: 'chile',
   es: {
     hero: {
       titleTop: "THE WORLD'S HIGHEST VOLCANO",

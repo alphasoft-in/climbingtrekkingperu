@@ -60,10 +60,7 @@ export const culturalTambopataData = {
     itineraryTitle: "Expedición",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_4.png', '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Sugerido"
   },
   en: {
     hero: {
@@ -123,9 +120,6 @@ export const culturalTambopataData = {
     itineraryTitle: "Expedition",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included Services",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_4.png', '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Suggested Gear"
   }
 };

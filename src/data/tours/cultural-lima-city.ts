@@ -5,119 +5,137 @@ export const culturalLimaCityData = {
   es: {
     hero: {
       titleTop: "CIUDAD DE LOS REYES",
-      titleMain: "LIMA CITY TOUR 4H",
+      titleMain: "CITY TOUR LIMA - PERÚ",
       backgroundImage: "/slider_3.png",
-      duration: "4 HORAS APROX",
-      price: "CONSULTAR",
+      duration: "04 HORAS",
+      price: "USD. 65.00",
       difficulty: "FÁCIL",
       difficultyLevel: "easy"
     },
     intro: {
       code: "LIM-CTY-04H",
-      titlePrefix: "Tres Eras en una",
-      titleAccent: "Sola Ciudad",
-      description: "Lima es una metrópoli que respira historia en cada esquina. Este recorrido optimizado de 4 horas te permite contrastar la Lima Ancestral de los oráculos de adobe, la Lima Colonial del virreinato más importante de América, y la Lima Contemporánea.",
+      titlePrefix: "Lima",
+      titleAccent: "Ancestral & Colonial",
+      description: "Conozca Lima, Perú en sus tres períodos históricos: Ancestral, Colonial y Contemporáneo. Iniciamos con la mística Huaca Pucllana, centro ceremonial del siglo IV D.C. Continuamos por el Centro Histórico con más de cincuenta monumentos coloniales, destacando la Basílica Catedral y el Convento de San Francisco con sus famosas Catacumbas. Finalmente, visitamos las zonas residenciales de San Isidro y Miraflores con vistas espectaculares al Pacífico.",
       image: "/slider_1.png",
       lat: `12° 02' 35" S`,
       lon: `77° 01' 42" W`,
       specs: [
-        { label: 'SALIDAS', value: 'Diarias (AM/PM)', icon: 'location' },
-        { label: 'HISTORIA', value: 'Ancestral & Colonial', icon: 'zone' },
-        { label: 'DURACIÓN', value: '4 Horas', icon: 'season' },
-        { label: 'MODALIDAD', value: 'Compartido / Privado', icon: 'service' }
+        { label: 'SALIDAS', value: '09:15 y 14:15', icon: 'location' },
+        { label: 'HISTORIA', value: '3 Épocas', icon: 'zone' },
+        { label: 'DURACIÓN', value: '3.5 a 4 Horas', icon: 'season' },
+        { label: 'ADULTOS', value: 'USD. 65.00', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'ANCESTRAL', title: 'HUACA PUCLLANA', content: 'Iniciamos con una vista panorámica de la Huaca Pucllana, un magnífico centro ceremonial y arqueológico del siglo IV D.C. construido en adobe, considerado un pueblo sagrado por los Incas.', stats: { alt: 'Nivel del mar', dist: 'Panorámica', time: '45 min' } },
-      { day: 'COLONIAL', title: 'CENTRO HISTÓRICO Y CATACUMBAS', content: 'Recorrido por el Centro Histórico de Lima: Plaza Mayor, Palacio de Gobierno, Catedral y Palacio Municipal. Visita al Convento de San Francisco y sus famosas criptas subterráneas (Catacumbas).', stats: { alt: 'Histórico', dist: 'Caminata', time: '2 h' } },
-      { day: 'MODERNA', title: 'SAN ISIDRO Y MIRAFLORES', content: 'Visita a las zonas residenciales tradicionales: El Olivar de San Isidro y el Parque del Amor en Miraflores, con una vista espectacular del Océano Pacífico.', stats: { alt: 'Costa', dist: 'Transporte', time: '1 h' } }
+      { 
+        day: 'INICIO', 
+        title: 'RECOJO Y LIMA ANCESTRAL', 
+        content: 'Recojo del hotel en los distritos de Miraflores, San Isidro o Centro de Lima. Vista panorámica de la Huaca Pucllana, centro ceremonial edificado en el siglo IV y considerado pueblo sagrado por los Incas.', 
+        stats: { time: '09:15 / 14:15' } 
+      },
+      { 
+        day: 'COLONIAL', 
+        title: 'CENTRO HISTÓRICO Y CATACUMBAS', 
+        content: 'Visita al Centro Histórico: Paseo de la República, Plaza San Martín, Plaza Mayor, Palacio de Gobierno y la Catedral. Ingreso al Conjunto Monumental de San Francisco y sus criptas subterráneas (Catacumbas).', 
+        stats: { status: 'Cultura' } 
+      },
+      { 
+        day: 'MODERNA', 
+        title: 'SAN ISIDRO Y MIRAFLORES', 
+        content: 'Recorrido por las zonas residenciales más tradicionales: El Parque del Olivar en San Isidro y el Parque del Amor en Miraflores, con una vista espectacular del Océano Pacífico.', 
+        stats: { status: 'Vistas' } 
+      }
     ],
     includes: [
-      'Recojo desde su hotel (Miraflores, San Isidro, Lima)',
-      'Transporte turístico con aire acondicionado',
+      'Recojo desde su hotel (Miraflores, San Isidro, Centro)',
       'Guía oficial de turismo bilingüe',
-      'Visita guiada a San Francisco y Catacumbas',
-      'Retorno a su hotel al finalizar el tour'
+      'Transporte turístico con aire acondicionado',
+      'Finalización en su hotel'
     ],
     excludes: [
       'Tickets de entrada a sitios turísticos',
       'Alimentación y bebidas',
-      'Propinas para guía y conductor',
-      'Gastos personales'
+      'Propinas para guía y chofer'
     ],
     equipment: [
       'Calzado cómodo para caminar',
       'Bloqueador solar y lentes de sol',
-      'Cámara fotográfica con batería extra',
+      'Cámara fotográfica',
       'Agua embotellada',
-      'Casaca ligera (Lima puede ser nublada)',
-      'Efectivo extra para compras personales'
+      'Casaca ligera'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
-    includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_3.png', '/slider_1.png', '/slider_2.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Programa",
+    itinerarySubtitle: "Tres Épocas",
+    includesTitle: "Incluye",
+    equipmentTitle: "Sugerencias"
   },
   en: {
     hero: {
       titleTop: "CITY OF KINGS",
-      titleMain: "LIMA CITY TOUR 4H",
+      titleMain: "LIMA CITY TOUR",
       backgroundImage: "/slider_3.png",
-      duration: "4 HOURS APPROX",
-      price: "UPON REQUEST",
+      duration: "04 HOURS",
+      price: "USD. 65.00",
       difficulty: "EASY",
       difficultyLevel: "easy"
     },
     intro: {
       code: "LIM-CTY-04H",
-      titlePrefix: "Three Eras in One",
-      titleAccent: "Single City",
-      description: "Lima is a metropolis that breathes history in every corner. This optimized 4-hour tour allows you to contrast Ancestral Lima with its adobe oracles, Colonial Lima of the most important viceroyalty in America, and Contemporary Lima.",
+      titlePrefix: "Lima",
+      titleAccent: "Ancestral & Colonial",
+      description: "Explore Lima through its three historical periods: Ancestral, Colonial, and Contemporary. We start with the mystical Huaca Pucllana, a ceremonial center from the 4th century A.D. We continue through the Historic Center with over fifty colonial monuments, highlighting the Cathedral and the Convent of San Francisco with its famous Catacombs. Finally, we visit the residential areas of San Isidro and Miraflores with spectacular views of the Pacific.",
       image: "/slider_1.png",
       lat: `12° 02' 35" S`,
       lon: `77° 01' 42" W`,
       specs: [
-        { label: 'DEPARTURES', value: 'Daily (AM/PM)', icon: 'location' },
-        { label: 'HISTORY', value: 'Ancestral & Colonial', icon: 'zone' },
-        { label: 'DURATION', value: '4 Hours', icon: 'season' },
-        { label: 'MODE', value: 'Shared / Private', icon: 'service' }
+        { label: 'DEPARTURES', value: '09:15 and 14:15', icon: 'location' },
+        { label: 'HISTORY', value: '3 Periods', icon: 'zone' },
+        { label: 'DURATION', value: '3.5 to 4 Hours', icon: 'season' },
+        { label: 'ADULTS', value: 'USD. 65.00', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: 'ANCESTRAL', title: 'HUACA PUCLLANA', content: 'We start with a panoramic view of Huaca Pucllana, a magnificent ceremonial and archaeological center from the 4th century A.D. built in adobe, considered a sacred village by the Incas.', stats: { alt: 'Sea level', dist: 'Panoramic', time: '45 min' } },
-      { day: 'COLONIAL', title: 'HISTORICAL CENTER AND CATACOMBS', content: 'Tour of the Historical Center of Lima: Plaza Mayor, Government Palace, Cathedral and Municipal Palace. Visit to the Convent of San Francisco and its famous underground crypts (Catacombs).', stats: { alt: 'Historical', dist: 'Walk', time: '2 h' } },
-      { day: 'MODERN', title: 'SAN ISIDRO AND MIRAFLORES', content: 'Visit to traditional residential areas: El Olivar de San Isidro and Love Park in Miraflores, with a spectacular view of the Pacific Ocean.', stats: { alt: 'Coast', dist: 'Transport', time: '1 h' } }
+      { 
+        day: 'START', 
+        title: 'PICKUP & ANCESTRAL LIMA', 
+        content: 'Pickup from hotels in Miraflores, San Isidro, or Downtown Lima. Panoramic view of Huaca Pucllana, a ceremonial center built in the 4th century and considered a sacred village by the Incas.', 
+        stats: { time: '09:15 / 14:15' } 
+      },
+      { 
+        day: 'COLONIAL', 
+        title: 'HISTORIC CENTER & CATACOMBS', 
+        content: 'Visit to the Historic Center: Paseo de la República, Plaza San Martín, Plaza Mayor, Government Palace, and Cathedral. Entrance to the Monumental Complex of San Francisco and its underground crypts (Catacombs).', 
+        stats: { status: 'Culture' } 
+      },
+      { 
+        day: 'MODERN', 
+        title: 'SAN ISIDRO & MIRAFLORES', 
+        content: 'Tour of the most traditional residential areas: El Olivar Park in San Isidro and the Park of Love in Miraflores, with a spectacular view of the Pacific Ocean.', 
+        stats: { status: 'Views' } 
+      }
     ],
     includes: [
-      'Pickup from your hotel (Miraflores, San Isidro, Lima)',
-      'Air-conditioned tourist transport',
+      'Pickup from your hotel (Miraflores, San Isidro, Downtown)',
       'Bilingual official tour guide',
-      'Guided visit to San Francisco and Catacombs',
-      'Return to your hotel at the end of the tour'
+      'Air-conditioned tourist transport',
+      'Drop-off at your hotel'
     ],
     excludes: [
       'Entrance tickets to tourist sites',
-      'Food and drinks',
-      'Tips for guide and driver',
-      'Personal expenses'
+      'Meals and drinks',
+      'Tips for guide and driver'
     ],
     equipment: [
       'Comfortable walking shoes',
       'Sunscreen and sunglasses',
-      'Camera with extra battery',
+      'Camera',
       'Bottled water',
-      'Light jacket (Lima can be cloudy)',
-      'Extra cash for personal purchases'
+      'Light jacket'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
-    includesTitle: "Included Services",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_3.png', '/slider_1.png', '/slider_2.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Program",
+    itinerarySubtitle: "Three Eras",
+    includesTitle: "Includes",
+    equipmentTitle: "Suggestions"
   }
 };

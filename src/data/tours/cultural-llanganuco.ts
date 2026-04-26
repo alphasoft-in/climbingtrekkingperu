@@ -4,126 +4,108 @@ export const culturalLlanganucoData = {
   subCategory: 'ancash',
   es: {
     hero: {
-      titleTop: "HISTORIA Y NATURALEZA",
-      titleMain: "LAGUNA LLANGANUCO",
-      backgroundImage: "/slider_1.png",
-      duration: "FULL DAY (10H)",
+      titleTop: "CORDILLERA BLANCA",
+      titleMain: "LAGUNA LLANGANUCO 3890M",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      duration: "08 - 09 HORAS",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
       difficultyLevel: "easy"
     },
     intro: {
       code: "HZ-LLA-FD",
-      titlePrefix: "Turquesa en la",
-      titleAccent: "Alta Montaña",
-      description: "El tour a Llanganuco es el clásico por excelencia de Huaraz. Combina la belleza natural de las lagunas con la conmovedora historia de Yungay.",
-      image: "/slider_3.png",
+      titlePrefix: "Belleza",
+      titleAccent: "Turquesa",
+      description: "Las lagunas de Llanganuco (Chinacocha y Orcuncocha) son de las más emblemáticas del Parque Nacional Huascarán. Rodeadas por los nevados más altos del Perú, ofrecen un espectáculo natural de aguas cristalinas y bosques de queñuales.",
+      image: "/trekking/blanca/trekking-clasico.png",
       lat: `09° 04' 00" S`,
       lon: `77° 39' 00" W`,
       specs: [
-        { label: 'LOCALIZACIÓN', value: 'Parque Nac. Huascarán', icon: 'location' },
-        { label: 'NEVADOS', value: 'Huascarán, Huandoy', icon: 'zone' },
-        { label: 'TIPO', value: 'Cultural / Paisajístico', icon: 'season' },
-        { label: 'TEMPERATURA', value: '12°C - 18°C', icon: 'service' }
+        { label: 'ELEVACIÓN', value: '3,890 MSNM', icon: 'location' },
+        { label: 'DESTINO', value: 'Carhuaz & Yungay', icon: 'zone' },
+        { label: 'SALIDA', value: '08:00 AM', icon: 'season' },
+        { label: 'DURACIÓN', value: '9 Horas Aprox.', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '08:00 AM', title: 'PARTIDA DE HUARAZ', content: 'Recojo de su hotel y viaje hacia el norte del Callejón de Huaylas. Primera parada en Carhuaz para degustar helados típicos.', stats: { time: 'Inicio' } },
-      { day: '10:30 AM', title: 'YUNGAY (CAMPO SANTO)', content: 'Visita guiada al Campo Santo de Yungay, ciudad sepultada por el alud de 1970. Un lugar de memoria e historia.', stats: { alt: '2500m' } },
-      { day: '11:30 AM', title: 'PARQUE NACIONAL HUASCARÁN', content: 'Ingreso al Parque Nacional. Ascenso por la quebrada Llanganuco entre bosques de Quenuales.', stats: { alt: '3400m' } },
-      { day: '12:00 PM', title: 'LAGUNAS LLANGANUCO', content: 'Visita a las lagunas Chinacocha (hembra) y Orconcocha (macho). Tiempo para botes, caminatas y fotografía.', stats: { alt: '3890m', time: '2 h estancia' } },
-      { day: '03:00 PM', title: 'TARICA Y ARTESANÍAS', content: 'Descenso y parada en el pueblo artesanal de Tarica para ver el trabajo en cerámica y comprar recuerdos.', stats: { time: 'Cultura' } },
-      { day: '06:30 PM', title: 'RETORNO A HUARAZ', content: 'Llegada a la Plaza de Armas de Huaraz. Fin de la expedición diaria.', stats: { time: 'Fin' } }
+      { day: '08:00 AM', title: 'SALIDA DE HUARAZ', content: 'Viaje hacia el norte visitando Carhuaz (ciudad de los helados). Continuamos hasta el control del Parque Nacional Huascarán.' },
+      { day: '11:00 AM', title: 'LAGUNAS LLANGANUCO', content: 'Visita a las lagunas Chinacocha y Orcuncocha. Tiempo para fotos y caminatas cortas. Almuerzo en restaurante local.' },
+      { day: '03:00 PM', title: 'YUNGAY Y TARICA', content: 'Visita al Campo Santo de Yungay y finalizamos en el pueblo artesanal de Tarica para comprar recuerdos. Retorno a Huaraz.' }
     ],
     includes: [
       'Recojo de su hotel en Huaraz',
-      'Transporte turístico equipado',
-      'Guía Oficial de Turismo (Bilingüe)',
-      'Asistencia en el Parque Nacional',
-      'Botiquín de primeros auxilios'
+      'Transporte turístico compartido',
+      'Guía oficial de turismo bilingüe'
     ],
     excludes: [
-      'Alimentación (Almuerzo en restaurante local)',
-      'Tickets de entrada PNH (Ext: S/. 30.00 / Nac: S/. 12.00)',
-      'Servicio de botes en la laguna',
-      'Gastos personales'
+      'Alimentación (Almuerzo regional)',
+      'Ticket de entrada PNH (S/. 30.00 EX / S/. 12.00 N)',
+      'Gastos personales',
+      'Propinas'
     ],
     equipment: [
-      'Casaca ligera y poncho de lluvia',
-      'Protección solar (gorro, bloqueador, lentes)',
-      'Calzado cómodo para caminata',
-      'Cámara fotográfica con batería extra',
-      'Agua y snacks',
-      'Efectivo para almuerzo y tickets'
+      'Ropa ligera y casaca térmica',
+      'Protector solar y lentes de sol',
+      'Zapatos cómodos',
+      'Cámara fotográfica',
+      'Agua embotellada'
     ],
-    itineraryTitle: "Expedición",
-    itinerarySubtitle: "Cronograma",
-    includesTitle: "Qué Incluye",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Cronograma",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Servicios Incluidos",
+    equipmentTitle: "Recomendaciones"
   },
   en: {
     hero: {
-      titleTop: "HISTORY AND NATURE",
-      titleMain: "LLANGANUCO LAGOON",
-      backgroundImage: "/slider_1.png",
-      duration: "FULL DAY (10H)",
+      titleTop: "CORDILLERA BLANCA",
+      titleMain: "LLANGANUCO LAGOON 3890M",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      duration: "08 - 09 HOURS",
       price: "UPON REQUEST",
       difficulty: "EASY",
       difficultyLevel: "easy"
     },
     intro: {
       code: "HZ-LLA-FD",
-      titlePrefix: "Turquoise in the",
-      titleAccent: "High Mountain",
-      description: "The tour to Llanganuco is the classic Huaraz tour par excellence. It combines the natural beauty of the lagoons with the touching history of Yungay.",
-      image: "/slider_3.png",
+      titlePrefix: "Turquoise",
+      titleAccent: "Beauty",
+      description: "The Llanganuco lagoons (Chinacocha and Orcuncocha) are among the most emblematic of the Huascarán National Park. Surrounded by Peru's highest peaks, they offer a natural spectacle of crystal clear waters and queñual forests.",
+      image: "/trekking/blanca/trekking-clasico.png",
       lat: `09° 04' 00" S`,
       lon: `77° 39' 00" W`,
       specs: [
-        { label: 'LOCATION', value: 'Huascaran National Park', icon: 'location' },
-        { label: 'PEAKS', value: 'Huascaran, Huandoy', icon: 'zone' },
-        { label: 'TYPE', value: 'Cultural / Scenic', icon: 'season' },
-        { label: 'TEMPERATURE', value: '12°C - 18°C', icon: 'service' }
+        { label: 'ELEVATION', value: '3,890 MASL', icon: 'location' },
+        { label: 'DESTINATION', value: 'Carhuaz & Yungay', icon: 'zone' },
+        { label: 'DEPARTURE', value: '08:00 AM', icon: 'season' },
+        { label: 'DURATION', value: '9 Hours Approx.', icon: 'service' }
       ]
     },
     itinerary: [
-      { day: '08:00 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Pickup from your hotel and travel north of the Callejon de Huaylas. First stop in Carhuaz to taste typical ice creams.', stats: { time: 'Start' } },
-      { day: '10:30 AM', title: 'YUNGAY (HOLY FIELD)', content: 'Guided tour of the Yungay Holy Field, city buried by the 1970 avalanche. A place of memory and history.', stats: { alt: '2500m' } },
-      { day: '11:30 AM', title: 'HUASCARAN NATIONAL PARK', content: 'Entrance to the National Park. Ascent through the Llanganuco gorge between Quenuales forests.', stats: { alt: '3400m' } },
-      { day: '12:00 PM', title: 'LLANGANUCO LAGOONS', content: 'Visit to the Chinacocha (female) and Orconcocha (male) lagoons. Time for boats, walks and photography.', stats: { alt: '3890m', time: '2 h stay' } },
-      { day: '03:00 PM', title: 'TARICA AND HANDICRAFTS', content: 'Descent and stop in the craft village of Tarica to see the pottery work and buy souvenirs.', stats: { time: 'Culture' } },
-      { day: '06:30 PM', title: 'RETURN TO HUARAZ', content: 'Arrival at the Plaza de Armas of Huaraz. End of the daily expedition.', stats: { time: 'End' } }
+      { day: '08:00 AM', title: 'DEPARTURE FROM HUARAZ', content: 'Heading north visiting Carhuaz (city of ice cream). Continue to the Huascarán National Park control.' },
+      { day: '11:00 AM', title: 'LLANGANUCO LAGOONS', content: 'Visit to Chinacocha and Orcuncocha lagoons. Time for photos and short walks. Lunch at a local restaurant.' },
+      { day: '03:00 PM', title: 'YUNGAY & TARICA', content: 'Visit to the Yungay Holy Field (Campo Santo) and finish at the artisan village of Tarica for souvenirs. Return to Huaraz.' }
     ],
     includes: [
       'Pickup from your hotel in Huaraz',
-      'Equipped tourist transport',
-      'Official Tour Guide (Bilingual)',
-      'Assistance in the National Park',
-      'First aid kit'
+      'Shared tourist transport',
+      'Bilingual official tour guide'
     ],
     excludes: [
-      'Meals (Lunch at local restaurant)',
-      'PNH entrance tickets (Ext: S/. 30.00 / Nac: S/. 12.00)',
-      'Boat service in the lagoon',
-      'Personal expenses'
+      'Meals (Regional lunch)',
+      'Entrance ticket (S/. 30.00 EX / S/. 12.00 N)',
+      'Personal expenses',
+      'Tips'
     ],
     equipment: [
-      'Light jacket and rain poncho',
-      'Sun protection (hat, sunblock, glasses)',
-      'Comfortable walking shoes',
-      'Camera with extra battery',
-      'Water and snacks',
-      'Extra cash for lunch and tickets'
+      'Light clothing and thermal jacket',
+      'Sunscreen and sunglasses',
+      'Comfortable shoes',
+      'Camera',
+      'Bottled water'
     ],
-    itineraryTitle: "Expedition",
-    itinerarySubtitle: "Timeline",
-    includesTitle: "What's Included",
-    equipmentTitle: "Suggested Gear",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    itineraryTitle: "Timeline",
+    itinerarySubtitle: "Full Day",
+    includesTitle: "Included Services",
+    equipmentTitle: "Recommendations"
   }
 };

@@ -14,7 +14,7 @@ const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
       <PageHero 
         titleTop={isEs ? 'HABLEMOS' : "LET'S TALK"}
         titleMain={isEs ? 'CONTACTO' : 'CONTACT'}
-        backgroundImage="/expedicion.jpg"
+        backgroundImage="/bg-contactanos.png"
         techData={[
           { label: "HQ", value: "HUARAZ" },
           { label: "AVAILABILITY", value: "24/7" }
