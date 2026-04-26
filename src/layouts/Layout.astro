@@ -1,6 +1,7 @@
 ---
 import Footer from "@components/Footer.tsx";
 import Navbar from "@components/Navbar.tsx";
+import FloatingWhatsApp from "@components/FloatingWhatsApp.tsx";
 import {
 	getLangFromUrl,
 	useTranslations,
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const {
-	title = "Franpisco Adventure - Tours & Expediciones",
+	title = "ALPINE TREKS PERÚ - Tours & Expediciones",
 	description = "Agencia local especializada en experiencias de montaña y trekking en Perú.",
 } = Astro.props;
 
@@ -183,6 +184,8 @@ const footerLabels = {
 		</main>
 
 		<Footer client:load lang={lang as 'es' | 'en'} labels={footerLabels} />
+
+		<FloatingWhatsApp client:load />
 
 		<script>
 			// Sticky behavior moved to React component

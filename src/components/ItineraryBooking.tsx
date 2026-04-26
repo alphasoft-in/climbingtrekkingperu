@@ -27,9 +27,9 @@ const ItineraryBooking: React.FC<ItineraryBookingProps> = ({
       labelDate: "FECHA APROXIMADA",
       labelName: "NOMBRES Y APELLIDOS",
       placeholderName: "Nombre completo",
-      button: "RESERVAR CUPO",
+      button: "CONSULTAR AHORA",
       footer: "Respuesta inmediata vía WhatsApp",
-      whatsappMsg: "Hola Franpisco Adventure! Me gustaría reservar un cupo para la expedición:"
+      whatsappMsg: "Hola ALPINE TREKS PERÚ! Me gustaría consultar sobre la expedición:"
     },
     en: {
       status: "OPEN AVAILABILITY",
@@ -39,9 +39,9 @@ const ItineraryBooking: React.FC<ItineraryBookingProps> = ({
       labelDate: "APPROXIMATE DATE",
       labelName: "FULL NAME",
       placeholderName: "Your name",
-      button: "BOOK YOUR SPOT",
+      button: "INQUIRE NOW",
       footer: "Immediate response via WhatsApp",
-      whatsappMsg: "Hi Franpisco Adventure! I'd like to book a spot for the expedition:"
+      whatsappMsg: "Hi ALPINE TREKS PERÚ! I'd like to inquire about the expedition:"
     }
   };
 

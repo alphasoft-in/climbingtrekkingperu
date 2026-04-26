@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const isEs = lang === 'es';
+---
+
+<Layout 
+  title={isEs ? "404 - Ruta No Encontrada | ALPINE TREKS PERÚ" : "404 - Route Not Found | ALPINE TREKS PERÚ"}
+  description={isEs ? "La expedición que buscas ha tomado un camino diferente. Vuelve al campo base." : "The expedition you are looking for has taken a different path. Return to base camp."}
+>
+  <div class="relative min-h-screen bg-brand-dark flex items-center justify-center overflow-hidden">
+    {/* Background Image with Overlay */}
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/slider_4.png" 
+        alt="Mountain Background" 
+        class="w-full h-full object-cover opacity-20 grayscale scale-110 animate-slow-zoom"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-transparent to-brand-dark"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-2xl pt-20">
+      <span class="text-brand-blue text-[9px] md:text-[10px] font-black tracking-[0.4em] uppercase mb-3 block animate-fade-in">
+        ERROR 404
+      </span>
+      <h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6 animate-slide-up">
+        RUTA <span class="text-brand-blue">PERDIDA</span>
+      </h1>
+      <div class="w-12 h-[2px] bg-brand-red mx-auto mb-8 animate-width-grow"></div>
+      <p class="text-white/40 text-[10px] md:text-xs font-medium leading-relaxed mb-10 max-w-sm mx-auto">
+        {isEs 
+          ? "Has alcanzado una altitud donde el sendero desaparece. La página que buscas no existe o ha sido trasladada a otra cordillera."
+          : "You have reached an altitude where the trail disappears. The page you are looking for does not exist or has been moved to another mountain range."
+        }
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a 
+          href={isEs ? "/" : "/en"}
+          class="bg-brand-blue hover:bg-brand-blue/90 text-white font-black text-[9px] py-4 px-8 uppercase tracking-[0.2em] transition-all shadow-[0_10px_20px_rgba(0,144,204,0.2)] hover:shadow-[0_15px_30px_rgba(0,144,204,0.3)] active:scale-95"
+        >
+          {isEs ? "VOLVER AL CAMPO BASE" : "RETURN TO BASE CAMP"}
+        </a>
+        <a 
+          href={isEs 
+            ? "https://wa.me/51962421830?text=Hola ALPINE TREKS PERÚ! He encontrado un error 404 en la web." 
+            : "https://wa.me/51962421830?text=Hi ALPINE TREKS PERÚ! I found a 404 error on the website."
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white/5 hover:bg-white/10 text-white border border-white/10 font-black text-[9px] py-4 px-8 uppercase tracking-[0.2em] transition-all active:scale-95"
+        >
+          {isEs ? "REPORTAR PROBLEMA" : "REPORT AN ISSUE"}
+        </a>
+      </div>
+    </div>
+
+    {/* Technical HUD Elements */}
+    <div class="absolute bottom-12 left-12 hidden lg:block text-[8px] font-bold text-white/20 tracking-[0.3em] uppercase vertical-text">
+      ALTITUDE: 0M / STATUS: OFFLINE
+    </div>
+    <div class="absolute top-12 right-12 hidden lg:block text-[8px] font-bold text-white/20 tracking-[0.3em] uppercase">
+      ALPINE TREKS PERÚ / TECH-UNIT
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  @keyframes slow-zoom {
+    from { transform: scale(1.1); }
+    to { transform: scale(1.2); }
+  }
+  .animate-slow-zoom {
+    animation: slow-zoom 20s linear infinite alternate;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slide-up {
+    animation: slide-up 1s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  @keyframes width-grow {
+    from { width: 0; }
+    to { width: 80px; }
+  }
+  .animate-width-grow {
+    animation: width-grow 1s ease-out 0.5s forwards;
+    width: 0;
+  }
+</style>

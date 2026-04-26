@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaFacebookF, FaInstagram, FaTiktok, FaThreads } from 'react-icons/fa6';
+import { FaTripadvisor } from 'react-icons/fa';
 
 interface NavbarProps {
   lang: 'es' | 'en';
@@ -67,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <a href={lang === 'es' ? '/' : '/en'} className="block">
               <img
                 src="/logo.png"
-                alt="Franpisco Adventure"
+                alt="ALPINE TREKS PERÚ"
                 className={`transition-all duration-500 object-contain ${
                   isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-16'
                 }`}
@@ -87,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     href={link.href}
                     className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
                       link.active
-                        ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
+                        ? isScrolled ? 'text-white' : 'text-brand-blue'
                         : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                     }`}
                   >
@@ -95,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       {link.label}
                       <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-all duration-300 ${
                         link.active ? 'w-full' : 'w-0 group-hover:w-full'
-                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                      } bg-brand-blue`}></span>
                     </span>
                   </a>
                 </li>
@@ -106,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <button
                   className={`flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 py-2 ${
                     isTrekkingActive
-                      ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
+                      ? isScrolled ? 'text-white' : 'text-brand-blue'
                       : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                   }`}
                 >
@@ -115,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       {labels.trekking}
                       <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
                         isTrekkingActive ? 'w-full' : 'w-0 group-hover:w-full'
-                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                      } bg-brand-blue`}></span>
                     </span>
                     <svg className="transition-transform duration-300 group-hover:rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                       <path d="m6 9 6 6 6-6" />
@@ -157,7 +159,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   href={getBaseUrl('climbing')}
                   className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
                     routeName.startsWith('climbing')
-                      ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
+                      ? isScrolled ? 'text-white' : 'text-brand-blue'
                       : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                   }`}
                 >
@@ -165,7 +167,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       {labels.climbing}
                       <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
                         routeName.startsWith('climbing') ? 'w-full' : 'w-0 group-hover:w-full'
-                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                      } bg-brand-blue`}></span>
                     </span>
                   </a>
               </li>
@@ -175,7 +177,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <button
                   className={`flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 py-2 ${
                     isDestinationsActive
-                      ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
+                      ? isScrolled ? 'text-white' : 'text-brand-blue'
                       : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                   }`}
                 >
@@ -184,7 +186,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       {labels.destinations}
                       <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
                         isDestinationsActive ? 'w-full' : 'w-0 group-hover:w-full'
-                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                      } bg-brand-blue`}></span>
                     </span>
                     <svg className="transition-transform duration-300 group-hover:rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                       <path d="m6 9 6 6 6-6" />
@@ -233,7 +235,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     href={link.href}
                     className={`text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
                       link.active
-                        ? isScrolled ? 'text-brand-red' : 'text-brand-blue'
+                        ? isScrolled ? 'text-white' : 'text-brand-blue'
                         : isScrolled ? 'text-brand-light hover:text-white' : 'text-brand-dark hover:text-brand-blue'
                     }`}
                   >
@@ -241,7 +243,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       {link.label}
                       <span className={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
                         link.active ? 'w-full' : 'w-0 group-hover:w-full'
-                      } ${isScrolled ? 'bg-brand-red' : 'bg-brand-blue'}`}></span>
+                      } bg-brand-blue`}></span>
                     </span>
                   </a>
                 </li>
@@ -287,7 +289,7 @@ const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="h-full flex flex-col p-6 sm:p-12 overflow-y-auto">
           <div className="flex justify-between items-center mb-8 sm:mb-12">
-            <img src="/logo.png" alt="Logo" className="h-8 sm:h-10" />
+            <img src="/logo.png" alt="ALPINE TREKS PERÚ" className="h-8 sm:h-10" />
             <button
               onClick={toggleMobileMenu}
               className="group flex items-center gap-3 text-white text-[0.65rem] sm:text-[0.7rem] font-black tracking-[0.3em] opacity-60 hover:opacity-100 transition-all"
@@ -303,12 +305,12 @@ const Navbar: React.FC<NavbarProps> = ({
           <nav className="flex flex-col gap-4 sm:gap-6 items-center w-full">
             <div className="flex flex-col items-center gap-1 group">
               <a href={lang === 'es' ? '/' : '/en'} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
-              {routeName === '' && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              {routeName === '' && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
               <a href={getBaseUrl('about')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isAboutActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.about}</a>
-              {isAboutActive && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              {isAboutActive && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
             </div>
             
             {/* Mobile Dropdown: Trekking */}
@@ -349,29 +351,45 @@ const Navbar: React.FC<NavbarProps> = ({
 
             <div className="flex flex-col items-center gap-1 group">
               <a href={getBaseUrl('climbing')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('climbing') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.climbing}</a>
-              {routeName.startsWith('climbing') && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              {routeName.startsWith('climbing') && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
               <a href={getBaseUrl('tours')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
-              {isToursActive && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              {isToursActive && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
               <a href={getBaseUrl('gallery')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('gallery') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.gallery}</a>
-              {routeName.startsWith('gallery') && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              {routeName.startsWith('gallery') && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
               <a href={getBaseUrl('contact')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('contact') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.contact}</a>
-              {routeName.startsWith('contact') && <div className="w-6 h-[1.5px] bg-brand-red rounded-full shadow-[0_0_10px_rgba(216,2,2,0.5)]"></div>}
+              {routeName.startsWith('contact') && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10_rgba(0,144,204,0.5)]"></div>}
             </div>
           </nav>
 
           <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-8 items-center text-center">
-             <div className="flex gap-8">
-               <a href="#" className="text-white/40 hover:text-brand-red transition-colors text-[0.7rem] font-bold tracking-[0.2em]">FACEBOOK</a>
-               <a href="#" className="text-white/40 hover:text-brand-red transition-colors text-[0.7rem] font-bold tracking-[0.2em]">INSTAGRAM</a>
+             <div className="flex items-center justify-center gap-4 px-4">
+               {[
+                 { name: 'Facebook', url: 'https://www.facebook.com/FranciscoMayhuay', icon: <FaFacebookF className="w-5 h-5" /> },
+                 { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: <FaInstagram className="w-5 h-5" /> },
+                 { name: 'TikTok', url: 'https://www.tiktok.com/@franpiscoadventure', icon: <FaTiktok className="w-5 h-5" /> },
+                 { name: 'TripAdvisor', url: 'https://www.tripadvisor.com.pe/Attraction_Review-g304039-d12096967-Reviews-Franpisco_Adventure-Huaraz_Ancash_Region.html', icon: <FaTripadvisor className="w-5 h-5" /> },
+                 { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: <FaThreads className="w-5 h-5" /> }
+               ].map((social) => (
+                 <a 
+                   key={social.name}
+                   href={social.url} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm"
+                 >
+                   <span className="sr-only">{social.name}</span>
+                   {social.icon}
+                 </a>
+               ))}
              </div>
              
              <div className="flex items-center gap-4 text-xs font-black">
@@ -380,7 +398,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <a href={enUrl} className={`transition-all ${lang === 'en' ? 'text-brand-red scale-125' : 'text-white/40'}`}>EN</a>
              </div>
 
-             <p className="text-[0.55rem] sm:text-[0.6rem] tracking-[0.4em] text-white/20 uppercase">Franpisco Adventure Elite Expeditions</p>
+             <p className="text-[0.55rem] sm:text-[0.6rem] tracking-[0.4em] text-white/20 uppercase">ALPINE TREKS PERÚ</p>
           </div>
         </div>
       </div>

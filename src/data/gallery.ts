@@ -1,6 +1,6 @@
 export const galleryData = {
   es: {
-    title: "Galería de Expediciones | Franpisco Adventure",
+    title: "Galería de Expediciones | ALPINE TREKS PERÚ",
     description: "Explora nuestro registro visual de expediciones en los Andes.",
     categories: [
       { id: 'all', label: 'TODOS' },
@@ -8,11 +8,12 @@ export const galleryData = {
       { id: 'bolivia', label: 'BOLIVIA' },
       { id: 'argentina', label: 'ARGENTINA' },
       { id: 'ecuador', label: 'ECUADOR' },
+      { id: 'chile', label: 'CHILE' },
       { id: 'climbing', label: 'ESCALADA' }
     ]
   },
   en: {
-    title: "Expedition Gallery | Franpisco Adventure",
+    title: "Expedition Gallery | ALPINE TREKS PERÚ",
     description: "Explore our visual archive of Andean expeditions.",
     categories: [
       { id: 'all', label: 'ALL' },
@@ -20,6 +21,7 @@ export const galleryData = {
       { id: 'bolivia', label: 'BOLIVIA' },
       { id: 'argentina', label: 'ARGENTINA' },
       { id: 'ecuador', label: 'ECUADOR' },
+      { id: 'chile', label: 'CHILE' },
       { id: 'climbing', label: 'CLIMBING' }
     ]
   },
@@ -51,5 +53,16 @@ export const galleryData = {
     { id: 25, category: 'peru', title: 'Paso Cara Cara', location: 'Alpamayo Trek', image: '/trekking/blanca/cedros/1.png', size: 'small' },
     { id: 26, category: 'peru', title: 'Cara Norte Alpamayo', location: 'Cordillera Blanca', image: '/trekking/blanca/cedros/2.png', size: 'medium' },
     { id: 27, category: 'peru', title: 'Quebrada Los Cedros', location: 'Ruta Técnica', image: '/trekking/blanca/cedros/3.png', size: 'small' },
+    { id: 28, category: 'bolivia', title: 'Volcán Acotango', location: 'Sajama, Bolivia', image: '/bolivia/acotango.png', size: 'large' },
+    { id: 29, category: 'bolivia', title: 'Laguna Condoriri', location: 'Cordillera Real', image: '/bolivia/condoriri.png', size: 'medium' },
+    { id: 30, category: 'bolivia', title: 'Campo Base Cotia', location: 'Andes Bolivianos', image: '/bolivia/cotia.png', size: 'small' },
+    { id: 31, category: 'bolivia', title: 'Nevado Illampu', location: 'Sorata, Bolivia', image: '/bolivia/illampu.png', size: 'large' },
+    { id: 32, category: 'bolivia', title: 'Nevado Illimani', location: 'La Paz, Bolivia', image: '/bolivia/illimani.png', size: 'medium' },
+    { id: 33, category: 'bolivia', title: 'Isla del Sol', location: 'Lago Titicaca', image: '/bolivia/isla-del-sol.png', size: 'small' },
+    { id: 34, category: 'bolivia', title: 'Salar de Uyuni', location: 'Potosí, Bolivia', image: '/bolivia/uyuni.png', size: 'large' },
+    { id: 35, category: 'argentina', title: 'Cumbre Aconcagua', location: 'Mendoza, Argentina', image: '/argentina/aconcagua.png', size: 'large' },
+    { id: 36, category: 'ecuador', title: 'Volcán Iliniza', location: 'Avenida Volcanes', image: '/ecuador/lliniza.png', size: 'medium' },
+    { id: 37, category: 'ecuador', title: 'Rucu Pichincha', location: 'Quito, Ecuador', image: '/ecuador/rucu-pichincha.png', size: 'large' },
+    { id: 38, category: 'chile', title: 'Ojos del Salado', location: 'Atacama, Chile', image: '/chile/ojos-del-salado.png', size: 'large' },
   ]
 };

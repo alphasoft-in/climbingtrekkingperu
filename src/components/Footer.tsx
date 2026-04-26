@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaFacebookF, FaInstagram, FaTiktok, FaThreads } from 'react-icons/fa6';
+import { FaTripadvisor } from 'react-icons/fa';
 
 interface FooterProps {
   lang: 'es' | 'en';
@@ -37,30 +39,28 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
           {/* Column 1: Brand */}
           <div className="space-y-8">
             <div className="flex items-center">
-              <img src="/logo.png" alt="Franpisco Adventure" className="h-10 w-auto" />
+              <img src="/logo.png" alt="ALPINE TREKS PERÚ" className="h-10 w-auto" />
             </div>
             <p className="text-sm leading-relaxed font-medium text-slate-500 max-w-xs">
               {labels.brandDesc}
             </p>
-            <div className="flex gap-4">
-              {['facebook', 'instagram', 'linkedin'].map((social) => (
+            <div className="flex items-center gap-2">
+              {[
+                { name: 'Facebook', url: 'https://www.facebook.com/FranciscoMayhuay', icon: <FaFacebookF className="w-4 h-4" /> },
+                { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: <FaInstagram className="w-4 h-4" /> },
+                { name: 'TikTok', url: 'https://www.tiktok.com/@franpiscoadventure', icon: <FaTiktok className="w-4 h-4" /> },
+                { name: 'TripAdvisor', url: 'https://www.tripadvisor.com.pe/Attraction_Review-g304039-d12096967-Reviews-Franpisco_Adventure-Huaraz_Ancash_Region.html', icon: <FaTripadvisor className="w-4 h-4" /> },
+                { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: <FaThreads className="w-4 h-4" /> }
+              ].map((social) => (
                 <a 
-                  key={social}
-                  href={`https://${social}.com/franpiscoadventure`} 
+                  key={social.name}
+                  href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300"
+                  className="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm"
                 >
-                  <span className="sr-only">{social}</span>
-                  {social === 'facebook' && (
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-                  )}
-                  {social === 'instagram' && (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
-                  )}
-                  {social === 'linkedin' && (
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
-                  )}
+                  <span className="sr-only">{social.name}</span>
+                  {social.icon}
                 </a>
               ))}
             </div>
@@ -96,10 +96,10 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: labels.legalEthics, href: isEs ? '/nosotros#ethics' : '/en/about#ethics' },
+                { label: labels.legalEthics, href: `${baseUrl}/ethics` },
                 { label: labels.legalTerms, href: `${baseUrl}/terms` },
                 { label: labels.legalPrivacy, href: `${baseUrl}/privacy` },
-                { label: labels.legalEsnna, href: '#' },
+                { label: labels.legalEsnna, href: `${baseUrl}/esnna` },
                 { label: labels.legalCert, href: '#' }
               ].map((link, idx) => (
                 <li key={idx}>
@@ -146,7 +146,7 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
                 </div>
                 <div className="text-xs font-medium leading-relaxed">
                   <span className="block text-brand-blue text-[8px] font-black tracking-widest uppercase mb-1">{isEs ? 'CENTRAL OPERATIVA 24/7' : '24/7 COMMAND CENTER'}</span>
-                  <a href="https://wa.me/51987654321" className="text-green-500 font-bold hover:text-green-400 transition-colors">+51 987 654 321</a>
+                  <a href="https://wa.me/51962421830" className="text-green-500 font-bold hover:text-green-400 transition-colors">+51 962 421 830</a>
                 </div>
               </div>
             </div>

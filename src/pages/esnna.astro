@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '@components/PageHero';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+---
+
+<Layout 
+  title={isEs ? "Declaración Contra la Explotación Infantil (ESNNA) | ALPINE TREKS PERÚ" : "Declaration Against Child Exploitation (ESNNA) | ALPINE TREKS PERÚ"}
+  description={isEs ? "Declaración de cumplimiento de la Ley 29408 y rechazo a la ESNNA en el sector turismo." : "Declaration of compliance with Law 29408 and rejection of ESNNA in the tourism sector."}
+>
+  <PageHero 
+    client:load
+    titleTop={isEs ? "CUMPLIMIENTO LEGAL" : "LEGAL COMPLIANCE"}
+    titleMain={isEs ? "ESNNA" : "ESNNA"}
+    backgroundImage="/slider_3.png"
+  />
+
+  <section class="py-16 md:py-24 bg-white px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-slate prose-xs md:prose-sm max-w-none space-y-12 text-left md:text-justify">
+        
+        <div class="border-l-2 border-brand-red pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "I. Declaración de Principios Contra la ESNNA" : "I. Declaration of Principles Against ESNNA"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "En ALPINE TREKS PERÚ, manifestamos nuestra adhesión irrestricta a la Ley N° 29408, Ley General de Turismo, y su compromiso contra la Explotación Sexual de Niñas, Niños y Adolescentes (ESNNA). Declaramos tolerancia cero ante cualquier conducta que vulnere la integridad de los menores de edad."
+              : "At ALPINE TREKS PERÚ, we state our unrestricted adherence to Law No. 29408, the General Tourism Law, and its commitment against the Sexual Exploitation of Children and Adolescents (ESNNA). We declare zero tolerance for any conduct that violates the integrity of minors."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "II. Deber de Denuncia y Vigilancia" : "II. Duty to Report and Vigilance"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "Como operadores formales ante la Dirección Regional de Comercio Exterior y Turismo (DIRCETUR), ALPINE TREKS PERÚ y todo su personal operativo están obligados por ley a denunciar cualquier acto o sospecha de explotación ante las autoridades competentes (Policía Nacional del Perú o Ministerio Público)."
+              : "As formal operators before the Regional Directorate of Foreign Trade and Tourism (DIRCETUR), ALPINE TREKS PERÚ and all its operational staff are legally obliged to report any act or suspicion of exploitation to the competent authorities (National Police of Peru or the Public Prosecutor's Office)."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "III. Sanciones Penales" : "III. Criminal Sanctions"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "Recordamos a nuestros clientes y colaboradores que la explotación sexual infantil es un delito tipificado en el Código Penal peruano, con penas privativas de libertad severas. Nuestra empresa no brindará servicios a ninguna persona involucrada en dichas prácticas delictivas."
+              : "We remind our clients and collaborators that child sexual exploitation is a crime defined in the Peruvian Penal Code, with severe prison sentences. Our company will not provide services to any person involved in such criminal practices."
+            }
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

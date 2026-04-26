@@ -1,12 +1,67 @@
 import React from 'react';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import PageHero from './PageHero';
 
 interface ContactHubProps {
   lang: 'es' | 'en';
 }
 
-const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
-  const isEs = lang === 'es';
+const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isEs }) => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = React.useState<{
+    type: 'idle' | 'loading' | 'success' | 'error';
+    message: string;
+  }>({ type: 'idle', message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!executeRecaptcha) {
+      console.warn('Execute recaptcha not yet available');
+      return;
+    }
+
+    setStatus({ type: 'loading', message: '' });
+
+    try {
+      const token = await executeRecaptcha('contact_form');
+
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, captchaToken: token }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ type: 'success', message: data.message });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: data.message });
+      }
+    } catch (error) {
+      setStatus({ 
+        type: 'error', 
+        message: isEs ? 'Error de conexión o validación. Intente de nuevo.' : 'Connection or validation error. Please try again.' 
+      });
+    }
+  };
 
   return (
     <div className="bg-white">
@@ -104,12 +159,16 @@ const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
                 <p className="text-xs text-slate-500">{isEs ? 'Responderemos en menos de 24 horas.' : 'We will respond in less than 24 hours.'}</p>
               </div>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'NOMBRE' : 'NAME'}</label>
                     <input 
                       type="text" 
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm focus:border-brand-blue outline-none transition-all"
                       placeholder="John Doe"
                     />
@@ -118,6 +177,10 @@ const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
                     <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'EMAIL' : 'EMAIL'}</label>
                     <input 
                       type="email" 
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm focus:border-brand-blue outline-none transition-all"
                       placeholder="email@example.com"
                     />
@@ -128,6 +191,10 @@ const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
                   <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'ASUNTO' : 'SUBJECT'}</label>
                   <input 
                     type="text" 
+                    name="subject"
+                    required
+                    value={formData.subject}
+                    onChange={handleChange}
                     className="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm focus:border-brand-blue outline-none transition-all"
                     placeholder={isEs ? '¿En qué podemos ayudarle?' : 'How can we help you?'}
                   />
@@ -136,14 +203,42 @@ const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'MENSAJE' : 'MESSAGE'}</label>
                   <textarea 
+                    name="message"
+                    required
                     rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full bg-white border border-slate-200 rounded-lg px-4 py-4 text-sm focus:border-brand-blue outline-none transition-all resize-none"
                     placeholder={isEs ? 'Escriba aquí los detalles de su consulta...' : 'Type your query details here...'}
                   ></textarea>
                 </div>
 
-                <button className="w-full bg-brand-dark hover:bg-brand-blue text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg shadow-slate-200">
-                  {isEs ? 'ENVIAR MENSAJE' : 'SEND MESSAGE'}
+                {status.message && (
+                  <div className={`p-4 rounded-lg text-xs font-bold ${
+                    status.type === 'success' ? 'bg-green-50 text-green-600 border border-green-100' : 'bg-red-50 text-red-600 border border-red-100'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
+
+                <button 
+                  type="submit"
+                  disabled={status.type === 'loading'}
+                  className={`w-full bg-brand-dark hover:bg-brand-blue text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg shadow-slate-200 flex items-center justify-center gap-3 ${
+                    status.type === 'loading' ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {status.type === 'loading' ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      {isEs ? 'ENVIANDO...' : 'SENDING...'}
+                    </>
+                  ) : (
+                    isEs ? 'ENVIAR MENSAJE' : 'SEND MESSAGE'
+                  )}
                 </button>
               </form>
             </div>
@@ -152,6 +247,16 @@ const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
         </div>
       </section>
     </div>
+  );
+};
+
+const ContactHub: React.FC<ContactHubProps> = ({ lang }) => {
+  const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+  
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
+      <ContactForm lang={lang} isEs={lang === 'es'} />
+    </GoogleReCaptchaProvider>
   );
 };
 

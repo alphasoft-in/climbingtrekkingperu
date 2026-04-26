@@ -19,7 +19,7 @@ export const aboutData = {
       accLabel: "ACREDITACIÓN",
       accValue: "UIAGM / AGMP",
       quote: "Se forjó nuestra vida corporativa bajo la inmensa protección de la majestuosa Cordillera Blanca. Fuimos guías nativos conociendo a detalle la red andina antes que gestores turísticos.",
-      desc1: "Nos define la absoluta devoción al montañismo técnico. En **Franpisco Adventure** guiamos logísticamente cada año a exploradores internacionales cumpliendo inquebrantables acuerdos y altísimos cánones de seguridad andina.",
+      desc1: "Nos define la absoluta devoción al montañismo técnico. En **ALPINE TREKS PERÚ** guiamos logísticamente cada año a exploradores internacionales cumpliendo inquebrantables acuerdos y altísimos cánones de seguridad andina.",
       desc2: "Contamos con el respaldo nacional e internacional **UIAGM**, trabajando en alianza con bases locales de arrieros, protegiendo este ecosistema milenario bajo una huella de impacto cero."
     },
     mission: {
@@ -51,7 +51,7 @@ export const aboutData = {
       accLabel: "ACCREDITATION",
       accValue: "UIAGM / AGMP",
       quote: "Our corporate life was forged under the immense protection of the majestic Cordillera Blanca. We were native guides deeply knowing the Andean network before becoming tourism managers.",
-      desc1: "We are defined by our absolute devotion to technical mountaineering. At **Franpisco Adventure**, we logistically guide international explorers every year, fulfilling unbreakable agreements and the highest Andean safety canons.",
+      desc1: "We are defined by our absolute devotion to technical mountaineering. At **ALPINE TREKS PERÚ**, we logistically guide international explorers every year, fulfilling unbreakable agreements and the highest Andean safety canons.",
       desc2: "We have **UIAGM** national and international backing, working in alliance with local bases of muleteers, protecting this millennial ecosystem under a zero-impact footprint."
     },
     mission: {

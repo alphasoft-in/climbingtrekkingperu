@@ -1,7 +1,7 @@
 export const homeData = {
   es: {
-    title: "Inicio - Franpisco Adventure",
-    description: "Agencia de viajes y turismo Franpisco Adventure. Expediciones de montaña y trekking en Huaraz y toda Sudamérica.",
+    title: "Inicio - ALPINE TREKS PERÚ",
+    description: "Agencia de viajes y turismo ALPINE TREKS PERÚ. Expediciones de montaña y trekking en Huaraz y toda Sudamérica.",
     slides: [
       { src: '/slider_1.png', pretitle: 'DESCUBRE LA MAGIA', title: 'CAMINO INCA CLÁSICO', subtitle: 'Sigue los pasos de los antiguos incas a través de selvas nubladas y valles sagrados, una expedición inolvidable.'},
       { src: '/slider_2.png', pretitle: 'EXPERIENCIA PREMIUM', title: 'MACHU PICCHU AL AMANECER', subtitle: 'Contempla la ciudadela perdida de los Incas bañado por la primera luz del sol entre las nubes.'},
@@ -11,7 +11,7 @@ export const homeData = {
     ],
     institutional: {
       identity: {
-        name: "FRANPISCO ADVENTURE E.I.R.L.",
+        name: "ALPINE TREKS PERÚ",
         type: "Agencia de Viajes y Turismo",
         regBadge: "REGISTRO OFICIAL",
         regText: "Consolidada en pleno corazón de Huaraz, Perú. Se encuentra debidamente inscrita en los registros públicos de Perú como empresa prestadora de servicios turísticos (Toda operación protegida bajo derechos reservados).",
@@ -108,13 +108,13 @@ export const homeData = {
         { tag: "SEGURIDAD / 01", title: "Seguridad Radical", desc: "No transigimos con el margen de seguridad, sin importar las condiciones extremas.", icon: "🛡️", color: "slate" },
         { tag: "LIMPIEZA / 02", title: "Huella Cero", desc: "Gestión letal de residuos. Devolvemos a la ciudad el 100% de lo que llevamos al campo.", icon: "🌱", color: "green" },
         { tag: "TÉCNICO / 03", title: "Calidad Técnica", desc: "Equipamiento de alta gama probado en los escenarios más hostiles de los Andes.", icon: "⭐", color: "slate" },
-        { tag: "JURAMENTO DE MARCA", title: "", desc: "\"VALORAMOS con lealtad andina el esfuerzo del equipo humano y el peso justo animal, en devoto cuidado del ambiente prístino que nos late la vida.\"", color: "gold", span: "col-span-1 md:col-span-2 xl:col-span-3", isQuote: true, signature: { name: "FRANPISCO ADVENTURE", rank: "COMANDO DE EXPEDICIÓN" } }
+        { tag: "JURAMENTO DE MARCA", title: "", desc: "\"VALORAMOS con lealtad andina el esfuerzo del equipo humano y el peso justo animal, en devoto cuidado del ambiente prístino que nos late la vida.\"", color: "gold", span: "col-span-1 md:col-span-2 xl:col-span-3", isQuote: true, signature: { name: "ALPINE TREKS PERÚ", rank: "COMANDO DE EXPEDICIÓN" } }
       ]
     }
   },
   en: {
-    title: "Home - Franpisco Adventure",
-    description: "Franpisco Adventure Travel and Tourism Agency. Epic mountain and trekking expeditions in Huaraz and across South America.",
+    title: "Home - ALPINE TREKS PERÚ",
+    description: "ALPINE TREKS PERÚ Travel and Tourism Agency. Epic mountain and trekking expeditions in Huaraz and across South America.",
     slides: [
       { src: '/slider_1.png', pretitle: 'DISCOVER THE MAGIC', title: 'CLASSIC INCA TRAIL', subtitle: 'Follow the footsteps of the ancient Incas through cloud forests and sacred valleys, an unforgettable expedition.'},
       { src: '/slider_2.png', pretitle: 'PREMIUM EXPERIENCE', title: 'MACHU PICCHU AT DAWN', subtitle: 'Witness the lost citadel of the Incas bathed in the first light of the sun breaking through the clouds.'},
@@ -124,7 +124,7 @@ export const homeData = {
     ],
     institutional: {
       identity: {
-        name: "FRANPISCO ADVENTURE E.I.R.L.",
+        name: "ALPINE TREKS PERÚ",
         type: "Travel and Tourism Agency",
         regBadge: "OFFICIAL REGISTRATION",
         regText: "Consolidated in the very heart of Huaraz, Peru. We are duly registered in the public registries of Peru as a specialized mountain tourist service provider company (All operations fully protected under reserved rights).",
@@ -221,7 +221,7 @@ export const homeData = {
         { tag: "SECURE / 01", title: "Radical Safety", desc: "We do not compromise on the safety margin, regardless of the extreme conditions.", icon: "🛡️", color: "slate" },
         { tag: "CLEAN / 02", title: "Zero Footprint", desc: "Strict waste management. We return 100% of what we take to the field back to the city.", icon: "🌱", color: "green" },
         { tag: "TECH / 03", title: "Technical Quality", desc: "High-end equipment tested in the most hostile scenarios of the Andes.", icon: "⭐", color: "slate" },
-        { tag: "BRAND OATH", title: "", desc: "\"WE VALUE with Andean loyalty the effort of our human team and the fair animal weight, in devoted care of the pristine environment that pulses our lives.\"", color: "gold", span: "col-span-1 md:col-span-2 xl:col-span-3", isQuote: true, signature: { name: "FRANPISCO ADVENTURE", rank: "EXPEDITION COMMAND" } }
+        { tag: "BRAND OATH", title: "", desc: "\"WE VALUE with Andean loyalty the effort of our human team and the fair animal weight, in devoted care of the pristine environment that pulses our lives.\"", color: "gold", span: "col-span-1 md:col-span-2 xl:col-span-3", isQuote: true, signature: { name: "ALPINE TREKS PERÚ", rank: "EXPEDITION COMMAND" } }
       ]
     }
   }

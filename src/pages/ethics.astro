@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '@components/PageHero';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+---
+
+<Layout 
+  title={isEs ? "Código de Ética | ALPINE TREKS PERÚ" : "Code of Ethics | ALPINE TREKS PERÚ"}
+  description={isEs ? "Nuestros valores andinos y compromiso con la montaña." : "Our Andean values and commitment to the mountain."}
+>
+  <PageHero 
+    client:load
+    titleTop={isEs ? "VALORES" : "VALUES"}
+    titleMain={isEs ? "ÉTICA" : "ETHICS"}
+    backgroundImage="/bg-nosotros.png"
+  />
+
+  <section class="py-16 md:py-24 bg-white px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-slate prose-xs md:prose-sm max-w-none space-y-10">
+        
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "Integridad en la Montaña" : "Mountain Integrity"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "Para ALPINE TREKS PERÚ, la ética prevalece sobre el beneficio. Rechazamos las prácticas de bajo costo que explotan al personal local y comprometen la seguridad de los expedicionarios."
+              : "For ALPINE TREKS PERÚ, ethics prevail over profit. We reject low-cost practices that exploit local staff and compromise the safety of expeditioners."
+            }
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+          <div class="p-8 bg-slate-50 border-l-2 border-brand-red">
+            <h3 class="text-xs font-black tracking-widest text-brand-red mb-4 uppercase">{isEs ? "Respeto Animal" : "Animal Respect"}</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">
+              {isEs 
+                ? "Respetamos el peso máximo de 40kg por acémila. Valoramos la vida de nuestros animales como parte esencial de nuestro equipo."
+                : "We respect the maximum weight of 40kg per pack animal. We value our animals' lives as an essential part of our team."
+              }
+            </p>
+          </div>
+          <div class="p-8 bg-slate-50 border-l-2 border-brand-blue">
+            <h3 class="text-xs font-black tracking-widest text-brand-blue mb-4 uppercase">{isEs ? "Salarios Justos" : "Fair Wages"}</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">
+              {isEs 
+                ? "Garantizamos pagos justos y oportunos a nuestros arrieros, cocineros y porteadores, reconociendo su esfuerzo vital en cada expedición."
+                : "We guarantee fair and timely payments to our muleteers, cooks, and porters, recognizing their vital effort in every expedition."
+              }
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -9,7 +9,7 @@ interface PageHeroProps {
   titleTop: string;
   titleMain: string;
   backgroundImage: string;
-  techData: TechItem[];
+  techData?: TechItem[];
   height?: string;
 }
 
@@ -32,18 +32,20 @@ const PageHero: React.FC<PageHeroProps> = ({ titleTop, titleMain, backgroundImag
             <div className="w-16 h-1 bg-brand-red mt-5 shadow-[0_0_15px_rgba(216,2,2,0.4)]"></div>
           </div>
 
-          <div className="flex justify-center gap-6 md:gap-12 pt-8 mt-2 border-t border-white/10 w-full max-w-2xl">
-            {techData.map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-1 items-center">
-                <label className="text-[9px] md:text-[10px] text-brand-blue font-black tracking-[0.2em] uppercase">
-                  {item.label}
-                </label>
-                <span className="text-xs md:text-sm text-white font-bold font-mono tracking-tight">
-                  {item.value}
-                </span>
-              </div>
-            ))}
-          </div>
+          {techData && techData.length > 0 && (
+            <div className="flex justify-center gap-6 md:gap-12 pt-8 mt-2 border-t border-white/10 w-full max-w-2xl">
+              {techData.map((item, idx) => (
+                <div key={idx} className="flex flex-col gap-1 items-center">
+                  <label className="text-[9px] md:text-[10px] text-brand-blue font-black tracking-[0.2em] uppercase">
+                    {item.label}
+                  </label>
+                  <span className="text-xs md:text-sm text-white font-bold font-mono tracking-tight">
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -22,6 +22,18 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const isEs = lang === 'es';
 
+  const getTechId = (item: GalleryItem) => {
+    const prefixMap: Record<string, string> = {
+      peru: 'PER',
+      bolivia: 'BOL',
+      argentina: 'ARG',
+      ecuador: 'ECU',
+      chile: 'CHI',
+      climbing: 'CLB'
+    };
+    return `${prefixMap[item.category] || 'IMG'}-${item.id.toString().padStart(3, '0')}`;
+  };
+
   const filteredItems = filter === 'all' 
     ? items 
     : items.filter(item => item.category === filter);
@@ -98,17 +110,17 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
       {/* 3. Refined Masonry Grid */}
       <section className="py-6 md:py-8 px-6">
         <div className="max-w-[1600px] mx-auto">
-          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredItems.map((item, index) => (
               <div 
                 key={item.id} 
                 onClick={() => setSelectedIndex(index)}
-                className="relative break-inside-avoid group cursor-pointer overflow-hidden rounded-xl bg-slate-100"
+                className="relative group cursor-pointer overflow-hidden rounded-xl bg-slate-100 aspect-[4/3]"
               >
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-auto object-cover transition-all duration-1000 group-hover:scale-105 group-hover:brightness-75"
+                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 group-hover:brightness-75"
                   loading="lazy"
                 />
                 
@@ -128,7 +140,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
 
                 {/* Corner ID */}
                 <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white text-[8px] font-black font-mono">IMG_{item.id.toString().padStart(3, '0')}</span>
+                  <span className="text-white text-[8px] font-black font-mono">{getTechId(item)}</span>
                 </div>
               </div>
             ))}
@@ -204,7 +216,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
                   <div className="hidden md:flex gap-8">
                     <div className="text-right">
                       <label className="block text-[8px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase">ARCHIVE ID</label>
-                      <span className="text-xs font-bold text-white/60 font-mono">#{selectedImage.id.toString().padStart(4, '0')}</span>
+                      <span className="text-xs font-bold text-white/60 font-mono">#{getTechId(selectedImage)}</span>
                     </div>
                     <div className="text-right">
                       <label className="block text-[8px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase">RESOLUTION</label>
