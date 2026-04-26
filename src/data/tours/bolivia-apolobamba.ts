@@ -6,7 +6,7 @@ export const boliviaApolobambaData = {
     hero: {
       titleTop: "LA FRONTERA OLVIDADA",
       titleMain: "CORDILLERA APOLOBAMBA",
-      backgroundImage: "/expedicion.jpg",
+      backgroundImage: "/tours/bg-apolobamba.png",
       duration: "8 DÍAS",
       price: "A CONSULTAR",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const boliviaApolobambaData = {
       titlePrefix: "El Norte",
       titleAccent: "Místico",
       description: "Explore la cordillera más remota y mística de Bolivia. Tierra de los Kallawayas y cumbres vírgenes. Una expedición de 8 días al corazón de lo desconocido.",
-      image: "/expedicion.jpg",
+      image: "/tours/apolobamba.png",
       lat: `14° 39' 00" S`,
       lon: `69° 14' 00" W`,
       specs: [
@@ -66,16 +66,13 @@ export const boliviaApolobambaData = {
     itineraryTitle: "Expedición",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Incluido",
-    equipmentTitle: "Equipo Técnico",
-    gallery: [
-      '/expedicion.jpg', '/slider_1.png', '/slider_2.png'
-    ]
+    equipmentTitle: "Equipo Técnico"
   },
   en: {
     hero: {
       titleTop: "THE FORGOTTEN FRONTIER",
       titleMain: "CORDILLERA APOLOBAMBA",
-      backgroundImage: "/expedicion.jpg",
+      backgroundImage: "/tours/bg-apolobamba.png",
       duration: "8 DAYS",
       price: "ON CONSULT",
       difficulty: "HARD",
@@ -86,7 +83,7 @@ export const boliviaApolobambaData = {
       titlePrefix: "The Mystical",
       titleAccent: "North",
       description: "Explore Bolivia's most remote and mystical mountain range. Land of the Kallawayas and untouched summits. An 8-day expedition into the heart of the unknown.",
-      image: "/expedicion.jpg",
+      image: "/tours/apolobamba.png",
       lat: `14° 39' 00" S`,
       lon: `69° 14' 00" W`,
       specs: [
@@ -135,9 +132,6 @@ export const boliviaApolobambaData = {
     itineraryTitle: "Expedition",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included",
-    equipmentTitle: "Technical Gear",
-    gallery: [
-      '/expedicion.jpg', '/slider_1.png', '/slider_2.png'
-    ]
+    equipmentTitle: "Technical Gear"
   }
 };

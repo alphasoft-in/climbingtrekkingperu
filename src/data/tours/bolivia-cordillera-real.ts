@@ -6,7 +6,7 @@ export const boliviaCordilleraRealData = {
     hero: {
       titleTop: "EL CIRCUITO BOLIVIANO DEFINITIVO",
       titleMain: "CORDILLERA REAL 6088M",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/tours/bg-cordillera-real.png",
       duration: "11 DÍAS",
       price: "USD 995.00",
       difficulty: "MODERADA / TÉCNICA",
@@ -17,7 +17,7 @@ export const boliviaCordilleraRealData = {
       titlePrefix: "El Corazón de la",
       titleAccent: "Cordillera Real",
       description: "Esta expedición de 11 días es la inmersión definitiva en el montañismo boliviano. Combinamos una aclimatación mística en el Lago Titicaca con una serie de ascensos progresivos que culminan en el gigante Huayna Potosí.",
-      image: "/slider_3.png",
+      image: "/tours/cordillera-real.png",
       lat: `16° 15' 45" S`,
       lon: `68° 09' 18" W`,
       specs: [
@@ -71,16 +71,13 @@ export const boliviaCordilleraRealData = {
     itineraryTitle: "Expedición",
     itinerarySubtitle: "Cronograma",
     includesTitle: "Servicios Incluidos",
-    equipmentTitle: "Equipo Sugerido",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Equipo Sugerido"
   },
   en: {
     hero: {
       titleTop: "THE ULTIMATE BOLIVIAN CIRCUIT",
       titleMain: "CORDILLERA REAL 6088M",
-      backgroundImage: "/slider_3.png",
+      backgroundImage: "/tours/bg-cordillera-real.png",
       duration: "11 DAYS",
       price: "USD 995.00",
       difficulty: "MODERATE / TECHNICAL",
@@ -91,7 +88,7 @@ export const boliviaCordilleraRealData = {
       titlePrefix: "The Heart of the",
       titleAccent: "Cordillera Real",
       description: "This 11-day expedition is the definitive immersion into Bolivian mountaineering. We combine mystical acclimatization at Lake Titicaca with a series of progressive ascents culminating in the giant Huayna Potosi.",
-      image: "/slider_3.png",
+      image: "/tours/cordillera-real.png",
       lat: `16° 15' 45" S`,
       lon: `68° 09' 18" W`,
       specs: [
@@ -145,9 +142,6 @@ export const boliviaCordilleraRealData = {
     itineraryTitle: "Expedition",
     itinerarySubtitle: "Timeline",
     includesTitle: "Included Services",
-    equipmentTitle: "Suggested Equipment",
-    gallery: [
-      '/slider_1.png', '/slider_2.png', '/slider_3.png', '/slider_4.png', '/slider_5.png'
-    ]
+    equipmentTitle: "Suggested Equipment"
   }
 };

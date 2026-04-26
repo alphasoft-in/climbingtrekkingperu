@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "filesChecked": 54,
+    "imagesChecked": 444,
+    "missingImages": 0,
+    "syntaxErrors": 0
+  },
+  "errors": [
+    {
+      "type": "CONSISTENCY_WARNING",
+      "file": "bolivia-cordillera-real.ts",
+      "path": "N/A",
+      "context": "File still contains generic slider placeholders"
+    },
+    {
+      "type": "CONSISTENCY_WARNING",
+      "file": "cultural-chacas.ts",
+      "path": "N/A",
+      "context": "File still contains generic slider placeholders"
+    }
+  ]
+}
