@@ -55,16 +55,16 @@ import { culturalPeruBolivia19dData } from './cultural-peru-bolivia-19d';
 export const allToursData: Record<string, any> = {
   // Huayhuash
   'huaraz-full-experience': huarazFullExperienceData,
-  '360': huayhuash360Data,
-  'classic': huayhuashClassicData,
-  'mini': huayhuashMiniData,
-  'cumbres': huayhuashPeaksData,
-  'espectacular': huayhuashSpectacularData,
+  'huayhuash-360-trek': huayhuash360Data,
+  'huayhuash-classic-trek': huayhuashClassicData,
+  'huayhuash-mini-trek': huayhuashMiniData,
+  'huayhuash-peaks-trek': huayhuashPeaksData,
+  'huayhuash-spectacular-trek': huayhuashSpectacularData,
   // Blanca Trekking
-  'santa-cruz': blancaSantaCruzData,
+  'santa-cruz-trek': blancaSantaCruzData,
   'alpamayo-trek': blancaAlpamayoTrekData,
-  'circuit': blancaCircuitData,
-  'best': blancaBestData,
+  'cordillera-blanca-circuit-trek': blancaCircuitData,
+  'lo-mejor-de-la-cordillera-blanca': blancaBestData,
   // Cusco
   'ausangate': cuscoAusangateData,
   'camino-inca': cuscoCaminoIncaData,
@@ -113,7 +113,7 @@ export const allToursData: Record<string, any> = {
   'iquitos-amazonas': culturalIquitosData,
   'norte-peru-15d': culturalNortePeru15dData,
   'selva-tambopata': culturalTambopataData,
-  'chacas': culturalChacasData,
+  'chacas-punta-olimpica': culturalChacasData,
   'maravillas-peru-17d': culturalMaravillasData,
   'peru-bolivia-confort': culturalPeruBolivia19dData,
 };

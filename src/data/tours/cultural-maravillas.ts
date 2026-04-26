@@ -112,7 +112,7 @@ export const culturalMaravillasData = {
       { day: 'DAY 09', title: 'UROS AND TAQUILE ISLANDS', content: 'Navigation on Lake Titicaca. Visit to Uros floating islands and Taquile island with traditional dances and country lunch.' },
       { day: 'DAY 10', title: 'PUNO – CUSCO', content: 'Bus transfer to the Imperial City of Cusco. Free afternoon to explore the city.' },
       { day: 'DAY 11', title: 'CUSCO CITY TOUR – SACSAYHUAMAN', content: 'Visit to Qoricancha (Temple of the Sun) and the archaeological complexes of Sacsayhuaman, Qenqo, Pukapukara, and Tambomachay.' },
-      { day: 'DAY 12', title: 'VIP SACRED VALLEY – MACHU PICCHU', content: 'Chincheros, Maras Salt Mines, Moray, and Ollantaytambo. Tourist train to Machupicchu town in the evening.' },
+      { day: 'DAY 12', title: 'VIP SACRED VALLEY – MACHU PICCHU', content: 'Chinchero, Maras Salt Mines, Moray, and Ollantaytambo. Tourist train to Machu Picchu Pueblo in the evening.' },
       { day: 'DAY 13', title: 'MACHU PICCHU CITADEL', content: 'Guided visit to the world wonder. Exploration of the citadel and return by Expedition train to Cusco.' },
       { day: 'DAY 14', title: 'FREE DAY IN CUSCO', content: 'Day of rest to enjoy Cusquenian gastronomy and local markets.' },
       { day: 'DAY 15', title: '7 COLORS MOUNTAIN – RED VALLEY', content: 'Hike to Vinicunca (5100m) and descent through the spectacular Red Valley. Buffet lunch included.' },

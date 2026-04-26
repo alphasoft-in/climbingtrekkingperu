@@ -17,12 +17,14 @@ interface ItineraryScheduleProps {
   days: DayItem[];
   title?: string;
   subtitle?: string;
+  lang?: 'es' | 'en';
 }
 
 const ItinerarySchedule: React.FC<ItineraryScheduleProps> = ({ 
   days, 
   title = "Cronograma Diario", 
-  subtitle = "ITINERARIO TÉCNICO" 
+  subtitle = "ITINERARIO TÉCNICO",
+  lang = 'es'
 }) => {
   return (
     <div className="flex flex-col">
@@ -72,19 +74,25 @@ const ItinerarySchedule: React.FC<ItineraryScheduleProps> = ({
                   <div className="flex flex-wrap gap-x-8 gap-y-3 mt-2">
                     {item.stats.alt && (
                       <div className="flex flex-col">
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">ALTITUD MÁX.</span>
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                          {lang === 'es' ? 'ALTITUD MÁX.' : 'MAX ELEVATION'}
+                        </span>
                         <span className="text-xs font-bold text-slate-700 uppercase">{item.stats.alt}</span>
                       </div>
                     )}
                     {item.stats.dist && (
                       <div className="flex flex-col">
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">DISTANCIA</span>
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                          {lang === 'es' ? 'DISTANCIA' : 'DISTANCE'}
+                        </span>
                         <span className="text-xs font-bold text-slate-700 uppercase">{item.stats.dist}</span>
                       </div>
                     )}
                     {item.stats.time && (
                       <div className="flex flex-col">
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">TIEMPO ESTIMADO</span>
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                          {lang === 'es' ? 'TIEMPO ESTIMADO' : 'ESTIMATED TIME'}
+                        </span>
                         <span className="text-xs font-bold text-slate-700 uppercase">{item.stats.time}</span>
                       </div>
                     )}

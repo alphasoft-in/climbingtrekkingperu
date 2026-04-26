@@ -105,7 +105,7 @@ export const blancaBestData = {
       { day: 'DAY 05', title: 'YURACCORAL (3900 M) – VAQUERIA – PARIA (3900 MASL)', content: 'Transfer passing through Portachuelo pass (4760m). Meet donkeys in Vaqueria and hike to Paria camp.', stats: { alt: '4760m', dist: '09 km', time: '5 h' } },
       { day: 'DAY 06', title: 'PARIA (3900M) - TAULLIPAMPA (4250 MASL)', content: 'Crossing Punta Union pass (4,750 masl). Stunning views of Taulliraju and Santa Cruz Canyon.', stats: { alt: '4750 m', dist: '13 km', time: '09 h' } },
       { day: 'DAY 07', title: 'TAULLIPAMPA (4250M) - LLAMACORAL (3760 MASL)', content: 'Descent through Santa Cruz valley. Visit Alpamayo base camp and Arhuaycocha lagoon (4460m).', stats: { alt: '4460 m', dist: '15 km', time: '08 h' } },
-      { day: 'DAY 08', title: 'LLAMACORAL (3760M) - CASHAPAMPA (2900 MSNM) - HUARAZ', content: 'Last descent along Yurakmayu river to Cashapampa. Transfer back to Huaraz hotel.', stats: { alt: '2900 m', dist: '08 km', time: '04 h' } },
+      { day: 'DAY 08', title: 'LLAMACORAL (3760M) - CASHAPAMPA (2900 MASL) - HUARAZ', content: 'Last descent along Yurakmayu river to Cashapampa. Transfer back to Huaraz hotel.', stats: { alt: '2900 m', dist: '08 km', time: '04 h' } },
       { day: 'DAY 09', title: 'RETURN: HUARAZ – LIMA', content: 'Transfer to terminal and trip back to Lima. Transfer to hotel in Miraflores district.' },
       { day: 'DAY 10', title: 'LIMA – INTERNATIONAL FLIGHT', content: 'Transfer to the airport for your return flight. End of services.' }
     ],

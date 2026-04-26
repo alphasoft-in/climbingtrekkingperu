@@ -4,7 +4,7 @@ export const climbingArtesonrajuData = {
   subCategory: 'blanca',
   es: {
     hero: {
-      titleTop: "THE PARAMOUNT PICTURES PEAK",
+      titleTop: "LA CUMBRE DE PARAMOUNT PICTURES",
       titleMain: "NEVADO ARTESONRAJU 6025M",
       backgroundImage: "/artesonraju/bg-artesonraju.png",
       duration: "06 DÍAS",
@@ -30,10 +30,10 @@ export const climbingArtesonrajuData = {
     itinerary: [
       { day: 'DÍA 01', title: 'HUARAZ (3100 M) – CASHAPAMPA (2900 M) – LLAMACORAL (3760 M)', content: 'Traslado a Cashapampa. Inicio del trekking por el valle de Santa Cruz hasta Llamacoral.', stats: { time: '4-5h Trek', alt: '3760m' } },
       { day: 'DÍA 02', title: 'LLAMACORAL (3760 M) – CAMPO BASE TAULLIPAMPA (4250 M)', content: 'Ascenso por el valle de Santa Cruz, pasando por las lagunas Jatuncocha y Quisuarpampa hasta el base.', stats: { time: '5-6h Trek', alt: '4250m' } },
-      { day: 'DÍA 03', title: 'CAMPO BASE (4250 M) – CAMPO ALTO (5190 M)', content: 'Ascenso técnico hacia el campo alto. Preparación para el ataque a la cumbre.', stats: { time: '4-5h Ascent', alt: '5190m' } },
+      { day: 'DÍA 03', title: 'CAMPO BASE (4250 M) – CAMPO ALTO (5190 M)', content: 'Ascenso técnico hacia el campo alto. Preparación para el ataque a la cumbre.', stats: { time: '4-5h Ascenso', alt: '5190m' } },
       { day: 'DÍA 04', title: 'CUMBRE ARTESONRAJU (6025 M) – CAMPO ALTO', content: 'Ataque a la cumbre. Escalada técnica en paredes de 60° y 70°. Vistas de la pirámide perfecta.', stats: { time: '12-13h', alt: '6025m' } },
-      { day: 'DÍA 05', title: 'CAMPO ALTO (5190 M) – CAMPO BASE (4250 M)', content: 'Descenso técnico desde el campo alto hacia el campo base.', stats: { time: '4-5h Descent', alt: '4250m' } },
-      { day: 'DÍA 06', title: 'CAMPO BASE – CASHAPAMPA – HUARAZ (3100 M)', content: 'Caminata final de retorno a Cashapampa y traslado privado a Huaraz.', stats: { time: 'Return', alt: '3100m' } }
+      { day: 'DÍA 05', title: 'CAMPO ALTO (5190 M) – CAMPO BASE (4250 M)', content: 'Descenso técnico desde el campo alto hacia el campo base.', stats: { time: '4-5h Descenso', alt: '4250m' } },
+      { day: 'DÍA 06', title: 'CAMPO BASE – CASHAPAMPA – HUARAZ (3100 M)', content: 'Caminata final de retorno a Cashapampa y traslado privado a Huaraz.', stats: { estado: 'Retorno', alt: '3100m' } }
     ],
     includes: [
       'Traslado aeropuerto/terminal - hotel en Huaraz',

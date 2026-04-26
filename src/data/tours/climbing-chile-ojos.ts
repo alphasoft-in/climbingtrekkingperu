@@ -4,7 +4,7 @@ export const climbingChileOjosData = {
   subCategory: 'chile',
   es: {
     hero: {
-      titleTop: "THE WORLD'S HIGHEST VOLCANO",
+      titleTop: "EL VOLCÁN MÁS ALTO DEL MUNDO",
       titleMain: "OJOS DEL SALADO 6893M",
       backgroundImage: "/chile/bg-ojos-del-salado.png",
       duration: "13 DÍAS",
@@ -29,18 +29,18 @@ export const climbingChileOjosData = {
     },
     itinerary: [
       { day: 'DÍA 01', title: 'LLEGADA A SANTIAGO - COPIAPÓ', content: 'Recepción en Copiapó (vía aérea o terrestre desde Santiago). Traslado al hotel y descanso.', stats: { alt: '391m' } },
-      { day: 'DÍA 02', title: 'DÍA LIBRE EN COPIAPÓ', content: 'Día de preparación, revisión de equipo técnico y última logística antes de internarnos en el desierto de Atacama.', stats: { status: 'Logistics' } },
-      { day: 'DÍA 03', title: 'COPIAPÓ – LAGUNA SANTA ROSA (3800 M)', content: 'Traslado en 4x4 al altiplano. Primer campamento junto a la laguna. Aclimatación suave con vistas de flamencos y volcanes.', stats: { time: '4h Drive', alt: '3800m' } },
-      { day: 'DÍA 04', title: 'LAGUNA SANTA ROSA – LAGUNA VERDE (4350 M)', content: 'Continuamos hacia Laguna Verde. Campamento cerca de aguas termales naturales. Paisajes surrealistas de color turquesa.', stats: { time: '3h Drive', alt: '4350m' } },
-      { day: 'DÍA 05', title: 'CUMBRE VOLCÁN MULAS MUERTAS (5897 M)', content: 'Ascensión de aclimatación activa. Una cumbre de casi 6000m para preparar el cuerpo para la altitud extrema. Retorno a Laguna Verde.', stats: { time: '6-7h Ascent', alt: '5897m' } },
-      { day: 'DÍA 06', title: 'LAGUNA VERDE – REFUGIO ATACAMA (5250 M)', content: 'Traslado al campo base alto. Establecimiento del campamento en el Refugio Atacama.', stats: { time: '4h Drive', alt: '5250m' } },
-      { day: 'DÍA 07', title: 'REFUGIO ATACAMA – TEJOS (PORTEO)', content: 'Caminata de porteo de equipo al Refugio Tejos (5800m) y retorno a Atacama para dormir. Mejora la aclimatación.', stats: { time: '5h Day', alt: '5800m' } },
-      { day: 'DÍA 08', title: 'ESTABLECIMIENTO EN REFUGIO TEJOS (5800 M)', content: 'Ascenso final al Refugio Tejos para pernoctar. Preparación táctica para el ataque a la cumbre.', stats: { time: '3h Ascent', alt: '5800m' } },
-      { day: 'DÍA 09', title: 'DÍA EXTRA / FLEXIBLE', content: 'Día de reserva para mal tiempo o refuerzo de aclimatación. Crucial para el éxito en esta altitud.', stats: { status: 'Flexible' } },
-      { day: 'DÍA 10', title: 'CUMBRE OJOS DEL SALADO (6893 M)', content: 'Ataque a la cumbre del volcán más alto del mundo. Escalada técnica final en el cráter. El techo de Chile alcanzado. Descenso a Atacama.', stats: { time: '14h Day', alt: '6893m' } },
-      { day: 'DÍA 11', title: 'REFUGIO ATACAMA – COPIAPÓ', content: 'Largo descenso en 4x4 desde el altiplano de regreso a la civilización. Noche en hotel en Copiapó.', stats: { time: '8h Drive', alt: '391m' } },
-      { day: 'DÍA 12', title: 'COPIAPÓ – SANTIAGO', content: 'Traslado al aeropuerto o terminal para el retorno a Santiago.', stats: { status: 'Transfer' } },
-      { day: 'DÍA 13', title: 'SANTIAGO – VUELO INTERNACIONAL', content: 'Fin de los servicios. Vuelo de retorno a su país de origen.', stats: { status: 'Departure' } }
+      { day: 'DÍA 02', title: 'DÍA LIBRE EN COPIAPÓ', content: 'Día de preparación, revisión de equipo técnico y última logística antes de internarnos en el desierto de Atacama.', stats: { estado: 'Logística' } },
+      { day: 'DÍA 03', title: 'COPIAPÓ – LAGUNA SANTA ROSA (3800 M)', content: 'Traslado en 4x4 al altiplano. Primer campamento junto a la laguna. Aclimatación suave con vistas de flamencos y volcanes.', stats: { time: '4h Viaje', alt: '3800m' } },
+      { day: 'DÍA 04', title: 'LAGUNA SANTA ROSA – LAGUNA VERDE (4350 M)', content: 'Continuamos hacia Laguna Verde. Campamento cerca de aguas termales naturales. Paisajes surrealistas de color turquesa.', stats: { time: '3h Viaje', alt: '4350m' } },
+      { day: 'DÍA 05', title: 'CUMBRE VOLCÁN MULAS MUERTAS (5897 M)', content: 'Ascensión de aclimatación activa. Una cumbre de casi 6000m para preparar el cuerpo para la altitud extrema. Retorno a Laguna Verde.', stats: { time: '6-7h Ascenso', alt: '5897m' } },
+      { day: 'DÍA 06', title: 'LAGUNA VERDE – REFUGIO ATACAMA (5250 M)', content: 'Traslado al campo base alto. Establecimiento del campamento en el Refugio Atacama.', stats: { time: '4h Viaje', alt: '5250m' } },
+      { day: 'DÍA 07', title: 'REFUGIO ATACAMA – TEJOS (PORTEO)', content: 'Caminata de porteo de equipo al Refugio Tejos (5800m) y retorno a Atacama para dormir. Mejora la aclimatación.', stats: { time: '5h Día', alt: '5800m' } },
+      { day: 'DÍA 08', title: 'ESTABLECIMIENTO EN REFUGIO TEJOS (5800 M)', content: 'Ascenso final al Refugio Tejos para pernoctar. Preparación táctica para el ataque a la cumbre.', stats: { time: '3h Ascenso', alt: '5800m' } },
+      { day: 'DÍA 09', title: 'DÍA EXTRA / FLEXIBLE', content: 'Día de reserva para mal tiempo o refuerzo de aclimatación. Crucial para el éxito en esta altitud.', stats: { estado: 'Flexible' } },
+      { day: 'DÍA 10', title: 'CUMBRE OJOS DEL SALADO (6893 M)', content: 'Ataque a la cumbre del volcán más alto del mundo. Escalada técnica final en el cráter. El techo de Chile alcanzado. Descenso a Atacama.', stats: { time: '14h Día', alt: '6893m' } },
+      { day: 'DÍA 11', title: 'REFUGIO ATACAMA – COPIAPÓ', content: 'Largo descenso en 4x4 desde el altiplano de regreso a la civilización. Noche en hotel en Copiapó.', stats: { time: '8h Viaje', alt: '391m' } },
+      { day: 'DÍA 12', title: 'COPIAPÓ – SANTIAGO', content: 'Traslado al aeropuerto o terminal para el retorno a Santiago.', stats: { estado: 'Traslado' } },
+      { day: 'DÍA 13', title: 'SANTIAGO – VUELO INTERNACIONAL', content: 'Fin de los servicios. Vuelo de retorno a su país de origen.', stats: { estado: 'Salida' } }
     ],
     includes: [
       'Traslados Aeropuerto/Terminal - Hotel en Copiapó',

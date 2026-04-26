@@ -29,9 +29,9 @@ export const boliviaApolobambaData = {
     },
     itinerary: [
       { day: 'DÍA 01', title: 'LA PAZ – CHARAZANI – CURVA (3800 M)', content: 'Largo viaje hacia la frontera norte. Charazani es la tierra de los Kallawayas (curanderos andinos). Pernocte en Curva.', stats: { alt: '3800m' } },
-      { day: 'DÍA 02', title: 'CURVA – CAMPAMENTO INCACHANI (4000 M)', content: 'Inicio del trek por valles remotos. Campamento en la zona de Incachani.', stats: { time: '5h Trek', alt: '4000m' } },
-      { day: 'DÍA 03', title: 'INCACHANI – PASO VISCACHANI – SURAQA (4200 M)', content: 'Cruce del paso Viscachani (4800m). Paisajes de alta montaña y avistamiento de vicuñas.', stats: { time: '6h Trek', alt: '4200m' } },
-      { day: 'DÍA 04', title: 'SURAQA – PASO KATANTICA – CAMPO BASE (4400 M)', content: 'Ascenso al paso Katantica (4900m) con vistas de Chaupi Orko. Establecimiento del campo base.', stats: { time: '6h Trek', alt: '4400m' } },
+      { day: 'DÍA 02', title: 'CURVA – CAMPAMENTO INCACHANI (4000 M)', content: 'Inicio del trek por valles remotos. Campamento en la zona de Incachani.', stats: { time: '5h Caminata', alt: '4000m' } },
+      { day: 'DÍA 03', title: 'INCACHANI – PASO VISCACHANI – SURAQA (4200 M)', content: 'Cruce del paso Viscachani (4800m). Paisajes de alta montaña y avistamiento de vicuñas.', stats: { time: '6h Caminata', alt: '4200m' } },
+      { day: 'DÍA 04', title: 'SURAQA – PASO KATANTICA – CAMPO BASE (4400 M)', content: 'Ascenso al paso Katantica (4900m) con vistas de Chaupi Orko. Establecimiento del campo base.', stats: { time: '6h Caminata', alt: '4400m' } },
       { day: 'DÍA 05', title: 'DÍA DE CUMBRE (6000 M)', content: 'Empuje a la cumbre de uno de los gigantes de Apolobamba. Paisajes prístinos y soledad absoluta.', stats: { time: '10h Día', alt: '6000m' } },
       { day: 'DÍA 06', title: 'CAMPO BASE – CURVA', content: 'Retorno por una ruta alternativa al pueblo de Curva.', stats: { estado: 'Retorno' } },
       { day: 'DÍA 07', title: 'CURVA – CHARAZANI – LA PAZ', content: 'Viaje de regreso a la ciudad de La Paz. Cena de despedida.', stats: { estado: 'Retorno' } },
@@ -88,7 +88,7 @@ export const boliviaApolobambaData = {
       lon: `69° 14' 00" W`,
       specs: [
         { label: 'REGION', value: 'Apolobamba', icon: 'location' },
-        { label: 'SUMMIT', value: '6000 MSNM', icon: 'zone' },
+        { label: 'SUMMIT', value: '6000 MASL', icon: 'zone' },
         { label: 'NATURE', value: 'Extreme Remote', icon: 'season' },
         { label: 'TYPE', value: 'Expedition', icon: 'service' }
       ]

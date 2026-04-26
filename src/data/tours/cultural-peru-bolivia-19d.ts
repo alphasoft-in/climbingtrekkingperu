@@ -107,7 +107,7 @@ export const culturalPeruBolivia19dData = {
     itinerary: [
       { day: 'DAY 01', title: 'ARRIVAL IN CUSCO', content: 'Airport pickup and transfer to 3-star hotel in Cusco (3400 masl).' },
       { day: 'DAY 02', title: 'CUSCO CITY TOUR', content: 'Visit Sun Temple (Qoricancha), Sacsayhuaman, Qenqo, Pukapukara, and Tambomachay.' },
-      { day: 'DAY 03', title: 'SACRED VALLEY VIP', content: 'Visit Chinchero, Maras Salt Mines, Moray, and Ollantaytambo. Train to Aguas Calientes.' },
+      { day: 'DAY 03', title: 'SACRED VALLEY VIP', content: 'Visit Chinchero, Maras Salt Mines, Moray, and Ollantaytambo. Train to Machu Picchu Pueblo.' },
       { day: 'DAY 04', title: 'MACHU PICCHU', content: '2.5h guided visit. Free time and return to Cusco.' },
       { day: 'DAY 05', title: 'FREE DAY', content: 'Rest and enjoy Cusco cuisine.' },
       { day: 'DAY 06', title: 'RAINBOW MOUNTAIN', content: 'Trek to Vinicunca (5100 masl) and Red Valley.' },
@@ -127,7 +127,7 @@ export const culturalPeruBolivia19dData = {
     ],
     includes: [
       'Airport/hotel transfers in Cusco and La Paz',
-      '04 nights in Cusco, 01 in Machupicchu, 02 in Puno, 01 in Copacabana, 05 in La Paz (3* Hotels)',
+      '04 nights in Cusco, 01 in Machu Picchu Pueblo, 02 in Puno, 01 in Copacabana, 05 in La Paz (3* Hotels)',
       'Shared tours in Cusco (City, Sacred Valley, Machu Picchu, Rainbow Mountain)',
       'Train, bus tickets and entrance fees to all sites',
       'Sleeper bus Cusco-Puno and private transport in Bolivia expeditions',

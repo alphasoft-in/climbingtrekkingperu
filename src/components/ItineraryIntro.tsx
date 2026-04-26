@@ -16,6 +16,7 @@ interface ItineraryIntroProps {
   lat: string;
   lon: string;
   verticalLabel?: string;
+  lang?: 'es' | 'en';
 }
 
 const Icons = {
@@ -54,8 +55,10 @@ const ItineraryIntro: React.FC<ItineraryIntroProps> = ({
   image,
   lat,
   lon,
-  verticalLabel = "PAQUETE TÉCNICO"
+  verticalLabel,
+  lang = 'es'
 }) => {
+  const displayVerticalLabel = verticalLabel || (lang === 'es' ? "PAQUETE TÉCNICO" : "TECHNICAL PACKAGE");
   return (
     <section className="py-20 md:py-32 bg-white overflow-hidden border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -65,7 +68,7 @@ const ItineraryIntro: React.FC<ItineraryIntroProps> = ({
           <div className="flex flex-col relative lg:pl-16">
             <div className="mb-8">
               <span className="text-[10px] font-black tracking-[0.2em] text-brand-blue uppercase mb-3 block">
-                CÓDIGO: {code}
+                {lang === 'es' ? 'CÓDIGO' : 'CODE'}: {code}
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter leading-none">
                 {titlePrefix} <span className="text-brand-blue">{titleAccent}</span>
@@ -76,7 +79,7 @@ const ItineraryIntro: React.FC<ItineraryIntroProps> = ({
               {/* Vertical Label: Perfectly centered with the paragraph */}
               <div className="hidden lg:flex absolute -left-12 top-1/2 -translate-y-1/2 h-full items-center justify-center">
                 <span className="[writing-mode:vertical-lr] rotate-180 text-[10px] font-black tracking-[0.6em] text-slate-300 uppercase whitespace-nowrap">
-                  {verticalLabel}
+                  {displayVerticalLabel}
                 </span>
               </div>
               {description}
@@ -114,12 +117,16 @@ const ItineraryIntro: React.FC<ItineraryIntroProps> = ({
               {/* Data Overlay: Coordinates */}
               <div className="absolute bottom-0 inset-x-0 bg-slate-900/90 backdrop-blur-md border-t border-white/10 px-8 py-5 flex justify-center gap-10 items-center">
                 <div className="flex flex-col items-center">
-                  <span className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-1">LATITUDE</span>
+                  <span className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-1">
+                    {lang === 'es' ? 'LATITUD' : 'LATITUDE'}
+                  </span>
                   <span className="text-[11px] font-bold text-white font-mono">{lat}</span>
                 </div>
                 <div className="w-px h-6 bg-white/10"></div>
                 <div className="flex flex-col items-center">
-                  <span className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-1">LONGITUDE</span>
+                  <span className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-1">
+                    {lang === 'es' ? 'LONGITUD' : 'LONGITUDE'}
+                  </span>
                   <span className="text-[11px] font-bold text-white font-mono">{lon}</span>
                 </div>
               </div>

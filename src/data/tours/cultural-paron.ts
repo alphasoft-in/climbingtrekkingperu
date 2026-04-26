@@ -7,7 +7,7 @@ export const culturalParonData = {
       titleTop: "LA JOYA DE LA CORDILLERA",
       titleMain: "LAGUNA PARÓN 4250M",
       backgroundImage: "/peru/bg-laguna-paron.png",
-      duration: "FULL DAY",
+      duration: "DÍA COMPLETO",
       price: "CONSULTAR",
       difficulty: "FÁCIL",
       difficultyLevel: "easy"

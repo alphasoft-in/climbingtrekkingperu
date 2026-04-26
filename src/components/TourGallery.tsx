@@ -126,7 +126,9 @@ const TourGallery: React.FC<TourGalleryProps> = ({
             {/* Modal Info */}
             <div className="w-full border-t border-white/10 pt-8 flex justify-between items-end">
               <div>
-                <span className="text-brand-blue text-[9px] font-black tracking-[0.4em] uppercase mb-2 block">EXPEDICIÓN</span>
+                <span className="text-brand-blue text-[9px] font-black tracking-[0.4em] uppercase mb-2 block">
+                  {lang === 'es' ? 'EXPEDICIÓN' : 'EXPEDITION'}
+                </span>
                 <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">
                   {tourName || (lang === 'es' ? 'Andes Peruanos' : 'Peruvian Andes')}
                 </h3>

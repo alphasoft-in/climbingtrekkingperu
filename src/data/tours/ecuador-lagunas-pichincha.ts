@@ -31,7 +31,7 @@ export const ecuadorLagunasPichinchaData = {
       { day: 'DÍA 01', title: 'LLEGADA A QUITO (2850 M)', content: 'Recepción en el Aeropuerto Mariscal Sucre y traslado al hotel. Charla informativa y revisión de equipo para los próximos días.', stats: { alt: '2850m' } },
       { day: 'DÍA 02', title: 'TOUR LAGUNA QUILOTOA (3900 M)', content: 'Viaje por la Panamericana Sur. Caminata al mirador del Cañón del Río Toachi y descenso a la orilla de la laguna turquesa.', stats: { time: '6h Actividad', alt: '3900m' } },
       { day: 'DÍA 03', title: 'LAGUNA CUICOCHA (3068 M) - OTAVALO', content: 'Visita a la laguna sagrada al pie del volcán Cotacachi. Caminata por los miradores y parada en el mercado de Otavalo.', stats: { alt: '3068m' } },
-      { day: 'DÍA 04', title: 'LAGUNAS DE MOJANDA (4263 M)', content: 'Exploración de las tres lagunas de altura (Caricocha, Huarmicocha, Yanacocha). Picnic al aire libre y caminata de aclimatación.', stats: { time: '4h Trek', alt: '4263m' } },
+      { day: 'DÍA 04', title: 'LAGUNAS DE MOJANDA (4263 M)', content: 'Exploración de las tres lagunas de altura (Caricocha, Huarmicocha, Yanacocha). Picnic al aire libre y caminata de aclimatación.', stats: { time: '4h Caminata', alt: '4263m' } },
       { day: 'DÍA 05', title: 'CUMBRE VOLCÁN RUCU PICHINCHA (4696 M)', content: 'Ascenso al pico icónico de Quito. Aproximación en teleférico y escalada final por los arenales. Entrenamiento perfecto.', stats: { time: '6-8h Día', alt: '4696m' } }
     ],
     includes: [
@@ -84,7 +84,7 @@ export const ecuadorLagunasPichinchaData = {
       lon: `78° 54' 50" W`,
       specs: [
         { label: 'REGION', value: 'Quito / Andes', icon: 'location' },
-        { label: 'MAX ALT.', value: '4696 MSNM', icon: 'zone' },
+        { label: 'MAX ALT.', value: '4696 MASL', icon: 'zone' },
         { label: 'STATUS', value: 'Scenic', icon: 'season' },
         { label: 'TYPE', value: 'Lake Trekking', icon: 'service' }
       ]

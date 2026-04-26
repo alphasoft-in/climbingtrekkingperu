@@ -8,6 +8,7 @@ interface ItineraryHeroProps {
   price: string;
   difficulty: string;
   difficultyLevel: 'hard' | 'modplus' | 'mod' | 'easy';
+  lang?: 'es' | 'en';
 }
 
 const ItineraryHero: React.FC<ItineraryHeroProps> = ({
@@ -17,7 +18,8 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
   duration,
   price,
   difficulty,
-  difficultyLevel
+  difficultyLevel,
+  lang = 'es'
 }) => {
   const isHard = difficultyLevel === 'hard';
   
@@ -52,7 +54,9 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
           <div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-10 md:gap-x-16 gap-y-6 mt-4 md:mt-8 pt-4 md:pt-6 border-t border-white/10 w-full max-w-3xl">
             {/* Duration */}
             <div className="flex flex-col gap-1 items-center min-w-[80px]">
-              <span className="text-[7px] md:text-[9px] font-black tracking-[0.2em] text-brand-blue uppercase">DURACIÓN</span>
+              <span className="text-[7px] md:text-[9px] font-black tracking-[0.2em] text-brand-blue uppercase">
+                {lang === 'es' ? 'DURACIÓN' : 'DURATION'}
+              </span>
               <span className="text-[10px] md:text-xs font-bold text-white uppercase tracking-tight text-center">
                 {duration}
               </span>
@@ -60,7 +64,9 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
 
             {/* Price */}
             <div className="flex flex-col gap-1 items-center min-w-[80px]">
-              <span className="text-[7px] md:text-[9px] font-black tracking-[0.2em] text-brand-blue uppercase">DESDE</span>
+              <span className="text-[7px] md:text-[9px] font-black tracking-[0.2em] text-brand-blue uppercase">
+                {lang === 'es' ? 'DESDE' : 'FROM'}
+              </span>
               <span className="text-[10px] md:text-xs font-bold text-white uppercase tracking-tight text-center">
                 {price}
               </span>
@@ -68,7 +74,9 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
 
             {/* Difficulty */}
             <div className="flex flex-col gap-1 items-center min-w-[80px]">
-              <span className="text-[7px] md:text-[9px] font-black tracking-[0.2em] text-brand-blue uppercase">DIFICULTAD</span>
+              <span className="text-[7px] md:text-[9px] font-black tracking-[0.2em] text-brand-blue uppercase">
+                {lang === 'es' ? 'DIFICULTAD' : 'DIFFICULTY'}
+              </span>
               <div className={`px-3 py-1 ${isHard ? 'bg-red-950/40 border border-brand-red/30' : 'bg-brand-blue/10 border border-brand-blue/20'} backdrop-blur-md`}>
                 <span className={`text-[8px] md:text-[9px] font-black tracking-widest uppercase ${isHard ? 'text-brand-red' : 'text-brand-blue'}`}>
                   {difficulty}

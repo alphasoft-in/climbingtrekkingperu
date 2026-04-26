@@ -31,11 +31,11 @@ export const argentinaAconcaguaData = {
       { day: 'DÍA 01', title: 'LLEGADA A MENDOZA (746 MSNM)', content: 'Recepción en el Aeropuerto Internacional El Plumerillo y traslado privado al hotel en la ciudad de Mendoza.', stats: { alt: '746m' } },
       { day: 'DÍA 02', title: 'PERMISOS Y LOGÍSTICA EN MENDOZA', content: 'Trámites de permiso de ingreso al Parque Aconcagua con asistencia de guía. Revisión final de equipo y cena de bienvenida.', stats: { alt: '746m' } },
       { day: 'DÍA 03', title: 'MENDOZA – PENITENTES (2700 M)', content: 'Traslado hacia la montaña por la ruta internacional. Inicio de aclimatación gradual en la zona de Penitentes.', stats: { time: '5h Viaje', alt: '2700m' } },
-      { day: 'DÍA 04', title: 'PENITENTES – CONFLUENCIA (3368 M)', content: 'Inicio del trekking en el Parque Aconcagua. Primer campamento con vistas a la impresionante Pared Sur.', stats: { time: '5h Trek', alt: '3368m' } },
-      { day: 'DÍA 05', title: 'ACLIMATACIÓN A PLAZA FRANCIA (4200 M)', content: 'Caminata al mirador de la Pared Sur. Día crucial para la aclimatación gradual antes de moverse al campo base.', stats: { time: '7-8h Trek', alt: '4200m' } },
-      { day: 'DÍA 06', title: 'CONFLUENCIA – PLAZA DE MULAS (4250 M)', content: 'Caminata por Playa Ancha hasta el campo base más grande de los Andes, una verdadera "ciudad de carpas".', stats: { time: '8-9h Trek', alt: '4250m' } },
+      { day: 'DÍA 04', title: 'PENITENTES – CONFLUENCIA (3368 M)', content: 'Inicio del trekking en el Parque Aconcagua. Primer campamento con vistas a la impresionante Pared Sur.', stats: { time: '5h Caminata', alt: '3368m' } },
+      { day: 'DÍA 05', title: 'ACLIMATACIÓN A PLAZA FRANCIA (4200 M)', content: 'Caminata al mirador de la Pared Sur. Día crucial para la aclimatación gradual antes de moverse al campo base.', stats: { time: '7-8h Caminata', alt: '4200m' } },
+      { day: 'DÍA 06', title: 'CONFLUENCIA – PLAZA DE MULAS (4250 M)', content: 'Caminata por Playa Ancha hasta el campo base más grande de los Andes, una verdadera "ciudad de carpas".', stats: { time: '8-9h Caminata', alt: '4250m' } },
       { day: 'DÍA 07', title: 'DÍA DE DESCANSO EN PLAZA DE MULAS', content: 'Día libre para recuperación, hidratación y chequeos médicos obligatorios en el campo base.', stats: { alt: '4250m' } },
-      { day: 'DÍA 08', title: 'ASCENSO AL MT. BONETE (5000 M)', content: 'Cumbre de entrenamiento y aclimatación activa. Mejora dramáticamente las posibilidades de éxito en el Aconcagua.', stats: { time: '8-9h Trek', alt: '5000m' } },
+      { day: 'DÍA 08', title: 'ASCENSO AL MT. BONETE (5000 M)', content: 'Cumbre de entrenamiento y aclimatación activa. Mejora dramáticamente las posibilidades de éxito en el Aconcagua.', stats: { time: '8-9h Caminata', alt: '5000m' } },
       { day: 'DÍA 09', title: 'PLAZA DE MULAS – CAMPO 1 (5050 M)', content: 'Inicio del ascenso a los campos altos. Movimiento de carga y establecimiento del primer campo de altura.', stats: { time: '6-7h Ascenso', alt: '5050m' } },
       { day: 'DÍA 10', title: 'CAMPO 1 – CAMPO 2 NIDO DE CÓNDORES (5550 M)', content: 'Ascenso a uno de los campamentos más bellos con vistas panorámicas de la Cordillera Principal.', stats: { time: '6h Ascenso', alt: '5550m' } },
       { day: 'DÍA 11', title: 'ACLIMATACIÓN EN NIDO DE CÓNDORES', content: 'Día estratégico de descanso y ajuste del cuerpo a la altitud extrema por encima de los 5500 metros.', stats: { alt: '5550m' } },
@@ -103,7 +103,7 @@ export const argentinaAconcaguaData = {
       lon: `70° 00' 40" W`,
       specs: [
         { label: 'REGION', value: 'Mendoza, ARG', icon: 'location' },
-        { label: 'SUMMIT', value: '6962 MSNM', icon: 'zone' },
+        { label: 'SUMMIT', value: '6962 MASL', icon: 'zone' },
         { label: 'STATUS', value: 'Elite Exp.', icon: 'season' },
         { label: 'TYPE', value: 'High Altitude', icon: 'service' }
       ]

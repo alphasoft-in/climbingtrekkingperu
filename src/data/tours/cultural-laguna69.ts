@@ -7,7 +7,7 @@ export const culturalLaguna69Data = {
       titleTop: "EL DESAFÍO AZUL",
       titleMain: "LAGUNA 69 TREKKING 4600M",
       backgroundImage: "/peru/bg-cebollapampa.png",
-      duration: "FULL DAY",
+      duration: "DÍA COMPLETO",
       price: "CONSULTAR",
       difficulty: "EXIGENTE",
       difficultyLevel: "hard"

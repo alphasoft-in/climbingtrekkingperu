@@ -21,6 +21,7 @@ const t = data[lang];
 <Layout title={`${t.hero.titleMain} | Franpisco Adventure`} description={t.hero.description || t.intro.description}>
   <ItineraryHero
     client:load
+    lang={lang}
     titleTop={t.hero.titleTop}
     titleMain={t.hero.titleMain}
     backgroundImage={t.hero.backgroundImage}
@@ -32,6 +33,7 @@ const t = data[lang];
 
   <ItineraryIntro
     client:visible
+    lang={lang}
     code={t.intro.code}
     titlePrefix={t.intro.titlePrefix}
     titleAccent={t.intro.titleAccent}
@@ -48,6 +50,7 @@ const t = data[lang];
         <div class="lg:col-span-8">
           <ItinerarySchedule 
             client:visible
+            lang={lang}
             days={t.itinerary.map((item: any) => ({
               day: item.day,
               title: item.title,

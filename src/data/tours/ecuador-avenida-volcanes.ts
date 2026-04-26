@@ -34,10 +34,10 @@ export const ecuadorAvenidaVolcanesData = {
       { day: 'DÍA 04', title: 'DÍA DE DESCANSO EN QUITO', content: 'Recuperación física. Opción de recorrer el centro histórico de Quito y disfrutar de la gastronomía local.', stats: { estado: 'Descanso' } },
       { day: 'DÍA 05', title: 'QUITO – REFUGIO CAYAMBE (4600 M)', content: 'Traslado al Volcán Cayambe, ubicado justo en la línea ecuatorial. Preparación en el Refugio Ruales Oleas Berge.', stats: { time: '2h Viaje', alt: '4600m' } },
       { day: 'DÍA 06', title: 'CUMBRE CAYAMBE (5796 M) – QUITO', content: 'Ascenso glaciar exigente. Es el único punto en la Tierra donde la línea ecuatorial cruza un glaciar permanente. Retorno a Quito.', stats: { time: '8-9h Día', alt: '5796m' } },
-      { day: 'DÍA 07', title: 'QUITO – REFUGIO COTOPAXI (4864 M)', content: 'Entrada al Parque Nacional Cotopaxi. Caminata al Refugio José Rivas. Atardecer sobre la Avenida de los Volcanes.', stats: { time: '1h Trek', alt: '4864m' } },
+      { day: 'DÍA 07', title: 'QUITO – REFUGIO COTOPAXI (4864 M)', content: 'Entrada al Parque Nacional Cotopaxi. Caminata al Refugio José Rivas. Atardecer sobre la Avenida de los Volcanes.', stats: { time: '1h Caminata', alt: '4864m' } },
       { day: 'DÍA 08', title: 'CUMBRE COTOPAXI (5897 M) – QUITO', content: 'Ascenso por pendientes de 45°. Vista del cráter activo y el panorama de los Andes ecuatorianos. Descenso y retorno a Quito.', stats: { time: '10-11h Día', alt: '5897m' } },
       { day: 'DÍA 09', title: 'DÍA DE REPOSO ESTRATÉGICO', content: 'Día libre en Quito para recargar energías antes del objetivo final: Chimborazo.', stats: { estado: 'Recuperación' } },
-      { day: 'DÍA 10', title: 'QUITO – CAMPO ALTO CHIMBORAZO (5300 M)', content: 'Viaje al sur por la Avenida de los Volcanes. Caminata al campo alto para optimizar el empuje a la cumbre.', stats: { time: '3h Trek', alt: '5300m' } },
+      { day: 'DÍA 10', title: 'QUITO – CAMPO ALTO CHIMBORAZO (5300 M)', content: 'Viaje al sur por la Avenida de los Volcanes. Caminata al campo alto para optimizar el empuje a la cumbre.', stats: { time: '3h Caminata', alt: '5300m' } },
       { day: 'DÍA 11', title: 'CUMBRE CHIMBORAZO (6268 M) – QUITO', content: 'Ascenso al punto más cercano al sol. El Chimborazo es la montaña más alta de Ecuador. Retorno triunfal a Quito.', stats: { time: '11-12h Día', alt: '6268m' } },
       { day: 'DÍA 12', title: 'SALIDA DE QUITO', content: 'Traslado final al aeropuerto para su vuelo internacional. Fin de la expedición.', stats: { estado: 'Traslado' } }
     ],
@@ -92,7 +92,7 @@ export const ecuadorAvenidaVolcanesData = {
       lon: `78° 26' 06" W`,
       specs: [
         { label: 'REGION', value: 'Quito, ECU', icon: 'location' },
-        { label: 'PEAK', value: '6268 MSNM', icon: 'zone' },
+        { label: 'PEAK', value: '6268 MASL', icon: 'zone' },
         { label: 'STATUS', value: 'High Technical', icon: 'season' },
         { label: 'TYPE', value: 'Glacial Ascent', icon: 'service' }
       ]
