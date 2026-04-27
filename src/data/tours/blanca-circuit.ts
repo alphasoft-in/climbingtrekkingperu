@@ -17,7 +17,7 @@ export const blancaCircuitData = {
       titlePrefix: "La Travesía",
       titleAccent: "Total",
       description: "Esta es nuestra expedición insignia en la Cordillera Blanca. Durante 15 días, recorreremos los valles más remotos, uniendo la ruta clásica de Santa Cruz con el imponente circuito Los Cedros Alpamayo.",
-      image: "/trekking/blanca/blanca/bg-cordillera-blanca.png",
+      image: "/trekking/blanca/blanca/cordillera-blanca.png",
       lat: `08° 50' 11" S`,
       lon: `77° 40' 05" W`,
       specs: [
@@ -98,7 +98,7 @@ export const blancaCircuitData = {
       titlePrefix: "The Total",
       titleAccent: "Traverse",
       description: "This is our flagship expedition in the White Range. For 15 days, we will traverse the most remote valleys, joining the classic Santa Cruz route with the imposing Los Cedros Alpamayo circuit.",
-      image: "/trekking/blanca/blanca/bg-cordillera-blanca.png",
+      image: "/trekking/blanca/blanca/cordillera-blanca.png",
       lat: `08° 50' 11" S`,
       lon: `77° 40' 05" W`,
       specs: [
