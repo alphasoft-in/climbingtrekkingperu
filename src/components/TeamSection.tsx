@@ -27,7 +27,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ data }) => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
-          <h2 className="text-white text-3xl md:text-6xl font-black tracking-[0.25em] uppercase mb-6">
+          <h2 className="text-white text-3xl md:text-4xl font-black tracking-[0.25em] uppercase mb-6">
             {data.title}
           </h2>
           <div className="flex items-center justify-center gap-4">
