@@ -10,13 +10,6 @@
 }
 
 @layer base {
-  :root {
-    --brand-red: #d80202;
-    --brand-blue: #0090cc;
-    --brand-light: #d5d5d5;
-    --brand-dark: #373737;
-  }
-
   * {
     box-sizing: border-box;
     margin: 0;
