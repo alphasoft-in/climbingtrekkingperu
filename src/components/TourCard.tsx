@@ -65,41 +65,41 @@ const TourCard: React.FC<TourCardProps> = ({
       </div>
 
       {/* CONTENT ZONE: Architectural Layout */}
-      <div className="p-8 md:p-10 flex flex-col flex-1 border-x border-slate-100">
+      <div className="p-6 md:p-8 flex flex-col flex-1 border-x border-slate-100">
         {/* Simplified Difficulty Badge */}
-        <div className="flex mb-6">
-          <div className={`flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border ${
+        <div className="flex mb-4">
+          <div className={`flex items-center gap-2 px-2.5 py-1 rounded-full border ${
             isHard ? 'bg-red-50 border-red-100' : 
             (isModPlus || isMod ? 'bg-blue-50 border-blue-100' : 'bg-green-50 border-green-100')
           }`}>
-            <svg viewBox="0 0 24 24" className={`w-3.5 h-3.5 ${textColor}`} fill="none" stroke="currentColor" strokeWidth="2.5">
+            <svg viewBox="0 0 24 24" className={`w-3 h-3 ${textColor}`} fill="none" stroke="currentColor" strokeWidth="3">
               <path d="M8 18l4-11 4 11" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M4 20l5-13.5L13.5 13l2.5-4L20 20H4z" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span className={`text-[9px] font-black tracking-[0.2em] uppercase ${textColor}`}>
+            <span className={`text-[8.5px] font-black tracking-[0.2em] uppercase ${textColor}`}>
               {difficulty}
             </span>
           </div>
         </div>
 
-        <h3 className="text-xl font-black text-slate-900 tracking-tight leading-[1.2] mb-5 group-hover:text-brand-blue transition-colors duration-500 uppercase">
+        <h3 className="text-lg font-black text-slate-900 tracking-tight leading-tight mb-2 group-hover:text-brand-blue transition-colors duration-500 uppercase">
           {title}
         </h3>
 
-        <p className="text-slate-500 text-[13px] leading-relaxed mb-10 line-clamp-3 font-medium tracking-tight group-hover:text-slate-600 transition-colors duration-500">
+        <p className="text-slate-500 text-[12px] leading-relaxed mb-6 line-clamp-3 font-medium tracking-tight group-hover:text-slate-600 transition-colors duration-500">
           {description}
         </p>
 
         {/* ACTION BUTTON: Industrial Control */}
         <a 
           href={href}
-          className="mt-auto group/btn relative flex items-center justify-between bg-brand-dark text-white pl-8 pr-6 py-5 overflow-hidden transition-all duration-500 hover:bg-brand-blue"
+          className="mt-auto group/btn relative flex items-center justify-between bg-brand-dark text-white pl-6 pr-4 py-3.5 overflow-hidden transition-all duration-500 hover:bg-brand-blue"
         >
-          <span className="relative z-10 text-[10px] font-black tracking-[0.4em] uppercase">
+          <span className="relative z-10 text-[8.5px] font-black tracking-[0.4em] uppercase">
             {lang === 'es' ? 'VER ITINERARIO' : 'VIEW ITINERARY'}
           </span>
           <div className="relative z-10 transition-transform duration-500 group-hover/btn:translate-x-2">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="3">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="3">
               <path d="M5 12h14m-7-7l7 7-7 7" />
             </svg>
           </div>
