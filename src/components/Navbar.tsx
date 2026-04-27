@@ -370,8 +370,8 @@ const Navbar: React.FC<NavbarProps> = ({
             </div>
           </nav>
 
-          <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-8 items-center text-center">
-             <div className="flex items-center justify-center gap-4 px-4">
+          <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-8 items-center text-center pb-8">
+             <div className="flex items-center justify-center flex-wrap gap-4 px-4 relative z-[2001]">
                {[
                  { name: 'Facebook', url: 'https://www.facebook.com/FranciscoMayhuay', icon: <FaFacebookF className="w-5 h-5" /> },
                  { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: <FaInstagram className="w-5 h-5" /> },
@@ -384,7 +384,7 @@ const Navbar: React.FC<NavbarProps> = ({
                    href={social.url} 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm"
+                   className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm active:scale-95 touch-manipulation"
                  >
                    <span className="sr-only">{social.name}</span>
                    {social.icon}

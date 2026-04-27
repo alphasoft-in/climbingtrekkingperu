@@ -164,8 +164,8 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
       </div>
 
       {/* Decorative Background Elements */}
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-[100px]"></div>
-      <div className="absolute top-20 -left-20 w-72 h-72 bg-brand-red/5 rounded-full blur-[100px]"></div>
+      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-20 -left-20 w-72 h-72 bg-brand-red/5 rounded-full blur-[100px] pointer-events-none"></div>
     </footer>
   );
 };
