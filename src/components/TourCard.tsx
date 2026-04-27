@@ -82,7 +82,7 @@ const TourCard: React.FC<TourCardProps> = ({
           </div>
         </div>
 
-        <h3 className="text-lg font-black text-slate-900 tracking-tight leading-tight mb-2 group-hover:text-brand-blue transition-colors duration-500 uppercase">
+        <h3 className="text-base font-bold text-slate-900 tracking-tight leading-tight mb-2 group-hover:text-brand-blue transition-colors duration-500 uppercase">
           {title}
         </h3>
 
