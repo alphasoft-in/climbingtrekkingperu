@@ -28,6 +28,14 @@
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    font-smoothing: antialiased;
   }
   
   main {

@@ -63,15 +63,22 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
             }`}
           >
             {/* Image with Ken Burns Effect */}
-            <div className="absolute inset-0 overflow-hidden">
-              <img
-                src={slide.src}
-                alt={slide.title}
-                className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out will-change-transform ${
-                  index === currentIndex ? 'scale-110' : 'scale-100'
-                }`}
-              />
-            </div>
+             <div className="absolute inset-0 overflow-hidden">
+               <img
+                 src={slide.src}
+                 alt={slide.title}
+                 className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
+                   index === currentIndex ? 'scale-110' : 'scale-100'
+                 }`}
+                 style={{ 
+                   imageRendering: 'auto',
+                   WebkitBackfaceVisibility: 'hidden',
+                   backfaceVisibility: 'hidden',
+                   transform: `scale(${index === currentIndex ? 1.1 : 1.0}) translateZ(0)`,
+                   filter: 'contrast(1.02) brightness(0.95)'
+                 }}
+               />
+             </div>
 
             {/* Cinematic Overlays */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent z-20 md:block hidden" />
