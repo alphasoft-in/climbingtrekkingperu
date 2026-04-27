@@ -6,7 +6,7 @@ export const blancaBestData = {
     hero: {
       titleTop: "EXPEDICIÓN SUPREMA",
       titleMain: "LO MEJOR DE LA CORDILLERA BLANCA",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/trekking/blanca/lomejor/lo-mejor.png",
       duration: "10 DÍAS / 09 NOCHES",
       price: "USD. 1,195.00",
       difficulty: "MODERADO +",
@@ -17,7 +17,7 @@ export const blancaBestData = {
       titlePrefix: "El Corazón",
       titleAccent: "de los Andes",
       description: "Este programa combina las lagunas más icónicas de la Cordillera Blanca con el clásico Santa Cruz Trek, ofreciendo una logística de confort superior para una inmersión total en los Andes.",
-      image: "/trekking/blanca/bg-cordillerablanca.png",
+      image: "/trekking/blanca/lomejor/lo-mejor.png",
       lat: `09° 00' 25" S`,
       lon: `77° 39' 11" W`,
       specs: [
@@ -76,7 +76,7 @@ export const blancaBestData = {
     hero: {
       titleTop: "SUPREME EXPEDITION",
       titleMain: "THE BEST OF WHITE RANGE",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/trekking/blanca/lomejor/lo-mejor.png",
       duration: "10 DAYS / 09 NIGHTS",
       price: "USD. 1,195.00",
       difficulty: "MODERATE+",
@@ -87,7 +87,7 @@ export const blancaBestData = {
       titlePrefix: "The Heart",
       titleAccent: "of the Andes",
       description: "This program combines the most iconic lagoons of the White Range with the classic Santa Cruz Trek, offering superior comfort logistics for total immersion in the Andes.",
-      image: "/trekking/blanca/bg-cordillerablanca.png",
+      image: "/trekking/blanca/lomejor/lo-mejor.png",
       lat: `09° 00' 25" S`,
       lon: `77° 39' 11" W`,
       specs: [
