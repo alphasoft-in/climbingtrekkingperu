@@ -6,7 +6,7 @@ export const blancaBestData = {
     hero: {
       titleTop: "EXPEDICIÓN SUPREMA",
       titleMain: "LO MEJOR DE LA CORDILLERA BLANCA",
-      backgroundImage: "/trekking/blanca/lomejor/lo-mejor.png",
+      backgroundImage: "/trekking/blanca/lomejor/bg-lo-mejor.png",
       duration: "10 DÍAS / 09 NOCHES",
       price: "USD. 1,195.00",
       difficulty: "MODERADO +",
@@ -76,7 +76,7 @@ export const blancaBestData = {
     hero: {
       titleTop: "SUPREME EXPEDITION",
       titleMain: "THE BEST OF WHITE RANGE",
-      backgroundImage: "/trekking/blanca/lomejor/lo-mejor.png",
+      backgroundImage: "/trekking/blanca/lomejor/bg-lo-mejor.png",
       duration: "10 DAYS / 09 NIGHTS",
       price: "USD. 1,195.00",
       difficulty: "MODERATE+",
