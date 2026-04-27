@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
             <p className="text-sm leading-relaxed font-medium text-slate-500 max-w-xs">
               {labels.brandDesc}
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center flex-wrap gap-3">
               {[
                 { name: 'Facebook', url: 'https://www.facebook.com/FranciscoMayhuay', icon: <FaFacebookF className="w-4 h-4" /> },
                 { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: <FaInstagram className="w-4 h-4" /> },
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
                   href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm"
+                  className="w-10 h-10 rounded-lg bg-slate-800/50 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm"
                 >
                   <span className="sr-only">{social.name}</span>
                   {social.icon}
