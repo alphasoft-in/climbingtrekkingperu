@@ -88,29 +88,29 @@ const TourGallery: React.FC<TourGalleryProps> = ({
         >
           {/* Close Button */}
           <button 
-            className="absolute top-8 right-8 text-white/50 hover:text-brand-red transition-all z-[100000] p-4"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-brand-red transition-all z-[100000] p-4 bg-white/5 md:bg-transparent rounded-full"
             onClick={closeLightbox}
           >
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <svg viewBox="0 0 24 24" className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
-
+ 
           {/* Nav Controls */}
           <button 
-            className="absolute left-4 md:left-12 text-white/20 hover:text-brand-blue transition-all z-[100000] p-4 hidden md:block"
+            className="absolute left-2 md:left-12 text-white/40 hover:text-brand-blue transition-all z-[100000] p-4 active:scale-95 touch-manipulation"
             onClick={prevImage}
           >
-            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg viewBox="0 0 24 24" className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
           
           <button 
-            className="absolute right-4 md:right-12 text-white/20 hover:text-brand-blue transition-all z-[100000] p-4 hidden md:block"
+            className="absolute right-2 md:right-12 text-white/40 hover:text-brand-blue transition-all z-[100000] p-4 active:scale-95 touch-manipulation"
             onClick={nextImage}
           >
-            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg viewBox="0 0 24 24" className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
