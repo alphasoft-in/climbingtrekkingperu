@@ -67,16 +67,10 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
                <img
                  src={slide.src}
                  alt={slide.title}
-                 className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
-                   index === currentIndex ? 'scale-110' : 'scale-100'
+                 className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out transform-gpu ${
+                   index === currentIndex ? 'scale-105' : 'scale-100'
                  }`}
-                 style={{ 
-                   imageRendering: 'auto',
-                   WebkitBackfaceVisibility: 'hidden',
-                   backfaceVisibility: 'hidden',
-                   transform: `scale(${index === currentIndex ? 1.1 : 1.0}) translateZ(0)`,
-                   filter: 'contrast(1.02) brightness(0.95)'
-                 }}
+                 loading="eager"
                />
              </div>
 
