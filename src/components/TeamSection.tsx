@@ -17,7 +17,7 @@ interface TeamSectionProps {
 
 const TeamSection: React.FC<TeamSectionProps> = ({ data }) => {
   return (
-    <section className="bg-[#0b0d10] pt-24 md:pt-32 pb-24 md:pb-32 px-6 relative overflow-hidden">
+    <section className="bg-[#0b0d10] pt-16 md:pt-24 pb-20 md:pb-32 px-6 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] bg-brand-blue/10 rounded-full blur-[120px]"></div>
@@ -26,7 +26,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ data }) => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-20 md:mb-28">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-[0.25em] uppercase mb-6">
             {data.title}
           </h2>
