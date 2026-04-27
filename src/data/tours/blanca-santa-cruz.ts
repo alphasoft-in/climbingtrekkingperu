@@ -6,7 +6,7 @@ export const blancaSantaCruzData = {
     hero: {
       titleTop: "TREKKING CLÁSICO",
       titleMain: "SANTA CRUZ 07D",
-      backgroundImage: "/trekking/blanca/trekking-clasico.png",
+      backgroundImage: "/trekking/blanca/santacruz/bg-santa-cruz.png",
       duration: "07 DÍAS / 06 NOCHES",
       price: "USD. 595.00",
       difficulty: "MODERADO +",
@@ -17,7 +17,7 @@ export const blancaSantaCruzData = {
       titlePrefix: "Experiencia",
       titleAccent: "Santa Cruz",
       description: "Considerado uno de los trekkings más bellos del mundo, el Santa Cruz ofrece vistas inigualables del pico Alpamayo y cruza el emblemático paso Punta Unión a 4,750 metros.",
-      image: "/trekking/blanca/trekking-clasico.png",
+      image: "/trekking/blanca/santacruz/bg-santa-cruz.png",
       lat: `08° 52' 39" S`,
       lon: `77° 33' 21" W`,
       specs: [
@@ -76,7 +76,7 @@ export const blancaSantaCruzData = {
     hero: {
       titleTop: "CLASSIC TREKKING",
       titleMain: "SANTA CRUZ 07D",
-      backgroundImage: "/trekking/blanca/trekking-clasico.png",
+      backgroundImage: "/trekking/blanca/santacruz/bg-santa-cruz.png",
       duration: "07 DAYS / 06 NIGHTS",
       price: "USD. 595.00",
       difficulty: "MODERATE+",
@@ -87,7 +87,7 @@ export const blancaSantaCruzData = {
       titlePrefix: "Santa Cruz",
       titleAccent: "Experience",
       description: "Considered one of the most beautiful treks in the world, the Santa Cruz offers unmatched views of the Alpamayo peak and crosses the emblematic Punta Union pass at 4,750 meters.",
-      image: "/trekking/blanca/trekking-clasico.png",
+      image: "/trekking/blanca/santacruz/bg-santa-cruz.png",
       lat: `08° 52' 39" S`,
       lon: `77° 33' 21" W`,
       specs: [
