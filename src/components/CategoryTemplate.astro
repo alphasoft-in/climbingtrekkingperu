@@ -14,7 +14,12 @@ interface Props {
 const { lang, metadata, programs } = Astro.props;
 ---
 
-<Layout title={`${metadata[lang].titleMain} - ALPINE TREKS PERÚ`} description={metadata[lang].description}>
+<Layout 
+  title={`${metadata[lang].titleMain} - ALPINE TREKS PERÚ`} 
+  description={metadata[lang].description}
+  keywords={`${metadata[lang].titleMain.toLowerCase()}, trekking peru, expeditions, adventure huaraz`}
+  image={metadata[lang].backgroundImage}
+>
   <PageHero 
     client:load
     titleTop={metadata[lang].titleTop}

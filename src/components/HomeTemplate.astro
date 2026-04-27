@@ -19,7 +19,12 @@ const { lang, data } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<Layout title={data.title} description={data.description}>
+<Layout 
+	title={data.title} 
+	description={data.description}
+	keywords="trekking peru, cordillera blanca, huayhuash, expediciones montaña, huaraz adventure, alpine treks peru"
+	image="/slider_1.png"
+>
 	<Slider client:load lang={lang} slides={data.slides} buttonLabel={t('slider.btn')} />
 	<Institutional client:load data={data.institutional} />
 	<WorkArea client:load data={data.workArea} />

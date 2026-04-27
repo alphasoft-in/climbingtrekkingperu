@@ -18,7 +18,12 @@ const { lang, data } = Astro.props;
 const t = data[lang];
 ---
 
-<Layout title={`${t.hero.titleMain} | ALPINE TREKS PERÚ`} description={t.hero.description || t.intro.description}>
+<Layout 
+  title={`${t.hero.titleMain} | ALPINE TREKS PERÚ`} 
+  description={t.hero.description || t.intro.description}
+  keywords={`${t.hero.titleMain.toLowerCase()}, trekking peru, cordillera blanca, huayhuash, expedicion tecnica, alpine treks`}
+  image={t.hero.backgroundImage}
+>
   <ItineraryHero
     client:load
     lang={lang}
