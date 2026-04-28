@@ -157,9 +157,20 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
 
       {/* Copyright Bar */}
       <div className="border-t border-white/[0.03] bg-black/50 py-10 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-bold tracking-[0.1em] text-slate-600 uppercase">
             {labels.copy}
+          </p>
+          <p className="text-[10px] font-bold tracking-[0.1em] text-slate-600 uppercase">
+            {isEs ? 'Un proyecto desarrollado por' : 'A project developed by'}{' '}
+            <a 
+              href="https://www.facebook.com/rubenestebantipiania" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-brand-blue hover:text-brand-red transition-colors"
+            >
+              Rubén Tipiani
+            </a>
           </p>
         </div>
       </div>
