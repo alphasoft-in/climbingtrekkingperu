@@ -6,7 +6,7 @@ export const cuscoChoquequiraoData = {
     hero: {
       titleTop: "LA HERMANA DE MACHU PICCHU",
       titleMain: "TREKKING CHOQUEQUIRAO",
-      backgroundImage: "/peru/bg-choquequirao.png",
+      backgroundImage: "/peru/bg-choquequirao.avif",
       duration: "4 DÍAS / 3 NOCHES",
       price: "CONSULTAR",
       difficulty: "EXIGENTE",
@@ -17,7 +17,7 @@ export const cuscoChoquequiraoData = {
       titlePrefix: "Aventura",
       titleAccent: "Cusco",
       description: "Cruzar el imponente Cañón del Apurímac para alcanzar las terrazas sagradas de Choquequirao es una de las experiencias más auténticas de los Andes. Este trekking combina historia inca, biodiversidad y el desafío de uno de los cañones más profundos del mundo.",
-      image: "/trekking/cusco/choquequirao.png",
+      image: "/trekking/cusco/choquequirao.avif",
       lat: `13° 23' 21" S`,
       lon: `72° 52' 33" W`,
       specs: [
@@ -65,7 +65,7 @@ export const cuscoChoquequiraoData = {
     hero: {
       titleTop: "THE SISTER OF MACHU PICCHU",
       titleMain: "CHOQUEQUIRAO TREKKING",
-      backgroundImage: "/peru/bg-choquequirao.png",
+      backgroundImage: "/peru/bg-choquequirao.avif",
       duration: "4 DAYS / 3 NIGHTS",
       price: "UPON REQUEST",
       difficulty: "CHALLENGING",
@@ -76,7 +76,7 @@ export const cuscoChoquequiraoData = {
       titlePrefix: "Cusco",
       titleAccent: "Adventure",
       description: "Crossing the imposing Apurimac Canyon to reach the sacred terraces of Choquequirao is one of the most authentic experiences in the Andes. This trek combines Inca history, biodiversity, and the challenge of one of the deepest canyons in the world.",
-      image: "/trekking/cusco/choquequirao.png",
+      image: "/trekking/cusco/choquequirao.avif",
       lat: `13° 23' 21" S`,
       lon: `72° 52' 33" W`,
       specs: [

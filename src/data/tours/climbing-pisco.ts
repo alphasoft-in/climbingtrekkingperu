@@ -6,7 +6,7 @@ export const climbingPiscoData = {
     hero: {
       titleTop: "EL BALCÓN DE LOS ANDES",
       titleMain: "NEVADO PISCO 5752M",
-      backgroundImage: "/pisco/bg-pisco.png",
+      backgroundImage: "/pisco/bg-pisco.avif",
       duration: "05 DÍAS",
       price: "USD 595.00",
       difficulty: "MODERADO",
@@ -17,7 +17,7 @@ export const climbingPiscoData = {
       titlePrefix: "El Corazón de la",
       titleAccent: "Cordillera Blanca",
       description: "El Nevado Pisco es conocido como el balcón de los Andes por su ubicación estratégica. Ofrece vistas panorámicas inigualables del Huascarán, Chopicalqui y Huandoy.",
-      image: "/pisco/pisco.png",
+      image: "/pisco/pisco.avif",
       lat: `09° 01' 14" S`,
       lon: `77° 35' 42" W`,
       specs: [
@@ -67,21 +67,21 @@ export const climbingPiscoData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/pisco/1.png",
-      "/pisco/2.png",
-      "/pisco/3.png",
-      "/pisco/4.png",
-      "/pisco/5.png",
-      "/pisco/6.png",
-      "/pisco/7.png",
-      "/pisco/8.png"
+      "/pisco/1.avif",
+      "/pisco/2.avif",
+      "/pisco/3.avif",
+      "/pisco/4.avif",
+      "/pisco/5.avif",
+      "/pisco/6.avif",
+      "/pisco/7.avif",
+      "/pisco/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "THE BALCONY OF THE ANDES",
       titleMain: "NEVADO PISCO 5752M",
-      backgroundImage: "/pisco/bg-pisco.png",
+      backgroundImage: "/pisco/bg-pisco.avif",
       duration: "05 DAYS",
       price: "USD 595.00",
       difficulty: "MODERATE",
@@ -92,7 +92,7 @@ export const climbingPiscoData = {
       titlePrefix: "The Heart of the",
       titleAccent: "Cordillera Blanca",
       description: "Nevado Pisco is known as the balcony of the Andes because of its strategic location. It offers unparalleled panoramic views of Huascarán, Chopicalqui and Huandoy.",
-      image: "/pisco/pisco.png",
+      image: "/pisco/pisco.avif",
       lat: `09° 01' 14" S`,
       lon: `77° 35' 42" W`,
       specs: [
@@ -142,14 +142,14 @@ export const climbingPiscoData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/pisco/1.png",
-      "/pisco/2.png",
-      "/pisco/3.png",
-      "/pisco/4.png",
-      "/pisco/5.png",
-      "/pisco/6.png",
-      "/pisco/7.png",
-      "/pisco/8.png"
+      "/pisco/1.avif",
+      "/pisco/2.avif",
+      "/pisco/3.avif",
+      "/pisco/4.avif",
+      "/pisco/5.avif",
+      "/pisco/6.avif",
+      "/pisco/7.avif",
+      "/pisco/8.avif"
     ]
   }
 };

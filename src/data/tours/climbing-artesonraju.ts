@@ -6,7 +6,7 @@ export const climbingArtesonrajuData = {
     hero: {
       titleTop: "LA CUMBRE DE PARAMOUNT PICTURES",
       titleMain: "NEVADO ARTESONRAJU 6025M",
-      backgroundImage: "/artesonraju/bg-artesonraju.png",
+      backgroundImage: "/artesonraju/bg-artesonraju.avif",
       duration: "06 DÍAS",
       price: "USD 2,295.00",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const climbingArtesonrajuData = {
       titlePrefix: "La Pirámide de",
       titleAccent: "Paramount",
       description: "El Nevado Artesonraju 6025 m.s.n.m. es una de las montañas más icónicas de los Andes peruanos. Su forma piramidal perfecta es mundialmente reconocida.",
-      image: "/artesonraju/artesonraju.png",
+      image: "/artesonraju/artesonraju.avif",
       lat: `08° 57' 04" S`,
       lon: `77° 37' 54" W`,
       specs: [
@@ -71,17 +71,17 @@ export const climbingArtesonrajuData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/artesonraju/1.png",
-      "/artesonraju/2.png",
-      "/artesonraju/3.png",
-      "/artesonraju/4.png"
+      "/artesonraju/1.avif",
+      "/artesonraju/2.avif",
+      "/artesonraju/3.avif",
+      "/artesonraju/4.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "THE PARAMOUNT PICTURES PEAK",
       titleMain: "NEVADO ARTESONRAJU 6025M",
-      backgroundImage: "/artesonraju/bg-artesonraju.png",
+      backgroundImage: "/artesonraju/bg-artesonraju.avif",
       duration: "06 DAYS",
       price: "USD 2,295.00",
       difficulty: "HARD",
@@ -92,7 +92,7 @@ export const climbingArtesonrajuData = {
       titlePrefix: "The Pyramid of",
       titleAccent: "Paramount",
       description: "Nevado Artesonraju 6025 MASL is one of the most iconic mountains in the Peruvian Andes. Its perfect pyramidal shape is recognized worldwide.",
-      image: "/artesonraju/artesonraju.png",
+      image: "/artesonraju/artesonraju.avif",
       lat: `08° 57' 04" S`,
       lon: `77° 37' 54" W`,
       specs: [
@@ -146,10 +146,10 @@ export const climbingArtesonrajuData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/artesonraju/1.png",
-      "/artesonraju/2.png",
-      "/artesonraju/3.png",
-      "/artesonraju/4.png"
+      "/artesonraju/1.avif",
+      "/artesonraju/2.avif",
+      "/artesonraju/3.avif",
+      "/artesonraju/4.avif"
     ]
   }
 };

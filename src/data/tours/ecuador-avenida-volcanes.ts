@@ -6,7 +6,7 @@ export const ecuadorAvenidaVolcanesData = {
     hero: {
       titleTop: "EL DESAFÍO VOLCÁNICO DEFINITIVO",
       titleMain: "VOLCANES & CUMBRES DE ECUADOR 12D",
-      backgroundImage: "/ecuador/bg-lliniza.png",
+      backgroundImage: "/ecuador/bg-lliniza.avif",
       duration: "12 DÍAS",
       price: "USD 1,995",
       difficulty: "TÉCNICA",
@@ -17,7 +17,7 @@ export const ecuadorAvenidaVolcanesData = {
       titlePrefix: "Tierra de",
       titleAccent: "Fuego y Hielo",
       description: "Los Andes ecuatorianos albergan una de las concentraciones de volcanes más impresionantes del planeta. Nuestra expedición recorre la mística Avenida de los Volcanes, uniendo cuatro picos icónicos.",
-      image: "/ecuador/lliniza.png",
+      image: "/ecuador/lliniza.avif",
       lat: `00° 01' 44" S`,
       lon: `78° 26' 06" W`,
       specs: [
@@ -76,7 +76,7 @@ export const ecuadorAvenidaVolcanesData = {
     hero: {
       titleTop: "THE ULTIMATE VOLCANO CHALLENGE",
       titleMain: "ECUADOR VOLCANOES & SUMMITS 12D",
-      backgroundImage: "/ecuador/bg-lliniza.png",
+      backgroundImage: "/ecuador/bg-lliniza.avif",
       duration: "12 DAYS",
       price: "USD 1,995",
       difficulty: "TECHNICAL",
@@ -87,7 +87,7 @@ export const ecuadorAvenidaVolcanesData = {
       titlePrefix: "Land of",
       titleAccent: "Fire & Ice",
       description: "The Ecuadorian Andes house one of the most impressive concentrations of volcanoes on the planet. Our expedition traverses the mystical Avenue of Volcanoes, uniting four iconic peaks.",
-      image: "/ecuador/lliniza.png",
+      image: "/ecuador/lliniza.avif",
       lat: `00° 01' 44" S`,
       lon: `78° 26' 06" W`,
       specs: [

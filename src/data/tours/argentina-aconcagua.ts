@@ -6,7 +6,7 @@ export const argentinaAconcaguaData = {
     hero: {
       titleTop: "EL TECHO DE LAS AMÉRICAS",
       titleMain: "NEVADO ACONCAGUA 6962M",
-      backgroundImage: "/argentina/bg-aconcagua.png",
+      backgroundImage: "/argentina/bg-aconcagua.avif",
       duration: "17 DÍAS",
       price: "USD 8,950",
       difficulty: "EXTREMA",
@@ -17,7 +17,7 @@ export const argentinaAconcaguaData = {
       titlePrefix: "El Centinela",
       titleAccent: "de Piedra",
       description: "El Monte Aconcagua es el pico más alto de las Américas y el más alto del mundo fuera de Asia. Un programa de 17 días diseñado para maximizar la aclimatación gradual.",
-      image: "/argentina/aconcagua.png",
+      image: "/argentina/aconcagua.avif",
       lat: `32° 39' 12" S`,
       lon: `70° 00' 40" W`,
       specs: [
@@ -87,7 +87,7 @@ export const argentinaAconcaguaData = {
     hero: {
       titleTop: "THE ROOF OF THE AMERICAS",
       titleMain: "NEVADO ACONCAGUA 6962M",
-      backgroundImage: "/argentina/bg-aconcagua.png",
+      backgroundImage: "/argentina/bg-aconcagua.avif",
       duration: "17 DAYS",
       price: "USD 8,950",
       difficulty: "EXTREME",
@@ -98,7 +98,7 @@ export const argentinaAconcaguaData = {
       titlePrefix: "The Stone",
       titleAccent: "Sentinel",
       description: "Mount Aconcagua is the highest peak in the Americas and the highest in the world outside Asia. A 17-day program designed to maximize gradual acclimatization.",
-      image: "/argentina/aconcagua.png",
+      image: "/argentina/aconcagua.avif",
       lat: `32° 39' 12" S`,
       lon: `70° 00' 40" W`,
       specs: [

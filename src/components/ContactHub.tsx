@@ -69,7 +69,7 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
       <PageHero 
         titleTop={isEs ? 'HABLEMOS' : "LET'S TALK"}
         titleMain={isEs ? 'CONTACTO' : 'CONTACT'}
-        backgroundImage="/bg-contactanos.png"
+        backgroundImage="/bg-contactanos.avif"
         techData={[
           { label: "HQ", value: "HUARAZ" },
           { label: "AVAILABILITY", value: "24/7" }

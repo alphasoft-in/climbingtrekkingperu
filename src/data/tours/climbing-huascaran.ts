@@ -6,7 +6,7 @@ export const climbingHuascaranData = {
     hero: {
       titleTop: "EL TECHO DEL PERÚ",
       titleMain: "NEVADO HUASCARÁN 6768M",
-      backgroundImage: "/huascaran/bg-huascaran.png",
+      backgroundImage: "/huascaran/bg-huascaran.avif",
       duration: "06 DÍAS",
       price: "USD 1,995.00",
       difficulty: "MUY ALTA",
@@ -17,7 +17,7 @@ export const climbingHuascaranData = {
       titlePrefix: "El Coloso",
       titleAccent: "de los Andes",
       description: "El Huascarán Sur es la cumbre más alta de los Andes Peruanos. Un desafío máximo que requiere experiencia técnica sólida y una aclimatación rigurosa.",
-      image: "/huascaran/huascaran.png",
+      image: "/huascaran/huascaran.avif",
       lat: `09° 07' 17" S`,
       lon: `77° 36' 32" W`,
       specs: [
@@ -69,21 +69,21 @@ export const climbingHuascaranData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/huascaran/1.png",
-      "/huascaran/2.png",
-      "/huascaran/3.png",
-      "/huascaran/4.png",
-      "/huascaran/5.png",
-      "/huascaran/6.png",
-      "/huascaran/7.png",
-      "/huascaran/8.png"
+      "/huascaran/1.avif",
+      "/huascaran/2.avif",
+      "/huascaran/3.avif",
+      "/huascaran/4.avif",
+      "/huascaran/5.avif",
+      "/huascaran/6.avif",
+      "/huascaran/7.avif",
+      "/huascaran/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "THE ROOF OF PERU",
       titleMain: "NEVADO HUASCARÁN 6768M",
-      backgroundImage: "/huascaran/bg-huascaran.png",
+      backgroundImage: "/huascaran/bg-huascaran.avif",
       duration: "06 DAYS",
       price: "USD 1,995.00",
       difficulty: "VERY HIGH",
@@ -94,7 +94,7 @@ export const climbingHuascaranData = {
       titlePrefix: "The Colossus",
       titleAccent: "of the Andes",
       description: "South Huascaran is the highest peak in the Peruvian Andes. A maximum challenge that requires solid technical experience and rigorous acclimatization.",
-      image: "/huascaran/huascaran.png",
+      image: "/huascaran/huascaran.avif",
       lat: `09° 07' 17" S`,
       lon: `77° 36' 32" W`,
       specs: [
@@ -146,14 +146,14 @@ export const climbingHuascaranData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/huascaran/1.png",
-      "/huascaran/2.png",
-      "/huascaran/3.png",
-      "/huascaran/4.png",
-      "/huascaran/5.png",
-      "/huascaran/6.png",
-      "/huascaran/7.png",
-      "/huascaran/8.png"
+      "/huascaran/1.avif",
+      "/huascaran/2.avif",
+      "/huascaran/3.avif",
+      "/huascaran/4.avif",
+      "/huascaran/5.avif",
+      "/huascaran/6.avif",
+      "/huascaran/7.avif",
+      "/huascaran/8.avif"
     ]
   }
 };

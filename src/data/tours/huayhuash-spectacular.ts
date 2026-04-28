@@ -6,7 +6,7 @@ export const huayhuashSpectacularData = {
     hero: {
       titleTop: "LA MEJOR RUTA",
       titleMain: "HUAYHUASH ESPECTACULAR",
-      backgroundImage: "/trekking/huayhuash/bg-espectacular.png",
+      backgroundImage: "/trekking/huayhuash/bg-espectacular.avif",
       duration: "15 DÍAS / 14 NOCHES",
       price: "USD. 1,995.00",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const huayhuashSpectacularData = {
       titlePrefix: "Circuito",
       titleAccent: "Supremo",
       description: "Esta es nuestra ruta más completa y exclusiva. 15 días de inmersión total en la Cordillera Huayhuash, incluyendo el mirador Cero Gran Vista frente al Siula Grande y servicios logísticos de nivel superior.",
-      image: "/trekking/huayhuash/espectacular/1.png",
+      image: "/trekking/huayhuash/espectacular/1.avif",
       lat: `10° 17' 22" S`,
       lon: `76° 54' 01" W`,
       specs: [
@@ -73,21 +73,21 @@ export const huayhuashSpectacularData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Requerido",
     gallery: [
-      "/trekking/huayhuash/espectacular/1.png",
-      "/trekking/huayhuash/espectacular/2.png",
-      "/trekking/huayhuash/espectacular/3.png",
-      "/trekking/huayhuash/espectacular/4.png",
-      "/trekking/huayhuash/espectacular/5.png",
-      "/trekking/huayhuash/espectacular/6.png",
-      "/trekking/huayhuash/espectacular/7.png",
-      "/trekking/huayhuash/espectacular/8.png"
+      "/trekking/huayhuash/espectacular/1.avif",
+      "/trekking/huayhuash/espectacular/2.avif",
+      "/trekking/huayhuash/espectacular/3.avif",
+      "/trekking/huayhuash/espectacular/4.avif",
+      "/trekking/huayhuash/espectacular/5.avif",
+      "/trekking/huayhuash/espectacular/6.avif",
+      "/trekking/huayhuash/espectacular/7.avif",
+      "/trekking/huayhuash/espectacular/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "THE BEST ROUTE",
       titleMain: "HUAYHUASH SPECTACULAR",
-      backgroundImage: "/trekking/huayhuash/bg-espectacular.png",
+      backgroundImage: "/trekking/huayhuash/bg-espectacular.avif",
       duration: "15 DAYS / 14 NIGHTS",
       price: "USD. 1,995.00",
       difficulty: "HARD",
@@ -98,7 +98,7 @@ export const huayhuashSpectacularData = {
       titlePrefix: "Supreme",
       titleAccent: "Circuit",
       description: "This is our most complete and exclusive route. 15 days of total immersion in the Cordillera Huayhuash, including the Cero Gran Vista lookout facing Siula Grande and superior logistics services.",
-      image: "/trekking/huayhuash/espectacular/1.png",
+      image: "/trekking/huayhuash/espectacular/1.avif",
       lat: `10° 17' 22" S`,
       lon: `76° 54' 01" W`,
       specs: [
@@ -154,14 +154,14 @@ export const huayhuashSpectacularData = {
     includesTitle: "Services Included",
     equipmentTitle: "Required Equipment",
     gallery: [
-      "/trekking/huayhuash/espectacular/1.png",
-      "/trekking/huayhuash/espectacular/2.png",
-      "/trekking/huayhuash/espectacular/3.png",
-      "/trekking/huayhuash/espectacular/4.png",
-      "/trekking/huayhuash/espectacular/5.png",
-      "/trekking/huayhuash/espectacular/6.png",
-      "/trekking/huayhuash/espectacular/7.png",
-      "/trekking/huayhuash/espectacular/8.png"
+      "/trekking/huayhuash/espectacular/1.avif",
+      "/trekking/huayhuash/espectacular/2.avif",
+      "/trekking/huayhuash/espectacular/3.avif",
+      "/trekking/huayhuash/espectacular/4.avif",
+      "/trekking/huayhuash/espectacular/5.avif",
+      "/trekking/huayhuash/espectacular/6.avif",
+      "/trekking/huayhuash/espectacular/7.avif",
+      "/trekking/huayhuash/espectacular/8.avif"
     ]
   }
 };

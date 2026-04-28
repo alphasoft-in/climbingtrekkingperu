@@ -72,7 +72,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
       <PageHero 
         titleTop={isEs ? 'REGISTRO VISUAL' : 'VISUAL ARCHIVE'}
         titleMain={isEs ? 'GALERÍA DE EXPEDICIONES' : 'EXPEDITION GALLERY'}
-        backgroundImage="/slider_1.png"
+        backgroundImage="/slider_1.avif"
         height="h-[50vh]"
         techData={[
           { label: "ASSETS", value: `${items.length} IMAGES` },

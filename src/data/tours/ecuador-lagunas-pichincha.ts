@@ -6,7 +6,7 @@ export const ecuadorLagunasPichinchaData = {
     hero: {
       titleTop: "ACLIMATACIÓN Y CULTURA",
       titleMain: "LAGUNAS Y VOLCÁN RUCU PICHINCHA",
-      backgroundImage: "/ecuador/bg-rucu-pichincha.png",
+      backgroundImage: "/ecuador/bg-rucu-pichincha.avif",
       duration: "05 DÍAS",
       price: "USD 895",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const ecuadorLagunasPichinchaData = {
       titlePrefix: "Espejos de",
       titleAccent: "Agua y Fuego",
       description: "Los Andes ecuatorianos ofrecen un paisaje único de lagunas volcánicas con aguas turquesas. Este programa es la combinación perfecta de turismo cultural y preparación física.",
-      image: "/ecuador/rucu-pichincha.png",
+      image: "/ecuador/rucu-pichincha.avif",
       lat: `00° 51' 40" S`,
       lon: `78° 54' 50" W`,
       specs: [
@@ -68,7 +68,7 @@ export const ecuadorLagunasPichinchaData = {
     hero: {
       titleTop: "ACCLIMATIZATION & CULTURE",
       titleMain: "LAKES & RUCU PICHINCHA",
-      backgroundImage: "/ecuador/bg-rucu-pichincha.png",
+      backgroundImage: "/ecuador/bg-rucu-pichincha.avif",
       duration: "05 DAYS",
       price: "USD 895",
       difficulty: "MODERATE",
@@ -79,7 +79,7 @@ export const ecuadorLagunasPichinchaData = {
       titlePrefix: "Mirrors of",
       titleAccent: "Water & Fire",
       description: "The Ecuadorian Andes offer a unique landscape of volcanic lagoons with turquoise waters. This program is the perfect combination of cultural tourism and physical preparation.",
-      image: "/ecuador/rucu-pichincha.png",
+      image: "/ecuador/rucu-pichincha.avif",
       lat: `00° 51' 40" S`,
       lon: `78° 54' 50" W`,
       specs: [

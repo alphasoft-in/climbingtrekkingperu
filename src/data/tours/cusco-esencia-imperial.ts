@@ -6,7 +6,7 @@ export const cuscoEsenciaImperialData = {
     hero: {
       titleTop: "CULTURA Y AVENTURA TOTAL",
       titleMain: "ESENCIA IMPERIAL 12D",
-      backgroundImage: "/trekking/cusco/esencial-imperial/bg-esencial-imperial.png",
+      backgroundImage: "/trekking/cusco/esencial-imperial/bg-esencial-imperial.avif",
       duration: "12 DÍAS / 11 NOCHES",
       price: "USD. 1,695.00",
       difficulty: "PREMIUM",
@@ -17,7 +17,7 @@ export const cuscoEsenciaImperialData = {
       titlePrefix: "El Corazón de",
       titleAccent: "Los Andes",
       description: "Esta expedición de 12 días es nuestra propuesta más ambiciosa en el sur del Perú. Hemos diseñado un viaje que equilibra el misticismo de los templos incas con la adrenalina de caminatas de altura por encima de los 5,000 metros.",
-      image: "/trekking/cusco/esencia-imperial.png",
+      image: "/trekking/cusco/esencia-imperial.avif",
       lat: `13° 31' 30" S`,
       lon: `71° 58' 20" W`,
       specs: [
@@ -75,21 +75,21 @@ export const cuscoEsenciaImperialData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Sugerido",
     gallery: [
-      '/trekking/cusco/esencial-imperial/1.png',
-      '/trekking/cusco/esencial-imperial/2.png',
-      '/trekking/cusco/esencial-imperial/3.png',
-      '/trekking/cusco/esencial-imperial/4.png',
-      '/trekking/cusco/esencial-imperial/5.png',
-      '/trekking/cusco/esencial-imperial/6.png',
-      '/trekking/cusco/esencial-imperial/7.png',
-      '/trekking/cusco/esencial-imperial/8.png'
+      '/trekking/cusco/esencial-imperial/1.avif',
+      '/trekking/cusco/esencial-imperial/2.avif',
+      '/trekking/cusco/esencial-imperial/3.avif',
+      '/trekking/cusco/esencial-imperial/4.avif',
+      '/trekking/cusco/esencial-imperial/5.avif',
+      '/trekking/cusco/esencial-imperial/6.avif',
+      '/trekking/cusco/esencial-imperial/7.avif',
+      '/trekking/cusco/esencial-imperial/8.avif'
     ]
   },
   en: {
     hero: {
       titleTop: "TOTAL CULTURE AND ADVENTURE",
       titleMain: "IMPERIAL ESSENCE 12D",
-      backgroundImage: "/trekking/cusco/esencial-imperial/bg-esencial-imperial.png",
+      backgroundImage: "/trekking/cusco/esencial-imperial/bg-esencial-imperial.avif",
       duration: "12 DAYS / 11 NIGHTS",
       price: "USD. 1,695.00",
       difficulty: "PREMIUM",
@@ -100,7 +100,7 @@ export const cuscoEsenciaImperialData = {
       titlePrefix: "The Heart of",
       titleAccent: "The Andes",
       description: "This 12-day expedition is our most ambitious proposal in southern Peru. We have designed a journey that balances the mysticism of Inca temples with the adrenaline of high-altitude hikes above 5,000 meters.",
-      image: "/trekking/cusco/esencia-imperial.png",
+      image: "/trekking/cusco/esencia-imperial.avif",
       lat: `13° 31' 30" S`,
       lon: `71° 58' 20" W`,
       specs: [
@@ -158,14 +158,14 @@ export const cuscoEsenciaImperialData = {
     includesTitle: "Services Included",
     equipmentTitle: "Suggested Gear",
     gallery: [
-      '/trekking/cusco/esencial-imperial/1.png',
-      '/trekking/cusco/esencial-imperial/2.png',
-      '/trekking/cusco/esencial-imperial/3.png',
-      '/trekking/cusco/esencial-imperial/4.png',
-      '/trekking/cusco/esencial-imperial/5.png',
-      '/trekking/cusco/esencial-imperial/6.png',
-      '/trekking/cusco/esencial-imperial/7.png',
-      '/trekking/cusco/esencial-imperial/8.png'
+      '/trekking/cusco/esencial-imperial/1.avif',
+      '/trekking/cusco/esencial-imperial/2.avif',
+      '/trekking/cusco/esencial-imperial/3.avif',
+      '/trekking/cusco/esencial-imperial/4.avif',
+      '/trekking/cusco/esencial-imperial/5.avif',
+      '/trekking/cusco/esencial-imperial/6.avif',
+      '/trekking/cusco/esencial-imperial/7.avif',
+      '/trekking/cusco/esencial-imperial/8.avif'
     ]
   }
 };

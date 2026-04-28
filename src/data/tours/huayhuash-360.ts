@@ -6,7 +6,7 @@ export const huayhuash360Data = {
     hero: {
       titleTop: "TREKKING CORDILLERA",
       titleMain: "HUAYHUASH 360",
-      backgroundImage: "/trekking/huayhuash/bg-huayhuash.png",
+      backgroundImage: "/trekking/huayhuash/bg-huayhuash.avif",
       duration: "15 DÍAS / 14 NOCHES",
       price: "USD. 1,695.00",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const huayhuash360Data = {
       titlePrefix: "Exploración",
       titleAccent: "Integral",
       description: "Esta expedición de 15 días es la experiencia definitiva en los Andes peruanos. Rodearemos la Cordillera Huayhuash en su totalidad, cruzando pasos de más de 5,000 metros y acampando junto a lagunas glaciares de color turquesa intenso.",
-      image: "/trekking/huayhuash/360.png",
+      image: "/trekking/huayhuash/360.avif",
       lat: `9° 32' 26" S`,
       lon: `77° 31' 39" W`,
       specs: [
@@ -71,21 +71,21 @@ export const huayhuash360Data = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Sugerido",
     gallery: [
-      "/trekking/huayhuash/360/1.png",
-      "/trekking/huayhuash/360/2.png",
-      "/trekking/huayhuash/360/3.png",
-      "/trekking/huayhuash/360/4.png",
-      "/trekking/huayhuash/360/5.png",
-      "/trekking/huayhuash/360/6.png",
-      "/trekking/huayhuash/360/7.png",
-      "/trekking/huayhuash/360/8.png"
+      "/trekking/huayhuash/360/1.avif",
+      "/trekking/huayhuash/360/2.avif",
+      "/trekking/huayhuash/360/3.avif",
+      "/trekking/huayhuash/360/4.avif",
+      "/trekking/huayhuash/360/5.avif",
+      "/trekking/huayhuash/360/6.avif",
+      "/trekking/huayhuash/360/7.avif",
+      "/trekking/huayhuash/360/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "TREKKING RANGE",
       titleMain: "HUAYHUASH 360",
-      backgroundImage: "/trekking/huayhuash/bg-huayhuash.png",
+      backgroundImage: "/trekking/huayhuash/bg-huayhuash.avif",
       duration: "15 DAYS / 14 NIGHTS",
       price: "USD. 1,695.00",
       difficulty: "HARD",
@@ -96,7 +96,7 @@ export const huayhuash360Data = {
       titlePrefix: "Integral",
       titleAccent: "Exploration",
       description: "This 15-day expedition is the ultimate experience in the Peruvian Andes. We will circle the entire Huayhuash range, crossing passes over 5,000 meters and camping next to intense turquoise glacial lagoons.",
-      image: "/trekking/huayhuash/360.png",
+      image: "/trekking/huayhuash/360.avif",
       lat: `9° 32' 26" S`,
       lon: `77° 31' 39" W`,
       specs: [
@@ -150,14 +150,14 @@ export const huayhuash360Data = {
     includesTitle: "Services Included",
     equipmentTitle: "Suggested Equipment",
     gallery: [
-      "/trekking/huayhuash/360/1.png",
-      "/trekking/huayhuash/360/2.png",
-      "/trekking/huayhuash/360/3.png",
-      "/trekking/huayhuash/360/4.png",
-      "/trekking/huayhuash/360/5.png",
-      "/trekking/huayhuash/360/6.png",
-      "/trekking/huayhuash/360/7.png",
-      "/trekking/huayhuash/360/8.png"
+      "/trekking/huayhuash/360/1.avif",
+      "/trekking/huayhuash/360/2.avif",
+      "/trekking/huayhuash/360/3.avif",
+      "/trekking/huayhuash/360/4.avif",
+      "/trekking/huayhuash/360/5.avif",
+      "/trekking/huayhuash/360/6.avif",
+      "/trekking/huayhuash/360/7.avif",
+      "/trekking/huayhuash/360/8.avif"
     ]
   }
 };

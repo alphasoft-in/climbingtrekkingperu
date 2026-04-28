@@ -6,7 +6,7 @@ export const huayhuashPeaksData = {
     hero: {
       titleTop: "CUMBRES DE LA",
       titleMain: "CORDILLERA HUAYHUASH",
-      backgroundImage: "/trekking/huayhuash/bg-cumbres.png",
+      backgroundImage: "/trekking/huayhuash/bg-cumbres.avif",
       duration: "13 DÍAS / 12 NOCHES",
       price: "USD. 1,995.00",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const huayhuashPeaksData = {
       titlePrefix: "Diablo Mudo",
       titleAccent: "& Pumarinri",
       description: "Una expedición técnica diseñada para montañistas que buscan combinar el espectacular trekking de Huayhuash con cumbres de más de 5,000 metros, incluyendo el Diablo Mudo y Pumarinri.",
-      image: "/trekking/huayhuash/cumbres.png",
+      image: "/trekking/huayhuash/cumbres.avif",
       lat: `10° 16' 18" S`,
       lon: `76° 54' 14" W`,
       specs: [
@@ -69,21 +69,21 @@ export const huayhuashPeaksData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/trekking/huayhuash/cumbres/1.png",
-      "/trekking/huayhuash/cumbres/2.png",
-      "/trekking/huayhuash/cumbres/3.png",
-      "/trekking/huayhuash/cumbres/4.png",
-      "/trekking/huayhuash/cumbres/5.png",
-      "/trekking/huayhuash/cumbres/6.png",
-      "/trekking/huayhuash/cumbres/7.png",
-      "/trekking/huayhuash/cumbres/8.png"
+      "/trekking/huayhuash/cumbres/1.avif",
+      "/trekking/huayhuash/cumbres/2.avif",
+      "/trekking/huayhuash/cumbres/3.avif",
+      "/trekking/huayhuash/cumbres/4.avif",
+      "/trekking/huayhuash/cumbres/5.avif",
+      "/trekking/huayhuash/cumbres/6.avif",
+      "/trekking/huayhuash/cumbres/7.avif",
+      "/trekking/huayhuash/cumbres/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "PEAKS OF THE",
       titleMain: "HUAYHUASH RANGE",
-      backgroundImage: "/trekking/huayhuash/bg-cumbres.png",
+      backgroundImage: "/trekking/huayhuash/bg-cumbres.avif",
       duration: "13 DAYS / 12 NIGHTS",
       price: "USD. 1,995.00",
       difficulty: "HARD",
@@ -94,7 +94,7 @@ export const huayhuashPeaksData = {
       titlePrefix: "Diablo Mudo",
       titleAccent: "& Pumarinri",
       description: "A technical expedition designed for mountaineers seeking to combine the spectacular Huayhuash trekking with summits over 5,000 meters, including Diablo Mudo and Pumarinri.",
-      image: "/trekking/huayhuash/cumbres.png",
+      image: "/trekking/huayhuash/cumbres.avif",
       lat: `10° 16' 18" S`,
       lon: `76° 54' 14" W`,
       specs: [
@@ -146,14 +146,14 @@ export const huayhuashPeaksData = {
     includesTitle: "Services Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/trekking/huayhuash/cumbres/1.png",
-      "/trekking/huayhuash/cumbres/2.png",
-      "/trekking/huayhuash/cumbres/3.png",
-      "/trekking/huayhuash/cumbres/4.png",
-      "/trekking/huayhuash/cumbres/5.png",
-      "/trekking/huayhuash/cumbres/6.png",
-      "/trekking/huayhuash/cumbres/7.png",
-      "/trekking/huayhuash/cumbres/8.png"
+      "/trekking/huayhuash/cumbres/1.avif",
+      "/trekking/huayhuash/cumbres/2.avif",
+      "/trekking/huayhuash/cumbres/3.avif",
+      "/trekking/huayhuash/cumbres/4.avif",
+      "/trekking/huayhuash/cumbres/5.avif",
+      "/trekking/huayhuash/cumbres/6.avif",
+      "/trekking/huayhuash/cumbres/7.avif",
+      "/trekking/huayhuash/cumbres/8.avif"
     ]
   }
 };

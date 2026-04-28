@@ -6,7 +6,7 @@ export const huayhuashMiniData = {
     hero: {
       titleTop: "TREKKING CORDILLERA",
       titleMain: "HUAYHUASH MINI 08D",
-      backgroundImage: "/trekking/huayhuash/bg-mini.png",
+      backgroundImage: "/trekking/huayhuash/bg-mini.avif",
       duration: "08 DÍAS / 07 NOCHES",
       price: "USD. 695.00",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const huayhuashMiniData = {
       titlePrefix: "Esencia",
       titleAccent: "Andina",
       description: "Este itinerario compacto selecciona los puntos más impactantes del circuito Huayhuash, cruzando pasos de más de 5,000 metros y concluyendo en el histórico pueblo de Cajatambo.",
-      image: "/trekking/huayhuash/mini.png",
+      image: "/trekking/huayhuash/mini.avif",
       lat: `10° 20' 05" S`,
       lon: `76° 59' 12" W`,
       specs: [
@@ -64,21 +64,21 @@ export const huayhuashMiniData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Sugerido",
     gallery: [
-      "/trekking/huayhuash/mini/1.png",
-      "/trekking/huayhuash/mini/2.png",
-      "/trekking/huayhuash/mini/3.png",
-      "/trekking/huayhuash/mini/4.png",
-      "/trekking/huayhuash/mini/5.png",
-      "/trekking/huayhuash/mini/6.png",
-      "/trekking/huayhuash/mini/7.png",
-      "/trekking/huayhuash/mini/8.png"
+      "/trekking/huayhuash/mini/1.avif",
+      "/trekking/huayhuash/mini/2.avif",
+      "/trekking/huayhuash/mini/3.avif",
+      "/trekking/huayhuash/mini/4.avif",
+      "/trekking/huayhuash/mini/5.avif",
+      "/trekking/huayhuash/mini/6.avif",
+      "/trekking/huayhuash/mini/7.avif",
+      "/trekking/huayhuash/mini/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "TREKKING RANGE",
       titleMain: "HUAYHUASH MINI 08D",
-      backgroundImage: "/trekking/huayhuash/bg-mini.png",
+      backgroundImage: "/trekking/huayhuash/bg-mini.avif",
       duration: "08 DAYS / 07 NIGHTS",
       price: "USD. 695.00",
       difficulty: "HARD",
@@ -89,7 +89,7 @@ export const huayhuashMiniData = {
       titlePrefix: "Andean",
       titleAccent: "Essence",
       description: "This compact itinerary selects the most impactful spots of the Huayhuash circuit, crossing passes over 5,000 meters and concluding in the historic town of Cajatambo.",
-      image: "/trekking/huayhuash/mini.png",
+      image: "/trekking/huayhuash/mini.avif",
       lat: `10° 20' 05" S`,
       lon: `76° 59' 12" W`,
       specs: [
@@ -136,14 +136,14 @@ export const huayhuashMiniData = {
     includesTitle: "Services Included",
     equipmentTitle: "Suggested Equipment",
     gallery: [
-      "/trekking/huayhuash/mini/1.png",
-      "/trekking/huayhuash/mini/2.png",
-      "/trekking/huayhuash/mini/3.png",
-      "/trekking/huayhuash/mini/4.png",
-      "/trekking/huayhuash/mini/5.png",
-      "/trekking/huayhuash/mini/6.png",
-      "/trekking/huayhuash/mini/7.png",
-      "/trekking/huayhuash/mini/8.png"
+      "/trekking/huayhuash/mini/1.avif",
+      "/trekking/huayhuash/mini/2.avif",
+      "/trekking/huayhuash/mini/3.avif",
+      "/trekking/huayhuash/mini/4.avif",
+      "/trekking/huayhuash/mini/5.avif",
+      "/trekking/huayhuash/mini/6.avif",
+      "/trekking/huayhuash/mini/7.avif",
+      "/trekking/huayhuash/mini/8.avif"
     ]
   }
 };

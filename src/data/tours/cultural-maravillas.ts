@@ -6,7 +6,7 @@ export const culturalMaravillasData = {
     hero: {
       titleTop: "LA EXPEDICIÓN DEFINITIVA",
       titleMain: "VIAJES VIP LAS MARAVILLAS DEL PERÚ",
-      backgroundImage: "/peru/bg-viajes-vip.png",
+      backgroundImage: "/peru/bg-viajes-vip.avif",
       duration: "17 DÍAS / 16 NOCHES",
       price: "USD. 2,465.00",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const culturalMaravillasData = {
       titlePrefix: "El Alma del",
       titleAccent: "Sur Peruano",
       description: "Este es el viaje cultural y de aventura más completo del sur peruano. 17 días recorriendo Lima, Ica, Nazca, Arequipa, Puno y Cusco con servicio personalizado VIP. Desde el Oasis de Huacachina y las misteriosas Líneas de Nazca, hasta la majestuosidad de Machu Picchu y la Montaña de 7 Colores. Una inmersión profunda en la historia, gastronomía y paisajes de los Andes y la costa del Pacífico.",
-      image: "/peru/viajes-vip.png",
+      image: "/peru/viajes-vip.avif",
       lat: `13° 09' 47" S`,
       lon: `72° 32' 44" W`,
       specs: [
@@ -79,7 +79,7 @@ export const culturalMaravillasData = {
     hero: {
       titleTop: "THE ULTIMATE EXPEDITION",
       titleMain: "VIP WONDERS OF PERU TOUR",
-      backgroundImage: "/peru/bg-viajes-vip.png",
+      backgroundImage: "/peru/bg-viajes-vip.avif",
       duration: "17 DAYS / 16 NIGHTS",
       price: "USD. 2,465.00",
       difficulty: "MODERATE",
@@ -90,7 +90,7 @@ export const culturalMaravillasData = {
       titlePrefix: "The Soul of",
       titleAccent: "South Peru",
       description: "This is the most comprehensive cultural and adventure trip in southern Peru. 17 days exploring Lima, Ica, Nazca, Arequipa, Puno, and Cusco with personalized VIP service. From the Huacachina Oasis and the mysterious Nazca Lines to the majesty of Machu Picchu and the 7 Colors Mountain. A deep immersion in the history, gastronomy, and landscapes of the Andes and the Pacific coast.",
-      image: "/peru/viajes-vip.png",
+      image: "/peru/viajes-vip.avif",
       lat: `13° 09' 47" S`,
       lon: `72° 32' 44" W`,
       specs: [

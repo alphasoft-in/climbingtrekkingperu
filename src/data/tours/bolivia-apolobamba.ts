@@ -6,7 +6,7 @@ export const boliviaApolobambaData = {
     hero: {
       titleTop: "LA FRONTERA OLVIDADA",
       titleMain: "CORDILLERA APOLOBAMBA",
-      backgroundImage: "/tours/bg-apolobamba.png",
+      backgroundImage: "/tours/bg-apolobamba.avif",
       duration: "8 DÍAS",
       price: "A CONSULTAR",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const boliviaApolobambaData = {
       titlePrefix: "El Norte",
       titleAccent: "Místico",
       description: "Explore la cordillera más remota y mística de Bolivia. Tierra de los Kallawayas y cumbres vírgenes. Una expedición de 8 días al corazón de lo desconocido.",
-      image: "/tours/apolobamba.png",
+      image: "/tours/apolobamba.avif",
       lat: `14° 39' 00" S`,
       lon: `69° 14' 00" W`,
       specs: [
@@ -72,7 +72,7 @@ export const boliviaApolobambaData = {
     hero: {
       titleTop: "THE FORGOTTEN FRONTIER",
       titleMain: "CORDILLERA APOLOBAMBA",
-      backgroundImage: "/tours/bg-apolobamba.png",
+      backgroundImage: "/tours/bg-apolobamba.avif",
       duration: "8 DAYS",
       price: "ON CONSULT",
       difficulty: "HARD",
@@ -83,7 +83,7 @@ export const boliviaApolobambaData = {
       titlePrefix: "The Mystical",
       titleAccent: "North",
       description: "Explore Bolivia's most remote and mystical mountain range. Land of the Kallawayas and untouched summits. An 8-day expedition into the heart of the unknown.",
-      image: "/tours/apolobamba.png",
+      image: "/tours/apolobamba.avif",
       lat: `14° 39' 00" S`,
       lon: `69° 14' 00" W`,
       specs: [

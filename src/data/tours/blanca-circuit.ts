@@ -6,7 +6,7 @@ export const blancaCircuitData = {
     hero: {
       titleTop: "EXPEDICIÓN ELITE",
       titleMain: "CIRCUITO COMPLETO CORDILLERA BLANCA",
-      backgroundImage: "/trekking/blanca/blanca/bg-cordillera-blanca.png",
+      backgroundImage: "/trekking/blanca/blanca/bg-cordillera-blanca.avif",
       duration: "15 DÍAS / 14 NOCHES",
       price: "USD. 1,695.00",
       difficulty: "MUY DIFÍCIL",
@@ -17,7 +17,7 @@ export const blancaCircuitData = {
       titlePrefix: "La Travesía",
       titleAccent: "Total",
       description: "Esta es nuestra expedición insignia en la Cordillera Blanca. Durante 15 días, recorreremos los valles más remotos, uniendo la ruta clásica de Santa Cruz con el imponente circuito Los Cedros Alpamayo.",
-      image: "/trekking/blanca/blanca/cordillera-blanca.png",
+      image: "/trekking/blanca/blanca/cordillera-blanca.avif",
       lat: `08° 50' 11" S`,
       lon: `77° 40' 05" W`,
       specs: [
@@ -73,21 +73,21 @@ export const blancaCircuitData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/trekking/blanca/blanca/1.png",
-      "/trekking/blanca/blanca/2.png",
-      "/trekking/blanca/blanca/3.png",
-      "/trekking/blanca/blanca/4.png",
-      "/trekking/blanca/blanca/5.png",
-      "/trekking/blanca/blanca/6.png",
-      "/trekking/blanca/blanca/7.png",
-      "/trekking/blanca/blanca/8.png"
+      "/trekking/blanca/blanca/1.avif",
+      "/trekking/blanca/blanca/2.avif",
+      "/trekking/blanca/blanca/3.avif",
+      "/trekking/blanca/blanca/4.avif",
+      "/trekking/blanca/blanca/5.avif",
+      "/trekking/blanca/blanca/6.avif",
+      "/trekking/blanca/blanca/7.avif",
+      "/trekking/blanca/blanca/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "ELITE EXPEDITION",
       titleMain: "WHITE RANGE FULL CIRCUIT",
-      backgroundImage: "/trekking/blanca/blanca/bg-cordillera-blanca.png",
+      backgroundImage: "/trekking/blanca/blanca/bg-cordillera-blanca.avif",
       duration: "15 DAYS / 14 NIGHTS",
       price: "USD. 1,695.00",
       difficulty: "VERY HARD",
@@ -98,7 +98,7 @@ export const blancaCircuitData = {
       titlePrefix: "The Total",
       titleAccent: "Traverse",
       description: "This is our flagship expedition in the White Range. For 15 days, we will traverse the most remote valleys, joining the classic Santa Cruz route with the imposing Los Cedros Alpamayo circuit.",
-      image: "/trekking/blanca/blanca/cordillera-blanca.png",
+      image: "/trekking/blanca/blanca/cordillera-blanca.avif",
       lat: `08° 50' 11" S`,
       lon: `77° 40' 05" W`,
       specs: [
@@ -154,14 +154,14 @@ export const blancaCircuitData = {
     includesTitle: "Included Services",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/trekking/blanca/blanca/1.png",
-      "/trekking/blanca/blanca/2.png",
-      "/trekking/blanca/blanca/3.png",
-      "/trekking/blanca/blanca/4.png",
-      "/trekking/blanca/blanca/5.png",
-      "/trekking/blanca/blanca/6.png",
-      "/trekking/blanca/blanca/7.png",
-      "/trekking/blanca/blanca/8.png"
+      "/trekking/blanca/blanca/1.avif",
+      "/trekking/blanca/blanca/2.avif",
+      "/trekking/blanca/blanca/3.avif",
+      "/trekking/blanca/blanca/4.avif",
+      "/trekking/blanca/blanca/5.avif",
+      "/trekking/blanca/blanca/6.avif",
+      "/trekking/blanca/blanca/7.avif",
+      "/trekking/blanca/blanca/8.avif"
     ]
   }
 };

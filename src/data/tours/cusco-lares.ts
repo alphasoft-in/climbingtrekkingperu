@@ -6,7 +6,7 @@ export const cuscoLaresData = {
     hero: {
       titleTop: "EL VALLE DE LOS TEJEDORES",
       titleMain: "TREKKING LARES - MACHU PICCHU",
-      backgroundImage: "/trekking/cusco/lares/bg-lares.png",
+      backgroundImage: "/trekking/cusco/lares/bg-lares.avif",
       duration: "4 DÍAS / 3 NOCHES",
       price: "USD. 795.00",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const cuscoLaresData = {
       titlePrefix: "Cultura",
       titleAccent: "Cusco",
       description: "El trekking de Lares es la alternativa cultural por excelencia. Atraviesa comunidades quechuas que aún conservan sus tradiciones milenarias, disfruta de aguas termales medicinales y culmina en la ciudadela de Machu Picchu.",
-      image: "/trekking/cusco/lares-trek.png",
+      image: "/trekking/cusco/lares-trek.avif",
       lat: `13° 07' 42" S`,
       lon: `72° 02' 14" W`,
       specs: [
@@ -82,7 +82,7 @@ export const cuscoLaresData = {
     hero: {
       titleTop: "THE WEAVERS' VALLEY",
       titleMain: "LARES TREKKING - MACHU PICCHU",
-      backgroundImage: "/trekking/cusco/lares/bg-lares.png",
+      backgroundImage: "/trekking/cusco/lares/bg-lares.avif",
       duration: "4 DAYS / 3 NIGHTS",
       price: "USD. 795.00",
       difficulty: "MODERATE",
@@ -93,7 +93,7 @@ export const cuscoLaresData = {
       titlePrefix: "Culture",
       titleAccent: "Cusco",
       description: "The Lares trekking is the quintessential cultural alternative. It crosses Quechua communities that still preserve their millenary traditions, enjoy medicinal hot springs, and culminates in the Machu Picchu citadel.",
-      image: "/trekking/cusco/lares-trek.png",
+      image: "/trekking/cusco/lares-trek.avif",
       lat: `13° 07' 42" S`,
       lon: `72° 02' 14" W`,
       specs: [

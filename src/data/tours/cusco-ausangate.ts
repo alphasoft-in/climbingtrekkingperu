@@ -6,7 +6,7 @@ export const cuscoAusangateData = {
     hero: {
       titleTop: "EL GUARDIÁN DEL CUSCO",
       titleMain: "TREKKING AUSANGATE 4D",
-      backgroundImage: "/peru/ausangate-4d.png",
+      backgroundImage: "/peru/ausangate-4d.avif",
       duration: "4 DÍAS / 3 NOCHES",
       price: "USD. 695.00",
       difficulty: "DIFÍCIL",
@@ -17,7 +17,7 @@ export const cuscoAusangateData = {
       titlePrefix: "Aventura",
       titleAccent: "Cusco",
       description: "Ausangate es el Apu más importante del sur andino. Esta ruta te lleva por faldas glaciares y lagunas de colores vibrantes, conectando de forma épica con la Montaña de 7 Colores. Un desafío de altura con paisajes que parecen de otro mundo.",
-      image: "/peru/bg-ausangate.png",
+      image: "/peru/bg-ausangate.avif",
       lat: `13° 47' 18" S`,
       lon: `71° 13' 52" W`,
       specs: [
@@ -87,7 +87,7 @@ export const cuscoAusangateData = {
     hero: {
       titleTop: "THE SACRED GUARDIAN",
       titleMain: "AUSANGATE TREKKING 4D",
-      backgroundImage: "/peru/ausangate-4d.png",
+      backgroundImage: "/peru/ausangate-4d.avif",
       duration: "4 DAYS / 3 NIGHTS",
       price: "USD. 695.00",
       difficulty: "HARD",
@@ -98,7 +98,7 @@ export const cuscoAusangateData = {
       titlePrefix: "Cusco",
       titleAccent: "Adventure",
       description: "Ausangate is the most important Apu in the southern Andes. This route takes you through glacial slopes and vibrant lagoons, epically connecting with the 7 Colors Mountain. A high-altitude challenge with landscapes that seem out of this world.",
-      image: "/peru/bg-ausangate.png",
+      image: "/peru/bg-ausangate.avif",
       lat: `13° 47' 18" S`,
       lon: `71° 13' 52" W`,
       specs: [

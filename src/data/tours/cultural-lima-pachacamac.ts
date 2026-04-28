@@ -6,7 +6,7 @@ export const culturalLimaPachacamacData = {
     hero: {
       titleTop: "EL ORÁCULO DEL PACÍFICO",
       titleMain: "TOUR EN LIMA & PACHACAMAC",
-      backgroundImage: "/peru/bg-pachacamac.png",
+      backgroundImage: "/peru/bg-pachacamac.avif",
       duration: "08 HORAS",
       price: "USD. 140.00",
       difficulty: "BAJA",
@@ -17,7 +17,7 @@ export const culturalLimaPachacamacData = {
       titlePrefix: "Entre el Oráculo",
       titleAccent: "y la Ciudad",
       description: "Este tour integral nos lleva a través de las tres épocas de Lima (Ancestral, Colonial y Contemporánea) y culmina en el místico Santuario de Pachacamac. Desde la Huaca Pucllana y el Centro Histórico con sus Catacumbas, hasta Barranco y la Costa Verde, para finalmente explorar la ciudadela del Dios creador del universo, donde miles de peregrinos consultaban al oráculo.",
-      image: "/peru/pachacamac.png",
+      image: "/peru/pachacamac.avif",
       lat: `12° 15' 32" S`,
       lon: `76° 54' 00" W`,
       specs: [
@@ -75,7 +75,7 @@ export const culturalLimaPachacamacData = {
     hero: {
       titleTop: "ORACLE OF THE PACIFIC",
       titleMain: "LIMA & PACHACAMAC TOUR",
-      backgroundImage: "/peru/bg-pachacamac.png",
+      backgroundImage: "/peru/bg-pachacamac.avif",
       duration: "08 HOURS",
       price: "USD. 140.00",
       difficulty: "LOW",
@@ -86,7 +86,7 @@ export const culturalLimaPachacamacData = {
       titlePrefix: "Between the Oracle",
       titleAccent: "and the City",
       description: "This comprehensive tour takes us through the three eras of Lima (Ancestral, Colonial, and Contemporary) and culminates at the mystical Sanctuary of Pachacamac. From Huaca Pucllana and the Historic Center with its Catacombs, to Barranco and the Costa Verde, finally exploring the citadel of the Creator God of the universe, where thousands of pilgrims consulted the oracle.",
-      image: "/peru/pachacamac.png",
+      image: "/peru/pachacamac.avif",
       lat: `12° 15' 32" S`,
       lon: `76° 54' 00" W`,
       specs: [

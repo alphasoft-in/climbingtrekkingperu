@@ -6,7 +6,7 @@ export const blancaAlpamayoTrekData = {
     hero: {
       titleTop: "EXPEDICIÓN TÉCNICA",
       titleMain: "LOS CEDROS ALPAMAYO",
-      backgroundImage: "/trekking/blanca/bg-loscedros.png",
+      backgroundImage: "/trekking/blanca/bg-loscedros.avif",
       duration: "11 DÍAS / 10 NOCHES",
       price: "USD. 895.00",
       difficulty: "DIFÍCIL / TÉCNICO",
@@ -17,7 +17,7 @@ export const blancaAlpamayoTrekData = {
       titlePrefix: "La Cara",
       titleAccent: "Norte",
       description: "Considerada la ruta más espectacular para fotógrafos y montañistas, Los Cedros permite rodear el Alpamayo para contemplar su pirámide perfecta desde ángulos inaccesibles en otras rutas.",
-      image: "/trekking/blanca/trekking-cedros.png",
+      image: "/trekking/blanca/trekking-cedros.avif",
       lat: `08° 52' 45" S`,
       lon: `77° 39' 12" W`,
       specs: [
@@ -67,21 +67,21 @@ export const blancaAlpamayoTrekData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Sugerido",
     gallery: [
-      "/trekking/blanca/cedros/1.png",
-      "/trekking/blanca/cedros/2.png",
-      "/trekking/blanca/cedros/3.png",
-      "/trekking/blanca/cedros/4.png",
-      "/trekking/blanca/cedros/5.png",
-      "/trekking/blanca/cedros/6.png",
-      "/trekking/blanca/cedros/7.png",
-      "/trekking/blanca/cedros/8.png"
+      "/trekking/blanca/cedros/1.avif",
+      "/trekking/blanca/cedros/2.avif",
+      "/trekking/blanca/cedros/3.avif",
+      "/trekking/blanca/cedros/4.avif",
+      "/trekking/blanca/cedros/5.avif",
+      "/trekking/blanca/cedros/6.avif",
+      "/trekking/blanca/cedros/7.avif",
+      "/trekking/blanca/cedros/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "TECHNICAL EXPEDITION",
       titleMain: "LOS CEDROS ALPAMAYO",
-      backgroundImage: "/trekking/blanca/bg-loscedros.png",
+      backgroundImage: "/trekking/blanca/bg-loscedros.avif",
       duration: "11 DAYS / 10 NIGHTS",
       price: "USD. 895.00",
       difficulty: "HARD / TECHNICAL",
@@ -92,7 +92,7 @@ export const blancaAlpamayoTrekData = {
       titlePrefix: "The North",
       titleAccent: "Face",
       description: "Considered the most spectacular route for photographers and mountaineers, Los Cedros allows you to circle Alpamayo to contemplate its perfect pyramid from angles inaccessible in other routes.",
-      image: "/trekking/blanca/trekking-cedros.png",
+      image: "/trekking/blanca/trekking-cedros.avif",
       lat: `08° 52' 45" S`,
       lon: `77° 39' 12" W`,
       specs: [
@@ -142,14 +142,14 @@ export const blancaAlpamayoTrekData = {
     includesTitle: "Included Services",
     equipmentTitle: "Suggested Gear",
     gallery: [
-      "/trekking/blanca/cedros/1.png",
-      "/trekking/blanca/cedros/2.png",
-      "/trekking/blanca/cedros/3.png",
-      "/trekking/blanca/cedros/4.png",
-      "/trekking/blanca/cedros/5.png",
-      "/trekking/blanca/cedros/6.png",
-      "/trekking/blanca/cedros/7.png",
-      "/trekking/blanca/cedros/8.png"
+      "/trekking/blanca/cedros/1.avif",
+      "/trekking/blanca/cedros/2.avif",
+      "/trekking/blanca/cedros/3.avif",
+      "/trekking/blanca/cedros/4.avif",
+      "/trekking/blanca/cedros/5.avif",
+      "/trekking/blanca/cedros/6.avif",
+      "/trekking/blanca/cedros/7.avif",
+      "/trekking/blanca/cedros/8.avif"
     ]
   }
 };

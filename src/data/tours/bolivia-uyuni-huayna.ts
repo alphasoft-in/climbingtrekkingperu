@@ -6,7 +6,7 @@ export const boliviaUyuniHuaynaData = {
     hero: {
       titleTop: "SALAR & CUMBRE",
       titleMain: "UYUNI & HUAYNAPOTOSÍ 10D",
-      backgroundImage: "/bolivia/bg-uyuni.png",
+      backgroundImage: "/bolivia/bg-uyuni.avif",
       duration: "10 DÍAS / 09 NOCHES",
       price: "USD. 995.00",
       difficulty: "NO TÉCNICO / ALTA MONTAÑA",
@@ -17,7 +17,7 @@ export const boliviaUyuniHuaynaData = {
       titlePrefix: "Aventura",
       titleAccent: "Bolivia",
       description: "Combina la maravilla natural del Salar de Uyuni, la salina más grande del mundo, con el desafío de alcanzar los 6088m de la montaña Huayna Potosí. Una experiencia única que une desierto de sal y glaciares eternos.",
-      image: "/bolivia/uyuni.png",
+      image: "/bolivia/uyuni.avif",
       lat: `20° 08' 01" S`,
       lon: `67° 29' 20" W`,
       specs: [
@@ -74,7 +74,7 @@ export const boliviaUyuniHuaynaData = {
     hero: {
       titleTop: "SALT & SUMMIT",
       titleMain: "UYUNI & HUAYNAPOTOSI 10D",
-      backgroundImage: "/bolivia/bg-uyuni.png",
+      backgroundImage: "/bolivia/bg-uyuni.avif",
       duration: "10 DAYS / 09 NIGHTS",
       price: "USD. 995.00",
       difficulty: "NON-TECHNICAL / HIGH MOUNTAIN",
@@ -85,7 +85,7 @@ export const boliviaUyuniHuaynaData = {
       titlePrefix: "Bolivia",
       titleAccent: "Adventure",
       description: "Combine the natural wonder of Salar de Uyuni, the world's largest salt flat, with the challenge of reaching the 6088m of Mt. Huayna Potosi. A unique experience that joins salt desert and eternal glaciers.",
-      image: "/bolivia/uyuni.png",
+      image: "/bolivia/uyuni.avif",
       lat: `20° 08' 01" S`,
       lon: `67° 29' 20" W`,
       specs: [

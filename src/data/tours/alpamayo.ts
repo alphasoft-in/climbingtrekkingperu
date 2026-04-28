@@ -6,7 +6,7 @@ export const alpamayoData = {
     hero: {
       titleTop: "LA MONTAÑA MÁS BELLA",
       titleMain: "NEVADO ALPAMAYO 5947M",
-      backgroundImage: "/climbing/bg-alpamayo-5947m.png",
+      backgroundImage: "/climbing/bg-alpamayo-5947m.avif",
       duration: "06 DÍAS / 05 NOCHES",
       price: "USD. 1,950.00",
       difficulty: "DIFÍCIL / TÉCNICO",
@@ -17,7 +17,7 @@ export const alpamayoData = {
       titlePrefix: "La Pirámide",
       titleAccent: "de Hielo",
       description: "El Alpamayo es considerado la montaña más bella del mundo. Su forma piramidal perfecta atrae a montañistas de todo el globo. Un desafío técnico de alto nivel que requiere experiencia y aclimatación.",
-      image: "/climbing/alpamayo.png",
+      image: "/climbing/alpamayo.avif",
       lat: `08° 52' 45" S`,
       lon: `77° 39' 12" W`,
       specs: [
@@ -64,21 +64,21 @@ export const alpamayoData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/climbing/1.png",
-      "/climbing/2.png",
-      "/climbing/3.png",
-      "/climbing/4.png",
-      "/climbing/5.png",
-      "/climbing/6.png",
-      "/climbing/7.png",
-      "/climbing/8.png"
+      "/climbing/1.avif",
+      "/climbing/2.avif",
+      "/climbing/3.avif",
+      "/climbing/4.avif",
+      "/climbing/5.avif",
+      "/climbing/6.avif",
+      "/climbing/7.avif",
+      "/climbing/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "THE MOST BEAUTIFUL MOUNTAIN",
       titleMain: "NEVADO ALPAMAYO 5947M",
-      backgroundImage: "/climbing/bg-alpamayo-5947m.png",
+      backgroundImage: "/climbing/bg-alpamayo-5947m.avif",
       duration: "06 DAYS / 05 NIGHTS",
       price: "USD. 1,950.00",
       difficulty: "HARD / TECHNICAL",
@@ -89,7 +89,7 @@ export const alpamayoData = {
       titlePrefix: "The Pyramid",
       titleAccent: "of Ice",
       description: "Alpamayo is considered the most beautiful mountain in the world. Its perfect pyramid shape attracts mountaineers worldwide. A high-level technical challenge requiring experience and adaptation.",
-      image: "/climbing/alpamayo.png",
+      image: "/climbing/alpamayo.avif",
       lat: `08° 52' 45" S`,
       lon: `77° 39' 12" W`,
       specs: [
@@ -136,14 +136,14 @@ export const alpamayoData = {
     includesTitle: "What's Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/climbing/1.png",
-      "/climbing/2.png",
-      "/climbing/3.png",
-      "/climbing/4.png",
-      "/climbing/5.png",
-      "/climbing/6.png",
-      "/climbing/7.png",
-      "/climbing/8.png"
+      "/climbing/1.avif",
+      "/climbing/2.avif",
+      "/climbing/3.avif",
+      "/climbing/4.avif",
+      "/climbing/5.avif",
+      "/climbing/6.avif",
+      "/climbing/7.avif",
+      "/climbing/8.avif"
     ]
   }
 };

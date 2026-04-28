@@ -6,7 +6,7 @@ export const culturalChurupData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "LAGUNA CHURUP 4450M",
-      backgroundImage: "/peru/bg-laguna-churup.png",
+      backgroundImage: "/peru/bg-laguna-churup.avif",
       duration: "08 HORAS",
       price: "CONSULTAR",
       difficulty: "MODERADA",
@@ -17,7 +17,7 @@ export const culturalChurupData = {
       titlePrefix: "A los Pies de",
       titleAccent: "la Montaña",
       description: "La Laguna Churup es una de las rutas de aclimatación preferidas por los montañistas. Ubicada justo encima de Huaraz, el trekking ofrece una experiencia emocionante que incluye tramos con cadenas para llegar a sus aguas color verde esmeralda.",
-      image: "/peru/laguna-churup.png",
+      image: "/peru/laguna-churup.avif",
       lat: `09° 29' 00" S`,
       lon: `77° 24' 00" W`,
       specs: [
@@ -59,7 +59,7 @@ export const culturalChurupData = {
     hero: {
       titleTop: "CORDILLERA BLANCA",
       titleMain: "CHURUP LAGOON 4450M",
-      backgroundImage: "/peru/bg-laguna-churup.png",
+      backgroundImage: "/peru/bg-laguna-churup.avif",
       duration: "08 HOURS",
       price: "UPON REQUEST",
       difficulty: "MODERATE",
@@ -70,7 +70,7 @@ export const culturalChurupData = {
       titlePrefix: "At the foot of",
       titleAccent: "the Mountain",
       description: "Churup Lagoon is one of the preferred acclimatization routes for mountaineers. Located just above Huaraz, the trek offers an exciting experience that includes sections with chains to reach its emerald green waters.",
-      image: "/peru/laguna-churup.png",
+      image: "/peru/laguna-churup.avif",
       lat: `09° 29' 00" S`,
       lon: `77° 24' 00" W`,
       specs: [

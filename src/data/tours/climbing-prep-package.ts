@@ -6,7 +6,7 @@ export const climbingPrepPackageData = {
     hero: {
       titleTop: "ENTRENAMIENTO DE ALTO NIVEL",
       titleMain: "PREPARACIÓN: 4 CUMBRES TÉCNICAS",
-      backgroundImage: "/prep/bg-prep.png",
+      backgroundImage: "/prep/bg-prep.avif",
       duration: "06 DÍAS",
       price: "USD 1,395.00",
       difficulty: "ALTA / PROGRESIVA",
@@ -17,7 +17,7 @@ export const climbingPrepPackageData = {
       titlePrefix: "Domina los",
       titleAccent: "Andes Técnicos",
       description: "Programa intensivo diseñado para consolidar técnica en glaciar y pared. Cuatro cumbres emblemáticas para prepararte para desafíos como Alpamayo o Huascarán.",
-      image: "/prep/prep.png",
+      image: "/prep/prep.avif",
       lat: `09° 08' 22" S`,
       lon: `77° 28' 14" W`,
       specs: [
@@ -68,17 +68,17 @@ export const climbingPrepPackageData = {
     includesTitle: "Qué Incluye",
     equipmentTitle: "Equipo Técnico",
     gallery: [
-      "/prep/1.png",
-      "/prep/2.png",
-      "/prep/3.png",
-      "/prep/4.png"
+      "/prep/1.avif",
+      "/prep/2.avif",
+      "/prep/3.avif",
+      "/prep/4.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "HIGH-LEVEL TRAINING",
       titleMain: "PREPARATION: 4 TECHNICAL SUMMITS",
-      backgroundImage: "/prep/bg-prep.png",
+      backgroundImage: "/prep/bg-prep.avif",
       duration: "06 DAYS",
       price: "USD 1,395.00",
       difficulty: "HIGH / PROGRESSIVE",
@@ -89,7 +89,7 @@ export const climbingPrepPackageData = {
       titlePrefix: "Master the",
       titleAccent: "Technical Andes",
       description: "Intensive program designed to consolidate glacier and wall technique. Four emblematic summits to prepare you for challenges like Alpamayo or Huascaran.",
-      image: "/prep/prep.png",
+      image: "/prep/prep.avif",
       lat: `09° 08' 22" S`,
       lon: `77° 28' 14" W`,
       specs: [
@@ -140,10 +140,10 @@ export const climbingPrepPackageData = {
     includesTitle: "Included",
     equipmentTitle: "Technical Gear",
     gallery: [
-      "/prep/1.png",
-      "/prep/2.png",
-      "/prep/3.png",
-      "/prep/4.png"
+      "/prep/1.avif",
+      "/prep/2.avif",
+      "/prep/3.avif",
+      "/prep/4.avif"
     ]
   }
 };

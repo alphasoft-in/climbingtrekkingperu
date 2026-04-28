@@ -6,7 +6,7 @@ export const boliviaIllampuClimbingData = {
     hero: {
       titleTop: "EL REY DE LAS MONTAÑAS",
       titleMain: "NEVADO ILLAMPU 6360M",
-      backgroundImage: "/bolivia/bg-illampu.png",
+      backgroundImage: "/bolivia/bg-illampu.avif",
       duration: "07 DÍAS / 06 NOCHES",
       price: "USD. 1,595.00",
       difficulty: "ALTA DIFICULTAD TÉCNICA",
@@ -17,7 +17,7 @@ export const boliviaIllampuClimbingData = {
       titlePrefix: "Expedición",
       titleAccent: "Técnica",
       description: "El Illampu (6360m), 'El Fuerte' en aymara, es una de las montañas más difíciles de Bolivia. Requiere gran capacidad física y técnica para superar pendientes de hasta 65° en nieve y hielo, ofreciendo las mejores vistas de la Cordillera Real y el Lago Titicaca.",
-      image: "/bolivia/illampu.png",
+      image: "/bolivia/illampu.avif",
       lat: `15° 49' 00" S`,
       lon: `68° 33' 00" W`,
       specs: [
@@ -71,7 +71,7 @@ export const boliviaIllampuClimbingData = {
     hero: {
       titleTop: "KING OF THE MOUNTAINS",
       titleMain: "MT. ILLAMPU 6360M",
-      backgroundImage: "/bolivia/bg-illampu.png",
+      backgroundImage: "/bolivia/bg-illampu.avif",
       duration: "07 DAYS / 06 NIGHTS",
       price: "USD. 1,595.00",
       difficulty: "HIGH TECHNICAL DIFFICULTY",
@@ -82,7 +82,7 @@ export const boliviaIllampuClimbingData = {
       titlePrefix: "Technical",
       titleAccent: "Expedition",
       description: "Illampu (6360m), 'The Strong' in Aymara, is one of the most difficult mountains in Bolivia. It requires great physical and technical capacity to overcome slopes of up to 65° in snow and ice, offering the best views of the Cordillera Real and Lake Titicaca.",
-      image: "/bolivia/illampu.png",
+      image: "/bolivia/illampu.avif",
       lat: `15° 49' 00" S`,
       lon: `68° 33' 00" W`,
       specs: [

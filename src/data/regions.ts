@@ -24,7 +24,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "AVENTURAS",
       titleMain: "CORDILLERA BLANCA",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,768 M.S.N.M." },
         { label: "COORDENADAS", value: "9°07′S 77°36′W" },
@@ -35,7 +35,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "ADVENTURES",
       titleMain: "CORDILLERA BLANCA",
-      backgroundImage: "/trekking/blanca/bg-cordillerablanca.png",
+      backgroundImage: "/trekking/blanca/bg-cordillerablanca.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,768 M.A.S.L." },
         { label: "COORDINATES", value: "9°07′S 77°36′W" },
@@ -50,7 +50,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "AVENTURAS",
       titleMain: "CORDILLERA HUAYHUASH",
-      backgroundImage: "/trekking/huayhuash/bg-huayhuash.png",
+      backgroundImage: "/trekking/huayhuash/bg-huayhuash.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "5,632 M.S.N.M." },
         { label: "COORDENADAS", value: "10°16′S 76°54′W" },
@@ -61,7 +61,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "ADVENTURES",
       titleMain: "HUAYHUASH RANGE",
-      backgroundImage: "/trekking/huayhuash/bg-huayhuash.png",
+      backgroundImage: "/trekking/huayhuash/bg-huayhuash.avif",
       techData: [
         { label: "MAX ELEVATION", value: "5,632 M.A.S.L." },
         { label: "COORDINATES", value: "10°16′S 76°54′W" },
@@ -76,7 +76,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "AVENTURAS",
       titleMain: "CUSCO TREKS",
-      backgroundImage: "/trekking/cusco/bg-busco.png",
+      backgroundImage: "/trekking/cusco/bg-busco.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,384 M.S.N.M." },
         { label: "COORDENADAS", value: "13°31′S 71°58′W" },
@@ -87,7 +87,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "ADVENTURES",
       titleMain: "CUSCO TREKS",
-      backgroundImage: "/trekking/cusco/bg-busco.png",
+      backgroundImage: "/trekking/cusco/bg-busco.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,384 M.A.S.L." },
         { label: "COORDINATES", value: "13°31′S 71°58′W" },
@@ -102,7 +102,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "AVENTURAS",
       titleMain: "AREQUIPA & COLCA",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/slider_1.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,075 M.S.N.M." },
         { label: "COORDENADAS", value: "16°23′S 71°32′W" },
@@ -113,7 +113,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "ADVENTURES",
       titleMain: "AREQUIPA & COLCA",
-      backgroundImage: "/slider_1.png",
+      backgroundImage: "/slider_1.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,075 M.A.S.L." },
         { label: "COORDINATES", value: "16°23′S 71°32′W" },
@@ -128,7 +128,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "DESTINOS",
       titleMain: "ARGENTINA",
-      backgroundImage: "/argentina/bg-argentina.png",
+      backgroundImage: "/argentina/bg-argentina.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,962 M.S.N.M." },
         { label: "COORDENADAS", value: "32°39′S 70°00′W" },
@@ -139,7 +139,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "DESTINATIONS",
       titleMain: "ARGENTINA",
-      backgroundImage: "/argentina/bg-argentina.png",
+      backgroundImage: "/argentina/bg-argentina.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,962 M.A.S.L." },
         { label: "COORDINATES", value: "32°39′S 70°00′W" },
@@ -154,7 +154,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "DESTINOS",
       titleMain: "BOLIVIA",
-      backgroundImage: "/bolivia/bg-bolivia.png",
+      backgroundImage: "/bolivia/bg-bolivia.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,542 M.S.N.M." },
         { label: "COORDENADAS", value: "16°29′S 68°08′W" },
@@ -165,7 +165,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "DESTINATIONS",
       titleMain: "BOLIVIA",
-      backgroundImage: "/bolivia/bg-bolivia.png",
+      backgroundImage: "/bolivia/bg-bolivia.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,542 M.A.S.L." },
         { label: "COORDINATES", value: "16°29′S 68°08′W" },
@@ -180,7 +180,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "DESTINOS",
       titleMain: "ECUADOR",
-      backgroundImage: "/ecuador/bg-ecuador.png",
+      backgroundImage: "/ecuador/bg-ecuador.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,263 M.S.N.M." },
         { label: "COORDENADAS", value: "0°13′S 78°30′W" },
@@ -191,7 +191,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "DESTINATIONS",
       titleMain: "ECUADOR",
-      backgroundImage: "/ecuador/bg-ecuador.png",
+      backgroundImage: "/ecuador/bg-ecuador.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,263 M.A.S.L." },
         { label: "COORDINATES", value: "0°13′S 78°30′W" },
@@ -206,7 +206,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "DESTINOS",
       titleMain: "CHILE",
-      backgroundImage: "/chile/bg-chile.png",
+      backgroundImage: "/chile/bg-chile.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,893 M.S.N.M." },
         { label: "COORDENADAS", value: "27°06′S 68°32′W" },
@@ -217,7 +217,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "DESTINATIONS",
       titleMain: "CHILE",
-      backgroundImage: "/chile/bg-chile.png",
+      backgroundImage: "/chile/bg-chile.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,893 M.A.S.L." },
         { label: "COORDINATES", value: "27°06′S 68°32′W" },
@@ -232,7 +232,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "EXPEDICIONES",
       titleMain: "ESCALADA TÉCNICA",
-      backgroundImage: "/climbing/bg-climbing.png",
+      backgroundImage: "/climbing/bg-climbing.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,962 M.S.N.M." },
         { label: "COORDENADAS", value: "9°08′S 77°36′W" },
@@ -243,7 +243,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "EXPEDITIONS",
       titleMain: "TECHNICAL CLIMBING",
-      backgroundImage: "/climbing/bg-climbing.png",
+      backgroundImage: "/climbing/bg-climbing.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,962 M.A.S.L." },
         { label: "COORDINATES", value: "9°08′S 77°36′W" },
@@ -258,7 +258,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "EXPERIENCIAS",
       titleMain: "TOURS CULTURALES",
-      backgroundImage: "/tours/bg-tours.png",
+      backgroundImage: "/tours/bg-tours.avif",
       techData: [
         { label: "VARIEDAD", value: "DÍA & CULTURAL" },
         { label: "DESTINOS", value: "PERÚ COMPLETO" },
@@ -269,7 +269,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "EXPERIENCES",
       titleMain: "CULTURAL TOURS",
-      backgroundImage: "/tours/bg-tours.png",
+      backgroundImage: "/tours/bg-tours.avif",
       techData: [
         { label: "VARIETY", value: "DAY & CULTURAL" },
         { label: "DESTINATIONS", value: "ALL PERU" },
@@ -284,7 +284,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     es: {
       titleTop: "DESTINOS",
       titleMain: "PERÚ",
-      backgroundImage: "/peru/bg-peru.png",
+      backgroundImage: "/peru/bg-peru.avif",
       techData: [
         { label: "ELEVACIÓN MÁX", value: "6,768 M.S.N.M." },
         { label: "COORDENADAS", value: "9°30′S 77°31′W" },
@@ -295,7 +295,7 @@ export const regionsData: Record<string, RegionMetadata> = {
     en: {
       titleTop: "DESTINATIONS",
       titleMain: "PERU",
-      backgroundImage: "/peru/bg-peru.png",
+      backgroundImage: "/peru/bg-peru.avif",
       techData: [
         { label: "MAX ELEVATION", value: "6,768 M.A.S.L." },
         { label: "COORDINATES", value: "9°30′S 77°31′W" },

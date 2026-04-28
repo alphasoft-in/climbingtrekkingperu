@@ -7,7 +7,7 @@ export const arequipaVolcanesData = {
     hero: {
       titleTop: "LA CIUDAD BLANCA",
       titleMain: "MISTI & CHACHANI 10D",
-      backgroundImage: "/peru/bg-arequipa.png",
+      backgroundImage: "/peru/bg-arequipa.avif",
       duration: "10 DÍAS / 09 NOCHES",
       price: "USD. 795.00",
       difficulty: "DIFÍCIL",
@@ -18,7 +18,7 @@ export const arequipaVolcanesData = {
       titlePrefix: "Aventura",
       titleAccent: "Arequipa",
       description: "Explora la Ciudad Blanca y conquista sus volcanes más emblemáticos. Esta expedición de 10 días combina cultura, paisajes únicos como el Cañón del Colca y la adrenalina de alcanzar las cumbres del Misti (5822m) y el Chachani (6057m).",
-      image: "/peru/arequipa.png",
+      image: "/peru/arequipa.avif",
       lat: `16° 23' 55" S`,
       lon: `71° 32' 12" W`,
       specs: [
@@ -76,7 +76,7 @@ export const arequipaVolcanesData = {
     hero: {
       titleTop: "THE WHITE CITY",
       titleMain: "MISTI & CHACHANI 10D",
-      backgroundImage: "/peru/bg-arequipa.png",
+      backgroundImage: "/peru/bg-arequipa.avif",
       duration: "10 DAYS / 09 NIGHTS",
       price: "USD. 795.00",
       difficulty: "HARD",
@@ -87,7 +87,7 @@ export const arequipaVolcanesData = {
       titlePrefix: "Arequipa",
       titleAccent: "Adventure",
       description: "Explore the White City and conquer its most iconic volcanoes. This 10-day expedition combines culture, unique landscapes like the Colca Canyon, and the adrenaline of reaching the summits of Misti (5822m) and Chachani (6057m).",
-      image: "/peru/arequipa.png",
+      image: "/peru/arequipa.avif",
       lat: `16° 23' 55" S`,
       lon: `71° 32' 12" W`,
       specs: [

@@ -6,7 +6,7 @@ export const culturalNortePeru15dData = {
     hero: {
       titleTop: "EXPERIENCIA CULTURAL",
       titleMain: "EXPERIENCIA NACIONAL: LIMA, ICA & HUARAZ 15D",
-      backgroundImage: "/peru/bg-caral.png",
+      backgroundImage: "/peru/bg-caral.avif",
       duration: "15 DÍAS / 14 NOCHES",
       price: "USD. 1,795.00",
       difficulty: "SUAVE / CULTURAL",
@@ -17,7 +17,7 @@ export const culturalNortePeru15dData = {
       titlePrefix: "Gran Tour",
       titleAccent: "Esencia Peruana",
       description: "Descubre la diversidad del Perú en una expedición de 15 días. Desde los misterios de las Líneas de Nazca y el Oasis de Huacachina en la costa, hasta la majestuosidad de la Cordillera Blanca en Huaraz. Un viaje diseñado para combinar historia, aventura y los paisajes más impresionantes del norte y centro del país.",
-      image: "/peru/caral.png",
+      image: "/peru/caral.avif",
       lat: `9° 31' 48" S`,
       lon: `77° 31' 44" W`,
       specs: [
@@ -76,7 +76,7 @@ export const culturalNortePeru15dData = {
     hero: {
       titleTop: "CULTURAL EXPERIENCE",
       titleMain: "NATIONAL EXPERIENCE: LIMA, ICA & HUARAZ 15D",
-      backgroundImage: "/peru/bg-caral.png",
+      backgroundImage: "/peru/bg-caral.avif",
       duration: "15 DAYS / 14 NIGHTS",
       price: "USD. 1,795.00",
       difficulty: "SOFT / CULTURAL",
@@ -87,7 +87,7 @@ export const culturalNortePeru15dData = {
       titlePrefix: "Grand Tour",
       titleAccent: "Peruvian Essence",
       description: "Discover the diversity of Peru in a 15-day expedition. From the mysteries of the Nazca Lines and the Huacachina Oasis on the coast to the majesty of the Cordillera Blanca in Huaraz. A trip designed to combine history, adventure, and the most impressive landscapes of northern and central Peru.",
-      image: "/peru/caral.png",
+      image: "/peru/caral.avif",
       lat: `9° 31' 48" S`,
       lon: `77° 31' 44" W`,
       specs: [

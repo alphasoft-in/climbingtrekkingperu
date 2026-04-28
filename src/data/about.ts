@@ -3,7 +3,7 @@ export const aboutData = {
     hero: {
       titleTop: "NUESTRA",
       titleMain: "HISTORIA",
-      backgroundImage: "/bg-nosotros.png",
+      backgroundImage: "/bg-nosotros.avif",
       techData: [
         { label: "ELEVACIÓN", value: "3,052 M.S.N.M." },
         { label: "COORDENADAS", value: "9°31′48″S 77°31′44″W" },
@@ -35,7 +35,7 @@ export const aboutData = {
     hero: {
       titleTop: "OUR",
       titleMain: "HISTORY",
-      backgroundImage: "/bg-nosotros.png",
+      backgroundImage: "/bg-nosotros.avif",
       techData: [
         { label: "ELEVATION", value: "3,052 M.S.L." },
         { label: "COORDINATES", value: "9°31′48″S 77°31′44″W" },

@@ -3,11 +3,11 @@ export const homeData = {
     title: "Inicio - ALPINE TREKS PERÚ",
     description: "Agencia de viajes y turismo ALPINE TREKS PERÚ. Expediciones de montaña y trekking en Huaraz y toda Sudamérica.",
     slides: [
-      { src: '/slider_1.png', pretitle: 'DESCUBRE LA MAGIA', title: 'CAMINO INCA CLÁSICO', subtitle: 'Sigue los pasos de los antiguos incas a través de selvas nubladas y valles sagrados, una expedición inolvidable.'},
-      { src: '/slider_2.png', pretitle: 'EXPERIENCIA PREMIUM', title: 'MACHU PICCHU AL AMANECER', subtitle: 'Contempla la ciudadela perdida de los Incas bañado por la primera luz del sol entre las nubes.'},
-      { src: '/slider_3.png', pretitle: 'TREKKING DE ALTURA', title: 'MONTAÑA VINICUNCA', subtitle: 'Camina por valles de ensueño hasta conquistar el surrealista y pintoresco valle rojo y la montaña de colores.'},
-      { src: '/slider_4.png', pretitle: 'EL GIGANTE BLANCO', title: 'NEVADO HUASCARÁN', subtitle: 'Enfréntate a las inmensas cumbres del Parque Nacional Huascarán rodeado de lagunas glaciares.'},
-      { src: '/slider_5.png', pretitle: 'EXPEDICIÓN ANDINA', title: 'RUTA DEL AUSANGATE', subtitle: 'Piérdete entre alpacas, picos nevados y lagunas turquesas bajo el aura del nevado más sagrado del Cusco.'}
+      { src: '/slider_1.avif', pretitle: 'DESCUBRE LA MAGIA', title: 'CAMINO INCA CLÁSICO', subtitle: 'Sigue los pasos de los antiguos incas a través de selvas nubladas y valles sagrados, una expedición inolvidable.'},
+      { src: '/slider_2.avif', pretitle: 'EXPERIENCIA PREMIUM', title: 'MACHU PICCHU AL AMANECER', subtitle: 'Contempla la ciudadela perdida de los Incas bañado por la primera luz del sol entre las nubes.'},
+      { src: '/slider_3.avif', pretitle: 'TREKKING DE ALTURA', title: 'MONTAÑA VINICUNCA', subtitle: 'Camina por valles de ensueño hasta conquistar el surrealista y pintoresco valle rojo y la montaña de colores.'},
+      { src: '/slider_4.avif', pretitle: 'EL GIGANTE BLANCO', title: 'NEVADO HUASCARÁN', subtitle: 'Enfréntate a las inmensas cumbres del Parque Nacional Huascarán rodeado de lagunas glaciares.'},
+      { src: '/slider_5.avif', pretitle: 'EXPEDICIÓN ANDINA', title: 'RUTA DEL AUSANGATE', subtitle: 'Piérdete entre alpacas, picos nevados y lagunas turquesas bajo el aura del nevado más sagrado del Cusco.'}
     ],
     institutional: {
       identity: {
@@ -43,10 +43,10 @@ export const homeData = {
       title: "EQUIPO DE COMANDO",
       subtitle: "MANDO TÉCNICO Y OPERATIVO",
       members: [
-        { name: "Francisco Mayhuay Colonia", badge: "LIDERAZGO ESTRATÉGICO", rank: "Gerente General & Fundador", avatar: "/perfiles/francisco.jpeg" },
-        { name: "Milagros Moreno Correa", badge: "CONTROL DE MISIÓN", rank: "Jefa de Logística de Campo", avatar: "/perfiles/milagros.jpeg" },
-        { name: "Nilo Aramburu Tafur", badge: "CUMBRE ÉLITE", rank: "Guía de Montaña IVBV – UIAGM", avatar: "/perfiles/nilo.jpeg" },
-        { name: "Hosterling Guillermo Julca", badge: "PRIMERA LÍNEA", rank: "Aspirante a Guía de Montaña", avatar: "/perfiles/hosterling.jpeg" }
+        { name: "Francisco Mayhuay Colonia", badge: "LIDERAZGO ESTRATÉGICO", rank: "Gerente General & Fundador", avatar: "/perfiles/francisco.avif" },
+        { name: "Milagros Moreno Correa", badge: "CONTROL DE MISIÓN", rank: "Jefa de Logística de Campo", avatar: "/perfiles/milagros.avif" },
+        { name: "Nilo Aramburu Tafur", badge: "CUMBRE ÉLITE", rank: "Guía de Montaña IVBV – UIAGM", avatar: "/perfiles/nilo.avif" },
+        { name: "Hosterling Guillermo Julca", badge: "PRIMERA LÍNEA", rank: "Aspirante a Guía de Montaña", avatar: "/perfiles/hosterling.avif" }
       ]
     },
     gastronomy: {
@@ -116,11 +116,11 @@ export const homeData = {
     title: "Home - ALPINE TREKS PERÚ",
     description: "ALPINE TREKS PERÚ Travel and Tourism Agency. Epic mountain and trekking expeditions in Huaraz and across South America.",
     slides: [
-      { src: '/slider_1.png', pretitle: 'DISCOVER THE MAGIC', title: 'CLASSIC INCA TRAIL', subtitle: 'Follow the footsteps of the ancient Incas through cloud forests and sacred valleys, an unforgettable expedition.'},
-      { src: '/slider_2.png', pretitle: 'PREMIUM EXPERIENCE', title: 'MACHU PICCHU AT DAWN', subtitle: 'Witness the lost citadel of the Incas bathed in the first light of the sun breaking through the clouds.'},
-      { src: '/slider_3.png', pretitle: 'HIGH ALTITUDE TREK', title: 'VINICUNCA MOUNTAIN', subtitle: 'Trek through dreamlike valleys to conquer the surreal and picturesque red valley and the rainbow mountain.'},
-      { src: '/slider_4.png', pretitle: 'THE WHITE GIANT', title: 'MOUNT HUASCARAN', subtitle: 'Face the immense peaks of Huascaran National Park surrounded by pristine glacial lakes.'},
-      { src: '/slider_5.png', pretitle: 'ANDEAN EXPEDITION', title: 'AUSANGATE ROUTE', subtitle: 'Lose yourself among alpacas, snow-capped peaks, and turquoise lagoons under the aura of Cusco\'s most sacred mountain.'}
+      { src: '/slider_1.avif', pretitle: 'DISCOVER THE MAGIC', title: 'CLASSIC INCA TRAIL', subtitle: 'Follow the footsteps of the ancient Incas through cloud forests and sacred valleys, an unforgettable expedition.'},
+      { src: '/slider_2.avif', pretitle: 'PREMIUM EXPERIENCE', title: 'MACHU PICCHU AT DAWN', subtitle: 'Witness the lost citadel of the Incas bathed in the first light of the sun breaking through the clouds.'},
+      { src: '/slider_3.avif', pretitle: 'HIGH ALTITUDE TREK', title: 'VINICUNCA MOUNTAIN', subtitle: 'Trek through dreamlike valleys to conquer the surreal and picturesque red valley and the rainbow mountain.'},
+      { src: '/slider_4.avif', pretitle: 'THE WHITE GIANT', title: 'MOUNT HUASCARAN', subtitle: 'Face the immense peaks of Huascaran National Park surrounded by pristine glacial lakes.'},
+      { src: '/slider_5.avif', pretitle: 'ANDEAN EXPEDITION', title: 'AUSANGATE ROUTE', subtitle: 'Lose yourself among alpacas, snow-capped peaks, and turquoise lagoons under the aura of Cusco\'s most sacred mountain.'}
     ],
     institutional: {
       identity: {
@@ -156,10 +156,10 @@ export const homeData = {
       title: "COMMAND TEAM",
       subtitle: "TECHNICAL AND OPERATIONAL COMMAND",
       members: [
-        { name: "Francisco Mayhuay Colonia", badge: "STRATEGIC LEAD", rank: "General Manager & Founder", avatar: "/perfiles/francisco.jpeg" },
-        { name: "Milagros Moreno Correa", badge: "MISSION CONTROL", rank: "Head of Field Logistics", avatar: "/perfiles/milagros.jpeg" },
-        { name: "Nilo Aramburu Tafur", badge: "ELITE SUMMIT", rank: "Mountain Guide IVBV – UIAGM", avatar: "/perfiles/nilo.jpeg" },
-        { name: "Hosterling Guillermo Julca", badge: "FRONT LINE", rank: "Aspirant Mountain Guide", avatar: "/perfiles/hosterling.jpeg" }
+        { name: "Francisco Mayhuay Colonia", badge: "STRATEGIC LEAD", rank: "General Manager & Founder", avatar: "/perfiles/francisco.avif" },
+        { name: "Milagros Moreno Correa", badge: "MISSION CONTROL", rank: "Head of Field Logistics", avatar: "/perfiles/milagros.avif" },
+        { name: "Nilo Aramburu Tafur", badge: "ELITE SUMMIT", rank: "Mountain Guide IVBV – UIAGM", avatar: "/perfiles/nilo.avif" },
+        { name: "Hosterling Guillermo Julca", badge: "FRONT LINE", rank: "Aspirant Mountain Guide", avatar: "/perfiles/hosterling.avif" }
       ]
     },
     gastronomy: {

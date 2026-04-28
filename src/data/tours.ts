@@ -39,7 +39,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "15 Días", en: "15 Days" },
     difficulty: { es: "DIFÍCIL", en: "HARD" },
     difficultyLevel: 'hard',
-    image: '/trekking/huayhuash/360.png',
+    image: '/trekking/huayhuash/360.avif',
     path: 'trekking/huayhuash/360'
   },
   {
@@ -54,7 +54,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "11 Días", en: "11 Days" },
     difficulty: { es: "MODERADO +", en: "MODERATE +" },
     difficultyLevel: 'modplus',
-    image: '/trekking/huayhuash/clasico.png',
+    image: '/trekking/huayhuash/clasico.avif',
     path: 'trekking/huayhuash/clasico'
   },
   {
@@ -69,7 +69,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "8 Días", en: "8 Days" },
     difficulty: { es: "MODERADO", en: "MODERATE" },
     difficultyLevel: 'mod',
-    image: '/trekking/huayhuash/mini.png',
+    image: '/trekking/huayhuash/mini.avif',
     path: 'trekking/huayhuash/mini'
   },
   {
@@ -84,7 +84,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "12 Días", en: "12 Days" },
     difficulty: { es: "DIFÍCIL", en: "HARD" },
     difficultyLevel: 'hard',
-    image: '/trekking/huayhuash/cumbres.png',
+    image: '/trekking/huayhuash/cumbres.avif',
     path: 'trekking/huayhuash/cumbres'
   },
   {
@@ -99,7 +99,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "15 Días", en: "15 Days" },
     difficulty: { es: "MODERADO +", en: "MODERATE +" },
     difficultyLevel: 'modplus',
-    image: '/trekking/huayhuash/bg-espectacular.png',
+    image: '/trekking/huayhuash/bg-espectacular.avif',
     path: 'trekking/huayhuash/espectacular'
   },
   {
@@ -114,7 +114,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "7 Días", en: "7 Days" },
     difficulty: { es: "MODERADO +", en: "MODERATE +" },
     difficultyLevel: 'modplus',
-    image: '/trekking/blanca/trekking-clasico.png',
+    image: '/trekking/blanca/trekking-clasico.avif',
     path: 'trekking/blanca/santa-cruz'
   },
   {
@@ -129,7 +129,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "11 Días", en: "11 Days" },
     difficulty: { es: "DIFÍCIL", en: "HARD" },
     difficultyLevel: 'hard',
-    image: '/trekking/blanca/trekking-cedros.png',
+    image: '/trekking/blanca/trekking-cedros.avif',
     path: 'trekking/blanca/alpamayo'
   },
   {
@@ -144,7 +144,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "15 Días", en: "15 Days" },
     difficulty: { es: "MUY DIFÍCIL", en: "VERY HARD" },
     difficultyLevel: 'hard',
-    image: '/trekking/blanca/trekking-blanca.png',
+    image: '/trekking/blanca/trekking-blanca.avif',
     path: 'trekking/blanca/circuito'
   },
   {
@@ -159,7 +159,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "10 Días", en: "10 Days" },
     difficulty: { es: "MODERADO +", en: "MODERATE +" },
     difficultyLevel: 'modplus',
-    image: '/slider_4.png',
+    image: '/slider_4.avif',
     path: 'trekking/blanca/lo-mejor'
   },
   {
@@ -174,7 +174,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "5 Días", en: "5 Days" },
     difficulty: { es: "MODERADO", en: "MODERATE" },
     difficultyLevel: 'mod',
-    image: '/slider_2.png',
+    image: '/slider_2.avif',
     path: 'climbing/pisco'
   },
   {
@@ -189,7 +189,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "6 Días", en: "6 Days" },
     difficulty: { es: "TÉCNICA / EXTREMA", en: "TECHNICAL / EXTREME" },
     difficultyLevel: 'hard',
-    image: '/slider_4.png',
+    image: '/slider_4.avif',
     path: 'climbing/huascaran'
   },
   {
@@ -204,7 +204,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "6 Días", en: "6 Days" },
     difficulty: { es: "TÉCNICO / ELITE", en: "TECHNICAL / ELITE" },
     difficultyLevel: 'hard',
-    image: '/slider_1.png',
+    image: '/slider_1.avif',
     path: 'climbing/artesonraju'
   },
   {
@@ -219,7 +219,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "4 Días", en: "4 Days" },
     difficulty: { es: "DIFÍCIL", en: "HARD" },
     difficultyLevel: 'hard',
-    image: '/slider_2.png',
+    image: '/slider_2.avif',
     path: 'trekking/cusco/choquequirao'
   },
   {
@@ -234,7 +234,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "4 Días", en: "4 Days" },
     difficulty: { es: "MODERADO +", en: "MODERATE +" },
     difficultyLevel: 'modplus',
-    image: '/trekking/huayhuash/clasico.png',
+    image: '/trekking/huayhuash/clasico.avif',
     path: 'trekking/cusco/camino-inca'
   },
   {
@@ -249,7 +249,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "7 Días", en: "7 Days" },
     difficulty: { es: "DIFÍCIL", en: "HARD" },
     difficultyLevel: 'hard',
-    image: '/slider_2.png',
+    image: '/slider_2.avif',
     path: 'trekking/arequipa/arequipa-volcanes'
   },
   {
@@ -264,7 +264,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "17 Días", en: "17 Days" },
     difficulty: { es: "EXTREMA", en: "EXTREME" },
     difficultyLevel: 'hard',
-    image: '/slider_1.png',
+    image: '/slider_1.avif',
     path: 'argentina/aconcagua'
   },
   {
@@ -279,7 +279,7 @@ export const toursData: TourRoute[] = [
     duration: { es: "12 Días", en: "12 Days" },
     difficulty: { es: "DIFÍCIL", en: "HARD" },
     difficultyLevel: 'hard',
-    image: '/slider_4.png',
+    image: '/slider_4.avif',
     path: 'ecuador/avenida-volcanes'
   }
 ];

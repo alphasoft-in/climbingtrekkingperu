@@ -6,7 +6,7 @@ export const huayhuashClassicData = {
     hero: {
       titleTop: "TREKKING CORDILLERA",
       titleMain: "HUAYHUASH CLÁSICO",
-      backgroundImage: "/trekking/huayhuash/bg-clasico.png",
+      backgroundImage: "/trekking/huayhuash/bg-clasico.avif",
       duration: "11 DÍAS / 10 NOCHES",
       price: "USD. 795.00",
       difficulty: "MODERADO +",
@@ -17,7 +17,7 @@ export const huayhuashClassicData = {
       titlePrefix: "Ruta",
       titleAccent: "Legendaria",
       description: "Este circuito concentra los paisajes más icónicos de la Cordillera Huayhuash iniciando desde Queropalca. Ideal para quienes buscan la máxima belleza escénica en un itinerario optimizado.",
-      image: "/trekking/huayhuash/clasico.png",
+      image: "/trekking/huayhuash/clasico.avif",
       lat: `9° 58' 21" S`,
       lon: `76° 54' 42" W`,
       specs: [
@@ -67,21 +67,21 @@ export const huayhuashClassicData = {
     includesTitle: "Servicios Incluidos",
     equipmentTitle: "Equipo Sugerido",
     gallery: [
-      "/trekking/huayhuash/clasico/1.png",
-      "/trekking/huayhuash/clasico/2.png",
-      "/trekking/huayhuash/clasico/3.png",
-      "/trekking/huayhuash/clasico/4.png",
-      "/trekking/huayhuash/clasico/5.png",
-      "/trekking/huayhuash/clasico/6.png",
-      "/trekking/huayhuash/clasico/7.png",
-      "/trekking/huayhuash/clasico/8.png"
+      "/trekking/huayhuash/clasico/1.avif",
+      "/trekking/huayhuash/clasico/2.avif",
+      "/trekking/huayhuash/clasico/3.avif",
+      "/trekking/huayhuash/clasico/4.avif",
+      "/trekking/huayhuash/clasico/5.avif",
+      "/trekking/huayhuash/clasico/6.avif",
+      "/trekking/huayhuash/clasico/7.avif",
+      "/trekking/huayhuash/clasico/8.avif"
     ]
   },
   en: {
     hero: {
       titleTop: "TREKKING RANGE",
       titleMain: "HUAYHUASH CLASSIC",
-      backgroundImage: "/trekking/huayhuash/bg-clasico.png",
+      backgroundImage: "/trekking/huayhuash/bg-clasico.avif",
       duration: "11 DAYS / 10 NIGHTS",
       price: "USD. 795.00",
       difficulty: "MODERATE+",
@@ -92,7 +92,7 @@ export const huayhuashClassicData = {
       titlePrefix: "Legendary",
       titleAccent: "Route",
       description: "This circuit concentrates the most iconic landscapes of the Cordillera Huayhuash starting from Queropalca. Ideal for those looking for maximum scenic beauty in an optimized itinerary.",
-      image: "/trekking/huayhuash/clasico.png",
+      image: "/trekking/huayhuash/clasico.avif",
       lat: `9° 58' 21" S`,
       lon: `76° 54' 42" W`,
       specs: [
@@ -142,14 +142,14 @@ export const huayhuashClassicData = {
     includesTitle: "Services Included",
     equipmentTitle: "Suggested Equipment",
     gallery: [
-      "/trekking/huayhuash/clasico/1.png",
-      "/trekking/huayhuash/clasico/2.png",
-      "/trekking/huayhuash/clasico/3.png",
-      "/trekking/huayhuash/clasico/4.png",
-      "/trekking/huayhuash/clasico/5.png",
-      "/trekking/huayhuash/clasico/6.png",
-      "/trekking/huayhuash/clasico/7.png",
-      "/trekking/huayhuash/clasico/8.png"
+      "/trekking/huayhuash/clasico/1.avif",
+      "/trekking/huayhuash/clasico/2.avif",
+      "/trekking/huayhuash/clasico/3.avif",
+      "/trekking/huayhuash/clasico/4.avif",
+      "/trekking/huayhuash/clasico/5.avif",
+      "/trekking/huayhuash/clasico/6.avif",
+      "/trekking/huayhuash/clasico/7.avif",
+      "/trekking/huayhuash/clasico/8.avif"
     ]
   }
 };
