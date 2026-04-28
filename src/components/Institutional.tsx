@@ -75,7 +75,7 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
             {data.pillars.map((pillar, idx) => (
               <div key={idx} className="group relative bg-[#fbfcfd] p-8 md:p-12 transition-all duration-700 hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-16">
-                  <span className="text-5xl font-black text-slate-400/80 group-hover:text-brand-blue/10 transition-colors duration-500">
+                  <span className="text-5xl font-black text-slate-500 group-hover:text-brand-blue/20 transition-colors duration-500">
                     {pillar.num}
                   </span>
                   <span className="text-3xl opacity-20 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
