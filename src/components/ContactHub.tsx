@@ -142,12 +142,13 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
               {/* Minimalist Map */}
               <div className="h-64 rounded-xl overflow-hidden border border-slate-100 grayscale hover:grayscale-0 transition-all duration-700">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3739.9948362943383!2d-77.53226062497484!3d-9.536548890546435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzInMTEuNiJTIDc3wrAzMSc0Ni45Ilc!5e1!3m2!1ses!2spe!4v1776890394707!5m2!1ses!2spe" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.9938678764306!2d-77.52972729999999!3d-9.5366372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a90d0219bb41bb%3A0x795df5102e8e4b09!2sFranpisco%20Adventure!5e1!3m2!1ses-419!2spe!4v1777393824712!5m2!1ses-419!2spe" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen={true} 
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
             </div>
