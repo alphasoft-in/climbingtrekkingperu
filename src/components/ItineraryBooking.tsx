@@ -74,6 +74,7 @@ const ItineraryBooking: React.FC<ItineraryBookingProps> = ({
           <div className="flex flex-col gap-2.5">
             <label htmlFor="booking-date" className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{t.labelDate}</label>
             <div className="relative">
+              <input 
                 id="booking-date"
                 type="date" 
                 value={formData.date}
