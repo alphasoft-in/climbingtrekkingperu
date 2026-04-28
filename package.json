@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize-images": "tsx scripts/optimize_images.ts"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.4",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }
