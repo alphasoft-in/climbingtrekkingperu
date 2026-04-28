@@ -25,3 +25,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Fix for date picker icon visibility in dark inputs */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}

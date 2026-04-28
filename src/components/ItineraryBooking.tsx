@@ -74,12 +74,6 @@ const ItineraryBooking: React.FC<ItineraryBookingProps> = ({
           <div className="flex flex-col gap-2.5">
             <label className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{t.labelDate}</label>
             <div className="relative">
-              <style>{`
-                input[type="date"]::-webkit-calendar-picker-indicator {
-                  filter: invert(1);
-                  cursor: pointer;
-                }
-              `}</style>
               <input 
                 type="date" 
                 value={formData.date}
