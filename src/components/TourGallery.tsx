@@ -90,6 +90,7 @@ const TourGallery: React.FC<TourGalleryProps> = ({
           <button 
             className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-brand-red transition-all z-[100000] p-4 bg-white/5 md:bg-transparent rounded-full"
             onClick={closeLightbox}
+            aria-label={lang === 'es' ? "Cerrar galería" : "Close gallery"}
           >
             <svg viewBox="0 0 24 24" className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M18 6L6 18M6 6l12 12" />
@@ -100,6 +101,7 @@ const TourGallery: React.FC<TourGalleryProps> = ({
           <button 
             className="absolute left-2 md:left-12 text-white/40 hover:text-brand-blue transition-all z-[100000] p-4 active:scale-95 touch-manipulation"
             onClick={prevImage}
+            aria-label={lang === 'es' ? "Imagen anterior" : "Previous image"}
           >
             <svg viewBox="0 0 24 24" className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M15 18l-6-6 6-6" />
@@ -109,6 +111,7 @@ const TourGallery: React.FC<TourGalleryProps> = ({
           <button 
             className="absolute right-2 md:right-12 text-white/40 hover:text-brand-blue transition-all z-[100000] p-4 active:scale-95 touch-manipulation"
             onClick={nextImage}
+            aria-label={lang === 'es' ? "Siguiente imagen" : "Next image"}
           >
             <svg viewBox="0 0 24 24" className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 18l6-6-6-6" />

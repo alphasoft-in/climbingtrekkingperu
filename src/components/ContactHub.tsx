@@ -105,7 +105,7 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
                     <svg className="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                   </div>
                   <div>
-                    <h4 className="text-[10px] font-black text-slate-400 tracking-widest uppercase mb-1">{isEs ? 'UBICACIÓN' : 'LOCATION'}</h4>
+                    <h3 className="text-[10px] font-black text-slate-400 tracking-widest uppercase mb-1">{isEs ? 'UBICACIÓN' : 'LOCATION'}</h3>
                     <p className="text-sm font-bold text-slate-800 leading-tight">
                       Jr. Trinitarias S/N, Pasaje Sarita Colonia 191 <br/> 2do Piso, Huaraz - Ancash.
                     </p>
@@ -118,9 +118,9 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
                     <svg className="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                   </div>
                   <div>
-                    <h4 className="text-[10px] font-black text-slate-400 tracking-widest uppercase mb-1">{isEs ? 'EMAIL' : 'EMAIL'}</h4>
-                    <a href="mailto:info@franpiscoadventure.com" className="text-sm font-bold text-brand-blue hover:underline">
-                      info@franpiscoadventure.com
+                    <h3 className="text-[10px] font-black text-slate-400 tracking-widest uppercase mb-1">{isEs ? 'EMAIL' : 'EMAIL'}</h3>
+                    <a href="mailto:info@alpinetreksperu.com" className="text-sm font-bold text-brand-blue hover:underline">
+                      info@alpinetreksperu.com
                     </a>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
                     <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.506 0-9.989 4.478-9.99 9.984a9.965 9.965 0 001.333 4.993L2 22l5.133-1.347A9.946 9.946 0 0012.031 22c5.506 0 9.989-4.478 9.99-9.984a9.964 9.964 0 00-9.99-10.016zm4.923 14.152c-.214.603-1.248 1.162-1.724 1.233-.465.07-1.06.094-1.708-.115-.438-.141-1.019-.342-1.713-.644-2.992-1.298-4.927-4.315-5.077-4.517-.15-.203-1.085-1.442-1.085-2.753 0-1.31.684-1.955.93-2.223.246-.268.535-.335.712-.335.178 0 .355.003.508.01.165.007.387-.062.607.469.214.517.734 1.79.797 1.92.063.13.105.281.02.45-.084.17-.127.276-.252.421-.125.145-.262.324-.374.433-.125.122-.256.255-.11.503.146.248.65 1.072 1.396 1.734.96.852 1.768 1.116 2.023 1.243.254.127.403.106.553-.066.15-.171.644-.75.815-1.006.17-.256.342-.214.577-.127.235.087 1.488.702 1.745.83.256.128.427.192.49.3.063.108.063.626-.15 1.229z"/></svg>
                   </div>
                   <div>
-                    <h4 className="text-[10px] font-black text-slate-400 tracking-widest uppercase mb-1">{isEs ? 'WHATSAPP' : 'WHATSAPP'}</h4>
+                    <h3 className="text-[10px] font-black text-slate-400 tracking-widest uppercase mb-1">{isEs ? 'WHATSAPP' : 'WHATSAPP'}</h3>
                     <a href="https://wa.me/51962421830" className="text-sm font-bold text-slate-800">
                       +51 962 421 830
                     </a>
@@ -162,8 +162,9 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'NOMBRE' : 'NAME'}</label>
+                    <label htmlFor="contact-name" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'NOMBRE' : 'NAME'}</label>
                     <input 
+                      id="contact-name"
                       type="text" 
                       name="name"
                       required
@@ -174,8 +175,9 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'EMAIL' : 'EMAIL'}</label>
+                    <label htmlFor="contact-email" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'EMAIL' : 'EMAIL'}</label>
                     <input 
+                      id="contact-email"
                       type="email" 
                       name="email"
                       required
@@ -188,8 +190,9 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'ASUNTO' : 'SUBJECT'}</label>
+                  <label htmlFor="contact-subject" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'ASUNTO' : 'SUBJECT'}</label>
                   <input 
+                    id="contact-subject"
                     type="text" 
                     name="subject"
                     required
@@ -201,8 +204,9 @@ const ContactForm: React.FC<{ lang: 'es' | 'en', isEs: boolean }> = ({ lang, isE
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'MENSAJE' : 'MESSAGE'}</label>
+                  <label htmlFor="contact-message" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{isEs ? 'MENSAJE' : 'MESSAGE'}</label>
                   <textarea 
+                    id="contact-message"
                     name="message"
                     required
                     rows={5}

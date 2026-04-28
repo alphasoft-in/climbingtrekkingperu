@@ -49,7 +49,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
 
         {/* Dietary Badges */}
         <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-20">
-          <span className="text-[10px] font-black tracking-widest text-brand-dark/40 uppercase mr-4 w-full text-center md:w-auto mb-4 md:mb-0">
+          <span className="text-[10px] font-black tracking-widest text-brand-dark/70 uppercase mr-4 w-full text-center md:w-auto mb-4 md:mb-0">
             {data.dietary.label}
           </span>
           {data.dietary.options.map((opt, idx) => (
@@ -63,7 +63,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
           {data.programs.map((prog, idx) => (
             <div key={idx} className="bg-slate-50 p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-200">
-              <span className="inline-block text-brand-blue text-[10px] font-black tracking-[0.2em] mb-6">
+              <span className="inline-block text-[#0078ab] text-[10px] font-black tracking-[0.2em] mb-6">
                 {prog.unit}
               </span>
               <h3 className="text-brand-dark text-lg md:text-xl font-black uppercase tracking-wider mb-6">
@@ -85,7 +85,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {/* Dinner Card (Spans 2 columns on large+) */}
           <div className="xl:col-span-2 bg-slate-50 p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-200">
-            <span className="inline-block text-brand-blue text-[10px] font-black tracking-[0.2em] mb-6">
+            <span className="inline-block text-[#0078ab] text-[10px] font-black tracking-[0.2em] mb-6">
               {data.dinner.unit}
             </span>
             <h3 className="text-brand-dark text-lg md:text-xl font-black uppercase tracking-wider mb-6">
@@ -96,7 +96,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
             <div className="grid sm:grid-cols-2 gap-10">
               {data.dinner.groups.map((group, idx) => (
                 <div key={idx}>
-                  <span className="block text-[10px] font-black tracking-[0.2em] text-brand-blue/50 uppercase mb-6">
+                    <span className="block text-[10px] font-black tracking-[0.2em] text-brand-blue/80 uppercase mb-6">
                     {group.label}
                   </span>
                   <ul className="space-y-4">
@@ -113,7 +113,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
 
           {/* Dessert Card */}
           <div className="bg-slate-50 p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-200">
-            <span className="inline-block text-brand-blue text-[10px] font-black tracking-[0.2em] mb-6">
+            <span className="inline-block text-[#0078ab] text-[10px] font-black tracking-[0.2em] mb-6">
               {data.dessert.unit}
             </span>
             <h3 className="text-brand-dark text-lg md:text-xl font-black uppercase tracking-wider mb-6">

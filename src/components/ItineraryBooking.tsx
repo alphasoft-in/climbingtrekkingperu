@@ -72,9 +72,9 @@ const ItineraryBooking: React.FC<ItineraryBookingProps> = ({
         
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col gap-2.5">
-            <label className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{t.labelDate}</label>
+            <label htmlFor="booking-date" className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{t.labelDate}</label>
             <div className="relative">
-              <input 
+                id="booking-date"
                 type="date" 
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
@@ -85,8 +85,9 @@ const ItineraryBooking: React.FC<ItineraryBookingProps> = ({
           </div>
 
           <div className="flex flex-col gap-2.5">
-            <label className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{t.labelName}</label>
+            <label htmlFor="booking-name" className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{t.labelName}</label>
             <input 
+              id="booking-name"
               type="text" 
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}

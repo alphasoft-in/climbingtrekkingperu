@@ -32,7 +32,7 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
             <h1 className="text-brand-dark text-3xl md:text-5xl font-black tracking-[0.15em] mb-4 leading-tight uppercase">
               {data.identity.name}
             </h1>
-            <p className="text-slate-400 text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase">
+            <p className="text-slate-500 text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase">
               {data.identity.type}
             </p>
             <div className="w-16 h-1 bg-brand-red mx-auto mt-10"></div>
@@ -40,7 +40,7 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-20">
             <div className="space-y-6">
-              <span className="inline-block bg-slate-100 text-brand-dark/40 text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-sm">
+              <span className="inline-block bg-slate-100 text-brand-dark/70 text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-sm">
                 {data.identity.regBadge}
               </span>
               <p className="text-brand-dark/80 text-base md:text-lg leading-relaxed font-medium">
@@ -49,7 +49,7 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
             </div>
 
             <div className="space-y-6">
-              <span className="inline-block bg-slate-100 text-brand-dark/40 text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-sm">
+              <span className="inline-block bg-slate-100 text-brand-dark/70 text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-sm">
                 {data.identity.netBadge}
               </span>
               <div className="space-y-6">
@@ -75,7 +75,7 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
             {data.pillars.map((pillar, idx) => (
               <div key={idx} className="group relative bg-[#fbfcfd] p-8 md:p-12 transition-all duration-700 hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-16">
-                  <span className="text-5xl font-black text-slate-100 group-hover:text-brand-blue/10 transition-colors duration-500">
+                  <span className="text-5xl font-black text-slate-300 group-hover:text-brand-blue/10 transition-colors duration-500">
                     {pillar.num}
                   </span>
                   <span className="text-3xl opacity-20 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
@@ -83,9 +83,9 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
                   </span>
                 </div>
                 
-                <h3 className="text-brand-dark text-sm font-black tracking-[0.25em] uppercase mb-5 leading-tight">
+                <h2 className="text-brand-dark text-sm font-black tracking-[0.25em] uppercase mb-5 leading-tight">
                   {pillar.title}
-                </h3>
+                </h2>
                 
                 <div className="w-8 h-[2px] bg-brand-red mb-8"></div>
                 

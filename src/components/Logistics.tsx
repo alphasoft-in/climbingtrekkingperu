@@ -48,12 +48,12 @@ const Logistics: React.FC<LogisticsProps> = ({ data }) => {
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full px-6 md:px-8 py-6 md:py-10 flex items-center gap-4 md:gap-8 text-left group"
               >
-                <span className={`text-3xl md:text-5xl font-black font-serif transition-colors duration-500 ${openIndex === idx ? 'text-brand-blue opacity-30' : 'text-slate-200'}`}>
+                <span className={`text-3xl md:text-5xl font-black font-serif transition-colors duration-500 ${openIndex === idx ? 'text-brand-blue opacity-30' : 'text-slate-400'}`}>
                   {item.num}
                 </span>
                 
                 <div className="flex-1 flex flex-col gap-1.5">
-                  <span className={`text-[10px] font-black tracking-[0.2em] uppercase transition-colors duration-500 ${openIndex === idx ? 'text-brand-blue' : 'text-slate-400'}`}>
+                  <span className={`text-[10px] font-black tracking-[0.2em] uppercase transition-colors duration-500 ${openIndex === idx ? 'text-[#0078ab]' : 'text-slate-600'}`}>
                     {item.category}
                   </span>
                   <h3 className="text-brand-dark text-base md:text-lg font-bold tracking-tight">

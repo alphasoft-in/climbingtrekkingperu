@@ -162,6 +162,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
             <button 
               className="absolute top-6 right-6 md:top-10 md:right-10 text-white transition-all duration-300 z-[110] bg-brand-red hover:bg-brand-red/80 p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(216,2,2,0.4)]"
               onClick={closeLightbox}
+              aria-label={lang === 'es' ? "Cerrar galería" : "Close gallery"}
             >
               <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M18 6L6 18M6 6l12 12" />
@@ -172,6 +173,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
             <button 
               className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/40 hover:text-white hover:scale-110 transition-all duration-300 z-[110] bg-white/5 hover:bg-white/10 p-4 rounded-full border border-white/5"
               onClick={(e) => { e.stopPropagation(); prevImage(); }}
+              aria-label={lang === 'es' ? "Imagen anterior" : "Previous image"}
             >
               <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="3">
                 <path d="M15 18l-6-6 6-6" />
@@ -181,6 +183,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
             <button 
               className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/40 hover:text-white hover:scale-110 transition-all duration-300 z-[110] bg-white/5 hover:bg-white/10 p-4 rounded-full border border-white/5"
               onClick={(e) => { e.stopPropagation(); nextImage(); }}
+              aria-label={lang === 'es' ? "Siguiente imagen" : "Next image"}
             >
               <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="3">
                 <path d="M9 18l6-6-6-6" />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaFacebookF, FaInstagram, FaTiktok, FaThreads } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaTiktok, FaThreads, FaYoutube } from 'react-icons/fa6';
 import { FaTripadvisor } from 'react-icons/fa';
 
 interface NavbarProps {
@@ -27,10 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMobileDrop, setActiveMobileDrop] = useState<string | null>(null);
-  const [isMounted, setIsMounted] = useState(false);
-
   useEffect(() => {
-    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
     };
@@ -275,7 +272,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={toggleMobileMenu}
               className="nav:hidden flex flex-col gap-[6px] sm:gap-[7px] bg-none border-none cursor-pointer group p-2 -mr-2"
-              aria-label="Menu"
+              aria-label={lang === 'es' ? "Menú" : "Menu"}
             >
               <span className={`w-6 sm:w-8 h-[2.5px] sm:h-[3px] transition-all duration-300 group-hover:w-5 ${isScrolled ? 'bg-white' : 'bg-brand-dark'}`}></span>
               <span className={`w-6 sm:w-8 h-[2.5px] sm:h-[3px] transition-all duration-300 ${isScrolled ? 'bg-white' : 'bg-brand-dark'}`}></span>
@@ -296,9 +293,9 @@ const Navbar: React.FC<NavbarProps> = ({
             <img src="/logo.avif" alt="ALPINE TREKS PERÚ" className="h-8 sm:h-10" />
             <button
               onClick={toggleMobileMenu}
-              className="group flex items-center gap-3 text-white text-[0.65rem] sm:text-[0.7rem] font-black tracking-[0.3em] opacity-60 hover:opacity-100 transition-all"
+              className="group flex items-center gap-3 text-white text-[0.65rem] sm:text-[0.7rem] font-black tracking-[0.3em] opacity-60 hover:opacity-100 transition-all uppercase"
             >
-              CERRAR
+              {labels.close}
               <div className="relative w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
                 <span className="absolute w-full h-[2px] bg-white rotate-45 group-hover:rotate-[135deg] transition-transform duration-500"></span>
                 <span className="absolute w-full h-[2px] bg-white -rotate-45 group-hover:rotate-[45deg] transition-transform duration-500"></span>
@@ -308,29 +305,29 @@ const Navbar: React.FC<NavbarProps> = ({
 
           <nav className="flex flex-col gap-4 sm:gap-6 items-center w-full">
             <div className="flex flex-col items-center gap-1 group">
-              <a href={lang === 'es' ? '/' : '/en'} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
-              {routeName === '' && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
+              <a href={lang === 'es' ? '/' : '/en'} className={`text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
+              {routeName === '' && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('about')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isAboutActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.about}</a>
-              {isAboutActive && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
+              <a href={getBaseUrl('about')} className={`text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isAboutActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.about}</a>
+              {isAboutActive && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
             
             {/* Mobile Dropdown: Trekking */}
             <div className="w-full flex flex-col items-center">
               <button
                 onClick={() => setActiveMobileDrop(activeMobileDrop === 'trekking' ? null : 'trekking')}
-                className={`flex items-center gap-2.5 text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isTrekkingActive || activeMobileDrop === 'trekking' ? 'text-brand-blue' : 'text-white/50'}`}
+                className={`flex items-center gap-2.5 text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isTrekkingActive || activeMobileDrop === 'trekking' ? 'text-brand-blue' : 'text-white/50'}`}
               >
                 {labels.trekking}
-                <svg className={`transition-transform duration-300 ${activeMobileDrop === 'trekking' ? 'rotate-180' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                <svg className={`transition-transform duration-300 ${activeMobileDrop === 'trekking' ? 'rotate-180' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m6 9 6 6 6-6"/></svg>
               </button>
-              <div className={`overflow-hidden transition-all duration-500 flex flex-col items-center gap-3 ${activeMobileDrop === 'trekking' ? 'max-h-60 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="w-4 h-[1px] bg-white/10 mb-1"></div>
-                <a href={getBaseUrl('trekking/huayhuash')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.huayhuash}</a>
-                <a href={getBaseUrl('trekking/blanca')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.blanca}</a>
-                <a href={getBaseUrl('trekking/cusco')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.cusco}</a>
+              <div className={`overflow-hidden transition-all duration-500 flex flex-col items-center gap-4 ${activeMobileDrop === 'trekking' ? 'max-h-64 mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="w-6 h-[1.5px] bg-white/10 mb-2"></div>
+                <a href={getBaseUrl('trekking/huayhuash')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName.includes('huayhuash') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.huayhuash}</a>
+                <a href={getBaseUrl('trekking/blanca')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName.includes('blanca') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.blanca}</a>
+                <a href={getBaseUrl('trekking/cusco')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName.includes('cusco') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.cusco}</a>
               </div>
             </div>
 
@@ -338,39 +335,39 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="w-full flex flex-col items-center">
               <button
                 onClick={() => setActiveMobileDrop(activeMobileDrop === 'dest' ? null : 'dest')}
-                className={`flex items-center gap-2.5 text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isDestinationsActive || activeMobileDrop === 'dest' ? 'text-brand-blue' : 'text-white/50'}`}
+                className={`flex items-center gap-2.5 text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isDestinationsActive || activeMobileDrop === 'dest' ? 'text-brand-blue' : 'text-white/50'}`}
               >
                 {labels.destinations}
-                <svg className={`transition-transform duration-300 ${activeMobileDrop === 'dest' ? 'rotate-180' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                <svg className={`transition-transform duration-300 ${activeMobileDrop === 'dest' ? 'rotate-180' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m6 9 6 6 6-6"/></svg>
               </button>
-              <div className={`overflow-hidden transition-all duration-500 flex flex-col items-center gap-3 ${activeMobileDrop === 'dest' ? 'max-h-80 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="w-4 h-[1px] bg-white/10 mb-1"></div>
-                <a href={getBaseUrl('peru')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.peru}</a>
-                <a href={getBaseUrl('bolivia')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.bolivia}</a>
-                <a href={getBaseUrl('ecuador')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.ecuador}</a>
-                <a href={getBaseUrl('chile')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.chile}</a>
-                <a href={getBaseUrl('argentina')} className="text-[0.75rem] sm:text-base font-normal text-white/60 hover:text-white transition-colors">{labels.argentina}</a>
+              <div className={`overflow-hidden transition-all duration-500 flex flex-col items-center gap-4 ${activeMobileDrop === 'dest' ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="w-6 h-[1.5px] bg-white/10 mb-2"></div>
+                <a href={getBaseUrl('peru')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'peru' || routeName.startsWith('peru/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.peru}</a>
+                <a href={getBaseUrl('bolivia')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'bolivia' || routeName.startsWith('bolivia/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.bolivia}</a>
+                <a href={getBaseUrl('ecuador')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'ecuador' || routeName.startsWith('ecuador/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.ecuador}</a>
+                <a href={getBaseUrl('chile')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'chile' || routeName.startsWith('chile/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.chile}</a>
+                <a href={getBaseUrl('argentina')} className={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'argentina' || routeName.startsWith('argentina/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.argentina}</a>
               </div>
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('climbing')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('climbing') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.climbing}</a>
-              {routeName.startsWith('climbing') && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
+              <a href={getBaseUrl('climbing')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('climbing') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.climbing}</a>
+              {routeName.startsWith('climbing') && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('tours')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
-              {isToursActive && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
+              <a href={getBaseUrl('tours')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
+              {isToursActive && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('gallery')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('gallery') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.gallery}</a>
-              {routeName.startsWith('gallery') && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10px_rgba(0,144,204,0.5)]"></div>}
+              <a href={getBaseUrl('gallery')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('gallery') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.gallery}</a>
+              {routeName.startsWith('gallery') && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('contact')} className={`text-[0.85rem] sm:text-[1.1rem] font-medium uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('contact') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.contact}</a>
-              {routeName.startsWith('contact') && <div className="w-6 h-[1.5px] bg-brand-blue rounded-full shadow-[0_0_10_rgba(0,144,204,0.5)]"></div>}
+              <a href={getBaseUrl('contact')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('contact') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.contact}</a>
+              {routeName.startsWith('contact') && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
           </nav>
 
@@ -381,7 +378,8 @@ const Navbar: React.FC<NavbarProps> = ({
                  { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: <FaInstagram className="w-5 h-5" /> },
                  { name: 'TikTok', url: 'https://www.tiktok.com/@franpiscoadventure', icon: <FaTiktok className="w-5 h-5" /> },
                  { name: 'TripAdvisor', url: 'https://www.tripadvisor.com.pe/Attraction_Review-g304039-d12096967-Reviews-Franpisco_Adventure-Huaraz_Ancash_Region.html', icon: <FaTripadvisor className="w-5 h-5" /> },
-                 { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: <FaThreads className="w-5 h-5" /> }
+                 { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: <FaThreads className="w-5 h-5" /> },
+                 { name: 'YouTube', url: 'https://www.youtube.com/@franpiscoadventure', icon: <FaYoutube className="w-5 h-5" /> }
                ].map((social) => (
                  <a 
                    key={social.name}

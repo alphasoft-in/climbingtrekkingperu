@@ -72,9 +72,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ data }) => {
 
               {/* Info */}
               <div className="relative z-10">
-                <h4 className="text-white text-lg md:text-xl font-bold tracking-tight mb-2 leading-tight group-hover:text-brand-blue transition-colors duration-500">
+                <h3 className="text-white text-lg md:text-xl font-bold tracking-tight mb-2 leading-tight group-hover:text-brand-blue transition-colors duration-500">
                   {member.name}
-                </h4>
+                </h3>
 
                 <div className="w-8 h-[2px] bg-brand-red mx-auto mb-6 group-hover:w-16 transition-all duration-500"></div>
 

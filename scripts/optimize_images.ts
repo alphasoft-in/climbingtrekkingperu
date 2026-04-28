@@ -27,19 +27,48 @@ async function optimizeImages() {
 
   await walkDir(PUBLIC_DIR, async (filePath) => {
     const ext = path.extname(filePath).toLowerCase();
+    
+    // Convertir de JPG/PNG a AVIF
     if (EXTENSIONS.includes(ext)) {
       const output = filePath.replace(ext, '.avif');
-      
-      // Solo convertir si el AVIF no existe o el original es más nuevo
       if (!fs.existsSync(output) || fs.statSync(filePath).mtime > fs.statSync(output).mtime) {
         try {
           await sharp(filePath)
-            .avif({ quality: 65, effort: 6 }) // Balance calidad/peso óptimo
+            .resize({ width: 2000, withoutEnlargement: true }) // Evitar imágenes gigantes
+            .avif({ quality: 60, effort: 6 })
             .toFile(output);
           console.log(`✅ Convertido: ${filePath} -> ${output}`);
           convertedCount++;
         } catch (err) {
           console.error(`❌ Error convirtiendo ${filePath}:`, err);
+        }
+      }
+    } 
+    
+    // Re-comprimir AVIF existentes si son muy pesados (>300KB)
+    else if (ext === '.avif') {
+      const stats = fs.statSync(filePath);
+      if (stats.size > 300 * 1024) { // 300KB threshold
+        try {
+          console.log(`📉 Re-comprimiendo AVIF pesado: ${filePath} (${Math.round(stats.size/1024)}KB)`);
+          const buffer = fs.readFileSync(filePath);
+          const metadata = await sharp(buffer).metadata();
+          
+          let pipeline = sharp(buffer);
+          if (metadata.width && metadata.width > 1920) {
+            pipeline = pipeline.resize(1920);
+          }
+          
+          await pipeline
+            .avif({ quality: 45, effort: 6 })
+            .toFile(filePath + '.tmp');
+            
+          fs.renameSync(filePath + '.tmp', filePath);
+          const newStats = fs.statSync(filePath);
+          console.log(`✨ Optimizado: ${Math.round(stats.size/1024)}KB -> ${Math.round(newStats.size/1024)}KB`);
+          convertedCount++;
+        } catch (err) {
+          console.error(`❌ Error optimizando AVIF ${filePath}:`, err);
         }
       }
     }

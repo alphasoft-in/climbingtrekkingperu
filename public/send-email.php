@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $recipient = "info@franpiscoadventure.com";
+    $recipient = "info@alpinetreksperu.com";
     $email_subject = "Consulta Web: $subject";
     
     $email_content = "Nombre: $name\n";

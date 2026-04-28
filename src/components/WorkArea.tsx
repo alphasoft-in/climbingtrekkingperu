@@ -41,9 +41,9 @@ const WorkArea: React.FC<WorkAreaProps> = ({ data }) => {
               <span className="inline-block text-brand-blue text-[10px] font-black tracking-[0.2em] mb-6 border-b-2 border-brand-blue/10 pb-1">
                 {unit.tag}
               </span>
-              <h4 className="text-brand-dark text-lg md:text-xl font-black uppercase tracking-wider mb-6">
+              <h3 className="text-brand-dark text-lg md:text-xl font-black uppercase tracking-wider mb-6">
                 {unit.title}
-              </h4>
+              </h3>
               
               {unit.desc ? (
                 <p className="text-slate-500 text-sm md:text-base leading-relaxed">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaTiktok, FaThreads } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaTiktok, FaThreads, FaYoutube } from 'react-icons/fa6';
 import { FaTripadvisor } from 'react-icons/fa';
 
 interface FooterProps {
@@ -50,7 +50,8 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
                 { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: <FaInstagram className="w-4 h-4" /> },
                 { name: 'TikTok', url: 'https://www.tiktok.com/@franpiscoadventure', icon: <FaTiktok className="w-4 h-4" /> },
                 { name: 'TripAdvisor', url: 'https://www.tripadvisor.com.pe/Attraction_Review-g304039-d12096967-Reviews-Franpisco_Adventure-Huaraz_Ancash_Region.html', icon: <FaTripadvisor className="w-4 h-4" /> },
-                { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: <FaThreads className="w-4 h-4" /> }
+                { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: <FaThreads className="w-4 h-4" /> },
+                { name: 'YouTube', url: 'https://www.youtube.com/@franpiscoadventure', icon: <FaYoutube className="w-4 h-4" /> }
               ].map((social) => (
                 <a 
                   key={social.name}
@@ -68,10 +69,10 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
 
           {/* Column 2: Navigation */}
           <div>
-            <h4 className="text-white text-xs font-black tracking-[0.3em] uppercase mb-10 relative inline-block">
+            <h3 className="text-white text-xs font-black tracking-[0.3em] uppercase mb-10 relative inline-block">
               {labels.navTitle}
               <span className="absolute -bottom-3 left-0 w-6 h-[2px] bg-brand-blue"></span>
-            </h4>
+            </h3>
             <ul className="space-y-4">
               {[
                 { label: labels.navHome, href: `${baseUrl}/` },
@@ -90,10 +91,10 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
 
           {/* Column 3: Legal */}
           <div>
-            <h4 className="text-white text-xs font-black tracking-[0.3em] uppercase mb-10 relative inline-block">
+            <h3 className="text-white text-xs font-black tracking-[0.3em] uppercase mb-10 relative inline-block">
               {labels.legalTitle}
               <span className="absolute -bottom-3 left-0 w-6 h-[2px] bg-brand-blue"></span>
-            </h4>
+            </h3>
             <ul className="space-y-4">
               {[
                 { label: labels.legalEthics, href: `${baseUrl}/ethics` },
@@ -113,10 +114,10 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="text-white text-xs font-black tracking-[0.3em] uppercase mb-10 relative inline-block">
+            <h3 className="text-white text-xs font-black tracking-[0.3em] uppercase mb-10 relative inline-block">
               {labels.contactTitle}
               <span className="absolute -bottom-3 left-0 w-6 h-[2px] bg-brand-blue"></span>
-            </h4>
+            </h3>
             <div className="space-y-8">
               <div className="flex gap-4">
                 <div className="w-8 h-8 rounded-sm bg-brand-red/10 flex items-center justify-center flex-shrink-0">
@@ -134,7 +135,7 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
                 </div>
                 <div className="text-xs font-medium leading-relaxed">
                   <span className="block text-brand-blue text-[8px] font-black tracking-widest uppercase mb-1">{isEs ? 'COMUNICACIÓN' : 'COMMUNICATION'}</span>
-                  <a href="mailto:info@franpiscoadventure.com" className="text-slate-300 hover:text-white transition-colors">info@franpiscoadventure.com</a>
+                  <a href="mailto:info@alpinetreksperu.com" className="text-slate-300 hover:text-white transition-colors">info@alpinetreksperu.com</a>
                 </div>
               </div>
 

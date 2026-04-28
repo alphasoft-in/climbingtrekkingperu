@@ -42,7 +42,7 @@ const EthicsBento: React.FC<EthicsBentoProps> = ({ data }) => {
           <h2 className="text-brand-dark text-2xl md:text-3xl font-black tracking-[0.2em] uppercase mb-4">
             {data.header.title}
           </h2>
-          <p className="text-brand-blue/60 text-[10px] md:text-xs font-black tracking-[0.4em] uppercase mb-8">
+          <p className="text-brand-blue text-[10px] md:text-xs font-black tracking-[0.4em] uppercase mb-8">
             {data.header.subtitle}
           </p>
           <div className="w-16 h-1 bg-brand-red mx-auto mb-10"></div>
@@ -86,7 +86,7 @@ const EthicsBento: React.FC<EthicsBentoProps> = ({ data }) => {
                     <span className="text-brand-dark font-black tracking-widest text-sm uppercase">
                       {item.signature?.name}
                     </span>
-                    <span className="text-slate-400 font-bold tracking-widest text-[10px] uppercase">
+                    <span className="text-slate-600 font-bold tracking-widest text-[10px] uppercase">
                       {item.signature?.rank}
                     </span>
                   </div>

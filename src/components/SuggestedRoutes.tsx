@@ -9,18 +9,22 @@ interface SuggestedRoutesProps {
 
 const SuggestedRoutes: React.FC<SuggestedRoutesProps> = ({ lang, currentId }) => {
   const isEs = lang === 'es';
+  const [recommended, setRecommended] = React.useState<typeof toursData>([]);
 
-  const recommended = toursData
-    .filter(p => p.id !== currentId)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 4);
+  React.useEffect(() => {
+    const shuffled = toursData
+      .filter(p => p.id !== currentId)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4);
+    setRecommended(shuffled);
+  }, [currentId]);
 
   return (
     <section className="bg-[#fafafa] pt-16 md:pt-24 pb-24 md:pb-32 px-6 text-slate-900">
       <div className="max-w-[1600px] mx-auto">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
-          <span className="text-brand-blue text-[9px] font-black tracking-[0.4em] uppercase mb-3 block">
+          <span className="text-[#0078ab] text-[9px] font-black tracking-[0.4em] uppercase mb-3 block">
             {isEs ? 'CONTINUAR LA EXPEDICIÓN' : 'CONTINUE THE EXPEDITION'}
           </span>
           <div className="inline-flex items-center gap-4">
