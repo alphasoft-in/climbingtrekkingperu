@@ -282,7 +282,6 @@ const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
         </div>
-        </div>
       </header>
 
       {/* Full Menu Overlay (Mobile) */}
