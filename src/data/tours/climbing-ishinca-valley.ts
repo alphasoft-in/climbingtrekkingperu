@@ -18,8 +18,8 @@ export const climbingIshincaValleyData = {
       titleAccent: "los Gigantes",
       description: "El valle de Ishinca permite un ascenso progresivo ideal. Urus e Ishinca sirven de aclimatación perfecta antes del desafío técnico del Tocllaraju (6030m).",
       image: "/tocllaraju/tocllaraju.avif",
-      lat: `09° 20' 52" S`,
-      lon: `77° 19' 26" W`,
+      lat: '09° 20\' 52" S',
+      lon: '77° 19\' 26" W',
       specs: [
         { label: "PUNTO MÁXIMO", value: "6,030 MSNM", icon: "location" },
         { label: "TIPO", value: "Trilogía de Cumbres", icon: "zone" },
@@ -96,8 +96,8 @@ export const climbingIshincaValleyData = {
       titleAccent: "the Giants",
       description: "The Ishinca valley allows for an ideal progressive ascent. Urus and Ishinca serve as perfect acclimatization before the technical challenge of Tocllaraju (6030m).",
       image: "/tocllaraju/tocllaraju.avif",
-      lat: `09° 20' 52" S`,
-      lon: `77° 19' 26" W`,
+      lat: '09° 20\' 52" S',
+      lon: '77° 19\' 26" W',
       specs: [
         { label: "MAX POINT", value: "6,030 MASL", icon: "location" },
         { label: "TYPE", value: "Summit Trilogy", icon: "zone" },

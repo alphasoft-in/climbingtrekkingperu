@@ -18,8 +18,8 @@ export const culturalLimaCityData = {
       titleAccent: "Ancestral & Colonial",
       description: "Conozca Lima, Perú en sus tres períodos históricos: Ancestral, Colonial y Contemporáneo. Iniciamos con la mística Huaca Pucllana, centro ceremonial del siglo IV D.C. Continuamos por el Centro Histórico con más de cincuenta monumentos coloniales, destacando la Basílica Catedral y el Convento de San Francisco con sus famosas Catacumbas. Finalmente, visitamos las zonas residenciales de San Isidro y Miraflores con vistas espectaculares al Pacífico.",
       image: "/peru/lima.avif",
-      lat: `12° 02' 35" S`,
-      lon: `77° 01' 42" W`,
+      lat: '12° 02\' 35" S',
+      lon: '77° 01\' 42" W',
       specs: [
         { label: 'SALIDAS', value: '09:15 y 14:15', icon: 'location' },
         { label: 'HISTORIA', value: '3 Épocas', icon: 'zone' },
@@ -86,8 +86,8 @@ export const culturalLimaCityData = {
       titleAccent: "Ancestral & Colonial",
       description: "Explore Lima through its three historical periods: Ancestral, Colonial, and Contemporary. We start with the mystical Huaca Pucllana, a ceremonial center from the 4th century A.D. We continue through the Historic Center with over fifty colonial monuments, highlighting the Cathedral and the Convent of San Francisco with its famous Catacombs. Finally, we visit the residential areas of San Isidro and Miraflores with spectacular views of the Pacific.",
       image: "/peru/lima.avif",
-      lat: `12° 02' 35" S`,
-      lon: `77° 01' 42" W`,
+      lat: '12° 02\' 35" S',
+      lon: '77° 01\' 42" W',
       specs: [
         { label: 'DEPARTURES', value: '09:15 and 14:15', icon: 'location' },
         { label: 'HISTORY', value: '3 Periods', icon: 'zone' },

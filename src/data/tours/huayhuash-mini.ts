@@ -18,8 +18,8 @@ export const huayhuashMiniData = {
       titleAccent: "Andina",
       description: "Este itinerario compacto selecciona los puntos más impactantes del circuito Huayhuash, cruzando pasos de más de 5,000 metros y concluyendo en el histórico pueblo de Cajatambo.",
       image: "/trekking/huayhuash/mini.avif",
-      lat: `10° 20' 05" S`,
-      lon: `76° 59' 12" W`,
+      lat: '10° 20\' 05" S',
+      lon: '76° 59\' 12" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Huaraz, Perú", icon: "location" },
         { label: "ZONAS TÉCNICAS", value: "Ancash, Huánuco, Lima", icon: "zone" },
@@ -90,8 +90,8 @@ export const huayhuashMiniData = {
       titleAccent: "Essence",
       description: "This compact itinerary selects the most impactful spots of the Huayhuash circuit, crossing passes over 5,000 meters and concluding in the historic town of Cajatambo.",
       image: "/trekking/huayhuash/mini.avif",
-      lat: `10° 20' 05" S`,
-      lon: `76° 59' 12" W`,
+      lat: '10° 20\' 05" S',
+      lon: '76° 59\' 12" W',
       specs: [
         { label: "START / LOGISTICS", value: "Huaraz, Peru", icon: "location" },
         { label: "TECHNICAL ZONES", value: "Ancash, Huánuco, Lima", icon: "zone" },

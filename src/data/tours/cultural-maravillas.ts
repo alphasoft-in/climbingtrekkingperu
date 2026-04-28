@@ -18,8 +18,8 @@ export const culturalMaravillasData = {
       titleAccent: "Sur Peruano",
       description: "Este es el viaje cultural y de aventura más completo del sur peruano. 17 días recorriendo Lima, Ica, Nazca, Arequipa, Puno y Cusco con servicio personalizado VIP. Desde el Oasis de Huacachina y las misteriosas Líneas de Nazca, hasta la majestuosidad de Machu Picchu y la Montaña de 7 Colores. Una inmersión profunda en la historia, gastronomía y paisajes de los Andes y la costa del Pacífico.",
       image: "/peru/viajes-vip.avif",
-      lat: `13° 09' 47" S`,
-      lon: `72° 32' 44" W`,
+      lat: '13° 09\' 47" S',
+      lon: '72° 32\' 44" W',
       specs: [
         { label: 'COSTO', value: 'USD. 2,465.00', icon: 'location' },
         { label: 'TIPO', value: 'Cultural & Aventura', icon: 'zone' },
@@ -91,8 +91,8 @@ export const culturalMaravillasData = {
       titleAccent: "South Peru",
       description: "This is the most comprehensive cultural and adventure trip in southern Peru. 17 days exploring Lima, Ica, Nazca, Arequipa, Puno, and Cusco with personalized VIP service. From the Huacachina Oasis and the mysterious Nazca Lines to the majesty of Machu Picchu and the 7 Colors Mountain. A deep immersion in the history, gastronomy, and landscapes of the Andes and the Pacific coast.",
       image: "/peru/viajes-vip.avif",
-      lat: `13° 09' 47" S`,
-      lon: `72° 32' 44" W`,
+      lat: '13° 09\' 47" S',
+      lon: '72° 32\' 44" W',
       specs: [
         { label: 'COST', value: 'USD. 2,465.00', icon: 'location' },
         { label: 'TYPE', value: 'Cultural & Adventure', icon: 'zone' },

@@ -18,8 +18,8 @@ export const boliviaIllimaniSajamaData = {
       titleAccent: "Bolivia",
       description: "Desafía las dos cumbres más emblemáticas de Bolivia: el majestuoso Illimani (6438m), guardián de La Paz, y el volcán Sajama (6542m), el punto más alto del país. Una expedición para montañistas que buscan el techo de los Andes bolivianos.",
       image: "/bolivia/illimani.avif",
-      lat: `18° 06' 00" S`,
-      lon: `68° 52' 00" W`,
+      lat: '18° 06\' 00" S',
+      lon: '68° 52\' 00" W',
       specs: [
         { label: 'COSTO', value: 'USD. 1,795.00', icon: 'location' },
         { label: 'CUMBRE MÁX', value: '6,542 MSNM', icon: 'zone' },
@@ -90,8 +90,8 @@ export const boliviaIllimaniSajamaData = {
       titleAccent: "Expedition",
       description: "Challenge the two most iconic peaks of Bolivia: the majestic Illimani (6438m), guardian of La Paz, and the Sajama volcano (6542m), the highest point in the country. An expedition for mountaineers seeking the roof of the Bolivian Andes.",
       image: "/bolivia/illimani.avif",
-      lat: `18° 06' 00" S`,
-      lon: `68° 52' 00" W`,
+      lat: '18° 06\' 00" S',
+      lon: '68° 52\' 00" W',
       specs: [
         { label: 'COST', value: 'USD. 1,795.00', icon: 'location' },
         { label: 'MAX SUMMIT', value: '6,542 MASL', icon: 'zone' },

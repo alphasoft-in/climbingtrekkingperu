@@ -18,8 +18,8 @@ export const huayhuashClassicData = {
       titleAccent: "Legendaria",
       description: "Este circuito concentra los paisajes más icónicos de la Cordillera Huayhuash iniciando desde Queropalca. Ideal para quienes buscan la máxima belleza escénica en un itinerario optimizado.",
       image: "/trekking/huayhuash/clasico.avif",
-      lat: `9° 58' 21" S`,
-      lon: `76° 54' 42" W`,
+      lat: '9° 58\' 21" S',
+      lon: '76° 54\' 42" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Queropalca, Perú", icon: "location" },
         { label: "ZONAS TÉCNICAS", value: "Ancash, Huánuco, Lima", icon: "zone" },
@@ -93,8 +93,8 @@ export const huayhuashClassicData = {
       titleAccent: "Route",
       description: "This circuit concentrates the most iconic landscapes of the Cordillera Huayhuash starting from Queropalca. Ideal for those looking for maximum scenic beauty in an optimized itinerary.",
       image: "/trekking/huayhuash/clasico.avif",
-      lat: `9° 58' 21" S`,
-      lon: `76° 54' 42" W`,
+      lat: '9° 58\' 21" S',
+      lon: '76° 54\' 42" W',
       specs: [
         { label: "START / LOGISTICS", value: "Queropalca, Peru", icon: "location" },
         { label: "TECHNICAL ZONES", value: "Ancash, Huánuco, Lima", icon: "zone" },

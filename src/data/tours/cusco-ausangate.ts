@@ -18,8 +18,8 @@ export const cuscoAusangateData = {
       titleAccent: "Cusco",
       description: "Ausangate es el Apu más importante del sur andino. Esta ruta te lleva por faldas glaciares y lagunas de colores vibrantes, conectando de forma épica con la Montaña de 7 Colores. Un desafío de altura con paisajes que parecen de otro mundo.",
       image: "/peru/bg-ausangate.avif",
-      lat: `13° 47' 18" S`,
-      lon: `71° 13' 52" W`,
+      lat: '13° 47\' 18" S',
+      lon: '71° 13\' 52" W',
       specs: [
         { label: 'COSTO', value: 'USD. 695.00', icon: 'location' },
         { label: 'ALTURA MÁX', value: '5,200 MSNM', icon: 'zone' },
@@ -99,8 +99,8 @@ export const cuscoAusangateData = {
       titleAccent: "Adventure",
       description: "Ausangate is the most important Apu in the southern Andes. This route takes you through glacial slopes and vibrant lagoons, epically connecting with the 7 Colors Mountain. A high-altitude challenge with landscapes that seem out of this world.",
       image: "/peru/bg-ausangate.avif",
-      lat: `13° 47' 18" S`,
-      lon: `71° 13' 52" W`,
+      lat: '13° 47\' 18" S',
+      lon: '71° 13\' 52" W',
       specs: [
         { label: 'COST', value: 'USD. 695.00', icon: 'location' },
         { label: 'MAX ALT', value: '5,200 MASL', icon: 'zone' },

@@ -18,8 +18,8 @@ export const boliviaApolobambaData = {
       titleAccent: "Místico",
       description: "Explore la cordillera más remota y mística de Bolivia. Tierra de los Kallawayas y cumbres vírgenes. Una expedición de 8 días al corazón de lo desconocido.",
       image: "/tours/apolobamba.avif",
-      lat: `14° 39' 00" S`,
-      lon: `69° 14' 00" W`,
+      lat: '14° 39\' 00" S',
+      lon: '69° 14\' 00" W',
       specs: [
         { label: 'REGIÓN', value: 'Apolobamba', icon: 'location' },
         { label: 'CUMBRE', value: '6000 MSNM', icon: 'zone' },
@@ -84,8 +84,8 @@ export const boliviaApolobambaData = {
       titleAccent: "North",
       description: "Explore Bolivia's most remote and mystical mountain range. Land of the Kallawayas and untouched summits. An 8-day expedition into the heart of the unknown.",
       image: "/tours/apolobamba.avif",
-      lat: `14° 39' 00" S`,
-      lon: `69° 14' 00" W`,
+      lat: '14° 39\' 00" S',
+      lon: '69° 14\' 00" W',
       specs: [
         { label: 'REGION', value: 'Apolobamba', icon: 'location' },
         { label: 'SUMMIT', value: '6000 MASL', icon: 'zone' },

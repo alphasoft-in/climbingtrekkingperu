@@ -18,8 +18,8 @@ export const culturalChacasData = {
       titleAccent: "Alturas",
       description: "Un viaje espectacular que cruza la Cordillera Blanca por el túnel vehicular más alto del mundo (Punta Olímpica 4,736 msnm). Visitaremos Chacas, pueblo famoso por su arquitectura colonial y sus talleres de tallado en madera de la Operación Mato Grosso.",
       image: "/tours/cancaraca.avif",
-      lat: `09° 09' 00" S`,
-      lon: `77° 21' 00" W`,
+      lat: '09° 09\' 00" S',
+      lon: '77° 21\' 00" W',
       specs: [
         { label: 'ELEVACIÓN', value: '4,736 MSNM', icon: 'location' },
         { label: 'TÚNEL', value: 'Punta Olímpica', icon: 'zone' },
@@ -71,8 +71,8 @@ export const culturalChacasData = {
       titleAccent: "Heights",
       description: "A spectacular journey crossing the Cordillera Blanca through the world's highest vehicular tunnel (Punta Olímpica 4,736 masl). We will visit Chacas, a town famous for its colonial architecture and its wood carving workshops of the Operation Mato Grosso.",
       image: "/tours/cancaraca.avif",
-      lat: `09° 09' 00" S`,
-      lon: `77° 21' 00" W`,
+      lat: '09° 09\' 00" S',
+      lon: '77° 21\' 00" W',
       specs: [
         { label: 'ELEVATION', value: '4,736 MASL', icon: 'location' },
         { label: 'TUNNEL', value: 'Olympic Point', icon: 'zone' },

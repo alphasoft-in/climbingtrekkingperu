@@ -18,8 +18,8 @@ export const boliviaVolcanesData = {
       titleAccent: "Volcanes",
       description: "Explora los gigantes de la Cordillera Occidental: Acotango (6052m), Pomerape (6280m) y Parinacota (6332m). Ubicados en el Parque Nacional Sajama, estos volcanes ofrecen paisajes desérticos únicos, géiseres y aguas termales.",
       image: "/bolivia/acotango.avif",
-      lat: `18° 06' 00" S`,
-      lon: `68° 52' 00" W`,
+      lat: '18° 06\' 00" S',
+      lon: '68° 52\' 00" W',
       specs: [
         { label: 'COSTO', value: 'USD. 1,895.00', icon: 'location' },
         { label: 'CUMBRES', value: '3 Volcanes 6000+', icon: 'zone' },
@@ -82,8 +82,8 @@ export const boliviaVolcanesData = {
       titleAccent: "Expedition",
       description: "Explore the giants of the Western Cordillera: Acotango (6052m), Pomerape (6280m), and Parinacota (6332m). Located in the Sajama National Park, these volcanoes offer unique desert landscapes, geysers, and hot springs.",
       image: "/bolivia/acotango.avif",
-      lat: `18° 06' 00" S`,
-      lon: `68° 52' 00" W`,
+      lat: '18° 06\' 00" S',
+      lon: '68° 52\' 00" W',
       specs: [
         { label: 'COST', value: 'USD. 1,895.00', icon: 'location' },
         { label: 'SUMMITS', value: '3 Volcanes 6000+', icon: 'zone' },

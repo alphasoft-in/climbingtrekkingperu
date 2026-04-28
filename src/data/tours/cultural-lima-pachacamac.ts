@@ -18,8 +18,8 @@ export const culturalLimaPachacamacData = {
       titleAccent: "y la Ciudad",
       description: "Este tour integral nos lleva a través de las tres épocas de Lima (Ancestral, Colonial y Contemporánea) y culmina en el místico Santuario de Pachacamac. Desde la Huaca Pucllana y el Centro Histórico con sus Catacumbas, hasta Barranco y la Costa Verde, para finalmente explorar la ciudadela del Dios creador del universo, donde miles de peregrinos consultaban al oráculo.",
       image: "/peru/pachacamac.avif",
-      lat: `12° 15' 32" S`,
-      lon: `76° 54' 00" W`,
+      lat: '12° 15\' 32" S',
+      lon: '76° 54\' 00" W',
       specs: [
         { label: 'SALIDAS', value: 'Martes a Sábado', icon: 'location' },
         { label: 'DURACIÓN', value: '8 Horas', icon: 'zone' },
@@ -87,8 +87,8 @@ export const culturalLimaPachacamacData = {
       titleAccent: "and the City",
       description: "This comprehensive tour takes us through the three eras of Lima (Ancestral, Colonial, and Contemporary) and culminates at the mystical Sanctuary of Pachacamac. From Huaca Pucllana and the Historic Center with its Catacombs, to Barranco and the Costa Verde, finally exploring the citadel of the Creator God of the universe, where thousands of pilgrims consulted the oracle.",
       image: "/peru/pachacamac.avif",
-      lat: `12° 15' 32" S`,
-      lon: `76° 54' 00" W`,
+      lat: '12° 15\' 32" S',
+      lon: '76° 54\' 00" W',
       specs: [
         { label: 'DEPARTURES', value: 'Tuesday to Saturday', icon: 'location' },
         { label: 'DURATION', value: '8 Hours', icon: 'zone' },

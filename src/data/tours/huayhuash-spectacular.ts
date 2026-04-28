@@ -18,8 +18,8 @@ export const huayhuashSpectacularData = {
       titleAccent: "Supremo",
       description: "Esta es nuestra ruta más completa y exclusiva. 15 días de inmersión total en la Cordillera Huayhuash, incluyendo el mirador Cero Gran Vista frente al Siula Grande y servicios logísticos de nivel superior.",
       image: "/trekking/huayhuash/espectacular/1.avif",
-      lat: `10° 17' 22" S`,
-      lon: `76° 54' 01" W`,
+      lat: '10° 17\' 22" S',
+      lon: '76° 54\' 01" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Lima / Huaraz, Perú", icon: "location" },
         { label: "PUNTOS CLAVE", value: "Cero Gran Vista, Santa Rosa", icon: "zone" },
@@ -99,8 +99,8 @@ export const huayhuashSpectacularData = {
       titleAccent: "Circuit",
       description: "This is our most complete and exclusive route. 15 days of total immersion in the Cordillera Huayhuash, including the Cero Gran Vista lookout facing Siula Grande and superior logistics services.",
       image: "/trekking/huayhuash/espectacular/1.avif",
-      lat: `10° 17' 22" S`,
-      lon: `76° 54' 01" W`,
+      lat: '10° 17\' 22" S',
+      lon: '76° 54\' 01" W',
       specs: [
         { label: "START / LOGISTICS", value: "Lima / Huaraz, Peru", icon: "location" },
         { label: "KEY POINTS", value: "Cero Gran Vista, Santa Rosa", icon: "zone" },

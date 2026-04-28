@@ -18,8 +18,8 @@ export const culturalIcaParacasData = {
       titleAccent: "Sol y Pisco",
       description: "Ubicada a 300 km al sur de Lima, Ica es un paraíso de sol eterno. Desde el místico Oasis de Huacachina y sus leyendas, hasta la biodiversidad marina de Paracas y los enigmáticos geoglifos de Nazca. Descubre la cuna del Pisco peruano y la aventura profunda del Cañón de los Perdidos en una región donde el desierto cobra vida.",
       image: "/peru/ica.avif",
-      lat: `14° 04' 00" S`,
-      lon: `75° 43' 00" W`,
+      lat: '14° 04\' 00" S',
+      lon: '75° 43\' 00" W',
       specs: [
         { label: 'ÁREA', value: 'Costa Sur', icon: 'location' },
         { label: 'DESTACADOS', value: 'Paracas y Nazca', icon: 'zone' },
@@ -79,8 +79,8 @@ export const culturalIcaParacasData = {
       titleAccent: "Sun and Pisco",
       description: "Located 300 km south of Lima, Ica is a paradise of eternal sun. From the mystical Huacachina Oasis and its legends, to the marine biodiversity of Paracas and the enigmatic Nazca geoglyphs. Discover the cradle of Peruvian Pisco and the deep adventure of the Canyon of the Lost in a region where the desert comes to life.",
       image: "/peru/ica.avif",
-      lat: `14° 04' 00" S`,
-      lon: `75° 43' 00" W`,
+      lat: '14° 04\' 00" S',
+      lon: '75° 43\' 00" W',
       specs: [
         { label: 'AREA', value: 'South Coast', icon: 'location' },
         { label: 'HIGHLIGHTS', value: 'Paracas and Nazca', icon: 'zone' },

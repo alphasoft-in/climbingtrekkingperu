@@ -18,8 +18,8 @@ export const cuscoCaminoIncaData = {
       titleAccent: "Cultural",
       description: "El Camino Inca es la ruta de senderismo más legendaria de América. Un viaje a través del tiempo que atraviesa bosques de queñuales, pasos de montaña a 4200m y senderos originales de granito blanco, culminando en la majestuosa Puerta del Sol con vista a Machu Picchu.",
       image: "/trekking/cusco/camino-inca.avif",
-      lat: `13° 13' 35" S`,
-      lon: `72° 32' 59" W`,
+      lat: '13° 13\' 35" S',
+      lon: '72° 32\' 59" W',
       specs: [
         { label: 'COSTO', value: 'USD. 1,595.00', icon: 'location' },
         { label: 'DURACIÓN', value: '4 Días / 3 Noches', icon: 'zone' },
@@ -101,8 +101,8 @@ export const cuscoCaminoIncaData = {
       titleAccent: "Trekking",
       description: "The Inca Trail is the most legendary hiking route in America. A journey through time crossing queñual forests, mountain passes at 4200m, and original white granite paths, culminating at the majestic Sun Gate overlooking Machu Picchu.",
       image: "/trekking/cusco/camino-inca.avif",
-      lat: `13° 13' 35" S`,
-      lon: `72° 32' 59" W`,
+      lat: '13° 13\' 35" S',
+      lon: '72° 32\' 59" W',
       specs: [
         { label: 'COST', value: 'USD. 1,595.00', icon: 'location' },
         { label: 'DURATION', value: '4 Days / 3 Nights', icon: 'zone' },

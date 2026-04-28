@@ -18,8 +18,8 @@ export const boliviaUyuniHuaynaData = {
       titleAccent: "Bolivia",
       description: "Combina la maravilla natural del Salar de Uyuni, la salina más grande del mundo, con el desafío de alcanzar los 6088m de la montaña Huayna Potosí. Una experiencia única que une desierto de sal y glaciares eternos.",
       image: "/bolivia/uyuni.avif",
-      lat: `20° 08' 01" S`,
-      lon: `67° 29' 20" W`,
+      lat: '20° 08\' 01" S',
+      lon: '67° 29\' 20" W',
       specs: [
         { label: 'COSTO', value: 'USD. 995.00', icon: 'location' },
         { label: 'CUMBRE MÁX', value: '6,088 MSNM', icon: 'zone' },
@@ -86,8 +86,8 @@ export const boliviaUyuniHuaynaData = {
       titleAccent: "Adventure",
       description: "Combine the natural wonder of Salar de Uyuni, the world's largest salt flat, with the challenge of reaching the 6088m of Mt. Huayna Potosi. A unique experience that joins salt desert and eternal glaciers.",
       image: "/bolivia/uyuni.avif",
-      lat: `20° 08' 01" S`,
-      lon: `67° 29' 20" W`,
+      lat: '20° 08\' 01" S',
+      lon: '67° 29\' 20" W',
       specs: [
         { label: 'COST', value: 'USD. 995.00', icon: 'location' },
         { label: 'MAX SUMMIT', value: '6,088 MASL', icon: 'zone' },

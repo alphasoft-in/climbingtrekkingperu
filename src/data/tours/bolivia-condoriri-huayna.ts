@@ -18,8 +18,8 @@ export const boliviaCondoririHuaynaData = {
       titleAccent: "Bolivia",
       description: "Bolivia es el corazón de los Andes. Esta expedición de 11 días combina la aclimatación en el Lago Titicaca con la ascensión a picos emblemáticos como el Pico Austria, Tarija, Pequeño Alpamayo y el gigante Huayna Potosí (6088m).",
       image: "/bolivia/condoriri.avif",
-      lat: `16° 10' 11" S`,
-      lon: `68° 14' 00" W`,
+      lat: '16° 10\' 11" S',
+      lon: '68° 14\' 00" W',
       specs: [
         { label: 'COSTO', value: 'USD. 995.00', icon: 'location' },
         { label: 'CUMBRE MÁX', value: '6,088 MSNM', icon: 'zone' },
@@ -88,8 +88,8 @@ export const boliviaCondoririHuaynaData = {
       titleAccent: "Expedition",
       description: "Bolivia is the heart of the Andes. This 11-day expedition combines acclimatization at Lake Titicaca with the ascent of iconic peaks such as Pico Austria, Tarija, Pequeno Alpamayo, and the giant Huayna Potosi (6088m).",
       image: "/bolivia/condoriri.avif",
-      lat: `16° 10' 11" S`,
-      lon: `68° 14' 00" W`,
+      lat: '16° 10\' 11" S',
+      lon: '68° 14\' 00" W',
       specs: [
         { label: 'COST', value: 'USD. 995.00', icon: 'location' },
         { label: 'MAX SUMMIT', value: '6,088 MASL', icon: 'zone' },

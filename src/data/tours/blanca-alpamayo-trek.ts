@@ -18,8 +18,8 @@ export const blancaAlpamayoTrekData = {
       titleAccent: "Norte",
       description: "Considerada la ruta más espectacular para fotógrafos y montañistas, Los Cedros permite rodear el Alpamayo para contemplar su pirámide perfecta desde ángulos inaccesibles en otras rutas.",
       image: "/trekking/blanca/trekking-cedros.avif",
-      lat: `08° 52' 45" S`,
-      lon: `77° 39' 12" W`,
+      lat: '08° 52\' 45" S',
+      lon: '77° 39\' 12" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Huaraz, Perú", icon: "location" },
         { label: "PUNTO MÁX.", value: "Paso Toropishtanan (4,850m)", icon: "zone" },
@@ -93,8 +93,8 @@ export const blancaAlpamayoTrekData = {
       titleAccent: "Face",
       description: "Considered the most spectacular route for photographers and mountaineers, Los Cedros allows you to circle Alpamayo to contemplate its perfect pyramid from angles inaccessible in other routes.",
       image: "/trekking/blanca/trekking-cedros.avif",
-      lat: `08° 52' 45" S`,
-      lon: `77° 39' 12" W`,
+      lat: '08° 52\' 45" S',
+      lon: '77° 39\' 12" W',
       specs: [
         { label: "START / LOGISTICS", value: "Huaraz, Peru", icon: "location" },
         { label: "MAX POINT", value: "Toropishtanan Pass (4,850m)", icon: "zone" },

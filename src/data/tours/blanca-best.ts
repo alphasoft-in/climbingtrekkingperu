@@ -18,8 +18,8 @@ export const blancaBestData = {
       titleAccent: "de los Andes",
       description: "Este programa combina las lagunas más icónicas de la Cordillera Blanca con el clásico Santa Cruz Trek, ofreciendo una logística de confort superior para una inmersión total en los Andes.",
       image: "/trekking/blanca/lomejor/lo-mejor.avif",
-      lat: `09° 00' 25" S`,
-      lon: `77° 39' 11" W`,
+      lat: '09° 00\' 25" S',
+      lon: '77° 39\' 11" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Lima / Huaraz, Perú", icon: "location" },
         { label: "PUNTOS CLAVE", value: "Laguna 69, Parón, Santa Cruz", icon: "zone" },
@@ -88,8 +88,8 @@ export const blancaBestData = {
       titleAccent: "of the Andes",
       description: "This program combines the most iconic lagoons of the White Range with the classic Santa Cruz Trek, offering superior comfort logistics for total immersion in the Andes.",
       image: "/trekking/blanca/lomejor/lo-mejor.avif",
-      lat: `09° 00' 25" S`,
-      lon: `77° 39' 11" W`,
+      lat: '09° 00\' 25" S',
+      lon: '77° 39\' 11" W',
       specs: [
         { label: "START / LOGISTICS", value: "Lima / Huaraz, Peru", icon: "location" },
         { label: "KEY POINTS", value: "Lagoon 69, Paron, Santa Cruz", icon: "zone" },

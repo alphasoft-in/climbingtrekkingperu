@@ -18,8 +18,8 @@ export const blancaSantaCruzData = {
       titleAccent: "Santa Cruz",
       description: "Considerado uno de los trekkings más bellos del mundo, el Santa Cruz ofrece vistas inigualables del pico Alpamayo y cruza el emblemático paso Punta Unión a 4,750 metros.",
       image: "/trekking/blanca/santacruz/bg-santa-cruz.avif",
-      lat: `08° 52' 39" S`,
-      lon: `77° 33' 21" W`,
+      lat: '08° 52\' 39" S',
+      lon: '77° 33\' 21" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Huaraz, Perú", icon: "location" },
         { label: "ZONA TÉCNICA", value: "P.N. Huascarán, Ancash", icon: "zone" },
@@ -88,8 +88,8 @@ export const blancaSantaCruzData = {
       titleAccent: "Experience",
       description: "Considered one of the most beautiful treks in the world, the Santa Cruz offers unmatched views of the Alpamayo peak and crosses the emblematic Punta Union pass at 4,750 meters.",
       image: "/trekking/blanca/santacruz/bg-santa-cruz.avif",
-      lat: `08° 52' 39" S`,
-      lon: `77° 33' 21" W`,
+      lat: '08° 52\' 39" S',
+      lon: '77° 33\' 21" W',
       specs: [
         { label: "START / LOGISTICS", value: "Huaraz, Peru", icon: "location" },
         { label: "TECHNICAL ZONE", value: "Huascaran N.P., Ancash", icon: "zone" },

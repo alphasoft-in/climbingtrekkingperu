@@ -18,8 +18,8 @@ export const climbingChopicalquiData = {
       titleAccent: "Ancash",
       description: "El Chopicallqui es la quinta montaña más alta de la Cordillera Blanca. Ofrece una ruta estética y una cima con vistas impresionantes a los macizos del Huascarán y Huandoy.",
       image: "/chopicalqui/chopicalqui.avif",
-      lat: `09° 05' 12" S`,
-      lon: `77° 34' 26" W`,
+      lat: '09° 05\' 12" S',
+      lon: '77° 34\' 26" W',
       specs: [
         { label: "ALTITUD MÁX", value: "6,354 MSNM", icon: "location" },
         { label: "TIPO", value: "Expedición Técnica", icon: "zone" },
@@ -87,8 +87,8 @@ export const climbingChopicalquiData = {
       titleAccent: "Ancash",
       description: "Chopicalqui is the fifth highest mountain in the Cordillera Blanca. It offers an aesthetic route and a summit with impressive views of the Huascarán and Huandoy massifs.",
       image: "/chopicalqui/chopicalqui.avif",
-      lat: `09° 05' 12" S`,
-      lon: `77° 34' 26" W`,
+      lat: '09° 05\' 12" S',
+      lon: '77° 34\' 26" W',
       specs: [
         { label: "MAX ALTITUDE", value: "6,354 MASL", icon: "location" },
         { label: "TYPE", value: "Technical Expedition", icon: "zone" },

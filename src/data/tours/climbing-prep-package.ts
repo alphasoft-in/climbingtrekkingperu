@@ -18,8 +18,8 @@ export const climbingPrepPackageData = {
       titleAccent: "Andes Técnicos",
       description: "Programa intensivo diseñado para consolidar técnica en glaciar y pared. Cuatro cumbres emblemáticas para prepararte para desafíos como Alpamayo o Huascarán.",
       image: "/prep/prep.avif",
-      lat: `09° 08' 22" S`,
-      lon: `77° 28' 14" W`,
+      lat: '09° 08\' 22" S',
+      lon: '77° 28\' 14" W',
       specs: [
         { label: "PUNTO MÁXIMO", value: "5,680 MSNM", icon: "location" },
         { label: "TIPO", value: "Entrenamiento Técnico", icon: "zone" },
@@ -90,8 +90,8 @@ export const climbingPrepPackageData = {
       titleAccent: "Technical Andes",
       description: "Intensive program designed to consolidate glacier and wall technique. Four emblematic summits to prepare you for challenges like Alpamayo or Huascaran.",
       image: "/prep/prep.avif",
-      lat: `09° 08' 22" S`,
-      lon: `77° 28' 14" W`,
+      lat: '09° 08\' 22" S',
+      lon: '77° 28\' 14" W',
       specs: [
         { label: "MAX POINT", value: "5,680 MASL", icon: "location" },
         { label: "TYPE", value: "Technical Training", icon: "zone" },

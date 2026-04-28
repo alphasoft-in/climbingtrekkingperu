@@ -18,8 +18,8 @@ export const boliviaIllampuData = {
       titleAccent: "Bolivia",
       description: "El Circuito Illampu es un viaje remoto alrededor de uno de los nevados más imponentes de Bolivia. Atraviesa pasos de más de 4000m, camina por tierras Aymara y maravíllate con glaciares, lagunas y valles profundos.",
       image: "/bolivia/illampu-8d.avif",
-      lat: `15° 49' 00" S`,
-      lon: `68° 33' 00" W`,
+      lat: '15° 49\' 00" S',
+      lon: '68° 33\' 00" W',
       specs: [
         { label: 'COSTO', value: 'USD. 695.00', icon: 'location' },
         { label: 'DIFICULTAD', value: 'Moderada', icon: 'zone' },
@@ -83,8 +83,8 @@ export const boliviaIllampuData = {
       titleAccent: "Bolivia",
       description: "The Illampu Circuit is a remote journey around one of Bolivia's most imposing peaks. Cross passes over 4000m, walk through Aymara lands and marvel at glaciers, lagoons and deep valleys.",
       image: "/bolivia/illampu-8d.avif",
-      lat: `15° 49' 00" S`,
-      lon: `68° 33' 00" W`,
+      lat: '15° 49\' 00" S',
+      lon: '68° 33\' 00" W',
       specs: [
         { label: 'COST', value: 'USD. 695.00', icon: 'location' },
         { label: 'DIFFICULTY', value: 'Moderate', icon: 'zone' },

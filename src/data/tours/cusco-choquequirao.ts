@@ -18,8 +18,8 @@ export const cuscoChoquequiraoData = {
       titleAccent: "Cusco",
       description: "Cruzar el imponente Cañón del Apurímac para alcanzar las terrazas sagradas de Choquequirao es una de las experiencias más auténticas de los Andes. Este trekking combina historia inca, biodiversidad y el desafío de uno de los cañones más profundos del mundo.",
       image: "/trekking/cusco/choquequirao.avif",
-      lat: `13° 23' 21" S`,
-      lon: `72° 52' 33" W`,
+      lat: '13° 23\' 21" S',
+      lon: '72° 52\' 33" W',
       specs: [
         { label: 'DURACIÓN', value: '4 Días', icon: 'location' },
         { label: 'PARTIDA', value: 'Cusco', icon: 'zone' },
@@ -77,8 +77,8 @@ export const cuscoChoquequiraoData = {
       titleAccent: "Adventure",
       description: "Crossing the imposing Apurimac Canyon to reach the sacred terraces of Choquequirao is one of the most authentic experiences in the Andes. This trek combines Inca history, biodiversity, and the challenge of one of the deepest canyons in the world.",
       image: "/trekking/cusco/choquequirao.avif",
-      lat: `13° 23' 21" S`,
-      lon: `72° 52' 33" W`,
+      lat: '13° 23\' 21" S',
+      lon: '72° 52\' 33" W',
       specs: [
         { label: 'DURATION', value: '4 Days', icon: 'location' },
         { label: 'START', value: 'Cusco', icon: 'zone' },

@@ -18,8 +18,8 @@ export const culturalNortePeru15dData = {
       titleAccent: "Esencia Peruana",
       description: "Descubre la diversidad del Perú en una expedición de 15 días. Desde los misterios de las Líneas de Nazca y el Oasis de Huacachina en la costa, hasta la majestuosidad de la Cordillera Blanca en Huaraz. Un viaje diseñado para combinar historia, aventura y los paisajes más impresionantes del norte y centro del país.",
       image: "/peru/caral.avif",
-      lat: `9° 31' 48" S`,
-      lon: `77° 31' 44" W`,
+      lat: '9° 31\' 48" S',
+      lon: '77° 31\' 44" W',
       specs: [
         { label: 'COSTO', value: 'USD. 1,795.00', icon: 'location' },
         { label: 'DESTINOS', value: 'Ica, Nazca, Huaraz', icon: 'zone' },
@@ -88,8 +88,8 @@ export const culturalNortePeru15dData = {
       titleAccent: "Peruvian Essence",
       description: "Discover the diversity of Peru in a 15-day expedition. From the mysteries of the Nazca Lines and the Huacachina Oasis on the coast to the majesty of the Cordillera Blanca in Huaraz. A trip designed to combine history, adventure, and the most impressive landscapes of northern and central Peru.",
       image: "/peru/caral.avif",
-      lat: `9° 31' 48" S`,
-      lon: `77° 31' 44" W`,
+      lat: '9° 31\' 48" S',
+      lon: '77° 31\' 44" W',
       specs: [
         { label: 'COST', value: 'USD. 1,795.00', icon: 'location' },
         { label: 'DESTINATIONS', value: 'Ica, Nazca, Huaraz', icon: 'zone' },

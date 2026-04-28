@@ -18,8 +18,8 @@ export const ecuadorLagunasPichinchaData = {
       titleAccent: "Agua y Fuego",
       description: "Los Andes ecuatorianos ofrecen un paisaje único de lagunas volcánicas con aguas turquesas. Este programa es la combinación perfecta de turismo cultural y preparación física.",
       image: "/ecuador/rucu-pichincha.avif",
-      lat: `00° 51' 40" S`,
-      lon: `78° 54' 50" W`,
+      lat: '00° 51\' 40" S',
+      lon: '78° 54\' 50" W',
       specs: [
         { label: 'REGIÓN', value: 'Quito / Andes', icon: 'location' },
         { label: 'ALT. MÁX.', value: '4696 MSNM', icon: 'zone' },
@@ -80,8 +80,8 @@ export const ecuadorLagunasPichinchaData = {
       titleAccent: "Water & Fire",
       description: "The Ecuadorian Andes offer a unique landscape of volcanic lagoons with turquoise waters. This program is the perfect combination of cultural tourism and physical preparation.",
       image: "/ecuador/rucu-pichincha.avif",
-      lat: `00° 51' 40" S`,
-      lon: `78° 54' 50" W`,
+      lat: '00° 51\' 40" S',
+      lon: '78° 54\' 50" W',
       specs: [
         { label: 'REGION', value: 'Quito / Andes', icon: 'location' },
         { label: 'MAX ALT.', value: '4696 MASL', icon: 'zone' },

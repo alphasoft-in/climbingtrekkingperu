@@ -18,8 +18,8 @@ export const cuscoLaresData = {
       titleAccent: "Cusco",
       description: "El trekking de Lares es la alternativa cultural por excelencia. Atraviesa comunidades quechuas que aún conservan sus tradiciones milenarias, disfruta de aguas termales medicinales y culmina en la ciudadela de Machu Picchu.",
       image: "/trekking/cusco/lares-trek.avif",
-      lat: `13° 07' 42" S`,
-      lon: `72° 02' 14" W`,
+      lat: '13° 07\' 42" S',
+      lon: '72° 02\' 14" W',
       specs: [
         { label: 'COSTO', value: 'USD. 795.00', icon: 'location' },
         { label: 'ALTURA MÁX', value: '4,600 MSNM', icon: 'zone' },
@@ -94,8 +94,8 @@ export const cuscoLaresData = {
       titleAccent: "Cusco",
       description: "The Lares trekking is the quintessential cultural alternative. It crosses Quechua communities that still preserve their millenary traditions, enjoy medicinal hot springs, and culminates in the Machu Picchu citadel.",
       image: "/trekking/cusco/lares-trek.avif",
-      lat: `13° 07' 42" S`,
-      lon: `72° 02' 14" W`,
+      lat: '13° 07\' 42" S',
+      lon: '72° 02\' 14" W',
       specs: [
         { label: 'COST', value: 'USD. 795.00', icon: 'location' },
         { label: 'MAX ALT', value: '4,600 MASL', icon: 'zone' },

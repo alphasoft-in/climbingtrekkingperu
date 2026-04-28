@@ -18,8 +18,8 @@ export const climbingChileOjosData = {
       titleAccent: "Atacama",
       description: "El Volcán Ojos del Salado, con sus imponentes 6893 metros, ostenta el título del volcán más alto del mundo y la segunda cumbre más elevada de América. Ubicado en el corazón del Desierto de Atacama, es un desafío de aislamiento absoluto y condiciones extremas.",
       image: "/chile/ojos-del-salado.avif",
-      lat: `27° 06' 34" S`,
-      lon: `68° 32' 32" W`,
+      lat: '27° 06\' 34" S',
+      lon: '68° 32\' 32" W',
       specs: [
         { label: 'PUNTO PARTIDA', value: 'Copiapó, Chile', icon: 'location' },
         { label: 'ACTIVIDAD', value: 'Expedición 6000+', icon: 'zone' },
@@ -92,8 +92,8 @@ export const climbingChileOjosData = {
       titleAccent: "Atacama",
       description: "Ojos del Salado Volcano, with its imposing 6893 meters, holds the title of the highest volcano in the world and the second highest summit in America. Located in the heart of the Atacama Desert, it is a challenge of absolute isolation and extreme conditions.",
       image: "/chile/ojos-del-salado.avif",
-      lat: `27° 06' 34" S`,
-      lon: `68° 32' 32" W`,
+      lat: '27° 06\' 34" S',
+      lon: '68° 32\' 32" W',
       specs: [
         { label: 'START POINT', value: 'Copiapo, Chile', icon: 'location' },
         { label: 'ACTIVITY', value: '6000+ Expedition', icon: 'zone' },

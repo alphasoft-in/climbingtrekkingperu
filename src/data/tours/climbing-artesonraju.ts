@@ -18,8 +18,8 @@ export const climbingArtesonrajuData = {
       titleAccent: "Paramount",
       description: "El Nevado Artesonraju 6025 m.s.n.m. es una de las montañas más icónicas de los Andes peruanos. Su forma piramidal perfecta es mundialmente reconocida.",
       image: "/artesonraju/artesonraju.avif",
-      lat: `08° 57' 04" S`,
-      lon: `77° 37' 54" W`,
+      lat: '08° 57\' 04" S',
+      lon: '77° 37\' 54" W',
       specs: [
         { label: 'PUNTO PARTIDA', value: 'Huaraz, Perú', icon: 'location' },
         { label: 'ACTIVIDAD', value: 'Escalada Técnica', icon: 'zone' },
@@ -93,8 +93,8 @@ export const climbingArtesonrajuData = {
       titleAccent: "Paramount",
       description: "Nevado Artesonraju 6025 MASL is one of the most iconic mountains in the Peruvian Andes. Its perfect pyramidal shape is recognized worldwide.",
       image: "/artesonraju/artesonraju.avif",
-      lat: `08° 57' 04" S`,
-      lon: `77° 37' 54" W`,
+      lat: '08° 57\' 04" S',
+      lon: '77° 37\' 54" W',
       specs: [
         { label: 'START POINT', value: 'Huaraz, Peru', icon: 'location' },
         { label: 'ACTIVITY', value: 'Technical Climbing', icon: 'zone' },

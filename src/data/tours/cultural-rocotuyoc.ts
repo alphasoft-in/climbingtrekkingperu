@@ -18,8 +18,8 @@ export const culturalRocotuyocData = {
       titleAccent: "Glaciares",
       description: "Un recorrido fascinante por el norte de Huaraz que incluye la comunidad histórica de Vicos, la cascada de Ruripaccha y las lagunas de Rocutuyoc. Podrá observar pinturas rupestres y el imponente glaciar de Ruripaccha a 4,650 msnm.",
       image: "/peru/rocutoyoc.avif",
-      lat: `09° 15' 00" S`,
-      lon: `77° 30' 00" W`,
+      lat: '09° 15\' 00" S',
+      lon: '77° 30\' 00" W',
       specs: [
         { label: 'ELEVACIÓN', value: '4,450 MSNM', icon: 'location' },
         { label: 'DESTINO', value: 'Quebrada Honda', icon: 'zone' },
@@ -71,8 +71,8 @@ export const culturalRocotuyocData = {
       titleAccent: "Glaciers",
       description: "A fascinating journey north of Huaraz including the historic community of Vicos, the Ruripaccha waterfall, and the Rocutuyoc lagoons. You can observe rock paintings and the imposing Ruripaccha glacier at 4,650 masl.",
       image: "/peru/rocutoyoc.avif",
-      lat: `09° 15' 00" S`,
-      lon: `77° 30' 00" W`,
+      lat: '09° 15\' 00" S',
+      lon: '77° 30\' 00" W',
       specs: [
         { label: 'ELEVATION', value: '4,450 MASL', icon: 'location' },
         { label: 'DESTINATION', value: 'Quebrada Honda', icon: 'zone' },

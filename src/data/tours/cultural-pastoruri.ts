@@ -18,8 +18,8 @@ export const culturalPastoruriData = {
       titleAccent: "Cambio Climático",
       description: "El Glaciar Pastoruri es uno de los destinos más accesibles para tocar la nieve en la Cordillera Blanca. En la ruta observaremos las impresionantes Puyas Raimondi, pinturas rupestres y aguas gasificadas en el corazón del sur de Huaraz.",
       image: "/peru/glaciar-pastoruri.avif",
-      lat: `09° 52' 00" S`,
-      lon: `77° 11' 00" W`,
+      lat: '09° 52\' 00" S',
+      lon: '77° 11\' 00" W',
       specs: [
         { label: 'ELEVACIÓN', value: '4,900 MSNM', icon: 'location' },
         { label: 'FLORA', value: 'Puyas Raimondi', icon: 'zone' },
@@ -71,8 +71,8 @@ export const culturalPastoruriData = {
       titleAccent: "Route",
       description: "Pastoruri Glacier is one of the most accessible destinations to touch snow in the Cordillera Blanca. On the route, we will observe the impressive Puyas Raimondi, rock paintings, and carbonated waters in the heart of southern Huaraz.",
       image: "/peru/glaciar-pastoruri.avif",
-      lat: `09° 52' 00" S`,
-      lon: `77° 11' 00" W`,
+      lat: '09° 52\' 00" S',
+      lon: '77° 11\' 00" W',
       specs: [
         { label: 'ELEVATION', value: '4,900 MASL', icon: 'location' },
         { label: 'FLORA', value: 'Puyas Raimondi', icon: 'zone' },

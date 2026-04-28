@@ -18,8 +18,8 @@ export const culturalIquitosData = {
       titleAccent: "Origen del Agua",
       description: "Iquitos es la ciudad más grande del mundo sin acceso por carretera, una isla de civilización en el corazón del Amazonas. Desde aquí, navegamos por el río más caudaloso del planeta para descubrir delfines rosados, caimanes y una biodiversidad única.",
       image: "/peru/iquitos.avif",
-      lat: `03° 45' 00" S`,
-      lon: `73° 15' 00" W`,
+      lat: '03° 45\' 00" S',
+      lon: '73° 15\' 00" W',
       specs: [
         { label: 'PUNTO BASE', value: 'Iquitos', icon: 'location' },
         { label: 'FAUNA', value: 'Delfín Rosado', icon: 'zone' },
@@ -80,8 +80,8 @@ export const culturalIquitosData = {
       titleAccent: "Source of Water",
       description: "Iquitos is the largest city in the world without road access, an island of civilization in the heart of the Amazon. From here, we navigate the mightiest river on the planet to discover pink dolphins, caimans and unique biodiversity.",
       image: "/peru/iquitos.avif",
-      lat: `03° 45' 00" S`,
-      lon: `73° 15' 00" W`,
+      lat: '03° 45\' 00" S',
+      lon: '73° 15\' 00" W',
       specs: [
         { label: 'BASE POINT', value: 'Iquitos', icon: 'location' },
         { label: 'FAUNA', value: 'Pink Dolphin', icon: 'zone' },

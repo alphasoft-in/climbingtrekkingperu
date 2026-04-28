@@ -18,8 +18,8 @@ export const climbingPiscoData = {
       titleAccent: "Cordillera Blanca",
       description: "El Nevado Pisco es conocido como el balcón de los Andes por su ubicación estratégica. Ofrece vistas panorámicas inigualables del Huascarán, Chopicalqui y Huandoy.",
       image: "/pisco/pisco.avif",
-      lat: `09° 01' 14" S`,
-      lon: `77° 35' 42" W`,
+      lat: '09° 01\' 14" S',
+      lon: '77° 35\' 42" W',
       specs: [
         { label: "PUNTO MÁXIMO", value: "5,752 MSNM", icon: "location" },
         { label: "TIPO", value: "Montañismo Glaciar", icon: "zone" },
@@ -93,8 +93,8 @@ export const climbingPiscoData = {
       titleAccent: "Cordillera Blanca",
       description: "Nevado Pisco is known as the balcony of the Andes because of its strategic location. It offers unparalleled panoramic views of Huascarán, Chopicalqui and Huandoy.",
       image: "/pisco/pisco.avif",
-      lat: `09° 01' 14" S`,
-      lon: `77° 35' 42" W`,
+      lat: '09° 01\' 14" S',
+      lon: '77° 35\' 42" W',
       specs: [
         { label: "MAX POINT", value: "5,752 MASL", icon: "location" },
         { label: "TYPE", value: "Glacier Mountaineering", icon: "zone" },

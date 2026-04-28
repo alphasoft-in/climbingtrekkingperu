@@ -18,8 +18,8 @@ export const cuscoEsenciaImperialData = {
       titleAccent: "Los Andes",
       description: "Esta expedición de 12 días es nuestra propuesta más ambiciosa en el sur del Perú. Hemos diseñado un viaje que equilibra el misticismo de los templos incas con la adrenalina de caminatas de altura por encima de los 5,000 metros.",
       image: "/trekking/cusco/esencia-imperial.avif",
-      lat: `13° 31' 30" S`,
-      lon: `71° 58' 20" W`,
+      lat: '13° 31\' 30" S',
+      lon: '71° 58\' 20" W',
       specs: [
         { label: 'COBERTURA', value: 'Lima, Cusco & Valle Sagrado', icon: 'location' },
         { label: 'PUNTOS CLAVE', value: 'Machu Picchu, Humantay, Vinicunca', icon: 'zone' },
@@ -101,8 +101,8 @@ export const cuscoEsenciaImperialData = {
       titleAccent: "The Andes",
       description: "This 12-day expedition is our most ambitious proposal in southern Peru. We have designed a journey that balances the mysticism of Inca temples with the adrenaline of high-altitude hikes above 5,000 meters.",
       image: "/trekking/cusco/esencia-imperial.avif",
-      lat: `13° 31' 30" S`,
-      lon: `71° 58' 20" W`,
+      lat: '13° 31\' 30" S',
+      lon: '71° 58\' 20" W',
       specs: [
         { label: 'COVERAGE', value: 'Lima, Cusco & Sacred Valley', icon: 'location' },
         { label: 'KEY POINTS', value: 'Machu Picchu, Humantay, Vinicunca', icon: 'zone' },

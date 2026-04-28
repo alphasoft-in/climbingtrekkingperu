@@ -18,8 +18,8 @@ export const culturalPeruBolivia19dData = {
       titleAccent: "Confot",
       description: "Un viaje épico de 19 días que conecta las maravillas del Cusco, el Lago Titicaca y las imponentes cumbres de la Cordillera Real en Bolivia. Una combinación perfecta de cultura, historia y aventura de alta montaña.",
       image: "/peru/peru-bolivia.avif",
-      lat: `13° 31' 00" S`,
-      lon: `71° 58' 00" W`,
+      lat: '13° 31\' 00" S',
+      lon: '71° 58\' 00" W',
       specs: [
         { label: 'DURACIÓN', value: '19 Días', icon: 'location' },
         { label: 'PAÍSES', value: 'Perú & Bolivia', icon: 'zone' },
@@ -95,8 +95,8 @@ export const culturalPeruBolivia19dData = {
       titleAccent: "Expedition",
       description: "An epic 19-day journey connecting the wonders of Cusco, Lake Titicaca, and the imposing peaks of the Cordillera Real in Bolivia. A perfect combination of culture, history, and high mountain adventure.",
       image: "/peru/peru-bolivia.avif",
-      lat: `13° 31' 00" S`,
-      lon: `71° 58' 00" W`,
+      lat: '13° 31\' 00" S',
+      lon: '71° 58\' 00" W',
       specs: [
         { label: 'DURATION', value: '19 Days', icon: 'location' },
         { label: 'COUNTRIES', value: 'Peru & Bolivia', icon: 'zone' },

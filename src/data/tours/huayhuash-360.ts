@@ -18,8 +18,8 @@ export const huayhuash360Data = {
       titleAccent: "Integral",
       description: "Esta expedición de 15 días es la experiencia definitiva en los Andes peruanos. Rodearemos la Cordillera Huayhuash en su totalidad, cruzando pasos de más de 5,000 metros y acampando junto a lagunas glaciares de color turquesa intenso.",
       image: "/trekking/huayhuash/360.avif",
-      lat: `9° 32' 26" S`,
-      lon: `77° 31' 39" W`,
+      lat: '9° 32\' 26" S',
+      lon: '77° 31\' 39" W',
       specs: [
         { label: "BASE LOGÍSTICA", value: "Huaraz, Perú", icon: "location" },
         { label: "ZONA TÉCNICA", value: "Andes Centrales", icon: "zone" },
@@ -97,8 +97,8 @@ export const huayhuash360Data = {
       titleAccent: "Exploration",
       description: "This 15-day expedition is the ultimate experience in the Peruvian Andes. We will circle the entire Huayhuash range, crossing passes over 5,000 meters and camping next to intense turquoise glacial lagoons.",
       image: "/trekking/huayhuash/360.avif",
-      lat: `9° 32' 26" S`,
-      lon: `77° 31' 39" W`,
+      lat: '9° 32\' 26" S',
+      lon: '77° 31\' 39" W',
       specs: [
         { label: "LOGISTICS BASE", value: "Huaraz, Peru", icon: "location" },
         { label: "TECHNICAL ZONE", value: "Central Andes", icon: "zone" },

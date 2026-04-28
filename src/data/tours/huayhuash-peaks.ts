@@ -18,8 +18,8 @@ export const huayhuashPeaksData = {
       titleAccent: "& Pumarinri",
       description: "Una expedición técnica diseñada para montañistas que buscan combinar el espectacular trekking de Huayhuash con cumbres de más de 5,000 metros, incluyendo el Diablo Mudo y Pumarinri.",
       image: "/trekking/huayhuash/cumbres.avif",
-      lat: `10° 16' 18" S`,
-      lon: `76° 54' 14" W`,
+      lat: '10° 16\' 18" S',
+      lon: '76° 54\' 14" W',
       specs: [
         { label: "INICIO / LOGÍSTICA", value: "Huaraz, Perú", icon: "location" },
         { label: "ACTIVIDAD", value: "Hiking & Montañismo", icon: "zone" },
@@ -95,8 +95,8 @@ export const huayhuashPeaksData = {
       titleAccent: "& Pumarinri",
       description: "A technical expedition designed for mountaineers seeking to combine the spectacular Huayhuash trekking with summits over 5,000 meters, including Diablo Mudo and Pumarinri.",
       image: "/trekking/huayhuash/cumbres.avif",
-      lat: `10° 16' 18" S`,
-      lon: `76° 54' 14" W`,
+      lat: '10° 16\' 18" S',
+      lon: '76° 54\' 14" W',
       specs: [
         { label: "START / LOGISTICS", value: "Huaraz, Peru", icon: "location" },
         { label: "ACTIVITY", value: "Hiking & Mountaineering", icon: "zone" },

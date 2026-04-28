@@ -18,8 +18,8 @@ export const climbingHuascaranData = {
       titleAccent: "de los Andes",
       description: "El Huascarán Sur es la cumbre más alta de los Andes Peruanos. Un desafío máximo que requiere experiencia técnica sólida y una aclimatación rigurosa.",
       image: "/huascaran/huascaran.avif",
-      lat: `09° 07' 17" S`,
-      lon: `77° 36' 32" W`,
+      lat: '09° 07\' 17" S',
+      lon: '77° 36\' 32" W',
       specs: [
         { label: "PUNTO MÁXIMO", value: "6,768 MSNM", icon: "location" },
         { label: "ACTIVIDAD", value: "Escalada Técnica", icon: "zone" },
@@ -95,8 +95,8 @@ export const climbingHuascaranData = {
       titleAccent: "of the Andes",
       description: "South Huascaran is the highest peak in the Peruvian Andes. A maximum challenge that requires solid technical experience and rigorous acclimatization.",
       image: "/huascaran/huascaran.avif",
-      lat: `09° 07' 17" S`,
-      lon: `77° 36' 32" W`,
+      lat: '09° 07\' 17" S',
+      lon: '77° 36\' 32" W',
       specs: [
         { label: "MAX POINT", value: "6,768 MASL", icon: "location" },
         { label: "ACTIVITY", value: "Technical Climbing", icon: "zone" },

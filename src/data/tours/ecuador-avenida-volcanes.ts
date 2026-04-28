@@ -18,8 +18,8 @@ export const ecuadorAvenidaVolcanesData = {
       titleAccent: "Fuego y Hielo",
       description: "Los Andes ecuatorianos albergan una de las concentraciones de volcanes más impresionantes del planeta. Nuestra expedición recorre la mística Avenida de los Volcanes, uniendo cuatro picos icónicos.",
       image: "/ecuador/lliniza.avif",
-      lat: `00° 01' 44" S`,
-      lon: `78° 26' 06" W`,
+      lat: '00° 01\' 44" S',
+      lon: '78° 26\' 06" W',
       specs: [
         { label: 'REGIÓN', value: 'Quito, ECU', icon: 'location' },
         { label: 'CUMBRE', value: '6268 MSNM', icon: 'zone' },
@@ -88,8 +88,8 @@ export const ecuadorAvenidaVolcanesData = {
       titleAccent: "Fire & Ice",
       description: "The Ecuadorian Andes house one of the most impressive concentrations of volcanoes on the planet. Our expedition traverses the mystical Avenue of Volcanoes, uniting four iconic peaks.",
       image: "/ecuador/lliniza.avif",
-      lat: `00° 01' 44" S`,
-      lon: `78° 26' 06" W`,
+      lat: '00° 01\' 44" S',
+      lon: '78° 26\' 06" W',
       specs: [
         { label: 'REGION', value: 'Quito, ECU', icon: 'location' },
         { label: 'PEAK', value: '6268 MASL', icon: 'zone' },

@@ -18,8 +18,8 @@ export const alpamayoData = {
       titleAccent: "de Hielo",
       description: "El Alpamayo es considerado la montaña más bella del mundo. Su forma piramidal perfecta atrae a montañistas de todo el globo. Un desafío técnico de alto nivel que requiere experiencia y aclimatación.",
       image: "/climbing/alpamayo.avif",
-      lat: `08° 52' 45" S`,
-      lon: `77° 39' 12" W`,
+      lat: '08° 52\' 45" S',
+      lon: '77° 39\' 12" W',
       specs: [
         { label: "PUNTO INICIO", value: "Huaraz, Perú", icon: "location" },
         { label: "INCLINACIÓN", value: "60° - 90° Pared", icon: "activity" },
@@ -90,8 +90,8 @@ export const alpamayoData = {
       titleAccent: "of Ice",
       description: "Alpamayo is considered the most beautiful mountain in the world. Its perfect pyramid shape attracts mountaineers worldwide. A high-level technical challenge requiring experience and adaptation.",
       image: "/climbing/alpamayo.avif",
-      lat: `08° 52' 45" S`,
-      lon: `77° 39' 12" W`,
+      lat: '08° 52\' 45" S',
+      lon: '77° 39\' 12" W',
       specs: [
         { label: "START POINT", value: "Huaraz, Peru", icon: "location" },
         { label: "INCLINATION", value: "60° - 90° Wall", icon: "activity" },

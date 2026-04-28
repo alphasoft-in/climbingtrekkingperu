@@ -18,8 +18,8 @@ export const blancaCircuitData = {
       titleAccent: "Total",
       description: "Esta es nuestra expedición insignia en la Cordillera Blanca. Durante 15 días, recorreremos los valles más remotos, uniendo la ruta clásica de Santa Cruz con el imponente circuito Los Cedros Alpamayo.",
       image: "/trekking/blanca/blanca/cordillera-blanca.avif",
-      lat: `08° 50' 11" S`,
-      lon: `77° 40' 05" W`,
+      lat: '08° 50\' 11" S',
+      lon: '77° 40\' 05" W',
       specs: [
         { label: "COBERTURA", value: "Norte & Centro Blanca", icon: "location" },
         { label: "PUNTOS CLAVE", value: "Alpamayo, Punta Unión, Cullicocha", icon: "zone" },
@@ -99,8 +99,8 @@ export const blancaCircuitData = {
       titleAccent: "Traverse",
       description: "This is our flagship expedition in the White Range. For 15 days, we will traverse the most remote valleys, joining the classic Santa Cruz route with the imposing Los Cedros Alpamayo circuit.",
       image: "/trekking/blanca/blanca/cordillera-blanca.avif",
-      lat: `08° 50' 11" S`,
-      lon: `77° 40' 05" W`,
+      lat: '08° 50\' 11" S',
+      lon: '77° 40\' 05" W',
       specs: [
         { label: "COVERAGE", value: "North & Central Blanca", icon: "location" },
         { label: "KEY POINTS", value: "Alpamayo, Punta Union, Cullicocha", icon: "zone" },

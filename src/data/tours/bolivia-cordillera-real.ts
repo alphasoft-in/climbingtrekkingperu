@@ -18,8 +18,8 @@ export const boliviaCordilleraRealData = {
       titleAccent: "Cordillera Real",
       description: "Esta expedición de 11 días es la inmersión definitiva en el montañismo boliviano. Combinamos una aclimatación mística en el Lago Titicaca con una serie de ascensos progresivos que culminan en el gigante Huayna Potosí.",
       image: "/tours/cordillera-real.avif",
-      lat: `16° 15' 45" S`,
-      lon: `68° 09' 18" W`,
+      lat: '16° 15\' 45" S',
+      lon: '68° 09\' 18" W',
       specs: [
         { label: 'PUNTO INICIO', value: 'La Paz, Bolivia', icon: 'location' },
         { label: 'ACTIVIDAD', value: 'Alpinismo Progresivo', icon: 'zone' },
@@ -89,8 +89,8 @@ export const boliviaCordilleraRealData = {
       titleAccent: "Cordillera Real",
       description: "This 11-day expedition is the definitive immersion into Bolivian mountaineering. We combine mystical acclimatization at Lake Titicaca with a series of progressive ascents culminating in the giant Huayna Potosi.",
       image: "/tours/cordillera-real.avif",
-      lat: `16° 15' 45" S`,
-      lon: `68° 09' 18" W`,
+      lat: '16° 15\' 45" S',
+      lon: '68° 09\' 18" W',
       specs: [
         { label: 'START POINT', value: 'La Paz, Bolivia', icon: 'location' },
         { label: 'ACTIVITY', value: 'Progressive Alpinism', icon: 'zone' },

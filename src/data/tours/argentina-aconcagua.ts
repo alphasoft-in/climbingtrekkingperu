@@ -18,8 +18,8 @@ export const argentinaAconcaguaData = {
       titleAccent: "de Piedra",
       description: "El Monte Aconcagua es el pico más alto de las Américas y el más alto del mundo fuera de Asia. Un programa de 17 días diseñado para maximizar la aclimatación gradual.",
       image: "/argentina/aconcagua.avif",
-      lat: `32° 39' 12" S`,
-      lon: `70° 00' 40" W`,
+      lat: '32° 39\' 12" S',
+      lon: '70° 00\' 40" W',
       specs: [
         { label: 'REGIÓN', value: 'Mendoza, ARG', icon: 'location' },
         { label: 'CUMBRE', value: '6962 MSNM', icon: 'zone' },
@@ -99,8 +99,8 @@ export const argentinaAconcaguaData = {
       titleAccent: "Sentinel",
       description: "Mount Aconcagua is the highest peak in the Americas and the highest in the world outside Asia. A 17-day program designed to maximize gradual acclimatization.",
       image: "/argentina/aconcagua.avif",
-      lat: `32° 39' 12" S`,
-      lon: `70° 00' 40" W`,
+      lat: '32° 39\' 12" S',
+      lon: '70° 00\' 40" W',
       specs: [
         { label: 'REGION', value: 'Mendoza, ARG', icon: 'location' },
         { label: 'SUMMIT', value: '6962 MASL', icon: 'zone' },

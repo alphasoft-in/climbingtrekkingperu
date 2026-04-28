@@ -18,8 +18,8 @@ export const culturalLlanganucoData = {
       titleAccent: "Turquesa",
       description: "Las lagunas de Llanganuco (Chinacocha y Orcuncocha) son de las más emblemáticas del Parque Nacional Huascarán. Rodeadas por los nevados más altos del Perú, ofrecen un espectáculo natural de aguas cristalinas y bosques de queñuales.",
       image: "/peru/llanganuco.avif",
-      lat: `09° 04' 00" S`,
-      lon: `77° 39' 00" W`,
+      lat: '09° 04\' 00" S',
+      lon: '77° 39\' 00" W',
       specs: [
         { label: 'ELEVACIÓN', value: '3,890 MSNM', icon: 'location' },
         { label: 'DESTINO', value: 'Carhuaz & Yungay', icon: 'zone' },
@@ -71,8 +71,8 @@ export const culturalLlanganucoData = {
       titleAccent: "Beauty",
       description: "The Llanganuco lagoons (Chinacocha and Orcuncocha) are among the most emblematic of the Huascarán National Park. Surrounded by Peru's highest peaks, they offer a natural spectacle of crystal clear waters and queñual forests.",
       image: "/peru/llanganuco.avif",
-      lat: `09° 04' 00" S`,
-      lon: `77° 39' 00" W`,
+      lat: '09° 04\' 00" S',
+      lon: '77° 39\' 00" W',
       specs: [
         { label: 'ELEVATION', value: '3,890 MASL', icon: 'location' },
         { label: 'DESTINATION', value: 'Carhuaz & Yungay', icon: 'zone' },
