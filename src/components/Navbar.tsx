@@ -64,24 +64,24 @@ const Navbar: React.FC<NavbarProps> = ({
             : 'h-[90px] md:h-[105px] bg-white border-brand-blue/20'
         }`}
       >
-        <div className="h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
-          {/* Brand/Logo */}
-          <div className="flex-shrink-0 z-[1001]">
-            <a href={lang === 'es' ? '/' : '/en'} className="block">
-              <img
-                src="/logo.avif"
-                alt="ALPINE TREKS PERÚ"
-                width={477}
-                height={254}
-                className={`transition-all duration-500 object-contain ${
-                  isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-16'
-                }`}
-              />
-            </a>
+        <div className="h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center">
+          {/* Left Column: Logo */}
+          <div className="flex-1 flex justify-start">
+            <div className="flex-shrink-0 z-[1001]">
+              <a href={lang === 'es' ? '/' : '/en'} className="block">
+                <img
+                  src="/logo.avif"
+                  alt="ALPINE TREKS PERÚ"
+                  className={`transition-all duration-500 object-contain w-auto ${
+                    isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-16'
+                  }`}
+                />
+              </a>
+            </div>
           </div>
 
-          {/* Desktop Navigation (Hidden on Mobile/Tablet) */}
-          <nav className="hidden nav:flex items-center ml-auto mr-8 lg:mr-12 h-full">
+          {/* Center Column: Desktop Navigation */}
+          <nav className="hidden nav:flex items-center justify-center h-full">
             <ul className="flex items-center gap-5 lg:gap-7 h-full list-none m-0 p-0">
               {[
                 { label: labels.home, href: lang === 'es' ? '/' : '/en', active: routeName === '' },
@@ -254,8 +254,8 @@ const Navbar: React.FC<NavbarProps> = ({
             </ul>
           </nav>
 
-          {/* Actions / Language & Burger */}
-          <div className="flex items-center gap-3 sm:gap-6">
+          {/* Right Column: Actions */}
+          <div className="flex-1 flex justify-end items-center gap-3 sm:gap-6">
             {/* Language Switcher - Desktop & Tablet */}
             <div className="hidden sm:flex items-center gap-3 font-black text-[0.7rem] lg:text-[0.75rem]">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-blue opacity-80">
@@ -282,6 +282,7 @@ const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
         </div>
+        </div>
       </header>
 
       {/* Full Menu Overlay (Mobile) */}
@@ -292,7 +293,7 @@ const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="h-full flex flex-col p-6 sm:p-12 overflow-y-auto">
           <div className="flex justify-between items-center mb-8 sm:mb-12">
-            <img src="/logo.avif" alt="ALPINE TREKS PERÚ" width={477} height={254} className="h-8 sm:h-10" />
+            <img src="/logo.avif" alt="ALPINE TREKS PERÚ" className="h-8 sm:h-10" />
             <button
               onClick={toggleMobileMenu}
               className="group flex items-center gap-3 text-white text-[0.65rem] sm:text-[0.7rem] font-black tracking-[0.3em] opacity-60 hover:opacity-100 transition-all uppercase"

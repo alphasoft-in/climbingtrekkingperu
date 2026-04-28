@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
           {/* Column 1: Brand */}
           <div className="space-y-8">
             <div className="flex items-center">
-              <img src="/logo.avif" alt="ALPINE TREKS PERÚ" width={477} height={254} className="h-10 w-auto" />
+              <img src="/logo.avif" alt="ALPINE TREKS PERÚ" className="h-10 w-auto" />
             </div>
             <p className="text-sm leading-relaxed font-medium text-slate-500 max-w-xs">
               {labels.brandDesc}
