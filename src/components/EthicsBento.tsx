@@ -27,9 +27,9 @@ const EthicsBento: React.FC<EthicsBentoProps> = ({ data }) => {
   const getColorClasses = (color: string) => {
     switch (color) {
       case 'red': return 'border-brand-red text-brand-red';
-      case 'blue': return 'border-brand-blue text-brand-blue';
-      case 'green': return 'border-green-600 text-green-600';
-      case 'gold': return 'border-amber-500 text-amber-500';
+      case 'blue': return 'border-[#0078ab] text-[#0078ab]';
+      case 'green': return 'border-green-700 text-green-700';
+      case 'gold': return 'border-[#b45309] text-[#b45309]';
       default: return 'border-slate-800 text-slate-800';
     }
   };
@@ -42,7 +42,7 @@ const EthicsBento: React.FC<EthicsBentoProps> = ({ data }) => {
           <h2 className="text-brand-dark text-2xl md:text-3xl font-black tracking-[0.2em] uppercase mb-4">
             {data.header.title}
           </h2>
-          <p className="text-brand-blue text-[10px] md:text-xs font-black tracking-[0.4em] uppercase mb-8">
+          <p className="text-[#0078ab] text-[10px] md:text-xs font-black tracking-[0.4em] uppercase mb-8">
             {data.header.subtitle}
           </p>
           <div className="w-16 h-1 bg-brand-red mx-auto mb-10"></div>

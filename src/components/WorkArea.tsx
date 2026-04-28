@@ -25,7 +25,7 @@ const WorkArea: React.FC<WorkAreaProps> = ({ data }) => {
           <h2 className="text-brand-dark text-xl md:text-3xl font-black tracking-[0.2em] uppercase mb-4">
             {data.header.title}
           </h2>
-          <p className="text-brand-blue text-[10px] md:text-xs font-black tracking-[0.4em] uppercase mb-8">
+          <p className="text-[#0078ab] text-[10px] md:text-xs font-black tracking-[0.4em] uppercase mb-8">
             {data.header.subtitle}
           </p>
           <div className="w-16 h-1 bg-brand-red mx-auto mb-10"></div>
@@ -38,7 +38,7 @@ const WorkArea: React.FC<WorkAreaProps> = ({ data }) => {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {data.units.map((unit, idx) => (
             <div key={idx} className="bg-white p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-slate-200">
-              <span className="inline-block text-brand-blue text-[10px] font-black tracking-[0.2em] mb-6 border-b-2 border-brand-blue/10 pb-1">
+              <span className="inline-block text-[#0078ab] text-[10px] font-black tracking-[0.2em] mb-6 border-b-2 border-brand-blue/10 pb-1">
                 {unit.tag}
               </span>
               <h3 className="text-brand-dark text-lg md:text-xl font-black uppercase tracking-wider mb-6">

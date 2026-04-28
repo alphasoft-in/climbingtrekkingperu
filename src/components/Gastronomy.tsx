@@ -38,7 +38,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
           <h2 className="text-brand-dark text-2xl md:text-4xl font-black tracking-[0.2em] uppercase mb-4">
             {data.header.title}
           </h2>
-          <p className="text-brand-blue text-xs md:text-sm font-black tracking-[0.4em] uppercase mb-8">
+          <p className="text-[#0078ab] text-xs md:text-sm font-black tracking-[0.4em] uppercase mb-8">
             {data.header.subtitle}
           </p>
           <div className="w-16 h-1 bg-brand-red mx-auto mb-10"></div>
@@ -96,7 +96,7 @@ const Gastronomy: React.FC<GastronomyProps> = ({ data }) => {
             <div className="grid sm:grid-cols-2 gap-10">
               {data.dinner.groups.map((group, idx) => (
                 <div key={idx}>
-                    <span className="block text-[10px] font-black tracking-[0.2em] text-brand-blue/80 uppercase mb-6">
+                    <span className="block text-[10px] font-black tracking-[0.2em] text-[#0078ab] uppercase mb-6">
                     {group.label}
                   </span>
                   <ul className="space-y-4">

@@ -28,7 +28,7 @@ const Logistics: React.FC<LogisticsProps> = ({ data }) => {
           <h2 className="text-brand-dark text-2xl md:text-4xl font-black tracking-[0.2em] uppercase mb-4">
             {data.header.title}
           </h2>
-          <p className="text-brand-blue text-xs md:text-sm font-black tracking-[0.4em] uppercase mb-8">
+          <p className="text-[#0078ab] text-xs md:text-sm font-black tracking-[0.4em] uppercase mb-8">
             {data.header.subtitle}
           </p>
           <div className="w-16 h-1 bg-brand-red mx-auto mb-10"></div>
@@ -48,7 +48,7 @@ const Logistics: React.FC<LogisticsProps> = ({ data }) => {
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full px-6 md:px-8 py-6 md:py-10 flex items-center gap-4 md:gap-8 text-left group"
               >
-                <span className={`text-3xl md:text-5xl font-black font-serif transition-colors duration-500 ${openIndex === idx ? 'text-brand-blue opacity-30' : 'text-slate-400'}`}>
+                <span className={`text-3xl md:text-5xl font-black font-serif transition-colors duration-500 ${openIndex === idx ? 'text-[#0078ab] opacity-50' : 'text-slate-500'}`}>
                   {item.num}
                 </span>
                 

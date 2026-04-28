@@ -32,7 +32,7 @@ const TourCard: React.FC<TourCardProps> = ({
   const isMod = difficultyLevel === 'mod';
 
   const dotColor = isHard ? 'bg-brand-red' : (isModPlus || isMod ? 'bg-brand-blue' : 'bg-green-500');
-  const textColor = isHard ? 'text-brand-red' : (isModPlus || isMod ? 'text-brand-blue' : 'text-green-700');
+  const textColor = isHard ? 'text-brand-red' : (isModPlus || isMod ? 'text-[#0078ab]' : 'text-green-700');
 
   return (
     <div className="group bg-white flex flex-col h-full transition-all duration-700 border border-slate-100 border-b-4 border-b-brand-blue hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">

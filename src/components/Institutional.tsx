@@ -49,17 +49,17 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
             </div>
 
             <div className="space-y-6">
-              <span className="inline-block bg-slate-100 text-brand-dark/70 text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-sm">
+              <span className="inline-block bg-slate-100 text-brand-dark/85 text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-sm">
                 {data.identity.netBadge}
               </span>
               <div className="space-y-6">
-                <p className="text-brand-dark/70 text-base leading-relaxed">
+                <p className="text-brand-dark/85 text-base leading-relaxed">
                   {data.identity.netText1}
                   <strong className="text-brand-dark font-bold underline decoration-brand-blue/30 decoration-2 underline-offset-4">
                     {data.identity.netHighlight}
                   </strong>
                 </p>
-                <p className="text-brand-dark/70 text-base leading-relaxed italic border-l-2 border-brand-blue/20 pl-6">
+                <p className="text-brand-dark/85 text-base leading-relaxed italic border-l-2 border-brand-blue/20 pl-6">
                   {data.identity.netText2}
                 </p>
               </div>
@@ -75,7 +75,7 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
             {data.pillars.map((pillar, idx) => (
               <div key={idx} className="group relative bg-[#fbfcfd] p-8 md:p-12 transition-all duration-700 hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2">
                 <div className="flex justify-between items-start mb-16">
-                  <span className="text-5xl font-black text-slate-300 group-hover:text-brand-blue/10 transition-colors duration-500">
+                  <span className="text-5xl font-black text-slate-400/80 group-hover:text-brand-blue/10 transition-colors duration-500">
                     {pillar.num}
                   </span>
                   <span className="text-3xl opacity-20 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
