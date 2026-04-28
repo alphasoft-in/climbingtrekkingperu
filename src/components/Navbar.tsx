@@ -307,12 +307,12 @@ const Navbar: React.FC<NavbarProps> = ({
 
           <nav className="flex flex-col gap-4 sm:gap-6 items-center w-full">
             <div className="flex flex-col items-center gap-1 group">
-              <a href={lang === 'es' ? '/' : '/en'} className={`text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
+              <a href={lang === 'es' ? '/' : '/en'} className={`text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
               {routeName === '' && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('about')} className={`text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isAboutActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.about}</a>
+              <a href={getBaseUrl('about')} className={`text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${isAboutActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.about}</a>
               {isAboutActive && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
             
@@ -320,7 +320,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="w-full flex flex-col items-center">
               <button
                 onClick={() => setActiveMobileDrop(activeMobileDrop === 'trekking' ? null : 'trekking')}
-                className={`flex items-center gap-2.5 text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isTrekkingActive || activeMobileDrop === 'trekking' ? 'text-brand-blue' : 'text-white/50'}`}
+                className={`flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${isTrekkingActive || activeMobileDrop === 'trekking' ? 'text-brand-blue' : 'text-white/50'}`}
               >
                 {labels.trekking}
                 <svg className={`transition-transform duration-300 ${activeMobileDrop === 'trekking' ? 'rotate-180' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m6 9 6 6 6-6"/></svg>
@@ -337,7 +337,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="w-full flex flex-col items-center">
               <button
                 onClick={() => setActiveMobileDrop(activeMobileDrop === 'dest' ? null : 'dest')}
-                className={`flex items-center gap-2.5 text-[1.05rem] sm:text-[1.25rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isDestinationsActive || activeMobileDrop === 'dest' ? 'text-brand-blue' : 'text-white/50'}`}
+                className={`flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${isDestinationsActive || activeMobileDrop === 'dest' ? 'text-brand-blue' : 'text-white/50'}`}
               >
                 {labels.destinations}
                 <svg className={`transition-transform duration-300 ${activeMobileDrop === 'dest' ? 'rotate-180' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m6 9 6 6 6-6"/></svg>
@@ -353,22 +353,22 @@ const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('climbing')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('climbing') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.climbing}</a>
+              <a href={getBaseUrl('climbing')} className={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName.startsWith('climbing') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.climbing}</a>
               {routeName.startsWith('climbing') && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('tours')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
+              <a href={getBaseUrl('tours')} className={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
               {isToursActive && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('gallery')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('gallery') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.gallery}</a>
+              <a href={getBaseUrl('gallery')} className={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName.startsWith('gallery') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.gallery}</a>
               {routeName.startsWith('gallery') && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
             <div className="flex flex-col items-center gap-1 group">
-              <a href={getBaseUrl('contact')} className={`text-[1rem] sm:text-[1.2rem] font-black uppercase tracking-[0.3em] transition-all duration-300 ${routeName.startsWith('contact') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.contact}</a>
+              <a href={getBaseUrl('contact')} className={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName.startsWith('contact') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.contact}</a>
               {routeName.startsWith('contact') && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
           </nav>
