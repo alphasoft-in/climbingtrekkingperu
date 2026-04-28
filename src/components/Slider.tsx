@@ -67,6 +67,8 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
                <img
                  src={slide.src}
                  alt={slide.title}
+                 width={1920}
+                 height={1080}
                  className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out transform-gpu ${
                    index === currentIndex ? 'scale-105' : 'scale-100'
                  }`}

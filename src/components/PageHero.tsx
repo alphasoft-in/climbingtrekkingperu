@@ -19,6 +19,8 @@ const PageHero: React.FC<PageHeroProps> = ({ titleTop, titleMain, backgroundImag
       <img
         src={backgroundImage}
         alt={titleMain}
+        width={1920}
+        height={1080}
         className="absolute inset-0 w-full h-full object-cover object-[center_40%] transition-transform duration-[10000ms] hover:scale-105 transform-gpu"
         loading="eager"
         fetchPriority="high"
