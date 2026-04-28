@@ -28,7 +28,7 @@ export const huayhuashMiniData = {
       ]
     },
     itinerary: [
-      { day: "DÍA 01", title: "LIMA PERÚ (100 MSNM) – HUARAZ (3100 MSNM)", content: "Viaje en bus (8 horas) o vuelo (50 min) a Huaraz. Se recomienda al menos un día de aclimatación en la Cordillera Blanca." },
+      { day: "DÍA 01", title: "LIMA PERÚ (100 MSNM) – HUARAZ (3100 MSNM)", content: "Viaje en bus (8 horas) or vuelo (50 min) a Huaraz. Se recomienda al menos un día de aclimatación en la Cordillera Blanca." },
       { day: "DÍA 02", title: "FULL DAY LAGUNA ROCUTOYOC (4450 MSNM) – ACLIMATACIÓN", content: "Visita a laguna Rocutuyoc, cascada de Ruripaccha y glaciar Ruripaccha (4,650 msnm). Retorno a Huaraz.", stats: { time: "9-10 horas", alt: "4450m" } },
       { day: "DÍA 03", title: "DÍA LIBRE", content: "Día de descanso estratégico para optimizar el ajuste a la altura antes de iniciar el Mini Trek Huayhuash." },
       { day: "DÍA 04", title: "HUARAZ (3100M) CUARTELWAIN (4180 MSNM) - MITUCOCHA (4280 MSNM)", content: "Traslado a Cuartelwain. Paso Cacananpunta (4700 msnm). Descenso al campamento Jancapampa (Mitucocha).", stats: { trans: "05 horas", alt: "4700 m", time: "5 h" } },

@@ -139,7 +139,7 @@ export const huayhuashClassicData = {
     ],
     itineraryTitle: "Timeline",
     itinerarySubtitle: "Itinerary",
-    includesTitle: "Services Included",
+    includesTitle: "Included Services",
     equipmentTitle: "Suggested Equipment",
     gallery: [
       "/trekking/huayhuash/clasico/1.avif",

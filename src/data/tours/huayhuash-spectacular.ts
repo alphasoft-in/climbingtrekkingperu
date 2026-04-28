@@ -16,7 +16,7 @@ export const huayhuashSpectacularData = {
       code: "HYH-SPEC-15D",
       titlePrefix: "Circuito",
       titleAccent: "Supremo",
-      description: "Esta es nuestra ruta más completa y exclusiva. 15 días de inmersión total en la Cordillera Huayhuash, incluyendo el mirador Cero Gran Vista frente al Siula Grande y servicios logísticos de nivel superior.",
+      description: "Esta es nuestra ruta más completa y exclusiva. 15 days of total immersion in the Cordillera Huayhuash, including the Cero Gran Vista frente al Siula Grande y servicios logísticos de nivel superior.",
       image: "/trekking/huayhuash/espectacular/1.avif",
       lat: '10° 17\' 22" S',
       lon: '76° 54\' 01" W',
@@ -122,8 +122,8 @@ export const huayhuashSpectacularData = {
       { day: "DAY 11", title: "HUAYLLAPA (3630 MASL) - GASHPAPAMPA (4555 MASL)", content: "Long but gentle ascent to Tapush Pass (4,800 masl). Views of Diablo Mudo peak (5,350 masl).", stats: { alt: "4800 m", dist: "15 km", time: "08 h" } },
       { day: "DAY 12", title: "GASHPAPAMPA (4555 MASL) - JAHUACOCHA LAGOON (4100 MASL)", content: "Yaucha Pass (4,800 masl). Huacrish Lookout with full panorama of the highest peaks of the range.", stats: { alt: "4800 m", dist: "12 km", time: "07 h" } },
       { day: "DAY 13", title: "JAHUACOCHA (4100 MASL) - LLAMAC (3300 MASL)", content: "Last day of trekking. Pampa Llamac Pass (3,900m). Final descent to Llamac and transfer back to Huaraz.", stats: { alt: "3900 m", dist: "13 km", time: "06 h" } },
-      { day: "DAY 14", title: "HUARAZ - TRANSFER TO TERMINAL OR AIRPORT", content: "Transfer from hotel to bus terminal or airport for the return trip to Lima." },
-      { day: "DAY 15", title: "LIMA - TRANSFER TO AIRPORT", content: "Final transfer to the international airport for your return flight. End of services." }
+      { day: "DAY 14", title: "HUARAZ - TRANSFER TO TERMINAL OR AIRPORT", content: "Transfer from hotel to bus terminal or airport for the return trip to Lima.", stats: { time: "8 hs" } },
+      { day: "DAY 15", title: "LIMA - TRANSFER TO AIRPORT", content: "Final transfer to the international airport for your return flight. End of services.", stats: { time: "1 h" } }
     ],
     includes: [
       "Lima airport reception and all transfers",
@@ -151,7 +151,7 @@ export const huayhuashSpectacularData = {
     ],
     itineraryTitle: "Timeline",
     itinerarySubtitle: "Expedition",
-    includesTitle: "Services Included",
+    includesTitle: "Included Services",
     equipmentTitle: "Required Equipment",
     gallery: [
       "/trekking/huayhuash/espectacular/1.avif",

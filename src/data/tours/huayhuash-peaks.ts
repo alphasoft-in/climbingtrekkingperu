@@ -40,7 +40,7 @@ export const huayhuashPeaksData = {
       { day: "DÍA 10", title: "HUAYLLAPA (3630 MSNM) - GASHPAPAMPA (4550 MSNM)", content: "Ascenso exigente al paso Tapush (4,800 msnm). Vista del nevado Diablo Mudo. Campo base Gashpapampa.", stats: { alt: "4800 m", dist: "15 km", time: "08 hs" } },
       { day: "DÍA 11", title: "ASCENSO NEVADO DIABLO MUDO (5350 M) – JAHUACOCHA (4100 M)", content: "Ascenso por la arista y cumbre (01:30 am). Vista fenomenal de la cordillera Huayhuash. Descenso a laguna Jahuacocha.", stats: { alt: "5350 m", dist: "19 km", time: "14 hs" } },
       { day: "DÍA 12", title: "JAHUACOCHA (4100 MSNM) - LLAMAC (3300 MSNM)", content: "Último día de trekking. Paso Pampa Llamac (3,900 m). Descenso final a Llamac y traslado de regreso a Huaraz.", stats: { alt: "3950 m", dist: "13 km", time: "6 hs" } },
-      { day: "DÍA 13", title: "TRASLADO AL TERMINAL O AEROPUERTO", content: "Traslado del hotel al terminal de bus o aeropuerto para el retorno a Lima. Fin de servicios." }
+      { day: "DÍA 13", title: "TRASLADO AL TERMINAL O AEROPUERTO", content: "Traslado del hotel al terminal de bus o aeropuerto para el retorno a Lima. Fin de servicios.", stats: { time: "8 hs" } }
     ],
     includes: [
       "Briefing técnico en oficina Huaraz",
@@ -117,7 +117,7 @@ export const huayhuashPeaksData = {
       { day: "DAY 10", title: "HUAYLLAPA (3630 MASL) - GASHPAPAMPA (4550 MASL)", content: "Demanding ascent to Tapush Pass (4,800 masl). View of Diablo Mudo peak. Base camp Gashpapampa.", stats: { alt: "4800 m", dist: "15 km", time: "08 hs" } },
       { day: "DAY 11", title: "DIABLO MUDO MOUNTAIN ASCENT (5350 M) – JAHUACOCHA (4100 M)", content: "Ascent to the ridge and summit (01:30 am). Phenomenal view of the Huayhuash range. Descent to Jahuacocha lagoon.", stats: { alt: "5350 m", dist: "19 km", time: "14 hs" } },
       { day: "DAY 12", title: "JAHUACOCHA (4100 MASL) - LLAMAC (3300 MASL)", content: "Last day of trekking. Pampa Llamac Pass (3,900m). Final descent to Llamac and transfer back to Huaraz.", stats: { alt: "3950 m", dist: "13 km", time: "6 hs" } },
-      { day: "DAY 13", title: "TRANSFER TO TERMINAL OR AIRPORT", content: "Transfer from hotel to bus terminal or airport for the return to Lima. End of services." }
+      { day: "DAY 13", title: "TRANSFER TO TERMINAL OR AIRPORT", content: "Transfer from hotel to bus terminal or airport for the return to Lima. End of services.", stats: { time: "8 hs" } }
     ],
     includes: [
       "Technical briefing at Huaraz office",

@@ -26,11 +26,11 @@ export const galleryData = {
     ]
   },
   items: [
-    { id: 1, category: 'peru', title: 'Laguna Carhuacocha', location: 'Cordillera Huayhuash', image: '/trekking/huayhuash/360/1.avif', size: 'large' },
-    { id: 2, category: 'peru', title: 'Paso Cacananpunta', location: 'Huayhuash 360', image: '/trekking/huayhuash/360/2.avif', size: 'medium' },
-    { id: 3, category: 'peru', title: 'Campamento Mitucocha', location: 'Andes Peruanos', image: '/trekking/huayhuash/360/3.avif', size: 'small' },
-    { id: 4, category: 'peru', title: 'Vista Yerupaja', location: 'Cordillera Huayhuash', image: '/trekking/huayhuash/360/4.avif', size: 'medium' },
-    { id: 5, category: 'climbing', title: 'Ascenso Técnico', location: 'Cordillera Blanca', image: '/trekking/huayhuash/360/5.avif', size: 'large' },
+    { id: 1, category: 'peru', title: 'Campamento Janca (mitucocha)', location: 'Cordillera Huayhuash', image: '/trekking/huayhuash/360/1.avif', size: 'large' },
+    { id: 2, category: 'peru', title: 'Campamento Huayhuash', location: 'Huayhuash 360', image: '/trekking/huayhuash/360/2.avif', size: 'medium' },
+    { id: 3, category: 'peru', title: 'Mirador de 3 lagunas (Mirador Siula)', location: 'Andes Peruanos', image: '/trekking/huayhuash/360/3.avif', size: 'small' },
+    { id: 4, category: 'peru', title: 'Laguna ganrajanca', location: 'Cordillera Huayhuash', image: '/trekking/huayhuash/360/4.avif', size: 'medium' },
+    { id: 5, category: 'climbing', title: 'Laguna carhuacocha', location: 'Cordillera Blanca', image: '/trekking/huayhuash/360/5.avif', size: 'large' },
     { id: 6, category: 'peru', title: 'Laguna Viconga', location: 'Baños Termales', image: '/trekking/huayhuash/360/6.avif', size: 'small' },
     { id: 7, category: 'peru', title: 'Paso Carhuac', location: 'Huayhuash Clasico', image: '/trekking/huayhuash/clasico/1.avif', size: 'medium' },
     { id: 8, category: 'peru', title: 'Mirador Tres Lagunas', location: 'Cordillera Huayhuash', image: '/trekking/huayhuash/clasico/2.avif', size: 'large' },
