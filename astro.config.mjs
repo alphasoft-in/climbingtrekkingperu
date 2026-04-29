@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.alpinetreksperu.com',
+  site: 'https://alpinetreksperu.com',
 
   i18n: {
     defaultLocale: 'es',

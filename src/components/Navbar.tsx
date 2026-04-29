@@ -72,6 +72,8 @@ const Navbar: React.FC<NavbarProps> = ({
                 <img
                   src="/logo.avif"
                   alt="ALPINE TREKS PERÚ"
+                  width="260"
+                  height="138"
                   className={`transition-all duration-500 object-contain w-auto ${
                     isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-16'
                   }`}
@@ -292,7 +294,7 @@ const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="h-full flex flex-col p-6 sm:p-12 overflow-y-auto">
           <div className="flex justify-between items-center mb-8 sm:mb-12">
-            <img src="/logo.avif" alt="ALPINE TREKS PERÚ" className="h-8 sm:h-10" />
+            <img src="/logo.avif" alt="ALPINE TREKS PERÚ" width="260" height="138" className="h-8 sm:h-10 w-auto object-contain" />
             <button
               onClick={toggleMobileMenu}
               className="group flex items-center gap-3 text-white text-[0.65rem] sm:text-[0.7rem] font-black tracking-[0.3em] opacity-60 hover:opacity-100 transition-all uppercase"

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.alpinetreksperu.com/sitemap-index.xml
+Sitemap: https://alpinetreksperu.com/sitemap-index.xml
