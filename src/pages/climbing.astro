@@ -3,7 +3,7 @@ import { toursData } from '@data/tours/toursData';
 import { regionsData } from '@data/regions';
 import CategoryTemplate from '@components/CategoryTemplate.astro';
 
-const lang = 'es';
+const lang = 'en'; 
 const metadata = regionsData['climbing'];
 const programs = toursData.filter(t => t.path.startsWith('climbing/'));
 ---
