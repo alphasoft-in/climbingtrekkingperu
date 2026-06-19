@@ -3,12 +3,12 @@
 import Layout from '@layouts/Layout.astro';
 import SuggestedRoutes from './SuggestedRoutes.astro';
 import TourGallery from './TourGallery.astro';
-import TestGallery from './TestGallery.astro';
 import ItineraryHero from './ItineraryHero';
 import ItineraryIntro from './ItineraryIntro';
 import ItinerarySchedule from './ItinerarySchedule';
 import LogisticsCard from './LogisticsCard';
 import ItineraryBooking from './ItineraryBooking';
+
 
 interface Props {
   lang: 'es' | 'en';
@@ -67,8 +67,6 @@ const pageTitle = `${formatTitle(t.hero.titleMain)} | Alpine Treks Perú`;
     lon={t.intro.lon}
     specs={t.intro.specs}
   />
-
-  <TestGallery />
 
   <TourGallery 
     lang={lang}
