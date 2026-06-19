@@ -1,6 +1,6 @@
 ---
 import Footer from "@components/Footer.tsx";
-import Navbar from "@components/Navbar.tsx";
+import Navbar from "@components/Navbar.astro";
 import FloatingWhatsApp from "@components/FloatingWhatsApp.tsx";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import "../styles/global.css";
@@ -222,7 +222,6 @@ const footerLabels = {
 	</head>
 	<body>
 		<Navbar
-			client:idle
 			lang={lang as "es" | "en"}
 			labels={navLabels}
 			esUrl={esUrl}

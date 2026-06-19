@@ -1,0 +1,614 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+interface Props {
+  lang: 'es' | 'en';
+  labels: any;
+  esUrl: string;
+  enUrl: string;
+  currentPath: string;
+  routeName: string;
+  isTrekkingActive: boolean;
+  isDestinationsActive: boolean;
+  isToursActive: boolean;
+}
+
+const {
+  lang,
+  labels,
+  esUrl,
+  enUrl,
+  currentPath,
+  routeName,
+  isTrekkingActive,
+  isDestinationsActive,
+  isToursActive,
+} = Astro.props;
+
+const getBaseUrl = (path: string) => {
+  if (path === 'about' && lang === 'es') return '/es/nosotros';
+  return lang === 'es' ? `/es/${path}` : `/${path}`;
+};
+
+const isAboutActive = routeName.startsWith('about') || routeName.startsWith('nosotros');
+
+// SVG Icons
+const FaFacebookF = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>`;
+const FaInstagram = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>`;
+const FaTiktok = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg>`;
+const FaTripadvisor = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504.65 190.54c-12.83-6.68-25.04-12.72-36.66-18.06A263.14 263.14 0 0 0 256.4 56C163.66 56 81.33 103.88 34.62 176c-9.15 4-19 8.27-29.35 12.88-2.65 1.18-5.3 2.4-7.85 3.63a8 8 0 0 0-4.63 7.87L22.25 456a8.05 8.05 0 0 0 8 7.37c28.66.07 59.27-2.6 92.1-8.52a265.17 265.17 0 0 0 133.57 35.8A263.11 263.11 0 0 0 512 249a265.41 265.41 0 0 0-3.32-42.34c-1.57-5.83-2.58-10.45-4.03-16.12zM337 360H175.05c-3.13 0-5.7-2.18-6-5.26a165.71 165.71 0 0 1 0-33.48c.32-3.08 2.89-5.26 6-5.26H337c3.13 0 5.7 2.18 6 5.26a165.71 165.71 0 0 1 0 33.48c-.3 3.08-2.87 5.26-6 5.26zM256.4 290.41c-32.96 0-59.66-26.7-59.66-59.66s26.7-59.66 59.66-59.66 59.66 26.7 59.66 59.66-26.7 59.66-59.66 59.66z"></path></svg>`;
+const FaThreads = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C-1.7 184.3 15 127.2 47.3 86.2C83.6 40.1 137.5 16.5 207.7 16h.3c71.7 .5 125.3 24.5 159.4 71.4c29.5 40.7 46.5 98.4 46.5 156.4v7.4H289c-4.4-15.5-13.8-28.7-25.9-38.6c-4.5-3.7-9.5-6.9-15-9.6c-19.4-9.3-43.1-10.7-67.9-6.3c-11.8 2.1-23.2 5.8-33.8 11.2c-39.7 20-63.7 64-63.7 114.6c0 53.6 24 94.6 62.7 106.6c20.3 6.3 43 5.3 62-4.5c15.9-8.3 29.5-22.1 39.5-39.6c2.5-4.4 4.7-9 6.6-13.8c-20.7 13.5-45 22.1-71.1 22.1c-34.9 0-66.7-14.2-89.8-37.3c-23-23-37.2-54.8-37.2-89.7c0-35 14.2-66.7 37.2-89.8c23.1-23.1 54.9-37.3 89.8-37.3c35 0 66.8 14.2 89.8 37.3c15 15 26.6 33.6 33.6 54.4c.1 .3 .2 .6 .4 .9zm-113 14c-12 1.4-23 6.4-31.5 14.9c-8.5 8.5-13.5 19.5-14.9 31.5H301.7c-1.4-12-6.4-23-14.9-31.5c-8.5-8.5-19.5-13.5-31.5-14.9z"></path></svg>`;
+const FaYoutube = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>`;
+
+const mainLinks = [
+  { label: labels.home, href: lang === 'es' ? '/es/' : '/', active: routeName === '' },
+  { label: labels.about, href: getBaseUrl('about'), active: isAboutActive },
+];
+
+const secondaryLinks = [
+  { label: labels.tours, href: getBaseUrl('tours'), active: isToursActive },
+  { label: labels.gallery, href: getBaseUrl('gallery'), active: routeName.startsWith('gallery') },
+  { label: labels.contact, href: getBaseUrl('contact'), active: routeName.startsWith('contact') },
+];
+
+---
+
+<!-- Main Header -->
+<header
+  id="main-navbar"
+  class="fixed top-0 left-0 w-full z-[1000] transition-all duration-500 border-b h-[90px] md:h-[105px] bg-white border-brand-blue/20"
+>
+  <div class="h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center">
+    <!-- Left Column: Logo -->
+    <div class="flex-1 flex justify-start">
+      <div class="flex-shrink-0 z-[1001]">
+        <a href={lang === 'es' ? '/es/' : '/'} class="block">
+          <img
+            id="navbar-logo"
+            src="/logo.avif"
+            alt="ALPINE TREKS PERÚ"
+            width="260"
+            height="138"
+            class="transition-all duration-500 object-contain w-auto h-10 md:h-16"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- Center Column: Desktop Navigation -->
+    <nav class="hidden nav:flex items-center justify-center h-full">
+      <ul class="flex items-center gap-5 lg:gap-7 h-full list-none m-0 p-0">
+        {mainLinks.map((link) => (
+          <li class="h-full flex items-center">
+            <a
+              href={link.href}
+              class={`nav-link text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
+                link.active
+                  ? 'active-link text-brand-blue'
+                  : 'inactive-link text-brand-dark hover:text-brand-blue'
+              }`}
+              data-active={link.active ? 'true' : 'false'}
+            >
+              <span class="relative py-1">
+                {link.label}
+                <span class={`absolute left-0 h-[2px] -bottom-1.5 transition-all duration-300 ${
+                  link.active ? 'w-full' : 'w-0 group-hover:w-full'
+                } bg-brand-blue`}></span>
+              </span>
+            </a>
+          </li>
+        ))}
+
+        <!-- Trekking Dropdown -->
+        <li class="relative group h-full flex items-center">
+          <button
+            class={`nav-dropdown-btn flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 py-2 ${
+              isTrekkingActive
+                ? 'active-link text-brand-blue'
+                : 'inactive-link text-brand-dark hover:text-brand-blue'
+            }`}
+            data-active={isTrekkingActive ? 'true' : 'false'}
+          >
+            <span class="flex items-center gap-1.5">
+              <span class="relative">
+                {labels.trekking}
+                <span class={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                  isTrekkingActive ? 'w-full' : 'w-0 group-hover:w-full'
+                } bg-brand-blue`}></span>
+              </span>
+              <svg class="transition-transform duration-300 group-hover:rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </button>
+          <div class="nav-dropdown-menu absolute top-[calc(100%-15px)] left-1/2 -translate-x-1/2 translate-y-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-400 min-w-[280px] p-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-[1100] border bg-white border-slate-100">
+            <div class="flex flex-col gap-1.5">
+              {[
+                { href: 'trekking/huayhuash', label: labels.huayhuash },
+                { href: 'trekking/blanca', label: labels.blanca },
+                { href: 'trekking/cusco', label: labels.cusco },
+              ].map((item) => (
+                <a
+                  href={getBaseUrl(item.href)}
+                  class={`nav-dropdown-item text-[0.75rem] px-5 py-3.5 rounded-xl font-bold transition-all duration-300 flex items-center justify-between group/item ${
+                    routeName.includes(item.href)
+                      ? 'active-sub text-brand-blue bg-slate-50'
+                      : 'inactive-sub text-brand-dark hover:bg-slate-50 hover:text-brand-blue'
+                  }`}
+                  data-active={routeName.includes(item.href) ? 'true' : 'false'}
+                >
+                  {item.label}
+                  <svg class="opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        </li>
+
+        <li class="h-full flex items-center">
+          <a
+            href={getBaseUrl('climbing')}
+            class={`nav-link text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
+              routeName.startsWith('climbing')
+                ? 'active-link text-brand-blue'
+                : 'inactive-link text-brand-dark hover:text-brand-blue'
+            }`}
+            data-active={routeName.startsWith('climbing') ? 'true' : 'false'}
+          >
+              <span class="relative">
+                {labels.climbing}
+                <span class={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                  routeName.startsWith('climbing') ? 'w-full' : 'w-0 group-hover:w-full'
+                } bg-brand-blue`}></span>
+              </span>
+            </a>
+        </li>
+
+        <!-- Destinations Dropdown -->
+        <li class="relative group h-full flex items-center">
+          <button
+            class={`nav-dropdown-btn flex items-center gap-1.5 text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 py-2 ${
+              isDestinationsActive
+                ? 'active-link text-brand-blue'
+                : 'inactive-link text-brand-dark hover:text-brand-blue'
+            }`}
+            data-active={isDestinationsActive ? 'true' : 'false'}
+          >
+            <span class="flex items-center gap-1.5">
+              <span class="relative">
+                {labels.destinations}
+                <span class={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                  isDestinationsActive ? 'w-full' : 'w-0 group-hover:w-full'
+                } bg-brand-blue`}></span>
+              </span>
+              <svg class="transition-transform duration-300 group-hover:rotate-180" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </button>
+          <div class="nav-dropdown-menu absolute top-[calc(100%-15px)] left-1/2 -translate-x-1/2 translate-y-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-400 min-w-[280px] p-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-[1100] border bg-white border-slate-100">
+            <div class="flex flex-col gap-1.5">
+              {[
+                { href: 'peru', label: labels.peru },
+                { href: 'bolivia', label: labels.bolivia },
+                { href: 'ecuador', label: labels.ecuador },
+                { href: 'chile', label: labels.chile },
+                { href: 'argentina', label: labels.argentina },
+              ].map((item) => {
+                const isActive = routeName === item.href || routeName.startsWith(item.href + '/');
+                return (
+                <a
+                  href={getBaseUrl(item.href)}
+                  class={`nav-dropdown-item text-[0.75rem] px-5 py-3.5 rounded-xl font-bold transition-all duration-300 flex items-center justify-between group/item ${
+                    isActive
+                      ? 'active-sub text-brand-blue bg-slate-50'
+                      : 'inactive-sub text-brand-dark hover:bg-slate-50 hover:text-brand-blue'
+                  }`}
+                  data-active={isActive ? 'true' : 'false'}
+                >
+                  {item.label}
+                  <svg class="opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </a>
+              )})}
+            </div>
+          </div>
+        </li>
+
+        {secondaryLinks.map((link) => (
+          <li class="h-full flex items-center">
+            <a
+              href={link.href}
+              class={`nav-link text-[0.7rem] lg:text-[0.78rem] font-bold uppercase tracking-widest transition-colors duration-300 relative group py-2 ${
+                link.active
+                  ? 'active-link text-brand-blue'
+                  : 'inactive-link text-brand-dark hover:text-brand-blue'
+              }`}
+              data-active={link.active ? 'true' : 'false'}
+            >
+              <span class="relative">
+                {link.label}
+                <span class={`absolute left-0 h-[2px] -bottom-1.5 transition-[width] duration-300 ${
+                  link.active ? 'w-full' : 'w-0 group-hover:w-full'
+                } bg-brand-blue`}></span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Right Column: Actions -->
+    <div class="flex-1 flex justify-end items-center gap-3 sm:gap-6">
+      <!-- Language Switcher - Desktop & Tablet -->
+      <div class="hidden sm:flex items-center gap-3 font-black text-[0.7rem] lg:text-[0.75rem]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-brand-blue opacity-80">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        <div class="flex items-center gap-2 lg:gap-2.5">
+          <a href={esUrl} class={`transition-all duration-300 ${lang === 'es' ? 'text-brand-blue scale-110' : 'text-gray-400 hover:text-brand-red'}`}>ES</a>
+          <span id="lang-divider" class="w-[1px] h-3.5 bg-gray-300"></span>
+          <a href={enUrl} id="lang-en" class={`transition-all duration-300 ${lang === 'en' ? 'text-brand-blue scale-110' : 'text-gray-400 hover:text-brand-red'}`} data-active={lang === 'en' ? 'true' : 'false'}>EN</a>
+        </div>
+      </div>
+      
+      <!-- Burger Menu Button -->
+      <button
+        id="burger-menu-btn"
+        class="nav:hidden flex flex-col gap-[6px] sm:gap-[7px] bg-none border-none cursor-pointer group p-2 -mr-2"
+        aria-label={lang === 'es' ? "Menú" : "Menu"}
+      >
+        <span class="burger-line w-6 sm:w-8 h-[2.5px] sm:h-[3px] transition-all duration-300 group-hover:w-5 bg-brand-dark"></span>
+        <span class="burger-line w-6 sm:w-8 h-[2.5px] sm:h-[3px] transition-all duration-300 bg-brand-dark"></span>
+        <span class="burger-line w-6 sm:w-8 h-[2.5px] sm:h-[3px] transition-all duration-300 group-hover:w-5 ml-auto bg-brand-dark"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Full Menu Overlay (Mobile) -->
+<div
+  id="mobile-menu-overlay"
+  class="fixed inset-0 z-[2000] bg-brand-dark/98 backdrop-blur-xl transition-all duration-700 ease-in-out opacity-0 invisible translate-y-10"
+>
+  <div class="h-full flex flex-col p-6 sm:p-12 overflow-y-auto">
+    <div class="flex justify-between items-center mb-8 sm:mb-12">
+      <img src="/logo.avif" alt="ALPINE TREKS PERÚ" width="260" height="138" class="h-8 sm:h-10 w-auto object-contain" />
+      <button
+        id="close-menu-btn"
+        class="group flex items-center gap-3 text-white text-[0.65rem] sm:text-[0.7rem] font-black tracking-[0.3em] opacity-60 hover:opacity-100 transition-all uppercase"
+      >
+        {labels.close}
+        <div class="relative w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
+          <span class="absolute w-full h-[2px] bg-white rotate-45 group-hover:rotate-[135deg] transition-transform duration-500"></span>
+          <span class="absolute w-full h-[2px] bg-white -rotate-45 group-hover:rotate-[45deg] transition-transform duration-500"></span>
+        </div>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-4 sm:gap-6 items-center w-full">
+      <div class="flex flex-col items-center gap-1 group">
+        <a href={lang === 'es' ? '/es/' : '/'} class={`text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
+        {routeName === '' && <div class="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
+      </div>
+
+      <div class="flex flex-col items-center gap-1 group">
+        <a href={getBaseUrl('about')} class={`text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${isAboutActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.about}</a>
+        {isAboutActive && <div class="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
+      </div>
+      
+      <!-- Mobile Dropdown: Trekking -->
+      <div class="w-full flex flex-col items-center">
+        <button
+          class="mobile-dropdown-toggle flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300"
+          data-active={isTrekkingActive ? "true" : "false"}
+        >
+          {labels.trekking}
+          <svg class="dropdown-icon transition-transform duration-300" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-dropdown-content overflow-hidden transition-all duration-500 flex flex-col items-center gap-4 max-h-0 opacity-0">
+          <div class="w-6 h-[1.5px] bg-white/10 mb-2 mt-6"></div>
+          <a href={getBaseUrl('trekking/huayhuash')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName.includes('huayhuash') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.huayhuash}</a>
+          <a href={getBaseUrl('trekking/blanca')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName.includes('blanca') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.blanca}</a>
+          <a href={getBaseUrl('trekking/cusco')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName.includes('cusco') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.cusco}</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: Destinations -->
+      <div class="w-full flex flex-col items-center">
+        <button
+          class="mobile-dropdown-toggle flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300"
+          data-active={isDestinationsActive ? "true" : "false"}
+        >
+          {labels.destinations}
+          <svg class="dropdown-icon transition-transform duration-300" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-dropdown-content overflow-hidden transition-all duration-500 flex flex-col items-center gap-4 max-h-0 opacity-0">
+          <div class="w-6 h-[1.5px] bg-white/10 mb-2 mt-6"></div>
+          <a href={getBaseUrl('peru')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'peru' || routeName.startsWith('peru/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.peru}</a>
+          <a href={getBaseUrl('bolivia')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'bolivia' || routeName.startsWith('bolivia/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.bolivia}</a>
+          <a href={getBaseUrl('ecuador')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'ecuador' || routeName.startsWith('ecuador/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.ecuador}</a>
+          <a href={getBaseUrl('chile')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'chile' || routeName.startsWith('chile/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.chile}</a>
+          <a href={getBaseUrl('argentina')} class={`text-[1rem] sm:text-[1.15rem] font-black uppercase tracking-[0.15em] transition-colors ${routeName === 'argentina' || routeName.startsWith('argentina/') ? 'text-brand-blue' : 'text-white/60 hover:text-white'}`}>{labels.argentina}</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-1 group">
+        <a href={getBaseUrl('climbing')} class={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName.startsWith('climbing') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.climbing}</a>
+        {routeName.startsWith('climbing') && <div class="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
+      </div>
+
+      <div class="flex flex-col items-center gap-1 group">
+        <a href={getBaseUrl('tours')} class={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${isToursActive ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.tours}</a>
+        {isToursActive && <div class="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
+      </div>
+
+      <div class="flex flex-col items-center gap-1 group">
+        <a href={getBaseUrl('gallery')} class={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName.startsWith('gallery') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.gallery}</a>
+        {routeName.startsWith('gallery') && <div class="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
+      </div>
+
+      <div class="flex flex-col items-center gap-1 group">
+        <a href={getBaseUrl('contact')} class={`text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName.startsWith('contact') ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.contact}</a>
+        {routeName.startsWith('contact') && <div class="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
+      </div>
+    </nav>
+
+    <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-8 items-center text-center pb-8">
+       <div class="flex items-center justify-center flex-wrap gap-4 px-4 relative z-[2001]">
+         {[
+           { name: 'Facebook', url: 'https://www.facebook.com/FranciscoMayhuay', icon: FaFacebookF },
+           { name: 'Instagram', url: 'https://www.instagram.com/franpisco_adventure/', icon: FaInstagram },
+           { name: 'TikTok', url: 'https://www.tiktok.com/@franpiscoadventure', icon: FaTiktok },
+           { name: 'TripAdvisor', url: 'https://www.tripadvisor.com.pe/Attraction_Review-g304039-d12096967-Reviews-Franpisco_Adventure-Huaraz_Ancash_Region.html', icon: FaTripadvisor },
+           { name: 'Threads', url: 'https://www.threads.net/@franpisco_adventure', icon: FaThreads },
+           { name: 'YouTube', url: 'https://www.youtube.com/@franpiscoadventure', icon: FaYoutube }
+         ].map((social) => (
+           <a 
+             href={social.url} 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all duration-300 border border-white/5 shadow-sm active:scale-95 touch-manipulation"
+           >
+             <span class="sr-only">{social.name}</span>
+             <span class="w-5 h-5 flex items-center justify-center" set:html={social.icon} />
+           </a>
+         ))}
+       </div>
+       
+       <div class="flex items-center gap-4 text-xs font-black">
+          <a href={esUrl} class={`transition-all ${lang === 'es' ? 'text-brand-red scale-125' : 'text-white/40'}`}>ES</a>
+          <span class="w-px h-3 bg-white/10"></span>
+          <a href={enUrl} class={`transition-all ${lang === 'en' ? 'text-brand-red scale-125' : 'text-white/40'}`}>EN</a>
+       </div>
+
+       <p class="text-[0.55rem] sm:text-[0.6rem] tracking-[0.4em] text-white/20 uppercase">ALPINE TREKS PERÚ</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setupNavbar() {
+    const navbar = document.getElementById('main-navbar');
+    const logo = document.getElementById('navbar-logo');
+    const links = document.querySelectorAll('.nav-link');
+    const dropdownBtns = document.querySelectorAll('.nav-dropdown-btn');
+    const dropdownItems = document.querySelectorAll('.nav-dropdown-item');
+    const langDivider = document.getElementById('lang-divider');
+    const langEn = document.getElementById('lang-en');
+    const burgerLines = document.querySelectorAll('.burger-line');
+    const dropdownMenus = document.querySelectorAll('.nav-dropdown-menu');
+    
+    // Scroll handling
+    function handleScroll() {
+      if (window.scrollY > 40) {
+        navbar?.classList.add('h-[70px]', 'md:h-[80px]', 'bg-brand-dark/95', 'backdrop-blur-md', 'border-brand-red/50', 'shadow-xl');
+        navbar?.classList.remove('h-[90px]', 'md:h-[105px]', 'bg-white', 'border-brand-blue/20');
+        
+        logo?.classList.add('h-8', 'md:h-12');
+        logo?.classList.remove('h-10', 'md:h-16');
+        
+        links.forEach(link => {
+          if (link.getAttribute('data-active') === 'true') {
+            link.classList.add('text-white');
+            link.classList.remove('text-brand-blue');
+          } else {
+            link.classList.add('text-brand-light', 'hover:text-white');
+            link.classList.remove('text-brand-dark', 'hover:text-brand-blue');
+          }
+        });
+        
+        dropdownBtns.forEach(btn => {
+          if (btn.getAttribute('data-active') === 'true') {
+            btn.classList.add('text-white');
+            btn.classList.remove('text-brand-blue');
+          } else {
+            btn.classList.add('text-brand-light', 'hover:text-white');
+            btn.classList.remove('text-brand-dark', 'hover:text-brand-blue');
+          }
+        });
+
+        dropdownMenus.forEach(menu => {
+          menu.classList.add('bg-brand-dark', 'border-white/10');
+          menu.classList.remove('bg-white', 'border-slate-100');
+        });
+
+        dropdownItems.forEach(item => {
+          if (item.getAttribute('data-active') === 'true') {
+            item.classList.add('bg-white/10', 'text-brand-blue');
+            item.classList.remove('bg-slate-50');
+          } else {
+            item.classList.add('text-white', 'hover:bg-white/5', 'hover:text-brand-blue');
+            item.classList.remove('text-brand-dark', 'hover:bg-slate-50');
+          }
+        });
+
+        if (langDivider) {
+          langDivider.classList.add('bg-white/20');
+          langDivider.classList.remove('bg-gray-300');
+        }
+        
+        if (langEn && langEn.getAttribute('data-active') === 'true') {
+          langEn.classList.add('text-brand-red');
+          langEn.classList.remove('text-brand-blue');
+        }
+
+        burgerLines.forEach(line => {
+          line.classList.add('bg-white');
+          line.classList.remove('bg-brand-dark');
+        });
+
+      } else {
+        navbar?.classList.remove('h-[70px]', 'md:h-[80px]', 'bg-brand-dark/95', 'backdrop-blur-md', 'border-brand-red/50', 'shadow-xl');
+        navbar?.classList.add('h-[90px]', 'md:h-[105px]', 'bg-white', 'border-brand-blue/20');
+        
+        logo?.classList.remove('h-8', 'md:h-12');
+        logo?.classList.add('h-10', 'md:h-16');
+        
+        links.forEach(link => {
+          if (link.getAttribute('data-active') === 'true') {
+            link.classList.remove('text-white');
+            link.classList.add('text-brand-blue');
+          } else {
+            link.classList.remove('text-brand-light', 'hover:text-white');
+            link.classList.add('text-brand-dark', 'hover:text-brand-blue');
+          }
+        });
+        
+        dropdownBtns.forEach(btn => {
+          if (btn.getAttribute('data-active') === 'true') {
+            btn.classList.remove('text-white');
+            btn.classList.add('text-brand-blue');
+          } else {
+            btn.classList.remove('text-brand-light', 'hover:text-white');
+            btn.classList.add('text-brand-dark', 'hover:text-brand-blue');
+          }
+        });
+
+        dropdownMenus.forEach(menu => {
+          menu.classList.remove('bg-brand-dark', 'border-white/10');
+          menu.classList.add('bg-white', 'border-slate-100');
+        });
+
+        dropdownItems.forEach(item => {
+          if (item.getAttribute('data-active') === 'true') {
+            item.classList.remove('bg-white/10');
+            item.classList.add('bg-slate-50', 'text-brand-blue');
+          } else {
+            item.classList.remove('text-white', 'hover:bg-white/5');
+            item.classList.add('text-brand-dark', 'hover:bg-slate-50', 'hover:text-brand-blue');
+          }
+        });
+
+        if (langDivider) {
+          langDivider.classList.remove('bg-white/20');
+          langDivider.classList.add('bg-gray-300');
+        }
+
+        if (langEn && langEn.getAttribute('data-active') === 'true') {
+          langEn.classList.remove('text-brand-red');
+          langEn.classList.add('text-brand-blue');
+        }
+
+        burgerLines.forEach(line => {
+          line.classList.remove('bg-white');
+          line.classList.add('bg-brand-dark');
+        });
+      }
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initialize immediately
+    handleScroll();
+
+    // Mobile Menu logic
+    const burgerBtn = document.getElementById('burger-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    let isMobileMenuOpen = false;
+
+    function toggleMobileMenu() {
+      isMobileMenuOpen = !isMobileMenuOpen;
+      if (isMobileMenuOpen) {
+        mobileOverlay?.classList.add('opacity-100', 'visible', 'translate-y-0');
+        mobileOverlay?.classList.remove('opacity-0', 'invisible', 'translate-y-10');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileOverlay?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        mobileOverlay?.classList.add('opacity-0', 'invisible', 'translate-y-10');
+        document.body.style.overflow = '';
+      }
+    }
+
+    burgerBtn?.addEventListener('click', toggleMobileMenu);
+    closeMenuBtn?.addEventListener('click', toggleMobileMenu);
+
+    // Mobile Dropdowns
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('.dropdown-icon');
+        
+        // Close others
+        mobileDropdownToggles.forEach(otherToggle => {
+          if (otherToggle !== toggle) {
+            const otherContent = otherToggle.nextElementSibling;
+            const otherIcon = otherToggle.querySelector('.dropdown-icon');
+            otherContent?.classList.remove('max-h-[500px]', 'max-h-64', 'opacity-100');
+            otherContent?.classList.add('max-h-0', 'opacity-0');
+            otherIcon?.classList.remove('rotate-180');
+            if (otherToggle.getAttribute('data-active') !== 'true') {
+               otherToggle.classList.add('text-white/50');
+               otherToggle.classList.remove('text-brand-blue');
+            }
+          }
+        });
+
+        // Toggle current
+        if (content?.classList.contains('max-h-0')) {
+          content.classList.remove('max-h-0', 'opacity-0');
+          content.classList.add('max-h-[500px]', 'opacity-100');
+          icon?.classList.add('rotate-180');
+          toggle.classList.remove('text-white/50');
+          toggle.classList.add('text-brand-blue');
+        } else {
+          content?.classList.add('max-h-0', 'opacity-0');
+          content?.classList.remove('max-h-[500px]', 'opacity-100');
+          icon?.classList.remove('rotate-180');
+          if (toggle.getAttribute('data-active') !== 'true') {
+             toggle.classList.add('text-white/50');
+             toggle.classList.remove('text-brand-blue');
+          }
+        }
+      });
+    });
+    
+    // Initial coloring for active toggles
+    mobileDropdownToggles.forEach(toggle => {
+        if (toggle.getAttribute('data-active') === 'true') {
+            toggle.classList.remove('text-white/50');
+            toggle.classList.add('text-brand-blue');
+        } else {
+            toggle.classList.add('text-white/50');
+            toggle.classList.remove('text-brand-blue');
+        }
+    });
+
+  }
+
+  // Support for Astro View Transitions if enabled
+  document.addEventListener('astro:page-load', setupNavbar);
+  // Initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNavbar);
+  } else {
+    setupNavbar();
+  }
+</script>

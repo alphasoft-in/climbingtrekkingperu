@@ -1,13 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Slider from './Slider';
+import Slider from './Slider.astro';
 import Institutional from './Institutional';
 import WorkArea from './WorkArea';
 import TeamSection from './TeamSection';
 import Gastronomy from './Gastronomy';
-import Logistics from './Logistics';
-import EthicsBento from './EthicsBento';
-import SuggestedRoutes from './SuggestedRoutes';
+import Logistics from './Logistics.astro';
+import EthicsBento from './EthicsBento.astro';
+import SuggestedRoutes from './SuggestedRoutes.astro';
 import { useTranslations } from '@i18n/utils';
 
 interface Props {
@@ -23,12 +23,12 @@ const t = useTranslations(lang);
 	title={data.title} 
 	description={data.description}
 >
-	<Slider client:idle lang={lang} slides={data.slides} buttonLabel={t('slider.btn')} />
+	<Slider lang={lang} slides={data.slides} buttonLabel={t('slider.btn')} />
 	<Institutional data={data.institutional} />
 	<WorkArea data={data.workArea} />
 	<TeamSection data={data.team} />
 	<Gastronomy data={data.gastronomy} />
-	<Logistics client:visible data={data.logistics} />
-	<EthicsBento client:visible data={data.ethics} />
-	<SuggestedRoutes client:visible lang={lang} />
+	<Logistics data={data.logistics} />
+	<EthicsBento data={data.ethics} />
+	<SuggestedRoutes lang={lang} />
 </Layout>

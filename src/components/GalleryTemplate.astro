@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import GalleryHub from './GalleryHub';
-import SuggestedRoutes from './SuggestedRoutes';
+import SuggestedRoutes from './SuggestedRoutes.astro';
 
 interface Props {
   lang: 'es' | 'en';
@@ -22,5 +22,5 @@ const { lang, data } = Astro.props;
     items={data.items} 
   />
   
-  <SuggestedRoutes lang={lang} currentId="gallery" client:visible />
+  <SuggestedRoutes lang={lang} currentId="gallery" />
 </Layout>

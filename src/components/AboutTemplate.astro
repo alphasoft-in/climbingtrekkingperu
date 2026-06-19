@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import SuggestedRoutes from './SuggestedRoutes';
+import SuggestedRoutes from './SuggestedRoutes.astro';
 import PageHero from './PageHero';
 
 interface Props {
@@ -81,5 +81,5 @@ const content = data[lang];
 		</div>
 	</section>
 
-  <SuggestedRoutes client:visible lang={lang} />
+  <SuggestedRoutes lang={lang} />
 </Layout>

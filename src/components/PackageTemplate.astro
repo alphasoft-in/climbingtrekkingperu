@@ -1,8 +1,8 @@
 ---
 // src/components/PackageTemplate.astro
 import Layout from '@layouts/Layout.astro';
-import SuggestedRoutes from './SuggestedRoutes';
-import TourGallery from './TourGallery';
+import SuggestedRoutes from './SuggestedRoutes.astro';
+import TourGallery from './TourGallery.astro';
 import ItineraryHero from './ItineraryHero';
 import ItineraryIntro from './ItineraryIntro';
 import ItinerarySchedule from './ItinerarySchedule';
@@ -122,14 +122,13 @@ const pageTitle = `${formatTitle(t.hero.titleMain)} | Alpine Treks Perú`;
 
   {t.gallery && (
     <TourGallery 
-      client:visible 
       lang={lang}
       tourName={t.hero.titleMain}
       images={t.gallery} 
     />
   )}
 
-  <SuggestedRoutes lang={lang} currentId={data.id} client:visible />
+  <SuggestedRoutes lang={lang} currentId={data.id} />
 </Layout>
 
 <style>

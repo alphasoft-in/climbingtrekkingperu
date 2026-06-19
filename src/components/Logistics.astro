@@ -1,0 +1,148 @@
+---
+interface LogisticsProps {
+  data: {
+    header: {
+      title: string;
+      subtitle: string;
+      desc: string;
+    };
+    items: Array<{
+      num: string;
+      category: string;
+      title: string;
+      p1: string;
+      p2: string;
+    }>;
+  };
+}
+
+const { data } = Astro.props as LogisticsProps;
+---
+
+<section class="bg-[#f8fbff] pt-12 md:pt-16 pb-24 md:pb-32 px-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center max-w-4xl mx-auto mb-16 md:mb-24">
+      <h2 class="text-brand-dark text-2xl md:text-4xl font-black tracking-[0.2em] uppercase mb-4">
+        {data.header.title}
+      </h2>
+      <p class="text-[#0078ab] text-xs md:text-sm font-black tracking-[0.4em] uppercase mb-8">
+        {data.header.subtitle}
+      </p>
+      <div class="w-16 h-1 bg-brand-red mx-auto mb-10"></div>
+      <p class="text-slate-500 text-base md:text-lg leading-relaxed font-medium">
+        {data.header.desc}
+      </p>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="max-w-4xl mx-auto space-y-4" id="logistics-accordion">
+      {data.items.map((item, idx) => (
+        <div 
+          class={`logistics-item bg-white border rounded-sm transition-all duration-500 ${idx === 0 ? 'border-brand-blue shadow-xl shadow-blue-900/5' : 'border-slate-200 hover:border-slate-300'}`}
+          data-index={idx}
+        >
+          <button
+            class="logistics-btn w-full px-6 md:px-8 py-6 md:py-10 flex items-center gap-4 md:gap-8 text-left group"
+          >
+            <span class={`logistics-num text-3xl md:text-5xl font-black font-serif transition-colors duration-500 ${idx === 0 ? 'text-[#005a80]' : 'text-slate-600'}`}>
+              {item.num}
+            </span>
+            
+            <div class="flex-1 flex flex-col gap-1.5">
+              <span class={`logistics-category text-[10px] font-black tracking-[0.2em] uppercase transition-colors duration-500 ${idx === 0 ? 'text-[#0078ab]' : 'text-slate-600'}`}>
+                {item.category}
+              </span>
+              <h3 class="text-brand-dark text-base md:text-lg font-bold tracking-tight">
+                {item.title}
+              </h3>
+            </div>
+
+            <div class={`logistics-icon relative w-6 h-6 transition-transform duration-500 ${idx === 0 ? 'rotate-45' : ''}`}>
+              <span class={`logistics-icon-h absolute top-1/2 left-0 w-full h-0.5 transition-colors duration-500 ${idx === 0 ? 'bg-brand-red' : 'bg-slate-300'}`}></span>
+              <span class={`logistics-icon-v absolute top-0 left-1/2 w-0.5 h-full transition-colors duration-500 ${idx === 0 ? 'bg-brand-red' : 'bg-slate-300'}`}></span>
+            </div>
+          </button>
+
+          <div class={`logistics-content overflow-hidden transition-all duration-500 ease-in-out ${idx === 0 ? 'max-h-[500px] opacity-100 pb-10' : 'max-h-0 opacity-0'}`}>
+            <div class="px-6 md:px-32">
+              <div class="md:border-l-2 border-brand-blue/20 pl-0 md:pl-8 text-slate-500 text-sm md:text-base leading-relaxed">
+                <p class="mb-4">{item.p1}</p>
+                <p>{item.p2}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupLogistics() {
+    const accordion = document.getElementById('logistics-accordion');
+    if (!accordion) return;
+
+    const items = accordion.querySelectorAll('.logistics-item');
+
+    items.forEach((item) => {
+      const btn = item.querySelector('.logistics-btn');
+      btn?.addEventListener('click', () => {
+        const isActive = item.querySelector('.logistics-content')?.classList.contains('max-h-[500px]');
+
+        // Close all
+        items.forEach((otherItem) => {
+          otherItem.classList.remove('border-brand-blue', 'shadow-xl', 'shadow-blue-900/5');
+          otherItem.classList.add('border-slate-200', 'hover:border-slate-300');
+
+          otherItem.querySelector('.logistics-num')?.classList.remove('text-[#005a80]');
+          otherItem.querySelector('.logistics-num')?.classList.add('text-slate-600');
+
+          otherItem.querySelector('.logistics-category')?.classList.remove('text-[#0078ab]');
+          otherItem.querySelector('.logistics-category')?.classList.add('text-slate-600');
+
+          otherItem.querySelector('.logistics-icon')?.classList.remove('rotate-45');
+          otherItem.querySelector('.logistics-icon-h')?.classList.remove('bg-brand-red');
+          otherItem.querySelector('.logistics-icon-h')?.classList.add('bg-slate-300');
+          otherItem.querySelector('.logistics-icon-v')?.classList.remove('bg-brand-red');
+          otherItem.querySelector('.logistics-icon-v')?.classList.add('bg-slate-300');
+
+          const content = otherItem.querySelector('.logistics-content');
+          content?.classList.remove('max-h-[500px]', 'opacity-100', 'pb-10');
+          content?.classList.add('max-h-0', 'opacity-0');
+        });
+
+        // Open clicked if it wasn't active
+        if (!isActive) {
+          item.classList.add('border-brand-blue', 'shadow-xl', 'shadow-blue-900/5');
+          item.classList.remove('border-slate-200', 'hover:border-slate-300');
+
+          item.querySelector('.logistics-num')?.classList.add('text-[#005a80]');
+          item.querySelector('.logistics-num')?.classList.remove('text-slate-600');
+
+          item.querySelector('.logistics-category')?.classList.add('text-[#0078ab]');
+          item.querySelector('.logistics-category')?.classList.remove('text-slate-600');
+
+          item.querySelector('.logistics-icon')?.classList.add('rotate-45');
+          item.querySelector('.logistics-icon-h')?.classList.add('bg-brand-red');
+          item.querySelector('.logistics-icon-h')?.classList.remove('bg-slate-300');
+          item.querySelector('.logistics-icon-v')?.classList.add('bg-brand-red');
+          item.querySelector('.logistics-icon-v')?.classList.remove('bg-slate-300');
+
+          const content = item.querySelector('.logistics-content');
+          content?.classList.add('max-h-[500px]', 'opacity-100', 'pb-10');
+          content?.classList.remove('max-h-0', 'opacity-0');
+        }
+      });
+    });
+  }
+
+  // Support for Astro View Transitions if enabled
+  document.addEventListener('astro:page-load', setupLogistics);
+  // Initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupLogistics);
+  } else {
+    setupLogistics();
+  }
+</script>

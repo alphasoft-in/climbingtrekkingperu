@@ -1,0 +1,236 @@
+---
+interface Props {
+  images: string[];
+  title?: string;
+  subtitle?: string;
+  lang?: 'es' | 'en';
+  tourName?: string;
+}
+
+const { 
+  images = [], 
+  title, 
+  subtitle,
+  lang = 'es',
+  tourName
+} = Astro.props;
+
+const displayTitle = title || (lang === 'es' ? "GALERÍA DE EXPEDICIÓN" : "EXPEDITION GALLERY");
+const displaySubtitle = subtitle || (lang === 'es' ? "REGISTRO VISUAL" : "VISUAL RECORD");
+const expeditionText = lang === 'es' ? 'EXPEDICIÓN' : 'EXPEDITION';
+const defaultTourName = tourName || (lang === 'es' ? 'Andes Peruanos' : 'Peruvian Andes');
+---
+
+<section class="py-24 bg-white border-t border-slate-100 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    <!-- Header: Elite Technical Style -->
+    <div class="mb-16 border-l-4 border-brand-blue pl-8">
+      <span class="inline-block text-brand-light text-[9px] font-black tracking-[0.5em] uppercase mb-3">
+        {displaySubtitle}
+      </span>
+      <h2 class="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter uppercase leading-none">
+        {displayTitle.split(' ')[0]} <span class="text-brand-blue">{displayTitle.split(' ').slice(1).join(' ')}</span>
+      </h2>
+    </div>
+
+    <!-- Technical Grid: 8 Images Layout -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" id="tour-gallery-grid">
+      {images.map((img, idx) => (
+        <div 
+          class="gallery-thumbnail relative aspect-[4/3] group overflow-hidden bg-slate-100 rounded-sm shadow-sm cursor-pointer transition-all duration-500 hover:shadow-2xl"
+          data-index={idx}
+        >
+          <img 
+            src={img} 
+            alt={`${tourName || 'Gallery'} ${idx + 1}`}
+            class="w-full h-full object-cover transition-transform duration-1000"
+          />
+          <div class="absolute inset-0 bg-brand-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="white" stroke-width="2.5">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Premium Lightbox Modal -->
+  <div 
+    id="tour-lightbox"
+    class="fixed inset-0 z-[99999] bg-slate-950/98 backdrop-blur-2xl flex flex-col items-center justify-center p-4 md:p-12 transition-all duration-500 opacity-0 invisible"
+  >
+    <!-- Close Button -->
+    <button 
+      id="lightbox-close"
+      class="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-brand-red transition-all z-[100000] p-4 bg-white/5 md:bg-transparent rounded-full"
+      aria-label={lang === 'es' ? "Cerrar galería" : "Close gallery"}
+    >
+      <svg viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Nav Controls -->
+    <button 
+      id="lightbox-prev"
+      class="absolute left-2 md:left-12 text-white/40 hover:text-brand-blue transition-all z-[100000] p-4 active:scale-95 touch-manipulation"
+      aria-label={lang === 'es' ? "Imagen anterior" : "Previous image"}
+    >
+      <svg viewBox="0 0 24 24" class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+    
+    <button 
+      id="lightbox-next"
+      class="absolute right-2 md:right-12 text-white/40 hover:text-brand-blue transition-all z-[100000] p-4 active:scale-95 touch-manipulation"
+      aria-label={lang === 'es' ? "Siguiente imagen" : "Next image"}
+    >
+      <svg viewBox="0 0 24 24" class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+
+    <!-- Image Container -->
+    <div class="relative max-w-5xl w-full h-full flex flex-col items-center justify-center gap-8">
+      <img 
+        id="lightbox-img"
+        src="" 
+        class="max-h-[75vh] w-auto object-contain shadow-2xl border border-white/5 transition-transform duration-500 scale-95"
+        alt="Fullscreen"
+      />
+      
+      <!-- Modal Info -->
+      <div class="w-full border-t border-white/10 pt-8 flex justify-between items-end">
+        <div>
+          <span class="text-brand-blue text-[9px] font-black tracking-[0.4em] uppercase mb-2 block">
+            {expeditionText}
+          </span>
+          <h3 class="text-xl md:text-2xl font-black text-white uppercase tracking-tight">
+            {defaultTourName}
+          </h3>
+        </div>
+        <div class="text-white/30 text-[10px] font-black tracking-widest font-mono" id="lightbox-counter">
+          01 / {images.length.toString().padStart(2, '0')}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Store images data for JS -->
+<script type="application/json" id="tour-gallery-data">
+  {JSON.stringify(images)}
+</script>
+
+<script>
+  function setupTourGallery() {
+    const dataScript = document.getElementById('tour-gallery-data');
+    if (!dataScript) return;
+    
+    let images: string[] = [];
+    try {
+      images = JSON.parse(dataScript.textContent || '[]');
+    } catch (e) {
+      console.error('Error parsing gallery data', e);
+      return;
+    }
+
+    if (images.length === 0) return;
+
+    const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+    const lightbox = document.getElementById('tour-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    let currentIndex: number | null = null;
+
+    function openLightbox(index: number) {
+      currentIndex = index;
+      updateLightboxContent();
+      
+      // Show modal
+      lightbox?.classList.remove('opacity-0', 'invisible');
+      lightbox?.classList.add('opacity-100', 'visible');
+      lightboxImg?.classList.remove('scale-95');
+      lightboxImg?.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      currentIndex = null;
+      
+      // Hide modal
+      lightbox?.classList.remove('opacity-100', 'visible');
+      lightbox?.classList.add('opacity-0', 'invisible');
+      lightboxImg?.classList.remove('scale-100');
+      lightboxImg?.classList.add('scale-95');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      if (currentIndex === null || !lightboxImg || !lightboxCounter) return;
+      
+      lightboxImg.src = images[currentIndex];
+      const currentFormatted = (currentIndex + 1).toString().padStart(2, '0');
+      const totalFormatted = images.length.toString().padStart(2, '0');
+      lightboxCounter.textContent = `${currentFormatted} / ${totalFormatted}`;
+    }
+
+    function prevImage(e: Event) {
+      e.stopPropagation();
+      if (currentIndex !== null) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightboxContent();
+      }
+    }
+
+    function nextImage(e: Event) {
+      e.stopPropagation();
+      if (currentIndex !== null) {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightboxContent();
+      }
+    }
+
+    // Event Listeners
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        const index = parseInt(thumb.getAttribute('data-index') || '0', 10);
+        openLightbox(index);
+      });
+    });
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', prevImage);
+    nextBtn?.addEventListener('click', nextImage);
+    
+    // Close when clicking outside image
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox || (e.target as Element).closest('.relative.max-w-5xl') === null) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (currentIndex === null) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage(e);
+      if (e.key === 'ArrowRight') nextImage(e);
+    });
+  }
+
+  // Support for Astro View Transitions if enabled
+  document.addEventListener('astro:page-load', setupTourGallery);
+  // Initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTourGallery);
+  } else {
+    setupTourGallery();
+  }
+</script>
