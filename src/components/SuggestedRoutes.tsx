@@ -9,15 +9,12 @@ interface SuggestedRoutesProps {
 
 const SuggestedRoutes: React.FC<SuggestedRoutesProps> = ({ lang, currentId }) => {
   const isEs = lang === 'es';
-  const [recommended, setRecommended] = React.useState<typeof toursData>([]);
-
-  React.useEffect(() => {
-    const shuffled = toursData
+  const [recommended, setRecommended] = React.useState<typeof toursData>(() => {
+    return toursData
       .filter(p => p.id !== currentId)
       .sort(() => Math.random() - 0.5)
       .slice(0, 4);
-    setRecommended(shuffled);
-  }, [currentId]);
+  });
 
   return (
     <section className="bg-[#fafafa] pt-16 md:pt-24 pb-24 md:pb-32 px-6 text-slate-900">
