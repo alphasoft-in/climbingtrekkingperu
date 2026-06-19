@@ -1,7 +1,7 @@
 export const homeData = {
   es: {
     title: "Alpine Treks Perú - Tours & Expediciones en Huaraz | Agencia de viajes y turismo en Huaraz",
-    description: "Agencia de viajes y turismo ALPINE TREKS PERÚ. Expediciones de montaña y trekking en Huaraz y toda Sudamérica.",
+    description: "Especialistas en expediciones técnicas de montaña, trekking en Cordillera Blanca y Huayhuash. Guías certificados UIAGM / AGMP.",
     slides: [
       { src: '/slider_1.avif', pretitle: 'DESCUBRE LA MAGIA', title: 'CAMINO INCA CLÁSICO', subtitle: 'Sigue los pasos de los antiguos incas a través de selvas nubladas y valles sagrados, una expedición inolvidable.'},
       { src: '/slider_2.avif', pretitle: 'EXPERIENCIA PREMIUM', title: 'MACHU PICCHU AL AMANECER', subtitle: 'Contempla la ciudadela perdida de los Incas bañado por la primera luz del sol entre las nubes.'},
@@ -114,7 +114,7 @@ export const homeData = {
   },
   en: {
     title: "Alpine Treks Peru - Tours & Expeditions in Huaraz | Travel and Tourism Agency",
-    description: "ALPINE TREKS PERÚ Travel and Tourism Agency. Epic mountain and trekking expeditions in Huaraz and across South America.",
+    description: "Specialists in technical mountain expeditions, trekking in Cordillera Blanca and Huayhuash. UIAGM / AGMP certified guides.",
     slides: [
       { src: '/slider_1.avif', pretitle: 'DISCOVER THE MAGIC', title: 'CLASSIC INCA TRAIL', subtitle: 'Follow the footsteps of the ancient Incas through cloud forests and sacred valleys, an unforgettable expedition.'},
       { src: '/slider_2.avif', pretitle: 'PREMIUM EXPERIENCE', title: 'MACHU PICCHU AT DAWN', subtitle: 'Witness the lost citadel of the Incas bathed in the first light of the sun breaking through the clouds.'},
