@@ -1,6 +1,6 @@
 export const homeData = {
   es: {
-    title: "Inicio - ALPINE TREKS PERÚ",
+    title: "Alpine Treks Perú - Tours & Expediciones en Huaraz | Agencia de viajes y turismo en Huaraz",
     description: "Agencia de viajes y turismo ALPINE TREKS PERÚ. Expediciones de montaña y trekking en Huaraz y toda Sudamérica.",
     slides: [
       { src: '/slider_1.avif', pretitle: 'DESCUBRE LA MAGIA', title: 'CAMINO INCA CLÁSICO', subtitle: 'Sigue los pasos de los antiguos incas a través de selvas nubladas y valles sagrados, una expedición inolvidable.'},
@@ -113,7 +113,7 @@ export const homeData = {
     }
   },
   en: {
-    title: "Home - ALPINE TREKS PERÚ",
+    title: "Alpine Treks Peru - Tours & Expeditions in Huaraz | Travel and Tourism Agency",
     description: "ALPINE TREKS PERÚ Travel and Tourism Agency. Epic mountain and trekking expeditions in Huaraz and across South America.",
     slides: [
       { src: '/slider_1.avif', pretitle: 'DISCOVER THE MAGIC', title: 'CLASSIC INCA TRAIL', subtitle: 'Follow the footsteps of the ancient Incas through cloud forests and sacred valleys, an unforgettable expedition.'},
