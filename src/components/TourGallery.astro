@@ -120,9 +120,7 @@ const defaultTourName = tourName || (lang === 'es' ? 'Andes Peruanos' : 'Peruvia
 </section>
 
 <!-- Store images data for JS -->
-<script type="application/json" id="tour-gallery-data">
-  {JSON.stringify(images)}
-</script>
+<script type="application/json" id="tour-gallery-data" set:html={JSON.stringify(images)}></script>
 
 <script>
   function setupTourGallery() {
