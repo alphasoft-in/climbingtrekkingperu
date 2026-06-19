@@ -113,8 +113,8 @@ export const homeData = {
     }
   },
   en: {
-    title: "Alpine Treks Peru - Tours & Expeditions in Huaraz | Travel and Tourism Agency",
-    description: "Specialists in technical mountain expeditions, trekking in Cordillera Blanca and Huayhuash. UIAGM / AGMP certified guides.",
+    title: "Conquer the Andes: Expert-Led Mountaineering & Trekking in Huaraz",
+    description: "Beyond Altitude: Authentic Trekking and Climbing Expeditions in Peru. Top Huaraz trekking companies. Specialists in Cordillera Blanca mountaineering, Huayhuash trek Huaraz, and Santa Cruz trek Peru. Certified Huaraz climbing guides UIAGM.",
     slides: [
       { src: '/slider_1.avif', pretitle: 'DISCOVER THE MAGIC', title: 'CLASSIC INCA TRAIL', subtitle: 'Follow the footsteps of the ancient Incas through cloud forests and sacred valleys, an unforgettable expedition.'},
       { src: '/slider_2.avif', pretitle: 'PREMIUM EXPERIENCE', title: 'MACHU PICCHU AT DAWN', subtitle: 'Witness the lost citadel of the Incas bathed in the first light of the sun breaking through the clouds.'},
