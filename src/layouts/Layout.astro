@@ -201,9 +201,9 @@ const footerLabels = {
 			<slot />
 		</main>
 
-		<Footer client:load lang={lang as 'es' | 'en'} labels={footerLabels} />
+		<Footer lang={lang as 'es' | 'en'} labels={footerLabels} />
 
-		<FloatingWhatsApp client:load />
+		<FloatingWhatsApp />
 
 		<script>
 			// Sticky behavior moved to React component

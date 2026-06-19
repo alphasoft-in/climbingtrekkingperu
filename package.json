@@ -13,12 +13,12 @@
     "optimize-images": "tsx scripts/optimize_images.ts"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.4",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/react": "^5.0.7",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.2.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.1",
+    "astro": "^6.4.8",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.11.0",
     "react": "^19.2.5",
@@ -29,7 +29,7 @@
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "^0.9.9",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

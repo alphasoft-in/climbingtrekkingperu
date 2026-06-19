@@ -26,10 +26,10 @@ const t = useTranslations(lang);
 	image="/slider_1.avif"
 >
 	<Slider client:load lang={lang} slides={data.slides} buttonLabel={t('slider.btn')} />
-	<Institutional client:visible data={data.institutional} />
-	<WorkArea client:visible data={data.workArea} />
-	<TeamSection client:visible data={data.team} />
-	<Gastronomy client:visible data={data.gastronomy} />
+	<Institutional data={data.institutional} />
+	<WorkArea data={data.workArea} />
+	<TeamSection data={data.team} />
+	<Gastronomy data={data.gastronomy} />
 	<Logistics client:visible data={data.logistics} />
 	<EthicsBento client:visible data={data.ethics} />
 	<SuggestedRoutes client:visible lang={lang} />

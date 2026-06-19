@@ -28,12 +28,19 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMobileDrop, setActiveMobileDrop] = useState<string | null>(null);
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    // Initialize scroll state on mount
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
+    // Initialize scroll state on mount safely
+    window.requestAnimationFrame(() => setIsScrolled(window.scrollY > 40));
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

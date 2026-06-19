@@ -72,7 +72,7 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
                  className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out transform-gpu ${
                    index === currentIndex ? 'scale-105' : 'scale-100'
                  }`}
-                 loading="eager"
+                 loading={index === 0 ? "eager" : "lazy"}
                  fetchPriority={index === 0 ? "high" : "auto"}
                />
              </div>
