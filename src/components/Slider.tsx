@@ -114,7 +114,7 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
                   index === currentIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
                   <a
-                    href={lang === 'es' ? '/tours' : '/en/tours'}
+                    href={lang === 'es' ? '/es/tours' : '/tours'}
                     className="inline-flex items-center gap-3 bg-brand-red hover:bg-brand-dark text-white px-5 py-3 sm:px-6 sm:py-3.5 rounded-lg font-black text-[0.75rem] sm:text-[0.8rem] uppercase transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-brand-red/30"
                   >
                     {buttonLabel}

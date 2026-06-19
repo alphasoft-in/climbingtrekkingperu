@@ -26,7 +26,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
   const isEs = lang === 'es';
-  const baseUrl = isEs ? '' : '/en';
+  const baseUrl = isEs ? '/es' : '';
 
   return (
     <footer className="bg-[#05070a] text-slate-400 pt-20 relative overflow-hidden">
@@ -77,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({ lang, labels }) => {
               {[
                 { label: labels.navHome, href: `${baseUrl}/` },
                 { label: labels.navTours, href: `${baseUrl}/tours` },
-                { label: labels.navAbout, href: isEs ? '/nosotros' : '/en/about' },
+                { label: labels.navAbout, href: isEs ? '/es/nosotros' : '/about' },
                 { label: labels.navContact, href: `${baseUrl}/contact` }
               ].map((link, idx) => (
                 <li key={idx}>

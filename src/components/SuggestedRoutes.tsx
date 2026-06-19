@@ -50,7 +50,7 @@ const SuggestedRoutes: React.FC<SuggestedRoutesProps> = ({ lang, currentId }) =>
               difficultyLevel={route.difficultyLevel}
               description={route.description[lang]}
               category={route.category[lang]}
-              href={lang === 'es' ? `/${route.path}` : `/en/${route.path}`}
+              href={lang === 'es' ? `/es/${route.path}` : `/${route.path}`}
             />
           ))}
         </div>

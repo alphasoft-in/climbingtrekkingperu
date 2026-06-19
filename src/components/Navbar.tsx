@@ -55,8 +55,8 @@ const Navbar: React.FC<NavbarProps> = ({
   };
 
   const getBaseUrl = (path: string) => {
-    if (path === 'about' && lang === 'es') return '/nosotros';
-    return lang === 'es' ? `/${path}` : `/en/${path}`;
+    if (path === 'about' && lang === 'es') return '/es/nosotros';
+    return lang === 'es' ? `/es/${path}` : `/${path}`;
   };
 
   const isAboutActive = routeName.startsWith('about') || routeName.startsWith('nosotros');
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({
           {/* Left Column: Logo */}
           <div className="flex-1 flex justify-start">
             <div className="flex-shrink-0 z-[1001]">
-              <a href={lang === 'es' ? '/' : '/en'} className="block">
+              <a href={lang === 'es' ? '/es/' : '/'} className="block">
                 <img
                   src="/logo.avif"
                   alt="ALPINE TREKS PERÚ"
@@ -93,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <nav className="hidden nav:flex items-center justify-center h-full">
             <ul className="flex items-center gap-5 lg:gap-7 h-full list-none m-0 p-0">
               {[
-                { label: labels.home, href: lang === 'es' ? '/' : '/en', active: routeName === '' },
+                { label: labels.home, href: lang === 'es' ? '/es/' : '/', active: routeName === '' },
                 { label: labels.about, href: getBaseUrl('about'), active: isAboutActive },
               ].map((link) => (
                 <li key={link.label} className="h-full flex items-center">
@@ -316,7 +316,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
           <nav className="flex flex-col gap-4 sm:gap-6 items-center w-full">
             <div className="flex flex-col items-center gap-1 group">
-              <a href={lang === 'es' ? '/' : '/en'} className={`text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
+              <a href={lang === 'es' ? '/es/' : '/'} className={`text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300 ${routeName === '' ? 'text-white' : 'text-white/50 hover:text-white'}`}>{labels.home}</a>
               {routeName === '' && <div className="w-8 h-[2px] bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,144,204,0.6)]"></div>}
             </div>
 
