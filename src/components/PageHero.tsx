@@ -16,15 +16,14 @@ interface PageHeroProps {
 const PageHero: React.FC<PageHeroProps> = ({ titleTop, titleMain, backgroundImage, techData, height = "h-[75vh]" }) => {
   return (
     <section className={`relative ${height} min-h-[500px] flex items-center overflow-hidden bg-[#06090f]`}>
-      <img
-        src={backgroundImage}
-        alt={titleMain}
-        width={1920}
-        height={1080}
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
-        loading="eager"
-        fetchPriority="high"
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{ 
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 40%',
+          backgroundRepeat: 'no-repeat'
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06090f]/80 via-[#06090f]/40 to-[#06090f]/80"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#06090f] via-transparent to-transparent opacity-60"></div>

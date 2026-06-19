@@ -64,15 +64,14 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
           >
             {/* Image with Ken Burns Effect */}
              <div className="absolute inset-0 overflow-hidden">
-               <img
-                 src={slide.src}
-                 alt={slide.title}
-                 width={1920}
-                 height={1080}
-                 className="w-full h-full object-cover"
-                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                 loading={index === 0 ? "eager" : "lazy"}
-                 fetchPriority={index === 0 ? "high" : "auto"}
+               <div
+                 className="w-full h-full"
+                 style={{ 
+                   backgroundImage: `url(${slide.src})`,
+                   backgroundSize: 'cover',
+                   backgroundPosition: 'center',
+                   backgroundRepeat: 'no-repeat'
+                 }}
                />
              </div>
 

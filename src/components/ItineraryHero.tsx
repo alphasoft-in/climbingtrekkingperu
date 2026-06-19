@@ -26,15 +26,14 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
   return (
     <section className="relative h-[55vh] md:h-[65vh] min-h-[450px] flex items-center overflow-hidden bg-[#06090f]">
       {/* Cinematic Background */}
-      <img
-        src={backgroundImage}
-        alt={titleMain}
-        width={1920}
-        height={1080}
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        loading="eager"
-        fetchPriority="high"
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{ 
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       />
       
       {/* Architectural Overlays */}
