@@ -3,6 +3,7 @@
 import Layout from '@layouts/Layout.astro';
 import SuggestedRoutes from './SuggestedRoutes.astro';
 import TourGallery from './TourGallery.astro';
+import TestGallery from './TestGallery.astro';
 import ItineraryHero from './ItineraryHero';
 import ItineraryIntro from './ItineraryIntro';
 import ItinerarySchedule from './ItinerarySchedule';
@@ -67,6 +68,14 @@ const pageTitle = `${formatTitle(t.hero.titleMain)} | Alpine Treks Perú`;
     specs={t.intro.specs}
   />
 
+  <TestGallery />
+
+  <TourGallery 
+    lang={lang}
+    tourName={t.hero?.titleMain}
+    images={t.gallery || []} 
+  />
+
   <section class="details-section bg-[#fafafa] py-24 border-t border-slate-200">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -119,14 +128,6 @@ const pageTitle = `${formatTitle(t.hero.titleMain)} | Alpine Treks Perú`;
       </div>
     </div>
   </section>
-
-  {t.gallery && (
-    <TourGallery 
-      lang={lang}
-      tourName={t.hero.titleMain}
-      images={t.gallery} 
-    />
-  )}
 
   <SuggestedRoutes lang={lang} currentId={data.id} />
 </Layout>
