@@ -26,10 +26,15 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
   return (
     <section className="relative h-[55vh] md:h-[65vh] min-h-[450px] flex items-center overflow-hidden bg-[#06090f]">
       {/* Cinematic Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] hover:scale-110"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
-      ></div>
+      <img
+        src={backgroundImage}
+        alt={titleMain}
+        width={1920}
+        height={1080}
+        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[10000ms] hover:scale-110 transform-gpu"
+        loading="eager"
+        fetchPriority="high"
+      />
       
       {/* Architectural Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#06090f]/95 via-transparent to-[#06090f]/98"></div>

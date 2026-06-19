@@ -39,7 +39,6 @@ const t = data[lang];
   </Fragment>
 
   <ItineraryHero
-    client:load
     lang={lang}
     titleTop={t.hero.titleTop}
     titleMain={t.hero.titleMain}
@@ -51,7 +50,6 @@ const t = data[lang];
   />
 
   <ItineraryIntro
-    client:visible
     lang={lang}
     code={t.intro.code}
     titlePrefix={t.intro.titlePrefix}
@@ -68,7 +66,6 @@ const t = data[lang];
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div class="lg:col-span-8">
           <ItinerarySchedule 
-            client:visible
             lang={lang}
             days={t.itinerary.map((item: any) => ({
               day: item.day,
@@ -84,7 +81,6 @@ const t = data[lang];
         <aside class="lg:col-span-4 sticky top-24 h-fit">
           <div class="flex flex-col gap-10">
             <LogisticsCard
-              client:visible
               title={t.includesTitle}
               items={t.includes}
               refCode="SRV-INC"
@@ -92,7 +88,6 @@ const t = data[lang];
             />
 
             <LogisticsCard
-              client:visible
               title={t.equipmentTitle}
               items={t.equipment}
               refCode="EQP-TCN"
@@ -101,7 +96,6 @@ const t = data[lang];
 
             {t.excludes && (
               <LogisticsCard
-                client:visible
                 title={lang === 'es' ? 'No Incluye' : 'Not Included'}
                 items={t.excludes}
                 refCode="SRV-EXC"

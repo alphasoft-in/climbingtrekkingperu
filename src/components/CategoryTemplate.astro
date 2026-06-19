@@ -21,7 +21,6 @@ const { lang, metadata, programs } = Astro.props;
   image={metadata[lang].backgroundImage}
 >
   <PageHero 
-    client:load
     titleTop={metadata[lang].titleTop}
     titleMain={metadata[lang].titleMain}
     backgroundImage={metadata[lang].backgroundImage}
@@ -33,7 +32,6 @@ const { lang, metadata, programs } = Astro.props;
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {programs.map((prog) => (
           <TourCard 
-            client:visible
             id={prog.id}
             title={prog.title[lang]}
             description={prog.description[lang]}
