@@ -305,7 +305,7 @@ const secondaryLinks = [
       <!-- Mobile Dropdown: Trekking -->
       <div class="w-full flex flex-col items-center">
         <button
-          class="mobile-dropdown-toggle flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300"
+          class={`mobile-dropdown-toggle flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-colors duration-300 ${isTrekkingActive ? 'text-brand-blue' : 'text-white/50 hover:text-white'}`}
           data-active={isTrekkingActive ? "true" : "false"}
         >
           {labels.trekking}
@@ -322,7 +322,7 @@ const secondaryLinks = [
       <!-- Mobile Dropdown: Destinations -->
       <div class="w-full flex flex-col items-center">
         <button
-          class="mobile-dropdown-toggle flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-all duration-300"
+          class={`mobile-dropdown-toggle flex items-center gap-2.5 text-[1.05rem] sm:text-[1.1rem] font-black uppercase tracking-[0.25em] transition-colors duration-300 ${isDestinationsActive ? 'text-brand-blue' : 'text-white/50 hover:text-white'}`}
           data-active={isDestinationsActive ? "true" : "false"}
         >
           {labels.destinations}
@@ -590,16 +590,7 @@ const secondaryLinks = [
       });
     });
     
-    // Initial coloring for active toggles
-    mobileDropdownToggles.forEach(toggle => {
-        if (toggle.getAttribute('data-active') === 'true') {
-            toggle.classList.remove('text-white/50');
-            toggle.classList.add('text-brand-blue');
-        } else {
-            toggle.classList.add('text-white/50');
-            toggle.classList.remove('text-brand-blue');
-        }
-    });
+
 
   }
 

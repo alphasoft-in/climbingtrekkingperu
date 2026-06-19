@@ -114,8 +114,8 @@ const { lang, slides, buttonLabel } = Astro.props;
         aria-label={lang === 'es' ? `Ir a diapositiva ${index + 1}` : `Go to slide ${index + 1}`}
       >
         <div
-          class={`slider-progress absolute inset-0 bg-brand-blue rounded-full transition-all duration-[6000ms] linear ${
-            index === 0 ? 'w-full' : 'w-0 transition-none'
+          class={`slider-progress absolute inset-0 w-full bg-brand-blue rounded-full transition-transform duration-[6000ms] ease-linear origin-left ${
+            index === 0 ? 'scale-x-100' : 'scale-x-0 transition-none'
           }`}
         ></div>
       </button>
@@ -165,16 +165,16 @@ const { lang, slides, buttonLabel } = Astro.props;
         if (index === newIndex) {
           // Force reflow to restart animation
           if (progress) {
-            progress.classList.remove('transition-all', 'duration-[6000ms]', 'linear', 'w-full');
-            progress.classList.add('w-0', 'transition-none');
+            progress.classList.remove('transition-transform', 'duration-[6000ms]', 'ease-linear', 'scale-x-100');
+            progress.classList.add('scale-x-0', 'transition-none');
             void (progress as HTMLElement).offsetWidth; 
-            progress.classList.remove('w-0', 'transition-none');
-            progress.classList.add('transition-all', 'duration-[6000ms]', 'linear', 'w-full');
+            progress.classList.remove('scale-x-0', 'transition-none');
+            progress.classList.add('transition-transform', 'duration-[6000ms]', 'ease-linear', 'scale-x-100');
           }
         } else {
           if (progress) {
-            progress.classList.remove('w-full', 'transition-all', 'duration-[6000ms]', 'linear');
-            progress.classList.add('w-0', 'transition-none');
+            progress.classList.remove('scale-x-100', 'transition-transform', 'duration-[6000ms]', 'ease-linear');
+            progress.classList.add('scale-x-0', 'transition-none');
           }
         }
       });
