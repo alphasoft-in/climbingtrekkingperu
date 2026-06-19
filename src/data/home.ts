@@ -1,7 +1,7 @@
 export const homeData = {
   es: {
-    title: "Alpine Treks Perú - Tours & Expediciones en Huaraz | Agencia de viajes y turismo en Huaraz",
-    description: "Especialistas en expediciones técnicas de montaña, trekking en Cordillera Blanca y Huayhuash. Guías certificados UIAGM / AGMP.",
+    title: "Conquista los Andes: Montañismo y trekking liderado por expertos en Huaraz",
+    description: "Más allá de la altitud: Expediciones auténticas de trekking y escalada en Perú. Especialistas en expediciones técnicas de montaña, trekking en Cordillera Blanca y Huayhuash. Guías certificados UIAGM.",
     slides: [
       { src: '/slider_1.avif', pretitle: 'DESCUBRE LA MAGIA', title: 'CAMINO INCA CLÁSICO', subtitle: 'Sigue los pasos de los antiguos incas a través de selvas nubladas y valles sagrados, una expedición inolvidable.'},
       { src: '/slider_2.avif', pretitle: 'EXPERIENCIA PREMIUM', title: 'MACHU PICCHU AL AMANECER', subtitle: 'Contempla la ciudadela perdida de los Incas bañado por la primera luz del sol entre las nubes.'},
