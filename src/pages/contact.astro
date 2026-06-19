@@ -11,6 +11,6 @@ const lang = getLangFromUrl(Astro.url);
 	title={lang === 'es' ? "Contacto y Reservas | ALPINE TREKS PERÚ Huaraz" : "Contact & Bookings | ALPINE TREKS PERÚ Huaraz"}
 	description={lang === 'es' ? "Contacta con ALPINE TREKS PERÚ para planificar tu próxima expedición." : "Contact ALPINE TREKS PERÚ to plan your next expedition."}
 >
-  <ContactHub client:load lang={lang as 'es' | 'en'} />
+  <ContactHub client:idle lang={lang as 'es' | 'en'} />
 	<SuggestedRoutes lang={lang} currentId="contact" client:visible />
 </Layout>

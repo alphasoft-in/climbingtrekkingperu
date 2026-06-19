@@ -16,7 +16,7 @@ const { lang, data } = Astro.props;
   description={data[lang].description}
 >
   <GalleryHub 
-    client:load 
+    client:idle 
     lang={lang} 
     categories={data[lang].categories} 
     items={data.items} 

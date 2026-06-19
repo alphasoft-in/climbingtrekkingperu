@@ -19,7 +19,7 @@ const content = data[lang];
 	image="/bg-nosotros.avif"
 >
 	<PageHero 
-		client:load
+		client:idle
 		titleTop={content.hero.titleTop}
 		titleMain={content.hero.titleMain}
 		backgroundImage={content.hero.backgroundImage}
@@ -81,5 +81,5 @@ const content = data[lang];
 		</div>
 	</section>
 
-  <SuggestedRoutes client:load lang={lang} />
+  <SuggestedRoutes client:visible lang={lang} />
 </Layout>
