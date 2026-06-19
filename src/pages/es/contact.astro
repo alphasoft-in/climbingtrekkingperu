@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import ContactHub from '@components/ContactHub';
-import SuggestedRoutes from '@components/SuggestedRoutes';
+import SuggestedRoutes from '@components/SuggestedRoutes.astro';
 import { getLangFromUrl } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -12,5 +12,5 @@ const lang = getLangFromUrl(Astro.url);
 	description={lang === 'es' ? "Contacta con ALPINE TREKS PERÚ para planificar tu próxima expedición." : "Contact ALPINE TREKS PERÚ to plan your next expedition."}
 >
   <ContactHub client:idle lang={lang as 'es' | 'en'} />
-	<SuggestedRoutes lang={lang} currentId="contact" client:visible />
+	<SuggestedRoutes lang={lang} currentId="contact" />
 </Layout>
