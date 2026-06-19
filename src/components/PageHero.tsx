@@ -22,7 +22,7 @@ const PageHero: React.FC<PageHeroProps> = ({ titleTop, titleMain, backgroundImag
         width={1920}
         height={1080}
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: 'center 40%' }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
         loading="eager"
         fetchPriority="high"
       />
