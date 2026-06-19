@@ -120,7 +120,7 @@ const GalleryHub: React.FC<GalleryHubProps> = ({ lang, categories, items }) => {
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 group-hover:brightness-75"
+                  className="w-full h-full object-cover transition-all duration-1000 group-hover:brightness-75"
                   loading="lazy"
                 />
                 

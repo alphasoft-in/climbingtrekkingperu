@@ -68,7 +68,7 @@ const TourGallery: React.FC<TourGalleryProps> = ({
               <img 
                 src={img} 
                 alt={`${tourName || 'Gallery'} ${idx + 1}`}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-brand-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="white" strokeWidth="2.5">

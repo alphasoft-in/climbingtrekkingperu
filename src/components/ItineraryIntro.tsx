@@ -111,7 +111,7 @@ const ItineraryIntro: React.FC<ItineraryIntroProps> = ({
               <img 
                 src={image} 
                 alt={titlePrefix}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-1000"
               />
               
               {/* Data Overlay: Coordinates */}

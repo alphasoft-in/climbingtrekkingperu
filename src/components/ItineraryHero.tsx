@@ -31,7 +31,7 @@ const ItineraryHero: React.FC<ItineraryHeroProps> = ({
         alt={titleMain}
         width={1920}
         height={1080}
-        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[10000ms] hover:scale-110 transform-gpu"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchPriority="high"
       />

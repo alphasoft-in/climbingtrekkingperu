@@ -43,7 +43,7 @@ const TourCard: React.FC<TourCardProps> = ({
           alt={title} 
           width={600}
           height={450}
-          className="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100"
+          className="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:opacity-100"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
         

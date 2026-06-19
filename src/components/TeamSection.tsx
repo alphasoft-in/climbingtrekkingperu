@@ -62,7 +62,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ data }) => {
                     <img
                       src={member.avatar}
                       alt={member.name}
-                      className="w-full h-full object-cover transition-all duration-1000 scale-110 group-hover:scale-100"
+                      className="w-full h-full object-cover transition-all duration-1000"
                     />
                   </div>
                 </div>
