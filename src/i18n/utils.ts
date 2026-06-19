@@ -15,8 +15,8 @@ export function useTranslations(lang: keyof typeof ui) {
 /** Utility to generate language-specific links without hardcoding */
 export function getRelativeLocaleUrl(lang: string, path: string) {
     const cleanPath = path.replace(/^\//, '');
-    if (lang === 'es') {
+    if (lang === 'en') {
         return `/${cleanPath}`;
     }
-    return `/en/${cleanPath}`;
+    return `/es/${cleanPath}`;
 }

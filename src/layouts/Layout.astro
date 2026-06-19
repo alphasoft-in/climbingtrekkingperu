@@ -13,9 +13,9 @@ interface Props {
 }
 
 const {
-	title = "Alpine Treks Perú - Tours & Expediciones en Huaraz | Agencia de viajes y turismo en Huaraz",
-	description = "Especialistas en expediciones técnicas de montaña, trekking en Cordillera Blanca y Huayhuash. Guías certificados UIAGM / AGMP.",
-	keywords = "trekking peru, huayhuash, cordillera blanca, montaña huaraz, guias montaña peru, alpine treks",
+	title = "Alpine Treks Peru - Top Travel & Trekking Agency in Peru | Huaraz & Andes",
+	description = "Leading local travel agency in Peru. Specialists in technical mountain expeditions and trekking in Cordillera Blanca and Huayhuash. UIAGM certified guides.",
+	keywords = "travel agency peru, trekking in peru, huaraz mountaineering, cordillera blanca trek, huayhuash circuit, peru expeditions, alpine treks peru",
 	image = "/og-image.avif",
 } = Astro.props;
 
@@ -24,18 +24,18 @@ const t = useTranslations(lang);
 
 const currentPath = Astro.url.pathname;
 const routeName = currentPath
-	.replace(/^\/en(\/|$)/, "$1")
+	.replace(/^\/es(\/|$)/, "$1")
 	.replace(/^\//, "")
 	.split("?")[0]
 	.replace(/\/$/, "");
 
-let esUrl = `/${routeName}`;
-let enUrl = `/en/${routeName}`;
+let enUrl = `/${routeName}`;
+let esUrl = `/es/${routeName}`;
 
 // Handle localized page name mapping
 const mappings: Record<string, { es: string; en: string }> = {
-	nosotros: { es: "/nosotros", en: "/en/about" },
-	about: { es: "/nosotros", en: "/en/about" },
+	nosotros: { es: "/es/nosotros", en: "/about" },
+	about: { es: "/es/nosotros", en: "/about" },
 };
 
 if (mappings[routeName]) {

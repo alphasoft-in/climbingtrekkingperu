@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '@components/PageHero';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+---
+
+<Layout 
+  title={isEs ? "Política de Protección de Datos Personales | ALPINE TREKS PERÚ" : "Personal Data Protection Policy | ALPINE TREKS PERÚ"}
+  description={isEs ? "Cumplimiento de la Ley N° 29733 sobre la protección de datos personales en Perú." : "Compliance with Law No. 29733 on the protection of personal data in Peru."}
+>
+  <PageHero 
+    client:load
+    titleTop={isEs ? "LEY N° 29733" : "LAW N° 29733"}
+    titleMain={isEs ? "PRIVACIDAD" : "PRIVACY"}
+    backgroundImage="/slider_2.avif"
+  />
+
+  <section class="py-16 md:py-24 bg-white px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-slate prose-xs md:prose-sm max-w-none space-y-12 text-left md:text-justify">
+        
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "I. Declaración de Cumplimiento" : "I. Declaration of Compliance"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "En ALPINE TREKS PERÚ, el tratamiento de sus datos personales se rige estrictamente por la Ley N° 29733, Ley de Protección de Datos Personales y su Reglamento aprobado por Decreto Supremo N° 003-2013-JUS. Garantizamos la seguridad, confidencialidad y el ejercicio de sus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)."
+              : "At ALPINE TREKS PERÚ, the processing of your personal data is strictly governed by Law No. 29733, the Personal Data Protection Law, and its Regulation approved by Supreme Decree No. 003-2013-JUS. We guarantee security, confidentiality, and the exercise of your ARCO rights (Access, Rectification, Cancellation, and Opposition)."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "II. Finalidad del Tratamiento" : "II. Purpose of Processing"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "La información suministrada por el titular de los datos tiene como finalidad exclusiva la ejecución del servicio contratado, incluyendo la gestión de permisos ante el Parque Nacional Huascarán, contratatación de seguros de montaña y asistencia logística de emergencia."
+              : "The information provided by the data subject is exclusively for the execution of the contracted service, including the management of permits with the Huascaran National Park, mountain insurance contracting, and emergency logistical assistance."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "III. Consentimiento Informado" : "III. Informed Consent"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "Al utilizar nuestros canales de contacto y formularios de reserva, el usuario otorga su consentimiento previo, expreso, informado e inequívoco para el tratamiento de sus datos personales en nuestro banco de datos de titularidad de ALPINE TREKS PERÚ."
+              : "By using our contact channels and booking forms, the user grants their prior, express, informed, and unequivocal consent for the processing of their personal data in our data bank owned by ALPINE TREKS PERÚ."
+            }
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

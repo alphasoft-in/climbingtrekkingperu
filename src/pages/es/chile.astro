@@ -3,20 +3,11 @@ import { toursData } from '@data/tours/toursData';
 import { regionsData } from '@data/regions';
 import CategoryTemplate from '@components/CategoryTemplate.astro';
 
-const lang = 'en';
-const metadata = regionsData['bolivia'];
+const lang = 'es';
+const metadata = regionsData['chile'];
 
-// Featured selection for Bolivia hub
-const featuredIds = [
-  'condoriri-huayna-expedition',
-  'illimani-sajama',
-  'uyuni-huayna-potosi',
-  'illampu-circuit',
-  'cotia-huayna-trek',
-  'illampu-peak',
-  'bolivia-volcanes',
-  'uyuni-titicaca-cultural'
-];
+// Featured selection for Chile hub
+const featuredIds = ['ojos-del-salado'];
 const programs = toursData.filter(t => featuredIds.includes(t.slug));
 ---
 

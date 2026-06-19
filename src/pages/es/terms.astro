@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '@components/PageHero';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+---
+
+<Layout 
+  title={isEs ? "Términos y Condiciones Legales | ALPINE TREKS PERÚ" : "Legal Terms & Conditions | ALPINE TREKS PERÚ"}
+  description={isEs ? "Marco jurídico y condiciones contractuales para la prestación de servicios turísticos." : "Legal framework and contractual conditions for the provision of tourism services."}
+>
+  <PageHero 
+    client:load
+    titleTop={isEs ? "MARCO JURÍDICO" : "LEGAL FRAMEWORK"}
+    titleMain={isEs ? "TÉRMINOS" : "TERMS"}
+    backgroundImage="/slider_5.avif"
+  />
+
+  <section class="py-16 md:py-24 bg-white px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-slate prose-xs md:prose-sm max-w-none space-y-12 text-left md:text-justify">
+        
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "I. Ámbito Contractual" : "I. Contractual Scope"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "El presente documento constituye el contrato de prestación de servicios turísticos entre el cliente y ALPINE TREKS PERÚ. Al contratar nuestros servicios, el cliente declara bajo juramento haber leído, comprendido y aceptado las cláusulas estipuladas en el presente marco legal."
+              : "This document constitutes the contract for the provision of tourism services between the client and ALPINE TREKS PERÚ. By hiring our services, the client declares under oath to have read, understood, and accepted the clauses stipulated in this legal framework."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "II. Reservas y Obligaciones Pecuniarias" : "II. Reservations and Financial Obligations"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "Para la confirmación vinculante de cualquier expedición, se requiere un depósito equivalente al 30% del valor total de la transacción. El saldo remanente deberá ser liquidado en su totalidad en una única exhibición al menos 48 horas previas al inicio del itinerario. El incumplimiento del pago faculta a la empresa a resolver el contrato sin derecho a reembolso."
+              : "For the binding confirmation of any expedition, a deposit equivalent to 30% of the total transaction value is required. The remaining balance must be settled in full in a single payment at least 48 hours prior to the start of the itinerary. Failure to pay entitles the company to terminate the contract without right to refund."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-red pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "III. Régimen de Cancelaciones y Cláusula Penal" : "III. Cancellation Regime and Penalty Clause"}
+          </h2>
+          <p class="mb-4 text-slate-600">
+            {isEs 
+              ? "Las rescisiones contractuales por parte del cliente estarán sujetas a la siguiente escala de retenciones:"
+              : "Contractual terminations by the client will be subject to the following scale of retentions:"
+            }
+          </p>
+          <ul class="list-disc list-inside text-slate-600 space-y-2 italic">
+            {isEs ? (
+              <>
+                <li>Superior a 30 días previos al inicio: Retención del 20% del depósito por gastos administrativos.</li>
+                <li>Entre 15 y 29 días previos: Retención del 50% del depósito.</li>
+                <li>Inferior a 14 días o 'No Show': Retención del 100% del depósito.</li>
+              </>
+            ) : (
+              <>
+                <li>More than 30 days prior: 20% deposit retention for administrative expenses.</li>
+                <li>Between 15 and 29 days prior: 50% deposit retention.</li>
+                <li>Less than 14 days or 'No Show': 100% deposit retention.</li>
+              </>
+            )}
+          </ul>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "IV. Exoneración de Responsabilidad y Fuerza Mayor" : "IV. Disclaimer and Force Majeure"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "ALPINE TREKS PERÚ queda exonerada de responsabilidad ante eventos de fuerza mayor o caso fortuito, incluyendo pero no limitado a desastres naturales, huelgas, cierres de rutas por autoridades o condiciones climáticas extremas que impidan el desarrollo seguro de la actividad. En tales eventos, la empresa buscará alternativas logísticas, pero no se obliga a la devolución pecuniaria del servicio ya devengado."
+              : "ALPINE TREKS PERÚ is exempt from liability in the event of force majeure or fortuitous cases, including but not limited to natural disasters, strikes, route closures by authorities, or extreme weather conditions that prevent the safe conduct of the activity. In such events, the company will seek logistical alternatives but is not obligated to return financial payment for services already rendered."
+            }
+          </p>
+        </div>
+
+        <div class="border-l-2 border-brand-blue pl-6">
+          <h2 class="text-lg font-black text-brand-dark uppercase tracking-tight mb-4">
+            {isEs ? "V. Jurisdicción y Competencia" : "V. Jurisdiction and Competence"}
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            {isEs 
+              ? "Para cualquier controversia derivada de la interpretación o ejecución del presente contrato, las partes se someten expresamente a la jurisdicción de los tribunales competentes de la ciudad de Huaraz, Ancash, Perú, renunciando a cualquier otro fuero que pudiera corresponderles."
+              : "For any controversy arising from the interpretation or execution of this contract, the parties expressly submit to the jurisdiction of the competent courts of the city of Huaraz, Ancash, Peru, waiving any other jurisdiction that may correspond to them."
+            }
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
