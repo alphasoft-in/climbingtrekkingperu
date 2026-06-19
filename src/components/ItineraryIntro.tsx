@@ -75,15 +75,15 @@ const ItineraryIntro: React.FC<ItineraryIntroProps> = ({
               </h2>
             </div>
 
-            <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-12 relative pl-10 border-l-2 border-slate-100 min-h-[100px] flex items-center">
+            <div className="text-sm md:text-base text-slate-600 leading-relaxed mb-12 relative pl-10 border-l-2 border-slate-100 min-h-[100px] flex items-center">
               {/* Vertical Label: Perfectly centered with the paragraph */}
               <div className="hidden lg:flex absolute -left-12 top-1/2 -translate-y-1/2 h-full items-center justify-center">
                 <span className="[writing-mode:vertical-lr] rotate-180 text-[10px] font-black tracking-[0.6em] text-slate-300 uppercase whitespace-nowrap">
                   {displayVerticalLabel}
                 </span>
               </div>
-              {description}
-            </p>
+              <p className="m-0">{description}</p>
+            </div>
 
             {/* Technical Specs Dashboard */}
             <div className="grid grid-cols-2 gap-x-8 gap-y-10">
