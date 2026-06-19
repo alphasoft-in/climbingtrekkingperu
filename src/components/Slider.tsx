@@ -97,9 +97,9 @@ const Slider: React.FC<SliderProps> = ({ lang, slides, buttonLabel }) => {
                 <div className={`transition-all duration-700 delay-400 transform ${
                   index === currentIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
-                  <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] mb-3 md:mb-5 drop-shadow-2xl">
+                  <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] mb-3 md:mb-5 drop-shadow-2xl">
                     {slide.title}
-                  </h2>
+                  </h1>
                 </div>
 
                 <div className={`transition-all duration-700 delay-600 transform ${

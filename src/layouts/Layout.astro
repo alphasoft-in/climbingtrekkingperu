@@ -182,6 +182,24 @@ const footerLabels = {
 				href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap" 
 			/>
 		</noscript>
+
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "TravelAgency",
+			"name": "ALPINE TREKS PERÚ",
+			"image": "https://alpinetreksperu.com/logo.png",
+			"description": description,
+			"url": "https://alpinetreksperu.com",
+			"telephone": "+51962421830",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Huaraz",
+				"addressLocality": "Huaraz",
+				"addressRegion": "Ancash",
+				"addressCountry": "PE"
+			}
+		})} />
+		<slot name="head" />
 	</head>
 	<body>
 		<Navbar 

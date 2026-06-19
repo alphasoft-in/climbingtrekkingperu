@@ -24,6 +24,20 @@ const t = data[lang];
   keywords={`${t.hero.titleMain.toLowerCase()}, trekking peru, cordillera blanca, huayhuash, expedicion tecnica, alpine treks`}
   image={t.hero.backgroundImage}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": t.hero.titleMain,
+      "description": t.hero.description || t.intro.description,
+      "image": `https://alpinetreksperu.com${t.hero.backgroundImage}`,
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "ALPINE TREKS PERÚ"
+      }
+    })} />
+  </Fragment>
+
   <ItineraryHero
     client:load
     lang={lang}

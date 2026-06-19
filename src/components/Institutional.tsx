@@ -29,9 +29,9 @@ const Institutional: React.FC<InstitutionalProps> = ({ data }) => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center max-w-5xl mx-auto mb-20 md:mb-32">
-            <h1 className="text-brand-dark text-3xl md:text-5xl font-black tracking-[0.15em] mb-4 leading-tight uppercase">
+            <h2 className="text-brand-dark text-3xl md:text-5xl font-black tracking-[0.15em] mb-4 leading-tight uppercase">
               {data.identity.name}
-            </h1>
+            </h2>
             <p className="text-slate-500 text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase">
               {data.identity.type}
             </p>
